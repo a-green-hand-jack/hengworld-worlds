@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0007",
+  "start": 123.542,
+  "end": 150.042,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 26.5,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 36,
+   "start": -0.0,
+   "end": 26.5,
+   "description": "Medium shot of an animal character speaking in a snowy landscape with penguins, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 26.5
+  }
+ ]
+}

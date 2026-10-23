@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0012",
+  "start": 67.208,
+  "end": 72.625,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 5.417,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 12,
+   "start": 0.0,
+   "end": 5.417,
+   "description": "Wide shot of C1 running, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 5.417
+  }
+ ],
+ "task_id": "domini_canes-L0-0012-ref",
+ "descriptions_available": true
+}

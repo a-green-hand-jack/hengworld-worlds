@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0052",
+  "start": 169.08,
+  "end": 177.2,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 8.12,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 52,
+   "start": 0.0,
+   "end": 8.12,
+   "description": "Extreme close-up of a beam shooting down, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 8.12
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0052-ref",
+ "descriptions_available": true
+}

@@ -1,0 +1,19 @@
+Here is your detailed description of shot 30:
+{"setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, clear blue sky above jagged snow-covered rocky peaks and a snowy ground.", "characters": "C1: curled into a tight round ball, falling from the sky on upper left, crashing through rocky peaks to the foreground right.", "props": "Jagged rocks and snow.", "action": "Curled into an orange ball, C1 plummets from the high sky toward the jagged rocky peaks, smashing straight through a rock pinnacle in a cloud of debris and snow, then bouncing and rolling into the foreground.", "camera": "Extreme wide shot tilting down and panning right to follow C1's descent as C1 moves from extreme distance into a medium shot in the foreground.", "light_mood": "Bright, crisp daylight with cool blue sky and white snow contrasting with C1's warm orange fur; chaotic, action-packed comedic mood.", "sound": "Fast-paced, dramatic orchestral music builds to a crescendo, accompanied by a loud, echoing crash and crumbling rock sounds as C1 hits the peak."}
+An independent checker looking at the same frames flagged:
+- characters: 'crashing through rocky peaks to the foreground right' -> contradicted
+- action: 'smashing straight through a rock pinnacle in a cloud of debris and snow' -> contradicted
+- sound: 'accompanied by a loud, echoing crash and crumbling rock sounds' -> unsupported
+- sound: 'as C1 hits the peak' -> contradicted
+Rewrite the whole JSON (same keys, same limits, no description_* keys needed) so that every statement is confirmed by the frames or audio. Reply with JSON only.
+
+Frames:
+[frame 1 at 93.77s]
+IMG:38c5f06d40699350bd25c0d0c3caf8021ed646979589b15765852f7dfe172d61
+[frame 2 at 94.49s]
+IMG:6a72b93ba53ae3fd5de801f084ac5d80d7afbd7007007cb3955a3f7c3d9c88e3
+[frame 3 at 95.22s]
+IMG:bf13619ca9465ea0dbcab27b1cf6fc6d1e149dfd4826f9705151a5fc1995d7c7
+[frame 4 at 95.94s]
+IMG:a0d466dd9c1e2cd678fee13c4ac7519527d85b92c66dc0a28d93243c3e81ad1b
+AUD:aaa2bc0fe6abbca53babd044cdf5ba114b4465b90f3fea46715dbe27aa8f2763

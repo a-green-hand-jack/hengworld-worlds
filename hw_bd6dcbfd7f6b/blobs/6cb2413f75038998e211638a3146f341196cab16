@@ -1,0 +1,26 @@
+{
+ "container": "mp4",
+ "video": {
+  "codec": "h264",
+  "pix_fmt": "yuv420p",
+  "width": 1280,
+  "height": 720,
+  "fps": 24
+ },
+ "audio": {
+  "codec": "aac",
+  "channels": 2,
+  "sample_rate": 48000
+ },
+ "subtitles": {
+  "format": "webvtt",
+  "language": "en"
+ },
+ "duration_tolerance": 0.05,
+ "duration_s": 9.125,
+ "outputs": [
+  "output/film.mp4",
+  "output/film.en.vtt",
+  "output/manifest.json"
+ ]
+}

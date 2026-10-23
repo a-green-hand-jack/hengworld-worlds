@@ -1,0 +1,162 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0014",
+  "start": 986.385,
+  "end": 1189.155,
+  "shots": 20,
+  "lines": 0
+ },
+ "duration": 202.77,
+ "cuts": [
+  2.57,
+  4.772,
+  6.607,
+  13.28,
+  16.617,
+  17.451,
+  26.36,
+  40.508,
+  48.616,
+  51.552,
+  65.533,
+  88.155,
+  94.962,
+  105.873,
+  118.485,
+  127.328,
+  164.164,
+  167.001,
+  189.223
+ ],
+ "shots": [
+  {
+   "index": 118,
+   "start": 0.0,
+   "end": 2.57,
+   "description": "Medium shot of C1 talking and raising an arm, static camera."
+  },
+  {
+   "index": 119,
+   "start": 2.57,
+   "end": 4.772,
+   "description": "Medium shot of C1 walking on the sidewalk outside a shop, static."
+  },
+  {
+   "index": 120,
+   "start": 4.772,
+   "end": 6.607,
+   "description": "Medium shot of C1 moving their hand away from their face, static."
+  },
+  {
+   "index": 121,
+   "start": 6.607,
+   "end": 13.28,
+   "description": "Medium shot of C1 standing on the street smoking a cigarette, while C2 walks out of a shop in the background, static camera."
+  },
+  {
+   "index": 122,
+   "start": 13.28,
+   "end": 16.617,
+   "description": "Medium shot of C1 operating a movie projector, static."
+  },
+  {
+   "index": 123,
+   "start": 16.617,
+   "end": 17.451,
+   "description": "Wide shot of an audience sitting in a cinema, static."
+  },
+  {
+   "index": 124,
+   "start": 17.451,
+   "end": 26.36,
+   "description": "Wide shot of an audience watching a movie, static."
+  },
+  {
+   "index": 125,
+   "start": 26.36,
+   "end": 40.508,
+   "description": "Medium shot of C1 rubbing his eye and falling asleep, static."
+  },
+  {
+   "index": 126,
+   "start": 40.508,
+   "end": 48.616,
+   "description": "Long shot of C1 standing on stage, speaking. Static shot."
+  },
+  {
+   "index": 127,
+   "start": 48.616,
+   "end": 51.552,
+   "description": "Medium shot of C1 and C2 standing on a movie screen, with C1 winking, static camera."
+  },
+  {
+   "index": 128,
+   "start": 51.552,
+   "end": 65.533,
+   "description": "Medium shot of C1 sleeping on a stool, and C2 rising from a seated position and walking left, static camera."
+  },
+  {
+   "index": 129,
+   "start": 65.533,
+   "end": 88.155,
+   "description": "Medium close-up of C1 and C2 talking to each other, static camera."
+  },
+  {
+   "index": 130,
+   "start": 88.155,
+   "end": 94.962,
+   "description": "Medium shot of C1 standing in front of a mirror and C2 leaning his head against a wall while facing away, static camera."
+  },
+  {
+   "index": 131,
+   "start": 94.962,
+   "end": 105.873,
+   "description": "Medium shot of C1 standing in a room while C2 walks up the stairs, static camera."
+  },
+  {
+   "index": 132,
+   "start": 105.873,
+   "end": 118.485,
+   "description": "Medium shot of C1 wearing a hat, static."
+  },
+  {
+   "index": 133,
+   "start": 118.485,
+   "end": 127.328,
+   "description": "Medium shot of C1 ghost walking away while C2 sleeps on a stool next to equipment, static."
+  },
+  {
+   "index": 134,
+   "start": 127.328,
+   "end": 164.164,
+   "description": "Wide shot of a cinema audience watching a film on screen, static."
+  },
+  {
+   "index": 135,
+   "start": 164.164,
+   "end": 167.001,
+   "description": "Medium shot of C1 sleeping, static camera."
+  },
+  {
+   "index": 136,
+   "start": 167.001,
+   "end": 189.223,
+   "description": "Long shot of the cinema audience watching a film, static."
+  },
+  {
+   "index": 137,
+   "start": 189.223,
+   "end": 202.77,
+   "description": "Medium shot of C1 taking off their jacket and entering a building, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 202.77
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0014-scr",
+ "descriptions_available": true
+}

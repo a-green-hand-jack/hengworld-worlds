@@ -1,0 +1,24 @@
+# Audit record (auditor, 2026-10-21) — delivery assembled by `ht-role delivery`, CrewCut df54b3a
+
+Criteria: audit/criteria.md (written before reading deliveries).
+
+## What I reran myself (no paid step reproduced; no Gemini request made by auditor, cost 0)
+- sha256 of /crewcut/masters/caminandes3.ogv = 028d7629…8f8d7f = configs/films.yaml master_sha256 (line 80); curator's log also MATCH.
+- Compared task-maker's data/caminandes3/{shots,dialogue,hierarchy}.json to dataset d509bed: dialogue and hierarchy identical; shots identical (cut_frames equal) except `duration_s` 150.108345 vs published 150.04 — exactly the one difference task-maker listed (container vs video-stream duration); explanation plausible, flagged for the maintainer, not decided here.
+- Task ids: 90 rebuilt = 90 published (dev/test.jsonl), sets equal; every published field (level, segment_id, track, start_s, end_s, n_shots, n_lines) equal: 0 differences.
+- Key scan: no truth.json or key text in tasks/packages nor in the executor's run sandbox. The answer key is under task-maker's `key/`, separate from the published packages/release (it appears in the assembled delivery as task-maker's repo root; executor read only the release, run record verifies 585/585 file hashes).
+- Spend: descriptions ledger 37 requests, 125,282 prompt / 617 completion tokens = SPEND.md; plus 1 rejected 3.8-flash and 1 404 request (task-maker 39) + scorer 3 failed judge requests = 42 of 150. Executor made 0.
+- Descriptions: model gemini-3.5-flash-lite recorded with settings (CrewCut describe_film unmodified, max_tokens 120).
+
+## Run and score
+- fixed/smoke run on caminandes3-L1-0000-scr: attempt 1 failed (install artefact), kept; attempt 2 ok; records complete; marked unofficial.
+- Scores: Q 1, cut F1 0.8 (@0.5 and @1.0; cap explained by a truth cut at segment end), scene order 1.0 (trivial, stated). Validation shows measures react to damage. Not sampled by rerun (scorer's code at the recorded revision; values consistent with the cut lists in SCORES.md).
+- Shot correspondence (continuity judge): NOT RUN — judge sends max_tokens=3, Gemini returned empty; scorer stopped after 3 requests and no value is claimed. Gap belongs to the maintainer (protocol/maintainer-decisions.md). I accept this as a legitimate "not run".
+
+## Not run (consolidated)
+T0 real generators, T1, screening, S; shot correspondence (judge unusable as coded); provenance check in Q (no index); speaker/character purity (code never computes them); WER and line-onset: not applicable (0 dialogue lines). Prices: configs/prices.yaml lacks these models; costs use the provider's published price (source/date in spend/SPEND.md), scorer's judge tokens unpriced.
+
+## Open observations for the maintainer (recorded, not decided)
+duration_s mismatch; plain pip install cannot find configs/; judge max_tokens=3; last-boundary cut in segment truth; QC ignores manifest.json.
+
+Verdict: the five conditions hold with the above items marked not run. Approved.

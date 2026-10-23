@@ -1,0 +1,57 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L1-0024",
+  "start": 629.429,
+  "end": 645.378,
+  "shots": 5,
+  "lines": 0
+ },
+ "duration": 15.949,
+ "cuts": [
+  1.168,
+  5.072,
+  7.107,
+  12.746
+ ],
+ "shots": [
+  {
+   "index": 66,
+   "start": -0.0,
+   "end": 1.168,
+   "description": "Medium shot of C1, C2 and another person talking, static."
+  },
+  {
+   "index": 67,
+   "start": 1.168,
+   "end": 5.072,
+   "description": "A title card reading \"Some one has stolen my watch.\" appears on screen, static shot."
+  },
+  {
+   "index": 68,
+   "start": 5.072,
+   "end": 7.107,
+   "description": "Medium shot of C1, C2 and another person talking, static."
+  },
+  {
+   "index": 69,
+   "start": 7.107,
+   "end": 12.746,
+   "description": "Medium shot of C1 picking up a book and opening it to read, static."
+  },
+  {
+   "index": 70,
+   "start": 12.746,
+   "end": 15.949,
+   "description": "Medium shot of C1 talking and looking to the side, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 15.949
+  }
+ ],
+ "task_id": "sherlock_jr-L1-0024-scr",
+ "descriptions_available": true
+}

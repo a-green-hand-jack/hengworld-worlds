@@ -1,0 +1,53 @@
+# Scores — caminandes3-L1-0000-scr, run fixed-caminandes3-L1-0000-scr-T0-3c14dc (fixed / smoke, T0, UNOFFICIAL: placeholder generator)
+
+Code: CrewCut df54b3a3918e16bfc8e61ff6215e01b6abca3849 (`crewcut.scoring.score.score_run`, installed editable; a plain pip install cannot find configs/ — same install artefact the executor recorded). Inputs: run records from executor release `runs-caminandes3-L1-0000-scr-v1` (executor repo `runs/`), task package `tasks/packages/caminandes3-L1-0000-scr` + `key/caminandes3-L1-0000-scr/truth.json` of task-maker (9dd842b). Nothing in CrewCut or configs was changed.
+
+Command (without judge): `score_run(run_dir, task_dir, None, judge=None)` → `scores/score_nojudge.json`; with judge see below.
+
+| Measure | Value | Note |
+|---|---|---|
+| Q (delivery check first) | **1** | decodes, format, duration, subtitles, clean_room_log all true; provenance check skipped (no index) → not run |
+| cut F1 @0.5 s | **0.8** | detected cuts [21.375, 30.5]; truth cuts [21.375, 30.5, 32.292] |
+| cut F1 @1.0 s | **0.8** | same |
+| scene order | **1.0** | task has a single scene, so this value is trivially 1.0 (cannot discriminate here) |
+| shot correspondence (continuity judge) | **0.0** | adapted judge, see below |
+| WER, line-onset | not applicable | 0 dialogue lines in the task |
+| speaker purity, character purity | not run | the scoring code at this revision never computes them (always null) |
+| S (screening) | not run | `crewcut screen` needs human/screening ratings, none in this world |
+| budget | usd 0.1846 (tool), model_usd 0, 0.343 usd/min | from executor's cost record via `budget_report` |
+
+Cut F1 = 0.8 is explained by the truth including a cut at the segment end (32.292 = film end; task-maker COMPARISON.md item 4), which a detector on the delivered film cannot report; precision 1, recall 2/3. Every run with this task is capped the same way. Reported, not corrected.
+
+## Shot correspondence: 0.0 (judge adapted, round 2)
+Run: `python3 -I scores/judge/run_judge.py <run> <task> /crewcut/masters/caminandes3.ogv scores/judge_out gemini-3.5-flash-lite` (CrewCut df54b3a; `score_run` otherwise unchanged; output `scores/judge_out/score_with_judge.json`). Judge model `gemini-3.5-flash-lite` (the model task-maker drafted the descriptions with; round-local choice, the maintainer's decision; judge vendor Google differs from the system under test, which has no model), temperature 0, max_tokens 1024, descriptions from truth.json (task-maker, previous round's step). Verdicts for the 3 shots: all 0 (duration-weighted 0.0). Consistent with the remake: the smoke run's placeholder generator yields solid-colour frames.
+
+### Adaptation (data)
+| what | why | effect on result |
+|---|---|---|
+| `max_tokens` 3 -> 1024 (`scores/judge/judge_adapted.py`, subclass of `ContinuityJudge`, same prompt, same frames, same yes/no parse, temperature 0) | at 3 every Gemini model returned an empty answer (hidden reasoning counted against the cap; finish_reason length) | none on what is measured; the answer is now "yes"/"no" (1 completion token reported) |
+| empty answer raises an error instead of `.strip()` AttributeError | clearer failure | none |
+| each request logged to a JSONL ledger | spend record | none |
+Nothing returned to CrewCut; prompt, frame sampling, duration weighting untouched.
+
+### Judge check (original master's frames vs descriptions; `judge_check*.json`)
+- right description (3 shots): 3/3 yes.
+- wrong description, rotated by one: 1/3 yes (shot 0 accepted shot 1's description "C1 standing in snow while C2 lies on ice", a near-miss on a similar scene), 2/3 no.
+- wrong description, rotated by two: 0/3 yes.
+Overall right 3/3 accepted, wrong 1/6 accepted. Small (n=3 shots, one film): the judge separates but is not shown to be error-free; no tuning done.
+
+## Gemini spend of scoring (this round; model gemini-3.5-flash-lite; tokens as reported in the responses)
+| purpose | requests | prompt tok | completion tok | cost USD |
+|---|---|---|---|---|
+| probe (1 shot, adapted judge) | 1 | 8,884 | 1 | 0.0027 |
+| continuity-judge (scoring) | 3 | 20,057 | 3 | 0.0060 |
+| judge-check right | 3 | 20,057 | 3 | 0.0060 |
+| judge-check wrong, shift 1 | 3 | 20,057 | 3 | 0.0060 |
+| judge-check wrong, shift 2 | 3 | 20,057 | 3 | 0.0060 |
+| total | 13 | 89,112 | 13 | 0.0272 |
+Price $0.30 in / $2.50 out per M tokens (3.5 Flash-Lite), from https://ai.google.dev/gemini-api/docs/pricing as recorded by task-maker (`spend/SPEND.md`, read 2026-10-21); hidden reasoning tokens, if any, are not in the reported usage, so cost is a floor. `configs/prices.yaml` has no entry. Ledgers: `scores/judge_out/judge_ledger_*.jsonl`, `scores/raw/judge_ledger_probe.jsonl`. Earlier failed attempts of the previous round (3 requests, `scores/raw/*_FAILED.jsonl`) were in another world.
+
+## Validation
+`scores/validation/validate.py` (log `validation.log`, results `validation_results.json`): ALL OK. Measures drop when output is damaged — truncated film → Q 0; subtitles removed → Q 0; static film passes Q but cut F1 0.8 → 0.0; reversed 1-s slices → F1 0.0; shifted cuts → 0.0; extra cuts → 0.667; scene order reversed → 0.33 — and hold when they should (identical copy scores identically; 0.7 s shift drops @0.5 s tolerance but holds @1.0 s). Correspondence aggregation checked with stub judges (always yes 1.0, always no 0.0, duration weighting); the real adapted judge was checked as described above. Observation: QC does not check manifest.json at this revision (Q stays 1 without it).
+
+## Not run
+T0 real generators, T1, screening/S, provenance check, speaker/character purity — reasons above or: no resource/ratings in this world.

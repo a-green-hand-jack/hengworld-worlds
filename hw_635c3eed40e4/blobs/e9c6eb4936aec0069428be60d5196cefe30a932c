@@ -1,0 +1,735 @@
+{
+ "film_id": "spirit_chaser",
+ "duration_s": 266.72,
+ "L0": [
+  {
+   "id": "spirit_chaser-L0-0000",
+   "start": 0.0,
+   "end": 15.56,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0001",
+   "start": 15.56,
+   "end": 17.76,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0002",
+   "start": 17.76,
+   "end": 24.84,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0003",
+   "start": 24.84,
+   "end": 29.28,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0004",
+   "start": 29.28,
+   "end": 40.68,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0005",
+   "start": 40.68,
+   "end": 44.56,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0006",
+   "start": 44.56,
+   "end": 47.12,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0007",
+   "start": 47.12,
+   "end": 59.84,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0008",
+   "start": 59.84,
+   "end": 60.4,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0009",
+   "start": 60.4,
+   "end": 64.24,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0010",
+   "start": 64.24,
+   "end": 66.96,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0011",
+   "start": 66.96,
+   "end": 67.92,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0012",
+   "start": 67.92,
+   "end": 69.2,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0013",
+   "start": 69.2,
+   "end": 70.16,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0014",
+   "start": 70.16,
+   "end": 70.72,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0015",
+   "start": 70.72,
+   "end": 71.84,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0016",
+   "start": 71.84,
+   "end": 74.4,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0017",
+   "start": 74.4,
+   "end": 75.44,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0018",
+   "start": 75.44,
+   "end": 77.96,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0019",
+   "start": 77.96,
+   "end": 78.48,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0020",
+   "start": 78.48,
+   "end": 87.88,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0021",
+   "start": 87.88,
+   "end": 89.4,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0022",
+   "start": 89.4,
+   "end": 90.52,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0023",
+   "start": 90.52,
+   "end": 92.2,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0024",
+   "start": 92.2,
+   "end": 96.12,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0025",
+   "start": 96.12,
+   "end": 99.52,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0026",
+   "start": 99.52,
+   "end": 100.0,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0027",
+   "start": 100.0,
+   "end": 100.52,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0028",
+   "start": 100.52,
+   "end": 101.04,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0029",
+   "start": 101.04,
+   "end": 101.6,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0030",
+   "start": 101.6,
+   "end": 102.12,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0031",
+   "start": 102.12,
+   "end": 104.04,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0032",
+   "start": 104.04,
+   "end": 105.08,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0033",
+   "start": 105.08,
+   "end": 106.48,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0034",
+   "start": 106.48,
+   "end": 107.24,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0035",
+   "start": 107.24,
+   "end": 108.28,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0036",
+   "start": 108.28,
+   "end": 109.64,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0037",
+   "start": 109.64,
+   "end": 114.68,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0038",
+   "start": 114.68,
+   "end": 115.64,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0039",
+   "start": 115.64,
+   "end": 117.56,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0040",
+   "start": 117.56,
+   "end": 118.12,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0041",
+   "start": 118.12,
+   "end": 121.24,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0042",
+   "start": 121.24,
+   "end": 122.8,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0043",
+   "start": 122.8,
+   "end": 124.44,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0044",
+   "start": 124.44,
+   "end": 128.48,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0045",
+   "start": 128.48,
+   "end": 130.88,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0046",
+   "start": 130.88,
+   "end": 134.44,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0047",
+   "start": 134.44,
+   "end": 135.4,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0048",
+   "start": 135.4,
+   "end": 165.28,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0049",
+   "start": 165.28,
+   "end": 166.96,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0050",
+   "start": 166.96,
+   "end": 167.56,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0051",
+   "start": 167.56,
+   "end": 169.08,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0052",
+   "start": 169.08,
+   "end": 177.2,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0053",
+   "start": 177.2,
+   "end": 178.6,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0054",
+   "start": 178.6,
+   "end": 179.16,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0055",
+   "start": 179.16,
+   "end": 179.64,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0056",
+   "start": 179.64,
+   "end": 180.36,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0057",
+   "start": 180.36,
+   "end": 180.88,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0058",
+   "start": 180.88,
+   "end": 181.64,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0059",
+   "start": 181.64,
+   "end": 182.92,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0060",
+   "start": 182.92,
+   "end": 183.4,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0061",
+   "start": 183.4,
+   "end": 184.44,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0062",
+   "start": 184.44,
+   "end": 185.56,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0063",
+   "start": 185.56,
+   "end": 186.24,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0064",
+   "start": 186.24,
+   "end": 187.4,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0065",
+   "start": 187.4,
+   "end": 188.8,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0066",
+   "start": 188.8,
+   "end": 191.44,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0067",
+   "start": 191.44,
+   "end": 191.92,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0068",
+   "start": 191.92,
+   "end": 192.44,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0069",
+   "start": 192.44,
+   "end": 192.96,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0070",
+   "start": 192.96,
+   "end": 195.16,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0071",
+   "start": 195.16,
+   "end": 198.88,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0072",
+   "start": 198.88,
+   "end": 203.08,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0073",
+   "start": 203.08,
+   "end": 203.88,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0074",
+   "start": 203.88,
+   "end": 209.32,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0075",
+   "start": 209.32,
+   "end": 212.4,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0076",
+   "start": 212.4,
+   "end": 215.04,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0077",
+   "start": 215.04,
+   "end": 217.28,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0078",
+   "start": 217.28,
+   "end": 222.44,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L0-0079",
+   "start": 222.44,
+   "end": 266.72,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L1": [
+  {
+   "id": "spirit_chaser-L1-0000",
+   "start": 0.0,
+   "end": 17.76,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0001",
+   "start": 17.76,
+   "end": 29.28,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0002",
+   "start": 29.28,
+   "end": 59.84,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0003",
+   "start": 59.84,
+   "end": 69.2,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0004",
+   "start": 69.2,
+   "end": 74.4,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0005",
+   "start": 74.4,
+   "end": 89.4,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0006",
+   "start": 89.4,
+   "end": 101.6,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0007",
+   "start": 101.6,
+   "end": 109.64,
+   "shots": 7,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0008",
+   "start": 109.64,
+   "end": 122.8,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0009",
+   "start": 122.8,
+   "end": 135.4,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0010",
+   "start": 135.4,
+   "end": 167.56,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0011",
+   "start": 167.56,
+   "end": 181.64,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0012",
+   "start": 181.64,
+   "end": 188.8,
+   "shots": 7,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0013",
+   "start": 188.8,
+   "end": 192.96,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0014",
+   "start": 192.96,
+   "end": 217.28,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0015",
+   "start": 217.28,
+   "end": 222.44,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L1-0016",
+   "start": 222.44,
+   "end": 266.72,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L2": [
+  {
+   "id": "spirit_chaser-L2-0000",
+   "start": 0.0,
+   "end": 74.4,
+   "shots": 17,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L2-0001",
+   "start": 74.4,
+   "end": 135.4,
+   "shots": 31,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L2-0002",
+   "start": 135.4,
+   "end": 222.44,
+   "shots": 31,
+   "lines": 0
+  },
+  {
+   "id": "spirit_chaser-L2-0003",
+   "start": 222.44,
+   "end": 266.72,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L3": [
+  {
+   "id": "spirit_chaser-L3-0000",
+   "start": 0.0,
+   "end": 266.72,
+   "shots": 80,
+   "lines": 0
+  }
+ ],
+ "L4": [
+  {
+   "id": "spirit_chaser-L4-0000",
+   "start": 0.0,
+   "end": 266.72,
+   "shots": 80,
+   "lines": 0
+  }
+ ]
+}

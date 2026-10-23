@@ -1,0 +1,41 @@
+"""Split task packages into published (no truth.json) and key; then scan published for key content.
+Usage: split_and_scan.py FULL_TASKS PUBLISHED KEY. Exits non-zero if the scan finds key content."""
+import hashlib, json, shutil, sys
+from pathlib import Path
+
+full, pub, key = map(Path, sys.argv[1:4])
+for d in (pub, key):
+    if d.exists():
+        shutil.rmtree(d)
+    d.mkdir(parents=True)
+keyfiles = {}
+for t in sorted(p for p in full.iterdir() if p.is_dir()):
+    shutil.copytree(t, pub / t.name, ignore=shutil.ignore_patterns("truth.json"))
+    (key / t.name).mkdir()
+    shutil.copy2(t / "truth.json", key / t.name / "truth.json")
+    keyfiles[t.name] = (t / "truth.json").read_bytes()
+
+FORBIDDEN_KEYS = {"cuts", "scenes", "shots", "lines", "truth", "segment", "description"}
+ALLOWED_SCR_INPUT = {"script.csv", "shotlist.csv"}  # protocol input of the Screenplay track (decision D4)
+bad = []
+key_hashes = {hashlib.sha256(b).hexdigest() for b in keyfiles.values()}
+for f in sorted(pub.rglob("*")):
+    if not f.is_file():
+        continue
+    rel = f.relative_to(pub); task = rel.parts[0]
+    if f.name == "truth.json" or hashlib.sha256(f.read_bytes()).hexdigest() in key_hashes:
+        bad.append(f"{rel}: key file")
+    if f.suffix == ".json":
+        j = json.loads(f.read_text())
+        if isinstance(j, dict) and FORBIDDEN_KEYS & set(j):
+            bad.append(f"{rel}: key-like fields {sorted(FORBIDDEN_KEYS & set(j))}")
+    if rel.parts[1:2] == ("input",) and f.name not in ({"original.mp4"} | ALLOWED_SCR_INPUT):
+        bad.append(f"{rel}: unexpected input file")
+    if f.name in ALLOWED_SCR_INPUT and not task.endswith("-scr"):
+        bad.append(f"{rel}: screenplay input in non-screenplay task")
+    if f.name == "original.mp4" and not task.endswith("-ref"):
+        bad.append(f"{rel}: original clip in non-reference task")
+n = sum(1 for _ in pub.iterdir())
+if bad:
+    print("KEY SCAN FAILED:\n" + "\n".join(bad)); sys.exit(1)
+print(f"key scan ok: {n} published packages, no truth.json, no key-field JSON, no file equal to a key file")

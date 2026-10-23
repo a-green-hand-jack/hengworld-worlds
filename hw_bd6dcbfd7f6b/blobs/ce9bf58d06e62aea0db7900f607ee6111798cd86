@@ -1,0 +1,24 @@
+# Caminandes 3: rebuild vs published dataset d509bed
+
+Rebuild: crewcut commit df54b3a (`dev`), `scripts/reproduce.sh`, log `record/results/reproduce-run1.log`, data `record/results/comparison.json`. A second full run from an empty directory reproduced shots/dialogue/hierarchy byte-for-byte and every task json/csv/README byte-for-byte (sha256 compared).
+
+| Item | Result |
+|---|---|
+| Cuts (36 cut frames, 36 cut times, fps 24) | identical |
+| Shot count 37 | identical (catalogue row: 37 shots, 8 beats, 5 scenes, 1 sequence, 0 lines all equal) |
+| Dialogue | identical (0 lines, language "en") |
+| Hierarchy (L0 37, L1 8, L2 5, L3 1, L4 1) | identical, byte-for-byte |
+| Task ids | 90 vs 90, the same set (L0 30x2, L1 8x2, L2 5x2, L3 1x2, L4 1x2) |
+| Task fields (task_id, film_id, level, segment_id, track, start_s, end_s, n_shots, n_lines) | identical for all 90 |
+| Master sha256 | equals `configs/films.yaml` and the catalogue.csv value |
+
+## Differences (every one)
+
+1. `shots.json` `duration_s`: published 150.04, rebuild 150.108345. Cause: ffprobe reports the video stream as 150.041667 s and the audio stream as 150.108345 s; crewcut's `shots._probe` reads the container `format.duration` (the longer one), the published value matches the video stream (rounded to 2 decimals). It is the only byte difference of the three annotation files; `hierarchy.json` carries 150.04 in both. No cut, task id or task field depends on it. Which duration is intended is not stated in the documents: open item O4 for the maintainer, not decided here.
+2. Task descriptions: empty in the rebuild (VLM not run, no key, D5). The published dataset's task list has no description field, so nothing to compare; no conclusion drawn.
+3. Not comparable: the published dataset has no provenance index, no task input files and no truth.json for this film; the rebuilt `provenance.npz` (no DINOv2) is not compared with anything.
+4. ASR backend: published draft came from whisper.cpp, rebuild used faster-whisper (D3); both give zero lines here.
+
+The Issue #3 s1.6 defects reproduced: the largest-file master choice (record/raw/annotate_attempt1_largest_file.log) and the PeerTube 'Attribution' label rejected by `audit.decide` (O1, O2). The first was worked around by decision D2; the licence one by D1.
+
+5. Key `cuts` at segment end (raised by scorer, issue #8): in 32 of 90 key files the last cut equals the segment duration (e.g. caminandes3-L1-0000: cuts [21.375, 30.5, 32.292], duration 32.292). Cause: `segment_truth` filters `a < c < b` on the unrounded cut time (32.29167) against the rounded segment end (32.292). The published dataset has no truth.json, so it cannot be compared; the rebuild equals it on everything it publishes. Left as produced; open item O5 for the maintainer.

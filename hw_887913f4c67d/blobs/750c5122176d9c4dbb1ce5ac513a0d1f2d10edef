@@ -1,0 +1,15 @@
+# Open decisions and gaps (belong to CrewCut's maintainer; none made here)
+Source: brief.md §3. Status: open.
+1. VLM for shot descriptions; spend cap for ~9,716 shots (I3 待定事项 1). This round uses the `gemini` resource as the objective directs; its model id is a round-local fact to be recorded by the drafting position, not a choice of the benchmark.
+2. Generators, model prices, judge model for the version (I3 待定事项 2). prices.yaml has no gemini entry (only `default`); any price used must cite provider source and date, else cost = "price not known".
+3. Official run scale and total budget (I3 待定事项 3).
+4. Rater source (I3 待定事项 4).
+5. Speaker/character purity requires human speaker labels (I3 §2.7): not computable this round.
+6. Gaps seen in documents: README says 13 tests; the gemini/crewcut-dataset resources are not in steward's resource list; I3 §1.6 says Blender catalogue licence labels were unrecognised, so how the audit step admits Caminandes 3 is a record for curator, not a rule change.
+Positions raise further gaps to steward; they are appended here with the document cited.
+
+## Resource gaps found at round start (not protocol; affect what can run)
+- No `gemini` resource and no `crewcut-dataset` resource in `ht-resource list` (checked by steward and executor). Consequences: describe step, continuity judge (shot correspondence) and all Gemini spend are "not run"; comparison with d509bed is "not run" unless the dataset is obtainable another way (e.g. Hugging Face `Jack-Jieke-Wu/crewcut` revision d509bed over heng-network — the owner of the comparison, task-maker, decides whether that stands as the published dataset; recorded, not a protocol change). No substitute model may stand in for the judge or descriptions.
+
+## Judge setting (from scorer, steward#8)
+- `crewcut/scoring/judge.py:51` uses max_tokens=3; Gemini models via the world's gemini resource returned empty content (finish_reason=length). Documents fix neither the judge model (I3 待定事项 2; `CREWCUT_JUDGE_*` "chosen per benchmark version") nor a way to make thinking models answer within 3 tokens. Whether to change the setting or choose a judge model that works is the maintainer's. Until decided, shot correspondence (and anything depending on it) is "not run", without conclusion. No position changes the code or the setting.

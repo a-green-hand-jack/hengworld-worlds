@@ -1,0 +1,14 @@
+coffee_run-L0-0000-ref coffee_run {"plain_hits": 0, "frames": 14, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.04756756756756757, "reused": false} rc=0
+coffee_run-L0-0001-ref coffee_run {"plain_hits": 0, "frames": 99, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.0307172044525856, "reused": false} rc=0
+coffee_run-L0-0002-ref coffee_run {"plain_hits": 0, "frames": 100, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.022063595068137574, "reused": false} rc=0
+coffee_run-L0-0003-ref coffee_run {"plain_hits": 0, "frames": 127, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.018907563025210083, "reused": false} rc=0
+coffee_run-L0-0004-ref coffee_run {"plain_hits": 0, "frames": 29, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.03866348448687351, "reused": false} rc=0
+coffee_run-L1-0000-ref coffee_run {"plain_hits": 0, "frames": 14, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.06535947712418301, "reused": false} rc=0
+coffee_run-L1-0001-ref coffee_run {"plain_hits": 0, "frames": 99, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.02549800796812749, "reused": false} rc=0
+coffee_run-L1-0002-ref coffee_run {"plain_hits": 0, "frames": 100, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.027349319507453014, "reused": false} rc=0
+coffee_run-L1-0003-ref coffee_run {"plain_hits": 0, "frames": 127, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.013704735376044568, "reused": false} rc=0
+coffee_run-L1-0004-ref coffee_run {"plain_hits": 0, "frames": 29, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.1251798561151079, "reused": false} rc=0
+coffee_run-L2-0000-ref coffee_run {"plain_hits": 0, "frames": 340, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.016727272727272726, "reused": false} rc=0
+coffee_run-L2-0001-ref coffee_run {"plain_hits": 0, "frames": 29, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.06205250596658711, "reused": false} rc=0
+coffee_run-L3-0000-ref coffee_run {"plain_hits": 0, "frames": 369, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.02570694087403599, "reused": false} rc=0
+coffee_run-L4-0000-ref coffee_run {"plain_hits": 0, "frames": 369, "mirror_hits": 0, "video_frac": 0.0, "audio_frac": 0.009874326750448833, "reused": false} rc=0

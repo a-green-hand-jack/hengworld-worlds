@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0011",
+  "start": 881.047,
+  "end": 901.167,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 20.12,
+ "cuts": [
+  0.567,
+  6.206,
+  8.442
+ ],
+ "shots": [
+  {
+   "index": 110,
+   "start": -0.0,
+   "end": 0.567,
+   "description": "Medium shot of C1 walking out of frame, static camera."
+  },
+  {
+   "index": 111,
+   "start": 0.567,
+   "end": 6.206,
+   "description": "Medium wide shot of C1 and C2 walking toward a building, with C1 climbing the steps and entering a doorway while C2 continues walking past, static."
+  },
+  {
+   "index": 112,
+   "start": 6.206,
+   "end": 8.442,
+   "description": "Medium shot of C1 running up stairs, static camera."
+  },
+  {
+   "index": 113,
+   "start": 8.442,
+   "end": 20.12,
+   "description": "Medium shot of C1 entering a train carriage and C2 slamming the doors shut, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 20.12
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0011-ref",
+ "descriptions_available": true
+}

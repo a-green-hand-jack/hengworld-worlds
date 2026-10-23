@@ -1,0 +1,85 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0015",
+  "start": 1189.155,
+  "end": 1299.698,
+  "shots": 9,
+  "lines": 0
+ },
+ "duration": 110.543,
+ "cuts": [
+  9.476,
+  19.052,
+  21.454,
+  34.568,
+  49.249,
+  58.458,
+  79.612,
+  95.061
+ ],
+ "shots": [
+  {
+   "index": 138,
+   "start": -0.0,
+   "end": 9.476,
+   "description": "Wide shot of C1 performing acrobatics on a theatre stage, static camera."
+  },
+  {
+   "index": 139,
+   "start": 9.476,
+   "end": 19.052,
+   "description": "Wide shot of C1 watching film in cinema, static."
+  },
+  {
+   "index": 140,
+   "start": 19.052,
+   "end": 21.454,
+   "description": "Wide shot of C1 watching film on screen in cinema, static camera."
+  },
+  {
+   "index": 141,
+   "start": 21.454,
+   "end": 34.568,
+   "description": "Wide shot of a movie theatre auditorium looking at the screen displaying a man climbing a cliff, static."
+  },
+  {
+   "index": 142,
+   "start": 34.568,
+   "end": 49.249,
+   "description": "Long shot of C1 watching film on screen while playing piano, static camera."
+  },
+  {
+   "index": 143,
+   "start": 49.249,
+   "end": 58.458,
+   "description": "Wide shot of C1 getting up from the ground on the screen, static camera."
+  },
+  {
+   "index": 144,
+   "start": 58.458,
+   "end": 79.612,
+   "description": "Medium shot of C1 standing in a desert, static camera."
+  },
+  {
+   "index": 145,
+   "start": 79.612,
+   "end": 95.061,
+   "description": "Long shot of C1 standing on a rock in the sea, static."
+  },
+  {
+   "index": 146,
+   "start": 95.061,
+   "end": 110.543,
+   "description": "Medium shot of a movie screen showing a man stumbling and getting up, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 110.543
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0015-ref",
+ "descriptions_available": true
+}

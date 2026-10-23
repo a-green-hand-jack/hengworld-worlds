@@ -1,0 +1,4 @@
+# curator
+corpus/admissions.json — decision records; corpus/masters.tsv — pinned URLs/sizes/SHA-256 (from objective);
+corpus/fetch_verify.sh — fetch + verify command; corpus/verify_results.tsv — its output (all 6 PASS).
+Masters are in the release `masters-v1` of this repository.

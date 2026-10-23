@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Wide shot of a steam locomotive moving forward through a snowy landscape, static.
+Detailed description:
+setting: P2: Railroad tracks. Outdoor, bright daytime, clear blue sky with scattered white clouds, snow-covered hills and rocks along the tracks.
+characters: None.
+props: A black and red steam locomotive with a white star on the front, billowing white smoke; a yellow and black oil pumpjack in the background.
+action: A steam locomotive speeds forward along the tracks from the left background toward the right foreground, billowing thick white smoke from its smokestack and steam around its wheels while the distant oil pumpjack operates.
+camera: Wide shot at a low angle near the tracks, camera pushes in slightly toward the approaching train.
+light_mood: Bright, crisp daylight with high contrast between the white snow, blue sky, and dark train; urgent, suspenseful mood.
+Frames:
+[frame 1 at 40.99s]
+IMG:e11886d504b60d02233fffcf3db94043d8977be008751744fb66ddfa455f2d81
+[frame 2 at 41.19s]
+IMG:c796a98a75e987d25d036ab8964e4033c4837182d1b76010dc78d8adafa60214
+[frame 3 at 41.39s]
+IMG:5eb6932fa46ab0b5f2cf5c8babcb1d2378d3cd5d822e883f91fd779d69db82b1
+[frame 4 at 41.59s]
+IMG:13eba56a2c8032aadd5f5d89f6aa7f937c7b0b8afef71ae4d6b9f6b4f066af78

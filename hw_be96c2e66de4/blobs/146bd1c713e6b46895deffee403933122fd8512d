@@ -1,0 +1,181 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L3-0002",
+  "start": 771.738,
+  "end": 986.385,
+  "shots": 21,
+  "lines": 0
+ },
+ "duration": 214.647,
+ "cuts": [
+  8.341,
+  13.947,
+  17.684,
+  28.895,
+  43.143,
+  47.38,
+  59.693,
+  64.965,
+  67.3,
+  86.653,
+  91.024,
+  102.635,
+  109.309,
+  109.876,
+  115.515,
+  117.751,
+  129.429,
+  196.329,
+  201.101,
+  208.441
+ ],
+ "shots": [
+  {
+   "index": 97,
+   "start": -0.0,
+   "end": 8.341,
+   "description": "Medium shot of C1 pointing toward C2 while other people look on, static camera."
+  },
+  {
+   "index": 98,
+   "start": 8.341,
+   "end": 13.947,
+   "description": "Medium shot of C1, C2, and three other characters standing in a living room while C1 puts a hat on, static."
+  },
+  {
+   "index": 99,
+   "start": 13.947,
+   "end": 17.684,
+   "description": "Medium long shot of C1 standing and holding a hat next to a crying C2 who is leaning against the staircase, static."
+  },
+  {
+   "index": 100,
+   "start": 17.684,
+   "end": 28.895,
+   "description": "Medium close-up of C1 standing and looking down thoughtfully, static camera."
+  },
+  {
+   "index": 101,
+   "start": 28.895,
+   "end": 43.143,
+   "description": "Medium shot of C1 standing while C2 cries, static."
+  },
+  {
+   "index": 102,
+   "start": 43.143,
+   "end": 47.38,
+   "description": "Medium close-up of C1 standing and crying, static."
+  },
+  {
+   "index": 103,
+   "start": 47.38,
+   "end": 59.693,
+   "description": "Medium shot of C1 emerging from a house and walking down steps, with C2 standing on the porch, static camera."
+  },
+  {
+   "index": 104,
+   "start": 59.693,
+   "end": 64.965,
+   "description": "Extreme close-up of a list of rules displayed on paper, static."
+  },
+  {
+   "index": 105,
+   "start": 64.965,
+   "end": 67.3,
+   "description": "Medium long shot of C1 reading a book on a porch, running inside, static camera."
+  },
+  {
+   "index": 106,
+   "start": 67.3,
+   "end": 86.653,
+   "description": "Medium shot of C1 and C2 walking, panning left."
+  },
+  {
+   "index": 107,
+   "start": 86.653,
+   "end": 91.024,
+   "description": "Full shot of C1 and C2 walking in unison on a street, static camera."
+  },
+  {
+   "index": 108,
+   "start": 91.024,
+   "end": 102.635,
+   "description": "Medium shot of C1 standing in front of train while C2 is trapped in between train cars, static."
+  },
+  {
+   "index": 109,
+   "start": 102.635,
+   "end": 109.309,
+   "description": "Medium long shot of C1 and C2 walking toward a stationary train, static camera."
+  },
+  {
+   "index": 110,
+   "start": 109.309,
+   "end": 109.876,
+   "description": "Medium shot of C1 walking out of frame, static camera."
+  },
+  {
+   "index": 111,
+   "start": 109.876,
+   "end": 115.515,
+   "description": "Medium wide shot of C1 and C2 walking toward a building, with C1 climbing the steps and entering a doorway while C2 continues walking past, static."
+  },
+  {
+   "index": 112,
+   "start": 115.515,
+   "end": 117.751,
+   "description": "Medium shot of C1 running up stairs, static camera."
+  },
+  {
+   "index": 113,
+   "start": 117.751,
+   "end": 129.429,
+   "description": "Medium shot of C1 entering a train carriage and C2 slamming the doors shut, static."
+  },
+  {
+   "index": 114,
+   "start": 129.429,
+   "end": 196.329,
+   "description": "Wide shot of a water tower spilling water, static."
+  },
+  {
+   "index": 115,
+   "start": 196.329,
+   "end": 201.101,
+   "description": "Long shot of an audience watching a movie, the camera pans up."
+  },
+  {
+   "index": 116,
+   "start": 201.101,
+   "end": 208.441,
+   "description": "Medium shot of C1 walking outside a pawn shop, static camera."
+  },
+  {
+   "index": 117,
+   "start": 208.441,
+   "end": 214.647,
+   "description": "Medium shot of C1 talking, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 109.309
+  },
+  {
+   "start": 109.309,
+   "end": 129.429
+  },
+  {
+   "start": 129.429,
+   "end": 196.329
+  },
+  {
+   "start": 196.329,
+   "end": 214.647
+  }
+ ],
+ "task_id": "sherlock_jr-L3-0002-scr",
+ "descriptions_available": true
+}

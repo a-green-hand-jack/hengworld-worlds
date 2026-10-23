@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L2-0000",
+  "start": 0.0,
+  "end": 17.917,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 17.917,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 17.917,
+   "description": "Wide shot of C1 standing under a starry sky beside a tree, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 17.917
+  }
+ ],
+ "task_id": "domini_canes-L2-0000-scr",
+ "descriptions_available": true
+}

@@ -1,0 +1,129 @@
+You see 37 frames, one from the middle of each of the listed shots of a short film, in order. Below them is the one-sentence description of EVERY shot of the film; they refer to characters as C1, C2, ... Build the production bible of this film so that it can be remade from text alone. Reply with ONE JSON object and nothing else:
+{"look": "overall visual style, at most 40 words",
+ "characters": [{"id": "C1", "kind": "species or identity, e.g. a llama", "appearance": "body shape, colours, clothing, notable features; at most 80 words", "role": "at most 30 words", "example_shot": <shot number where it is clearly visible in the frames shown>}],
+ "places": [{"id": "P1", "name": "short name", "description": "at most 60 words", "example_shot": <shot number among the frames shown>}],
+ "mixed_ids": [{"old_id": "C2", "new_id": "C5", "shots": [shot numbers where the description label old_id actually means the new character], "reason": "..."}]}
+Rules: keep the C numbers used in the descriptions. If the same C number refers to different characters in different shots, give the other character a new C number (continuing after the highest used) and list it in mixed_ids (empty list if none). Add a new C number for a character that appears in the frames but has no label. Number places P1, P2, ... Describe only what is visible; do not use the film's title or any character's proper name; no scene numbers or groupings of shots; no reference to the frames themselves.
+Frames (shot number given before each frame):
+[shot 0]
+IMG:dda88f918a3a86d16fa3d53f0d25ef0f28d405bef012d4a6f59a7da2406a0f0d
+[shot 1]
+IMG:32fced812d6ec7eb4fcbe4623bb1b682f3003877aa2f584ff2e215326f93ad32
+[shot 2]
+IMG:6f3f203d52d1cb2604dd62626f8bdb3db0290687735b30dd20f816032cd9670c
+[shot 3]
+IMG:9689318ec225d324018e8862eb6f08e5c13f7a6ae924142a6519b6f22fbe5a75
+[shot 4]
+IMG:48df42648cdd74766bdfd134a72ee753ca83f39d34cbc10a8d1eec56593c3c4c
+[shot 5]
+IMG:e375c8135ae003b34012574ba52575b5511707a37f9bcdf7ae294a3356eb49d4
+[shot 6]
+IMG:98c357aaaae46a7c63c682da9301dad73607c007057bb320e0f063711d6aebd7
+[shot 7]
+IMG:4bcaeff2ce49c2b4acc93621f14e77af64856ed6761e04c4e694e774d37d7448
+[shot 8]
+IMG:7e93cc110e6a0dc3dad74612c380847ab9252d398d9bded1f5dc0c3707976e40
+[shot 9]
+IMG:6efd385cd18b8cd0340dd20aeb566ccfbca83fa12c2a35dad4885653643f3479
+[shot 10]
+IMG:98d789b41aa9da8e97ebd2225d6940fe60149bd0d09e2006e72946d5294b5a44
+[shot 11]
+IMG:1e2c3c5d8e86bf54bd621b74ab558df55616e7ff4ec58f5adbb266d65631dfb4
+[shot 12]
+IMG:8fe24be29f3a4397fb837ed1b2e86f5f29bac23bce4b291541313437ac682cc6
+[shot 13]
+IMG:d404ff4e8af56de99efe9d0ba3fbd8a1296cf573fdf0cc0413624ec1bebb6a66
+[shot 14]
+IMG:b8dcb20b111f34e0129ecccddfd2f92d6c3418f5da62f83b3bf7ec5ba596b6d6
+[shot 15]
+IMG:75367b3804d4be17cc0f6855259cfb723a5026427b40ad7ca9917278d4977ef9
+[shot 16]
+IMG:665498b179f7d2e7cce3b2ba52b559639701cc518b0fd3a6588ed53791bfe791
+[shot 17]
+IMG:a76c386b926a8c366ce1bd81343bb19473193465abeaea49c38cff11220663cb
+[shot 18]
+IMG:07843e36c094d86018e2240f87d86f9af0d3db415fe4ef67f8fa01c78a4f6841
+[shot 19]
+IMG:300415a795ce34eb624f85568e106678ef72ddc06c1160d7c83e4d3e05a1dbad
+[shot 20]
+IMG:35af5647e315839c52dc69869bd9b6b721fa3e88bc2b1a84a2ba335299334886
+[shot 21]
+IMG:21618a5d77fee97d8f198907aa3253d812d42ab2d685e1f0a0e781fd8d83123b
+[shot 22]
+IMG:93324050dedd3d04f22bc62c2ad9976b9d53d91fbb330a679a70edb1f7dd78b4
+[shot 23]
+IMG:ccd355948f23b3c023e15ec0ad04509fbd4a0a1fbce365e85de07bbe59de9470
+[shot 24]
+IMG:99aaba0e30a07b99a23d261d7fb854e825c19e8e51d6e872ac58cf11ac10bea2
+[shot 25]
+IMG:c5cd0442566bd666809791c45f5e794d020c742f608d28235fe8f02332002171
+[shot 26]
+IMG:86156fc7f6b4199e5bd60f59935c09df81251014345626671ff8c2267d5b06d5
+[shot 27]
+IMG:5afa09d1281473cbce2c759b653cfa99133a382c63da72031024065a1b737e1a
+[shot 28]
+IMG:22533860650185f6dae7e8f634139f328084568c1ffe695b1a61b59071b885cd
+[shot 29]
+IMG:c456305c69d03f29edc036bff5a0c7c2afe9f4245da5290bc2b6e0b5d113241d
+[shot 30]
+IMG:f2412a7c40acec70d0a1bedb1c7f1d1c614a697f2ad775fe32eba040db56d196
+[shot 31]
+IMG:46d050d8b38e542d84d522d1a16098c088729c3dfac4b8227814c3421a0da141
+[shot 32]
+IMG:0301bccd801aad8a8ed85bafff56fee421cb4ee0cfd73374a65c7d83d94f67b7
+[shot 33]
+IMG:3c1dfae54f8860fd3390f412b5b88132355c1ea7ca8f460f0611376a1f9378ce
+[shot 34]
+IMG:348ae99fe7de3195e99dc68490776b6305591ce683e9f33b7bd16c67fbbf5002
+[shot 35]
+IMG:0142fb8db5c6c251437ddfbb42e4bba19f545e374c7297facc334973aef55ad7
+[shot 36]
+IMG:5c6784b17f1567c376de34451bb98468f31c715661253559b2c1b16736285880
+
+Your previous draft of this JSON was:
+{"look": "3D CGI animated comedy with stylized, expressive animal characters, detailed fur and snow textures, bright daylight contrasting with dark blue cave interiors and a starry night sky.", "characters": [{"id": "C1", "kind": "a guanaco (llama-like camelid)", "appearance": "Slender body with orange-brown fur, cream-colored neck and belly, long neck, large bulging brown eyes with dark eyelids and patterned lower rims, long snout, and small ears.", "role": "Main protagonist who chases red berries, gets into slapstick accidents, rides a runaway minecart, and eventually receives berries from a penguin colony.", "example_shot": 0}, {"id": "C2", "kind": "a baby penguin", "appearance": "Small, round body covered in fluffy grey and white feathers, large blue eyes set in a white heart-shaped facial patch, tiny black beak, and small flippers.", "role": "Companion who finds a berry on the train tracks, shares a wild minecart ride with C1, and brings C1 to its colony.", "example_shot": 5}, {"id": "C3", "kind": "adult penguins", "appearance": "Medium-sized black and white penguins with distinct black and white striped markings on their heads and chests, holding large bunches of red berries.", "role": "A group of penguins that gather around C1 at the end to offer bunches of red berries.", "example_shot": 35}], "places": [{"id": "P1", "name": "Frozen pond", "description": "A patch of smooth blue ice surrounded by snow, rocks, and a wooden post fence, with snowy mountains in the distance and a small berry bush.", "example_shot": 0}, {"id": "P2", "name": "Snowy railroad tracks", "description": "Wooden-tied metal train tracks cutting through a bright, snowy, hilly landscape with an oil pumpjack visible in the background.", "example_shot": 5}, {"id": "P3", "name": "Underground mine", "description": "A dark, cavernous underground mine with blue-lit icy walls, deep chasms, and precarious wooden trestle tracks for minecarts.", "example_shot": 16}, {"id": "P4", "name": "Mine entrance", "description": "A wooden mine shaft exit built into a steep, snow-covered mountain slope.", "example_shot": 25}, {"id": "P5", "name": "Jagged mountain peaks", "description": "A rugged snowy landscape featuring sharp, rocky, snow-dusted mountain spires and slopes.", "example_shot": 30}, {"id": "P6", "name": "Rocky hill at night", "description": "A rocky outcrop surrounded by snow-covered hills under a dark blue night sky filled with stars and a glowing nebula.", "example_shot": 34}], "mixed_ids": [{"old_id": "C1", "new_id": "C2", "shots": [2, 5, 9, 11, 13, 23, 28, 32], "reason": "In these shots, the label C1 refers to the small grey-and-white baby penguin rather than the orange-brown guanaco."}]}
+An independent checker looking at the frames of the example shots raised:
+- characters C1 (appearance): 'large bulging brown eyes' -> contradicted: The eyes in the frame are large and bulging but appear white with black pupils, not brown.
+- characters C1 (appearance): 'patterned lower rims' -> unsupported: While there are dark markings around the eyes, a specific pattern on the lower rims is not clearly visible.
+- characters C2 (appearance): 'large blue eyes' -> contradicted: The character's eyes are large and white with black pupils, not blue.
+- places P6 (description): 'glowing nebula' -> contradicted: The sky is a clear dark blue gradient with a few stars, but there is no visible glowing nebula.
+Rewrite the whole JSON object (same schema) so that every statement is supported by the frames. Reply with the JSON only.
+
+One-sentence description of every shot:
+shot 0: Medium shot of C1 slipping on ice, static.
+shot 1: Close-up of C1 lying on the ice and falling asleep, panning right.
+shot 2: Wide shot of C1 standing on railroad tracks and looking at a sprout, zooming in.
+shot 3: Medium shot of a train speeding through a snowy landscape, tracking forward.
+shot 4: Medium close-up of C1 standing outdoors in a snowy landscape and looking around, static camera.
+shot 5: Medium shot of C1 standing on train tracks with a flower as a train approaches, static.
+shot 6: Close-up of C1 looking around with bulging eyes, static camera.
+shot 7: Wide shot of a steam locomotive moving forward through a snowy landscape, static.
+shot 8: Medium shot of C1 widening its eyes in shock, static camera.
+shot 9: Medium shot of C1 sitting on the train track eating, static camera.
+shot 10: Medium shot of C1 looking at a cherry on a stick, static camera.
+shot 11: Medium shot of C1 peering over a surface, static camera.
+shot 12: Medium close-up of C1 blowing on a party horn, static camera.
+shot 13: Medium shot of C1 getting thrown off a weasel's head, static camera.
+shot 14: Medium shot of a deer and a penguin sitting in the snow, with the penguin holding up a small red berry and the deer reacting by looking down, static camera.
+shot 15: Medium shot of C1 waking up and looking around, static.
+shot 16: Medium shot of C1 riding in a mine cart inside a cave, static camera.
+shot 17: Medium close-up of C1 and another animal looking excitedly while riding a vehicle, static camera.
+shot 18: Wide shot of roller coaster tracks running through a dark cave, tracking forward.
+shot 19: Wide shot of C1 riding a minecart crashing through wood structures, track-right.
+shot 20: Medium shot of C1 riding a minecart, static.
+shot 21: Medium shot of C1 roaring, static.
+shot 22: Medium shot of C1 dodging falling planks, static camera.
+shot 23: Medium close-up of C1 standing and eating fruit from a bunch, static.
+shot 24: Wide shot of a mine tunnel moving forward rapidly, push in.
+shot 25: Wide shot of a mineshaft collapsing, static.
+shot 26: Medium shot of C1 leaping through the air while chasing fruit, tracking right.
+shot 27: Medium close-up of C1 screaming and running, tracking shot.
+shot 28: Medium close-up of C1 falling while waving, static camera.
+shot 29: Medium close-up of C1 looking panicked while turning its head, static.
+shot 30: Extreme long shot of a furry creature falling from the sky and crashing into a snowy landscape, zooming in.
+shot 31: Medium shot of an animal lying on its back in the snow with another animal sitting on it, static camera.
+shot 32: Wide shot of C1 sliding down a snowy slope, panning right.
+shot 33: Medium shot of C1 ducking down, zoom out.
+shot 34: Medium shot of C1 looking around while sitting on a rocky hill, static camera.
+shot 35: Over-the-shoulder shot of C1 looking at penguins holding berries, static.
+shot 36: Medium shot of animals sitting together in the snow, static camera.

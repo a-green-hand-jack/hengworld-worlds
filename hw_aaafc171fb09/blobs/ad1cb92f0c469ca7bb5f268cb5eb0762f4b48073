@@ -1,0 +1,10 @@
+check 1 ok: master sha256 == pinned 028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f
+[2026-10-21 08:38:10.097] [ctranslate2] [thread 2241] [warning] The compute type inferred from the saved model is float16, but the target device or backend do not support efficient float16 computation. The model weights have been automatically converted to use the float32 compute type instead.
+annotated caminandes3 -> /hutian/work/rep/data/caminandes3
+90 task packages -> /hutian/work/rep/tasks_full
+key scan ok: 90 published packages, no truth.json, no key-field JSON, no file equal to a key file
+{"annotations": {"shots": false, "dialogue": true, "hierarchy": true}, "tasks_equal": true, "catalogue_equal": true}
+
+real	1m4.021s
+user	1m32.968s
+sys	0m5.008s

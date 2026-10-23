@@ -1,0 +1,297 @@
+{
+ "segment": {
+  "id": "caminandes3-L3-0000",
+  "start": 0.0,
+  "end": 150.042,
+  "shots": 37,
+  "lines": 0
+ },
+ "duration": 150.042,
+ "cuts": [
+  21.375,
+  30.5,
+  32.292,
+  33.875,
+  36.792,
+  39.5,
+  40.792,
+  41.792,
+  42.708,
+  43.917,
+  47.0,
+  49.875,
+  52.292,
+  52.875,
+  56.583,
+  62.25,
+  66.417,
+  67.417,
+  68.0,
+  70.083,
+  73.875,
+  74.625,
+  75.458,
+  77.75,
+  78.542,
+  80.125,
+  83.458,
+  86.167,
+  89.333,
+  93.042,
+  96.667,
+  101.792,
+  103.75,
+  114.5,
+  118.792,
+  123.542
+ ],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 21.375,
+   "description": "Medium shot of C1 slipping on ice, static."
+  },
+  {
+   "index": 1,
+   "start": 21.375,
+   "end": 30.5,
+   "description": "Close-up of C1 lying on the ice and falling asleep, panning right."
+  },
+  {
+   "index": 2,
+   "start": 30.5,
+   "end": 32.292,
+   "description": "Wide shot of C1 standing on railroad tracks and looking at a sprout, zooming in."
+  },
+  {
+   "index": 3,
+   "start": 32.292,
+   "end": 33.875,
+   "description": "Medium shot of a train speeding through a snowy landscape, tracking forward."
+  },
+  {
+   "index": 4,
+   "start": 33.875,
+   "end": 36.792,
+   "description": "Medium close-up of C1 standing outdoors in a snowy landscape and looking around, static camera."
+  },
+  {
+   "index": 5,
+   "start": 36.792,
+   "end": 39.5,
+   "description": "Medium shot of C1 standing on train tracks with a flower as a train approaches, static."
+  },
+  {
+   "index": 6,
+   "start": 39.5,
+   "end": 40.792,
+   "description": "Close-up of C1 looking around with bulging eyes, static camera."
+  },
+  {
+   "index": 7,
+   "start": 40.792,
+   "end": 41.792,
+   "description": "Wide shot of a steam locomotive moving forward through a snowy landscape, static."
+  },
+  {
+   "index": 8,
+   "start": 41.792,
+   "end": 42.708,
+   "description": "Medium shot of C1 widening its eyes in shock, static camera."
+  },
+  {
+   "index": 9,
+   "start": 42.708,
+   "end": 43.917,
+   "description": "Medium shot of C1 sitting on the train track eating, static camera."
+  },
+  {
+   "index": 10,
+   "start": 43.917,
+   "end": 47.0,
+   "description": "Medium shot of C1 looking at a cherry on a stick, static camera."
+  },
+  {
+   "index": 11,
+   "start": 47.0,
+   "end": 49.875,
+   "description": "Medium shot of C1 peering over a surface, static camera."
+  },
+  {
+   "index": 12,
+   "start": 49.875,
+   "end": 52.292,
+   "description": "Medium close-up of C1 blowing on a party horn, static camera."
+  },
+  {
+   "index": 13,
+   "start": 52.292,
+   "end": 52.875,
+   "description": "Medium shot of C1 getting thrown off a weasel's head, static camera."
+  },
+  {
+   "index": 14,
+   "start": 52.875,
+   "end": 56.583,
+   "description": "Medium shot of a deer and a penguin sitting in the snow, with the penguin holding up a small red berry and the deer reacting by looking down, static camera."
+  },
+  {
+   "index": 15,
+   "start": 56.583,
+   "end": 62.25,
+   "description": "Medium shot of C1 waking up and looking around, static."
+  },
+  {
+   "index": 16,
+   "start": 62.25,
+   "end": 66.417,
+   "description": "Medium shot of C1 riding in a mine cart inside a cave, static camera."
+  },
+  {
+   "index": 17,
+   "start": 66.417,
+   "end": 67.417,
+   "description": "Medium close-up of C1 and another animal looking excitedly while riding a vehicle, static camera."
+  },
+  {
+   "index": 18,
+   "start": 67.417,
+   "end": 68.0,
+   "description": "Wide shot of roller coaster tracks running through a dark cave, tracking forward."
+  },
+  {
+   "index": 19,
+   "start": 68.0,
+   "end": 70.083,
+   "description": "Wide shot of C1 riding a minecart crashing through wood structures, track-right."
+  },
+  {
+   "index": 20,
+   "start": 70.083,
+   "end": 73.875,
+   "description": "Medium shot of C1 riding a minecart, static."
+  },
+  {
+   "index": 21,
+   "start": 73.875,
+   "end": 74.625,
+   "description": "Medium shot of C1 roaring, static."
+  },
+  {
+   "index": 22,
+   "start": 74.625,
+   "end": 75.458,
+   "description": "Medium shot of C1 dodging falling planks, static camera."
+  },
+  {
+   "index": 23,
+   "start": 75.458,
+   "end": 77.75,
+   "description": "Medium close-up of C1 standing and eating fruit from a bunch, static."
+  },
+  {
+   "index": 24,
+   "start": 77.75,
+   "end": 78.542,
+   "description": "Wide shot of a mine tunnel moving forward rapidly, push in."
+  },
+  {
+   "index": 25,
+   "start": 78.542,
+   "end": 80.125,
+   "description": "Wide shot of a mineshaft collapsing, static."
+  },
+  {
+   "index": 26,
+   "start": 80.125,
+   "end": 83.458,
+   "description": "Medium shot of C1 leaping through the air while chasing fruit, tracking right."
+  },
+  {
+   "index": 27,
+   "start": 83.458,
+   "end": 86.167,
+   "description": "Medium close-up of C1 screaming and running, tracking shot."
+  },
+  {
+   "index": 28,
+   "start": 86.167,
+   "end": 89.333,
+   "description": "Medium close-up of C1 falling while waving, static camera."
+  },
+  {
+   "index": 29,
+   "start": 89.333,
+   "end": 93.042,
+   "description": "Medium close-up of C1 looking panicked while turning its head, static."
+  },
+  {
+   "index": 30,
+   "start": 93.042,
+   "end": 96.667,
+   "description": "Extreme long shot of a furry creature falling from the sky and crashing into a snowy landscape, zooming in."
+  },
+  {
+   "index": 31,
+   "start": 96.667,
+   "end": 101.792,
+   "description": "Medium shot of an animal lying on its back in the snow with another animal sitting on it, static camera."
+  },
+  {
+   "index": 32,
+   "start": 101.792,
+   "end": 103.75,
+   "description": "Wide shot of C1 sliding down a snowy slope, panning right."
+  },
+  {
+   "index": 33,
+   "start": 103.75,
+   "end": 114.5,
+   "description": "Medium shot of C1 ducking down, zoom out."
+  },
+  {
+   "index": 34,
+   "start": 114.5,
+   "end": 118.792,
+   "description": "Medium shot of C1 looking around while sitting on a rocky hill, static camera."
+  },
+  {
+   "index": 35,
+   "start": 118.792,
+   "end": 123.542,
+   "description": "Over-the-shoulder shot of C1 looking at penguins holding berries, static."
+  },
+  {
+   "index": 36,
+   "start": 123.542,
+   "end": 150.042,
+   "description": "Medium shot of animals sitting together in the snow, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 42.708
+  },
+  {
+   "start": 42.708,
+   "end": 56.583
+  },
+  {
+   "start": 56.583,
+   "end": 80.125
+  },
+  {
+   "start": 80.125,
+   "end": 123.542
+  },
+  {
+   "start": 123.542,
+   "end": 150.042
+  }
+ ],
+ "task_id": "caminandes3-L3-0000-scr",
+ "descriptions_available": true
+}

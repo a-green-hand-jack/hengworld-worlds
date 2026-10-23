@@ -1,0 +1,30 @@
+"""Meter every Gemini chat call made through the openai client (no change to CrewCut): appends one
+line per call (purpose, model, finish_reason, usage as reported) to $METER_LOG. Import before CrewCut."""
+import json, os, time
+from openai.resources.chat.completions import Completions
+
+PURPOSE = os.environ.get("METER_PURPOSE", "unset")
+_orig = Completions.create
+
+def create(self, *a, **kw):
+    t = time.time()
+    # the gateway returns empty content with finish_reason=length when max_tokens < ~4 (CrewCut's judge fixes 3):
+    # raise max_tokens to METER_MIN_MAX_TOKENS for the call; the one-word answer is read the same way.
+    if os.environ.get("METER_MIN_MAX_TOKENS"):
+        kw["max_tokens"] = max(kw.get("max_tokens") or 0, int(os.environ["METER_MIN_MAX_TOKENS"]))
+    # gemini-3.8-flash spends the fixed max_tokens (120 describe, 3 judge) on hidden reasoning and truncates;
+    # reasoning_effort is a request parameter of the provider, CrewCut's code and protocol are untouched.
+    if os.environ.get("METER_REASONING"):
+        kw.setdefault("reasoning_effort", os.environ["METER_REASONING"])
+    try:
+        r = _orig(self, *a, **kw)
+    except Exception as e:
+        rec = {"purpose": PURPOSE, "model": kw.get("model"), "error": repr(e)[:300], "t": t}
+        open(os.environ["METER_LOG"], "a").write(json.dumps(rec) + "\n")
+        raise
+    u = r.usage.model_dump() if r.usage else None
+    rec = {"purpose": PURPOSE, "model": kw.get("model"), "returned_model": r.model, "finish_reason": r.choices[0].finish_reason,
+           "empty_content": not (r.choices[0].message.content or "").strip(), "usage": u, "seconds": round(time.time() - t, 2), "t": t}
+    open(os.environ["METER_LOG"], "a").write(json.dumps(rec) + "\n")
+    return r
+Completions.create = create

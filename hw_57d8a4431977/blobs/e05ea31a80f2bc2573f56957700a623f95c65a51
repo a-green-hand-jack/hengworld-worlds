@@ -1,0 +1,108 @@
+"""Damage/stress checks that cost nothing. Usage: validate_free.py RUN_DIR TASK_DIR PROV ORIG_CLIP WORKDIR OUT.json"""
+import json, shutil, subprocess, sys
+from pathlib import Path
+from crewcut.scoring import continuity as C
+from crewcut.scoring.qc import run_qc
+
+run, task, prov, orig, work, out = map(Path, sys.argv[1:7])
+work.mkdir(parents=True, exist_ok=True)
+truth = json.loads((task / "truth.json").read_text())
+film = run / "output" / "film.mp4"
+ff = lambda *a: subprocess.run(["ffmpeg", "-v", "error", "-y", *map(str, a)], check=True)
+res = {"checks": []}
+
+def variant(name, make_film=None, drop=(), log_edit=None):
+    d = work / name
+    if d.exists():
+        shutil.rmtree(d)
+    shutil.copytree(run, d)
+    for f in drop:
+        (d / "output" / f).unlink()
+    if make_film:
+        make_film(d / "output" / "film.mp4")
+    if log_edit:
+        log_edit(d / "log.jsonl")
+    return d
+
+def qc_case(name, expect_pass, expect_fail_key=None, **kw):
+    d = variant(name, **kw)
+    r = run_qc(d, task, prov)
+    ok = r.passed == expect_pass and (expect_fail_key is None or r.checks.get(expect_fail_key) is not True)
+    res["checks"].append({"measure": "Q", "case": name, "expected": "pass" if expect_pass else f"fail ({expect_fail_key})",
+                          "Q": int(r.passed), "qc": r.checks, "behaves": bool(ok)})
+
+qc_case("intact", True)
+qc_case("reencoded_same_content", True, make_film=lambda p: (shutil.copy(p, p.with_suffix(".o.mp4")), ff("-i", p.with_suffix(".o.mp4"), "-c:v", "libx264", "-crf", "30", "-c:a", "aac", "-ar", "48000", "-ac", "2", p)))
+qc_case("truncated_10s", False, "duration", make_film=lambda p: (shutil.copy(p, p.with_suffix(".o.mp4")), ff("-i", p.with_suffix(".o.mp4"), "-t", 10, "-c", "copy", p)))
+qc_case("duration_minus_4pct", True, make_film=lambda p: (shutil.copy(p, p.with_suffix(".o.mp4")), ff("-i", p.with_suffix(".o.mp4"), "-t", 31.0, "-c", "copy", p)))  # -4%: inside tolerance, must hold
+qc_case("duration_minus_8pct", False, "duration", make_film=lambda p: (shutil.copy(p, p.with_suffix(".o.mp4")), ff("-i", p.with_suffix(".o.mp4"), "-t", 29.7, "-c", "copy", p)))
+qc_case("no_audio", False, "format", make_film=lambda p: (shutil.copy(p, p.with_suffix(".o.mp4")), ff("-i", p.with_suffix(".o.mp4"), "-an", "-c:v", "copy", p)))
+qc_case("wrong_size_640x360", False, "format", make_film=lambda p: (shutil.copy(p, p.with_suffix(".o.mp4")), ff("-i", p.with_suffix(".o.mp4"), "-vf", "scale=640:360", "-c:a", "copy", p)))
+qc_case("corrupt_bytes", False, "decodes", make_film=lambda p: p.write_bytes(p.read_bytes()[: len(p.read_bytes()) // 2]))
+qc_case("missing_film", False, drop=("film.mp4",))
+qc_case("missing_vtt", False, "subtitles", drop=("film.en.vtt",))
+def leak(p):
+    ev = [json.loads(l) for l in open(p)]
+    ev[0]["inputs"] = ["input/original.mp4"]
+    ev[0]["tool"] = "image.edit"
+    p.write_text("\n".join(json.dumps(e) for e in ev) + "\n")
+qc_case("generator_read_original_input", False, "clean_room_log", log_edit=leak)
+# provenance: the original clip itself, and re-encoded copies of it, must be caught
+def as_orig(p):
+    ff("-i", orig, "-vf", "fps=24,scale=1280:720,format=yuv420p", "-c:v", "libx264", "-c:a", "aac", "-ar", "48000", "-ac", "2", p)
+qc_case("original_clip_as_remake", False, "provenance", make_film=as_orig)
+def as_orig_flip(p):
+    ff("-i", orig, "-vf", "fps=24,scale=1280:720,eq=brightness=0.08:contrast=1.1,format=yuv420p", "-c:v", "libx264", "-crf", "28", "-c:a", "aac", "-ar", "48000", "-ac", "2", p)
+qc_case("original_clip_recoloured_reencoded", False, "provenance", make_film=as_orig_flip)
+
+# --- cuts
+shots = sorted((run.parent / "_art").glob("shot_*.mp4")) if False else []
+def cut_case(name, path, expect_note, expect_f1_05=None, expect_f1_10=None, lo=None):
+    cuts = C.detect_cuts(path)
+    f05, f10 = C.cut_f1(truth["cuts"], cuts, 0.5), C.cut_f1(truth["cuts"], cuts, 1.0)
+    res["checks"].append({"measure": "cut_f1", "case": name, "detected_cuts": [round(c, 3) for c in cuts], "key_cuts": truth["cuts"],
+                          "f1_05": round(f05, 4), "f1_10": round(f10, 4), "expected": expect_note})
+    return f05, f10
+f_run = cut_case("run_output_intact", film, "equal to the best possible 0.8 given the key lists the segment end as a cut")
+f_orig = cut_case("original_clip_cfr", orig, "high: same film, same cut places (clip normalised to 24 fps CFR)")
+# damaged: shots re-timed from the run's own artefacts
+def timed(name, d0, d1, d2):
+    p = work / f"{name}.mp4"
+    srcs = sorted(Path(sys.argv[7]).glob("shot_000*.mp4")) if len(sys.argv) > 7 else []
+    f = "".join(f"[{i}:v]trim=duration={d},setpts=PTS-STARTPTS[v{i}];" for i, d in enumerate((d0, d1, d2)))
+    cmd = ["ffmpeg", "-v", "error", "-y"]
+    for s in srcs:
+        cmd += ["-stream_loop", "-1", "-i", str(s)]
+    cmd += ["-filter_complex", f + "[v0][v1][v2]concat=n=3:v=1:a=0[o]", "-map", "[o]", "-r", "24", "-pix_fmt", "yuv420p", str(p)]
+    subprocess.run(cmd, check=True)
+    return p
+t = truth["cuts"]
+res["damage_cut_cases"] = []
+for name, ds in {"cuts_shifted_0.3s": (21.675, 8.825, 1.792), "cuts_shifted_0.8s": (22.175, 8.325, 1.792), "cuts_shifted_3s": (24.375, 6.125, 1.792), }.items():
+    cut_case(name, timed(name, *ds), "F1 falls as the cuts move away: 0.3s holds at both tolerances, 0.8s holds only at 1.0s, 3s fails both; a cut-free film scores 0")
+p_nc = work / "no_cuts_single_shot.mp4"
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-stream_loop", "-1", "-i", sorted(Path(sys.argv[7]).glob("shot_0000.mp4"))[0], "-t", "32.292", "-r", "24", "-pix_fmt", "yuv420p", str(p_nc)], check=True)
+cut_case("no_cuts_single_shot", p_nc, "a film without cuts scores 0")
+# --- pure unit checks of the metrics
+unit = []
+unit.append(("cut_f1 identical", C.cut_f1([1, 2, 3], [1, 2, 3], .5), 1.0))
+unit.append(("cut_f1 disjoint", C.cut_f1([1, 2, 3], [7, 8], .5), 0.0))
+unit.append(("cut_f1 extra detections", C.cut_f1([1, 2, 3], [1, 2, 3, 9], .5), round(6 / 7, 6)))
+unit.append(("cut_f1 empty vs empty", C.cut_f1([], [], .5), 1.0))
+shots_ = [{"start": 0, "end": 10, "description": "a"}, {"start": 10, "end": 14, "description": "b"}]
+unit.append(("correspondence all yes", C.correspondence(shots_, lambda d, a, b: 1)[0], 1.0))
+unit.append(("correspondence all no", C.correspondence(shots_, lambda d, a, b: 0)[0], 0.0))
+unit.append(("correspondence duration weighted (accept only the 4 s shot)", round(C.correspondence(shots_, lambda d, a, b: d == "b")[0], 6), round(4 / 14, 6)))
+sc = [(0, 10), (10, 20), (20, 30)]
+unit.append(("scene_order in order", C.scene_order(sc, [(0, 10), (10, 20), (20, 30)]), 1.0))
+unit.append(("scene_order shuffled", C.scene_order(sc, [(0, 10), (20, 30), (10, 20)]), round(1 - 2 / 3, 6)))
+unit.append(("scene_order one scene dropped", C.scene_order(sc, [(0, 10), (10, 20)]), round(1 - 1 / 3, 6)))
+unit.append(("wer identical", C.wer("a b c d", "a b c d"), 0.0))
+unit.append(("wer one substitution of four", C.wer("a b c d", "a b x d"), 0.25))
+unit.append(("wer empty hypothesis", C.wer("a b c d", ""), 1.0))
+res["unit"] = [{"case": n, "got": g, "expected": e, "behaves": abs(g - e) < 1e-6} for n, g, e in unit]
+res["all_behave"] = all(c.get("behaves", True) for c in res["checks"]) and all(u["behaves"] for u in res["unit"])
+out.write_text(json.dumps(res, indent=1) + "\n")
+for c in res["checks"]:
+    print(c["measure"], c["case"], c.get("Q", c.get("f1_05")), c.get("f1_10", ""), c.get("behaves", ""))
+print([u["case"] for u in res["unit"] if not u["behaves"]], res["all_behave"])

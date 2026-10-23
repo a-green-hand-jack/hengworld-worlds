@@ -1,0 +1,83 @@
+
+## Pass 3 (task-maker c4fe559)
+- shots (cut_frames, duration_s), hierarchy and dialogue for all 6 films equal reference d509bed (compared by me from the committed files; not yet recomputed from masters by me).
+- 598 task ids = reference (data/tasks_vs_reference.json); 598 packages, no truth* under packages/; README states key/ is in no release; task-maker has no releases.
+- Descriptions run once (D003, 603 calls, reasoning_effort minimal adaptation recorded). Not yet sampled/rerun by me.
+- Still open: master recompute, double-build result file, package leak scan by me, and — blocking — no Coffee Run T0 runs/scores.
+
+## Pass 4 (task-maker 4787948)
+- data/doublebuild.txt: annotations, tasks, packages, key IDENTICAL on second build (descriptions reused, paid step once).
+- Release packages-v1 packages.tar.gz: 4786 entries, none named truth/key.
+- Still open: runs/scores (blocking), my recompute from masters, description sampling.
+
+## Pass 5 (executor 59edcdd, release coffee-run-t0-v1)
+- Release tar sha256 matches SHA256SUMS. 28 runs (14 ref + 14 scr). All 28 delivery.mp4: h264 1280x720 24fps, aac 48k stereo, duration within ±5% of segment (checked with ffprobe).
+- No "key/" or "truth" string in runs/ (logs, pipeline, docs). Executor states it did not open key/, which appears in its delivery directory (key/ is also in the assembled delivery: 598 files) -- noted, not a read.
+- Sound effects not run (no ElevenLabs), no speech (0 dialogue lines): marked, nothing claimed.
+- Failed attempts kept (6 ref runs). Cost 4.154 USD + 0.159 failed.
+- Still open: scorer has not scored these runs (scores/not_run.md predates them). Blocking until Q/c scores exist; I have not yet rerun generators or checked provenance (fingerprint) on deliveries.
+
+## Pass 7 (continuation world, turn start; executor 59edcdd, scorer b83863e, task-maker 4787948)
+- executor#10: the reply says item 1 (music prompt from task input) is done in runs/pipeline/t0.py, but the executor's main is still 59edcdd and its t0.py still has `mprompt` as before -- not verified, not pushed. Items 2, 3 wait on task-maker#12 (no task-maker reply or push yet).
+- scorer#9: items 1, 2 accepted earlier; item 3 (rescoring after reruns) open.
+- Approval not possible: no frame-exact clips, no issuing tool service, no reruns/rescores. Nothing approved.
+
+## Pass 8 (executor 12858c9)
+- executor#10 item 1 verified by diff 59edcdd..12858c9: music prompt is a template over shot descriptions (given shotlist.csv, or generated for Reference from the clip) and duration; same code for all films. Accepted. Not yet exercised in a run (no rerun). Items 2, 3 still wait on task-maker#12 (no reply yet at task-maker 4787948).
+
+## Pass 9 (task-maker 62f6180)
+- #12 item 3 (service issues requests): reviewed diff of toolservice.py; ran tests/test_toolservice.py myself against my master (sha256 f40ce7f4... verified): 10/10 PASS (master frame/audio rejected before forwarding, success booked once after response, failure and rejections booked 0, remote URL refused). Test uses a local stub, so no live generator call is shown yet; live use will be checked in the executor's rerun logs (every generator call must appear in the service ledger with the request really sent by the service). Residual: the service runs in-process with the executor, so "holds no key" is a convention (key in service's env); noted, to be checked in rerun logs.
+- #12 item 2 (key/ out of tree): key/ removed in 62f6180, tasks/key_manifest.json has 603 sha256s. Not yet checked: that scorer/auditor can still obtain the key (regenerate with tools/step8_tasks.py and compare to manifest) -- to do.
+- #12 item 1 (frame-exact clips): not delivered yet; clips-v2 release pending (task-maker says regenerating). Not accepted until I count frames of the 14 Coffee Run clips and check first/last frames.
+
+## Pass 10 (scorer 3c846ce, task-maker 62f6180)
+- scorer key_check: I recomputed it for all 598 ids: sha256(git show 4787948:key/<id>/truth.json) == tasks/key_manifest.json (598/598). So the manifest is the key that run-1 scoring used. A regeneration of the key from masters with step8_tasks.py is still not done by anyone since key/ left the tree (my pass-6 recompute covered the pre-removal data); to be done on the rescoring.
+- Still open: clips-v2 (job-1fc5344d0d still running at last check), executor reruns, rescoring. No approval.
+
+## Pass 11 (executor 54ddf5b, task-maker 24df203)
+- executor#10 items 2/3 for the 14 Screenplay reruns: checked all 14 (runs/coffee_run/*-scr): production-log tool_call count == ledger status-ok rows (2..6 per run), 0 failed attempts, ledger amounts total 1.96 USD (image 0.0336, music 0.08 per call); ledger rows are written by ToolService.call (t0.py has no other path to a generator: reviewed the file). delivery.mp4 h264 1280x720 24fps + aac 48k stereo, duration within 0.01% of the segment, subtitles.vtt present; music prompt is the template over the given shot descriptions. Provenance check (fingerprint.py at task-maker 62f6180) of the 14 deliveries against the own film: reused=false for all (audio_frac 0.009-0.084 < 0.35, video_frac 0) -- audit/evidence/fpcheck_14_scr_reruns_coffee_run.log.
+- Limitation recorded by executor, accepted as a recorded limitation: service in-process, key in process environment.
+- Still open: 14 Reference reruns (wait clips-v2 and a model-call tool, task-maker#14), scorer rescoring of the new runs, clips-v2 check. No approval.
+
+## Pass 12 (executor 99c4ecd, task-maker 24df203)
+- model_call tool (task-maker 24df203) read: priced from reported tokens, booked after success, capped by model_usd; executor 99c4ecd routes the Reference description calls through it (no direct post left in that branch). Not yet exercised in a run (Reference reruns wait for clips-v2). To check in the rerun ledgers: one ok model_call row per described shot, cost = tokens x prices.json.
+- clips-v2 still unpublished; task-maker job-1fc5344d0d still running at this check (executor#15 and task-maker#14/#12 open). Screenplay reruns accepted (pass 11). No approval: Reference reruns, rescoring and clip frame-count check outstanding.
+
+## Pass 13 (scorer 09d5a3e; 14 Screenplay reruns)
+- scores/rerun/deliverables.sha256: all 56 hashes (delivery.mp4, manifest, ledger, production_log of the 14 -scr runs) equal the files at executor 99c4ecd (checked with sha256sum).
+- Cuts: I ran crewcut_algorithms cuts.detect on the L3-0000-scr and L2-0000-scr deliveries myself: [163,1355,2560,4083] and [163,1355,2560] = truth cut frames; cut F1 1.0 reproduced. (Many tasks have 0 cuts on both sides; the scorer flags these as trivial.)
+- Judge: calls file has 25 rows, prompt text in judge_shots.py equals the protocol's verbatim, qwen3-vl-plus temperature 0, max_tokens 2000, 0 errors; all accepted (1.0). Not rerun by me (0.0036 USD; the scorer's damage tests earlier show the judge rejecting mismatches). The all-yes result is a property of Screenplay remakes drawn from the same descriptions, not evidence the judge is saturated; flagged for the report.
+- Scene order 0.964 (L3-0000-scr 0.5): value depends on how the generated stills cluster, not recomputed by me; method accepted earlier. Truth regeneration 28/28 vs manifest reported by scorer (scores/code/regen_truth.sh); limitation: dialogue/descriptions reused. I have not re-executed it.
+- Still open: Reference reruns (clips-v2 unpublished, job-1fc5344d0d running), their scoring, my clip frame count. No approval.
+
+## Pass 14 (task-maker cad151f, release clips-v2-coffee_run)
+- Downloaded clips_v2_coffee_run.tar (113,776,640 bytes) and manifest; extracted 14 clips. Frame counts (ffprobe -count_frames) equal round(end*24)-round(start*24) from the reference hierarchy for all 14 (scripts/clipframes.py; 163/1192/1205/1523/347 and 4083/4430). Compare packages-v1: 8 of 14 were off by one.
+- First/last frame: scripts/clip_edges.py decodes the master and each clip with crewcut_algorithms' own frame reader and compares first/last clip frame with master frames at start-1/start/start+1 and end-2/end-1/end: the exact index has the smallest difference in 14/14 (0-3 mean abs diff on re-encoding, neighbours across a cut 12-63). #12 item 1 accepted for Coffee Run.
+- Not yet: the other five films' 299-clip clips-v2 (task-maker says ~114/299 done); the delivery's packages/ must carry the frame-exact clips (or point to the release) before approval; double-build of the rebuilt step must be repeated. Executor Reference reruns still to come, then scoring.
+
+## Pass 15 (executor 95661fd, steward decision 16 on steward#15)
+- Executor's Reference rerun 1 stopped 14/14 at the first description call: ToolService rejected the JPEG from the input clip (ledger row status=rejected, amount 0, nothing forwarded). This is evidence that the source screen works on real input (a master frame was refused before forwarding); it is also a conflict with Obj §二 (Reference pipeline describes its own input clip). Steward's reading (decision 16): model_call (text out, nothing generated) not screened, generator/tool calls stay screened; recorded as a maintainer-overrulable decision.
+- My view as auditor: consistent with the objective's text ("不能把原片素材交给任何生成器"; original may be analysed). I do not decide it. Conditions I will check on the change: (1) exemption limited to model_call, test showing a generator call with a master frame is still rejected and a model_call with a master frame is forwarded and booked once; (2) in the rerun records, every generator ledger row has status ok only for fresh media and no generator request body contains original media (the Q log check counts generator calls); (3) fingerprint check on the 14 Reference deliveries; (4) the run records and README state the reading.
+
+## Pass 16 (executor aa5f8fa, task-maker 505b3b7)
+- Service change (84dd06c, 505b3b7): re-ran tests/test_toolservice.py myself: 14/14 PASS, incl. master frame/audio still rejected and not forwarded for generator tools, model_call with an original frame forwarded and booked once with source_screened=false, model_call refuses any model but gemini-3.5-flash-lite and is not forwarded. tools.json "source_check" states the reading and that the maintainer may overrule. Accepted (task-maker#16).
+- 14 Reference reruns (runs/coffee_run/*-ref): per run generator tool_calls in the production log == ledger ok rows (2..6), model_call ok rows == number of shots described (1..5), no rejected or failed row in the final ledgers (the one failed music attempt of L0-0002 is kept in attempts/), 4.0858 USD for all 28 final runs per costs.md (my recomputation of the 14 ref ledgers: 2.1258 USD). Deliveries h264 + aac, duration within 0.01% of the segment. No reference to truth.json or key/ in runs/. Generator prompts are the task-input-derived templates (descriptions made by the description model from the input clip, per Obj §二). Provenance check of the 14 ref deliveries against coffee_run: reused=false for all (video_frac 0, audio_frac 0.010-0.125 < 0.35) -- audit/evidence/fpcheck_14_ref_reruns_coffee_run.log.
+- Observation, not a defect of the package: on L0-0001/0002 (and L1-0001/0002) the cut detector run on the clip finds one cut 2 frames before the clip end (1190 of 1192; 1203 of 1205), so the Reference shot list has 2 shots against 0 truth cuts -> those tasks will score cut F1 0. The clips are frame-exact (pass 14), so this is the detector's behaviour at a clip edge, to be stated in the report as a property of the fixed pipeline's Reference track.
+- executor#10 items 1-3 accepted for all 28 final Coffee Run runs.
+- Open: scorer must score the 14 Reference reruns (Q, one judge pass); task-maker: other five films' frame-exact clips, packages/ carrying them, double-build repeated; final report items (cost per minute, not-run list, comparison). No approval yet.
+
+## Pass 17 (scorer 3eea5d3, executor aa5f8fa)
+- All 56 hashes in scores/rerun/deliverables_ref.sha256 equal executor files at aa5f8fa.
+- Cuts: cut detector on remake deliveries L0-0001-ref -> [1190] (truth: none) and L2-0000-ref -> [163,1355,2560] (= truth): matches scores.csv (F1 0 and 1.0).
+- Judge sample: reran 2 of the 25 Reference judge calls (L2-0000-ref shot 3, L3-0000-ref shot 1) with the scorer's script on the same deliveries: same prompt sha256, same replies (No, No). Cost about 0.0003 USD, borne by the maintainer's Model Studio account (alibaba), recorded here as my paid rerun (2 requests).
+- Results (scorer): ref Q 1.00, cut F1 0.714/0.714, shot corr 0.340, scene order 0.929, $0.1518/run; scr 1.00/1.00/1.00/0.964, $0.14/run. Judge total 0.014296 USD (run-1 + rerun). Run-1 marked superseded.
+- scorer#9 items 1-3 accepted.
+- Open: task-maker#12 (clips of the other five films, packages/ pointing to frame-exact clips, double-build on final build); final report completeness (README/comparison/not-run list/cost per minute). No approval yet.
+
+## Pass 18 (task-maker ffdbda4, release clips-v2)
+- clips_v2.tar (810,260,480 B) and clips_manifest.json downloaded from the release; sha256 equal the README (32b92c23…eb86b9, a358b610…bf9f). 299 clip dirs == the 299 ref task ids of tasks/dev.jsonl; each clip's sha256 == manifest.
+- Frame counts: ffprobe full decode (-count_frames) of all 299 clips == round(end*fps)-round(start*fps) from the reference hierarchy, fps from each master's r_frame_rate (24, 25, 29.97), manifest start_frame equal -> 0 bad (audit/scripts/clips299.py --decode; audit/evidence/clips299_decode.log, packet count log too). 
+- First/last frame, sample of 25 segments in Sherlock Jr. (cfr case) and 11 in Caminandes 3 via the reference frame reader (clip_edges.py generalised): first frame is the exact start index in all; last frame is the exact index except one case within noise (sherlock_jr-L0-0265 last: exact 1.29 vs previous frame 1.19 mean abs, next-shot frame 37; the count and the exact first frame fix the last index) -> accepted. #12 item 1 accepted for all 299 clips.
+- Regeneration from my own recompute (shotrec.json from pass 6) with tools/step8_tasks.py at ffdbda4 on the committed annotations: tasks/dev.jsonl identical, data/tasks_vs_reference.json identical (598/598/0/0/0), key regenerated 598 truth.json whose sha256 all equal tasks/key_manifest.json (the key is obtainable by scorer/auditor and equals what was scored). #12 item 2 accepted.
+- FINDING: the committed packages/*/tools.json (all 598) differ from what step8_tasks.py at HEAD writes (toolservice/tools.json now has model_call and source_check; the packages carry the pre-24df203 version, no model_call, no source_check). Only tools.json differs (598 files; audit/evidence/regen_packages_diff.log, regen_tools_json_diff.txt). Consequently step10_doublebuild.sh at HEAD would print DIFFERENT packages; data/doublebuild.txt is from the earlier revision (c4fe559) and the README says so. Also key_manifest.json note text differs from the script's, and tools/__pycache__, toolservice/__pycache__ are tracked. To fix by task-maker: regenerate packages/ (and key_manifest) with step8 at the final revision, run step10 at the final revision and record it, untrack __pycache__.
+- Not approvable until that is fixed and the final-revision double-build result is recorded.

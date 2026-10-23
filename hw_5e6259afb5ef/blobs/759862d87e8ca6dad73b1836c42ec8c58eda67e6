@@ -1,0 +1,20 @@
+You verify a synopsis against the only information allowed to support it: one-sentence shot descriptions and dialogue. For each statement (a self-contained clause) judge 'supported' (can be inferred from them), or 'unsupported'. Each quote must be a complete self-contained clause so that deleting it leaves grammatical text. Also report whether the synopsis mentions any shot count, cut, time, shot size, camera move, colour or other appearance detail, or uses a C label. Reply with JSON {"statements": [{"quote": "exact substring", "verdict": "supported|unsupported"}], "forbidden_content": ["..."]}.
+
+One-sentence descriptions (C labels name the characters):
+shot 0: Medium shot of C1 waking up and looking around, static.
+shot 1: Wide shot of C1 and C2 riding in a mine cart on broken tracks inside a cave, static camera.
+shot 2: Medium close-up of C1 and C3 speeding forward through a tunnel while C3 holds a bunch of berries, tracking camera.
+shot 3: Wide shot of roller coaster tracks running through a dark cave, tracking forward.
+shot 4: Wide shot of C1 riding a minecart crashing through wood structures, track-right.
+shot 5: Medium shot of C1 and C3 riding a minecart, tracking backward.
+shot 6: Close-up of C1 screaming with its mouth wide open and eyes closed, static.
+shot 7: Close-up of C1 tilting its head up in shock as a large structure falls over it, slight camera movement.
+shot 8: Medium close-up of C2 standing and eating fruit from a bunch, static.
+shot 9: Wide shot of a mine tunnel moving forward rapidly, push in.
+shot 10: Wide shot of a minecart crashing at a mineshaft exit and launching C1 and berries into the air, cutting from a fast forward tracking POV to a static exterior angle.
+
+Dialogue:
+(no dialogue)
+
+Synopsis:
+In a frantic sequence, a creature wakes up and looks around before riding in a minecart with a penguin on broken tracks inside a cave, speeding forward through a tunnel along roller coaster tracks while the companion holds a bunch of berries, crashing through wood structures, continuing the ride before screaming and looking up in shock as a large structure falls over it, while the penguin stands and eats fruit from the bunch as the cart moves rapidly through a mine tunnel and finally crashes at a mineshaft exit, launching the creature and the berries into the air.

@@ -1,0 +1,26 @@
+# CrewCut 6-film dataset (task-maker)
+Commands (numbered, each with its check) in `tools/`; decisions in `decisions/`; data in `data/`.
+
+| step | command | check | result |
+|---|---|---|---|
+| 1 masters | tools/fetch_masters.py | SHA-256 + size of 6 masters | data/masters_check.json (6/6 OK) |
+| 2 cuts | tools/step2_cuts.sh (reference `cuts`, unmodified) | step 4 | |
+| 3 dialogue | tools/step3_dialogue.py, step3_run.sh | 0 lines in all 4 spoken films (same as reference) | annotations/*/dialogue.json |
+| 4 shots | tools/step4_shots.py | identical to reference shots.json for 6/6 films | |
+| 5 hierarchy | tools/step5_hier.sh, step5b_format.py (reference `hierarchy`, `tasks`) | hierarchy.json identical to reference 6/6 | |
+| 6 descriptions | tools/step6a_frames.py, step6b_describe.py, step6b_run.sh | 603/603 shots answered, 0 empty (decisions/D003; D001 superseded) | annotations/*/descriptions.json, describe_log.jsonl |
+| 7 fingerprints | tools/fingerprint.py, step7_fingerprints.sh | self-check reports reuse; negative control passes | annotations/*/fingerprint_* |
+| 8 tasks/packages/key | tools/step8_tasks.py, tools/leak_scan.py | 598 task ids = reference dev.jsonl exactly; no key in packages | tasks/dev.jsonl, packages/, key/ |
+| 9 clips | tools/step9_clips.py | duration within tolerance | release (large files) |
+
+`key/` is the answer key (scoring/audit only): it must not be uploaded with the dataset or put in any release. `toolservice/` is the tool service (tool list, official prices with date and source, source-side rejection check, per-call ledger).
+Licences/attribution: see curator's material (rights notes) — to be merged into this README before release.
+
+## Status and notes
+- `key/` is the answer key. It is **not part of the uploaded dataset** and is in no release; only scorer and auditor read this repository for it.
+- shots.json, dialogue.json, hierarchy.json and the task list were **recomputed from the masters** (not copied) with the unmodified reference algorithms; they equal reference release d509bed (6/6 shots, 6/6 hierarchy, 598/598 task ids, 0 field differences; `data/tasks_vs_reference.json`). Dialogue: 0 lines in every film, as in the reference.
+- Descriptions: gemini-3.5-flash-lite, temperature 0, reasoning_effort minimal, run once (603 calls, 1,996,461 prompt / 9,824 completion tokens); per-call tokens in `annotations/*/describe_log.jsonl` (D003). Screenplay shotlists and key truth now contain them. The tool service's live generator calls remain untested by task-maker (executor exercises them).
+- Adaptation (D002): Silero VAD is the copy bundled in faster-whisper (ONNX) instead of the standalone torch package; Whisper base = Systran/faster-whisper-base, int8, beam 5, temperature 0. The brief leaves versions open (gap 1).
+- Reference clips: libx264 crf 23 veryfast, height <= 720, AAC 128k (`tools/step9_clips.py`), in the `clips-v1` release with `clips_manifest.json` (sha256 each).
+- Double-build check: `tools/step10_doublebuild.sh` (reuses the paid description outputs); result in `data/doublebuild.txt`: annotations, tasks, packages, key all IDENTICAL after the descriptions run (revision c4fe559).
+- Licences and attribution: see curator's `corpus/` rights notes (to be merged here before release).

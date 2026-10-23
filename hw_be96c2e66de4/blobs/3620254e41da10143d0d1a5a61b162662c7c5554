@@ -1,0 +1,155 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0024",
+  "start": 2228.693,
+  "end": 2290.121,
+  "shots": 19,
+  "lines": 0
+ },
+ "duration": 61.428,
+ "cuts": [
+  1.001,
+  3.937,
+  6.84,
+  10.077,
+  11.178,
+  14.014,
+  15.949,
+  24.725,
+  26.894,
+  31.999,
+  36.236,
+  41.975,
+  44.411,
+  45.512,
+  48.015,
+  50.551,
+  53.253,
+  58.358
+ ],
+ "shots": [
+  {
+   "index": 305,
+   "start": 0.0,
+   "end": 1.001,
+   "description": "Wide shot of C1 riding a motorcycle, static."
+  },
+  {
+   "index": 306,
+   "start": 1.001,
+   "end": 3.937,
+   "description": "Long shot of cars driving fast, static."
+  },
+  {
+   "index": 307,
+   "start": 3.937,
+   "end": 6.84,
+   "description": "Wide shot of a car driving along a dirt road, static."
+  },
+  {
+   "index": 308,
+   "start": 6.84,
+   "end": 10.077,
+   "description": "Medium shot of C1 riding a tricycle, tracking forward."
+  },
+  {
+   "index": 309,
+   "start": 10.077,
+   "end": 11.178,
+   "description": "Long shot of road workers digging dirt by the side of the road, static camera."
+  },
+  {
+   "index": 310,
+   "start": 11.178,
+   "end": 14.014,
+   "description": "Long shot of construction workers digging a ditch by the side of the road, static camera."
+  },
+  {
+   "index": 311,
+   "start": 14.014,
+   "end": 15.949,
+   "description": "Medium shot of C1 riding a motorcycle down a street past a line of workers digging a trench, static."
+  },
+  {
+   "index": 312,
+   "start": 15.949,
+   "end": 24.725,
+   "description": "Medium shot of a group of men arguing near a sign, static."
+  },
+  {
+   "index": 313,
+   "start": 24.725,
+   "end": 26.894,
+   "description": "Wide shot of C1 riding a motorcycle through a forest, tracking shot."
+  },
+  {
+   "index": 314,
+   "start": 26.894,
+   "end": 31.999,
+   "description": "Long shot of multiple characters playing tug-of-war, static."
+  },
+  {
+   "index": 315,
+   "start": 31.999,
+   "end": 36.236,
+   "description": "Long shot of C1 crashing a motorcycle into a picnic, static camera."
+  },
+  {
+   "index": 316,
+   "start": 36.236,
+   "end": 41.975,
+   "description": "Long shot of C1 and C2 crashing a motorcycle, static."
+  },
+  {
+   "index": 317,
+   "start": 41.975,
+   "end": 44.411,
+   "description": "Long shot of C1 and C2 running through a shallow rocky river, static."
+  },
+  {
+   "index": 318,
+   "start": 44.411,
+   "end": 45.512,
+   "description": "Wide shot of a truck driving through a damaged bridge, static camera."
+  },
+  {
+   "index": 319,
+   "start": 45.512,
+   "end": 48.015,
+   "description": "Wide shot of a truck driving through a damaged bridge, static camera."
+  },
+  {
+   "index": 320,
+   "start": 48.015,
+   "end": 50.551,
+   "description": "Wide shot of C1 walking on a bridge, static camera."
+  },
+  {
+   "index": 321,
+   "start": 50.551,
+   "end": 53.253,
+   "description": "Wide shot of trucks driving, static camera."
+  },
+  {
+   "index": 322,
+   "start": 53.253,
+   "end": 58.358,
+   "description": "Long shot of C1 riding a motorcycle jumping over a truck, static camera."
+  },
+  {
+   "index": 323,
+   "start": 58.358,
+   "end": 61.428,
+   "description": "Long shot of a wooden structure collapsing, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 61.428
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0024-ref",
+ "descriptions_available": true
+}

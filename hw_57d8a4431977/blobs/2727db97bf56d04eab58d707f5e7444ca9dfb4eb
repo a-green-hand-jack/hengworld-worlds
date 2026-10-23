@@ -1,0 +1,20 @@
+"""Does the judge separate right from wrong descriptions? Frames of the original (CFR clip) against each shot's own description (right)
+and the other shots' descriptions (wrong). Usage: judge_check.py CLIP TASK_DIR OUT.json MODEL"""
+import json, os, subprocess, sys
+from pathlib import Path
+from crewcut.scoring.judge import ContinuityJudge
+clip, task, out, model = Path(sys.argv[1]), Path(sys.argv[2]), Path(sys.argv[3]), sys.argv[4]
+os.environ["CREWCUT_JUDGE_BASE_URL"] = subprocess.run(["ht-resource", "url", "gemini"], capture_output=True, text=True).stdout.strip()
+os.environ["CREWCUT_JUDGE_API_KEY"] = os.environ["HT_RESOURCE_TOKEN"]
+shots = json.loads((task / "truth.json").read_text())["shots"]
+log = Path(str(out) + ".calls.jsonl")
+j = ContinuityJudge(clip, model, log=log)
+rows = []
+for s in shots:
+    for k, d in enumerate(shots):
+        v = j(d["description"], s["start"], s["end"])
+        rows.append({"frames_of_shot": s["index"], "description_of_shot": d["index"], "right": s["index"] == d["index"], "verdict": v})
+right = [r["verdict"] for r in rows if r["right"]]; wrong = [r["verdict"] for r in rows if not r["right"]]
+res = {"judge_model": model, "temperature": 0, "rows": rows, "accept_rate_right": sum(right) / len(right),
+       "accept_rate_wrong": sum(wrong) / len(wrong), "separates": sum(right) / len(right) > sum(wrong) / len(wrong)}
+out.write_text(json.dumps(res, indent=1) + "\n"); print({k: v for k, v in res.items() if k != "rows"}); print([(r["frames_of_shot"], r["description_of_shot"], r["verdict"]) for r in rows])

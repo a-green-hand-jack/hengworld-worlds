@@ -1,0 +1,5746 @@
+{
+ "n_checks": 1148,
+ "n_failed": 0,
+ "results": [
+  {
+   "check": "12 new task rows",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "task ids not already in dev.jsonl",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-rich spec.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-rich tools.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-rich budget.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-rich task.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-rich README equals the -scr package README",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-rich script.csv identical",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-syn spec.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-syn tools.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-syn budget.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-syn task.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-syn README equals the -scr package README",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-syn script.csv identical",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 -ref README same",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 synopsis identical rich/syn",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-syn input files exactly",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-rich input files",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 rich header",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 rich first four columns == updated -scr (and times == original -scr)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 0 setting <= 30 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 0 props <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 0 action <= 60 words",
+   "pass": true,
+   "detail": "26"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 0 camera <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 0 light_mood <= 25 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 0 sound <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 1 setting <= 30 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 1 props <= 25 words",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 1 action <= 60 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 1 camera <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 1 light_mood <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 1 sound <= 25 words",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 1 characters entry form/len",
+   "pass": true,
+   "detail": "C1: standing in the left foreground facing forward, wide-eye"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 2 setting <= 30 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 2 props <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 2 action <= 60 words",
+   "pass": true,
+   "detail": "31"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 2 camera <= 25 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 2 light_mood <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 2 sound <= 25 words",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 2 characters entry form/len",
+   "pass": true,
+   "detail": "C2: popping up into the center foreground on the tracks, hol"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 3 setting <= 30 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 3 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 3 action <= 60 words",
+   "pass": true,
+   "detail": "34"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 3 camera <= 25 words",
+   "pass": true,
+   "detail": "12"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 3 light_mood <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 3 sound <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 3 characters entry form/len",
+   "pass": true,
+   "detail": "C1: positioned left of center, facing forward, initially wit"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 4 setting <= 30 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 4 props <= 25 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 4 action <= 60 words",
+   "pass": true,
+   "detail": "34"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 4 camera <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 4 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 4 sound <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 5 setting <= 30 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 5 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 5 action <= 60 words",
+   "pass": true,
+   "detail": "34"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 5 camera <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 5 light_mood <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 5 sound <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L1-0001 shot 5 characters entry form/len",
+   "pass": true,
+   "detail": "C1: positioned left of center facing forward; starts with wi"
+  },
+  {
+   "check": "caminandes3-L1-0001 C1 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 C2 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 characters.json covers every C label used",
+   "pass": true,
+   "detail": "set()"
+  },
+  {
+   "check": "caminandes3-L1-0001 synopsis sentence count == 1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 synopsis: single paragraph",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 synopsis no C label / digits / shot-camera words",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-rich no scene/group fields or words",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-rich no film/character proper names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/budget.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/spec.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/tools.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/README.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/task.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/input/synopsis.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/input/shotlist.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/input/script.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/input/characters.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/input/references/place_P1.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/input/references/manifest.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/input/references/character_C2.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/input/references/place_P2.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich/input/references/character_C1.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L1-0001-rich no answer-file names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001-syn/budget.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0001-syn/spec.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0001-syn/tools.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0001-syn/README.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L1-0001-syn/task.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0001-syn/input/synopsis.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L1-0001-syn/input/script.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L1-0001-syn no answer-file names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 image character_C1.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 image character_C1.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 image character_C1.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 image character_C2.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 image character_C2.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 image character_C2.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 image place_P1.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 image place_P1.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 image place_P1.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 image place_P2.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 image place_P2.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 image place_P2.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0001 all images in dir listed in manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-rich spec.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-rich tools.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-rich budget.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-rich task.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-rich README equals the -scr package README",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-rich script.csv identical",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-syn spec.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-syn tools.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-syn budget.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-syn task.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-syn README equals the -scr package README",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-syn script.csv identical",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 -ref README same",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 synopsis identical rich/syn",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-syn input files exactly",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-rich input files",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 rich header",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 rich first four columns == updated -scr (and times == original -scr)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 0 setting <= 30 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 0 props <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 0 action <= 60 words",
+   "pass": true,
+   "detail": "35"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 0 camera <= 25 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 0 light_mood <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 0 sound <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 1 setting <= 30 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 1 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 1 action <= 60 words",
+   "pass": true,
+   "detail": "42"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 1 camera <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 1 light_mood <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 1 sound <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 1 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on left in profile facing right, flying through air; ini"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 1 characters entry form/len",
+   "pass": true,
+   "detail": "C3: enters on far left edge."
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 2 setting <= 30 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 2 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 2 action <= 60 words",
+   "pass": true,
+   "detail": "30"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 2 camera <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 2 light_mood <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 2 sound <= 25 words",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 2 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on right foreground, only a raised hoof and furry leg in"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 2 characters entry form/len",
+   "pass": true,
+   "detail": "C2: in center-left, tumbling in mid-air, eyes wide with big "
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 3 setting <= 30 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 3 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 3 action <= 60 words",
+   "pass": true,
+   "detail": "31"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 3 camera <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 3 light_mood <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 3 sound <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 3 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on left and center, facing right, expression shifting fr"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 4 setting <= 30 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 4 props <= 25 words",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 4 action <= 60 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 4 camera <= 25 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 4 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 4 sound <= 25 words",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 4 characters entry form/len",
+   "pass": true,
+   "detail": "C1: curled into a tight round ball, falling from the sky on "
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 5 setting <= 30 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 5 props <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 5 action <= 60 words",
+   "pass": true,
+   "detail": "49"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 5 camera <= 25 words",
+   "pass": true,
+   "detail": "6"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 5 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 5 sound <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 5 characters entry form/len",
+   "pass": true,
+   "detail": "C1: lying sprawled on its back in the snow, dazed and half-l"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 5 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting upright on C1's chest, wide-eyed, then sliding d"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 6 setting <= 30 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 6 props <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 6 action <= 60 words",
+   "pass": true,
+   "detail": "34"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 6 camera <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 6 light_mood <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 6 sound <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 6 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sliding on its belly away from camera down the snowy slo"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 6 characters entry form/len",
+   "pass": true,
+   "detail": "C3: a large colony standing in the distant background on the"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 7 setting <= 30 words",
+   "pass": true,
+   "detail": "27"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 7 props <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 7 action <= 60 words",
+   "pass": true,
+   "detail": "48"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 7 camera <= 25 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 7 light_mood <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 7 sound <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 7 characters entry form/len",
+   "pass": true,
+   "detail": "C1: centered in close-up with a bruised purple left eye, dro"
+  },
+  {
+   "check": "caminandes3-L1-0005 shot 0 characters empty (all statements deleted as disputed)",
+   "pass": true,
+   "detail": "informational"
+  },
+  {
+   "check": "caminandes3-L1-0005 C1 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 C2 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 C3 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 characters.json covers every C label used",
+   "pass": true,
+   "detail": "set()"
+  },
+  {
+   "check": "caminandes3-L1-0005 synopsis sentence count == 1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 synopsis: single paragraph",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 synopsis no C label / digits / shot-camera words",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-rich no scene/group fields or words",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-rich no film/character proper names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/budget.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/spec.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/tools.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/README.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/task.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/input/synopsis.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/input/shotlist.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/input/script.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/input/characters.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/input/references/manifest.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/input/references/place_P4.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/input/references/character_C2.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/input/references/character_C3.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich/input/references/character_C1.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L1-0005-rich no answer-file names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005-syn/budget.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0005-syn/spec.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0005-syn/tools.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0005-syn/README.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L1-0005-syn/task.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L1-0005-syn/input/synopsis.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L1-0005-syn/input/script.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L1-0005-syn no answer-file names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 image character_C1.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 image character_C1.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 image character_C1.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 image character_C2.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 image character_C2.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 image character_C2.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 image character_C3.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 image character_C3.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 image character_C3.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 image place_P4.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 image place_P4.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 image place_P4.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L1-0005 all images in dir listed in manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-rich spec.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-rich tools.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-rich budget.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-rich task.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-rich README equals the -scr package README",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-rich script.csv identical",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-syn spec.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-syn tools.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-syn budget.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-syn task.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-syn README equals the -scr package README",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-syn script.csv identical",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 -ref README same",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 synopsis identical rich/syn",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-syn input files exactly",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-rich input files",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 rich header",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 rich first four columns == updated -scr (and times == original -scr)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 0 setting <= 30 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 0 props <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 0 action <= 60 words",
+   "pass": true,
+   "detail": "43"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 0 camera <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 0 light_mood <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 0 sound <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 0 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on the left, eyes closed at first, then opens eyes grogg"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 0 characters entry form/len",
+   "pass": true,
+   "detail": "C2: pops up on the right, looking up with wide eyes."
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 1 setting <= 30 words",
+   "pass": true,
+   "detail": "26"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 1 props <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 1 action <= 60 words",
+   "pass": true,
+   "detail": "50"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 1 camera <= 25 words",
+   "pass": true,
+   "detail": "2"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 1 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 1 sound <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 1 characters entry form/len",
+   "pass": true,
+   "detail": "C1: sitting in the left side of the minecart with dark circu"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 1 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting on the right rim of the cart, jumping up."
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 2 setting <= 30 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 2 props <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 2 action <= 60 words",
+   "pass": true,
+   "detail": "41"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 2 camera <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 2 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 2 sound <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 2 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on the left, dark circular marks around eyes, mouth wide"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 2 characters entry form/len",
+   "pass": true,
+   "detail": "C2: on the right, holding a bunch of red berries, looking ha"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 3 setting <= 30 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 3 props <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 3 action <= 60 words",
+   "pass": true,
+   "detail": "28"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 3 camera <= 25 words",
+   "pass": true,
+   "detail": "12"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 3 light_mood <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 3 sound <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 4 setting <= 30 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 4 props <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 4 action <= 60 words",
+   "pass": true,
+   "detail": "35"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 4 camera <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 4 light_mood <= 25 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 4 sound <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 4 characters entry form/len",
+   "pass": true,
+   "detail": "C1: riding in the front of the minecart, gripping the edge, "
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 4 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting in the back of the minecart."
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 5 setting <= 30 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 5 props <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 5 action <= 60 words",
+   "pass": true,
+   "detail": "38"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 5 camera <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 5 light_mood <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 5 sound <= 25 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 5 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on the left side of the minecart, wide-eyed at first, th"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 5 characters entry form/len",
+   "pass": true,
+   "detail": "C2: on the right side of the minecart, holding a bunch of re"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 6 setting <= 30 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 6 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 6 action <= 60 words",
+   "pass": true,
+   "detail": "27"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 6 camera <= 25 words",
+   "pass": true,
+   "detail": "6"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 6 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 6 sound <= 25 words",
+   "pass": true,
+   "detail": "6"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 6 characters entry form/len",
+   "pass": true,
+   "detail": "C1: center-left, head and long neck visible, eyelids tightly"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 7 setting <= 30 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 7 props <= 25 words",
+   "pass": true,
+   "detail": "12"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 7 action <= 60 words",
+   "pass": true,
+   "detail": "39"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 7 camera <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 7 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 7 sound <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 7 characters entry form/len",
+   "pass": true,
+   "detail": "C1: center-left, head and neck visible, red bump on top of h"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 8 setting <= 30 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 8 props <= 25 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 8 action <= 60 words",
+   "pass": true,
+   "detail": "32"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 8 camera <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 8 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 8 sound <= 25 words",
+   "pass": true,
+   "detail": "12"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 8 characters entry form/len",
+   "pass": true,
+   "detail": "C1: far left foreground, only orange-brown neck and torso vi"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 8 characters entry form/len",
+   "pass": true,
+   "detail": "C2: center, holding a large bunch of red berries, half-close"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 9 setting <= 30 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 9 props <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 9 action <= 60 words",
+   "pass": true,
+   "detail": "28"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 9 camera <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 9 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 9 sound <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 10 setting <= 30 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 10 props <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 10 action <= 60 words",
+   "pass": true,
+   "detail": "44"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 10 camera <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 10 light_mood <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 10 sound <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L2-0002 shot 10 characters entry form/len",
+   "pass": true,
+   "detail": "C1: launched out of the minecart into the air toward the upp"
+  },
+  {
+   "check": "caminandes3-L2-0002 C1 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 C2 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 C3 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 characters.json covers every C label used",
+   "pass": true,
+   "detail": "set()"
+  },
+  {
+   "check": "caminandes3-L2-0002 synopsis sentence count == 1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 synopsis: single paragraph",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 synopsis no C label / digits / shot-camera words",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-rich no scene/group fields or words",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-rich no film/character proper names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/budget.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/spec.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/tools.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/README.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/task.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/input/synopsis.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/input/shotlist.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/input/script.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/input/characters.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/input/references/place_P1.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/input/references/manifest.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/input/references/place_P4.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/input/references/character_C2.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/input/references/place_P3.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/input/references/character_C3.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich/input/references/character_C1.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L2-0002-rich no answer-file names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002-syn/budget.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0002-syn/spec.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0002-syn/tools.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0002-syn/README.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L2-0002-syn/task.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0002-syn/input/synopsis.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L2-0002-syn/input/script.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L2-0002-syn no answer-file names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image character_C1.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image character_C1.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image character_C1.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image character_C2.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image character_C2.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image character_C2.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image character_C3.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image character_C3.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image character_C3.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image place_P1.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image place_P1.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image place_P1.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image place_P3.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image place_P3.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image place_P3.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image place_P4.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image place_P4.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 image place_P4.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0002 all images in dir listed in manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-rich spec.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-rich tools.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-rich budget.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-rich task.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-rich README equals the -scr package README",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-rich script.csv identical",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-syn spec.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-syn tools.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-syn budget.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-syn task.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-syn README equals the -scr package README",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-syn script.csv identical",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 -ref README same",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 synopsis identical rich/syn",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-syn input files exactly",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-rich input files",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 rich header",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 rich first four columns == updated -scr (and times == original -scr)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 shot 0 setting <= 30 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L2-0004 shot 0 props <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L2-0004 shot 0 action <= 60 words",
+   "pass": true,
+   "detail": "51"
+  },
+  {
+   "check": "caminandes3-L2-0004 shot 0 camera <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L2-0004 shot 0 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L2-0004 shot 0 sound <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L2-0004 shot 0 characters entry form/len",
+   "pass": true,
+   "detail": "C1: lying in snow on left, eating berries, smiling contented"
+  },
+  {
+   "check": "caminandes3-L2-0004 shot 0 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting on wooden planks in center, eating a berry"
+  },
+  {
+   "check": "caminandes3-L2-0004 shot 0 characters entry form/len",
+   "pass": true,
+   "detail": "C3: crowd standing around in background."
+  },
+  {
+   "check": "caminandes3-L2-0004 C1 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 C2 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 C3 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 characters.json covers every C label used",
+   "pass": true,
+   "detail": "set()"
+  },
+  {
+   "check": "caminandes3-L2-0004 synopsis sentence count == 1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 synopsis: single paragraph",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 synopsis no C label / digits / shot-camera words",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-rich no scene/group fields or words",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-rich no film/character proper names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/budget.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/spec.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/tools.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/README.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/task.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/input/synopsis.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/input/shotlist.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/input/script.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/input/characters.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/input/references/manifest.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/input/references/place_P4.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/input/references/character_C2.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/input/references/character_C3.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich/input/references/character_C1.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L2-0004-rich no answer-file names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004-syn/budget.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0004-syn/spec.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0004-syn/tools.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0004-syn/README.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L2-0004-syn/task.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L2-0004-syn/input/synopsis.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L2-0004-syn/input/script.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L2-0004-syn no answer-file names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 image character_C1.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 image character_C1.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 image character_C1.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 image character_C2.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 image character_C2.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 image character_C2.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 image character_C3.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 image character_C3.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 image character_C3.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 image place_P4.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 image place_P4.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 image place_P4.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L2-0004 all images in dir listed in manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-rich spec.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-rich tools.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-rich budget.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-rich task.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-rich README equals the -scr package README",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-rich script.csv identical",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-syn spec.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-syn tools.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-syn budget.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-syn task.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-syn README equals the -scr package README",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-syn script.csv identical",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 -ref README same",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 synopsis identical rich/syn",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-syn input files exactly",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-rich input files",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 rich header",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 rich first four columns == updated -scr (and times == original -scr)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 0 setting <= 30 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 0 props <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 0 action <= 60 words",
+   "pass": true,
+   "detail": "50"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 0 camera <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 0 light_mood <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 0 sound <= 25 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 0 characters entry form/len",
+   "pass": true,
+   "detail": "C1: stands on ice, tongue out eagerly, looks surprised, then"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 0 characters entry form/len",
+   "pass": true,
+   "detail": "C2: falls from the sky in the background above C1."
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 1 setting <= 30 words",
+   "pass": true,
+   "detail": "26"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 1 props <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 1 action <= 60 words",
+   "pass": true,
+   "detail": "48"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 1 camera <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 1 light_mood <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 1 sound <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 1 characters entry form/len",
+   "pass": true,
+   "detail": "C1: lies flat on the ice on the left, narrows eyes angrily, "
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 1 characters entry form/len",
+   "pass": true,
+   "detail": "C2: stands on the ice in the center, eats a berry, then hops"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 2 setting <= 30 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 2 props <= 25 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 2 action <= 60 words",
+   "pass": true,
+   "detail": "33"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 2 camera <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 2 light_mood <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 2 sound <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 2 characters entry form/len",
+   "pass": true,
+   "detail": "C2: stands on a wooden railroad tie between the steel rails "
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 3 setting <= 30 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 3 props <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 3 action <= 60 words",
+   "pass": true,
+   "detail": "26"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 3 camera <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 3 light_mood <= 25 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 3 sound <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 4 setting <= 30 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 4 props <= 25 words",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 4 action <= 60 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 4 camera <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 4 light_mood <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 4 sound <= 25 words",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 4 characters entry form/len",
+   "pass": true,
+   "detail": "C1: standing in the left foreground facing forward, wide-eye"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 5 setting <= 30 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 5 props <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 5 action <= 60 words",
+   "pass": true,
+   "detail": "31"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 5 camera <= 25 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 5 light_mood <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 5 sound <= 25 words",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 5 characters entry form/len",
+   "pass": true,
+   "detail": "C2: popping up into the center foreground on the tracks, hol"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 6 setting <= 30 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 6 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 6 action <= 60 words",
+   "pass": true,
+   "detail": "34"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 6 camera <= 25 words",
+   "pass": true,
+   "detail": "12"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 6 light_mood <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 6 sound <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 6 characters entry form/len",
+   "pass": true,
+   "detail": "C1: positioned left of center, facing forward, initially wit"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 7 setting <= 30 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 7 props <= 25 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 7 action <= 60 words",
+   "pass": true,
+   "detail": "34"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 7 camera <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 7 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 7 sound <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 8 setting <= 30 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 8 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 8 action <= 60 words",
+   "pass": true,
+   "detail": "34"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 8 camera <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 8 light_mood <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 8 sound <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 8 characters entry form/len",
+   "pass": true,
+   "detail": "C1: positioned left of center facing forward; starts with wi"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 9 setting <= 30 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 9 props <= 25 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 9 action <= 60 words",
+   "pass": true,
+   "detail": "32"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 9 camera <= 25 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 9 light_mood <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 9 sound <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 9 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting centered in the foreground between the rails fac"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 10 setting <= 30 words",
+   "pass": true,
+   "detail": "29"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 10 props <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 10 action <= 60 words",
+   "pass": true,
+   "detail": "35"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 10 camera <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 10 light_mood <= 25 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 10 sound <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 10 characters entry form/len",
+   "pass": true,
+   "detail": "C1: sitting on the snow in the center foreground, eyelids cl"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 11 setting <= 30 words",
+   "pass": true,
+   "detail": "26"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 11 props <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 11 action <= 60 words",
+   "pass": true,
+   "detail": "27"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 11 camera <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 11 light_mood <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 11 sound <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 11 characters entry form/len",
+   "pass": true,
+   "detail": "C3: one adult penguin positioned behind the horizontal steel"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 12 setting <= 30 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 12 props <= 25 words",
+   "pass": true,
+   "detail": "5"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 12 action <= 60 words",
+   "pass": true,
+   "detail": "33"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 12 camera <= 25 words",
+   "pass": true,
+   "detail": "6"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 12 light_mood <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 12 sound <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 12 characters entry form/len",
+   "pass": true,
+   "detail": "C1: head and neck visible, facing right, with a long pink to"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 13 setting <= 30 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 13 props <= 25 words",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 13 action <= 60 words",
+   "pass": true,
+   "detail": "35"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 13 camera <= 25 words",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 13 light_mood <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 13 sound <= 25 words",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 13 characters entry form/len",
+   "pass": true,
+   "detail": "C1: head in bottom foreground facing right, large brown eyes"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 13 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting on C1's head, leaps right with open beak."
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 14 setting <= 30 words",
+   "pass": true,
+   "detail": "27"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 14 props <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 14 action <= 60 words",
+   "pass": true,
+   "detail": "59"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 14 camera <= 25 words",
+   "pass": true,
+   "detail": "5"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 14 light_mood <= 25 words",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 14 sound <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 14 characters entry form/len",
+   "pass": true,
+   "detail": "C1: sitting on the left, half-closed eyes looking down at C2"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 14 characters entry form/len",
+   "pass": true,
+   "detail": "C2: lands on the right holding a red berry, then falls throu"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 15 setting <= 30 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 15 props <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 15 action <= 60 words",
+   "pass": true,
+   "detail": "43"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 15 camera <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 15 light_mood <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 15 sound <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 15 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on the left, eyes closed at first, then opens eyes grogg"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 15 characters entry form/len",
+   "pass": true,
+   "detail": "C2: pops up on the right, looking up with wide eyes."
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 16 setting <= 30 words",
+   "pass": true,
+   "detail": "26"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 16 props <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 16 action <= 60 words",
+   "pass": true,
+   "detail": "50"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 16 camera <= 25 words",
+   "pass": true,
+   "detail": "2"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 16 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 16 sound <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 16 characters entry form/len",
+   "pass": true,
+   "detail": "C1: sitting in the left side of the minecart with dark circu"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 16 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting on the right rim of the cart, jumping up."
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 17 setting <= 30 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 17 props <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 17 action <= 60 words",
+   "pass": true,
+   "detail": "41"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 17 camera <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 17 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 17 sound <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 17 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on the left, dark circular marks around eyes, mouth wide"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 17 characters entry form/len",
+   "pass": true,
+   "detail": "C2: on the right, holding a bunch of red berries, looking ha"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 18 setting <= 30 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 18 props <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 18 action <= 60 words",
+   "pass": true,
+   "detail": "28"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 18 camera <= 25 words",
+   "pass": true,
+   "detail": "12"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 18 light_mood <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 18 sound <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 19 setting <= 30 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 19 props <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 19 action <= 60 words",
+   "pass": true,
+   "detail": "35"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 19 camera <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 19 light_mood <= 25 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 19 sound <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 19 characters entry form/len",
+   "pass": true,
+   "detail": "C1: riding in the front of the minecart, gripping the edge, "
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 19 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting in the back of the minecart."
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 20 setting <= 30 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 20 props <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 20 action <= 60 words",
+   "pass": true,
+   "detail": "38"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 20 camera <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 20 light_mood <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 20 sound <= 25 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 20 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on the left side of the minecart, wide-eyed at first, th"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 20 characters entry form/len",
+   "pass": true,
+   "detail": "C2: on the right side of the minecart, holding a bunch of re"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 21 setting <= 30 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 21 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 21 action <= 60 words",
+   "pass": true,
+   "detail": "27"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 21 camera <= 25 words",
+   "pass": true,
+   "detail": "6"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 21 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 21 sound <= 25 words",
+   "pass": true,
+   "detail": "6"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 21 characters entry form/len",
+   "pass": true,
+   "detail": "C1: center-left, head and long neck visible, eyelids tightly"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 22 setting <= 30 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 22 props <= 25 words",
+   "pass": true,
+   "detail": "12"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 22 action <= 60 words",
+   "pass": true,
+   "detail": "39"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 22 camera <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 22 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 22 sound <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 22 characters entry form/len",
+   "pass": true,
+   "detail": "C1: center-left, head and neck visible, red bump on top of h"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 23 setting <= 30 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 23 props <= 25 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 23 action <= 60 words",
+   "pass": true,
+   "detail": "32"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 23 camera <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 23 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 23 sound <= 25 words",
+   "pass": true,
+   "detail": "12"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 23 characters entry form/len",
+   "pass": true,
+   "detail": "C1: far left foreground, only orange-brown neck and torso vi"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 23 characters entry form/len",
+   "pass": true,
+   "detail": "C2: center, holding a large bunch of red berries, half-close"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 24 setting <= 30 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 24 props <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 24 action <= 60 words",
+   "pass": true,
+   "detail": "28"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 24 camera <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 24 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 24 sound <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 25 setting <= 30 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 25 props <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 25 action <= 60 words",
+   "pass": true,
+   "detail": "44"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 25 camera <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 25 light_mood <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 25 sound <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 25 characters entry form/len",
+   "pass": true,
+   "detail": "C1: launched out of the minecart into the air toward the upp"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 26 setting <= 30 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 26 props <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 26 action <= 60 words",
+   "pass": true,
+   "detail": "35"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 26 camera <= 25 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 26 light_mood <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 26 sound <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 27 setting <= 30 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 27 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 27 action <= 60 words",
+   "pass": true,
+   "detail": "42"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 27 camera <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 27 light_mood <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 27 sound <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 27 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on left in profile facing right, flying through air; ini"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 27 characters entry form/len",
+   "pass": true,
+   "detail": "C3: enters on far left edge."
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 28 setting <= 30 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 28 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 28 action <= 60 words",
+   "pass": true,
+   "detail": "30"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 28 camera <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 28 light_mood <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 28 sound <= 25 words",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 28 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on right foreground, only a raised hoof and furry leg in"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 28 characters entry form/len",
+   "pass": true,
+   "detail": "C2: in center-left, tumbling in mid-air, eyes wide with big "
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 29 setting <= 30 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 29 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 29 action <= 60 words",
+   "pass": true,
+   "detail": "31"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 29 camera <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 29 light_mood <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 29 sound <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 29 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on left and center, facing right, expression shifting fr"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 30 setting <= 30 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 30 props <= 25 words",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 30 action <= 60 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 30 camera <= 25 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 30 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 30 sound <= 25 words",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 30 characters entry form/len",
+   "pass": true,
+   "detail": "C1: curled into a tight round ball, falling from the sky on "
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 31 setting <= 30 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 31 props <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 31 action <= 60 words",
+   "pass": true,
+   "detail": "49"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 31 camera <= 25 words",
+   "pass": true,
+   "detail": "6"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 31 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 31 sound <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 31 characters entry form/len",
+   "pass": true,
+   "detail": "C1: lying sprawled on its back in the snow, dazed and half-l"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 31 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting upright on C1's chest, wide-eyed, then sliding d"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 32 setting <= 30 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 32 props <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 32 action <= 60 words",
+   "pass": true,
+   "detail": "34"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 32 camera <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 32 light_mood <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 32 sound <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 32 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sliding on its belly away from camera down the snowy slo"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 32 characters entry form/len",
+   "pass": true,
+   "detail": "C3: a large colony standing in the distant background on the"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 33 setting <= 30 words",
+   "pass": true,
+   "detail": "27"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 33 props <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 33 action <= 60 words",
+   "pass": true,
+   "detail": "48"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 33 camera <= 25 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 33 light_mood <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 33 sound <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 33 characters entry form/len",
+   "pass": true,
+   "detail": "C1: centered in close-up with a bruised purple left eye, dro"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 34 setting <= 30 words",
+   "pass": true,
+   "detail": "30"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 34 props <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 34 action <= 60 words",
+   "pass": true,
+   "detail": "40"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 34 camera <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 34 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 34 sound <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 34 characters entry form/len",
+   "pass": true,
+   "detail": "C1: sitting centered on the rocky ledge with a bruised left "
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 35 setting <= 30 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 35 props <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 35 action <= 60 words",
+   "pass": true,
+   "detail": "46"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 35 camera <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 35 light_mood <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 35 sound <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 35 characters entry form/len",
+   "pass": true,
+   "detail": "C1: blurred in left foreground, back of head and right eye v"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 35 characters entry form/len",
+   "pass": true,
+   "detail": "C2: on snow at right, holding a red berry branch, looking up"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 35 characters entry form/len",
+   "pass": true,
+   "detail": "C3: group in background walking forward, front four holding "
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 36 setting <= 30 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 36 props <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 36 action <= 60 words",
+   "pass": true,
+   "detail": "51"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 36 camera <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 36 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 36 sound <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 36 characters entry form/len",
+   "pass": true,
+   "detail": "C1: lying in snow on left, eating berries, smiling contented"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 36 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting on wooden planks in center, eating a berry"
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 36 characters entry form/len",
+   "pass": true,
+   "detail": "C3: crowd standing around in background."
+  },
+  {
+   "check": "caminandes3-L3-0000 shot 26 characters empty (all statements deleted as disputed)",
+   "pass": true,
+   "detail": "informational"
+  },
+  {
+   "check": "caminandes3-L3-0000 C1 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 C2 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 C3 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 characters.json covers every C label used",
+   "pass": true,
+   "detail": "set()"
+  },
+  {
+   "check": "caminandes3-L3-0000 synopsis sentence count == 5",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 synopsis: single paragraph",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 synopsis no C label / digits / shot-camera words",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-rich no scene/group fields or words",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-rich no film/character proper names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/budget.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/spec.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/tools.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/README.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/task.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/input/synopsis.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/input/shotlist.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/input/script.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/input/characters.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/input/references/place_P1.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/input/references/manifest.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/input/references/place_P4.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/input/references/character_C2.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/input/references/place_P3.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/input/references/place_P2.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/input/references/character_C3.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich/input/references/character_C1.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L3-0000-rich no answer-file names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000-syn/budget.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L3-0000-syn/spec.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L3-0000-syn/tools.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L3-0000-syn/README.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L3-0000-syn/task.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L3-0000-syn/input/synopsis.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L3-0000-syn/input/script.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L3-0000-syn no answer-file names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image character_C1.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image character_C1.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image character_C1.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image character_C2.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image character_C2.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image character_C2.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image character_C3.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image character_C3.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image character_C3.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image place_P1.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image place_P1.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image place_P1.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image place_P2.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image place_P2.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image place_P2.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image place_P3.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image place_P3.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image place_P3.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image place_P4.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image place_P4.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 image place_P4.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L3-0000 all images in dir listed in manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-rich spec.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-rich tools.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-rich budget.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-rich task.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-rich README equals the -scr package README",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-rich script.csv identical",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-syn spec.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-syn tools.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-syn budget.json identical to -scr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-syn task.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-syn README equals the -scr package README",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-syn script.csv identical",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 -ref README same",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 synopsis identical rich/syn",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-syn input files exactly",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-rich input files",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 rich header",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 rich first four columns == updated -scr (and times == original -scr)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 0 setting <= 30 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 0 props <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 0 action <= 60 words",
+   "pass": true,
+   "detail": "50"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 0 camera <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 0 light_mood <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 0 sound <= 25 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 0 characters entry form/len",
+   "pass": true,
+   "detail": "C1: stands on ice, tongue out eagerly, looks surprised, then"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 0 characters entry form/len",
+   "pass": true,
+   "detail": "C2: falls from the sky in the background above C1."
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 1 setting <= 30 words",
+   "pass": true,
+   "detail": "26"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 1 props <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 1 action <= 60 words",
+   "pass": true,
+   "detail": "48"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 1 camera <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 1 light_mood <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 1 sound <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 1 characters entry form/len",
+   "pass": true,
+   "detail": "C1: lies flat on the ice on the left, narrows eyes angrily, "
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 1 characters entry form/len",
+   "pass": true,
+   "detail": "C2: stands on the ice in the center, eats a berry, then hops"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 2 setting <= 30 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 2 props <= 25 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 2 action <= 60 words",
+   "pass": true,
+   "detail": "33"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 2 camera <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 2 light_mood <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 2 sound <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 2 characters entry form/len",
+   "pass": true,
+   "detail": "C2: stands on a wooden railroad tie between the steel rails "
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 3 setting <= 30 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 3 props <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 3 action <= 60 words",
+   "pass": true,
+   "detail": "26"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 3 camera <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 3 light_mood <= 25 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 3 sound <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 4 setting <= 30 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 4 props <= 25 words",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 4 action <= 60 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 4 camera <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 4 light_mood <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 4 sound <= 25 words",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 4 characters entry form/len",
+   "pass": true,
+   "detail": "C1: standing in the left foreground facing forward, wide-eye"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 5 setting <= 30 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 5 props <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 5 action <= 60 words",
+   "pass": true,
+   "detail": "31"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 5 camera <= 25 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 5 light_mood <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 5 sound <= 25 words",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 5 characters entry form/len",
+   "pass": true,
+   "detail": "C2: popping up into the center foreground on the tracks, hol"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 6 setting <= 30 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 6 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 6 action <= 60 words",
+   "pass": true,
+   "detail": "34"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 6 camera <= 25 words",
+   "pass": true,
+   "detail": "12"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 6 light_mood <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 6 sound <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 6 characters entry form/len",
+   "pass": true,
+   "detail": "C1: positioned left of center, facing forward, initially wit"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 7 setting <= 30 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 7 props <= 25 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 7 action <= 60 words",
+   "pass": true,
+   "detail": "34"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 7 camera <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 7 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 7 sound <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 8 setting <= 30 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 8 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 8 action <= 60 words",
+   "pass": true,
+   "detail": "34"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 8 camera <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 8 light_mood <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 8 sound <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 8 characters entry form/len",
+   "pass": true,
+   "detail": "C1: positioned left of center facing forward; starts with wi"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 9 setting <= 30 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 9 props <= 25 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 9 action <= 60 words",
+   "pass": true,
+   "detail": "32"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 9 camera <= 25 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 9 light_mood <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 9 sound <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 9 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting centered in the foreground between the rails fac"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 10 setting <= 30 words",
+   "pass": true,
+   "detail": "29"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 10 props <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 10 action <= 60 words",
+   "pass": true,
+   "detail": "35"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 10 camera <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 10 light_mood <= 25 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 10 sound <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 10 characters entry form/len",
+   "pass": true,
+   "detail": "C1: sitting on the snow in the center foreground, eyelids cl"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 11 setting <= 30 words",
+   "pass": true,
+   "detail": "26"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 11 props <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 11 action <= 60 words",
+   "pass": true,
+   "detail": "27"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 11 camera <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 11 light_mood <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 11 sound <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 11 characters entry form/len",
+   "pass": true,
+   "detail": "C3: one adult penguin positioned behind the horizontal steel"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 12 setting <= 30 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 12 props <= 25 words",
+   "pass": true,
+   "detail": "5"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 12 action <= 60 words",
+   "pass": true,
+   "detail": "33"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 12 camera <= 25 words",
+   "pass": true,
+   "detail": "6"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 12 light_mood <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 12 sound <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 12 characters entry form/len",
+   "pass": true,
+   "detail": "C1: head and neck visible, facing right, with a long pink to"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 13 setting <= 30 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 13 props <= 25 words",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 13 action <= 60 words",
+   "pass": true,
+   "detail": "35"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 13 camera <= 25 words",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 13 light_mood <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 13 sound <= 25 words",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 13 characters entry form/len",
+   "pass": true,
+   "detail": "C1: head in bottom foreground facing right, large brown eyes"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 13 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting on C1's head, leaps right with open beak."
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 14 setting <= 30 words",
+   "pass": true,
+   "detail": "27"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 14 props <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 14 action <= 60 words",
+   "pass": true,
+   "detail": "59"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 14 camera <= 25 words",
+   "pass": true,
+   "detail": "5"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 14 light_mood <= 25 words",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 14 sound <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 14 characters entry form/len",
+   "pass": true,
+   "detail": "C1: sitting on the left, half-closed eyes looking down at C2"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 14 characters entry form/len",
+   "pass": true,
+   "detail": "C2: lands on the right holding a red berry, then falls throu"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 15 setting <= 30 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 15 props <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 15 action <= 60 words",
+   "pass": true,
+   "detail": "43"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 15 camera <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 15 light_mood <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 15 sound <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 15 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on the left, eyes closed at first, then opens eyes grogg"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 15 characters entry form/len",
+   "pass": true,
+   "detail": "C2: pops up on the right, looking up with wide eyes."
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 16 setting <= 30 words",
+   "pass": true,
+   "detail": "26"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 16 props <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 16 action <= 60 words",
+   "pass": true,
+   "detail": "50"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 16 camera <= 25 words",
+   "pass": true,
+   "detail": "2"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 16 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 16 sound <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 16 characters entry form/len",
+   "pass": true,
+   "detail": "C1: sitting in the left side of the minecart with dark circu"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 16 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting on the right rim of the cart, jumping up."
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 17 setting <= 30 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 17 props <= 25 words",
+   "pass": true,
+   "detail": "9"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 17 action <= 60 words",
+   "pass": true,
+   "detail": "41"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 17 camera <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 17 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 17 sound <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 17 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on the left, dark circular marks around eyes, mouth wide"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 17 characters entry form/len",
+   "pass": true,
+   "detail": "C2: on the right, holding a bunch of red berries, looking ha"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 18 setting <= 30 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 18 props <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 18 action <= 60 words",
+   "pass": true,
+   "detail": "28"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 18 camera <= 25 words",
+   "pass": true,
+   "detail": "12"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 18 light_mood <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 18 sound <= 25 words",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 19 setting <= 30 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 19 props <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 19 action <= 60 words",
+   "pass": true,
+   "detail": "35"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 19 camera <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 19 light_mood <= 25 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 19 sound <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 19 characters entry form/len",
+   "pass": true,
+   "detail": "C1: riding in the front of the minecart, gripping the edge, "
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 19 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting in the back of the minecart."
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 20 setting <= 30 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 20 props <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 20 action <= 60 words",
+   "pass": true,
+   "detail": "38"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 20 camera <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 20 light_mood <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 20 sound <= 25 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 20 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on the left side of the minecart, wide-eyed at first, th"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 20 characters entry form/len",
+   "pass": true,
+   "detail": "C2: on the right side of the minecart, holding a bunch of re"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 21 setting <= 30 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 21 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 21 action <= 60 words",
+   "pass": true,
+   "detail": "27"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 21 camera <= 25 words",
+   "pass": true,
+   "detail": "6"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 21 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 21 sound <= 25 words",
+   "pass": true,
+   "detail": "6"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 21 characters entry form/len",
+   "pass": true,
+   "detail": "C1: center-left, head and long neck visible, eyelids tightly"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 22 setting <= 30 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 22 props <= 25 words",
+   "pass": true,
+   "detail": "12"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 22 action <= 60 words",
+   "pass": true,
+   "detail": "39"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 22 camera <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 22 light_mood <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 22 sound <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 22 characters entry form/len",
+   "pass": true,
+   "detail": "C1: center-left, head and neck visible, red bump on top of h"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 23 setting <= 30 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 23 props <= 25 words",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 23 action <= 60 words",
+   "pass": true,
+   "detail": "32"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 23 camera <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 23 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 23 sound <= 25 words",
+   "pass": true,
+   "detail": "12"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 23 characters entry form/len",
+   "pass": true,
+   "detail": "C1: far left foreground, only orange-brown neck and torso vi"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 23 characters entry form/len",
+   "pass": true,
+   "detail": "C2: center, holding a large bunch of red berries, half-close"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 24 setting <= 30 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 24 props <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 24 action <= 60 words",
+   "pass": true,
+   "detail": "28"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 24 camera <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 24 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 24 sound <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 25 setting <= 30 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 25 props <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 25 action <= 60 words",
+   "pass": true,
+   "detail": "44"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 25 camera <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 25 light_mood <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 25 sound <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 25 characters entry form/len",
+   "pass": true,
+   "detail": "C1: launched out of the minecart into the air toward the upp"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 26 setting <= 30 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 26 props <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 26 action <= 60 words",
+   "pass": true,
+   "detail": "35"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 26 camera <= 25 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 26 light_mood <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 26 sound <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 27 setting <= 30 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 27 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 27 action <= 60 words",
+   "pass": true,
+   "detail": "42"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 27 camera <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 27 light_mood <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 27 sound <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 27 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on left in profile facing right, flying through air; ini"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 27 characters entry form/len",
+   "pass": true,
+   "detail": "C3: enters on far left edge."
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 28 setting <= 30 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 28 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 28 action <= 60 words",
+   "pass": true,
+   "detail": "30"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 28 camera <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 28 light_mood <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 28 sound <= 25 words",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 28 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on right foreground, only a raised hoof and furry leg in"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 28 characters entry form/len",
+   "pass": true,
+   "detail": "C2: in center-left, tumbling in mid-air, eyes wide with big "
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 29 setting <= 30 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 29 props <= 25 words",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 29 action <= 60 words",
+   "pass": true,
+   "detail": "31"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 29 camera <= 25 words",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 29 light_mood <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 29 sound <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 29 characters entry form/len",
+   "pass": true,
+   "detail": "C1: on left and center, facing right, expression shifting fr"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 30 setting <= 30 words",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 30 props <= 25 words",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 30 action <= 60 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 30 camera <= 25 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 30 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 30 sound <= 25 words",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 30 characters entry form/len",
+   "pass": true,
+   "detail": "C1: curled into a tight round ball, falling from the sky on "
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 31 setting <= 30 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 31 props <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 31 action <= 60 words",
+   "pass": true,
+   "detail": "49"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 31 camera <= 25 words",
+   "pass": true,
+   "detail": "6"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 31 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 31 sound <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 31 characters entry form/len",
+   "pass": true,
+   "detail": "C1: lying sprawled on its back in the snow, dazed and half-l"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 31 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting upright on C1's chest, wide-eyed, then sliding d"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 32 setting <= 30 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 32 props <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 32 action <= 60 words",
+   "pass": true,
+   "detail": "34"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 32 camera <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 32 light_mood <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 32 sound <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 32 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sliding on its belly away from camera down the snowy slo"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 32 characters entry form/len",
+   "pass": true,
+   "detail": "C3: a large colony standing in the distant background on the"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 33 setting <= 30 words",
+   "pass": true,
+   "detail": "27"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 33 props <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 33 action <= 60 words",
+   "pass": true,
+   "detail": "48"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 33 camera <= 25 words",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 33 light_mood <= 25 words",
+   "pass": true,
+   "detail": "22"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 33 sound <= 25 words",
+   "pass": true,
+   "detail": "18"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 33 characters entry form/len",
+   "pass": true,
+   "detail": "C1: centered in close-up with a bruised purple left eye, dro"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 34 setting <= 30 words",
+   "pass": true,
+   "detail": "30"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 34 props <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 34 action <= 60 words",
+   "pass": true,
+   "detail": "40"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 34 camera <= 25 words",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 34 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 34 sound <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 34 characters entry form/len",
+   "pass": true,
+   "detail": "C1: sitting centered on the rocky ledge with a bruised left "
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 35 setting <= 30 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 35 props <= 25 words",
+   "pass": true,
+   "detail": "13"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 35 action <= 60 words",
+   "pass": true,
+   "detail": "46"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 35 camera <= 25 words",
+   "pass": true,
+   "detail": "19"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 35 light_mood <= 25 words",
+   "pass": true,
+   "detail": "14"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 35 sound <= 25 words",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 35 characters entry form/len",
+   "pass": true,
+   "detail": "C1: blurred in left foreground, back of head and right eye v"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 35 characters entry form/len",
+   "pass": true,
+   "detail": "C2: on snow at right, holding a red berry branch, looking up"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 35 characters entry form/len",
+   "pass": true,
+   "detail": "C3: group in background walking forward, front four holding "
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 36 setting <= 30 words",
+   "pass": true,
+   "detail": "25"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 36 props <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 36 action <= 60 words",
+   "pass": true,
+   "detail": "51"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 36 camera <= 25 words",
+   "pass": true,
+   "detail": "23"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 36 light_mood <= 25 words",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 36 sound <= 25 words",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 36 characters entry form/len",
+   "pass": true,
+   "detail": "C1: lying in snow on left, eating berries, smiling contented"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 36 characters entry form/len",
+   "pass": true,
+   "detail": "C2: sitting on wooden planks in center, eating a berry"
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 36 characters entry form/len",
+   "pass": true,
+   "detail": "C3: crowd standing around in background."
+  },
+  {
+   "check": "caminandes3-L4-0000 shot 26 characters empty (all statements deleted as disputed)",
+   "pass": true,
+   "detail": "informational"
+  },
+  {
+   "check": "caminandes3-L4-0000 C1 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 C2 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 C3 fields/limits",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 characters.json covers every C label used",
+   "pass": true,
+   "detail": "set()"
+  },
+  {
+   "check": "caminandes3-L4-0000 synopsis sentence count == 5",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 synopsis: single paragraph",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 synopsis no C label / digits / shot-camera words",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-rich no scene/group fields or words",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-rich no film/character proper names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/budget.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/spec.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/tools.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/README.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/task.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/input/synopsis.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/input/shotlist.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/input/script.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/input/characters.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/input/references/place_P1.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/input/references/manifest.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/input/references/place_P4.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/input/references/character_C2.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/input/references/place_P3.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/input/references/place_P2.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/input/references/character_C3.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich/input/references/character_C1.png allowed file type",
+   "pass": true,
+   "detail": ".png"
+  },
+  {
+   "check": "caminandes3-L4-0000-rich no answer-file names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000-syn/budget.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L4-0000-syn/spec.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L4-0000-syn/tools.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L4-0000-syn/README.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L4-0000-syn/task.json allowed file type",
+   "pass": true,
+   "detail": ".json"
+  },
+  {
+   "check": "caminandes3-L4-0000-syn/input/synopsis.md allowed file type",
+   "pass": true,
+   "detail": ".md"
+  },
+  {
+   "check": "caminandes3-L4-0000-syn/input/script.csv allowed file type",
+   "pass": true,
+   "detail": ".csv"
+  },
+  {
+   "check": "caminandes3-L4-0000-syn no answer-file names",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image character_C1.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image character_C1.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image character_C1.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image character_C2.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image character_C2.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image character_C2.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image character_C3.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image character_C3.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image character_C3.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image place_P1.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image place_P1.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image place_P1.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image place_P2.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image place_P2.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image place_P2.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image place_P3.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image place_P3.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image place_P3.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image place_P4.png sha matches manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image place_P4.png provenance passed (>10) and no media in request",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 image place_P4.png vision check passed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "caminandes3-L4-0000 all images in dir listed in manifest",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "no master-derived media in packages",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

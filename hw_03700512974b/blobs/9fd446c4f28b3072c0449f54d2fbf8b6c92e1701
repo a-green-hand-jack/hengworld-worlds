@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0032",
+  "start": 104.04,
+  "end": 105.08,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.04,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 32,
+   "start": 0.0,
+   "end": 1.04,
+   "description": "Wide shot of an eyeball creature looking up, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.04
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0032-scr",
+ "descriptions_available": true
+}

@@ -1,0 +1,12 @@
+# Decisions taken by task-maker (each is applied by a script; the record is the data named)
+
+1. **pHash variant**: median threshold over all 64 coefficients incl. DC (variants tried in `scripts/verify_phash.py`; mean-based variants gave 0.74 / 0.95 bit agreement). Evidence: `checks/phash_verification_caminandes3.txt`.
+2. **Continuity input** of shot k's draft = the previous shot's *draft* detailed description (not the resolved one) so drafts can run in sequence first and checks in parallel afterwards. First attempt (sequential, resolved text) was stopped after shot 0-12 and is superseded; its calls are in the log.
+3. **Quotes must be whole phrases**: the checker is told to quote complete clauses so that deleting a disputed statement leaves grammatical text; `scripts/resolve.py:delete_quote` additionally removes function words left dangling. The earlier film-table run (before this rule) is in `/hutian/work/attempt0` (not kept; its calls are not in the log).
+4. **Which text is deleted**: only quotes from the second (recheck) pass, after one drafter rewrite, as the protocol says; a quote not found in the text leaves the text unchanged and is logged.
+5. **Sound column** is checked by qwen3.5-omni-plus (audio + the first 3 frames); the other columns by qwen3.5-plus on frames.
+6. **Sentence corrections** are done for shots where both models say contradicted, or where the film table reassigned a label (mixed ids: C1->C2 in 8 shots); drafter rewrite, checker must say `matches`; two tries.
+7. **Synopsis**: see questions 5 and 6 and `annotations/caminandes3/superseded/README.md`.
+8. **Format repair** (`scripts/s2b_repair.py`): five shots whose final `characters` entries broke the 'C<n>: ...' / 25-word rule after resolution got one drafter fix call and a recheck (the first validator split on ';' wrongly).
+9. **Package README for -ref/-scr**: -scr packages are full copies with the new README (and the corrected shotlist); -ref packages contain only the new README.md (their input stays in the dataset).
+10. **Package manifest** omits the film id and where in the original the nearest hash was found (the full manifest in `references/` keeps them).

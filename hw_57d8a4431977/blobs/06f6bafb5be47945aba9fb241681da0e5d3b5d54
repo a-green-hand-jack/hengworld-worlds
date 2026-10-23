@@ -1,0 +1,76 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0005",
+  "start": 80.125,
+  "end": 114.5,
+  "shots": 8,
+  "lines": 0
+ },
+ "duration": 34.375,
+ "cuts": [
+  3.333,
+  6.042,
+  9.208,
+  12.917,
+  16.542,
+  21.667,
+  23.625
+ ],
+ "shots": [
+  {
+   "index": 26,
+   "start": 0.0,
+   "end": 3.333,
+   "description": "Medium shot of a creature running through the air, tracking shot."
+  },
+  {
+   "index": 27,
+   "start": 3.333,
+   "end": 6.042,
+   "description": "Medium shot of creature running, static."
+  },
+  {
+   "index": 28,
+   "start": 6.042,
+   "end": 9.208,
+   "description": "Medium shot of C1 tumbling past C2, static camera."
+  },
+  {
+   "index": 29,
+   "start": 9.208,
+   "end": 12.917,
+   "description": "Close-up of C1 looking terrified while falling through the air, static."
+  },
+  {
+   "index": 30,
+   "start": 12.917,
+   "end": 16.542,
+   "description": "Long shot of an animal rolling through a snowy landscape, panning left."
+  },
+  {
+   "index": 31,
+   "start": 16.542,
+   "end": 21.667,
+   "description": "Medium shot of C1 lying on snow while C2 stands on C1's back, static."
+  },
+  {
+   "index": 32,
+   "start": 21.667,
+   "end": 23.625,
+   "description": "Wide shot of C1 sliding on snow, static."
+  },
+  {
+   "index": 33,
+   "start": 23.625,
+   "end": 34.375,
+   "description": "Extreme close-up of C1 standing on a snowy cliff edge, zoom out."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 34.375
+  }
+ ]
+}

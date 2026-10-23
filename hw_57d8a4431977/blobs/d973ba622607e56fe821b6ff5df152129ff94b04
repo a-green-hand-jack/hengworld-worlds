@@ -1,0 +1,46 @@
+{
+  "assignment_schema": 1,
+  "objective": "CrewCut stage B: 6 dev films, all 598 dev tasks, systems {fixed, Claude Code, Codex, Antigravity CLI} singles (B1) then crews (B2), 1 run each, T0 (T1 smoke on fixed only).",
+  "items": [
+    {
+      "owner": "steward",
+      "paths": [
+        "protocol/"
+      ],
+      "work": "Brief (objective quotes, protocol items with document and place, maintainer's decisions); this assignment; protocol/gaps.md; answers to protocol questions; HuTian issue material (protocol/hutian-issue-material.md) from executor's sandbox-failure records; reads the budget gate (USD 1,500) and raises a stop to the maintainer."
+    },
+    {
+      "owner": "curator",
+      "paths": [
+        "corpus/"
+      ],
+      "work": "Objective req 1 (Breakdown inputs) for all six dev films: find, read licence, fetch each pinned master from source and verify SHA-256 per configs/films.yaml (df54b3a); backup only if unobtainable (only Caminandes 3 has one), recorded; every admit/reject as a decision with evidence; Sherlock Jr. has no page in CFG (gap G10); stage A adaptations carry over."
+    },
+    {
+      "owner": "task-maker",
+      "paths": [],
+      "work": "Objective req 1 and 2: for all six films shots, dialogue, hierarchy, descriptions (gemini-3.5-flash-lite, temp 0, id pinned, parameters recorded), fingerprints, answer-key-free task packages (598 tasks), key apart; comparison inputs with d509bed; double rebuild byte-identical; T0/T1 tool server with fixed prices refusing original inputs; price table from official pages with query date and source, one check against CrewCut Issue #13; adaptations as data; own cost ledger and not-run list. Layout: data/<film>/, packages/ (published, no key), key/ (scorer/auditor only), decisions/, costs/ (prices.json), commands+checks. Supplies prices and original-film fingerprints to executor's tool server; does not build the server."
+    },
+    {
+      "owner": "executor",
+      "paths": [
+        "runs/"
+      ],
+      "work": "Objective req 3: run each system (fixed, Claude Code, Codex, Antigravity CLI singles; then the three crews) on published packages only, 1 run per task, T0 (T1 smoke on fixed only), uniform production logs and deliverables, metered model calls, subscription $ marked nominal; Coffee Run first with per-minute cost per system; failures and sandbox-access phenomena recorded (command, error, time stream) without workaround; cost record; not-run list; export-ready trajectories (by run id). Builds and operates the single tool server (fixed prices read from task-maker's costs/prices.json, refusal of inputs matching task-maker's fingerprints of the original); batch order: B1 = Coffee Run first for every system (per-minute cost), then remaining films; B2 after B1 audit; failures recorded as not run."
+    },
+    {
+      "owner": "scorer",
+      "paths": [
+        "scores/"
+      ],
+      "work": "Objective req 4: Q and each c and $ item for every run by the protocol's measures; judge qwen3-vl-plus temp 0; small check that the judge separates right from wrong descriptions; S, speaker purity and character purity marked not run; per-system per-task R, per-minute cost table by purpose, B2 single-vs-crew table; judge cost record; export-ready results."
+    },
+    {
+      "owner": "auditor",
+      "paths": [
+        "audit/"
+      ],
+      "work": "Objective req 3 and 5 plus summary checks: item-by-item comparison of all six films with d509bed with every difference explained; independent reproduction per batch; check of run records against the protocol; cost report vs USD 1,500 and stop condition; credential/host-path/account-endpoint scan of the two export directories; approval."
+    }
+  ]
+}

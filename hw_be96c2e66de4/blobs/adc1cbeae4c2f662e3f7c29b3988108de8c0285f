@@ -1,0 +1,43 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0006",
+  "start": 303.069,
+  "end": 317.217,
+  "shots": 3,
+  "lines": 0
+ },
+ "duration": 14.148,
+ "cuts": [
+  1.502,
+  6.34
+ ],
+ "shots": [
+  {
+   "index": 29,
+   "start": 0.0,
+   "end": 1.502,
+   "description": "Extreme close-up of title card displaying dialogue, static."
+  },
+  {
+   "index": 30,
+   "start": 1.502,
+   "end": 6.34,
+   "description": "Medium shot of C1 sitting and looking to the side nervously, static camera."
+  },
+  {
+   "index": 31,
+   "start": 6.34,
+   "end": 14.148,
+   "description": "Medium shot of C1 sitting, then turning their head, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 14.148
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0006-ref",
+ "descriptions_available": true
+}

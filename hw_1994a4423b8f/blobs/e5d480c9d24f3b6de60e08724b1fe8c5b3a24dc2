@@ -1,0 +1,1 @@
+{"purpose": "shot-description", "ts": 1792586139.490793, "model_requested": "gemini-3.8-flash", "model_reported": "gemini-3.8-flash", "max_tokens": 120, "finish_reason": "length", "usage": {"completion_tokens": 1, "prompt_tokens": 3386, "total_tokens": 3502, "completion_tokens_details": null, "prompt_tokens_details": null}, "reply": "A"}

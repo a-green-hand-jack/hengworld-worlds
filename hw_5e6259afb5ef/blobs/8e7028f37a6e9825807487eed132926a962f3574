@@ -1,0 +1,29 @@
+You write the detailed shot description for one shot of a short film, so that it can be remade from text. You see the shot's frames in time order and its audio. Reply with ONE JSON object: {"setting": "place, indoor/outdoor, time, weather and surroundings; at most 30 words; call the place by the name given in the places list", "characters": "format 'C1: ...; C2: ...', for each character visible in the shot its position, clothing/held items and expression changes in this shot; at most 25 words per character; the basic appearance is already in the character list, so write only what differs from it", "props": "important objects; at most 25 words", "action": "what happens in order; at most 60 words", "camera": "shot size, angle, camera movement and composition changes; at most 25 words", "light_mood": "lighting, colour tone and mood; at most 25 words", "sound": "ambient sound, effects, music or silence; at most 25 words", "description_consistent": true or false (does the given one-sentence description agree with the frames), "description_note": "why, if not"}
+Rules: write only facts that can be confirmed in the frames or audio; do not guess; use the C labels of the character list; no proper names, no film title; no scene numbers, no grouping of shots, no mention of other shots or of frames.
+
+Overall look: 3D CGI animated cartoon style with exaggerated facial expressions, bright daylight in snowy mountain landscapes, and dark blue-lit underground mine caves.
+Characters:
+C1: a guanaco (llama). Slender, long-necked quadruped with orange-brown fur, dark brown muzzle, long ears, and huge bulging eyes.
+C2: a baby penguin. Small, round, fluffy bird with a grey-black back and head, white belly, small beak, and large white eyes with dark pupils.
+C3: adult penguins. Medium-sized black and white penguins with distinct black and white facial bands, holding large bunches of red berries.
+Places:
+P1: Frozen pond and snowy field. A snowy plain with a frozen blue puddle, a wire fence with wooden posts, and distant snowy mountains.
+P2: Railroad tracks. Steel train tracks on wooden ties and gravel cutting through a snowy landscape with an oil pumpjack in the background.
+P3: Underground mine. A dark, cavernous underground mine with blue ambient lighting, rocky walls, wooden support beams, and steep minecart tracks.
+P4: Mountain slope and rocky peaks. A high, steep snowy mountain area with jagged rocky peaks covered in snow and ice.
+
+Previous shot's detailed description (for continuity only; describe THIS shot from its own frames):
+{"setting": "P1: Frozen pond and snowy field. Outdoor, bright daytime. A snowy plain with rocks, a wire fence with wooden posts, and a snowy hill in the background.", "characters": "C1: standing in the left foreground facing forward, wide-eyed and chewing, then turning its head slightly to look forward with a confused expression.", "props": "", "action": "C1 stands in the snow, looking slightly to the right while chewing slowly, then turns its head to look straight ahead as its jaw drops slightly.", "camera": "Medium close-up at eye level, static camera.", "light_mood": "Bright, clear daylight with cool blue and white snow tones contrasting with C1's warm orange fur; comical, bewildered mood.", "sound": "Distant train chugging, a soft animal vocalization, and dramatic, swelling orchestral music."}
+
+Shot 5 one-sentence description: Medium shot of C1 standing on train tracks with a flower as a train approaches, static.
+
+Frames (4):
+[frame 1 at 37.33s]
+IMG:54e6cad92834694723eea8edcf19449590fb3e6a0dd03f3a630ad6813af5325e
+[frame 2 at 37.88s]
+IMG:e6eb8c2306b40f10b5bed4a05084c6bc5cd66fc66958d5763564d81ff1c1ae08
+[frame 3 at 38.42s]
+IMG:fab82fab7e20ec20a6097c344259b6240050b721c489cfa2b19db11644518fef
+[frame 4 at 38.96s]
+IMG:a08b348c73277afb5746a96c204c53152231bc42097974e65cdd676d70c8a8fb
+AUD:0480fa62c36d0fd23751027764802724b651a426f504ceb6f1009248d29dd53c

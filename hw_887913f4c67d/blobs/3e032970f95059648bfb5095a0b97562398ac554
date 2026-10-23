@@ -1,0 +1,56 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0003",
+  "start": 56.583,
+  "end": 70.083,
+  "shots": 5,
+  "lines": 0
+ },
+ "duration": 13.5,
+ "cuts": [
+  0.0,
+  5.667,
+  9.834,
+  10.834,
+  11.417
+ ],
+ "shots": [
+  {
+   "index": 15,
+   "start": 0.0,
+   "end": 5.667,
+   "description": "Medium close-up of a mammal waking up and looking around, static."
+  },
+  {
+   "index": 16,
+   "start": 5.667,
+   "end": 9.834,
+   "description": "Medium shot of C1 riding in a minecart, static camera."
+  },
+  {
+   "index": 17,
+   "start": 9.834,
+   "end": 10.834,
+   "description": "Medium shot of a creature looking towards something while another creature is holding a bunch of berries, static."
+  },
+  {
+   "index": 18,
+   "start": 10.834,
+   "end": 11.417,
+   "description": "Establishing shot of a minecart track plunging down a cave, camera tracks forward rapidly."
+  },
+  {
+   "index": 19,
+   "start": 11.417,
+   "end": 13.5,
+   "description": "Medium shot of a creature riding a minecart through a cave, tracking forward."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 13.5
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+Here is your detailed description of shot 26:
+{"setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime high in the air above snow-covered jagged mountain peaks under a blue sky.", "characters": "C1: flying in mid-air from lower left toward the camera, initially squinting and blinking, then opening eyes wide with an excited open-mouthed grin.", "props": "A large bunch of red berries on a green stem floating in the foreground.", "action": "C1 soars through the air toward the foreground, blinks its large eyes, and then falls slightly backward into the lower-left distance with a wide, eager smile while reaching its front hooves toward a bunch of red berries drifting into the upper-right foreground.", "camera": "Close-up on C1's face pulling back to a wide shot as the berries enter the foreground on the right; high angle looking slightly down.", "light_mood": "Bright, clear daylight with cool blue and white mountain tones contrasted by warm orange fur and vibrant red berries; comedic, triumphant mood.", "sound": "Rushing wind, a comedic vocal groan from C1, and triumphant, fast-paced orchestral brass and string music resuming."}
+An independent checker looking at the same frames flagged:
+- characters: 'flying in mid-air from lower left toward the camera' -> contradicted
+- action: 'C1 soars through the air toward the foreground' -> unsupported
+Rewrite the whole JSON (same keys, same limits, no description_* keys needed) so that every statement is confirmed by the frames or audio. Reply with JSON only.
+
+Frames:
+[frame 1 at 80.79s]
+IMG:f345d46f09684637b841bd716a51a903a9d6d04a51d04e55458c0cd1196088bb
+[frame 2 at 81.46s]
+IMG:1648206ec7a3afb2d1a3bfe2bf8315ea173aa52ab284cf09649c121cab564f1b
+[frame 3 at 82.12s]
+IMG:062a896a4a9679acf36fe332b26cafbe9bc04f508444416965445372d72a2ca1
+[frame 4 at 82.79s]
+IMG:b24fd401eca2a02f4c024ff33ecfde9519e2808026c6fb0619324ccf619e0af6
+AUD:e063c8ad166d2836d982a6c4bcf927ce32130b9dd2275cb9616da1c3e16852e2

@@ -1,0 +1,134 @@
+{
+ "queried": "2026-10-22",
+ "total_usd_sample": 2.8634,
+ "calls": 324,
+ "shots_in_sample": 37,
+ "avg_per_shot_draft_check_resolve_usd": 0.03512,
+ "avg_per_reference_image_incl_attempts_and_vision_check_usd": 0.06777,
+ "reference_images_generated_calls": 9,
+ "film_table_usd": 0.1928,
+ "description_corrections_usd": 0.43952,
+ "avg_per_synopsis_usd": 0.05361,
+ "synopsis_fit": {
+  "a_fixed": 0.02336,
+  "b_per_shot": 0.001815,
+  "points": {
+   "caminandes3-L1-0001": 0.03054,
+   "caminandes3-L1-0005": 0.04473,
+   "caminandes3-L2-0002": 0.04829,
+   "caminandes3-L2-0004": 0.01928,
+   "caminandes3-L3-0000": 0.11038,
+   "caminandes3-L4-0000": 0.06845
+  }
+ },
+ "extrapolation_formula": "603*shot_avg + 6*(film_table + n_images_per_film*img_avg) + 603*(corrections/shots_in_sample) + sum over the 299 dev segments of (a + b*n_shots); n_images_per_film taken as the sample's (7 here)",
+ "extrapolated_total_usd_6_films": 43.4,
+ "cap_usd": 30,
+ "within_cap": false,
+ "excess_usd": 13.4,
+ "not_included": "auditor's re-check calls; each separately reported by the auditor; the cap covers all of them together",
+ "notes": "omni: audio tokens at the audio rate, rest at the text/image rate; gemini-4-argon audio input priced at the text/image rate (page lists one input price); prices & sources in scripts/prices.json",
+ "sample_cost_by_purpose": {
+  "description-confirm": {
+   "calls": 36,
+   "usd": 0.049
+  },
+  "description-rewrite": {
+   "calls": 36,
+   "usd": 0.3905
+  },
+  "film-table-check": {
+   "calls": 1,
+   "usd": 0.0045
+  },
+  "film-table-draft": {
+   "calls": 1,
+   "usd": 0.0907
+  },
+  "film-table-recheck": {
+   "calls": 1,
+   "usd": 0.0058
+  },
+  "film-table-rewrite": {
+   "calls": 1,
+   "usd": 0.0918
+  },
+  "reference-image": {
+   "calls": 9,
+   "usd": 0.603
+  },
+  "reference-image-check": {
+   "calls": 9,
+   "usd": 0.007
+  },
+  "shot-detail-check": {
+   "calls": 55,
+   "usd": 0.2323
+  },
+  "shot-detail-draft": {
+   "calls": 38,
+   "usd": 0.5489
+  },
+  "shot-detail-formatfix": {
+   "calls": 5,
+   "usd": 0.0581
+  },
+  "shot-detail-lengthfix": {
+   "calls": 1,
+   "usd": 0.0139
+  },
+  "shot-detail-rewrite": {
+   "calls": 26,
+   "usd": 0.313
+  },
+  "shot-sound-check": {
+   "calls": 59,
+   "usd": 0.1332
+  },
+  "synopsis-check": {
+   "calls": 10,
+   "usd": 0.0633
+  },
+  "synopsis-check2": {
+   "calls": 12,
+   "usd": 0.0864
+  },
+  "synopsis-draft": {
+   "calls": 5,
+   "usd": 0.024
+  },
+  "synopsis-draft2": {
+   "calls": 6,
+   "usd": 0.0419
+  },
+  "synopsis-fix": {
+   "calls": 2,
+   "usd": 0.0062
+  },
+  "synopsis-narrow2": {
+   "calls": 2,
+   "usd": 0.0313
+  },
+  "synopsis-rewrite": {
+   "calls": 5,
+   "usd": 0.0274
+  },
+  "synopsis-rewrite2": {
+   "calls": 4,
+   "usd": 0.041
+  }
+ },
+ "extrapolation_parts_usd": {
+  "shots 603 x 0.03512": 21.18,
+  "one-sentence corrections 603 x 0.01188 (sample: 28 of 37 shots needed one)": 7.16,
+  "film tables+images 6 x (0.1928 + 9 x 0.0678)": 4.82,
+  "synopses: sum over the 299 dev segments of (0.02336 + 0.001815 x n_shots)": 10.24
+ },
+ "extrapolation_sum_check": 43.4,
+ "compression_options_for_maintainer": [
+  "fewer frames per shot (n is 4..8 now; the image tokens of draft and check are the largest line)",
+  "share one synopsis between L3 and L4 of a film (same shots)",
+  "measure the one-sentence correction rate on a second film before budgeting (28/37 here)",
+  "skip the audio check for shots whose audio is silent (already skipped) "
+ ]
+}

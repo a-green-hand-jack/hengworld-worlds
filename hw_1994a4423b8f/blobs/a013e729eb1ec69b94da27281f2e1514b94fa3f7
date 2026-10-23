@@ -1,0 +1,12 @@
+"""Second wrong-description check: description rotated by two (shot i judged with the description of shot i+2)."""
+import json, os, sys
+from pathlib import Path
+task, master, out, model = sys.argv[1:5]
+out = Path(out)
+sys.path.insert(0, str(Path(__file__).parent))
+os.environ["JUDGE_LEDGER"] = str(out / "judge_ledger_check2.jsonl"); os.environ["JUDGE_PURPOSE"] = "judge-check wrong description (shift 2)"
+import judge_adapted as A
+truth = json.loads((Path(task) / "truth.json").read_text())["shots"]
+j = A.AdaptedJudge(Path(master), model)
+rows = [{"check": "wrong description shift 2", "shot": i, "verdict": j(truth[(i + 2) % 3]["description"], s["start"], s["end"])} for i, s in enumerate(truth)]
+(out / "judge_check2.json").write_text(json.dumps(rows, indent=1)); print(rows)

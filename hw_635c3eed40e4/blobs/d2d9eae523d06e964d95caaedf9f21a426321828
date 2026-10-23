@@ -1,0 +1,5 @@
+export TOOLSERVICE_DIR=/hutian/deliv/d4/toolservice FP_DIR=/hutian/deliv/d3/annotations
+# endpoints/tokens are read by ToolService only (pipeline code never touches a key)
+export TOOLSERVICE_ENDPOINT=$(ht-resource url gemini) TOOLSERVICE_NATIVE_ENDPOINT=$(ht-resource url gemini-native)
+export TOOLSERVICE_TOKEN=$HT_RESOURCE_TOKEN TOOLSERVICE_NATIVE_TOKEN=$HT_RESOURCE_TOKEN
+export PATH=/hutian/.venv/bin:$PATH

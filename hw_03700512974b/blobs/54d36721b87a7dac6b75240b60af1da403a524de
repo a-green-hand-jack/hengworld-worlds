@@ -1,0 +1,214 @@
+{
+ "candidates": [
+  {
+   "film_id": "caminandes3",
+   "decision": "admit",
+   "reason": "Licence permits derivatives (no NC/ND per objective table and evidence); master matches pinned SHA-256.",
+   "licence": "CC BY 3.0",
+   "rights_evidence": [
+    {
+     "url": "https://archive.org/metadata/CaminandesLlamigos",
+     "quote": "licenseurl: http://creativecommons.org/licenses/by/3.0/ ; creator: Blender Foundation"
+    }
+   ],
+   "rights_note": "Only the archive.org page was read; no second site found (Commons lookup under a guessed title returned missing).",
+   "artifact_chosen": {
+    "url": "https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv",
+    "size": 11872682,
+    "sha256": "028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f",
+    "ext": "ogv",
+    "why": "exact file mandated by the objective"
+   },
+   "alternatives_passed_over": "Other files in the same item (e.g. 1080p mp4, \"Coffee Run.mp4\", \"My Movie.mp4\", full-size transcodes) not used: the objective pins this file.",
+   "source_location": "https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv",
+   "fetch_check": {
+    "command": "corpus/fetch_verify.sh OUTDIR",
+    "result": "PASS",
+    "http": "http=200",
+    "size": "size=11872682/11872682",
+    "sha256_computed": "028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f",
+    "fetched_at": "2026-10-22T03:44:31Z"
+   },
+   "release_asset": "release masters-v1 of world/curator: caminandes3.ogv",
+   "decided_by": "curator",
+   "decided_on": "2026-10-22",
+   "used_by": "task-maker"
+  },
+  {
+   "film_id": "coffee_run",
+   "decision": "admit",
+   "reason": "Licence permits derivatives (no NC/ND per objective table and evidence); master matches pinned SHA-256.",
+   "licence": "CC BY 4.0",
+   "rights_evidence": [
+    {
+     "url": "https://archive.org/metadata/coffee-run",
+     "quote": "licenseurl: https://creativecommons.org/licenses/by-nd/4.0/ (uploader ecewan11@gmail.com: \"I am not endorsed by or affiliated with the Blender Foundation\")"
+    },
+    {
+     "url": "https://commons.wikimedia.org/wiki/File:Coffee_Run_-_Blender_Open_Movie-full_movie.webm (API extmetadata)",
+     "quote": "LicenseShortName: CC BY 4.0; UsageTerms: Creative Commons Attribution 4.0; Artist: Blender Foundation"
+    }
+   ],
+   "rights_note": "LICENCE CONFLICT between sites: the archive.org item (third-party uploader) is tagged CC BY-ND 4.0; Wikimedia Commons (artist Blender Foundation) says CC BY 4.0. Per the objective the table (CC BY 4.0) prevails, so admitted on that basis; flagged to steward because the pinned file is the ND-tagged archive.org one. Attribution: Blender Foundation.",
+   "artifact_chosen": {
+    "url": "https://archive.org/download/coffee-run/Coffee%20Run.ia.mp4",
+    "size": 17475695,
+    "sha256": "f40ce7f497b2f56e6a672cea6ef15d191da3d19bd61aeed5d3730e5d73f6aebf",
+    "ext": "mp4",
+    "why": "exact file mandated by the objective"
+   },
+   "alternatives_passed_over": "Other files in the same item (e.g. 1080p mp4, \"Coffee Run.mp4\", \"My Movie.mp4\", full-size transcodes) not used: the objective pins this file.",
+   "source_location": "https://archive.org/download/coffee-run/Coffee%20Run.ia.mp4",
+   "fetch_check": {
+    "command": "corpus/fetch_verify.sh OUTDIR",
+    "result": "PASS",
+    "http": "http=200",
+    "size": "size=17475695/17475695",
+    "sha256_computed": "f40ce7f497b2f56e6a672cea6ef15d191da3d19bd61aeed5d3730e5d73f6aebf",
+    "fetched_at": "2026-10-22T03:44:38Z"
+   },
+   "release_asset": "release masters-v1 of world/curator: coffee_run.mp4",
+   "decided_by": "curator",
+   "decided_on": "2026-10-22",
+   "used_by": "task-maker"
+  },
+  {
+   "film_id": "spirit_chaser",
+   "decision": "admit",
+   "reason": "Licence permits derivatives (no NC/ND per objective table and evidence); master matches pinned SHA-256.",
+   "licence": "CC BY-SA 3.0",
+   "rights_evidence": [
+    {
+     "url": "https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata&titles=File:Karl_Pajak_-_Spirit_Chaser_(2016).webm",
+     "quote": "LicenseShortName: CC BY-SA 3.0; UsageTerms: Creative Commons Attribution-Share Alike 3.0; Artist: Karl Pajak; source Vimeo 166747691"
+    }
+   ],
+   "rights_note": "Share-alike: master and derived clips keep CC BY-SA 3.0.",
+   "artifact_chosen": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/ca/Karl_Pajak_-_Spirit_Chaser_%282016%29.webm/Karl_Pajak_-_Spirit_Chaser_%282016%29.webm.480p.vp9.webm",
+    "size": 13659889,
+    "sha256": "cce14605b8dc2fbe0593ca1207b8972d13676e3050bd6f48c92efd44f0013182",
+    "ext": "webm",
+    "why": "exact file mandated by the objective"
+   },
+   "alternatives_passed_over": "Other files in the same item (e.g. 1080p mp4, \"Coffee Run.mp4\", \"My Movie.mp4\", full-size transcodes) not used: the objective pins this file.",
+   "source_location": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/ca/Karl_Pajak_-_Spirit_Chaser_%282016%29.webm/Karl_Pajak_-_Spirit_Chaser_%282016%29.webm.480p.vp9.webm",
+   "fetch_check": {
+    "command": "corpus/fetch_verify.sh OUTDIR",
+    "result": "PASS",
+    "http": "http=200",
+    "size": "size=13659889/13659889",
+    "sha256_computed": "cce14605b8dc2fbe0593ca1207b8972d13676e3050bd6f48c92efd44f0013182",
+    "fetched_at": "2026-10-22T03:44:41Z"
+   },
+   "release_asset": "release masters-v1 of world/curator: spirit_chaser.webm",
+   "decided_by": "curator",
+   "decided_on": "2026-10-22",
+   "used_by": "task-maker"
+  },
+  {
+   "film_id": "domini_canes",
+   "decision": "admit",
+   "reason": "Licence permits derivatives (no NC/ND per objective table and evidence); master matches pinned SHA-256.",
+   "licence": "CC BY 3.0",
+   "rights_evidence": [
+    {
+     "url": "https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata&titles=File:Jakub_Bednarz_-_Domini_Canes_(2016).webm",
+     "quote": "LicenseShortName: CC BY 3.0; UsageTerms: Creative Commons Attribution 3.0; Artist: Jakub Bednarz (Kuba Tulobie); source Vimeo 155565051"
+    }
+   ],
+   "rights_note": "",
+   "artifact_chosen": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Jakub_Bednarz_-_Domini_Canes_%282016%29.webm/Jakub_Bednarz_-_Domini_Canes_%282016%29.webm.480p.vp9.webm",
+    "size": 18483687,
+    "sha256": "70b8515d4afc4a392644d315666583b4c83386f9cf50f3710fd228d92aa29586",
+    "ext": "webm",
+    "why": "exact file mandated by the objective"
+   },
+   "alternatives_passed_over": "Other files in the same item (e.g. 1080p mp4, \"Coffee Run.mp4\", \"My Movie.mp4\", full-size transcodes) not used: the objective pins this file.",
+   "source_location": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Jakub_Bednarz_-_Domini_Canes_%282016%29.webm/Jakub_Bednarz_-_Domini_Canes_%282016%29.webm.480p.vp9.webm",
+   "fetch_check": {
+    "command": "corpus/fetch_verify.sh OUTDIR",
+    "result": "PASS",
+    "http": "http=200",
+    "size": "size=18483687/18483687",
+    "sha256_computed": "70b8515d4afc4a392644d315666583b4c83386f9cf50f3710fd228d92aa29586",
+    "fetched_at": "2026-10-22T03:44:45Z"
+   },
+   "release_asset": "release masters-v1 of world/curator: domini_canes.webm",
+   "decided_by": "curator",
+   "decided_on": "2026-10-22",
+   "used_by": "task-maker"
+  },
+  {
+   "film_id": "sherlock_jr",
+   "decision": "admit",
+   "reason": "Licence permits derivatives (no NC/ND per objective table and evidence); master matches pinned SHA-256.",
+   "licence": "US public domain (published 1924, before 1931)",
+   "rights_evidence": [
+    {
+     "url": "https://archive.org/metadata/MyMovie_20190318",
+     "quote": "date: 1924; description: \"Release date May 11, 1924 ... Country United States ... Silent film, English intertitles\"; no licenseurl; uploader claims only fair use"
+    }
+   ],
+   "rights_note": "Work is PD by publication date. CAVEAT: the pinned .ogv carries a Vorbis audio track although the film is silent, so a score was added by the uploader and its rights are undocumented on the source page; unresolved, raised to steward as a maintainer question.",
+   "artifact_chosen": {
+    "url": "https://archive.org/download/MyMovie_20190318/My%20Movie.ogv",
+    "size": 170849579,
+    "sha256": "8931dc7b1dd72fababe7c48176774d01ade1f994c7c6cb3643c2fe1a0b7a7442",
+    "ext": "ogv",
+    "why": "exact file mandated by the objective"
+   },
+   "alternatives_passed_over": "Other files in the same item (e.g. 1080p mp4, \"Coffee Run.mp4\", \"My Movie.mp4\", full-size transcodes) not used: the objective pins this file.",
+   "source_location": "https://archive.org/download/MyMovie_20190318/My%20Movie.ogv",
+   "fetch_check": {
+    "command": "corpus/fetch_verify.sh OUTDIR",
+    "result": "PASS",
+    "http": "http=200",
+    "size": "size=170849579/170849579",
+    "sha256_computed": "8931dc7b1dd72fababe7c48176774d01ade1f994c7c6cb3643c2fe1a0b7a7442",
+    "fetched_at": "2026-10-22T03:45:00Z"
+   },
+   "release_asset": "release masters-v1 of world/curator: sherlock_jr.ogv",
+   "decided_by": "curator",
+   "decided_on": "2026-10-22",
+   "used_by": "task-maker"
+  },
+  {
+   "film_id": "trip_to_the_moon",
+   "decision": "admit",
+   "reason": "Licence permits derivatives (no NC/ND per objective table and evidence); master matches pinned SHA-256.",
+   "licence": "US public domain (published 1902, before 1931)",
+   "rights_evidence": [
+    {
+     "url": "https://archive.org/metadata/ATripToTheMoonGeorgeMelies",
+     "quote": "date: 1902; description: \"Silent film by George Méliès\"; no licenseurl"
+    }
+   ],
+   "rights_note": "Work is PD by publication date. CAVEAT: Vorbis audio track present in a silent film; added score rights undocumented; raised to steward.",
+   "artifact_chosen": {
+    "url": "https://archive.org/download/ATripToTheMoonGeorgeMelies/A%20Trip%20to%20the%20Moon-George%20M%C3%A9li%C3%A8s.ogv",
+    "size": 60618423,
+    "sha256": "084dc2ec7391f56a993cdda4ec9f385513d3c4a2f46fe9bb18875c5abb269fab",
+    "ext": "ogv",
+    "why": "exact file mandated by the objective"
+   },
+   "alternatives_passed_over": "Other files in the same item (e.g. 1080p mp4, \"Coffee Run.mp4\", \"My Movie.mp4\", full-size transcodes) not used: the objective pins this file.",
+   "source_location": "https://archive.org/download/ATripToTheMoonGeorgeMelies/A%20Trip%20to%20the%20Moon-George%20M%C3%A9li%C3%A8s.ogv",
+   "fetch_check": {
+    "command": "corpus/fetch_verify.sh OUTDIR",
+    "result": "PASS",
+    "http": "http=200",
+    "size": "size=60618423/60618423",
+    "sha256_computed": "084dc2ec7391f56a993cdda4ec9f385513d3c4a2f46fe9bb18875c5abb269fab",
+    "fetched_at": "2026-10-22T03:45:08Z"
+   },
+   "release_asset": "release masters-v1 of world/curator: trip_to_the_moon.ogv",
+   "decided_by": "curator",
+   "decided_on": "2026-10-22",
+   "used_by": "task-maker"
+  }
+ ],
+ "rejections": [],
+ "rejections_note": "The objective names exactly 6 films; no other candidates were considered, so there are no rejections."
+}

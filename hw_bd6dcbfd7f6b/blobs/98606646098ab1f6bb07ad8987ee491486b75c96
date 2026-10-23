@@ -1,0 +1,11 @@
+{
+ "decision": "Use gemini-3.8-flash for both the VLM (describe step) and the continuity judge, as the objective names. No fallback needed.",
+ "evidence": "GET /models lists models/gemini-3.8-flash; a chat completion with model gemini-3.8-flash returned HTTP 200, model_reported gemini-3.8-flash (record/gemini/*requests*.jsonl). Env: CREWCUT_VLM_* and CREWCUT_JUDGE_* point at the gemini resource.",
+ "note": "CrewCut's protocol asks the judge to come from a different vendor than the system's base model (benchmark.yaml); the evaluated system is the fixed pipeline with a placeholder generator (no base model), so no conflict arises this round. VLM and judge being the same model is not a CrewCut rule; whether it should be is the maintainer's (open item O7).",
+ "decided_by": "task-maker (agent)",
+ "date": "2026-10-21",
+ "affects": [
+  "shot descriptions",
+  "correspondence"
+ ]
+}

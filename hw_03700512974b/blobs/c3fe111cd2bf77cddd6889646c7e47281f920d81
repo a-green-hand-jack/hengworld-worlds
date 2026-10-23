@@ -1,0 +1,408 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L3-0003",
+  "start": 986.385,
+  "end": 1437.569,
+  "shots": 54,
+  "lines": 0
+ },
+ "duration": 451.184,
+ "cuts": [
+  2.57,
+  4.772,
+  6.607,
+  13.28,
+  16.617,
+  17.451,
+  26.36,
+  40.508,
+  48.616,
+  51.552,
+  65.533,
+  88.155,
+  94.962,
+  105.873,
+  118.485,
+  127.328,
+  164.164,
+  167.001,
+  189.223,
+  202.77,
+  212.246,
+  221.822,
+  224.224,
+  237.338,
+  252.019,
+  261.228,
+  282.382,
+  297.831,
+  313.313,
+  320.954,
+  341.375,
+  345.345,
+  347.581,
+  351.084,
+  354.688,
+  363.564,
+  366.133,
+  369.236,
+  374.975,
+  380.347,
+  386.019,
+  388.121,
+  390.958,
+  392.493,
+  396.663,
+  397.698,
+  401.101,
+  413.38,
+  416.75,
+  419.286,
+  428.562,
+  432.533,
+  435.302
+ ],
+ "shots": [
+  {
+   "index": 118,
+   "start": 0.0,
+   "end": 2.57,
+   "description": "Medium shot of C1 talking and raising an arm, static camera."
+  },
+  {
+   "index": 119,
+   "start": 2.57,
+   "end": 4.772,
+   "description": "Medium shot of C1 walking on the sidewalk outside a shop, static."
+  },
+  {
+   "index": 120,
+   "start": 4.772,
+   "end": 6.607,
+   "description": "Medium shot of C1 moving their hand away from their face, static."
+  },
+  {
+   "index": 121,
+   "start": 6.607,
+   "end": 13.28,
+   "description": "Medium shot of C1 standing on the street smoking a cigarette, while C2 walks out of a shop in the background, static camera."
+  },
+  {
+   "index": 122,
+   "start": 13.28,
+   "end": 16.617,
+   "description": "Medium shot of C1 operating a movie projector, static."
+  },
+  {
+   "index": 123,
+   "start": 16.617,
+   "end": 17.451,
+   "description": "Wide shot of an audience sitting in a cinema, static."
+  },
+  {
+   "index": 124,
+   "start": 17.451,
+   "end": 26.36,
+   "description": "Wide shot of an audience watching a movie, static."
+  },
+  {
+   "index": 125,
+   "start": 26.36,
+   "end": 40.508,
+   "description": "Medium shot of C1 rubbing his eye and falling asleep, static."
+  },
+  {
+   "index": 126,
+   "start": 40.508,
+   "end": 48.616,
+   "description": "Long shot of C1 standing on stage, speaking. Static shot."
+  },
+  {
+   "index": 127,
+   "start": 48.616,
+   "end": 51.552,
+   "description": "Medium shot of C1 and C2 standing on a movie screen, with C1 winking, static camera."
+  },
+  {
+   "index": 128,
+   "start": 51.552,
+   "end": 65.533,
+   "description": "Medium shot of C1 sleeping on a stool, and C2 rising from a seated position and walking left, static camera."
+  },
+  {
+   "index": 129,
+   "start": 65.533,
+   "end": 88.155,
+   "description": "Medium close-up of C1 and C2 talking to each other, static camera."
+  },
+  {
+   "index": 130,
+   "start": 88.155,
+   "end": 94.962,
+   "description": "Medium shot of C1 standing in front of a mirror and C2 leaning his head against a wall while facing away, static camera."
+  },
+  {
+   "index": 131,
+   "start": 94.962,
+   "end": 105.873,
+   "description": "Medium shot of C1 standing in a room while C2 walks up the stairs, static camera."
+  },
+  {
+   "index": 132,
+   "start": 105.873,
+   "end": 118.485,
+   "description": "Medium shot of C1 wearing a hat, static."
+  },
+  {
+   "index": 133,
+   "start": 118.485,
+   "end": 127.328,
+   "description": "Medium shot of C1 ghost walking away while C2 sleeps on a stool next to equipment, static."
+  },
+  {
+   "index": 134,
+   "start": 127.328,
+   "end": 164.164,
+   "description": "Wide shot of a cinema audience watching a film on screen, static."
+  },
+  {
+   "index": 135,
+   "start": 164.164,
+   "end": 167.001,
+   "description": "Medium shot of C1 sleeping, static camera."
+  },
+  {
+   "index": 136,
+   "start": 167.001,
+   "end": 189.223,
+   "description": "Long shot of the cinema audience watching a film, static."
+  },
+  {
+   "index": 137,
+   "start": 189.223,
+   "end": 202.77,
+   "description": "Medium shot of C1 taking off their jacket and entering a building, static camera."
+  },
+  {
+   "index": 138,
+   "start": 202.77,
+   "end": 212.246,
+   "description": "Wide shot of C1 performing acrobatics on a theatre stage, static camera."
+  },
+  {
+   "index": 139,
+   "start": 212.246,
+   "end": 221.822,
+   "description": "Wide shot of C1 watching film in cinema, static."
+  },
+  {
+   "index": 140,
+   "start": 221.822,
+   "end": 224.224,
+   "description": "Wide shot of C1 watching film on screen in cinema, static camera."
+  },
+  {
+   "index": 141,
+   "start": 224.224,
+   "end": 237.338,
+   "description": "Wide shot of a movie theatre auditorium looking at the screen displaying a man climbing a cliff, static."
+  },
+  {
+   "index": 142,
+   "start": 237.338,
+   "end": 252.019,
+   "description": "Long shot of C1 watching film on screen while playing piano, static camera."
+  },
+  {
+   "index": 143,
+   "start": 252.019,
+   "end": 261.228,
+   "description": "Wide shot of C1 getting up from the ground on the screen, static camera."
+  },
+  {
+   "index": 144,
+   "start": 261.228,
+   "end": 282.382,
+   "description": "Medium shot of C1 standing in a desert, static camera."
+  },
+  {
+   "index": 145,
+   "start": 282.382,
+   "end": 297.831,
+   "description": "Long shot of C1 standing on a rock in the sea, static."
+  },
+  {
+   "index": 146,
+   "start": 297.831,
+   "end": 313.313,
+   "description": "Medium shot of a movie screen showing a man stumbling and getting up, static camera."
+  },
+  {
+   "index": 147,
+   "start": 313.313,
+   "end": 320.954,
+   "description": "Wide shot of C1 watching a screen, static camera."
+  },
+  {
+   "index": 148,
+   "start": 320.954,
+   "end": 341.375,
+   "description": "Medium shot of C1 and C2 standing in a bedroom, C2 walking towards a door, zoom in."
+  },
+  {
+   "index": 149,
+   "start": 341.375,
+   "end": 345.345,
+   "description": "Medium shot of C1 taking an object out of a wall compartment and putting it down on a chair, static camera."
+  },
+  {
+   "index": 150,
+   "start": 345.345,
+   "end": 347.581,
+   "description": "Medium long shot of C1 and C2 walking, static."
+  },
+  {
+   "index": 151,
+   "start": 347.581,
+   "end": 351.084,
+   "description": "Medium shot of C1 standing in a room with two other people, static."
+  },
+  {
+   "index": 152,
+   "start": 351.084,
+   "end": 354.688,
+   "description": "Close-up of an intertitle displaying dialogue about stolen pearls, static."
+  },
+  {
+   "index": 153,
+   "start": 354.688,
+   "end": 363.564,
+   "description": "Medium shot of C1, C2, and another character standing near a staircase, static camera."
+  },
+  {
+   "index": 154,
+   "start": 363.564,
+   "end": 366.133,
+   "description": "Medium shot of C1 looking at C2, who is talking on the phone, static camera."
+  },
+  {
+   "index": 155,
+   "start": 366.133,
+   "end": 369.236,
+   "description": "Medium shot of C1 and C2 talking, static."
+  },
+  {
+   "index": 156,
+   "start": 369.236,
+   "end": 374.975,
+   "description": "Close-up of text showing dialogue, static."
+  },
+  {
+   "index": 157,
+   "start": 374.975,
+   "end": 380.347,
+   "description": "Medium shot of C1 standing and turning to C2, then walking away, static camera."
+  },
+  {
+   "index": 158,
+   "start": 380.347,
+   "end": 386.019,
+   "description": "Medium shot of C1 and C2 talking near a pool table, static."
+  },
+  {
+   "index": 159,
+   "start": 386.019,
+   "end": 388.121,
+   "description": "Close-up of C1 holding billiard balls, static."
+  },
+  {
+   "index": 160,
+   "start": 388.121,
+   "end": 390.958,
+   "description": "Close-up of C1 pointing to a billiard ball and then holding it, static camera."
+  },
+  {
+   "index": 161,
+   "start": 390.958,
+   "end": 392.493,
+   "description": "Close-up of C1 placing pool balls into a triangle, static."
+  },
+  {
+   "index": 162,
+   "start": 392.493,
+   "end": 396.663,
+   "description": "Medium shot of C1 standing in a library, looking up with objects in hand. C2 enters the frame and stands beside C1 as C1 turns to place the objects back onto a bookshelf, static camera."
+  },
+  {
+   "index": 163,
+   "start": 396.663,
+   "end": 397.698,
+   "description": "Wide shot of a sapling shaking in the wind, static camera."
+  },
+  {
+   "index": 164,
+   "start": 397.698,
+   "end": 401.101,
+   "description": "Medium shot of an explosion billow smoke, static camera."
+  },
+  {
+   "index": 165,
+   "start": 401.101,
+   "end": 413.38,
+   "description": "Medium shot of C1 and C2 standing indoors, talking and gesturing; static camera."
+  },
+  {
+   "index": 166,
+   "start": 413.38,
+   "end": 416.75,
+   "description": "Medium shot of C1 and C2 conversing indoors, static."
+  },
+  {
+   "index": 167,
+   "start": 416.75,
+   "end": 419.286,
+   "description": "Close-up of a hand pointing at a toy plough, static."
+  },
+  {
+   "index": 168,
+   "start": 419.286,
+   "end": 428.562,
+   "description": "Medium shot of C1 watching C2 pick up an axe, static."
+  },
+  {
+   "index": 169,
+   "start": 428.562,
+   "end": 432.533,
+   "description": "Close-up of C1 reaching for a doorknob, static."
+  },
+  {
+   "index": 170,
+   "start": 432.533,
+   "end": 435.302,
+   "description": "Medium shot of C1 and C2 standing next to each other and talking, static."
+  },
+  {
+   "index": 171,
+   "start": 435.302,
+   "end": 451.184,
+   "description": "Medium shot of C1 waiting by a door as it opens to reveal C2 standing outside, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 202.77
+  },
+  {
+   "start": 202.77,
+   "end": 313.313
+  },
+  {
+   "start": 313.313,
+   "end": 451.184
+  }
+ ],
+ "task_id": "sherlock_jr-L3-0003-scr",
+ "descriptions_available": true
+}

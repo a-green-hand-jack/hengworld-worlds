@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0014",
+  "start": 52.875,
+  "end": 56.583,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.708,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 14,
+   "start": 0.0,
+   "end": 3.708,
+   "description": "Medium shot of a deer and a penguin sitting in the snow, with the penguin holding up a small red berry and the deer reacting by looking down, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.708
+  }
+ ],
+ "task_id": "caminandes3-L0-0014-scr",
+ "descriptions_available": true
+}

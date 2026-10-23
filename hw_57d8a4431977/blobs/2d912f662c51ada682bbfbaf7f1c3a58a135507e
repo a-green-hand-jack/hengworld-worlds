@@ -1,0 +1,185 @@
+"""The CrewCut tool server: one MCP server through which every system reaches the generators.
+
+Started once per run by the runner (streamable HTTP, so a lead agent and all of its sub-agents
+share one server, one tool budget and one log). It exposes only the tools of the task's tier,
+meters each call with the prices in ``configs/tools.yaml``, writes a ``tool_call`` event to the
+production log, and enforces the clean-room rule at the source: a generator never receives a file
+from ``input/`` or any file whose bytes match the original clip.
+
+Every tool takes an optional ``actor`` argument so that crews can attribute calls to roles.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+import time
+from pathlib import Path
+
+import yaml
+
+from .backends import EXT, FFmpeg, REGISTRY, bill
+from .log import ProductionLog
+
+CONFIG_DIR = Path(__file__).resolve().parent.parent / "configs"
+TIERS = yaml.safe_load((CONFIG_DIR / "benchmark.yaml").read_text())["tiers"]
+
+GENERATORS = ("image.generate", "image.edit", "speech.synthesize", "music.generate", "sfx.generate", "video.generate")
+
+
+def load_tool_config(profile: str | None = None, path: Path | None = None) -> dict:
+    cfg = yaml.safe_load(Path(path or CONFIG_DIR / "tools.yaml").read_text())
+    tools = cfg["tools"]
+    if profile:
+        for name, override in cfg.get("profiles", {})[profile].items():
+            tools[name] = {**tools[name], **override}
+    return tools
+
+
+class ToolServer:
+    def __init__(self, sandbox: Path, tier: str, log: ProductionLog, tool_budget_usd: float,
+                 profile: str | None = None):
+        self.sandbox = Path(sandbox).resolve()
+        self.tier, self.log, self.budget = tier, log, tool_budget_usd
+        self.spent = 0.0
+        allowed = TIERS[tier]
+        tools = load_tool_config(profile)
+        self.tools = {n: c for n, c in tools.items() if allowed == "open" or n in allowed}
+        self.backends = {}
+        for n, c in self.tools.items():
+            cls = REGISTRY[c["backend"]]
+            self.backends[n] = cls(c, self.sandbox) if cls is FFmpeg else cls(c)
+        self.artefacts = self.sandbox / "artefacts" / "generated"
+        self.forbidden = self._forbidden_hashes()
+        self.tainted: set[Path] = set()   # files derived (by ffmpeg) from the original; generators refuse them too
+
+    def _forbidden_hashes(self) -> set[str]:
+        hs = set()
+        for p in (self.sandbox / "input").glob("*"):
+            if p.suffix.lower() in (".mp4", ".mov", ".mkv", ".webm", ".wav", ".mp3"):
+                hs.add(hashlib.sha256(p.read_bytes()).hexdigest())
+        return hs
+
+    def _resolve(self, p: str) -> Path:
+        q = (self.sandbox / p).resolve() if not os.path.isabs(p) else Path(p).resolve()
+        if self.sandbox not in q.parents:
+            raise PermissionError(f"{p} is outside the task directory")
+        return q
+
+    def _clean_room(self, tool: str, files: list[Path]) -> None:
+        if tool not in GENERATORS:
+            return
+        for f in files:
+            if (self.sandbox / "input") in f.parents or f in self.tainted or hashlib.sha256(f.read_bytes()).hexdigest() in self.forbidden:
+                raise PermissionError(f"clean-room rule: {f.name} comes from the original and cannot be given to a generator")
+
+    def call(self, tool: str, args: dict, actor: str = "agent") -> dict:
+        if tool not in self.tools:
+            raise ValueError(f"{tool} is not available in tier {self.tier}")
+        if self.spent >= self.budget:
+            self.log.write(actor, "tool_call", tool=tool, status="refused", detail={"reason": "tool budget exhausted"})
+            return {"error": f"tool budget of ${self.budget:.2f} is spent; deliver what you have"}
+        files = []
+        for k in ("image", "first_frame"):
+            if args.get(k):
+                q = self._resolve(args[k])
+                files.append(q)
+                args[k] = str(q)
+        if tool == "media.ffmpeg":
+            argv = args["args"] if isinstance(args["args"], list) else args["args"].split()
+            files = [self._resolve(a) for i, a in enumerate(argv) if i > 0 and argv[i - 1] == "-i" and "=" not in a]
+        try:
+            self._clean_room(tool, files)
+        except PermissionError as e:
+            self.log.write(actor, "tool_call", tool=tool, status="refused", inputs=[self._rel(f) for f in files],
+                           detail={"reason": str(e)})
+            return {"error": str(e)}
+        t0 = time.monotonic()
+        try:
+            res = self.backends[tool].call(tool, args, self.artefacts)
+        except Exception as e:  # report failures to the agent, keep them in the log
+            self.log.write(actor, "tool_call", tool=tool, status="error", inputs=[self._rel(f) for f in files],
+                           latency_s=round(time.monotonic() - t0, 3), detail={"error": str(e)[:500]})
+            return {"error": str(e)[:500]}
+        if tool == "media.ffmpeg" and any((self.sandbox / "input") in f.parents or f in self.tainted for f in files):
+            self.tainted.update(Path(o).resolve() for o in res.outputs)
+        cost = bill(res.units, self.tools[tool].get("price", {}))
+        self.spent += cost
+        ev = self.log.write(actor, "tool_call", tool=tool, inputs=[self._rel(f) for f in files],
+                            outputs=[self._rel(p) for p in res.outputs], cost_usd=cost,
+                            latency_s=round(time.monotonic() - t0, 3),
+                            detail={"args": {k: v for k, v in args.items() if k not in ("image", "first_frame")},
+                                    "units": res.units, **res.detail})
+        return {"outputs": [self._rel(p) for p in res.outputs], "cost_usd": cost,
+                "tool_budget_left_usd": round(self.budget - self.spent, 4), "event": ev.id}
+
+    def _rel(self, p: Path) -> str:
+        try:
+            return str(Path(p).resolve().relative_to(self.sandbox))
+        except ValueError:
+            return str(p)
+
+
+def mcp_app(server: ToolServer, host: str = "127.0.0.1", port: int = 8765):
+    """Wrap a :class:`ToolServer` as an MCP server (streamable HTTP at ``/mcp``)."""
+    from mcp.server.fastmcp import FastMCP
+
+    app = FastMCP("crewcut-tools", host=host, port=port,
+                  instructions="CrewCut generator tools. Paths are relative to the task directory. "
+                               "Generated files are written under artefacts/generated/.")
+
+    def add(name, fn, doc):
+        if name in server.tools:
+            app.add_tool(fn, name=name.replace(".", "_"), description=doc)
+
+    def image_generate(prompt: str, width: int = 1280, height: int = 720, seed: int | None = None, actor: str = "agent") -> str:
+        return json.dumps(server.call("image.generate", {"prompt": prompt, "width": width, "height": height, "seed": seed}, actor))
+
+    def image_edit(image: str, prompt: str, actor: str = "agent") -> str:
+        return json.dumps(server.call("image.edit", {"image": image, "prompt": prompt}, actor))
+
+    def speech_synthesize(text: str, voice: str, actor: str = "agent") -> str:
+        return json.dumps(server.call("speech.synthesize", {"text": text, "voice": voice}, actor))
+
+    def music_generate(prompt: str, duration_s: float, actor: str = "agent") -> str:
+        return json.dumps(server.call("music.generate", {"prompt": prompt, "duration_s": duration_s}, actor))
+
+    def sfx_generate(prompt: str, duration_s: float, actor: str = "agent") -> str:
+        return json.dumps(server.call("sfx.generate", {"prompt": prompt, "duration_s": duration_s}, actor))
+
+    def video_generate(prompt: str, duration_s: float = 5.0, first_frame: str | None = None, actor: str = "agent") -> str:
+        return json.dumps(server.call("video.generate", {"prompt": prompt, "duration_s": duration_s, "first_frame": first_frame}, actor))
+
+    def media_ffmpeg(args: list[str], actor: str = "agent") -> str:
+        return json.dumps(server.call("media.ffmpeg", {"args": args}, actor))
+
+    add("image.generate", image_generate, "Generate a still image from a text prompt. Returns the output path.")
+    add("image.edit", image_edit, "Edit an image you generated, following a text instruction.")
+    add("speech.synthesize", speech_synthesize, "Synthesize speech for one line with a named synthetic voice.")
+    add("music.generate", music_generate, "Generate music of a given length from a text prompt.")
+    add("sfx.generate", sfx_generate, "Generate a sound effect of a given length from a text prompt.")
+    add("video.generate", video_generate, "Generate a video clip (Wan 2.2, 720p), optionally from a first frame you generated.")
+    add("media.ffmpeg", media_ffmpeg, "Run ffmpeg with the given arguments on files inside the task directory.")
+    return app
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description="Run the CrewCut MCP tool server for one task sandbox.")
+    ap.add_argument("--sandbox", required=True)
+    ap.add_argument("--tier", default="T0")
+    ap.add_argument("--log", required=True)
+    ap.add_argument("--budget", type=float, required=True)
+    ap.add_argument("--run-id", default="manual")
+    ap.add_argument("--task-id", default="manual")
+    ap.add_argument("--profile", default=None)
+    ap.add_argument("--host", default="127.0.0.1")
+    ap.add_argument("--port", type=int, default=8765)
+    ap.add_argument("--transport", default="streamable-http", choices=["streamable-http", "stdio"])
+    a = ap.parse_args(argv)
+    srv = ToolServer(Path(a.sandbox), a.tier, ProductionLog(Path(a.log), a.run_id, a.task_id, a.tier), a.budget, a.profile)
+    mcp_app(srv, a.host, a.port).run(transport=a.transport)
+
+
+if __name__ == "__main__":
+    main()

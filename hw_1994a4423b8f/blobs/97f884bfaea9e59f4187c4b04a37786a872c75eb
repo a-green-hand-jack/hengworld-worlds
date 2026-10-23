@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/hutian/.venv/lib/python3.11/site-packages/crewcut/harness/toolserver.py", line 181, in <module>
+    main()
+  File "/hutian/.venv/lib/python3.11/site-packages/crewcut/harness/toolserver.py", line 176, in main
+    srv = ToolServer(Path(a.sandbox), a.tier, ProductionLog(Path(a.log), a.run_id, a.task_id, a.tier), a.budget, a.profile)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/hutian/.venv/lib/python3.11/site-packages/crewcut/harness/toolserver.py", line 45, in __init__
+    allowed = benchmark()["tiers"][tier]
+              ^^^^^^^^^^^
+  File "/hutian/.venv/lib/python3.11/site-packages/crewcut/config.py", line 16, in benchmark
+    return yaml.safe_load(Path(path or CONFIG_DIR / "benchmark.yaml").read_text())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/pathlib.py", line 1059, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/pathlib.py", line 1045, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/hutian/.venv/lib/python3.11/site-packages/configs/benchmark.yaml'

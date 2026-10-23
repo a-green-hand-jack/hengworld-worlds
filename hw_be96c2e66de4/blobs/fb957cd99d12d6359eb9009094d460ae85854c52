@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0005",
+  "start": 41.167,
+  "end": 46.083,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 4.916,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 5,
+   "start": -0.0,
+   "end": 4.916,
+   "description": "Medium shot of C1 lifting her hand towards a branch, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 4.916
+  }
+ ],
+ "task_id": "domini_canes-L0-0005-scr",
+ "descriptions_available": true
+}

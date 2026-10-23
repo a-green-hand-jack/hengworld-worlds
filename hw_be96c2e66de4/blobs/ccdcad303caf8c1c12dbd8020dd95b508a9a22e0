@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0020",
+  "start": 70.083,
+  "end": 73.875,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.792,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 20,
+   "start": 0.0,
+   "end": 3.792,
+   "description": "Medium shot of C1 riding a minecart, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.792
+  }
+ ],
+ "task_id": "caminandes3-L0-0020-scr",
+ "descriptions_available": true
+}

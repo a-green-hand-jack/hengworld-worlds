@@ -1,0 +1,39 @@
+{
+ "run": "fixed-caminandes3-L1-0000-scr-T0-3c14dc",
+ "task_id": "caminandes3-L1-0000-scr",
+ "Q": 1,
+ "qc": {
+  "decodes": true,
+  "format": true,
+  "duration": true,
+  "subtitles": true,
+  "clean_room_log": true,
+  "provenance": "skipped (no index)"
+ },
+ "budget": {
+  "usd": 0.1846,
+  "usd_per_minute": 0.343,
+  "model_usd": 0,
+  "tool_usd": 0.1846,
+  "hours_per_minute": 0.0075,
+  "model_calls": 0,
+  "tool_calls": 9,
+  "versions_delivered": 1,
+  "unused_generated_share": 0.0,
+  "spend_by_actor": {
+   "agent": 0.1846,
+   "harness": 0.0
+  }
+ },
+ "continuity": {
+  "cut_f1_05": 0.8,
+  "cut_f1_10": 0.8,
+  "correspondence": 0.0,
+  "wer": null,
+  "onset_error_median_s": null,
+  "speaker_purity": null,
+  "character_purity": null,
+  "scene_order": 1.0
+ },
+ "S": null
+}

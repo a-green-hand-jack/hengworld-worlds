@@ -1,0 +1,7 @@
+crewcut                   0.1.0      /hutian/cc/src
+ctranslate2               4.8.3
+faster-whisper            1.2.1
+numpy                     2.4.6
+openai                    3.35.1
+ffmpeg: ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+crewcut commit df54b3a (dev), pinned master sha256 028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f

@@ -1,0 +1,36 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L1-0049",
+  "start": 1268.767,
+  "end": 1299.698,
+  "shots": 2,
+  "lines": 0
+ },
+ "duration": 30.931,
+ "cuts": [
+  15.449
+ ],
+ "shots": [
+  {
+   "index": 145,
+   "start": 0.0,
+   "end": 15.449,
+   "description": "Long shot of C1 standing on a rock in the sea, static."
+  },
+  {
+   "index": 146,
+   "start": 15.449,
+   "end": 30.931,
+   "description": "Medium shot of a movie screen showing a man stumbling and getting up, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 30.931
+  }
+ ],
+ "task_id": "sherlock_jr-L1-0049-scr",
+ "descriptions_available": true
+}

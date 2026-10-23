@@ -1,0 +1,8 @@
+# task-maker: CrewCut Breakdown of Caminandes 3 (dev film)
+
+- `tasks/steps.md` commands, checks, outcomes; `records/decisions.json` judgments as data; `records/gaps_for_maintainer.md`.
+- `data/caminandes3/` rebuilt shots/dialogue/hierarchy, `descriptions.json` (+ `descriptions_meta.json`: model).
+- `comparison/`, `records/comparison.json` vs dataset d509bed. `spend/`.
+- `tasks/packages/` published task packages (no answer key; reference clips are in the release `tasks-caminandes3-v1`). `key/` the answer key (scorer, auditor only).
+- `commands/` reproducible steps; `commands/rebuild.sh` redoes everything except the paid description step.
+- Not run: real generators (T0), screening, S; evaluation of a task (executor + scorer own it).

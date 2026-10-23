@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0027",
+  "start": 105.375,
+  "end": 106.0,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.625,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 27,
+   "start": 0.0,
+   "end": 0.625,
+   "description": "Low-angle medium shot of a crowd standing, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.625
+  }
+ ],
+ "task_id": "domini_canes-L0-0027-ref",
+ "descriptions_available": true
+}

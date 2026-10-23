@@ -1,0 +1,235 @@
+{
+ "film": "caminandes3",
+ "model": "gemini-3.8-flash",
+ "request_parameter_added": {
+  "reasoning_effort": "none"
+ },
+ "crewcut": "df54b3a3918e16bfc8e61ff6215e01b6abca3849 crewcut.build.describe.describe_film, unmodified (prompt, 3 frames/shot, max_tokens 120)",
+ "master": "/crewcut/masters/caminandes3.ogv sha256 028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f (pinned file; copy of the world resource, used because only this copy is at hand)",
+ "shot_boundaries": "crewcut.build.shots.detect on that master: 36 cuts, 37 shots, fps 24",
+ "drafted_by_model_not_corrected": true,
+ "shots": [
+  {
+   "shot": 1,
+   "start": 0.0,
+   "end": 21.375,
+   "description": "Long shot of a guanaco sliding awkwardly across a frozen patch of ice in a snowy landscape, as the camera tilts down from the sky."
+  },
+  {
+   "shot": 2,
+   "start": 21.375,
+   "end": 30.5,
+   "description": "Medium close-up of C1, a baby penguin, who quickly hops away to reveal C2, a reindeer-like animal, lying on the ice with its head resting down before slowly lifting its chin, panning slightly left as C1 exits."
+  },
+  {
+   "shot": 3,
+   "start": 30.5,
+   "end": 32.292,
+   "description": "Long shot of a small bird standing on a railroad sleeper next to a tiny flower, as the camera zooms in closer."
+  },
+  {
+   "shot": 4,
+   "start": 32.292,
+   "end": 33.875,
+   "description": "Medium shot of a train speeding along a snowy railway track, the camera tracking alongside it."
+  },
+  {
+   "shot": 5,
+   "start": 33.875,
+   "end": 36.792,
+   "description": "Close-up of a guanaco turning its head with wide eyes in a snowy landscape, with the camera remaining static."
+  },
+  {
+   "shot": 6,
+   "start": 36.792,
+   "end": 39.5,
+   "description": "Low-angle close-up of a small penguin holding a flower, standing on snowy railroad tracks as a train approaches in the background, camera slightly tilts up."
+  },
+  {
+   "shot": 7,
+   "start": 39.5,
+   "end": 40.792,
+   "description": "Close-up of a prehistoric mammal shaking its head and blinking, static camera."
+  },
+  {
+   "shot": 8,
+   "start": 40.792,
+   "end": 41.792,
+   "description": "Extreme long shot of a steam train traveling along snowy railroad tracks, the camera tracking right."
+  },
+  {
+   "shot": 9,
+   "start": 41.792,
+   "end": 42.708,
+   "description": "Close-up of a reindeer turning its head forward and slightly shaking it with a dazed expression, the camera remaining static."
+  },
+  {
+   "shot": 10,
+   "start": 42.708,
+   "end": 43.917,
+   "description": "Eye-level close shot of a small penguin sitting on railway tracks eating, unaware of a steam train rapidly approaching behind it, static camera."
+  },
+  {
+   "shot": 11,
+   "start": 43.917,
+   "end": 47.0,
+   "description": "Medium shot of a small deer-like animal sitting on a snowy, debris-strewn plain, raising its head to look around, as the camera slowly pulls back."
+  },
+  {
+   "shot": 12,
+   "start": 47.0,
+   "end": 49.875,
+   "description": "Medium close-up of a penguin chick peeking over an edge, camera slightly panning right to follow its movement."
+  },
+  {
+   "shot": 13,
+   "start": 49.875,
+   "end": 52.292,
+   "description": "Close-up of a gazelle-like creature bouncing a berry on its tongue, with a static camera."
+  },
+  {
+   "shot": 14,
+   "start": 52.292,
+   "end": 52.875,
+   "description": "Close-up of a penguin jumping through the air behind a llama wearing sunglasses to catch a berry with its beak, with a static camera."
+  },
+  {
+   "shot": 15,
+   "start": 52.875,
+   "end": 56.583,
+   "description": "Medium shot of a deer sitting down while a penguin next to it shows off a small ball, until the deer quickly lunges forward to eat the ball, in a static camera shot."
+  },
+  {
+   "shot": 16,
+   "start": 56.583,
+   "end": 62.25,
+   "description": "Medium close-up of a creature tilting its head upwards and then down, followed by a little bird emerging into the frame and reaching out towards some berries, with a static camera."
+  },
+  {
+   "shot": 17,
+   "start": 62.25,
+   "end": 66.417,
+   "description": "Wide shot of an animal riding in a minecart with a bird perched on the edge as it slows to a stop near the edge of a broken track, static camera."
+  },
+  {
+   "shot": 18,
+   "start": 66.417,
+   "end": 67.417,
+   "description": "Medium shot of C1 holding a bunch of fruit alongside another animal while flying swiftly through a cavern, the camera tracking alongside them."
+  },
+  {
+   "shot": 19,
+   "start": 67.417,
+   "end": 68.0,
+   "description": "Extreme wide shot looking down into a deep crevasse between dark rock walls, through which railroad tracks and a waterfall are visible below, the camera plunging rapidly downward through the gap."
+  },
+  {
+   "shot": 20,
+   "start": 68.0,
+   "end": 70.083,
+   "description": "Wide shot of C1, an anthropomorphic deer, and C2 riding in a minecart down a steep railway through a cavern, the camera panning slightly right and following the cart as it speeds past."
+  },
+  {
+   "shot": 21,
+   "start": 70.083,
+   "end": 73.875,
+   "description": "Medium shot of a small squirrel-like animal and a small bird-like creature in a wooden cart moving at high speed, with the camera tracking them backwards while panning slightly."
+  },
+  {
+   "shot": 22,
+   "start": 73.875,
+   "end": 74.625,
+   "description": "Close-up of a camel panting with its mouth wide open, the camera static."
+  },
+  {
+   "shot": 23,
+   "start": 74.625,
+   "end": 75.458,
+   "description": "Low-angle close-up of C1's head emerging from an enclosure before a massive foot steps down and flattens it, static camera."
+  },
+  {
+   "shot": 24,
+   "start": 75.458,
+   "end": 77.75,
+   "description": "Close-up of a small penguin holding a bunch of grapes and blinking, static camera."
+  },
+  {
+   "shot": 25,
+   "start": 77.75,
+   "end": 78.542,
+   "description": "Point-of-view wide shot of a mine tunnel leading toward daylight at the exit, with the camera tracking rapidly forward along the tracks."
+  },
+  {
+   "shot": 26,
+   "start": 78.542,
+   "end": 80.125,
+   "description": "Long shot of a wooden mine cart bursting out of a snowy mine entrance and launching into the air over a cliffside, camera static."
+  },
+  {
+   "shot": 27,
+   "start": 80.125,
+   "end": 83.458,
+   "description": "Close-up of a gazelle-like creature flying through the sky and spotting a bunch of berries, the camera pulling back to reveal the fruit in the foreground."
+  },
+  {
+   "shot": 28,
+   "start": 83.458,
+   "end": 86.167,
+   "description": "Close-up of a gazelle running, camera tracking with it."
+  },
+  {
+   "shot": 29,
+   "start": 86.167,
+   "end": 89.333,
+   "description": "Close-up shot of C1 somersaulting in the air next to C2, panning slightly with the motion."
+  },
+  {
+   "shot": 30,
+   "start": 89.333,
+   "end": 93.042,
+   "description": "Close-up of a small, frightened prehistoric bird-like creature looking back with wide eyes while in motion, with the camera remaining relatively static as the landscape rushes by in the background."
+  },
+  {
+   "shot": 31,
+   "start": 93.042,
+   "end": 96.667,
+   "description": "Extreme long shot of a small furry creature flying through the air and crashing into the snowy ground, with a static camera."
+  },
+  {
+   "shot": 32,
+   "start": 96.667,
+   "end": 101.792,
+   "description": "Medium shot of a deer-like animal lying in the snow with a small penguin on its back; the deer looks back and the penguin quickly drops down behind it, static camera."
+  },
+  {
+   "shot": 33,
+   "start": 101.792,
+   "end": 103.75,
+   "description": "Extreme long shot of a penguin sliding on its belly across the snow toward a distant group of penguins, the camera tilts up slightly."
+  },
+  {
+   "shot": 34,
+   "start": 103.75,
+   "end": 114.5,
+   "description": "Close-up of a camel looking sad and lowering its head, with the camera quickly zooming out and panning up to reveal an extreme long shot of the camel standing at the edge of a high cliff over the sea."
+  },
+  {
+   "shot": 35,
+   "start": 114.5,
+   "end": 118.792,
+   "description": "Full shot of an animal sitting on a rocky, snow-dusted ledge and blinking as its eyes clear, static camera."
+  },
+  {
+   "shot": 36,
+   "start": 118.792,
+   "end": 123.542,
+   "description": "Over-the-shoulder medium shot of C1 watching penguins carry berries and approach across the snow, panning right to follow the penguins."
+  },
+  {
+   "shot": 37,
+   "start": 123.542,
+   "end": 150.108,
+   "description": "Medium shot of a llama sitting beside a small penguin on a pile of wood surrounded by penguins, tilting up into the night sky as end credits appear."
+  }
+ ]
+}

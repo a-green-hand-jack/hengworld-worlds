@@ -1,0 +1,47 @@
+"""Damage/stress checks on the measures with synthetic data; writes validation.json. Exit non-zero on failure."""
+import json, random, sys
+sys.path.insert(0, __file__.rsplit('/', 1)[0])
+from measures import *
+random.seed(0)
+ref = sorted(random.uniform(0, 300) for _ in range(60))
+txt = "the quick brown fox jumps over the lazy dog and then it's gone " * 5
+scn = list("ABCDEFGHIJ")
+shots = list(zip(range(0, 50, 5), range(5, 55, 5)))
+res = {}
+res['cut_f1_identical'] = cut_f1(ref, ref, 0.5)
+res['cut_f1_shift0.3_tol0.5'] = cut_f1(ref, [c + .3 for c in ref], 0.5)
+res['cut_f1_shift0.3_tol1.0'] = cut_f1(ref, [c + .3 for c in ref], 1.0)
+sparse = [5.0 * i for i in range(1, 40)]  # spacing 5 s, so a 0.8 s shift cannot hit a neighbour
+res['cut_f1_shift0.8_tol0.5'] = cut_f1(sparse, [c + .8 for c in sparse], 0.5)
+res['cut_f1_shift0.8_tol1.0'] = cut_f1(ref, [c + .8 for c in ref], 1.0)
+res['cut_f1_no_cuts'] = cut_f1(ref, [], 0.5)
+res['cut_f1_half_dropped'] = cut_f1(ref, ref[::2], 0.5)
+res['cut_f1_extra_noise'] = cut_f1(ref, sorted(ref + [random.uniform(0, 300) for _ in range(60)]), 0.5)
+res['wer_identical'] = wer(txt, txt)
+w = txt.split(); res['wer_half_words_removed'] = wer(txt, ' '.join(w[::2]))
+res['wer_silence'] = wer(txt, '')
+res['wer_case_punct_invariant'] = wer(txt, txt.upper().replace(' ', ', ', 3))
+res['onset_identical'] = onset_median_error(ref[:20], ref[:20])
+res['onset_shift2s'] = onset_median_error(ref[:20], [x + 2 for x in ref[:20]])
+res['scene_identical'] = scene_order(scn, scn)
+res['scene_reversed'] = scene_order(scn, scn[::-1])
+res['scene_empty'] = scene_order(scn, [])
+res['shot_all_yes'] = shot_correspondence(shots, [True]*10)
+res['shot_half_yes'] = shot_correspondence(shots, [True, False]*5)
+res['shot_none'] = shot_correspondence(shots, [False]*10)
+sc2 = [(0, 100), (100, 120)]
+res['recover_identical_scenes'] = recover_scene_labels(sc2, sc2)
+res['recover_swapped'] = recover_scene_labels(sc2, [(0, 20), (20, 120)])
+res['recover_split_scene_repeats_label'] = recover_scene_labels(sc2, [(0, 50), (50, 100), (100, 120)])
+res['recover_no_overlap_none'] = recover_scene_labels(sc2, [(200, 210)])
+res['recover_tie_earlier'] = recover_scene_labels([(0, 10), (10, 20)], [(5, 15)])
+res['scene_split_remake'] = scene_order([0, 1], res['recover_split_scene_repeats_label'])
+r = res
+checks = [r['cut_f1_identical'] == 1, r['cut_f1_shift0.3_tol0.5'] == 1, r['cut_f1_shift0.8_tol0.5'] == 0,
+          r['cut_f1_shift0.8_tol1.0'] == 1, r['cut_f1_no_cuts'] == 0, r['cut_f1_half_dropped'] < r['cut_f1_identical'],
+          r['cut_f1_extra_noise'] < 1, r['wer_identical'] == 0, 0.4 < r['wer_half_words_removed'] <= 0.6,
+          r['wer_silence'] == 1, r['wer_case_punct_invariant'] == 0, r['onset_identical'] == 0,
+          abs(r['onset_shift2s'] - 2) < 1e-9, r['scene_identical'] == 1, r['scene_reversed'] < 1,
+          r['scene_empty'] == 0, res['recover_identical_scenes'] == [0, 1], res['recover_swapped'] == [0, 0], res['recover_split_scene_repeats_label'] == [0, 0, 1], res['recover_no_overlap_none'] == [None], res['recover_tie_earlier'] == [0], res['scene_split_remake'] == 0.5, scene_order([0, 1], res['recover_no_overlap_none']) == 0, r['shot_all_yes'] == 1, r['shot_half_yes'] == .5, r['shot_none'] == 0]
+json.dump({'results': res, 'checks_passed': sum(checks), 'checks_total': len(checks)}, open(__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), '..', '..', 'validation', 'validation_measures.json'), 'w'), indent=1)
+print(sum(checks), '/', len(checks)); sys.exit(0 if all(checks) else 1)

@@ -1,0 +1,13 @@
+# Round 2 audit report (auditor)
+
+Checked against audit/criteria-round2.md (written before reading the makers' claims). Scorer@4e84680, executor@ef80bbf, task-maker@7e72139.
+
+1. Descriptions: 37 shots, CrewCut df54b3a describe_film, model gemini-3.8-flash; every metered response in meter_final.jsonl has returned_model gemini-3.8-flash; no fallback needed (S1). OK.
+2. c components: recomputed cut F1 by hand from the cut lists (output 21.375, 30.5; key 21.375, 30.5, 32.292): P=1, R=2/3, F1=0.8, equal to round 1. Correspondence 0.0 (3 of 3 "no") recorded in score_judged_*.json and identical in task-maker's independent record/c/score-c.json (the only difference is provenance: task-maker ran it with an index, scorer "skipped"; Q=1 either way). WER/onset null (no dialogue), purity null (code computes none), S and provenance not run. No conclusion drawn from 0.0; controls (positive 0.68, negative 0.006) show the judge discriminates. OK.
+3. Reproduction: judge outputs were reused, not re-asked (no Gemini budget spent by me); the arithmetic of F1 and the control verdict counts (35/37, 1/37) agree with the records.
+4. Spend: summed meter_final.jsonl (114 calls: 37+3+74; prompt 432,149) plus failed attempts (10 calls, 71,401 prompt) = 124 calls, 503,550 prompt tokens, as in spend.json. Price S4 has source and date. Ledger 260/300 as claimed by scorer; the logs I could count give executor 74 lines (claimed 76) and task-maker 44 (claimed 49), so the stated 260 is an upper bound; either way <= 300. Cost of the others not recomputed. OK.
+5. Protocol/config: no CrewCut file changed; the two deviations of call parameters (S2 reasoning_effort none, S3 judge max_tokens 512) are in a wrapper, recorded as open for CrewCut's maintainer, not decided. No T0 claim. OK.
+6. Key: descriptions are in scorer private/ and task-maker key/. Executor's repo holds its own second-draft descriptions (runs/round2/descriptions.json), drafted from the public film by CrewCut, not task-maker's key; noted, not a key leak (they are model drafts, not the answer key's cuts/ground truth beyond what the film shows). Note: the key's end-of-segment cut 32.292 (task-maker O5) caps cut F1 at 0.8; stays an open item for the maintainer.
+7. Not-run statement consistent.
+
+Verdict: approve.

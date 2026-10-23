@@ -1,0 +1,8 @@
+{
+ "model": "faster-whisper base (Systran/faster-whisper-base)",
+ "vad": "silero (faster-whisper bundled), vad_filter=True",
+ "beam_size": 5,
+ "temperature": 0.0,
+ "compute_type": "int8",
+ "language_probability": 0.5679
+}

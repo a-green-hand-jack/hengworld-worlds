@@ -1,0 +1,5 @@
+{"shot": 0, "chars": "none yet", "text": "Establishing shot of title text showing production credits, static.", "model": "gemini-3.5-flash-lite", "prompt_tokens": 3299, "completion_tokens": 11, "total_tokens": 3310, "finish_reason": "stop"}
+{"shot": 1, "chars": "none yet", "text": "Wide shot of C1 running, then flying away from a hospital, static camera.", "model": "gemini-3.5-flash-lite", "prompt_tokens": 3299, "completion_tokens": 17, "total_tokens": 3316, "finish_reason": "stop"}
+{"shot": 2, "chars": "C1", "text": "Wide shot of C1 flying through a hospital room, church, and city, static camera.", "model": "gemini-3.5-flash-lite", "prompt_tokens": 3299, "completion_tokens": 19, "total_tokens": 3318, "finish_reason": "stop"}
+{"shot": 3, "chars": "C1", "text": "Wide shot of C1 surfing on a stroller, panning right.", "model": "gemini-3.5-flash-lite", "prompt_tokens": 3299, "completion_tokens": 13, "total_tokens": 3312, "finish_reason": "stop"}
+{"shot": 4, "chars": "C1", "text": "Extreme close-up of credits showing, static.", "model": "gemini-3.5-flash-lite", "prompt_tokens": 3299, "completion_tokens": 10, "total_tokens": 3309, "finish_reason": "stop"}

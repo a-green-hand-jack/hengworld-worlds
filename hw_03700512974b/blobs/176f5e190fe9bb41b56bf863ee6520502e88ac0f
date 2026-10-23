@@ -1,0 +1,204 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0009",
+  "start": 645.378,
+  "end": 771.738,
+  "shots": 26,
+  "lines": 0
+ },
+ "duration": 126.36,
+ "cuts": [
+  3.47,
+  5.139,
+  7.875,
+  18.952,
+  21.221,
+  23.524,
+  27.728,
+  29.062,
+  30.931,
+  34.201,
+  38.972,
+  48.749,
+  63.297,
+  68.368,
+  75.842,
+  80.714,
+  88.856,
+  93.594,
+  98.465,
+  102.87,
+  105.772,
+  109.61,
+  116.25,
+  118.018,
+  124.825
+ ],
+ "shots": [
+  {
+   "index": 71,
+   "start": 0.0,
+   "end": 3.47,
+   "description": "Medium shot of C1 standing and C2 sitting reading a letter, static camera."
+  },
+  {
+   "index": 72,
+   "start": 3.47,
+   "end": 5.139,
+   "description": "Extreme close-up of a page displaying four detective rules, static."
+  },
+  {
+   "index": 73,
+   "start": 5.139,
+   "end": 7.875,
+   "description": "Close-up of text displaying the rules, static."
+  },
+  {
+   "index": 74,
+   "start": 7.875,
+   "end": 18.952,
+   "description": "Medium shot of C1 standing and C2 sitting reading a letter, static camera."
+  },
+  {
+   "index": 75,
+   "start": 18.952,
+   "end": 21.221,
+   "description": "Medium shot of C1 reading a book on a couch while C2 and others stand in the background, static camera."
+  },
+  {
+   "index": 76,
+   "start": 21.221,
+   "end": 23.524,
+   "description": "Medium shot of C1 talking, static camera."
+  },
+  {
+   "index": 77,
+   "start": 23.524,
+   "end": 27.728,
+   "description": "Close-up of an intertitle displaying dialogue, static camera."
+  },
+  {
+   "index": 78,
+   "start": 27.728,
+   "end": 29.062,
+   "description": "Medium close-up of C1 talking, static."
+  },
+  {
+   "index": 79,
+   "start": 29.062,
+   "end": 30.931,
+   "description": "Medium shot of C1 arguing with C2 while a woman watches from between them, with a static camera."
+  },
+  {
+   "index": 80,
+   "start": 30.931,
+   "end": 34.201,
+   "description": "Medium shot of C1 getting up from a chair and holding back C2, static camera."
+  },
+  {
+   "index": 81,
+   "start": 34.201,
+   "end": 38.972,
+   "description": "A static close-up shot shows a title card displaying text."
+  },
+  {
+   "index": 82,
+   "start": 38.972,
+   "end": 48.749,
+   "description": "Medium wide shot of C1, C2, and others standing in a room, static."
+  },
+  {
+   "index": 83,
+   "start": 48.749,
+   "end": 63.297,
+   "description": "Medium shot of C1 trying to pat another man on the chest while C2 stands nearby watching, static camera."
+  },
+  {
+   "index": 84,
+   "start": 63.297,
+   "end": 68.368,
+   "description": "Medium shot of C1 speaking, static."
+  },
+  {
+   "index": 85,
+   "start": 68.368,
+   "end": 75.842,
+   "description": "Medium shot of C1, C2, and another man standing in a room, with C1 stepping into the other man's arms, static camera."
+  },
+  {
+   "index": 86,
+   "start": 75.842,
+   "end": 80.714,
+   "description": "Extreme close-up of a pawn ticket held by hands, static camera."
+  },
+  {
+   "index": 87,
+   "start": 80.714,
+   "end": 88.856,
+   "description": "Medium shot of C1 showing a card to C2, static."
+  },
+  {
+   "index": 88,
+   "start": 88.856,
+   "end": 93.594,
+   "description": "Medium shot of C1 and C2 standing close together inside a room, with C1 speaking to C2 while looking downwards. Static camera."
+  },
+  {
+   "index": 89,
+   "start": 93.594,
+   "end": 98.465,
+   "description": "Medium shot of C1 and C2 holding a box, static."
+  },
+  {
+   "index": 90,
+   "start": 98.465,
+   "end": 102.87,
+   "description": "Medium shot of C1, C2, and another man standing indoors while looking at things in their hands, static."
+  },
+  {
+   "index": 91,
+   "start": 102.87,
+   "end": 105.772,
+   "description": "Extreme close-up of C1 holding a pawn ticket, static camera."
+  },
+  {
+   "index": 92,
+   "start": 105.772,
+   "end": 109.61,
+   "description": "Medium shot of C1, C2, and another man standing indoors, with the man holding out a wad of money to C1 while C1 holds cigarettes, static camera."
+  },
+  {
+   "index": 93,
+   "start": 109.61,
+   "end": 116.25,
+   "description": "Medium close-up of C1 looking down and away to the right, static."
+  },
+  {
+   "index": 94,
+   "start": 116.25,
+   "end": 118.018,
+   "description": "Medium close-up of C1 talking, static."
+  },
+  {
+   "index": 95,
+   "start": 118.018,
+   "end": 124.825,
+   "description": "Medium close-up of title card displaying dialogue, static."
+  },
+  {
+   "index": 96,
+   "start": 124.825,
+   "end": 126.36,
+   "description": "Medium shot of C1 talking, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 126.36
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0009-scr",
+ "descriptions_available": true
+}

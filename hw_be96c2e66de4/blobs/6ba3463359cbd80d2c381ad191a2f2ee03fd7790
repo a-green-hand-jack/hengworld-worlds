@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0309",
+  "start": 2238.77,
+  "end": 2239.871,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.101,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 309,
+   "start": -0.0,
+   "end": 1.101,
+   "description": "Long shot of road workers digging dirt by the side of the road, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.101
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0309-ref",
+ "descriptions_available": true
+}

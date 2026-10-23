@@ -1,0 +1,24 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Medium shot of C1 ducking down, zoom out.
+Detailed description:
+setting: P4: Mountain slope and rocky peaks. Outdoor, bright daytime transitioning to a wide snowy cliff overlooking an ocean with a striped lighthouse on the right at dusk.
+characters: C1: centered in close-up with a bruised purple left eye, drooping its eyelids and lowering its head, then seen standing sad on a cliff edge.
+props: A red-and-white striped lighthouse on the snowy slope in the final wide view.
+action: C1 stands looking ahead with a bruised left eye, then slowly droops its eyelids, pins its ears back, and lowers its head and neck down out of the bottom of the frame, followed by a transition to a wide cliff where C1 stands with its head hung low.
+camera: Starts as a close-up on C1's head, static as C1 ducks out of frame, then transitions to an extreme wide shot of the cliff.
+light_mood: Bright, clear daylight with soft background blur, shifting to cool twilight blue and pink tones in the final wide view; melancholic mood.
+Frames:
+[frame 1 at 105.29s]
+IMG:51fc1cee1fc0b1f27d33416d37e06d4b14d526396e2039e5679230bd1b81b4aa
+[frame 2 at 106.82s]
+IMG:e3f6b8f066ef042d38479966af3d8095e600df9850b17d47988cdb304bc85a21
+[frame 3 at 108.36s]
+IMG:caf54e5b0050926614f09466a287218dc6fc69b08f26e8744503cc3c8ab5fcaf
+[frame 4 at 109.89s]
+IMG:7161cf3da0e0b09702003553f963cd82f98a755b7933875c9081676a9ea8303a
+[frame 5 at 111.43s]
+IMG:702c8d553884edc5f8dcf6aea05f3262cc70f4bb435cfdb4867fd47ee1d7f15e
+[frame 6 at 112.96s]
+IMG:512cca5bfc5611fa57cd1283ca36bbf59a4e3f945febdd3e57f6f2109c93382d

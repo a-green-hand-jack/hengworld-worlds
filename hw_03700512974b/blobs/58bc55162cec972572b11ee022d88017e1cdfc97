@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/hutian/repo/runs/pipeline/t0.py", line 113, in <module>
+    au = next(p["inlineData"] for p in j["candidates"][0]["content"]["parts"] if "inlineData" in p)
+                                       ~^^^^^^^^^^^^^^
+KeyError: 'candidates'

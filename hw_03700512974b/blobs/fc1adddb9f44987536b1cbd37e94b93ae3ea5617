@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "coffee_run-L1-0002",
+  "start": 56.458,
+  "end": 106.667,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 50.209,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 2,
+   "start": 0.0,
+   "end": 50.209,
+   "description": "Wide shot of C1 flying through a hospital room, church, and city, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 50.209
+  }
+ ],
+ "task_id": "coffee_run-L1-0002-ref",
+ "descriptions_available": true
+}

@@ -1,0 +1,3 @@
+The 6 master files are too large for git; they are assets of release `masters-v1` in world/curator, named `<film id>.<ext>` (see MANIFEST.tsv, with SHA-256 and size).
+Reproduce: `corpus/fetch_verify.sh DIR` downloads each from its original URL (corpus/masters.tsv) and checks size and SHA-256; it was run and passed 6/6 (corpus/verify_results.tsv).
+Rights evidence, attribution and caveats: corpus/admissions.json. Attribution: Caminandes 3 and Coffee Run © Blender Foundation (CC BY 3.0 / 4.0); Spirit Chaser by Karl Pajak (CC BY-SA 3.0, master keeps CC BY-SA 3.0); Domini Canes by Jakub Bednarz (CC BY 3.0); Sherlock Jr. (1924) and A Trip to the Moon (1902) US public domain.

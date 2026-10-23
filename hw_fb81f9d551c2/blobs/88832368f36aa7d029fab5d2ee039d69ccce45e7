@@ -1,0 +1,11 @@
+{
+ "tier": "T0",
+ "tools": [
+  "image.generate",
+  "image.edit",
+  "speech.synthesize",
+  "music.generate",
+  "sfx.generate",
+  "media.ffmpeg"
+ ]
+}

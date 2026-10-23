@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Medium shot of C1 sitting on the train track eating, static camera.
+Detailed description:
+setting: P2: Railroad tracks. Outdoor, bright daytime, partly cloudy blue sky, snow-covered wooden ties, distant snowy hills, and an oil pumpjack on the right.
+characters: C2: sitting centered in the foreground between the rails facing forward, holding a single red berry against its chest, wide-eyed and oblivious.
+props: A single red berry held by C2, a green plant stem, and a black and red steam locomotive with a white star on the front.
+action: C2 sits completely still on the wooden railroad tie holding a red berry, while in the background the massive steam locomotive rapidly barrels straight toward C2, billowing white steam.
+camera: Medium shot at low ground-level angle on the tracks, static camera with shallow depth of field.
+light_mood: Bright daylight with cool blue sky and white snow contrasting with the dark approaching train; suspenseful and perilous mood.
+Frames:
+[frame 1 at 42.95s]
+IMG:ed7e34aca7d654c6b09500d1e08b1e2b801d2a877e1fc6d9c72dd1ed972cfb12
+[frame 2 at 43.19s]
+IMG:685d33aff5b6fafef478bc8827fbfb6a682066161966c1a5cdf58723cde4f599
+[frame 3 at 43.43s]
+IMG:b485bcfc618744571adf3164bc08a531db39b3d1e814be1a780e0bb4df3ef3fa
+[frame 4 at 43.68s]
+IMG:859e3029576d46c15e2ea471a1d6233558ae8000bcd5bbdbe6dbc00803dc2688

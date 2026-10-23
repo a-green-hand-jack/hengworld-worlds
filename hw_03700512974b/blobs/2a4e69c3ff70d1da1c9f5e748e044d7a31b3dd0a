@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0040",
+  "start": 117.56,
+  "end": 118.12,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.56,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 40,
+   "start": 0.0,
+   "end": 0.56,
+   "description": "Medium shot of C1 tumbling backwards, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.56
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0040-ref",
+ "descriptions_available": true
+}

@@ -1,0 +1,11 @@
+{
+ "system": "fixed",
+ "shots": [
+  "artefacts/fixed/shot_0000.mp4",
+  "artefacts/fixed/shot_0001.mp4",
+  "artefacts/fixed/shot_0002.mp4"
+ ],
+ "picture": "artefacts/fixed/picture.mp4",
+ "music": "artefacts/generated/music_generate_dc10145f.wav",
+ "voices": {}
+}

@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Medium shot of C1 dodging falling planks, static camera.
+Detailed description:
+setting: P1: Frozen pond and snowy field. Outdoor, daytime, clear cyan sky and a snowy mountain peak in the lower-left background.
+characters: C1: center-left, head and neck visible, red bump on top of head, clenched teeth and looking up in fear, then wincing as dark debris falls.
+props: Long wooden planks and a large dark rocky structure with falling rubble.
+action: C1 holds a long wooden plank across its neck while looking up in terror with clenched teeth. Suddenly, a massive dark rock ceiling and wooden beams crash down around and behind C1, casting a dark shadow as C1 flinches.
+camera: Close-up, low angle, static camera with slight shake upon impact.
+light_mood: Starts in bright daylight, abruptly shifting to dark, heavy shadow as the structure collapses; chaotic and perilous mood.
+Frames:
+[frame 1 at 74.79s]
+IMG:6b457640c0f0d205e6db94bb7fbe22f16651e2b8faed5ea7180b66371830e320
+[frame 2 at 74.96s]
+IMG:3ed062a722733fe76e8cb2bd014f6503c5a9c3dbcf5bd5f950a491c87378848f
+[frame 3 at 75.12s]
+IMG:24e72d836fc126b09da072edb5e9868c126a062f87930f9bf6e12791c870dc44
+[frame 4 at 75.29s]
+IMG:174bfae1f73b394383e720e87d81faa19ecb4eee6e6ebd83200ab5faeb04643c

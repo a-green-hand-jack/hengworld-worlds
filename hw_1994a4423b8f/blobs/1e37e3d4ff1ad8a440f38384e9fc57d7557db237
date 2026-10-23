@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0026",
+  "start": 80.125,
+  "end": 83.458,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.333,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 26,
+   "start": 0.0,
+   "end": 3.333,
+   "description": "Medium shot of an animal running through the air after a bunch of fruit, with the camera panning."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.333
+  }
+ ]
+}

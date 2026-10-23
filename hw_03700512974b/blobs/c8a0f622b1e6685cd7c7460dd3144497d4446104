@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0029",
+  "start": 101.04,
+  "end": 101.6,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.56,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 29,
+   "start": 0.0,
+   "end": 0.56,
+   "description": "Medium shot of a lightbeam passing over a mountain, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.56
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0029-scr",
+ "descriptions_available": true
+}

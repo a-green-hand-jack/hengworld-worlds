@@ -1,0 +1,53 @@
+"""Stage (b): draft shot descriptions with a vision-language model.
+
+Descriptions state what a shot means, not how it looks, following the template of Appendix C:
+"[shot size] of [subject] [action], [camera move]", with characters referred to by id. The model
+is reached through any OpenAI-compatible chat endpoint (set ``CREWCUT_VLM_BASE_URL``,
+``CREWCUT_VLM_API_KEY`` and ``CREWCUT_VLM_MODEL``); drafts are then corrected by annotators.
+"""
+from __future__ import annotations
+
+import base64
+import json
+import os
+import subprocess
+from pathlib import Path
+
+PROMPT = (
+    "You see frames from one shot of a film. Describe the shot in one to three sentences using the "
+    "template '[shot size] of [subject] [action], [camera move]'. Refer to people as C1, C2 and so on, "
+    "consistently with these known characters: {chars}. Do not mention colours, lens, art style or other "
+    "appearance details that a remake could legitimately change. Reply with the description only."
+)
+
+
+def frames_b64(video: Path, start: float, end: float, n: int = 3, width: int = 448) -> list[str]:
+    out = []
+    for k in range(n):
+        t = start + (end - start) * (k + 1) / (n + 1)
+        jpg = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{t:.3f}", "-i", str(video), "-frames:v", "1",
+                              "-vf", f"scale={width}:-2", "-f", "image2pipe", "-vcodec", "mjpeg", "-"],
+                             capture_output=True, check=True).stdout
+        out.append(base64.b64encode(jpg).decode())
+    return out
+
+
+def describe_film(film_dir: Path, characters: str = "none yet") -> dict[str, str]:
+    from openai import OpenAI  # optional dependency
+    client = OpenAI(base_url=os.environ.get("CREWCUT_VLM_BASE_URL"), api_key=os.environ.get("CREWCUT_VLM_API_KEY"))
+    model = os.environ.get("CREWCUT_VLM_MODEL", "gpt-4o-mini")
+    shots = json.loads((film_dir / "shots.json").read_text())
+    master = sorted(film_dir.glob("master.*"))[0]
+    fps = shots["fps"]
+    bounds = [0.0] + [c / fps for c in shots["cuts"]] + [shots["duration"]]
+    out_p = film_dir / "descriptions.json"
+    desc = json.loads(out_p.read_text()) if out_p.exists() else {}
+    for i, (a, b) in enumerate(zip(bounds[:-1], bounds[1:])):
+        if str(i) in desc:
+            continue
+        content = [{"type": "text", "text": PROMPT.format(chars=characters)}]
+        content += [{"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{x}"}} for x in frames_b64(master, a, b)]
+        r = client.chat.completions.create(model=model, messages=[{"role": "user", "content": content}], max_tokens=120)
+        desc[str(i)] = r.choices[0].message.content.strip()
+        out_p.write_text(json.dumps(desc, indent=1, ensure_ascii=False))
+    return desc

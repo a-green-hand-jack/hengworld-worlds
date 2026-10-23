@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Medium shot of C1 riding in a mine cart inside a cave, static camera.
+Detailed description:
+setting: P3: Underground mine. Indoor, dark cavern with blue light, rocky walls, broken wooden tracks suspended over a chasm, and another broken cart in the lower right.
+characters: C1: sitting in the left side of the minecart with dark circular marks around eyes, stretching forward with an eager expression; C2: sitting on the right rim of the cart, jumping up.
+props: A wooden minecart on a broken track edge, a bunch of red berries hanging from the rock wall, and a broken cart below.
+action: The minecart sits precariously on a broken track that ends over a chasm. C2 sits on the right rim, looking at a bunch of red berries hanging from the rock wall. C1 shifts right inside the cart and stretches its neck toward the berries as the cart rolls slightly right. C2 hops up toward the berries.
+camera: Wide shot, eye-level static camera.
+light_mood: Dark cavern with cool blue ambient light from above illuminating the cart and characters; tense and comedic mood.
+Frames:
+[frame 1 at 63.08s]
+IMG:bc087c0004af1bfa5025a14cfa11bc28489fef79241acf8efbf9c74bc80ac4a8
+[frame 2 at 63.92s]
+IMG:979b0885b4c02df7a7c5c51dc8ef774f4396c8c52337ee280633a8ab1596d280
+[frame 3 at 64.75s]
+IMG:80c42913ad058feafa1a7162148288bc25349f4f83f57269eb334a2624b4724e
+[frame 4 at 65.58s]
+IMG:0b2035eb30113e40c21370bef19f40abb501c00a67f149905a4ba9e8f1cfe4de

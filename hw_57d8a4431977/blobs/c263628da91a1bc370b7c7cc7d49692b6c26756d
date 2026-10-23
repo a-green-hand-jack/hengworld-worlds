@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0027",
+  "start": 83.458,
+  "end": 86.167,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.709,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 27,
+   "start": 0.0,
+   "end": 2.709,
+   "description": "Medium shot of creature running, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.709
+  }
+ ]
+}

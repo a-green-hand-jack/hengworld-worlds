@@ -1,0 +1,11 @@
+# Protocol gaps and inconsistencies (steward)
+Each is returned to the documents if they answer; otherwise it is the maintainer's. No position fills them in.
+
+- G1 "smoke" is called a 档位 (tier) by OBJ, but I3 tiers are T0/T1/T2. `smoke` exists only as a tool profile in old CFG `tools.yaml` (generators → placeholder, runs unofficial). The result must be labelled unofficial/placeholder; no tier (T0/T1) result is claimed. Maintainer to confirm if a tier label is wanted.
+- G2 `duration_s` basis (video stream vs container): documents silent. OBJ lets task-maker/auditor choose by comparison with `d509bed`, with reason; both bases reported. Not decided here.
+- G3 Judge vendor rule: I3 §2.4 says the judge must be a different vendor from the system's base model; OBJ treats `fixed` as model-free so no conflict, but how to enforce in general is the maintainer's (open decision 4). `gemini-3.8-flash` stand-in is temporary per OBJ.
+- G4 Number of runs for this round: I3 says 3 per task; OBJ says "一轮". Documents do not say how many for the smoke run. Executor should do what its package states and record it; maintainer to confirm if not 3.
+- G5 Provenance thresholds and scene `kappa` appear only in old CFG, not in I3 text (I3 §2.5 says thresholds are set on the stress test, which is out of scope). Used as given in CFG, flagged "CFG only".
+- G6 Per-measure formulas (F1 matching rule, WER normalisation, onset error aggregation, purity, scene order, duration weighting) and the Q pass thresholds beyond ±5% are not in I3; old implementation is reference only. Scorer must record the implementation used; any ambiguity returns here. Speaker/character consistency needs human speaker labels (I3 §2.7) — likely "未运行" for a dialogue-free film (0 lines).
+- G7 OBJ says CrewCut Issue #13 holds the reference price table; it is not in the readable documents. Comparison cannot be made unless a neighbour supplies its content; otherwise "未运行".
+- G8 Dev totals in I3 (598 tasks, 299 segments) are across six dev films; the objective's round covers one film (90 task IDs per I3 §1.6).

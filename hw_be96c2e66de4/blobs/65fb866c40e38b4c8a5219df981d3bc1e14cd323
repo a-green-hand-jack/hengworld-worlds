@@ -1,0 +1,10 @@
+# Summary (28 Coffee Run T0 runs)
+
+Inputs: executor runs commit 59edcdd585b6 / release coffee-run-t0-v1 (tar sha256 7eb5c819…8e6f, verified); truth from task-maker key/ at c4fe559cbed6; tools/fingerprint.py from task-maker. Scorer code in `scores/code/` at the commit that carries this file.
+
+| track | n | Q | cut F1@0.5 | cut F1@1.0 | shot corr. | $ / run |
+|---|---|---|---|---|---|---|
+| ref | 14 | 1.00 | 0.571 | 0.571 | 0.507 | 0.1567 |
+| scr | 14 | 1.00 | 1.000 | 1.000 | 1.000 | 0.1400 |
+
+Means are plain averages over tasks, not duration-weighted; many tasks are single-shot (cut F1 trivial, see README). Per-task values: scores.csv.

@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0035",
+  "start": 122.292,
+  "end": 129.167,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 6.875,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 35,
+   "start": -0.0,
+   "end": 6.875,
+   "description": "Medium shot of C1 standing against the starry night sky and looking around, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 6.875
+  }
+ ],
+ "task_id": "domini_canes-L0-0035-scr",
+ "descriptions_available": true
+}

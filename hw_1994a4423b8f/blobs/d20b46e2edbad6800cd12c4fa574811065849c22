@@ -1,0 +1,30 @@
+"""Adapted continuity judge (round-local adaptation of crewcut/scoring/judge.py @ df54b3a).
+Same prompt, same frames (crewcut.scoring.judge.frames), same yes/no parse. Changes:
+ - max_tokens 3 -> MAX_TOKENS (Gemini models count hidden reasoning against it; at 3 the answer was empty)
+ - handles an empty answer as an error (no silent 0)
+ - every request logged to a JSONL ledger (purpose, model, usage as reported)."""
+import json, os, time
+from crewcut.scoring import judge as J
+
+MAX_TOKENS = int(os.environ.get("JUDGE_MAX_TOKENS", "1024"))
+LEDGER = os.environ.get("JUDGE_LEDGER", "judge_ledger.jsonl")
+PURPOSE = os.environ.get("JUDGE_PURPOSE", "continuity-judge")
+
+
+class AdaptedJudge(J.ContinuityJudge):
+    def __call__(self, description, start, end):
+        content = [{"type": "text", "text": J.CONTINUITY_PROMPT.format(description=description)}]
+        content += [{"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{f}"}}
+                    for f in J.frames(self.film, start, end)]
+        r = self.client.chat.completions.create(model=self.model, messages=[{"role": "user", "content": content}],
+                                                max_tokens=MAX_TOKENS, temperature=0)
+        u = r.usage
+        ans = r.choices[0].message.content
+        with open(LEDGER, "a") as f:
+            f.write(json.dumps({"purpose": PURPOSE, "model": self.model, "response_model": r.model, "start": start,
+                                "end": end, "description": description, "answer": ans,
+                                "finish_reason": r.choices[0].finish_reason, "max_tokens": MAX_TOKENS,
+                                "usage_raw": u.model_dump() if hasattr(u, "model_dump") else None, "t": time.time()}) + "\n")
+        if not ans or not ans.strip():
+            raise RuntimeError(f"empty judge answer (finish_reason={r.choices[0].finish_reason})")
+        return int(ans.strip().lower().startswith("yes"))

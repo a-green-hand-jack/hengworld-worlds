@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0010",
+  "start": 64.417,
+  "end": 65.917,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.5,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 10,
+   "start": -0.0,
+   "end": 1.5,
+   "description": "Medium shot of C1 reaching down to pet an animal, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.5
+  }
+ ],
+ "task_id": "domini_canes-L0-0010-scr",
+ "descriptions_available": true
+}

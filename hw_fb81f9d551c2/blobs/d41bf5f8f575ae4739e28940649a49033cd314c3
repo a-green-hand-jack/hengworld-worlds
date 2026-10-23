@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0020",
+  "start": 70.083,
+  "end": 73.875,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.792,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 20,
+   "start": 0.0,
+   "end": 3.792,
+   "description": "Medium shot of a gopher and a penguin riding in a cart, panning left."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.792
+  }
+ ]
+}

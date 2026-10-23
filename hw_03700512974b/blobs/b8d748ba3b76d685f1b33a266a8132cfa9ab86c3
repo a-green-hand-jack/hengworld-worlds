@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0032",
+  "start": 101.792,
+  "end": 103.75,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.958,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 32,
+   "start": -0.0,
+   "end": 1.958,
+   "description": "Wide shot of C1 sliding down a snowy slope, panning right."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.958
+  }
+ ],
+ "task_id": "caminandes3-L0-0032-scr",
+ "descriptions_available": true
+}

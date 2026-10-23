@@ -1,0 +1,36 @@
+{
+ "task_id": "coffee_run-L1-0002-ref",
+ "track": "ref",
+ "system": "fixed-pipeline-T0",
+ "tier": "T0",
+ "run_no": 1,
+ "segment_duration_s": 50.209,
+ "delivery_duration_s": 50.208333333333336,
+ "versions_delivered": 1,
+ "wall_clock_s": 82.4,
+ "cost_usd_total": 0.149322,
+ "calls": 5,
+ "ledger_file": "ledger.jsonl",
+ "production_log": "production_log.jsonl",
+ "ffprobe": [
+  {
+   "codec_name": "h264",
+   "width": 1280,
+   "height": 720,
+   "r_frame_rate": "24/1",
+   "duration": "50.208333"
+  },
+  {
+   "codec_name": "aac",
+   "sample_rate": "48000",
+   "channels": 2,
+   "r_frame_rate": "0/0",
+   "duration": "50.208000"
+  }
+ ],
+ "dialogue_lines": 0,
+ "sound_effects": "not run: no ElevenLabs resource in this world",
+ "speech": "none: Reference track pipeline recovers no dialogue (no ASR step in fixed T0)",
+ "generated_assets": 3,
+ "generated_assets_unused": 0
+}

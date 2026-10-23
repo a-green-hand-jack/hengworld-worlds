@@ -1,0 +1,4 @@
+{"purpose":"probe: first shot-description request (with reasoning_effort=none), rejected HTTP 400; usage not reported","model":"gemini-3.5-flash-lite","usage":null,"ok":false}
+{"purpose":"probe: text-only 'Say hi' with reasoning_effort=none, rejected HTTP 400; usage not reported","model":"gemini-3.5-flash-lite","usage":null,"ok":false}
+{"purpose":"probe: text-only 'Say hi' without reasoning_effort, ok","model":"gemini-3.5-flash-lite","usage":{"prompt_tokens":3,"completion_tokens":10,"total_tokens":13},"ok":true}
+{"purpose":"probe: text-only 'Say hi' with reasoning_effort=minimal, ok","model":"gemini-3.5-flash-lite","usage":{"prompt_tokens":3,"completion_tokens":10,"total_tokens":13},"ok":true}

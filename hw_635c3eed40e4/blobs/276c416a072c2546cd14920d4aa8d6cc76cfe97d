@@ -1,0 +1,7 @@
+43a44,47
+>   },
+>   "model_call": {
+>    "model": "gemini-3.5-flash-lite",
+>    "unit": "tokens (model budget); for chat calls such as shot descriptions"
+47a52
+>  "source_check": "Applies to every generator request (image_generation, image_edit, speech_synthesis, music, sound_effects, video_*): each media part of the request is screened against the six masters and a reuse is refused before forwarding (D004). model_call is analysis-only (chat call to gemini-3.5-flash-lite, text answer): it is not source-screened, so Reference-track descriptions may see input-clip frames; its ledger rows carry source_screened=false. Reading per steward decision 16; the maintainer may overrule.",

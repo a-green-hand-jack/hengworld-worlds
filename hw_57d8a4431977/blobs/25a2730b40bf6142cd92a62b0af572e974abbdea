@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0030",
+  "start": 93.042,
+  "end": 96.667,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.625,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 30,
+   "start": -0.0,
+   "end": 3.625,
+   "description": "Long shot of an animal rolling through a snowy landscape, panning left."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.625
+  }
+ ]
+}

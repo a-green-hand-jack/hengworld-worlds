@@ -1,0 +1,226 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L3-0006",
+  "start": 2215.914,
+  "end": 2317.182,
+  "shots": 28,
+  "lines": 0
+ },
+ "duration": 101.268,
+ "cuts": [
+  1.001,
+  4.771,
+  9.409,
+  12.779,
+  13.78,
+  16.716,
+  19.619,
+  22.856,
+  23.957,
+  26.793,
+  28.728,
+  37.504,
+  39.673,
+  44.778,
+  49.015,
+  54.754,
+  57.19,
+  58.291,
+  60.794,
+  63.33,
+  66.032,
+  71.137,
+  74.207,
+  77.577,
+  82.148,
+  87.554,
+  94.828
+ ],
+ "shots": [
+  {
+   "index": 301,
+   "start": -0.0,
+   "end": 1.001,
+   "description": "Wide shot of C1 riding a bicycle away from the camera on a street, tracking forward."
+  },
+  {
+   "index": 302,
+   "start": 1.001,
+   "end": 4.771,
+   "description": "Medium shot of vintage cars driving past each other on a wide city street, static."
+  },
+  {
+   "index": 303,
+   "start": 4.771,
+   "end": 9.409,
+   "description": "Medium shot of C1 standing on the street, pan to the right."
+  },
+  {
+   "index": 304,
+   "start": 9.409,
+   "end": 12.779,
+   "description": "Long shot of C1 cycling on wet street, slipping and falling on his back while carrying laundry in basket, static camera."
+  },
+  {
+   "index": 305,
+   "start": 12.779,
+   "end": 13.78,
+   "description": "Wide shot of C1 riding a motorcycle, static."
+  },
+  {
+   "index": 306,
+   "start": 13.78,
+   "end": 16.716,
+   "description": "Long shot of cars driving fast, static."
+  },
+  {
+   "index": 307,
+   "start": 16.716,
+   "end": 19.619,
+   "description": "Wide shot of a car driving along a dirt road, static."
+  },
+  {
+   "index": 308,
+   "start": 19.619,
+   "end": 22.856,
+   "description": "Medium shot of C1 riding a tricycle, tracking forward."
+  },
+  {
+   "index": 309,
+   "start": 22.856,
+   "end": 23.957,
+   "description": "Long shot of road workers digging dirt by the side of the road, static camera."
+  },
+  {
+   "index": 310,
+   "start": 23.957,
+   "end": 26.793,
+   "description": "Long shot of construction workers digging a ditch by the side of the road, static camera."
+  },
+  {
+   "index": 311,
+   "start": 26.793,
+   "end": 28.728,
+   "description": "Medium shot of C1 riding a motorcycle down a street past a line of workers digging a trench, static."
+  },
+  {
+   "index": 312,
+   "start": 28.728,
+   "end": 37.504,
+   "description": "Medium shot of a group of men arguing near a sign, static."
+  },
+  {
+   "index": 313,
+   "start": 37.504,
+   "end": 39.673,
+   "description": "Wide shot of C1 riding a motorcycle through a forest, tracking shot."
+  },
+  {
+   "index": 314,
+   "start": 39.673,
+   "end": 44.778,
+   "description": "Long shot of multiple characters playing tug-of-war, static."
+  },
+  {
+   "index": 315,
+   "start": 44.778,
+   "end": 49.015,
+   "description": "Long shot of C1 crashing a motorcycle into a picnic, static camera."
+  },
+  {
+   "index": 316,
+   "start": 49.015,
+   "end": 54.754,
+   "description": "Long shot of C1 and C2 crashing a motorcycle, static."
+  },
+  {
+   "index": 317,
+   "start": 54.754,
+   "end": 57.19,
+   "description": "Long shot of C1 and C2 running through a shallow rocky river, static."
+  },
+  {
+   "index": 318,
+   "start": 57.19,
+   "end": 58.291,
+   "description": "Wide shot of a truck driving through a damaged bridge, static camera."
+  },
+  {
+   "index": 319,
+   "start": 58.291,
+   "end": 60.794,
+   "description": "Wide shot of a truck driving through a damaged bridge, static camera."
+  },
+  {
+   "index": 320,
+   "start": 60.794,
+   "end": 63.33,
+   "description": "Wide shot of C1 walking on a bridge, static camera."
+  },
+  {
+   "index": 321,
+   "start": 63.33,
+   "end": 66.032,
+   "description": "Wide shot of trucks driving, static camera."
+  },
+  {
+   "index": 322,
+   "start": 66.032,
+   "end": 71.137,
+   "description": "Long shot of C1 riding a motorcycle jumping over a truck, static camera."
+  },
+  {
+   "index": 323,
+   "start": 71.137,
+   "end": 74.207,
+   "description": "Long shot of a wooden structure collapsing, static camera."
+  },
+  {
+   "index": 324,
+   "start": 74.207,
+   "end": 77.577,
+   "description": "Medium shot of C1 and C2 working on a log outside, static."
+  },
+  {
+   "index": 325,
+   "start": 77.577,
+   "end": 82.148,
+   "description": "Medium shot of C1 and C2 walking behind a log on a road, static camera."
+  },
+  {
+   "index": 326,
+   "start": 82.148,
+   "end": 87.554,
+   "description": "Wide shot of C1 riding a motorcycle and C2 running through a street while it explodes, static camera."
+  },
+  {
+   "index": 327,
+   "start": 87.554,
+   "end": 94.828,
+   "description": "Long shot of C1 driving an agricultural tractor across a dirt road while C2 rides a motorcycle nearby, panning left."
+  },
+  {
+   "index": 328,
+   "start": 94.828,
+   "end": 101.268,
+   "description": "Static insert of text displaying dialogue, with no camera movement."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 12.779
+  },
+  {
+   "start": 12.779,
+   "end": 74.207
+  },
+  {
+   "start": 74.207,
+   "end": 101.268
+  }
+ ],
+ "task_id": "sherlock_jr-L3-0006-ref",
+ "descriptions_available": true
+}

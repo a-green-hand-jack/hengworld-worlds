@@ -1,0 +1,10 @@
+{
+ "task_id": "coffee_run-L2-0001-ref",
+ "film_id": "coffee_run",
+ "level": "L2",
+ "track": "ref",
+ "tier": "T0",
+ "start_s": 170.125,
+ "end_s": 184.583,
+ "segment_id": "coffee_run-L2-0001"
+}

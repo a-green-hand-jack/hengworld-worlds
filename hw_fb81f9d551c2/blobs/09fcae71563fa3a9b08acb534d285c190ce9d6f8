@@ -1,0 +1,97 @@
+{
+ "segment": {
+  "id": "caminandes3-L2-0002",
+  "start": 56.583,
+  "end": 80.125,
+  "shots": 11,
+  "lines": 0
+ },
+ "duration": 23.542,
+ "cuts": [
+  5.667,
+  9.834,
+  10.834,
+  11.417,
+  13.5,
+  17.292,
+  18.042,
+  18.875,
+  21.167,
+  21.959
+ ],
+ "shots": [
+  {
+   "index": 15,
+   "start": 0.0,
+   "end": 5.667,
+   "description": "Medium close-up of a furry mammal waking up and looking around as another creature offers it fruit, static."
+  },
+  {
+   "index": 16,
+   "start": 5.667,
+   "end": 9.834,
+   "description": "Medium shot of a small creature riding a minecart, static."
+  },
+  {
+   "index": 17,
+   "start": 9.834,
+   "end": 10.834,
+   "description": "Medium shot of an animal laughing while another creature holds fruit nearby, static."
+  },
+  {
+   "index": 18,
+   "start": 10.834,
+   "end": 11.417,
+   "description": "Establishing shot of an underground cave system rushing forward, moving in."
+  },
+  {
+   "index": 19,
+   "start": 11.417,
+   "end": 13.5,
+   "description": "Wide shot of animals riding a cart along tracks inside a cave, tracking forward."
+  },
+  {
+   "index": 20,
+   "start": 13.5,
+   "end": 17.292,
+   "description": "Medium shot of a gopher and a penguin riding in a cart, panning left."
+  },
+  {
+   "index": 21,
+   "start": 17.292,
+   "end": 18.042,
+   "description": "Close-up of a llama yelling, static camera."
+  },
+  {
+   "index": 22,
+   "start": 18.042,
+   "end": 18.875,
+   "description": "Medium shot of C1 getting hit in the face with a piece of wood, panning slightly with the hit."
+  },
+  {
+   "index": 23,
+   "start": 18.875,
+   "end": 21.167,
+   "description": "Medium close-up of C1 eating a bunch of fruit, static."
+  },
+  {
+   "index": 24,
+   "start": 21.167,
+   "end": 21.959,
+   "description": "Wide shot of a mineshaft rushing forward, tracking forward."
+  },
+  {
+   "index": 25,
+   "start": 21.959,
+   "end": 23.542,
+   "description": "Wide shot of a mineshaft collapsing, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 23.542
+  }
+ ]
+}

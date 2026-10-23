@@ -1,0 +1,7 @@
+#!/bin/sh
+# Fetch the ogv the CrewCut dataset uses as master; verify archive sha1/md5 and the sha256 task-maker reported.
+set -eu
+out=$1; mkdir -p "$out"
+curl -sfLo "$out/master.ogv" 'https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv'
+echo "adc553f00df255643a4af84deda1dc37a6235d6f  $out/master.ogv" | sha1sum -c -
+echo "028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f  $out/master.ogv" | sha256sum -c -

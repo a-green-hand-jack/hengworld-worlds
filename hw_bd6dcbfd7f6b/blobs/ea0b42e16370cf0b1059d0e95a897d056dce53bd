@@ -1,0 +1,15 @@
+"""Complete c for one run with CrewCut's own score_run + ContinuityJudge, with request logging.
+usage: score_c.py RUN_DIR TASK_PKG_DIR TRUTH_DESCRIBED.json OUT.json REQ_LOG.jsonl [PROVENANCE_INDEX]
+Builds a temporary task dir (published package + described truth), changes nothing in CrewCut."""
+import json, shutil, sys, tempfile
+sys.path.insert(0, __file__.rsplit("/", 1)[0])
+from pathlib import Path
+import gemini_log; gemini_log.install(sys.argv[5], "continuity-judge")
+from crewcut.scoring.score import score_run
+run, pkg, truth, out = map(Path, sys.argv[1:5])
+idx = Path(sys.argv[6]) if len(sys.argv) > 6 else None
+with tempfile.TemporaryDirectory() as td:
+    t = Path(td) / pkg.name; shutil.copytree(pkg, t); shutil.copy(truth, t / "truth.json")
+    r = score_run(run, t, idx, judge="auto")
+out.write_text(json.dumps(r, indent=1))
+print(json.dumps(r["continuity"]), "Q", r["Q"], r.get("notes"))

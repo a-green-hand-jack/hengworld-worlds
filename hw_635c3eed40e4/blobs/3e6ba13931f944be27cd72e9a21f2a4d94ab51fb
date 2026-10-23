@@ -1,0 +1,40 @@
+# usage: clips299.py CLIPS_DIR MANIFEST MASTERS_DIR TASKS_JSONL
+# Independent check of the 299 Reference clips: clip set == ref task ids; sha256 == manifest;
+# frames (ffprobe packet count and, with --decode, full decode count) == round(end*fps)-round(start*fps)
+# from the reference hierarchy (/crewcut-dataset), fps from each master's r_frame_rate; the film's last
+# segment may end at the decoded frame count of the cfr decode (noted, not assumed).
+import json,subprocess,sys,hashlib,os,glob
+from fractions import Fraction
+cd,man,md,tj=sys.argv[1:5]; decode='--decode' in sys.argv
+man=json.load(open(man)); tasks=[json.loads(l) for l in open(tj)]
+ref=[t for t in tasks if t['track']=='ref']
+ids={t['task_id'] for t in ref}
+have={d for d in os.listdir(cd)}
+print('ref tasks',len(ids),'clips',len(have),'missing',sorted(ids-have),'extra',sorted(have-ids),'manifest==ids',set(man)==ids)
+def fps(film):
+    f=glob.glob(f'{md}/{film}.*')[0]
+    o=subprocess.run(['ffprobe','-v','error','-select_streams','v:0','-show_entries','stream=r_frame_rate','-of','csv=p=0',f],capture_output=True,text=True).stdout.strip()
+    return Fraction(o)
+F={};H={}
+bad=0;rows=[]
+def rnd(x): return int(x+Fraction(1,2)) if False else int(round(x))
+for t in ref:
+    film=t['film_id']
+    if film not in F:
+        F[film]=fps(film); H[film]=json.load(open(f'/crewcut-dataset/annotations/{film}/hierarchy.json'))
+    seg={s['id']:s for lv in ['L0','L1','L2','L3','L4'] for s in H[film][lv]}[t['segment_id']]
+    r=float(F[film]); exp=round(seg['end']*r)-round(seg['start']*r)
+    p=f"{cd}/{t['task_id']}/clip.mp4"
+    sha=hashlib.sha256(open(p,'rb').read()).hexdigest()
+    a=['ffprobe','-v','error','-select_streams','v:0','-of','json']
+    if decode: a+=['-count_frames','-show_entries','stream=nb_read_frames']
+    else: a+=['-count_packets','-show_entries','stream=nb_read_packets']
+    st=json.loads(subprocess.run(a+[p],capture_output=True,text=True).stdout)['streams'][0]
+    n=int(st.get('nb_read_frames') or st.get('nb_read_packets'))
+    m=man[t['task_id']]
+    ok=(n==exp) and sha==m['sha256'] and m['frames']==n and m['start_frame']==round(seg['start']*r) 
+    if not ok:
+        bad+=1; print('DIFF',t['task_id'],'frames',n,'exp',exp,'manifest',m['frames'],m['expected_frames'],'sha_ok',sha==m['sha256'],'start',m['start_frame'],round(seg['start']*r),'end',seg['end'],'fps',float(F[film]))
+    rows.append((t['task_id'],n,exp,ok))
+print('checked',len(rows),'bad',bad,'fps',{k:float(v) for k,v in F.items()})
+sys.exit(1 if bad else 0)

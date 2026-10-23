@@ -1,0 +1,19 @@
+Rewrite the one-sentence description of this shot. Template: '[shot size] of [subject] [action], [camera move]'. Refer to characters by their C labels from the list (a label must name the same character in every shot); do not write colours, lens parameters, art style or other appearance. Reply with the sentence only.
+
+Characters:
+C1: a guanaco (llama). Slender, long-necked quadruped with orange-brown fur, dark brown muzzle, long ears, and huge bulging eyes.
+C2: a baby penguin. Small, round, fluffy bird with a grey-black back and head, white belly, small beak, and large white eyes with dark pupils.
+C3: adult penguins. Medium-sized black and white penguins with distinct black and white facial bands, holding large bunches of red berries.
+
+Old sentence: Medium shot of C1 dodging falling planks, static camera.
+Problem: both models judged the sentence contradicted by the frames
+Attempt 2; the previous rewrite was rejected: The description states the camera is static, but the background elements (specifically the wooden beam) shift into the frame from the right, indicating a camera pan or movement. Additionally, the character (C1) is seen tilting its head up and opening its mouth in reaction to the falling object, rather than 'ducking' (lowering its head) as described.
+Frames:
+[frame 1]
+IMG:6b457640c0f0d205e6db94bb7fbe22f16651e2b8faed5ea7180b66371830e320
+[frame 2]
+IMG:3ed062a722733fe76e8cb2bd014f6503c5a9c3dbcf5bd5f950a491c87378848f
+[frame 3]
+IMG:24e72d836fc126b09da072edb5e9868c126a062f87930f9bf6e12791c870dc44
+[frame 4]
+IMG:174bfae1f73b394383e720e87d81faa19ecb4eee6e6ebd83200ab5faeb04643c

@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+"""Fixed T0 pipeline (no model in the loop, no feedback): each shot = one generated still with a slow push-in; one synthetic voice per
+speaker (none needed when script.csv has no lines); one background music piece; straight concatenation at the cuts.
+Usage: t0.py PACKAGE_DIR CLIPS_DIR OUT_DIR   (PACKAGE_DIR = published packages/<task id>; CLIPS_DIR holds <task id>/clip.mp4 for ref tasks)
+Env: TOOLSERVICE_DIR (published toolservice/), FP_DIR (published annotations/), HT_RESOURCE_TOKEN, GEMINI_URL, GEMINI_NATIVE_URL.
+Every call goes through the published ToolService for the source-side screen, price and ledger; a failed attempt is logged, never hidden."""
+import base64, csv, json, os, re, subprocess, sys, time, urllib.request, urllib.error, shutil
+pkg, clips, out = sys.argv[1:4]
+TS = os.environ["TOOLSERVICE_DIR"]; sys.path.insert(0, TS); sys.path.insert(0, os.path.join(TS, "..", "tools"))
+sys.path.insert(0, "/crewcut-algorithms")
+import toolservice
+task = json.load(open(f"{pkg}/task.json")); budget = json.load(open(f"{pkg}/budget.json")); spec = json.load(open(f"{pkg}/spec.json"))
+tid = task["task_id"]; os.makedirs(out, exist_ok=True); work = f"{out}/work"; os.makedirs(work, exist_ok=True)
+T0 = time.time(); LOG = open(f"{out}/production_log.jsonl", "a"); LEDGER = f"{out}/ledger.jsonl"
+KEY = os.environ["HT_RESOURCE_TOKEN"]; NATIVE = os.environ["GEMINI_NATIVE_URL"].rstrip("/"); OAI = os.environ["GEMINI_URL"].rstrip("/")
+IMG_MODEL, MUSIC_MODEL, DESC_MODEL = "gemini-3.1-flash-lite-image", "lyria-3.5", "gemini-3.5-flash-lite"
+PRICES = toolservice.PRICES
+svc = toolservice.ToolService(os.environ["FP_DIR"], LEDGER, budget, "fixed-pipeline-T0", tid, "world (paid key of executor's resources)")
+model_spent = 0.0
+
+def log(kind, **r):
+    r.update(kind=kind, task=tid, t=round(time.time() - T0, 2)); LOG.write(json.dumps(r, ensure_ascii=False) + "\n"); LOG.flush()
+
+def post(url, body, headers, retries=3):
+    for a in range(retries):
+        try:
+            req = urllib.request.Request(url, json.dumps(body).encode(), headers)
+            return json.load(urllib.request.urlopen(req, timeout=170)), a
+        except urllib.error.HTTPError as e:
+            log("attempt_failed", url=url.split("?")[0].rsplit("/", 1)[-1], status=e.code, body=e.read()[:300].decode("utf8", "replace"), attempt=a + 1)
+            if e.code in (400, 402, 403): raise
+        except Exception as e:
+            log("attempt_failed", url=url.rsplit("/", 1)[-1], error=str(e)[:200], attempt=a + 1)
+        time.sleep(5 * (a + 1))
+    raise RuntimeError("call failed after retries")
+
+def sh(cmd):
+    log("command", cmd=" ".join(cmd)[:400]); subprocess.run(cmd, check=True, capture_output=True)
+
+def write_file(path, purpose):
+    log("file_write", path=os.path.relpath(path, out), bytes=os.path.getsize(path), purpose=purpose)
+
+fps = 24
+seg = task["end_s"] - task["start_s"]
+# ---- 1. shot list
+if task["track"] == "scr":
+    shots = [dict(start=float(r["start"]), end=float(r["end"]), description=r["description"]) for r in csv.DictReader(open(f"{pkg}/input/shotlist.csv"))]
+    lines = list(csv.DictReader(open(f"{pkg}/input/script.csv")))
+    log("shot_list", source="input/shotlist.csv (given)", n=len(shots))
+else:
+    clip = f"{clips}/{tid}/clip.mp4"
+    from crewcut_algorithms import cuts as cutmod
+    rec = cutmod.detect(clip); cf = rec["cuts"]; n = rec["nframes"]; cfps = rec["fps"]
+    b = [0] + cf + [n]
+    shots = [dict(start=b[i] / cfps, end=b[i + 1] / cfps) for i in range(len(b) - 1)]
+    log("shot_list", source="crewcut_algorithms cuts (unmodified) on input/clip.mp4", cut_frames=cf, fps=cfps, n=len(shots))
+    lines = []  # no ASR in the fixed T0 pipeline's Reference track: no dialogue is recovered (recorded in manifest)
+    maxc = 0
+    PROMPT = ("You see frames from one shot of a film. Describe the shot in one to three sentences using the template '[shot size] of [subject] [action], [camera move]'. "
+              "Refer to people as C1, C2 and so on, consistently with these known characters: {chars}. Do not mention colours, lens, art style or other appearance details that a remake could legitimately change. Reply with the description only.")
+    for i, s in enumerate(shots):
+        content = [{"type": "text", "text": PROMPT.format(chars=", ".join(f"C{j}" for j in range(1, maxc + 1)) or "none yet")}]
+        for k in range(3):
+            tt = min(s["start"] + (s["end"] - s["start"]) * (k + 1) / 4, (n - 1) / cfps)  # clamp: a 1-frame last shot would otherwise seek past the end
+            fp = f"{work}/d{i}_{k}.jpg"
+            fi = min(round(tt * cfps), n - 1)  # frame-exact extraction (seek-based extraction fails on a 1-frame last shot)
+            for back in range(4):  # cv2 and ffmpeg can disagree by a frame at the very end: step back until a frame decodes (still inside the shot's last frames)
+                if os.path.exists(fp): os.remove(fp)
+                sh(["ffmpeg", "-y", "-v", "error", "-i", clip, "-vf", f"select=eq(n\\,{fi - back}),scale=448:-2", "-frames:v", "1", "-vsync", "0", fp])
+                if os.path.exists(fp): break
+                log("note", msg=f"frame {fi - back} not decodable, stepping back")
+            content.append({"type": "image_url", "image_url": {"url": "data:image/jpeg;base64," + base64.b64encode(open(fp, "rb").read()).decode()}})
+        j, _ = post(OAI + "/chat/completions", {"model": DESC_MODEL, "temperature": 0, "reasoning_effort": "minimal", "max_tokens": 600,
+                    "messages": [{"role": "user", "content": content}]}, {"Content-Type": "application/json", "Authorization": "Bearer " + KEY})
+        s["description"] = (j["choices"][0]["message"].get("content") or "").strip()
+        u = j.get("usage", {}); dp = PRICES["description_model"]
+        amt = u.get("prompt_tokens", 0) / 1e6 * dp["input_per_1M_tokens"] + u.get("completion_tokens", 0) / 1e6 * dp["output_per_1M_tokens"]
+        model_spent += amt
+        if model_spent > budget["model_usd"]: raise SystemExit("model budget spent")
+        with open(LEDGER, "a") as f:
+            f.write(json.dumps(dict(service="chat/completions", model=DESC_MODEL, system="fixed-pipeline-T0", task=tid, purpose=f"describe shot {i} of input clip (Reference track shot list)",
+                    usage=dict(prompt_tokens=u.get("prompt_tokens"), completion_tokens=u.get("completion_tokens")), unit_price=dict(input_per_1M=dp["input_per_1M_tokens"], output_per_1M=dp["output_per_1M_tokens"]),
+                    amount=round(amt, 6), status="ok", borne_by=svc.borne_by)) + "\n")
+        log("model_call", model=DESC_MODEL, purpose=f"describe shot {i}", usage=u, text=s["description"], amount=round(amt, 6))
+        for m in re.findall(r"\bC(\d+)\b", s["description"]): maxc = max(maxc, int(m))
+
+# ---- 2. frame boundaries (exact total frame count)
+total_frames = round(seg * fps) if task["track"] == "scr" else round(shots[-1]["end"] * fps)
+bounds = [0] + [min(total_frames, round(s["end"] * fps)) for s in shots]; bounds[-1] = total_frames
+# ---- 3. stills + push-in
+assets = []; parts = []
+for i, s in enumerate(shots):
+    nfr = bounds[i + 1] - bounds[i]
+    if nfr <= 0: continue
+    prompt = ("An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. "
+              "Depict this shot: " + re.sub(r"\bC\d+\b", "a cartoon character", s["description"]))
+    svc.call("image_generation", f"still for shot {i}", inputs=())  # screen (text only), budget check, price record
+    j, att = post(f"{NATIVE}/v1beta/models/{IMG_MODEL}:generateContent", {"contents": [{"parts": [{"text": prompt}]}],
+                  "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "16:9"}}}, {"Content-Type": "application/json", "x-goog-api-key": KEY})
+    img = next((p["inlineData"] for p in j["candidates"][0]["content"]["parts"] if "inlineData" in p), None)
+    if img is None: raise RuntimeError("no image returned for shot %d: %s" % (i, json.dumps(j)[:300]))
+    ip = f"{work}/still{i}.jpg"; open(ip, "wb").write(base64.b64decode(img["data"])); write_file(ip, f"generated still shot {i}")
+    log("tool_call", tool="image_generation", model=IMG_MODEL, shot=i, prompt=prompt, usage=j.get("usageMetadata"))
+    vp = f"{work}/shot{i}.mp4"
+    sh(["ffmpeg", "-y", "-v", "error", "-i", ip, "-vf", f"scale=2560:1440:force_original_aspect_ratio=increase,crop=2560:1440,zoompan=z='1+0.12*on/{nfr}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={nfr}:s=1280x720:fps={fps},format=yuv420p",
+        "-frames:v", str(nfr), "-c:v", "libx264", "-crf", "20", "-preset", "veryfast", "-r", str(fps), "-an", vp])
+    parts.append(vp); assets.append(dict(type="image", file=f"work/still{i}.jpg", model=IMG_MODEL, prompt=prompt, used_in="delivery.mp4", shot=i))
+listf = f"{work}/concat.txt"; open(listf, "w").write("".join(f"file '{os.path.abspath(p)}'\n" for p in parts))
+sh(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", listf, "-c", "copy", f"{work}/video.mp4"])
+# ---- 4. speech: none needed unless the script has lines
+speech = []
+if lines:
+    log("note", msg="script has lines; speech synthesis would run here")  # not reached for Coffee Run (0 dialogue lines)
+# ---- 5. music (one piece)
+svc.call("music", "one background music piece", inputs=())
+mprompt = "Gentle instrumental background score for a short animated film about a woman hurrying through a city; light, warm, playful, no vocals."
+j, _ = post(f"{NATIVE}/v1beta/models/{MUSIC_MODEL}:generateContent", {"contents": [{"parts": [{"text": mprompt}]}]}, {"Content-Type": "application/json", "x-goog-api-key": KEY})
+au = next(p["inlineData"] for p in j["candidates"][0]["content"]["parts"] if "inlineData" in p)
+mp = f"{work}/music.mp3"; open(mp, "wb").write(base64.b64decode(au["data"])); write_file(mp, "generated music")
+log("tool_call", tool="music", model=MUSIC_MODEL, prompt=mprompt, usage=j.get("usageMetadata"))
+assets.append(dict(type="music", file="work/music.mp3", model=MUSIC_MODEL, prompt=mprompt, used_in="delivery.mp4"))
+dur = total_frames / fps
+sh(["ffmpeg", "-y", "-v", "error", "-i", f"{work}/video.mp4", "-stream_loop", "-1", "-i", mp, "-filter_complex",
+    f"[1:a]aformat=sample_rates=48000:channel_layouts=stereo,volume=0.6,afade=t=in:d=1,afade=t=out:st={max(dur-2,0):.3f}:d=2,atrim=0:{dur:.3f}[a]",
+    "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2", "-t", f"{dur:.3f}", f"{out}/delivery.mp4"])
+write_file(f"{out}/delivery.mp4", "delivered MP4 version 1")
+# ---- 6. subtitles + assets
+with open(f"{out}/subtitles.vtt", "w") as f:
+    f.write("WEBVTT\n\n")
+    def ts(x): return "%02d:%02d:%06.3f" % (int(x // 3600), int(x % 3600 // 60), x % 60)
+    for n, r in enumerate(lines, 1): f.write(f"{n}\n{ts(float(r['start']))} --> {ts(float(r['end']))}\n{r['text']}\n\n")
+write_file(f"{out}/subtitles.vtt", "WebVTT (%d cues)" % len(lines))
+json.dump(assets, open(f"{out}/assets.json", "w"), indent=1); write_file(f"{out}/assets.json", "asset list")
+pr = json.loads(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=codec_name,width,height,r_frame_rate,sample_rate,channels,duration", "-of", "json", f"{out}/delivery.mp4"], capture_output=True, text=True).stdout)
+led = [json.loads(l) for l in open(LEDGER)]
+used = {a["file"] for a in assets}
+man = dict(task_id=tid, track=task["track"], system="fixed-pipeline-T0", tier="T0", run_no=1, segment_duration_s=seg, delivery_duration_s=dur, versions_delivered=1,
+           wall_clock_s=round(time.time() - T0, 1), cost_usd_total=round(sum(x["amount"] for x in led), 6), calls=len(led), ledger_file="ledger.jsonl", production_log="production_log.jsonl",
+           ffprobe=pr["streams"], dialogue_lines=len(lines), sound_effects="not run: no ElevenLabs resource in this world", speech="none: script has no dialogue lines" if task["track"] == "scr" else "none: Reference track pipeline recovers no dialogue (no ASR step in fixed T0)",
+           generated_assets=len(assets), generated_assets_unused=0)
+json.dump(man, open(f"{out}/manifest.json", "w"), indent=1); write_file(f"{out}/manifest.json", "run manifest")
+shutil.rmtree(work + "/d0_0.jpg", ignore_errors=True)
+print("DONE", tid, man["cost_usd_total"], man["wall_clock_s"])

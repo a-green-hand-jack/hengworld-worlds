@@ -1,0 +1,45 @@
+"""Compare rebuilt Caminandes 3 data with the published dataset. usage: compare.py REBUILT_DATA_DIR TASKS_DIR DATASET_DIR OUT.json
+Exit 1 if any difference is found other than those listed in records/differences.json (checked by the caller)."""
+import json, sys, hashlib
+from pathlib import Path
+data, tasks, ds, out = map(Path, sys.argv[1:5])
+film = "caminandes3"
+res = {"differences": [], "identical": []}
+def sh(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+for n in ("shots", "dialogue", "hierarchy"):
+    a, b = data / film / f"{n}.json", ds / "annotations" / film / f"{n}.json"
+    ja, jb = json.loads(a.read_text()), json.loads(b.read_text())
+    if ja == jb:
+        res["identical"].append({"file": n, "sha256": sh(a), "byte_identical": a.read_bytes() == b.read_bytes()})
+    else:
+        keys = sorted(set(ja) | set(jb))
+        for k in keys:
+            if ja.get(k) != jb.get(k):
+                res["differences"].append({"file": f"{n}.json", "field": k, "rebuilt": ja.get(k), "published": jb.get(k)})
+        res["identical"].append({"file": n + " (other fields)", "note": "all other fields equal"})
+sa = json.loads((data / film / "shots.json").read_text()); sb = json.loads((ds / "annotations" / film / "shots.json").read_text())
+res["cuts"] = {"rebuilt": len(sa["cut_frames"]), "published": len(sb["cut_frames"]), "frames_equal": sa["cut_frames"] == sb["cut_frames"]}
+pub = {}
+for l in open(ds / "tasks" / "dev.jsonl"):
+    r = json.loads(l)
+    if r["film_id"] == film: pub[r["task_id"]] = r
+mine = {}
+for d in sorted(tasks.iterdir()):
+    t = json.loads((d / "task.json").read_text()); mine[t["task_id"]] = t
+res["tasks"] = {"rebuilt": len(mine), "published": len(pub), "ids_equal": set(mine) == set(pub),
+                "only_rebuilt": sorted(set(mine) - set(pub)), "only_published": sorted(set(pub) - set(mine))}
+fd = []
+for tid in sorted(set(mine) & set(pub)):
+    m, p = mine[tid], pub[tid]
+    # published fields: task_id film_id level segment_id track start_s end_s n_shots n_lines
+    seg = tid.rsplit("-", 1)[0]
+    tr = json.loads((tasks / tid / "truth.json").read_text())["segment"]
+    mm = {"task_id": tid, "film_id": m["film_id"], "level": m["level"], "segment_id": seg, "track": m["track"],
+          "start_s": m["start_s"], "end_s": m["end_s"], "n_shots": tr["shots"], "n_lines": tr["lines"]}
+    for k in p:
+        if mm.get(k) != p[k]: fd.append({"task": tid, "field": k, "rebuilt": mm.get(k), "published": p[k]})
+    if set(mm) != set(p): fd.append({"task": tid, "field": "keys", "rebuilt": sorted(mm), "published": sorted(p)})
+res["tasks"]["field_differences"] = fd
+res["tasks"]["fields_compared"] = sorted(next(iter(pub.values())))
+Path(out).write_text(json.dumps(res, indent=1))
+print(json.dumps({k: res[k] for k in ("cuts",)}), "task ids equal:", res["tasks"]["ids_equal"], "field diffs:", len(fd), "annotation diffs:", res["differences"])

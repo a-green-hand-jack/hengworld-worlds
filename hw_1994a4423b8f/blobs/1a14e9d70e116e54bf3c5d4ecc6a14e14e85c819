@@ -1,0 +1,4 @@
+# Environment (2026-10-21)
+- CrewCut cloned from /crewcut/crewcut.git at df54b3a3918e16bfc8e61ff6215e01b6abca3849; `pip install /hutian/cc` (core only) -> crewcut 0.1.0; `crewcut systems` runs.
+- ffmpeg 9.0.2 from conda-forge (micromamba, -p /hutian/.mamba).
+- Run on caminandes3-L1-0000-scr: pending the published task package (task-maker#3).

@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0015",
+  "start": 70.72,
+  "end": 71.84,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.12,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 15,
+   "start": 0.0,
+   "end": 1.12,
+   "description": "Medium shot of C1 riding a hoverboard and kicking a glowing orb, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.12
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0015-ref",
+ "descriptions_available": true
+}

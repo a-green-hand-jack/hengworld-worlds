@@ -1,0 +1,64 @@
+{
+ "segment": {
+  "id": "domini_canes-L1-0001",
+  "start": 17.917,
+  "end": 47.0,
+  "shots": 6,
+  "lines": 0
+ },
+ "duration": 29.083,
+ "cuts": [
+  2.5,
+  12.416,
+  13.791,
+  23.25,
+  28.166
+ ],
+ "shots": [
+  {
+   "index": 1,
+   "start": -0.0,
+   "end": 2.5,
+   "description": "Wide shot of C1 standing, static camera."
+  },
+  {
+   "index": 2,
+   "start": 2.5,
+   "end": 12.416,
+   "description": "Medium shot of C1 peeking from behind a curtain, static."
+  },
+  {
+   "index": 3,
+   "start": 12.416,
+   "end": 13.791,
+   "description": "Medium shot of a wolf puppet standing, static."
+  },
+  {
+   "index": 4,
+   "start": 13.791,
+   "end": 23.25,
+   "description": "Wide shot of C1 petting a wolf, static."
+  },
+  {
+   "index": 5,
+   "start": 23.25,
+   "end": 28.166,
+   "description": "Medium shot of C1 lifting her hand towards a branch, static camera."
+  },
+  {
+   "index": 6,
+   "start": 28.166,
+   "end": 29.083,
+   "description": "Medium close-up of C1 reaching up towards a branch, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 29.083
+  }
+ ],
+ "task_id": "domini_canes-L1-0001-scr",
+ "descriptions_available": true
+}

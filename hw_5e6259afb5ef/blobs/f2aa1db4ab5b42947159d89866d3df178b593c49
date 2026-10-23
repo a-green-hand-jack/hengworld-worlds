@@ -1,0 +1,17 @@
+# Questions for the maintainer (not decided by any position)
+1. Reference-image granularity (per character, place selection) — sample runs one per character and one per place; final choice is yours.
+2. Frames per shot — formula in objective 三 used for the sample; confirm or change.
+3. Disputed corrections (one model only) in `description_corrections.jsonl` — listed there, unchanged.
+4. Gaps: see brief.md Part B item 4 (a–g): model availability, frame rate source, price source/who bears cost, synopsis derivation tension, README for existing -ref/-scr, cap accounting, model-time budget.
+Positions append further items under their own heading below.
+
+## From task-maker (full text: task-maker `questions_for_maintainer.md`; relayed unchanged, steward#7)
+1. Cost: sample 2.86 USD (324 calls); extrapolation to 6 films 43.40 USD, 13.40 over the 30 USD cap (shots 21.18, corrections 7.16, film tables+images 4.82, synopses 10.24). Per 五 the method was not changed; compression options (fewer frames, shared L3/L4 synopsis, measuring the correction rate on a second film) are listed in `cost/summary.json` and are the maintainer's to choose. Auditor re-check calls are not yet included.
+2. Reference-image granularity: 3 character + 4 place images done; confirm or change. Place ids P1..P4 appear in manifest as lookup keys.
+3. Frame count: formula of 三 used, no experiment.
+4. Corrections: 28 of 37 one-sentence descriptions rewritten (both models contradicted), shot 14 disputed and unchanged. Do corrected `-scr` shotlists replace the published ones? READMEs of `-ref`/`-scr` for other segments/films unchanged.
+5. Protocol deviation to rule on: step 3 feeds the synopsis drafter the detailed descriptions and dialogue; task-maker also gave the corrected one-sentence descriptions (first literal attempt kept in `superseded/`). Steward notes this differs from the text of 三 step 3; whether it stands is the maintainer's.
+6. Two synopses carry a flagged word ("second", "wide"), kept and flagged.
+7. Shot 26 `characters` cell is empty after deletions.
+8. Audio input priced at the text rate (single listed price).
+9. pHash verified on Caminandes 3 only; min distances of accepted images 12-18.

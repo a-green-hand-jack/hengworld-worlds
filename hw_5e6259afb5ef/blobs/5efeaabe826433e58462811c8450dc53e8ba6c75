@@ -1,0 +1,16 @@
+Here is your detailed description of shot 2:
+{"setting": "P2: Railroad tracks. Outdoor, daytime. Horizontal steel train tracks on wooden ties and gravel covered in snow, set against a white snowy slope.", "characters": "C2: stands on a wooden railroad tie between the steel rails in the center, facing right with wide eyes.", "props": "A small green plant sprout with a single red berry on the snow between the rails.", "action": "The camera rapidly zooms in on the center of the railroad tracks, revealing C2 standing on a wooden tie and staring intently at a red berry on a green stem in the snow.", "camera": "Starts as a wide shot of the horizontal tracks, then rapidly crash-zooms in to a medium shot centered on C2.", "light_mood": "Bright, crisp daylight against white snow; sudden dramatic and comical mood.", "sound": "A loud, dramatic orchestral brass chord accompanied by the rhythmic clacking and rumble of an approaching train."}
+An independent checker looking at the same frames flagged:
+- sound: 'accompanied by the rhythmic clacking and rumble of an approaching train' -> contradicted
+Rewrite the whole JSON (same keys, same limits, no description_* keys needed) so that every statement is confirmed by the frames or audio. Reply with JSON only.
+
+Frames:
+[frame 1 at 30.86s]
+IMG:1e4f6e9770f77bda36eb96d6a2a595d2ebbdf435c442bbf347af57b55167c862
+[frame 2 at 31.22s]
+IMG:52b12ba661cbf62e0147f82e71ff57e74762478f26c7e2ea7b3b5944b3f3cf50
+[frame 3 at 31.58s]
+IMG:73b51c8a986dc7de82f84ddaccbd2174afa310dc689df5126250b4d6b99672bf
+[frame 4 at 31.93s]
+IMG:5084af04a48f0e6ff1f6555925bbd9448a97edbc9e0cf6243e1316950fc6b2af
+AUD:86fa832df5d409737a63647222200998c8b26e99a48c02778794687a3e9505d6

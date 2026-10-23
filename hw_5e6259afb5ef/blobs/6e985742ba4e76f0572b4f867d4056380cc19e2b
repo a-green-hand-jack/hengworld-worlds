@@ -1,0 +1,36 @@
+"""Auditor's own 64-bit DCT perceptual hash (32x32 grey, 8x8 low-frequency block)."""
+import sys, json, subprocess, numpy as np
+from scipy.fft import dctn
+
+def _bits(img, variant):
+    c = dctn(img.astype(np.float64), norm=None)[:8, :8].flatten()
+    ref = c[1:] if variant == "median_nodc" else c
+    thr = np.median(ref)
+    b = c > thr
+    return b
+
+def hash_hex(img32, variant="median_nodc"):
+    b = _bits(img32, variant)
+    v = 0
+    for x in b: v = (v << 1) | int(x)
+    return f"{v:016x}"
+
+def frames_from_video(path, fps=2):
+    cmd = ["ffmpeg","-v","error","-i",path,"-vf",f"fps={fps},scale=32:32:flags=area,format=gray",
+           "-f","rawvideo","-"]
+    raw = subprocess.run(cmd, capture_output=True, check=True).stdout
+    return np.frombuffer(raw, np.uint8).reshape(-1,32,32)
+
+def hd(a, b): return bin(int(a,16) ^ int(b,16)).count("1")
+
+if __name__ == "__main__":
+    master, fp = sys.argv[1], sys.argv[2]
+    ref = json.load(open(fp))["hashes"]
+    fr = frames_from_video(master)
+    print("frames", len(fr), "ref", len(ref))
+    for variant in ("median_nodc", "median_all"):
+        hs = [hash_hex(f, variant) for f in fr]
+        n = min(len(hs), len(ref))
+        d = [hd(hs[i], ref[i]) for i in range(n)]
+        tot = 64 * n
+        print(variant, "bit agreement", 1 - sum(d)/tot, "exact", sum(x==0 for x in d)/n, "max", max(d))

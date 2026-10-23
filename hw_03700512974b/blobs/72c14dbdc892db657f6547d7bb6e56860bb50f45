@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "domini_canes-L2-0002",
+  "start": 129.167,
+  "end": 218.375,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 89.208,
+ "cuts": [
+  6.291,
+  7.625,
+  25.625
+ ],
+ "shots": [
+  {
+   "index": 36,
+   "start": -0.0,
+   "end": 6.291,
+   "description": "Close-up of C1 looking, static."
+  },
+  {
+   "index": 37,
+   "start": 6.291,
+   "end": 7.625,
+   "description": "Extreme close-up of C1 staring intently, static."
+  },
+  {
+   "index": 38,
+   "start": 7.625,
+   "end": 25.625,
+   "description": "Extreme close-up of C1 standing, zooming out."
+  },
+  {
+   "index": 39,
+   "start": 25.625,
+   "end": 89.208,
+   "description": "Wide shot of a cathedral opening upwards, zooming out."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 89.208
+  }
+ ],
+ "task_id": "domini_canes-L2-0002-scr",
+ "descriptions_available": true
+}

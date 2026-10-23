@@ -1,0 +1,29 @@
+You write the detailed shot description for one shot of a short film, so that it can be remade from text. You see the shot's frames in time order and its audio. Reply with ONE JSON object: {"setting": "place, indoor/outdoor, time, weather and surroundings; at most 30 words; call the place by the name given in the places list", "characters": "format 'C1: ...; C2: ...', for each character visible in the shot its position, clothing/held items and expression changes in this shot; at most 25 words per character; the basic appearance is already in the character list, so write only what differs from it", "props": "important objects; at most 25 words", "action": "what happens in order; at most 60 words", "camera": "shot size, angle, camera movement and composition changes; at most 25 words", "light_mood": "lighting, colour tone and mood; at most 25 words", "sound": "ambient sound, effects, music or silence; at most 25 words", "description_consistent": true or false (does the given one-sentence description agree with the frames), "description_note": "why, if not"}
+Rules: write only facts that can be confirmed in the frames or audio; do not guess; use the C labels of the character list; no proper names, no film title; no scene numbers, no grouping of shots, no mention of other shots or of frames.
+
+Overall look: 3D CGI animated cartoon style with exaggerated facial expressions, bright daylight in snowy mountain landscapes, and dark blue-lit underground mine caves.
+Characters:
+C1: a guanaco (llama). Slender, long-necked quadruped with orange-brown fur, dark brown muzzle, long ears, and huge bulging eyes.
+C2: a baby penguin. Small, round, fluffy bird with a grey-black back and head, white belly, small beak, and large white eyes with dark pupils.
+C3: adult penguins. Medium-sized black and white penguins with distinct black and white facial bands, holding large bunches of red berries.
+Places:
+P1: Frozen pond and snowy field. A snowy plain with a frozen blue puddle, a wire fence with wooden posts, and distant snowy mountains.
+P2: Railroad tracks. Steel train tracks on wooden ties and gravel cutting through a snowy landscape with an oil pumpjack in the background.
+P3: Underground mine. A dark, cavernous underground mine with blue ambient lighting, rocky walls, wooden support beams, and steep minecart tracks.
+P4: Mountain slope and rocky peaks. A high, steep snowy mountain area with jagged rocky peaks covered in snow and ice.
+
+Previous shot's detailed description (for continuity only; describe THIS shot from its own frames):
+{"setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, mid-air with blurred snowy mountain peaks, clouds, and pale blue sky in the background.", "characters": "C1: on left and center, facing right, expression shifting from half-lidded droop to wide-eyed panic with open mouth, then confused blinking.", "props": "None.", "action": "While airborne, C1's expression suddenly shifts from a relaxed, half-lidded look to wide-eyed shock and panic as it gasps, then closes its mouth and blinks rapidly while looking around in confusion.", "camera": "Medium close-up of C1's head and neck at eye level, tracking alongside C1 against the moving background.", "light_mood": "Bright natural daylight with cool blue and white background tones; comedic and sudden realization mood.", "sound": "Dramatic orchestral music swells and shifts to a tense tone, accompanied by C1's high-pitched scream and confused grunting vocalizations."}
+
+Shot 30 one-sentence description: Extreme long shot of a furry creature falling from the sky and crashing into a snowy landscape, zooming in.
+
+Frames (4):
+[frame 1 at 93.77s]
+IMG:38c5f06d40699350bd25c0d0c3caf8021ed646979589b15765852f7dfe172d61
+[frame 2 at 94.49s]
+IMG:6a72b93ba53ae3fd5de801f084ac5d80d7afbd7007007cb3955a3f7c3d9c88e3
+[frame 3 at 95.22s]
+IMG:bf13619ca9465ea0dbcab27b1cf6fc6d1e149dfd4826f9705151a5fc1995d7c7
+[frame 4 at 95.94s]
+IMG:a0d466dd9c1e2cd678fee13c4ac7519527d85b92c66dc0a28d93243c3e81ad1b
+AUD:aaa2bc0fe6abbca53babd044cdf5ba114b4465b90f3fea46715dbe27aa8f2763

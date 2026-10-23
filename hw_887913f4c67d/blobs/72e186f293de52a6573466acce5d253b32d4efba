@@ -1,0 +1,63 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0004",
+  "start": 70.083,
+  "end": 80.125,
+  "shots": 6,
+  "lines": 0
+ },
+ "duration": 10.042,
+ "cuts": [
+  0.0,
+  3.792,
+  4.542,
+  5.375,
+  7.667,
+  8.459
+ ],
+ "shots": [
+  {
+   "index": 20,
+   "start": 0.0,
+   "end": 3.792,
+   "description": "Medium shot of a gopher-like animal and a small bird riding in a wooden crate, panning right."
+  },
+  {
+   "index": 21,
+   "start": 3.792,
+   "end": 4.542,
+   "description": "Close-up of a camel howling, static shot."
+  },
+  {
+   "index": 22,
+   "start": 4.542,
+   "end": 5.375,
+   "description": "Close-up of an animal getting its head smashed between two planks of wood, static camera."
+  },
+  {
+   "index": 23,
+   "start": 5.375,
+   "end": 7.667,
+   "description": "Medium close-up of C1 pecking at fruit, static camera."
+  },
+  {
+   "index": 24,
+   "start": 7.667,
+   "end": 8.459,
+   "description": "Wide shot of a minecart moving through a mine tunnel, tracking forward."
+  },
+  {
+   "index": 25,
+   "start": 8.459,
+   "end": 10.042,
+   "description": "Wide shot of a mineshaft collapsing, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 10.042
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0032",
+  "start": 111.0,
+  "end": 112.292,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.292,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 32,
+   "start": 0.0,
+   "end": 1.292,
+   "description": "Medium shot of multiple hooded figures standing still while holding torches, truck right."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.292
+  }
+ ],
+ "task_id": "domini_canes-L0-0032-scr",
+ "descriptions_available": true
+}

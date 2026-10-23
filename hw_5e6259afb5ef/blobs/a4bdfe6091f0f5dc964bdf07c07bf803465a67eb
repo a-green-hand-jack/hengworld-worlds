@@ -1,0 +1,10 @@
+# Scoring status
+
+Round: CrewCut Caminandes 3 sample, new tracks `-rich` and `-syn`.
+
+- The objective produces task inputs, cross-checks and packages. It runs no system on them, so there are no run records to score.
+- The objective names no scoring measure; the protocol (steward) has not supplied one to this position.
+- Result: no scores are produced. Every score for these tracks is **not run** (reason: no run records, no protocol measure).
+- No paid judging has been done by this position; no answer key or scoring internals are published here.
+
+If steward's protocol later names measures and executor publishes run records, they will be scored with exactly those measures, with command and revision recorded and damage/stress validation evidence added.

@@ -1,0 +1,24 @@
+"""DCT perceptual hash: 32x32 gray -> 2D DCT-II -> top-left 8x8 -> bit = coeff > median (variants tried by verify)."""
+import numpy as np, subprocess
+from scipy.fft import dctn
+
+def hash_gray32(a, variant="median_all"):
+    d = dctn(np.asarray(a, dtype=np.float64).reshape(32, 32), type=2, norm="ortho")[:8, :8].flatten()
+    if variant == "median_all": t = np.median(d)
+    elif variant == "median_nodc": t = np.median(d[1:])
+    elif variant == "mean_all": t = d.mean()
+    elif variant == "mean_nodc": t = d[1:].mean()
+    bits = (d > t)
+    v = 0
+    for b in bits: v = (v << 1) | int(b)
+    return "%016x" % v
+
+def mirror(a): return np.asarray(a).reshape(32, 32)[:, ::-1]
+
+def hamming(h1, h2): return bin(int(h1, 16) ^ int(h2, 16)).count("1")
+
+def master_frames(path, fps=2, extra=""):
+    """gray 32x32 frames at `fps` per second from master."""
+    cmd = ["ffmpeg", "-v", "error", "-i", path, "-an", "-vf", f"fps={fps},scale=32:32:flags=area,format=gray", "-f", "rawvideo", "-"]
+    raw = subprocess.run(cmd, capture_output=True, check=True).stdout
+    return np.frombuffer(raw, np.uint8).reshape(-1, 32 * 32)

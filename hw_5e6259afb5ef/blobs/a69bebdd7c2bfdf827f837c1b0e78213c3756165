@@ -1,0 +1,78 @@
+{
+ "caminandes3-L1-0001": {
+  "segment_id": "caminandes3-L1-0001",
+  "duration_s": 10.415999999999997,
+  "n_sentences_required": 1,
+  "synopsis": "As a steam locomotive speeds through a snowy landscape, a character standing outdoors looks around before another character stands on the train tracks holding a flower in the path of the approaching train, prompting the first character to walk forward while looking around, gasp in shock as the locomotive continues moving forward, and finally narrow its eyes in annoyance.",
+  "flags": [],
+  "calls": {
+   "draft": "4901a264c5b2daaf5ba6788f5a049d228a7bd5f05d314fe11d3f7877bf071c49"
+  },
+  "first_check_disputed": 0
+ },
+ "caminandes3-L1-0005": {
+  "segment_id": "caminandes3-L1-0005",
+  "duration_s": 34.375,
+  "n_sentences_required": 1,
+  "synopsis": "In an alarming sequence, a furry animal falls through the air behind a bunch of berries before screaming and flailing its legs while flying through the air, after which another animal falls while waving, the first animal gasps and blinks in alarm before falling from the sky and crashing into a snowy landscape, where it lies on its back in the snow with the other animal sitting on it, and after that second animal slides down a snowy slope, the first animal lowers its head.",
+  "flags": [
+   "forbidden content: ['second']"
+  ],
+  "calls": {
+   "draft": "c17cd3d7bfc403993608c24a67a18204775f202e358ff83b56be413da71657e1",
+   "rewrite": "94f71b8ef1e8af6047db52b619a8fac2cbfcffe9be8c49eba9b11c4efcb4713b"
+  },
+  "first_check_disputed": 6
+ },
+ "caminandes3-L2-0002": {
+  "segment_id": "caminandes3-L2-0002",
+  "duration_s": 23.542,
+  "n_sentences_required": 1,
+  "synopsis": "A character wakes up and looks around, rides in a mine cart with another character on broken tracks inside a cave, speeds forward through a tunnel while a companion holds a bunch of berries along roller coaster tracks running through a dark cave, rides a minecart crashing through wood structures, rides a minecart with the companion, screams with its mouth wide open and eyes closed, and tilts its head up in shock as a large structure falls over it, while the other character stands and eats fruit from a bunch before a minecart moves rapidly through a mine tunnel and crashes at a mineshaft exit, launching the first character and berries into the air.",
+  "flags": [
+   "forbidden content: ['wide']"
+  ],
+  "calls": {
+   "draft": "dbe99e6700d95fec2d55d5483ab3161cc7154b37f9f2004d0d58a42e1ba89b95",
+   "rewrite": "5c4da06467d4db47ee937d8ddb18398e02f8af581972d13ca9beb80df3301f7d"
+  },
+  "first_check_disputed": 4
+ },
+ "caminandes3-L2-0004": {
+  "segment_id": "caminandes3-L2-0004",
+  "duration_s": 26.5,
+  "n_sentences_required": 1,
+  "synopsis": "A character eats berries beside another companion while surrounded by a crowd beneath the night sky.",
+  "flags": [],
+  "calls": {
+   "draft": "ae01fd52b93979fd6b64299ffdb757c28b771e227fcf2e798db35f5fae31fd89"
+  },
+  "first_check_disputed": 0
+ },
+ "caminandes3-L3-0000": {
+  "segment_id": "caminandes3-L3-0000",
+  "duration_s": 150.042,
+  "n_sentences_required": 5,
+  "synopsis": "A deer slips on the ice while reaching for berries as a penguin jumps nearby, and after the deer struggles to stay awake beside the penguin, the penguin stands on railroad tracks looking at a sprout while a train speeds through the snowy landscape. The deer looks around and gasps in shock in an annoyed mood before narrowing its eyes as the train approaches the penguin, who sits eating on the track before the deer catches a berry on its tongue, tosses it, has the penguin thrown off its head, and finally sits in the snow with the penguin holding up a berry. After the deer wakes up and looks around, the pair ride in a mine cart on broken roller coaster tracks inside a cave, speeding through a tunnel while the penguin holds a bunch of berries and later eats fruit from a bunch, and the deer screams as wood structures fall and crash around it. The mine cart crashes at a mineshaft exit and launches the deer and the berries into the air, where the deer screams and flails its legs, the penguin waves while falling, and the deer gasps in alarm before crashing into the snowy landscape. After the deer lies on its back in the snow with the penguin sitting on it, the penguin slides down a snowy slope while the deer lowers its head and yawns on a rocky ledge, before the deer looks at the penguin and another penguin holding berries and finally eats berries next to the penguin while surrounded by the other penguin.",
+  "flags": [],
+  "calls": {
+   "draft": "f68f3bcce2d7f8fd9b696c14f9a72d0edda0145b8b6679a800d5b8ea90734efe",
+   "rewrite": "631441dde47c203abc9f72b8525385473428a097dfdf8d96e865560a05230ac5",
+   "narrow": "aa1194b90e918a5fce107a699118e0a119137c747770ee24d3620432a6542b4f"
+  },
+  "first_check_disputed": 2
+ },
+ "caminandes3-L4-0000": {
+  "segment_id": "caminandes3-L4-0000",
+  "duration_s": 150.042,
+  "n_sentences_required": 5,
+  "synopsis": "A deer slips on the ice while reaching for berries as a penguin jumps nearby, and the deer soon gasps in shock and narrows its eyes in annoyance as a steam locomotive speeds through the snowy landscape. The deer catches a berry on its tongue and tosses it while the penguin gets thrown off the deer's head, and after the penguin holds up a berry while they sit in the snow, the deer wakes up and they ride a mine cart on broken tracks inside a cave. As a penguin holds a bunch of berries and the penguin eats fruit from a bunch, the deer screams as their mine cart speeds through a tunnel, crashes through wood structures, and has a large structure fall over the shocked deer before crashing at a mineshaft exit. The crash launches the deer and the berries into the air, where the screaming, flailing, and gasping creature falls while the penguin waves before crashing into the snowy landscape below. After the penguin sits on the deer and then slides down a snowy slope, leaving the deer to lower its head and yawn on a rocky ledge, the deer looks at the penguin and other penguins holding berries in the snow, and eats berries next to the penguin while surrounded by the others.",
+  "flags": [],
+  "calls": {
+   "draft": "f68f3bcce2d7f8fd9b696c14f9a72d0edda0145b8b6679a800d5b8ea90734efe",
+   "rewrite": "656819d5a0c9e14dc32dc369316b1f1caedac900705b338123a5139dc69e10bb",
+   "narrow": "a0dbbfa3bca56d506276dfe9f846c994e5db528bc07753d1d3f0478253c92dcc"
+  },
+  "first_check_disputed": 1
+ }
+}

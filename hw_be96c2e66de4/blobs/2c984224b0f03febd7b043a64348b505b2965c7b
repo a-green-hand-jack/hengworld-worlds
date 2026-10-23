@@ -1,0 +1,4 @@
+# Audit findings @ task-maker 5620ae2, executor 07e57a1, scorer 6422f70, curator 71d2ab1
+- Reproduced: tasks/dev.jsonl = reference d509bed for the 6 films (598 ids, 0 field diffs); shots/hierarchy/dialogue json byte-identical to reference. Full recomputation from masters NOT yet done.
+- Unmet: no run exists (executor), descriptions missing (D001, Gemini 402), key in task-maker root readable by executor, fingerprints missing for sherlock_jr/trip_to_the_moon, no double-build record.
+- Approval: not given. Requests opened in task-maker, executor, steward.

@@ -1,0 +1,10 @@
+{
+ "decision": "Shot descriptions (VLM) are not run: no API key. All description fields in the task packages are empty strings, as in the unfilled pipeline. Nothing is concluded from this. The published dataset has no descriptions to compare against.",
+ "provenance": "Run: provenance.npz was built by crewcut annotate (CPU, no DINOv2, because --dino was not passed). Compared with nothing: the release has no provenance file for this film.",
+ "decided_by": "task-maker (agent)",
+ "date": "2026-10-21",
+ "affects": [
+  "tasks descriptions",
+  "description-mediated judging (not run)"
+ ]
+}

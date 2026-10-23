@@ -1,0 +1,13 @@
+"""Score one run directory against the key. Usage: score_run.py RUN_DIR TASK_DIR PROV_INDEX OUT.json [--judge MODEL]"""
+import json, os, subprocess, sys
+from pathlib import Path
+from crewcut.scoring.score import score_run
+
+run, task, prov, out = map(Path, sys.argv[1:5])
+judge = sys.argv[6] if len(sys.argv) > 6 and sys.argv[5] == "--judge" else None
+if judge:
+    os.environ["CREWCUT_JUDGE_BASE_URL"] = subprocess.run(["ht-resource", "url", "gemini"], capture_output=True, text=True).stdout.strip()
+    os.environ["CREWCUT_JUDGE_API_KEY"] = os.environ["HT_RESOURCE_TOKEN"]
+res = score_run(run, task, prov, judge=judge, judge_log=Path(str(out) + ".judge_calls.jsonl") if judge else None)
+out.write_text(json.dumps(res, indent=1, sort_keys=True) + "\n")
+print(json.dumps(res, indent=1, sort_keys=True))

@@ -1,0 +1,19 @@
+# Audit pass 6 (new objective #8). Revisions read: task-maker 4787948, executor 59edcdd, scorer 16af994, curator 71d2ab1, steward 1b90bbc.
+Approval: **not given**. Reasons below, each with the owner who must fix it.
+
+## Reproduced and accepted (A1, A2, partly A3)
+- A1 masters: fetched all six from the objective's source URLs myself (`scripts/fetch.py`; wikimedia needs a User-Agent) and recomputed SHA-256: all six equal the objective's table.
+- A2 task data: ran unmodified `crewcut_algorithms` (cuts, hierarchy, tasks) on those masters (`scripts/recompute.py`, result `evidence/recompute_result.json`): cut frames, fps, durations (decoded frames / fps, 2 decimals), L0–L4 segment bounds and the 598 task ids equal reference d509bed for all six films (0 differences; only_built = only_ref = []). task-maker's committed shots.json / hierarchy.json equal the reference too, dev.jsonl identical as a set. Dialogue: the algorithm run used task-maker's dialogue.json as input (0 lines for all six, same as reference); ASR re-check job: see `asr_check.md` if present.
+- A3 double build: task-maker `data/doublebuild.txt` (IDENTICAL annotations, tasks, packages) read; descriptions reused so the paid step ran once. Not yet re-run by me end to end; to be done on the fixed build.
+- Executor runs: release tar sha256 = SHA256SUMS; 28 delivery.mp4 conform (ffprobe); ledger sum of 28 ledgers = 4.1539 USD (115 rows) = runs/costs.md; failed attempts kept; sound effects marked not run, no dialogue lines.
+- Scorer: Q gates; judge prompt verbatim in code; 50 requests, 0 errors; scores.csv cost/calls/wall clock equal the run manifests for all 28.
+- Fingerprint control: the original Coffee Run clip is flagged reused (video_frac 1.0, audio 0.45) by `tools/fingerprint.py`; deliveries: `fpcheck.md`.
+
+## Unmet (blocking), with owner
+1. task-maker#12 item 1: Reference clips not frame-exact (8 of 14 Coffee Run clips off by one frame; `evidence/clip_frames_task-maker_packages-v1.txt`); this also makes the Reference L0/L1 cut F1 = 0 rows artefacts of the package.
+2. task-maker#12 item 2: `key/` (598 truth.json) in the delivered tree; it was visible to executor in its delivery directory. (My earlier acceptance of the placement is withdrawn: it assumed executor reads releases only.)
+3. task-maker#12 item 3 / executor#10 item 2: the tool service does not issue generator requests; the pipeline calls Gemini directly and books before success; media-input screening saw `inputs=()` for every call.
+4. executor#10 item 1: music prompt in t0.py names the film's content ("a woman hurrying through a city"), not a task input.
+5. scorer#9: scene order is specified by the revised objective but marked "not run"; judge cost not converted; scores must be redone on the corrected runs.
+6. Per-call priced lines for the 603 description calls are missing (task-maker#12 minor).
+The reruns (28 runs, ≈4.3 USD) and rescoring (judge ≈ 50 requests) fit the 200 USD limit: cost so far = executor 4.54 (incl. probes, test, failed) + descriptions ≈ 0.62 + judge (unconverted) ≪ 200.

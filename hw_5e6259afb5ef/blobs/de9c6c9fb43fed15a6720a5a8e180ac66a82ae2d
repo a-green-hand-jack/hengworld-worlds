@@ -1,0 +1,155 @@
+#!/usr/bin/env python3
+"""Auditor's own form / leak / monotonicity checks for the new CrewCut tracks.
+usage: check_packages.py DELIVERY_DIR [DATASET_DIR=/crewcut-dataset]
+Reads only the delivery and the dataset; prints PASS/FAIL lines, exit 1 on any FAIL.
+Written from the objective text, not from the makers' scripts."""
+import sys, os, re, json, csv, math, hashlib, glob
+D = sys.argv[1]; DS = sys.argv[2] if len(sys.argv) > 2 else "/crewcut-dataset"
+SEGS = {"caminandes3-L1-0001": 10.4, "caminandes3-L1-0005": 34.4, "caminandes3-L2-0002": 23.5,
+        "caminandes3-L2-0004": 26.5, "caminandes3-L3-0000": 150.0, "caminandes3-L4-0000": 150.0}
+fails = []; npass = 0
+def ok(c, msg):
+    global npass
+    if c: npass += 1
+    else: fails.append(msg); print("FAIL", msg)
+def rd(p, m="rb"):
+    with open(p, m) as f: return f.read()
+def exists(p): return os.path.exists(p)
+def words(s): return len(s.split())
+README_NEW = "`input/` the task input, by track. **Reference** (`-ref`): `clip.mp4`, the original segment. **Screenplay-rich** (`-rich`): `script.csv`, `shotlist.csv` (shot, start, end, description, plus per-shot detail columns), `characters.json`, `synopsis.md` and `references/` (images generated from text only; `manifest.json` lists the prompt of each). **Screenplay** (`-scr`): `script.csv` and `shotlist.csv` (shot, start, end, description). **Synopsis** (`-syn`): `synopsis.md` and `script.csv`; the segment duration is `segment_duration_s` in `spec.json`. Times are seconds from the segment start. You receive only the input of your track."
+CAPS = {"setting": 30, "props": 25, "action": 60, "camera": 25, "light_mood": 25, "sound": 25}
+COLS = "shot,start,end,description,setting,characters,props,action,camera,light_mood,sound".split(",")
+BAD_EXT = {".mp4", ".mkv", ".webm", ".ogv", ".wav", ".mp3", ".aac", ".m4a", ".flac", ".ogg", ".mov", ".avi"}
+SCENE_RE = re.compile(r"\bscene[s]?\b|\bsequence\b|\bact\s*\d|\bgroup(ed|ing)?\b", re.I)
+
+def pk(s, t): return os.path.join(D, "packages", f"{s}-{t}")
+def ds(s, t): return os.path.join(DS, "packages", f"{s}-{t}")
+def sentences(t):
+    t = t.strip()
+    return [x for x in re.split(r"(?<=[.!?])[\"')\]]*\s+", t) if x.strip()]
+
+readmes = {}
+for s, dur in SEGS.items():
+    scr0 = ds(s, "scr"); spec0 = json.load(open(os.path.join(scr0, "spec.json")))
+    seglen = spec0["segment_duration_s"]
+    row0 = [json.loads(l) for l in open(os.path.join(DS, "tasks/dev.jsonl")) if f'"{s}-scr"' in l][0]
+    scr_delivered = pk(s, "scr")
+    scr_sl = os.path.join(scr_delivered, "input/shotlist.csv") if exists(scr_delivered) else os.path.join(scr0, "input/shotlist.csv")
+    for t in ("rich", "syn"):
+        P = pk(s, t); ok(exists(P), f"{s}-{t}: package missing")
+        if not exists(P): continue
+        names = sorted(os.listdir(P))
+        ok(names == ["README.md", "budget.json", "input", "spec.json", "task.json", "tools.json"], f"{s}-{t}: top-level files {names}")
+        # byte-identical files
+        for f in ("spec.json", "tools.json", "budget.json"):
+            ok(exists(f"{P}/{f}") and rd(f"{P}/{f}") == rd(f"{scr0}/{f}"), f"{s}-{t}: {f} not byte-identical to -scr")
+        # task.json
+        if exists(f"{P}/task.json"):
+            tj = json.load(open(f"{P}/task.json")); e = json.load(open(f"{scr0}/task.json")); e["task_id"] = f"{s}-{t}"; e["track"] = t
+            ok(tj == e and tj["tier"] == "T0", f"{s}-{t}: task.json {tj} != expected {e}")
+        # readme
+        if exists(f"{P}/README.md"):
+            r = rd(f"{P}/README.md", "r"); readmes[f"{s}-{t}"] = r
+            ok(README_NEW in r, f"{s}-{t}: README lacks the mandated input/ sentence verbatim")
+        # script.csv
+        inp = f"{P}/input"
+        ok(exists(f"{inp}/script.csv") and rd(f"{inp}/script.csv") == rd(f"{scr0}/input/script.csv"), f"{s}-{t}: script.csv not byte-identical to -scr")
+        ok(exists(f"{inp}/synopsis.md"), f"{s}-{t}: synopsis.md missing")
+        # media / key leak (all files in package)
+        for root, _, fs in os.walk(P):
+            for f in fs:
+                ext = os.path.splitext(f)[1].lower()
+                ok(ext not in BAD_EXT, f"{s}-{t}: media file {os.path.join(root, f)}")
+                ok(not re.search(r"answer|key|truth|gt\.|clip", f, re.I), f"{s}-{t}: suspicious filename {f}")
+        if t == "syn":
+            ok(sorted(os.listdir(inp)) == ["script.csv", "synopsis.md"], f"{s}-syn: input files {sorted(os.listdir(inp))}")
+            continue
+        # ---- rich ----
+        got = sorted(os.listdir(inp))
+        ok(got == ["characters.json", "references", "script.csv", "shotlist.csv", "synopsis.md"], f"{s}-rich: input files {got}")
+        if not exists(f"{inp}/shotlist.csv"): continue
+        rows = list(csv.reader(open(f"{inp}/shotlist.csv", newline="", encoding="utf-8")))
+        ok(rows[0] == COLS, f"{s}-rich: shotlist header {rows[0]}")
+        body = [dict(zip(rows[0], r)) for r in rows[1:]]
+        ok(all(len(r) == len(COLS) for r in rows), f"{s}-rich: ragged shotlist rows")
+        ok(len(body) == row0["n_shots"], f"{s}-rich: n_shots {len(body)} != {row0['n_shots']}")
+        sc = list(csv.reader(open(scr_sl, newline="", encoding="utf-8")))
+        ok([r[:4] for r in rows] == [r[:4] for r in sc], f"{s}-rich: first four columns != (delivered/updated) -scr shotlist")
+        # raw-bytes check of first four columns: compare the csv-quoted prefix of each line
+        lr = rd(f"{inp}/shotlist.csv", "r").splitlines(); ls = rd(scr_sl, "r").splitlines()
+        ok(len(lr) == len(ls) and all(a.startswith(b) for a, b in zip(lr, ls)), f"{s}-rich: first four columns not byte-identical prefix of -scr lines")
+        # times vs original -scr
+        sc0 = list(csv.reader(open(f"{scr0}/input/shotlist.csv", newline="", encoding="utf-8")))
+        ok([r[:3] for r in rows] == [r[:3] for r in sc0], f"{s}-rich: shot/start/end differ from dataset -scr")
+        ids_used = set()
+        for r in body:
+            for c, cap in CAPS.items():
+                ok(r[c].strip() != "" and words(r[c]) <= cap, f"{s}-rich shot {r['shot']} {c}: {words(r[c])} words (cap {cap}) or empty")
+            parts = [x.strip() for x in r["characters"].split(";") if x.strip()]
+            for p in parts:
+                m = re.match(r"^(C\d+): (.+)$", p)
+                ok(bool(m), f"{s}-rich shot {r['shot']}: characters entry not 'Cn: ...': {p[:40]}")
+                if m:
+                    ids_used.add(m.group(1)); ok(words(m.group(2)) <= 25, f"{s}-rich shot {r['shot']} {m.group(1)}: {words(m.group(2))} words > 25")
+            for c in COLS:
+                mm = SCENE_RE.search(r[c]); ok(not mm, f"{s}-rich shot {r['shot']} {c}: scene/group wording: {mm.group(0) if mm else ''}")
+        # characters.json
+        cj = json.load(open(f"{inp}/characters.json"))
+        ok(all(set(c) == {"id", "kind", "appearance", "role", "reference"} for c in cj), f"{s}-rich: characters.json keys")
+        for c in cj:
+            ok(words(c["appearance"]) <= 80 and words(c["role"]) <= 30, f"{s}-rich {c['id']}: appearance/role word caps")
+            ok(exists(os.path.join(inp, c["reference"])), f"{s}-rich {c['id']}: reference {c['reference']} missing")
+        ok(ids_used <= {c["id"] for c in cj}, f"{s}-rich: shot characters {sorted(ids_used)} not all in characters.json")
+        ok(rd(f"{inp}/script.csv") == rd(f"{scr0}/input/script.csv"), f"{s}-rich: script.csv")
+        # references
+        man = f"{inp}/references/manifest.json"
+        ok(exists(man), f"{s}-rich: references/manifest.json missing")
+        if exists(man):
+            m = json.load(open(man)); ents = m if isinstance(m, list) else m.get("images", m.get("entries", []))
+            for e in ents:
+                fn = e.get("file") or e.get("filename")
+                p = os.path.join(inp, "references", fn) if fn else None
+                ok(p and exists(p) and hashlib.sha256(rd(p)).hexdigest() == e.get("sha256"), f"{s}-rich: manifest sha256 mismatch for {fn}")
+            on_disk = {f for f in os.listdir(f"{inp}/references") if f != "manifest.json"}
+            ok(on_disk == {(e.get('file') or e.get('filename')) for e in ents}, f"{s}-rich: references dir vs manifest entries differ")
+    # ---- synopsis ----
+    a, b = f"{pk(s,'rich')}/input/synopsis.md", f"{pk(s,'syn')}/input/synopsis.md"
+    if exists(a) and exists(b):
+        ok(rd(a) == rd(b), f"{s}: synopsis.md rich != syn bytes")
+        tx = rd(a, "r"); n = len(sentences(tx)); x = seglen / 30
+        want = {max(1, min(12, int(math.floor(x + 0.5)))), max(1, min(12, round(x)))}
+        ok(n in want, f"{s}: synopsis has {n} sentences, rule gives {sorted(want)}")
+        ok("\n\n" not in tx.strip() and not re.search(r"^\s*([-*•]|\d+[.)])\s", tx, re.M), f"{s}: synopsis not a single continuous paragraph")
+        ok(not re.search(r"\bC\d+\b", tx), f"{s}: synopsis has C id")
+        TIMEW = re.compile(r"\b(shots?|cuts?|close-?up|wide|medium shot|pan|zoom|camera|frame|\d+(\.\d+)?\s*(s|sec|seconds|min|minutes)\b|\d+:\d+)", re.I)
+        hits = [m.group(0) for m in TIMEW.finditer(tx)]
+        ok(not hits, f"{s}: synopsis has shot/camera/time wording: {hits}")
+# README identical across all delivered tracks, incl. any delivered -ref/-scr
+for t in ("ref", "scr"):
+    for s in SEGS:
+        p = os.path.join(pk(s, t), "README.md")
+        if exists(p): readmes[f"{s}-{t}"] = rd(p, "r")
+vals = set(readmes.values()); ok(len(vals) <= 1, f"READMEs not identical across tracks: {len(vals)} variants over {len(readmes)} packages")
+# updated -scr packages: only shotlist.csv (and README per the open question) differ from dataset
+for s in SEGS:
+    P = pk(s, "scr")
+    if not exists(P): continue
+    for root, _, fs in os.walk(P):
+        for f in fs:
+            rel = os.path.relpath(os.path.join(root, f), P); o = os.path.join(ds(s, "scr"), rel)
+            if not exists(o): ok(False, f"{s}-scr: new file {rel}"); continue
+            if rd(os.path.join(root, f)) != rd(o): print("NOTE changed vs dataset:", s + "-scr", rel)
+# task rows
+tp = os.path.join(D, "tasks/dev_new_tracks.jsonl")
+ok(exists(tp), "tasks/dev_new_tracks.jsonl missing")
+if exists(tp):
+    rows = [json.loads(l) for l in open(tp) if l.strip()]
+    ok(len(rows) == 12, f"task rows {len(rows)} != 12"); ids = [r["task_id"] for r in rows]; ok(len(set(ids)) == len(ids), "duplicate task ids")
+    allids = {json.loads(l)["task_id"] for l in open(os.path.join(DS, "tasks/dev.jsonl"))}; ok(not (set(ids) & allids), "new task ids collide with dev.jsonl")
+    for r in rows:
+        s = r["segment_id"]; t = r["task_id"].rsplit("-", 1)[1]
+        r0 = [json.loads(l) for l in open(os.path.join(DS, "tasks/dev.jsonl")) if f'"{s}-scr"' in l][0]
+        e = dict(r0); e["task_id"] = f"{s}-{t}"; e["track"] = t
+        ok(list(r) == list(r0) and r == e and t in ("rich", "syn"), f"task row {r['task_id']}: {r} != {e}")
+    ok(sorted(ids) == sorted(f"{s}-{t}" for s in SEGS for t in ("rich", "syn")), "task id set != 6 segments x {rich,syn}")
+print(f"\n{npass} checks passed, {len(fails)} failed"); sys.exit(1 if fails else 0)

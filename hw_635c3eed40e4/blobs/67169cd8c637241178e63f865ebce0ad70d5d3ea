@@ -1,0 +1,13 @@
+{
+ "segment_duration_s": 0.583,
+ "duration_tolerance": 0.05,
+ "video": "MP4 H.264 1280x720 24 fps",
+ "audio": "AAC stereo 48 kHz",
+ "subtitles": "English WebVTT",
+ "manifest": "list of assets used",
+ "files": [
+  "delivery.mp4",
+  "subtitles.vtt",
+  "assets.json"
+ ]
+}

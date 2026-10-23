@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0029",
+  "start": 106.833,
+  "end": 107.333,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.5,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 29,
+   "start": 0.0,
+   "end": 0.5,
+   "description": "Low-angle shot of a crowd standing, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.5
+  }
+ ],
+ "task_id": "domini_canes-L0-0029-scr",
+ "descriptions_available": true
+}

@@ -1,0 +1,29 @@
+You write the detailed shot description for one shot of a short film, so that it can be remade from text. You see the shot's frames in time order and its audio. Reply with ONE JSON object: {"setting": "place, indoor/outdoor, time, weather and surroundings; at most 30 words; call the place by the name given in the places list", "characters": "format 'C1: ...; C2: ...', for each character visible in the shot its position, clothing/held items and expression changes in this shot; at most 25 words per character; the basic appearance is already in the character list, so write only what differs from it", "props": "important objects; at most 25 words", "action": "what happens in order; at most 60 words", "camera": "shot size, angle, camera movement and composition changes; at most 25 words", "light_mood": "lighting, colour tone and mood; at most 25 words", "sound": "ambient sound, effects, music or silence; at most 25 words", "description_consistent": true or false (does the given one-sentence description agree with the frames), "description_note": "why, if not"}
+Rules: write only facts that can be confirmed in the frames or audio; do not guess; use the C labels of the character list; no proper names, no film title; no scene numbers, no grouping of shots, no mention of other shots or of frames.
+
+Overall look: 3D CGI animated cartoon style with exaggerated facial expressions, bright daylight in snowy mountain landscapes, and dark blue-lit underground mine caves.
+Characters:
+C1: a guanaco (llama). Slender, long-necked quadruped with orange-brown fur, dark brown muzzle, long ears, and huge bulging eyes.
+C2: a baby penguin. Small, round, fluffy bird with a grey-black back and head, white belly, small beak, and large white eyes with dark pupils.
+C3: adult penguins. Medium-sized black and white penguins with distinct black and white facial bands, holding large bunches of red berries.
+Places:
+P1: Frozen pond and snowy field. A snowy plain with a frozen blue puddle, a wire fence with wooden posts, and distant snowy mountains.
+P2: Railroad tracks. Steel train tracks on wooden ties and gravel cutting through a snowy landscape with an oil pumpjack in the background.
+P3: Underground mine. A dark, cavernous underground mine with blue ambient lighting, rocky walls, wooden support beams, and steep minecart tracks.
+P4: Mountain slope and rocky peaks. A high, steep snowy mountain area with jagged rocky peaks covered in snow and ice.
+
+Previous shot's detailed description (for continuity only; describe THIS shot from its own frames):
+{"setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, clear weather, snowy ground in the foreground with jagged snow-covered rocky peaks in the background.", "characters": "C1: lying sprawled on its back in the snow, dazed and half-lidded expression changing to wide-eyed surprise as it lifts its head; C2: sitting upright on C1's chest, wide-eyed, then sliding down C1's body out of view.", "props": "Small yellow grass blades sticking out of the snow on the bottom left.", "action": "C1 lies sprawled on its back in the snow while C2 sits upright on C1's chest. C1 groans and lifts its head with half-closed eyes, looking at C2. C2 tips backward and slides down C1's belly into the snow behind C1. C1's eyes widen as it watches C2 disappear.", "camera": "Medium shot, eye-level angle, static camera.", "light_mood": "Bright, crisp daylight with cool blue shadows on the white snow contrasting with C1's warm orange fur; comedic, dazed mood.", "sound": "Dramatic orchestral chord fades out, followed by a cute squeak from C2, a sliding sound in the snow, and a soft thud."}
+
+Shot 32 one-sentence description: Wide shot of C1 sliding down a snowy slope, panning right.
+
+Frames (4):
+[frame 1 at 102.18s]
+IMG:1be60798029918bfe50a852f191dc828a77dc998bf02fce389741bfe03dc0885
+[frame 2 at 102.58s]
+IMG:1849c11c75ae8e5b04b4a954c0b28eaf5b58068dc0cb1acbeaf02604a764e3fb
+[frame 3 at 102.97s]
+IMG:dcf458a0b4b464197974b0b21f5456243ada350b898fef809b3554f011d68abe
+[frame 4 at 103.36s]
+IMG:141cc79973f836784c7fece2a8824c58ec577b1fa98613ec497957a09ef91257
+AUD:a69d6f9c7f90a1353bbb25ecfd29ed6c09aaa0e67746049e70caf70f41cdf3d0

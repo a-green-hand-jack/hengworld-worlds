@@ -1,0 +1,3 @@
+# Corpus record
+`admissions.json`: one record per candidate (decision, rights evidence, artifact and alternatives, fetch command and verified sha256). `evidence/`: item metadata read on 2026-10-21. Reproduce: run the `fetch.command` and compare to `pinned_sha256`.
+The master itself (11.9 MB, CC BY 3.0) is not committed; fetch it by the command.

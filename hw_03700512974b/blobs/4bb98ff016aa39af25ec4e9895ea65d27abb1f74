@@ -1,0 +1,110 @@
+# Brief — CrewCut (6-film remake benchmark)
+
+Source for every item: the `Benchmark objective` issue (steward#13), cited as **Obj §section/subsection**. Text in quotes is verbatim from it. Nothing here is changed, rounded or filled in; gaps are in "Gaps and maintainer decisions".
+
+## 1. What the objective asks (requirements R1–R12)
+
+- R1 "做出 6 部影片的基准数据和任务包" (Obj intro, §一).
+- R2 "并用固定流水线在一部影片的任务上跑通、评分，证明任务包和评分能用" — Coffee Run, all tasks, 1 run each, T0 (Obj §二). "评测 coding agent 是下一轮的事."
+- R3 Corpus: 6 films, master files verified by SHA-256, licences checked (Obj §一 影片).
+- R4 Annotations: shots, dialogue, descriptions, provenance fingerprints, hierarchy L0–L4 (Obj §一 标注).
+- R5 Tasks and packages, tool service (Obj §一 任务).
+- R6 Comparison with reference release; "重建两次逐字节相同" (Obj §一 对照).
+- R7 Fixed-pipeline runs with production logs (Obj §二 运行规则).
+- R8 Scoring R = (Q, Q·c, Q·S, $), with "未运行" items (Obj §二 评分).
+- R9 Cost: per-call ledger, ≤ 200 USD total, cost per finished minute (Obj §三).
+- R10 Dataset directory layout and README (Obj §四).
+- R11 Deliverables list: comparison with reference, production logs of each run, deliverables, R and components, cost detail and per-minute cost, "未运行" list (Obj §四 last paragraph).
+- R12 Questions the objective does not settle recorded "给维护者的问题", not decided (Obj §四 last line).
+
+## 2. Protocol, item by item (Obj place in brackets)
+
+### Films and masters (Obj §一 影片)
+| Film | Year | Source | Licence / basis | master SHA-256 |
+|---|---|---|---|---|
+| Caminandes 3 | 2016 | Blender open movie | CC BY 3.0 | 028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f |
+| Coffee Run | 2020 | Blender open movie | CC BY 4.0 | f40ce7f497b2f56e6a672cea6ef15d191da3d19bd61aeed5d3730e5d73f6aebf |
+| Spirit Chaser | 2016 | indie CC film | CC BY-SA 3.0 | cce14605b8dc2fbe0593ca1207b8972d13676e3050bd6f48c92efd44f0013182 |
+| Domini Canes | 2016 | indie CC film | CC BY 3.0 | 70b8515d4afc4a392644d315666583b4c83386f9cf50f3710fd228d92aa29586 |
+| Sherlock Jr. | 1924 | US public domain | published before 1931 | 8931dc7b1dd72fababe7c48176774d01ade1f994c7c6cb3643c2fe1a0b7a7442 |
+| A Trip to the Moon | 1902 | US public domain | published before 1931 | 084dc2ec7391f56a993cdda4ec9f385513d3c4a2f46fe9bb18875c5abb269fab |
+
+Master URLs and sizes (exact files; site auto-transcodes, "不是最大或最清晰的那个"):
+- Caminandes 3: https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv (11,872,682 B)
+- Coffee Run: https://archive.org/download/coffee-run/Coffee%20Run.ia.mp4 (17,475,695 B)
+- Spirit Chaser: https://upload.wikimedia.org/wikipedia/commons/transcoded/c/ca/Karl_Pajak_-_Spirit_Chaser_%282016%29.webm/Karl_Pajak_-_Spirit_Chaser_%282016%29.webm.480p.vp9.webm (13,659,889 B)
+- Domini Canes: https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Jakub_Bednarz_-_Domini_Canes_%282016%29.webm/Jakub_Bednarz_-_Domini_Canes_%282016%29.webm.480p.vp9.webm (18,483,687 B)
+- Sherlock Jr.: https://archive.org/download/MyMovie_20190318/My%20Movie.ogv (170,849,579 B)
+- A Trip to the Moon: https://archive.org/download/ATripToTheMoonGeorgeMelies/A%20Trip%20to%20the%20Moon-George%20M%C3%A9li%C3%A8s.ogv (60,618,423 B)
+
+Licence check: derivatives allowed (CC0, CC BY, CC BY-SA or US public domain), no NC, no ND; if a film's licence differs between sites, record the original text of both, the table above governs. Verbatim: "master 里上传者另加的内容（例如给默片配的乐）照原样保留并记下，不因此排除内容或停下。" (uploader-added content, e.g. a score for a silent film, is kept as is and recorded; it does not exclude content or stop work). All annotations are on this master. (Obj §一 影片; this replaces the earlier clause about third-party-held content.)
+
+### Annotations (Obj §一 标注)
+- Shots: cut frame number and time per cut (must handle telecine, fades, black-and-white).
+- Dialogue: per line start/end and text (ASR).
+- Shot description: 1–3 sentences, form "[shot size] of [subject] [action], [camera move]"; characters numbered C1, C2…; no colour, lens parameters, art style.
+- Provenance fingerprint: master picture fingerprint and audio fingerprint.
+- Hierarchy: L0 shot; L1 beat = 2–8 consecutive shots within one scene, ≤ 40 s, shots > 40 s or lone shots form their own beat; L2 scene = same place and time, by shot appearance similarity, boundary where 3 shots before and 3 after are all dissimilar, scenes < 12 s merge into the previous; L3 sequence = 2–6 consecutive scenes, ≤ 10 min, an overlong single scene is its own sequence; L4 whole film, only films ≤ 15 min.
+
+### Computation parameters (Obj §一 计算参数)
+- Cuts, hierarchy, sampling, segment ground truth: the mounted reference algorithm `/crewcut-algorithms` (Python package `crewcut_algorithms`, commands per its `--help`) "照原样计算，不重写". It "在这 6 个 master 上算出的剪辑点、L1–L4 片段和 598 个任务 id 与参考发布逐项相同". Film duration = decoded frame count ÷ frame rate (not stream/container duration); reference `duration_s` is that rounded to 2 decimals.
+- If a step cannot run as written: adapt without changing the measure; record what was changed, why, and the effect on results, as data.
+- Dialogue: Whisper base multilingual, preceded by Silero VAD, language auto-detected; split recognised segments into lines at sentence-final punctuation; line start/end interpolated by character position; remove sound marks in square/round brackets and music symbols. Speaker left empty. Silent films have no dialogue.
+- Shot descriptions: `gemini-3.5-flash-lite`, temperature 0. Per shot n = 3 frames at (k+1)/(n+1) of the shot, JPEG width 448, with the prompt (verbatim): "You see frames from one shot of a film. Describe the shot in one to three sentences using the template '[shot size] of [subject] [action], [camera move]'. Refer to people as C1, C2 and so on, consistently with these known characters: {chars}. Do not mention colours, lens, art style or other appearance details that a remake could legitimately change. Reply with the description only." Record model id, parameters and token counts of each answer.
+- Reference clips are cut by frame: "恰好包含片段首帧到末帧（帧号由参考算法的剪辑点给出），不多不少；截完逐个核对帧数。" (Obj §一 计算参数, task package item; new in #13).
+- Task package files: `README.md` (same for all systems), `spec.json` (delivery spec, segment duration), `tools.json` (tier and tools), `budget.json` (model, tool, wall-clock caps), `task.json` (task id, film, level, track, tier, start/end), `input/` (Reference: clip cut from master, H.264 + AAC; Screenplay: `script.csv` columns line, speaker, start, end, text; `shotlist.csv` columns shot, start, end, description). `truth.json` is not in the published package.
+- Provenance fingerprint: 2 frames/s, 32×32 grayscale, 64-bit DCT perceptual hash; audio resampled to 8 kHz mono, STFT (n_fft 1024, hop 256), spectral peaks, each peak paired with the next 5 peaks (time difference ≤ 40 frames) as landmark hashes with time difference. Reuse is judged when > 5% of remake frames (mirror left-right included) are within Hamming distance ≤ 10 of some original frame, or ≥ 35% of remake audio landmarks agree with the original at one common time offset.
+
+### Tasks (Obj §一 任务)
+- Every L2, L3, L4 segment is a task. L0: 30 shots per film, L1: 15 beats per film, stratified by duration, seed determined by the film, identical anywhere; if fewer, all selected.
+- Every selected segment of any level gets two tracks: Reference (input: original clip) and Screenplay (input: script with times, shot list with times and descriptions).
+- Each task contains: uniform task statement, delivery spec, tool list for the tier, budget (per minute of segment: model USD 20, tools USD 5, wall-clock 1 hour, wall-clock at least 15 min), input. Ground truth for scoring only, not visible to the system under test.
+- 6 films should give **598 tasks**. If count or ids differ: list the differences and reasons; do not change rules to match.
+- Tool service ships with the packages (new in #13: "工具服务自己发出每一次生成器请求（含图像、语音、音乐的原生接口），对请求里的每个媒体输入做出处检查，请求成功后才记账；被测系统不直接调用生成器。" — the service itself issues every generator request, checks every media input in a request for provenance, and bills only after success; the system under test never calls generators directly): tool list by tier; model and official unit price per tool (with query date and source); a source-side check rejecting inputs derived from the original; per-call pricing record. All systems call generators through it.
+
+### Comparison (Obj §一 对照)
+Compare built shots, dialogue, hierarchy, task list with the reference release (CrewCut dataset revision `d509bed`, mounted read-only; has no master files and no shot descriptions); list and explain every difference; "重建两次逐字节相同".
+
+### Fixed pipeline run (Obj §二)
+- New in #13: "它的提示词只由任务输入拼出（镜头描述、台词、时长），不写入对影片内容的其他了解。" (prompts built only from task inputs: shot descriptions, lines, durations).
+- Film Coffee Run, all its tasks, 1 run each, tier T0: no model, no feedback loop; each shot = one still frame with slow push-in; one synthetic voice per speaker; one background music piece; straight concatenation at the cuts.
+- Reference track: shot list derived by the pipeline itself from the input clip with the cut detection above; descriptions by the same description model. Screenplay track: given shot list.
+- Rules: system cannot see ground truth; every model call billed and refused once model budget is spent; every tool call through the tool service at fixed price, rejecting original-derived input at source; per run a unified production log: model calls, tool calls, file writes, inter-role messages, each delivered version.
+- Tiers: T0 = image generation, image editing, speech synthesis, music, sound effects, video editing (image, speech, music by Gemini; sound effects by ElevenLabs). T1 = T0 + video generation with Wan 2.2. Models: image `gemini-3.1-flash-lite-image`, speech `gemini-3.8-flash-lite-tts`, music `lyria-3.5`, video `wan2.2-t2v-plus` / `wan2.2-i2v-plus`. Packages state the tool list for both tiers; this round runs only T0.
+- Delivery: MP4 (H.264, 1280×720, 24 fps; AAC stereo 48 kHz), English WebVTT subtitles, list of assets used; duration within ±5% of the source segment.
+
+### Scoring R = (Q, Q·c, Q·S, $) (Obj §二 评分)
+- Q (pass/fail): fully decodable with picture and sound; format compliant; duration ±5%; subtitles cover every line; no generator read original input in the log; provenance check finds no original picture/audio in the output. If Q fails, c and S are zero.
+- c continuity:
+  - Cut F1: detect remake cuts with the same cut detection; one-to-one match against original cuts at tolerance 0.5 s and 1.0 s (greedy on two sorted lists); F1 for each.
+  - Shot correspondence: judge sees only the original shot's description and the remake frames of the same time span, 1 frame/s, min 2, max 8; answers yes/no; "yes"-initial = accepted; result = accepted shots' duration share. Judge `qwen3-vl-plus`, temperature 0, generous max_tokens. Prompt (verbatim): "You will see a written description of a shot from a film and several frames from another video at the same time. Answer yes if the frames show the same subject, the same action and a similar framing intent as the description, even if the visual style, colours or character designs differ. Otherwise answer no. Answer with one word.\n\nDescription: {description}"
+  - Dialogue: ASR of remake against script: WER (lowercase, punctuation other than apostrophes removed, word-level edit distance ÷ reference words) and median line-start-time error; not applicable to segments without dialogue.
+  - Scene order: 1 − (edit distance between original scene sequence and scene sequence recovered from the remake ÷ original scene count), floored at 0. Recovery (new in #13): "对翻拍检出的镜头用同一套参考算法分出 L2 场景，每个翻拍场景记为与它时间重叠最多的原片场景" (L2 scenes of the remake's detected shots by the same reference algorithm; each remake scene is labelled with the original scene it overlaps most in time).
+  - Speaker/character consistency: no human labels → "未运行".
+- S (viewing score): no raters → "未运行".
+- $: total spend, spend per finished minute, time per minute, number of calls, number of delivered versions, share of generated assets unused, spend by role.
+
+### Cost (Obj §三)
+Each model call = reported tokens × official API price; each tool call = official unit price × usage (images, seconds); same basis whoever pays (subscription or paid key), state who bears it. Prices recorded with query date and source. Cost detail one row per call: service, model, system, task, purpose, usage, unit price, amount, borne-by. Whole round converted total ≤ **200 USD, including the world's positions' own model calls** (that part already converted into the world's model-time limit; remainder for descriptions, pipeline tools, judge). If an estimate would exceed, stop and state how much more is needed. Report fixed-pipeline cost per finished minute.
+
+### Delivery layout (Obj §四)
+A directly uploadable dataset directory in the reference layout, 6 films only: `catalogue.csv` (6 rows, reference columns); `annotations/<film id>/` with `shots.json`, `dialogue.json`, `hierarchy.json` (reference formats) plus `descriptions.json` (descriptions + drafting model id and parameters) and provenance fingerprints; `tasks/dev.jsonl` (one task per line, reference fields); `packages/<task id>/` without answers (Reference includes the clip cut from master); `masters/` (6 files named film id + original extension); `README.md` (per film source, licence, attribution — CC BY needs attribution, CC BY-SA clips and master keep the same licence — and differences from reference). Large files (clips, masters) may live in a position's release, with the directory stating where. Also deliver: comparison with reference, production logs of each run, deliverables, R and components, cost detail and per-minute cost, "未运行" list.
+
+## 3. Gaps and maintainer decisions (recorded, not decided here)
+Fixed in the objective and untouched: everything above. Open (documents silent or inconsistent; any result depending on them is "not run" or marked as such until the maintainer decides):
+
+1. Silero VAD and Whisper base exact versions/checkpoints, decoding settings (beam, compute type): not given.
+2. `ffmpeg`/encoding settings for the Reference clips (bitrate, resolution) and for how shot frames are extracted: not given.
+3. T0 sound-effect tool: ElevenLabs is named but the world lists no ElevenLabs resource; model name, price, and whether sound effects run in T0 are not given. Same for the existence/pricing of `gemini-3.1-flash-lite-image`, `gemini-3.8-flash-lite-tts`, `lyria-3.5` endpoints in the world's resources (`gemini`, `gemini-native`).
+4. Q thresholds: "字幕覆盖每句台词" and "完整解码" have no numeric rule; (scene-order recovery is now specified by #13; no longer a gap) how "生成后没用到的素材占比" is measured is not specified.
+5. Which model bears cost lines (subscription vs paid key) per call: to be stated by each position; no rule for tie-break.
+6. How to handle a Reference-track task for a film with no dialogue in the Q subtitle rule, and the English WebVTT for non-English or silent films.
+7. The synthetic voice choice per speaker and the background music prompt of the fixed pipeline: not specified.
+8. Whether `descriptions.json`/fingerprint file names and formats beyond those named have a required schema: not given.
+9. Whether the 598-task count is met is an outcome, not a decision; any mismatch is reported, not forced.
+10. If the 200 USD cap would be exceeded: the maintainer decides what to cut; no position decides.
+11. The remake's `speaker` (empty) vs a pipeline needing per-speaker voices: how speakers are assigned when the script has none is not specified.
+12. Where the Caminandes 3 `chars` ({chars}) known-character list comes from: not specified.
+
+## 4. Assignment
+See `assignment.json` (`ht-role assignment`): curator → catalogue.csv, masters/, corpus/; task-maker → annotations/, tasks/, packages/, README.md (dataset root); executor → runs/; scorer → scores/; auditor → audit/; steward → maintainer_decisions.md.

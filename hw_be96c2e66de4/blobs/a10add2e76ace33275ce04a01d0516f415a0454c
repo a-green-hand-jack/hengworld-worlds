@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0023",
+  "start": 2215.914,
+  "end": 2228.693,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 12.779,
+ "cuts": [
+  1.001,
+  4.771,
+  9.409
+ ],
+ "shots": [
+  {
+   "index": 301,
+   "start": -0.0,
+   "end": 1.001,
+   "description": "Wide shot of C1 riding a bicycle away from the camera on a street, tracking forward."
+  },
+  {
+   "index": 302,
+   "start": 1.001,
+   "end": 4.771,
+   "description": "Medium shot of vintage cars driving past each other on a wide city street, static."
+  },
+  {
+   "index": 303,
+   "start": 4.771,
+   "end": 9.409,
+   "description": "Medium shot of C1 standing on the street, pan to the right."
+  },
+  {
+   "index": 304,
+   "start": 9.409,
+   "end": 12.779,
+   "description": "Long shot of C1 cycling on wet street, slipping and falling on his back while carrying laundry in basket, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 12.779
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0023-ref",
+ "descriptions_available": true
+}

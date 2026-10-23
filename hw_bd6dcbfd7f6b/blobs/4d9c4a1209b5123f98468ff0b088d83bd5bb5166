@@ -1,0 +1,63 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0004",
+  "start": 70.083,
+  "end": 80.125,
+  "shots": 6,
+  "lines": 0
+ },
+ "duration": 10.042,
+ "cuts": [
+  0.0,
+  3.792,
+  4.542,
+  5.375,
+  7.667,
+  8.459
+ ],
+ "shots": [
+  {
+   "index": 20,
+   "start": 0.0,
+   "end": 3.792,
+   "description": ""
+  },
+  {
+   "index": 21,
+   "start": 3.792,
+   "end": 4.542,
+   "description": ""
+  },
+  {
+   "index": 22,
+   "start": 4.542,
+   "end": 5.375,
+   "description": ""
+  },
+  {
+   "index": 23,
+   "start": 5.375,
+   "end": 7.667,
+   "description": ""
+  },
+  {
+   "index": 24,
+   "start": 7.667,
+   "end": 8.459,
+   "description": ""
+  },
+  {
+   "index": 25,
+   "start": 8.459,
+   "end": 10.042,
+   "description": ""
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 10.042
+  }
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "task": "coffee_run-L4-0000-scr",
+ "orig_scenes": 2,
+ "identical_copy": {
+  "orig_scenes": 2,
+  "remake_scenes": [
+   [
+    0.0,
+    170.127
+   ],
+   [
+    170.127,
+    184.585
+   ]
+  ],
+  "recovered_labels": [
+   0,
+   1
+  ],
+  "scene_order": 1.0
+ },
+ "reencoded_crf30": {
+  "orig_scenes": 2,
+  "remake_scenes": [
+   [
+    0.0,
+    170.125
+   ],
+   [
+    170.125,
+    184.583
+   ]
+  ],
+  "recovered_labels": [
+   0,
+   1
+  ],
+  "scene_order": 1.0
+ },
+ "silenced": {
+  "orig_scenes": 2,
+  "remake_scenes": [
+   [
+    0.0,
+    170.127
+   ],
+   [
+    170.127,
+    184.585
+   ]
+  ],
+  "recovered_labels": [
+   0,
+   1
+  ],
+  "scene_order": 1.0
+ },
+ "shifted_3s_front_pad": {
+  "orig_scenes": 2,
+  "remake_scenes": [
+   [
+    0.0,
+    173.125
+   ],
+   [
+    173.125,
+    187.583
+   ]
+  ],
+  "recovered_labels": [
+   0,
+   1
+  ],
+  "scene_order": 1.0
+ },
+ "scenes_swapped": {
+  "orig_scenes": 2,
+  "remake_scenes": [
+   [
+    0.0,
+    21.292
+   ],
+   [
+    21.292,
+    184.625
+   ]
+  ],
+  "recovered_labels": [
+   0,
+   0
+  ],
+  "scene_order": 0.5
+ },
+ "second_scene_replaced_by_first": {
+  "orig_scenes": 2,
+  "remake_scenes": [
+   [
+    0.0,
+    184.625
+   ]
+  ],
+  "recovered_labels": [
+   0
+  ],
+  "scene_order": 0.5
+ }
+}

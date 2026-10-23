@@ -1,0 +1,3870 @@
+{
+ "film_id": "sherlock_jr",
+ "duration_s": 2648.11,
+ "L0": [
+  {
+   "id": "sherlock_jr-L0-0000",
+   "start": 0.0,
+   "end": 92.859,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0001",
+   "start": 92.859,
+   "end": 106.306,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0002",
+   "start": 106.306,
+   "end": 109.343,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0003",
+   "start": 109.343,
+   "end": 111.845,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0004",
+   "start": 111.845,
+   "end": 114.181,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0005",
+   "start": 114.181,
+   "end": 121.722,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0006",
+   "start": 121.722,
+   "end": 126.893,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0007",
+   "start": 126.893,
+   "end": 138.472,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0008",
+   "start": 138.472,
+   "end": 149.616,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0009",
+   "start": 149.616,
+   "end": 150.884,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0010",
+   "start": 150.884,
+   "end": 164.031,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0011",
+   "start": 164.031,
+   "end": 167.134,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0012",
+   "start": 167.134,
+   "end": 169.202,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0013",
+   "start": 169.202,
+   "end": 171.338,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0014",
+   "start": 171.338,
+   "end": 173.173,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0015",
+   "start": 173.173,
+   "end": 183.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0016",
+   "start": 183.917,
+   "end": 191.558,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0017",
+   "start": 191.558,
+   "end": 193.86,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0018",
+   "start": 193.86,
+   "end": 226.593,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0019",
+   "start": 226.593,
+   "end": 228.428,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0020",
+   "start": 228.428,
+   "end": 231.832,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0021",
+   "start": 231.832,
+   "end": 242.275,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0022",
+   "start": 242.275,
+   "end": 261.161,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0023",
+   "start": 261.161,
+   "end": 273.74,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0024",
+   "start": 273.74,
+   "end": 275.842,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0025",
+   "start": 275.842,
+   "end": 291.324,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0026",
+   "start": 291.324,
+   "end": 296.429,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0027",
+   "start": 296.429,
+   "end": 299.933,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0028",
+   "start": 299.933,
+   "end": 303.069,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0029",
+   "start": 303.069,
+   "end": 304.571,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0030",
+   "start": 304.571,
+   "end": 309.409,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0031",
+   "start": 309.409,
+   "end": 317.217,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0032",
+   "start": 317.217,
+   "end": 324.991,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0033",
+   "start": 324.991,
+   "end": 332.332,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0034",
+   "start": 332.332,
+   "end": 336.536,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0035",
+   "start": 336.536,
+   "end": 339.94,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0036",
+   "start": 339.94,
+   "end": 343.243,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0037",
+   "start": 343.243,
+   "end": 348.949,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0038",
+   "start": 348.949,
+   "end": 367.234,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0039",
+   "start": 367.234,
+   "end": 372.739,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0040",
+   "start": 372.739,
+   "end": 377.01,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0041",
+   "start": 377.01,
+   "end": 383.149,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0042",
+   "start": 383.149,
+   "end": 387.153,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0043",
+   "start": 387.153,
+   "end": 393.059,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0044",
+   "start": 393.059,
+   "end": 397.731,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0045",
+   "start": 397.731,
+   "end": 399.633,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0046",
+   "start": 399.633,
+   "end": 403.536,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0047",
+   "start": 403.536,
+   "end": 417.05,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0048",
+   "start": 417.05,
+   "end": 424.591,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0049",
+   "start": 424.591,
+   "end": 429.562,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0050",
+   "start": 429.562,
+   "end": 439.706,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0051",
+   "start": 439.706,
+   "end": 455.021,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0052",
+   "start": 455.021,
+   "end": 473.306,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0053",
+   "start": 473.306,
+   "end": 474.975,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0054",
+   "start": 474.975,
+   "end": 493.86,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0055",
+   "start": 493.86,
+   "end": 502.068,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0056",
+   "start": 502.068,
+   "end": 509.909,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0057",
+   "start": 509.909,
+   "end": 517.717,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0058",
+   "start": 517.717,
+   "end": 534.267,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0059",
+   "start": 534.267,
+   "end": 539.105,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0060",
+   "start": 539.105,
+   "end": 541.441,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0061",
+   "start": 541.441,
+   "end": 542.842,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0062",
+   "start": 542.842,
+   "end": 571.571,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0063",
+   "start": 571.571,
+   "end": 578.578,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0064",
+   "start": 578.578,
+   "end": 618.952,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0065",
+   "start": 618.952,
+   "end": 629.429,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0066",
+   "start": 629.429,
+   "end": 630.597,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0067",
+   "start": 630.597,
+   "end": 634.501,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0068",
+   "start": 634.501,
+   "end": 636.536,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0069",
+   "start": 636.536,
+   "end": 642.175,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0070",
+   "start": 642.175,
+   "end": 645.378,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0071",
+   "start": 645.378,
+   "end": 648.848,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0072",
+   "start": 648.848,
+   "end": 650.517,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0073",
+   "start": 650.517,
+   "end": 653.253,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0074",
+   "start": 653.253,
+   "end": 664.33,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0075",
+   "start": 664.33,
+   "end": 666.599,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0076",
+   "start": 666.599,
+   "end": 668.902,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0077",
+   "start": 668.902,
+   "end": 673.106,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0078",
+   "start": 673.106,
+   "end": 674.44,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0079",
+   "start": 674.44,
+   "end": 676.309,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0080",
+   "start": 676.309,
+   "end": 679.579,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0081",
+   "start": 679.579,
+   "end": 684.35,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0082",
+   "start": 684.35,
+   "end": 694.127,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0083",
+   "start": 694.127,
+   "end": 708.675,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0084",
+   "start": 708.675,
+   "end": 713.746,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0085",
+   "start": 713.746,
+   "end": 721.221,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0086",
+   "start": 721.221,
+   "end": 726.092,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0087",
+   "start": 726.092,
+   "end": 734.234,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0088",
+   "start": 734.234,
+   "end": 738.972,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0089",
+   "start": 738.972,
+   "end": 743.843,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0090",
+   "start": 743.843,
+   "end": 748.248,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0091",
+   "start": 748.248,
+   "end": 751.15,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0092",
+   "start": 751.15,
+   "end": 754.988,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0093",
+   "start": 754.988,
+   "end": 761.628,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0094",
+   "start": 761.628,
+   "end": 763.396,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0095",
+   "start": 763.396,
+   "end": 770.203,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0096",
+   "start": 770.203,
+   "end": 771.738,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0097",
+   "start": 771.738,
+   "end": 780.079,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0098",
+   "start": 780.079,
+   "end": 785.685,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0099",
+   "start": 785.685,
+   "end": 789.422,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0100",
+   "start": 789.422,
+   "end": 800.633,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0101",
+   "start": 800.633,
+   "end": 814.881,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0102",
+   "start": 814.881,
+   "end": 819.118,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0103",
+   "start": 819.118,
+   "end": 831.431,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0104",
+   "start": 831.431,
+   "end": 836.703,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0105",
+   "start": 836.703,
+   "end": 839.038,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0106",
+   "start": 839.038,
+   "end": 858.391,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0107",
+   "start": 858.391,
+   "end": 862.762,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0108",
+   "start": 862.762,
+   "end": 874.374,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0109",
+   "start": 874.374,
+   "end": 881.047,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0110",
+   "start": 881.047,
+   "end": 881.614,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0111",
+   "start": 881.614,
+   "end": 887.253,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0112",
+   "start": 887.253,
+   "end": 889.489,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0113",
+   "start": 889.489,
+   "end": 901.167,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0114",
+   "start": 901.167,
+   "end": 968.067,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0115",
+   "start": 968.067,
+   "end": 972.839,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0116",
+   "start": 972.839,
+   "end": 980.179,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0117",
+   "start": 980.179,
+   "end": 986.385,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0118",
+   "start": 986.385,
+   "end": 988.955,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0119",
+   "start": 988.955,
+   "end": 991.157,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0120",
+   "start": 991.157,
+   "end": 992.992,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0121",
+   "start": 992.992,
+   "end": 999.665,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0122",
+   "start": 999.665,
+   "end": 1003.002,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0123",
+   "start": 1003.002,
+   "end": 1003.836,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0124",
+   "start": 1003.836,
+   "end": 1012.745,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0125",
+   "start": 1012.745,
+   "end": 1026.893,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0126",
+   "start": 1026.893,
+   "end": 1035.001,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0127",
+   "start": 1035.001,
+   "end": 1037.937,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0128",
+   "start": 1037.937,
+   "end": 1051.918,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0129",
+   "start": 1051.918,
+   "end": 1074.54,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0130",
+   "start": 1074.54,
+   "end": 1081.347,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0131",
+   "start": 1081.347,
+   "end": 1092.258,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0132",
+   "start": 1092.258,
+   "end": 1104.87,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0133",
+   "start": 1104.87,
+   "end": 1113.713,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0134",
+   "start": 1113.713,
+   "end": 1150.549,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0135",
+   "start": 1150.549,
+   "end": 1153.386,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0136",
+   "start": 1153.386,
+   "end": 1175.608,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0137",
+   "start": 1175.608,
+   "end": 1189.155,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0138",
+   "start": 1189.155,
+   "end": 1198.631,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0139",
+   "start": 1198.631,
+   "end": 1208.207,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0140",
+   "start": 1208.207,
+   "end": 1210.609,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0141",
+   "start": 1210.609,
+   "end": 1223.723,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0142",
+   "start": 1223.723,
+   "end": 1238.404,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0143",
+   "start": 1238.404,
+   "end": 1247.613,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0144",
+   "start": 1247.613,
+   "end": 1268.767,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0145",
+   "start": 1268.767,
+   "end": 1284.216,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0146",
+   "start": 1284.216,
+   "end": 1299.698,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0147",
+   "start": 1299.698,
+   "end": 1307.339,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0148",
+   "start": 1307.339,
+   "end": 1327.76,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0149",
+   "start": 1327.76,
+   "end": 1331.73,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0150",
+   "start": 1331.73,
+   "end": 1333.966,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0151",
+   "start": 1333.966,
+   "end": 1337.469,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0152",
+   "start": 1337.469,
+   "end": 1341.073,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0153",
+   "start": 1341.073,
+   "end": 1349.949,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0154",
+   "start": 1349.949,
+   "end": 1352.518,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0155",
+   "start": 1352.518,
+   "end": 1355.621,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0156",
+   "start": 1355.621,
+   "end": 1361.36,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0157",
+   "start": 1361.36,
+   "end": 1366.732,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0158",
+   "start": 1366.732,
+   "end": 1372.404,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0159",
+   "start": 1372.404,
+   "end": 1374.506,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0160",
+   "start": 1374.506,
+   "end": 1377.343,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0161",
+   "start": 1377.343,
+   "end": 1378.878,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0162",
+   "start": 1378.878,
+   "end": 1383.048,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0163",
+   "start": 1383.048,
+   "end": 1384.083,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0164",
+   "start": 1384.083,
+   "end": 1387.486,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0165",
+   "start": 1387.486,
+   "end": 1399.765,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0166",
+   "start": 1399.765,
+   "end": 1403.135,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0167",
+   "start": 1403.135,
+   "end": 1405.671,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0168",
+   "start": 1405.671,
+   "end": 1414.947,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0169",
+   "start": 1414.947,
+   "end": 1418.918,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0170",
+   "start": 1418.918,
+   "end": 1421.687,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0171",
+   "start": 1421.687,
+   "end": 1437.569,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0172",
+   "start": 1437.569,
+   "end": 1446.912,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0173",
+   "start": 1446.912,
+   "end": 1467.633,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0174",
+   "start": 1467.633,
+   "end": 1474.64,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0175",
+   "start": 1474.64,
+   "end": 1479.211,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0176",
+   "start": 1479.211,
+   "end": 1484.883,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0177",
+   "start": 1484.883,
+   "end": 1498.364,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0178",
+   "start": 1498.364,
+   "end": 1502.201,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0179",
+   "start": 1502.201,
+   "end": 1512.378,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0180",
+   "start": 1512.378,
+   "end": 1533.265,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0181",
+   "start": 1533.265,
+   "end": 1539.204,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0182",
+   "start": 1539.204,
+   "end": 1551.15,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0183",
+   "start": 1551.15,
+   "end": 1571.37,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0184",
+   "start": 1571.37,
+   "end": 1574.973,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0185",
+   "start": 1574.973,
+   "end": 1579.211,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0186",
+   "start": 1579.211,
+   "end": 1581.68,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0187",
+   "start": 1581.68,
+   "end": 1594.526,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0188",
+   "start": 1594.526,
+   "end": 1596.161,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0189",
+   "start": 1596.161,
+   "end": 1597.229,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0190",
+   "start": 1597.229,
+   "end": 1599.865,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0191",
+   "start": 1599.865,
+   "end": 1617.349,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0192",
+   "start": 1617.349,
+   "end": 1619.918,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0193",
+   "start": 1619.918,
+   "end": 1622.387,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0194",
+   "start": 1622.387,
+   "end": 1626.758,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0195",
+   "start": 1626.758,
+   "end": 1633.499,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0196",
+   "start": 1633.499,
+   "end": 1636.735,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0197",
+   "start": 1636.735,
+   "end": 1638.77,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0198",
+   "start": 1638.77,
+   "end": 1642.741,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0199",
+   "start": 1642.741,
+   "end": 1647.746,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0200",
+   "start": 1647.746,
+   "end": 1649.414,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0201",
+   "start": 1649.414,
+   "end": 1655.354,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0202",
+   "start": 1655.354,
+   "end": 1656.922,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0203",
+   "start": 1656.922,
+   "end": 1658.857,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0204",
+   "start": 1658.857,
+   "end": 1663.195,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0205",
+   "start": 1663.195,
+   "end": 1668.4,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0206",
+   "start": 1668.4,
+   "end": 1676.108,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0207",
+   "start": 1676.108,
+   "end": 1681.213,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0208",
+   "start": 1681.213,
+   "end": 1686.018,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0209",
+   "start": 1686.018,
+   "end": 1693.759,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0210",
+   "start": 1693.759,
+   "end": 1696.595,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0211",
+   "start": 1696.595,
+   "end": 1714.646,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0212",
+   "start": 1714.646,
+   "end": 1721.386,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0213",
+   "start": 1721.386,
+   "end": 1726.391,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0214",
+   "start": 1726.391,
+   "end": 1732.864,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0215",
+   "start": 1732.864,
+   "end": 1737.135,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0216",
+   "start": 1737.135,
+   "end": 1744.042,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0217",
+   "start": 1744.042,
+   "end": 1755.787,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0218",
+   "start": 1755.787,
+   "end": 1767.866,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0219",
+   "start": 1767.866,
+   "end": 1799.431,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0220",
+   "start": 1799.431,
+   "end": 1806.638,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0221",
+   "start": 1806.638,
+   "end": 1810.742,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0222",
+   "start": 1810.742,
+   "end": 1822.12,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0223",
+   "start": 1822.12,
+   "end": 1836.068,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0224",
+   "start": 1836.068,
+   "end": 1838.203,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0225",
+   "start": 1838.203,
+   "end": 1848.313,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0226",
+   "start": 1848.313,
+   "end": 1853.952,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0227",
+   "start": 1853.952,
+   "end": 1856.755,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0228",
+   "start": 1856.755,
+   "end": 1878.877,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0229",
+   "start": 1878.877,
+   "end": 1880.112,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0230",
+   "start": 1880.112,
+   "end": 1885.784,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0231",
+   "start": 1885.784,
+   "end": 1886.852,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0232",
+   "start": 1886.852,
+   "end": 1887.786,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0233",
+   "start": 1887.786,
+   "end": 1890.589,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0234",
+   "start": 1890.589,
+   "end": 1893.391,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0235",
+   "start": 1893.391,
+   "end": 1896.228,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0236",
+   "start": 1896.228,
+   "end": 1899.03,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0237",
+   "start": 1899.03,
+   "end": 1901.733,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0238",
+   "start": 1901.733,
+   "end": 1909.374,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0239",
+   "start": 1909.374,
+   "end": 1916.615,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0240",
+   "start": 1916.615,
+   "end": 1920.752,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0241",
+   "start": 1920.752,
+   "end": 1925.69,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0242",
+   "start": 1925.69,
+   "end": 1946.111,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0243",
+   "start": 1946.111,
+   "end": 1953.485,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0244",
+   "start": 1953.485,
+   "end": 1956.555,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0245",
+   "start": 1956.555,
+   "end": 1961.326,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0246",
+   "start": 1961.326,
+   "end": 1964.095,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0247",
+   "start": 1964.095,
+   "end": 1966.598,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0248",
+   "start": 1966.598,
+   "end": 1969.201,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0249",
+   "start": 1969.201,
+   "end": 1972.07,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0250",
+   "start": 1972.07,
+   "end": 1972.771,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0251",
+   "start": 1972.771,
+   "end": 2002.133,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0252",
+   "start": 2002.133,
+   "end": 2003.635,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0253",
+   "start": 2003.635,
+   "end": 2008.974,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0254",
+   "start": 2008.974,
+   "end": 2011.576,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0255",
+   "start": 2011.576,
+   "end": 2015.18,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0256",
+   "start": 2015.18,
+   "end": 2020.352,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0257",
+   "start": 2020.352,
+   "end": 2022.854,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0258",
+   "start": 2022.854,
+   "end": 2028.026,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0259",
+   "start": 2028.026,
+   "end": 2037.836,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0260",
+   "start": 2037.836,
+   "end": 2043.041,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0261",
+   "start": 2043.041,
+   "end": 2044.809,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0262",
+   "start": 2044.809,
+   "end": 2048.346,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0263",
+   "start": 2048.346,
+   "end": 2052.817,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0264",
+   "start": 2052.817,
+   "end": 2055.387,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0265",
+   "start": 2055.387,
+   "end": 2056.288,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0266",
+   "start": 2056.288,
+   "end": 2057.355,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0267",
+   "start": 2057.355,
+   "end": 2060.725,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0268",
+   "start": 2060.725,
+   "end": 2061.693,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0269",
+   "start": 2061.693,
+   "end": 2067.299,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0270",
+   "start": 2067.299,
+   "end": 2070.135,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0271",
+   "start": 2070.135,
+   "end": 2072.103,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0272",
+   "start": 2072.103,
+   "end": 2075.273,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0273",
+   "start": 2075.273,
+   "end": 2083.081,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0274",
+   "start": 2083.081,
+   "end": 2085.584,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0275",
+   "start": 2085.584,
+   "end": 2094.159,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0276",
+   "start": 2094.159,
+   "end": 2096.394,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0277",
+   "start": 2096.394,
+   "end": 2099.631,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0278",
+   "start": 2099.631,
+   "end": 2106.504,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0279",
+   "start": 2106.504,
+   "end": 2110.976,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0280",
+   "start": 2110.976,
+   "end": 2113.244,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0281",
+   "start": 2113.244,
+   "end": 2130.962,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0282",
+   "start": 2130.962,
+   "end": 2141.272,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0283",
+   "start": 2141.272,
+   "end": 2144.909,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0284",
+   "start": 2144.909,
+   "end": 2150.281,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0285",
+   "start": 2150.281,
+   "end": 2165.797,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0286",
+   "start": 2165.797,
+   "end": 2167.666,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0287",
+   "start": 2167.666,
+   "end": 2173.338,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0288",
+   "start": 2173.338,
+   "end": 2176.875,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0289",
+   "start": 2176.875,
+   "end": 2179.277,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0290",
+   "start": 2179.277,
+   "end": 2185.717,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0291",
+   "start": 2185.717,
+   "end": 2190.555,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0292",
+   "start": 2190.555,
+   "end": 2197.195,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0293",
+   "start": 2197.195,
+   "end": 2200.365,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0294",
+   "start": 2200.365,
+   "end": 2201.332,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0295",
+   "start": 2201.332,
+   "end": 2203.401,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0296",
+   "start": 2203.401,
+   "end": 2203.902,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0297",
+   "start": 2203.902,
+   "end": 2207.372,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0298",
+   "start": 2207.372,
+   "end": 2208.74,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0299",
+   "start": 2208.74,
+   "end": 2213.645,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0300",
+   "start": 2213.645,
+   "end": 2215.914,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0301",
+   "start": 2215.914,
+   "end": 2216.915,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0302",
+   "start": 2216.915,
+   "end": 2220.685,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0303",
+   "start": 2220.685,
+   "end": 2225.323,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0304",
+   "start": 2225.323,
+   "end": 2228.693,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0305",
+   "start": 2228.693,
+   "end": 2229.694,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0306",
+   "start": 2229.694,
+   "end": 2232.63,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0307",
+   "start": 2232.63,
+   "end": 2235.533,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0308",
+   "start": 2235.533,
+   "end": 2238.77,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0309",
+   "start": 2238.77,
+   "end": 2239.871,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0310",
+   "start": 2239.871,
+   "end": 2242.707,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0311",
+   "start": 2242.707,
+   "end": 2244.642,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0312",
+   "start": 2244.642,
+   "end": 2253.418,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0313",
+   "start": 2253.418,
+   "end": 2255.587,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0314",
+   "start": 2255.587,
+   "end": 2260.692,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0315",
+   "start": 2260.692,
+   "end": 2264.929,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0316",
+   "start": 2264.929,
+   "end": 2270.668,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0317",
+   "start": 2270.668,
+   "end": 2273.104,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0318",
+   "start": 2273.104,
+   "end": 2274.205,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0319",
+   "start": 2274.205,
+   "end": 2276.708,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0320",
+   "start": 2276.708,
+   "end": 2279.244,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0321",
+   "start": 2279.244,
+   "end": 2281.946,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0322",
+   "start": 2281.946,
+   "end": 2287.051,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0323",
+   "start": 2287.051,
+   "end": 2290.121,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0324",
+   "start": 2290.121,
+   "end": 2293.491,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0325",
+   "start": 2293.491,
+   "end": 2298.062,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0326",
+   "start": 2298.062,
+   "end": 2303.468,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0327",
+   "start": 2303.468,
+   "end": 2310.742,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0328",
+   "start": 2310.742,
+   "end": 2317.182,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0329",
+   "start": 2317.182,
+   "end": 2331.663,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0330",
+   "start": 2331.663,
+   "end": 2334.532,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0331",
+   "start": 2334.532,
+   "end": 2340.672,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0332",
+   "start": 2340.672,
+   "end": 2341.906,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0333",
+   "start": 2341.906,
+   "end": 2343.274,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0334",
+   "start": 2343.274,
+   "end": 2345.71,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0335",
+   "start": 2345.71,
+   "end": 2348.446,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0336",
+   "start": 2348.446,
+   "end": 2349.948,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0337",
+   "start": 2349.948,
+   "end": 2351.916,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0338",
+   "start": 2351.916,
+   "end": 2353.818,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0339",
+   "start": 2353.818,
+   "end": 2354.319,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0340",
+   "start": 2354.319,
+   "end": 2355.053,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0341",
+   "start": 2355.053,
+   "end": 2359.424,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0342",
+   "start": 2359.424,
+   "end": 2362.46,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0343",
+   "start": 2362.46,
+   "end": 2363.261,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0344",
+   "start": 2363.261,
+   "end": 2366.097,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0345",
+   "start": 2366.097,
+   "end": 2377.308,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0346",
+   "start": 2377.308,
+   "end": 2378.076,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0347",
+   "start": 2378.076,
+   "end": 2382.347,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0348",
+   "start": 2382.347,
+   "end": 2384.315,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0349",
+   "start": 2384.315,
+   "end": 2388.419,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0350",
+   "start": 2388.419,
+   "end": 2391.155,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0351",
+   "start": 2391.155,
+   "end": 2395.226,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0352",
+   "start": 2395.226,
+   "end": 2397.228,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0353",
+   "start": 2397.228,
+   "end": 2400.465,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0354",
+   "start": 2400.465,
+   "end": 2402.2,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0355",
+   "start": 2402.2,
+   "end": 2405.803,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0356",
+   "start": 2405.803,
+   "end": 2409.24,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0357",
+   "start": 2409.24,
+   "end": 2412.31,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0358",
+   "start": 2412.31,
+   "end": 2414.012,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0359",
+   "start": 2414.012,
+   "end": 2417.081,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0360",
+   "start": 2417.081,
+   "end": 2421.386,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0361",
+   "start": 2421.386,
+   "end": 2422.353,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0362",
+   "start": 2422.353,
+   "end": 2426.691,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0363",
+   "start": 2426.691,
+   "end": 2428.793,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0364",
+   "start": 2428.793,
+   "end": 2432.597,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0365",
+   "start": 2432.597,
+   "end": 2435.6,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0366",
+   "start": 2435.6,
+   "end": 2436.901,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0367",
+   "start": 2436.901,
+   "end": 2439.737,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0368",
+   "start": 2439.737,
+   "end": 2445.376,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0369",
+   "start": 2445.376,
+   "end": 2448.212,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0370",
+   "start": 2448.212,
+   "end": 2453.818,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0371",
+   "start": 2453.818,
+   "end": 2454.652,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0372",
+   "start": 2454.652,
+   "end": 2455.353,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0373",
+   "start": 2455.353,
+   "end": 2458.156,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0374",
+   "start": 2458.156,
+   "end": 2460.959,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0375",
+   "start": 2460.959,
+   "end": 2463.795,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0376",
+   "start": 2463.795,
+   "end": 2464.796,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0377",
+   "start": 2464.796,
+   "end": 2472.503,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0378",
+   "start": 2472.503,
+   "end": 2473.037,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0379",
+   "start": 2473.037,
+   "end": 2475.707,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0380",
+   "start": 2475.707,
+   "end": 2483.815,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0381",
+   "start": 2483.815,
+   "end": 2485.65,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0382",
+   "start": 2485.65,
+   "end": 2488.453,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0383",
+   "start": 2488.453,
+   "end": 2491.255,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0384",
+   "start": 2491.255,
+   "end": 2492.223,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0385",
+   "start": 2492.223,
+   "end": 2505.937,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0386",
+   "start": 2505.937,
+   "end": 2509.273,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0387",
+   "start": 2509.273,
+   "end": 2515.947,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0388",
+   "start": 2515.947,
+   "end": 2520.251,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0389",
+   "start": 2520.251,
+   "end": 2528.159,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0390",
+   "start": 2528.159,
+   "end": 2530.795,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0391",
+   "start": 2530.795,
+   "end": 2536.501,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0392",
+   "start": 2536.501,
+   "end": 2545.143,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0393",
+   "start": 2545.143,
+   "end": 2549.68,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0394",
+   "start": 2549.68,
+   "end": 2560.124,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0395",
+   "start": 2560.124,
+   "end": 2572.77,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0396",
+   "start": 2572.77,
+   "end": 2577.708,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0397",
+   "start": 2577.708,
+   "end": 2587.718,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0398",
+   "start": 2587.718,
+   "end": 2594.859,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0399",
+   "start": 2594.859,
+   "end": 2611.108,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0400",
+   "start": 2611.108,
+   "end": 2615.68,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0401",
+   "start": 2615.68,
+   "end": 2628.693,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0402",
+   "start": 2628.693,
+   "end": 2639.737,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L0-0403",
+   "start": 2639.737,
+   "end": 2648.112,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L1": [
+  {
+   "id": "sherlock_jr-L1-0000",
+   "start": 0.0,
+   "end": 92.859,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0001",
+   "start": 92.859,
+   "end": 114.181,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0002",
+   "start": 114.181,
+   "end": 150.884,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0003",
+   "start": 150.884,
+   "end": 169.202,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0004",
+   "start": 169.202,
+   "end": 191.558,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0005",
+   "start": 191.558,
+   "end": 193.86,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0006",
+   "start": 193.86,
+   "end": 226.593,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0007",
+   "start": 226.593,
+   "end": 242.275,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0008",
+   "start": 242.275,
+   "end": 261.161,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0009",
+   "start": 261.161,
+   "end": 299.933,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0010",
+   "start": 299.933,
+   "end": 303.069,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0011",
+   "start": 303.069,
+   "end": 317.217,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0012",
+   "start": 317.217,
+   "end": 343.243,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0013",
+   "start": 343.243,
+   "end": 383.149,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0014",
+   "start": 383.149,
+   "end": 403.536,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0015",
+   "start": 403.536,
+   "end": 439.706,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0016",
+   "start": 439.706,
+   "end": 473.306,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0017",
+   "start": 473.306,
+   "end": 502.068,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0018",
+   "start": 502.068,
+   "end": 517.717,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0019",
+   "start": 517.717,
+   "end": 542.842,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0020",
+   "start": 542.842,
+   "end": 571.571,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0021",
+   "start": 571.571,
+   "end": 578.578,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0022",
+   "start": 578.578,
+   "end": 618.952,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0023",
+   "start": 618.952,
+   "end": 629.429,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0024",
+   "start": 629.429,
+   "end": 645.378,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0025",
+   "start": 645.378,
+   "end": 673.106,
+   "shots": 7,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0026",
+   "start": 673.106,
+   "end": 679.579,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0027",
+   "start": 679.579,
+   "end": 708.675,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0028",
+   "start": 708.675,
+   "end": 726.092,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0029",
+   "start": 726.092,
+   "end": 751.15,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0030",
+   "start": 751.15,
+   "end": 771.738,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0031",
+   "start": 771.738,
+   "end": 800.633,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0032",
+   "start": 800.633,
+   "end": 831.431,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0033",
+   "start": 831.431,
+   "end": 862.762,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0034",
+   "start": 862.762,
+   "end": 881.047,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0035",
+   "start": 881.047,
+   "end": 901.167,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0036",
+   "start": 901.167,
+   "end": 968.067,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0037",
+   "start": 968.067,
+   "end": 986.385,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0038",
+   "start": 986.385,
+   "end": 1003.836,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0039",
+   "start": 1003.836,
+   "end": 1037.937,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0040",
+   "start": 1037.937,
+   "end": 1051.918,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0041",
+   "start": 1051.918,
+   "end": 1081.347,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0042",
+   "start": 1081.347,
+   "end": 1104.87,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0043",
+   "start": 1104.87,
+   "end": 1113.713,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0044",
+   "start": 1113.713,
+   "end": 1150.549,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0045",
+   "start": 1150.549,
+   "end": 1189.155,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0046",
+   "start": 1189.155,
+   "end": 1223.723,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0047",
+   "start": 1223.723,
+   "end": 1238.404,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0048",
+   "start": 1238.404,
+   "end": 1268.767,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0049",
+   "start": 1268.767,
+   "end": 1299.698,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0050",
+   "start": 1299.698,
+   "end": 1337.469,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0051",
+   "start": 1337.469,
+   "end": 1355.621,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0052",
+   "start": 1355.621,
+   "end": 1383.048,
+   "shots": 7,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0053",
+   "start": 1383.048,
+   "end": 1421.687,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0054",
+   "start": 1421.687,
+   "end": 1437.569,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0055",
+   "start": 1437.569,
+   "end": 1474.64,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0056",
+   "start": 1474.64,
+   "end": 1502.201,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0057",
+   "start": 1502.201,
+   "end": 1533.265,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0058",
+   "start": 1533.265,
+   "end": 1539.204,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0059",
+   "start": 1539.204,
+   "end": 1571.37,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0060",
+   "start": 1571.37,
+   "end": 1597.229,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0061",
+   "start": 1597.229,
+   "end": 1617.349,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0062",
+   "start": 1617.349,
+   "end": 1647.746,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0063",
+   "start": 1647.746,
+   "end": 1663.195,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0064",
+   "start": 1663.195,
+   "end": 1681.213,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0065",
+   "start": 1681.213,
+   "end": 1696.595,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0066",
+   "start": 1696.595,
+   "end": 1721.386,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0067",
+   "start": 1721.386,
+   "end": 1744.042,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0068",
+   "start": 1744.042,
+   "end": 1767.866,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0069",
+   "start": 1767.866,
+   "end": 1806.638,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0070",
+   "start": 1806.638,
+   "end": 1838.203,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0071",
+   "start": 1838.203,
+   "end": 1856.755,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0072",
+   "start": 1856.755,
+   "end": 1886.852,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0073",
+   "start": 1886.852,
+   "end": 1901.733,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0074",
+   "start": 1901.733,
+   "end": 1916.615,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0075",
+   "start": 1916.615,
+   "end": 1925.69,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0076",
+   "start": 1925.69,
+   "end": 1964.095,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0077",
+   "start": 1964.095,
+   "end": 1972.771,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0078",
+   "start": 1972.771,
+   "end": 2008.974,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0079",
+   "start": 2008.974,
+   "end": 2044.809,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0080",
+   "start": 2044.809,
+   "end": 2060.725,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0081",
+   "start": 2060.725,
+   "end": 2094.159,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0082",
+   "start": 2094.159,
+   "end": 2113.244,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0083",
+   "start": 2113.244,
+   "end": 2144.909,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0084",
+   "start": 2144.909,
+   "end": 2173.338,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0085",
+   "start": 2173.338,
+   "end": 2197.195,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0086",
+   "start": 2197.195,
+   "end": 2215.914,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0087",
+   "start": 2215.914,
+   "end": 2228.693,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0088",
+   "start": 2228.693,
+   "end": 2244.642,
+   "shots": 7,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0089",
+   "start": 2244.642,
+   "end": 2273.104,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0090",
+   "start": 2273.104,
+   "end": 2290.121,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0091",
+   "start": 2290.121,
+   "end": 2317.182,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0092",
+   "start": 2317.182,
+   "end": 2349.948,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0093",
+   "start": 2349.948,
+   "end": 2359.424,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0094",
+   "start": 2359.424,
+   "end": 2384.315,
+   "shots": 7,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0095",
+   "start": 2384.315,
+   "end": 2402.2,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0096",
+   "start": 2402.2,
+   "end": 2422.353,
+   "shots": 7,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0097",
+   "start": 2422.353,
+   "end": 2435.6,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0098",
+   "start": 2435.6,
+   "end": 2454.652,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0099",
+   "start": 2454.652,
+   "end": 2464.796,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0100",
+   "start": 2464.796,
+   "end": 2492.223,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0101",
+   "start": 2492.223,
+   "end": 2505.937,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0102",
+   "start": 2505.937,
+   "end": 2520.251,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0103",
+   "start": 2520.251,
+   "end": 2545.143,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0104",
+   "start": 2545.143,
+   "end": 2577.708,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0105",
+   "start": 2577.708,
+   "end": 2615.68,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L1-0106",
+   "start": 2615.68,
+   "end": 2648.112,
+   "shots": 3,
+   "lines": 0
+  }
+ ],
+ "L2": [
+  {
+   "id": "sherlock_jr-L2-0000",
+   "start": 0.0,
+   "end": 92.859,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0001",
+   "start": 92.859,
+   "end": 150.884,
+   "shots": 9,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0002",
+   "start": 150.884,
+   "end": 169.202,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0003",
+   "start": 169.202,
+   "end": 191.558,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0004",
+   "start": 191.558,
+   "end": 242.275,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0005",
+   "start": 242.275,
+   "end": 303.069,
+   "shots": 7,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0006",
+   "start": 303.069,
+   "end": 317.217,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0007",
+   "start": 317.217,
+   "end": 383.149,
+   "shots": 10,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0008",
+   "start": 383.149,
+   "end": 645.378,
+   "shots": 29,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0009",
+   "start": 645.378,
+   "end": 771.738,
+   "shots": 26,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0010",
+   "start": 771.738,
+   "end": 881.047,
+   "shots": 13,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0011",
+   "start": 881.047,
+   "end": 901.167,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0012",
+   "start": 901.167,
+   "end": 968.067,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0013",
+   "start": 968.067,
+   "end": 986.385,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0014",
+   "start": 986.385,
+   "end": 1189.155,
+   "shots": 20,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0015",
+   "start": 1189.155,
+   "end": 1299.698,
+   "shots": 9,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0016",
+   "start": 1299.698,
+   "end": 1437.569,
+   "shots": 25,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0017",
+   "start": 1437.569,
+   "end": 1617.349,
+   "shots": 20,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0018",
+   "start": 1617.349,
+   "end": 1806.638,
+   "shots": 29,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0019",
+   "start": 1806.638,
+   "end": 1886.852,
+   "shots": 11,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0020",
+   "start": 1886.852,
+   "end": 1901.733,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0021",
+   "start": 1901.733,
+   "end": 2094.159,
+   "shots": 38,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0022",
+   "start": 2094.159,
+   "end": 2215.914,
+   "shots": 25,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0023",
+   "start": 2215.914,
+   "end": 2228.693,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0024",
+   "start": 2228.693,
+   "end": 2290.121,
+   "shots": 19,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0025",
+   "start": 2290.121,
+   "end": 2317.182,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0026",
+   "start": 2317.182,
+   "end": 2349.948,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0027",
+   "start": 2349.948,
+   "end": 2492.223,
+   "shots": 48,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0028",
+   "start": 2492.223,
+   "end": 2505.937,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0029",
+   "start": 2505.937,
+   "end": 2520.251,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0030",
+   "start": 2520.251,
+   "end": 2545.143,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L2-0031",
+   "start": 2545.143,
+   "end": 2648.112,
+   "shots": 11,
+   "lines": 0
+  }
+ ],
+ "L3": [
+  {
+   "id": "sherlock_jr-L3-0000",
+   "start": 0.0,
+   "end": 303.069,
+   "shots": 29,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L3-0001",
+   "start": 303.069,
+   "end": 771.738,
+   "shots": 68,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L3-0002",
+   "start": 771.738,
+   "end": 986.385,
+   "shots": 21,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L3-0003",
+   "start": 986.385,
+   "end": 1437.569,
+   "shots": 54,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L3-0004",
+   "start": 1437.569,
+   "end": 1806.638,
+   "shots": 49,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L3-0005",
+   "start": 1806.638,
+   "end": 2215.914,
+   "shots": 80,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L3-0006",
+   "start": 2215.914,
+   "end": 2317.182,
+   "shots": 28,
+   "lines": 0
+  },
+  {
+   "id": "sherlock_jr-L3-0007",
+   "start": 2317.182,
+   "end": 2648.112,
+   "shots": 75,
+   "lines": 0
+  }
+ ],
+ "L4": []
+}

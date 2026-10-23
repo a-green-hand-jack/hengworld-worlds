@@ -1,0 +1,57 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L1-0003",
+  "start": 59.84,
+  "end": 69.2,
+  "shots": 5,
+  "lines": 0
+ },
+ "duration": 9.36,
+ "cuts": [
+  0.56,
+  4.4,
+  7.12,
+  8.08
+ ],
+ "shots": [
+  {
+   "index": 8,
+   "start": 0.0,
+   "end": 0.56,
+   "description": "Medium shot of C1 looking, panning right."
+  },
+  {
+   "index": 9,
+   "start": 0.56,
+   "end": 4.4,
+   "description": "Medium shot of C1 getting bandaged, static camera."
+  },
+  {
+   "index": 10,
+   "start": 4.4,
+   "end": 7.12,
+   "description": "Wide shot of C1 standing on the platform surrounded by giant eyes, static."
+  },
+  {
+   "index": 11,
+   "start": 7.12,
+   "end": 8.08,
+   "description": "Medium close-up of C1 standing against a background of eyes, static camera."
+  },
+  {
+   "index": 12,
+   "start": 8.08,
+   "end": 9.36,
+   "description": "Medium close-up of C1 looking nervously around while a floating entity glowers, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 9.36
+  }
+ ],
+ "task_id": "spirit_chaser-L1-0003-scr",
+ "descriptions_available": true
+}

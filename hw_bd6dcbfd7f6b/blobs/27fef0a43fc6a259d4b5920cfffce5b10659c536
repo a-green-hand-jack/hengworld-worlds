@@ -1,0 +1,42 @@
+{
+ "assignment_schema": 1,
+ "objective": "Caminandes 3 Breakdown (catalogue query to task packages) compared with dataset d509bed; one task (caminandes3-L1-0000-scr) run with the fixed pipeline, smoke profile, scored to Q and cut F1; statement of what was not run. Round 2 (steward#7): shot descriptions for Caminandes 3 by CrewCut's describe step with Gemini; complete c for the fixed/smoke run (judge correspondence, cut F1, other components; WER/onset not applicable); results and spend; updated not-run statement.",
+ "items": [
+  {
+   "owner": "steward",
+   "work": "brief.md (objective's requirements, protocol verbatim from the CrewCut documents, maintainer's decisions) and this assignment"
+  },
+  {
+   "owner": "curator",
+   "work": "Corpus for Caminandes 3 only: candidate found from the catalogue query, licence read for this film only, admission/rejection records with evidence, pinned master chosen and its sha256 checked against configs/films.yaml; use of masters/caminandes3.ogv only if the pinned file cannot be fetched, recorded",
+   "paths": [
+    "corpus/"
+   ]
+  },
+  {
+   "owner": "task-maker",
+   "work": "Breakdown commands from the pinned master to task packages (shots, dialogue, hierarchy, provenance if feasible, tasks) each with a check; published task packages without answer key; answer key; comparison with dataset d509bed with every difference listed and explained; round 2: receives the drafted descriptions (with model) from scorer and publishes them in its delivery (key or package is its call); does not call Gemini"
+  },
+  {
+   "owner": "executor",
+   "work": "Run records of caminandes3-L1-0000-scr with --system fixed --profile smoke (command, version, log, cost, failures); statement of what was not run (shot descriptions, judge, real generators, screening) with no conclusion drawn; round 2: updated not-run statement (the spend ledger is scorer's in scores/); does not call Gemini",
+   "paths": [
+    "runs/"
+   ]
+  },
+  {
+   "owner": "scorer",
+   "work": "Scores of that run: delivery check Q and cut F1 only, with command and revision; check that the measures behave; round 2: runs crewcut describe on all 37 shots (model recorded, requests/tokens/cost logged in scores/) and sends the descriptions to task-maker; complete c from the descriptions with the continuity judge (each component and how computed, WER/onset not applicable, 'not run' with reason where not computable), judge requests logged",
+   "paths": [
+    "scores/"
+   ]
+  },
+  {
+   "owner": "auditor",
+   "work": "Independent reproduction, comparison with d509bed, check of run records against the protocol, approval; round 2: check descriptions, c components, spend and request count (<=300) against records",
+   "paths": [
+    "audit/"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0007",
+  "start": 123.542,
+  "end": 150.042,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 26.5,
+ "cuts": [],
+ "shots": [],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 26.5
+  }
+ ]
+}

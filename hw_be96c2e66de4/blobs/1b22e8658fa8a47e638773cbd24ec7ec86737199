@@ -1,0 +1,78 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L1-0092",
+  "start": 2317.182,
+  "end": 2349.948,
+  "shots": 8,
+  "lines": 0
+ },
+ "duration": 32.766,
+ "cuts": [
+  14.481,
+  17.35,
+  23.49,
+  24.724,
+  26.092,
+  28.528,
+  31.264
+ ],
+ "shots": [
+  {
+   "index": 329,
+   "start": -0.0,
+   "end": 14.481,
+   "description": "Medium shot of C1 riding a vehicle with a train in the background, static camera."
+  },
+  {
+   "index": 330,
+   "start": 14.481,
+   "end": 17.35,
+   "description": "Medium shot of C1 riding a bicycle, tracking."
+  },
+  {
+   "index": 331,
+   "start": 17.35,
+   "end": 23.49,
+   "description": "Medium shot of C1 striding down a road holding two sticks, panning left."
+  },
+  {
+   "index": 332,
+   "start": 23.49,
+   "end": 24.724,
+   "description": "Medium shot of C1 and C2 sitting across a table, talking, static."
+  },
+  {
+   "index": 333,
+   "start": 24.724,
+   "end": 26.092,
+   "description": "Medium shot of C1 and C2 talking across a table, static."
+  },
+  {
+   "index": 334,
+   "start": 26.092,
+   "end": 28.528,
+   "description": "Medium shot of C1 smiling and adjusting collar, static."
+  },
+  {
+   "index": 335,
+   "start": 28.528,
+   "end": 31.264,
+   "description": "Medium shot of C1 talking, static camera."
+  },
+  {
+   "index": 336,
+   "start": 31.264,
+   "end": 32.766,
+   "description": "Medium shot of C1 and C2 sitting and standing respectively, with C1 crying then gesticulating towards C2, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 32.766
+  }
+ ],
+ "task_id": "sherlock_jr-L1-0092-ref",
+ "descriptions_available": true
+}

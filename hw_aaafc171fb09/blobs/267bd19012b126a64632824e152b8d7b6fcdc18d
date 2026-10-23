@@ -1,0 +1,66 @@
+{
+ "annotations": {
+  "shots": {
+   "identical": false,
+   "bytes_identical": false,
+   "differing_keys": {
+    "duration_s": [
+     150.04,
+     150.108345
+    ]
+   }
+  },
+  "dialogue": {
+   "identical": true,
+   "bytes_identical": true,
+   "differing_keys": {}
+  },
+  "hierarchy": {
+   "identical": true,
+   "bytes_identical": true,
+   "differing_keys": {}
+  }
+ },
+ "tasks": {
+  "n_published": 90,
+  "n_ours": 90,
+  "ids_only_in_published": [],
+  "ids_only_in_ours": [],
+  "field_differences": {},
+  "fields_compared": [
+   "end_s",
+   "film_id",
+   "level",
+   "n_lines",
+   "n_shots",
+   "segment_id",
+   "start_s",
+   "task_id",
+   "track"
+  ],
+  "empty_descriptions_in_ours": 348
+ },
+ "catalogue": {
+  "shots": [
+   "37",
+   "37"
+  ],
+  "beats": [
+   "8",
+   "8"
+  ],
+  "scenes": [
+   "5",
+   "5"
+  ],
+  "sequences": [
+   "1",
+   "1"
+  ],
+  "lines": [
+   "0",
+   "0"
+  ],
+  "all_equal": true
+ }
+}

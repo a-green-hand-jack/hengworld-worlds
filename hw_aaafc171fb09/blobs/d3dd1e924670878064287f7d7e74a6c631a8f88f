@@ -1,0 +1,27 @@
+# scores (scorer)
+
+## Run score (Q first, then cut F1)
+Run `fixed-caminandes3-L1-0000-scr-T0-5e9dec` (executor@2bfa44aee581, smoke, unofficial), task `caminandes3-L1-0000-scr`.
+Full output: `score_fixed-caminandes3-L1-0000-scr-T0-5e9dec.json`.
+Command (CrewCut df54b3a, editable pip core install, ffmpeg 9.0.2 conda-forge; judge disabled because no key):
+`crewcut score --run <copy of executor runs/fixed-...-5e9dec> --task <published package task-maker@c8331e70c674 + key/.../truth.json> --judge ''`
+Input check: film.mp4 sha256 dbe7652f...9f26c equals executor's record.
+- **Q = 1**: decodes, format, duration, subtitles, clean-room log all pass. The provenance check is **not run** (no provenance index `--index` was supplied; none exists in task-maker's repo), so Q = 1 holds for the other five checks only.
+- **cut F1 = 0.8 at 0.5 s and at 1.0 s** (key has 3 cuts: 21.375, 30.5, 32.292; the output's detected cuts: 21.375, 30.5). Observation for task-maker/auditor: the key's third cut 32.292 equals the segment duration (32.292 s), i.e. a cut at the very end; the detector cannot report it. I did not alter the key or measure.
+- Not run: correspondence (judge, no key), WER/onset (no dialogue lines in truth or ASR not run), speaker/character purity, S (screening). scene_order printed 1.0 by the command but is outside this round's scope; not reported as a result.
+
+## Q-failure check (done)
+Same output truncated to 2 s -> Q = 0 (duration 2.00 s vs 32.29 s), cut F1 not computed (None). So Q gates c as the protocol says.
+
+## Validation of the measures (done, needs no key)
+`validation.json`: cut F1 at tolerances [0.5, 1.0] s (cfg `continuity.cut_tolerance_s`), CrewCut df54b3a
+(`crewcut.scoring.continuity.cut_f1`, `detect_cuts`; damage `crewcut.scoring.meta`), pip core install, ffmpeg from conda-forge.
+- synthetic 36 cuts: identical = 1.0; shift 0.3 s = 1.0/1.0 (holds within tolerance); shifts 0.7 s and 1.5 s = 0.9722 (not a real drop: the synthetic cuts are 1 s apart, so a shifted cut matches its neighbour in the one-to-one matching — an artefact of my 1 s spacing, recorded; the film-based damage below is the real drop evidence);
+  half dropped / doubled predictions = 0.6667; empty prediction = 0.0.
+- film-based (masters/caminandes3.ogv local copy, used only for this check; "truth" here = the detector's own cuts on that file, not the key):
+  self = 1.0/1.0 (36 cuts); blank_shots 25%/75% and shuffle_50 fall to 0.29/0.42 and 0.36/0.58.
+- Observation: blank_shots 25% and 75% gave identical F1 (noise injection creates spurious cuts either way; same seed). Recorded, not tuned.
+Run score: not run yet. Judge/correspondence/WER/scene order: not run (out of scope, no key).
+
+## Note on the key's end-of-segment cut (answered by task-maker#8)
+task-maker confirms it is not intended and unchanged: `segment_truth` keeps cuts with a < c < b, but the end b is rounded (32.292) while c = 775/24 = 32.29167, so the end cut passes. 32 of 90 key files are affected; recorded by task-maker as open item O5 for CrewCut's maintainer. The 0.8 cut F1 is therefore a property of this key (cap), not of the placeholder run. Score reported as computed; no correction applied.

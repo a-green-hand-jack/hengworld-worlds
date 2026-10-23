@@ -1,0 +1,135 @@
+[
+ {
+  "check": "baseline",
+  "expected": "Q=1",
+  "got": [
+   1,
+   0.8,
+   0.8,
+   1.0
+  ],
+  "ok": true
+ },
+ {
+  "check": "cut_f1 identical",
+  "expected": 1.0,
+  "got": 1.0,
+  "ok": true
+ },
+ {
+  "check": "cut_f1 shifted 3 s",
+  "expected": 0.0,
+  "got": 0.0,
+  "ok": true
+ },
+ {
+  "check": "cut_f1 shift 0.7 s: drops at 0.5 s tol, holds at 1.0 s",
+  "expected": "f05<f10=1",
+  "got": [
+   0.0,
+   1.0
+  ],
+  "ok": true
+ },
+ {
+  "check": "cut_f1 no detections",
+  "expected": 0.0,
+  "got": 0.0,
+  "ok": true
+ },
+ {
+  "check": "cut_f1 spurious extra cuts lower F1",
+  "expected": "<1",
+  "got": 0.6666666666666666,
+  "ok": true
+ },
+ {
+  "check": "correspondence always yes (stub judge, aggregation only)",
+  "expected": 1.0,
+  "got": 1.0,
+  "ok": true
+ },
+ {
+  "check": "correspondence always no (stub judge, aggregation only)",
+  "expected": 0.0,
+  "got": 0.0,
+  "ok": true
+ },
+ {
+  "check": "correspondence duration-weighted",
+  "expected": 0.6619,
+  "got": 0.6619,
+  "ok": true
+ },
+ {
+  "check": "scene_order in order",
+  "expected": 1.0,
+  "got": 1.0,
+  "ok": true
+ },
+ {
+  "check": "scene_order reversed",
+  "expected": "<1",
+  "got": 0.33333333333333337,
+  "ok": true
+ },
+ {
+  "check": "Q: subtitles removed",
+  "expected": "Q=0, c all null",
+  "got": [
+   0,
+   null
+  ],
+  "ok": true
+ },
+ {
+  "check": "observation: manifest removed (QC does not check manifest.json at this revision; not a measure change)",
+  "expected": "Q stays 1",
+  "got": 1,
+  "ok": true
+ },
+ {
+  "check": "Q: film truncated to 10 s",
+  "expected": "Q=0",
+  "got": 0,
+  "ok": true
+ },
+ {
+  "check": "Q passes but cut F1 drops: static film (no cuts)",
+  "expected": "Q=1, f1 < baseline",
+  "got": [
+   1,
+   0.0,
+   0.0,
+   1.0
+  ],
+  "ok": true
+ },
+ {
+  "check": "Q may pass; spurious cuts lower F1 (1-s slices reversed)",
+  "expected": "f1 < baseline",
+  "got": [
+   1,
+   0.0,
+   0.0,
+   1.0
+  ],
+  "ok": true
+ },
+ {
+  "check": "hold: identical copy scores the same",
+  "expected": [
+   1,
+   0.8,
+   0.8,
+   1.0
+  ],
+  "got": [
+   1,
+   0.8,
+   0.8,
+   1.0
+  ],
+  "ok": true
+ }
+]

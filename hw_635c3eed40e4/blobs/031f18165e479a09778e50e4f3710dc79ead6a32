@@ -1,0 +1,420 @@
+{
+ "film_id": "domini_canes",
+ "duration_s": 260.21,
+ "L0": [
+  {
+   "id": "domini_canes-L0-0000",
+   "start": 0.0,
+   "end": 17.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0001",
+   "start": 17.917,
+   "end": 20.417,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0002",
+   "start": 20.417,
+   "end": 30.333,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0003",
+   "start": 30.333,
+   "end": 31.708,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0004",
+   "start": 31.708,
+   "end": 41.167,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0005",
+   "start": 41.167,
+   "end": 46.083,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0006",
+   "start": 46.083,
+   "end": 47.0,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0007",
+   "start": 47.0,
+   "end": 53.417,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0008",
+   "start": 53.417,
+   "end": 61.333,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0009",
+   "start": 61.333,
+   "end": 64.417,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0010",
+   "start": 64.417,
+   "end": 65.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0011",
+   "start": 65.917,
+   "end": 67.208,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0012",
+   "start": 67.208,
+   "end": 72.625,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0013",
+   "start": 72.625,
+   "end": 78.583,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0014",
+   "start": 78.583,
+   "end": 80.708,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0015",
+   "start": 80.708,
+   "end": 83.0,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0016",
+   "start": 83.0,
+   "end": 85.625,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0017",
+   "start": 85.625,
+   "end": 89.417,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0018",
+   "start": 89.417,
+   "end": 92.167,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0019",
+   "start": 92.167,
+   "end": 94.167,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0020",
+   "start": 94.167,
+   "end": 100.125,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0021",
+   "start": 100.125,
+   "end": 100.708,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0022",
+   "start": 100.708,
+   "end": 102.833,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0023",
+   "start": 102.833,
+   "end": 103.375,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0024",
+   "start": 103.375,
+   "end": 104.208,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0025",
+   "start": 104.208,
+   "end": 104.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0026",
+   "start": 104.792,
+   "end": 105.375,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0027",
+   "start": 105.375,
+   "end": 106.0,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0028",
+   "start": 106.0,
+   "end": 106.833,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0029",
+   "start": 106.833,
+   "end": 107.333,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0030",
+   "start": 107.333,
+   "end": 109.625,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0031",
+   "start": 109.625,
+   "end": 111.0,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0032",
+   "start": 111.0,
+   "end": 112.292,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0033",
+   "start": 112.292,
+   "end": 121.542,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0034",
+   "start": 121.542,
+   "end": 122.292,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0035",
+   "start": 122.292,
+   "end": 129.167,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0036",
+   "start": 129.167,
+   "end": 135.458,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0037",
+   "start": 135.458,
+   "end": 136.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0038",
+   "start": 136.792,
+   "end": 154.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0039",
+   "start": 154.792,
+   "end": 218.375,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L0-0040",
+   "start": 218.375,
+   "end": 260.208,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L1": [
+  {
+   "id": "domini_canes-L1-0000",
+   "start": 0.0,
+   "end": 17.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L1-0001",
+   "start": 17.917,
+   "end": 47.0,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L1-0002",
+   "start": 47.0,
+   "end": 78.583,
+   "shots": 7,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L1-0003",
+   "start": 78.583,
+   "end": 89.417,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L1-0004",
+   "start": 89.417,
+   "end": 100.708,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L1-0005",
+   "start": 100.708,
+   "end": 107.333,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L1-0006",
+   "start": 107.333,
+   "end": 129.167,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L1-0007",
+   "start": 129.167,
+   "end": 136.792,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L1-0008",
+   "start": 136.792,
+   "end": 154.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L1-0009",
+   "start": 154.792,
+   "end": 218.375,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L1-0010",
+   "start": 218.375,
+   "end": 260.208,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L2": [
+  {
+   "id": "domini_canes-L2-0000",
+   "start": 0.0,
+   "end": 17.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L2-0001",
+   "start": 17.917,
+   "end": 129.167,
+   "shots": 35,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L2-0002",
+   "start": 129.167,
+   "end": 218.375,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "domini_canes-L2-0003",
+   "start": 218.375,
+   "end": 260.208,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L3": [
+  {
+   "id": "domini_canes-L3-0000",
+   "start": 0.0,
+   "end": 260.208,
+   "shots": 41,
+   "lines": 0
+  }
+ ],
+ "L4": [
+  {
+   "id": "domini_canes-L4-0000",
+   "start": 0.0,
+   "end": 260.208,
+   "shots": 41,
+   "lines": 0
+  }
+ ]
+}

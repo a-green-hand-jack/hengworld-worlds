@@ -1,0 +1,95 @@
+"""The production log, one system-agnostic event stream per run (paper Sec. 4.1, Appendix F).
+
+Every model call (written by the metering proxy), tool call (written by the tool server), file
+write, inter-agent message and publish of a deliverable becomes one JSON line. Solo agents and
+seven-role crews therefore produce logs in the same format, which is what makes their cost and
+process comparable.
+"""
+from __future__ import annotations
+
+import json
+import threading
+import time
+import uuid
+from dataclasses import asdict, dataclass, field
+from pathlib import Path
+from typing import Iterator
+
+EVENT_TYPES = ("model_call", "tool_call", "file_write", "message", "publish")
+
+
+@dataclass
+class Event:
+    run_id: str
+    task_id: str
+    tier: str
+    actor: str
+    type: str
+    t: str = field(default_factory=lambda: time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
+    id: str = field(default_factory=lambda: "evt-" + uuid.uuid4().hex[:12])
+    tool: str | None = None
+    model: str | None = None
+    inputs: list[str] = field(default_factory=list)
+    outputs: list[str] = field(default_factory=list)
+    tokens: dict = field(default_factory=lambda: {"input": 0, "output": 0, "cache_read": 0, "cache_write": 0})
+    cost_usd: float = 0.0
+    latency_s: float | None = None
+    parent: str | None = None
+    status: str = "ok"
+    detail: dict = field(default_factory=dict)
+
+    def __post_init__(self):
+        if self.type not in EVENT_TYPES:
+            raise ValueError(f"unknown event type {self.type!r}")
+
+
+class ProductionLog:
+    """Append-only JSONL log shared by the proxy and the tool server (thread- and process-safe appends)."""
+
+    def __init__(self, path: Path, run_id: str, task_id: str, tier: str):
+        self.path = Path(path)
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.run_id, self.task_id, self.tier = run_id, task_id, tier
+        self._lock = threading.Lock()
+
+    def write(self, actor: str, type: str, **kw) -> Event:
+        ev = Event(run_id=self.run_id, task_id=self.task_id, tier=self.tier, actor=actor, type=type, **kw)
+        line = json.dumps(asdict(ev), ensure_ascii=False) + "\n"
+        with self._lock, open(self.path, "a") as f:  # O_APPEND keeps lines whole across processes
+            f.write(line)
+        return ev
+
+    def events(self) -> Iterator[dict]:
+        if self.path.exists():
+            with open(self.path) as f:
+                for line in f:
+                    if line.strip():
+                        yield json.loads(line)
+
+    def spend(self) -> dict[str, float]:
+        model = tool = 0.0
+        for e in self.events():
+            if e["type"] == "model_call":
+                model += e["cost_usd"]
+            elif e["type"] == "tool_call":
+                tool += e["cost_usd"]
+        return {"model_usd": round(model, 6), "tool_usd": round(tool, 6)}
+
+
+def read(path: Path) -> list[dict]:
+    return [json.loads(l) for l in open(path) if l.strip()]
+
+
+def validate(path: Path) -> list[str]:
+    """Return a list of problems; empty when the log follows the schema."""
+    probs = []
+    required = {f for f in Event.__dataclass_fields__}
+    for i, e in enumerate(read(path)):
+        missing = required - e.keys()
+        if missing:
+            probs.append(f"line {i + 1}: missing {sorted(missing)}")
+        if e.get("type") not in EVENT_TYPES:
+            probs.append(f"line {i + 1}: bad type {e.get('type')!r}")
+        if e.get("cost_usd", 0) < 0:
+            probs.append(f"line {i + 1}: negative cost")
+    return probs

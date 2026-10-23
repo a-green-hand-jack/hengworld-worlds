@@ -1,0 +1,59 @@
+# CrewCut fixed configuration (paper, Appendix E, Table "Fixed configuration").
+# Everything here is fixed before any system is run. Change it only with a new benchmark version.
+version: "0.1.0"
+
+hierarchy:
+  beat:      {min_shots: 2, max_shots: 8, max_seconds: 40}
+  scene:     {link_window_shots: 3, kappa: 1.0, min_seconds: 12}
+  sequence:  {min_scenes: 2, max_scenes: 6, max_seconds: 600}
+  film:      {max_seconds: 900}          # L4 only for films of at most 15 min
+  sample_per_film: {L0: 30, L1: 15}      # duration-stratified, fixed seed per film
+  evaluate_levels: [L0, L1, L2, L3, L4]
+
+tracks: [ref, scr]
+
+delivery:
+  container: mp4
+  video: {codec: h264, pix_fmt: yuv420p, width: 1280, height: 720, fps: 24}
+  audio: {codec: aac, channels: 2, sample_rate: 48000}
+  subtitles: {format: webvtt, language: en}
+  duration_tolerance: 0.05
+
+budget_per_minute:            # per minute of the segment being remade
+  model_usd: 20.0
+  tool_usd: 5.0
+  wall_clock_hours: 1.0
+  wall_clock_floor_minutes: 15
+
+tiers:
+  T0: [image.generate, image.edit, speech.synthesize, music.generate, sfx.generate, media.ffmpeg]
+  T1: [image.generate, image.edit, speech.synthesize, music.generate, sfx.generate, media.ffmpeg, video.generate]
+  T2: open                      # bring your own generators; ranked separately
+
+runs: {default: 3, L4: 2}
+
+continuity:
+  cut_tolerance_s: [0.5, 1.0]
+  judge_frames_per_second: 1
+  judge_frames_min: 2
+  judge_frames_max: 8
+
+screening:
+  pairs: 500
+  raters_per_pair: 3
+  judge_min_agreement: 0.75
+
+provenance:
+  frame_sample_fps: 2
+  phash_max_hamming: 10         # set on the stress test (all altered copies must fail)
+  dino_min_cosine: 0.92
+  audio_min_match: 0.35
+  max_false_flag_rate: 0.01
+
+reshoots:
+  levels: [L2, L3]
+  per_log: 3
+  budget_fraction: 0.30
+
+annotation_check_fraction: 0.20
+decision_check_fraction: 0.10

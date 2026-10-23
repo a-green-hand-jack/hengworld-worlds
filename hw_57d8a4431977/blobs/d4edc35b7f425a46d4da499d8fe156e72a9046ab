@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0001",
+  "start": 21.375,
+  "end": 30.5,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 9.125,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 1,
+   "start": 0.0,
+   "end": 9.125,
+   "description": "Medium shot of an animal lying on ice, panning left."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 9.125
+  }
+ ]
+}

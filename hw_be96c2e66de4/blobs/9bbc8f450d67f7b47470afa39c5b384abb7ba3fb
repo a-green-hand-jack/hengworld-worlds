@@ -1,0 +1,57 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0025",
+  "start": 2290.121,
+  "end": 2317.182,
+  "shots": 5,
+  "lines": 0
+ },
+ "duration": 27.061,
+ "cuts": [
+  3.37,
+  7.941,
+  13.347,
+  20.621
+ ],
+ "shots": [
+  {
+   "index": 324,
+   "start": 0.0,
+   "end": 3.37,
+   "description": "Medium shot of C1 and C2 working on a log outside, static."
+  },
+  {
+   "index": 325,
+   "start": 3.37,
+   "end": 7.941,
+   "description": "Medium shot of C1 and C2 walking behind a log on a road, static camera."
+  },
+  {
+   "index": 326,
+   "start": 7.941,
+   "end": 13.347,
+   "description": "Wide shot of C1 riding a motorcycle and C2 running through a street while it explodes, static camera."
+  },
+  {
+   "index": 327,
+   "start": 13.347,
+   "end": 20.621,
+   "description": "Long shot of C1 driving an agricultural tractor across a dirt road while C2 rides a motorcycle nearby, panning left."
+  },
+  {
+   "index": 328,
+   "start": 20.621,
+   "end": 27.061,
+   "description": "Static insert of text displaying dialogue, with no camera movement."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 27.061
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0025-ref",
+ "descriptions_available": true
+}

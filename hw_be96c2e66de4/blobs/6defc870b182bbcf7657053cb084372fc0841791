@@ -1,0 +1,197 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0016",
+  "start": 1299.698,
+  "end": 1437.569,
+  "shots": 25,
+  "lines": 0
+ },
+ "duration": 137.871,
+ "cuts": [
+  7.641,
+  28.062,
+  32.032,
+  34.268,
+  37.771,
+  41.375,
+  50.251,
+  52.82,
+  55.923,
+  61.662,
+  67.034,
+  72.706,
+  74.808,
+  77.645,
+  79.179,
+  83.35,
+  84.385,
+  87.788,
+  100.067,
+  103.437,
+  105.973,
+  115.249,
+  119.219,
+  121.989
+ ],
+ "shots": [
+  {
+   "index": 147,
+   "start": 0.0,
+   "end": 7.641,
+   "description": "Wide shot of C1 watching a screen, static camera."
+  },
+  {
+   "index": 148,
+   "start": 7.641,
+   "end": 28.062,
+   "description": "Medium shot of C1 and C2 standing in a bedroom, C2 walking towards a door, zoom in."
+  },
+  {
+   "index": 149,
+   "start": 28.062,
+   "end": 32.032,
+   "description": "Medium shot of C1 taking an object out of a wall compartment and putting it down on a chair, static camera."
+  },
+  {
+   "index": 150,
+   "start": 32.032,
+   "end": 34.268,
+   "description": "Medium long shot of C1 and C2 walking, static."
+  },
+  {
+   "index": 151,
+   "start": 34.268,
+   "end": 37.771,
+   "description": "Medium shot of C1 standing in a room with two other people, static."
+  },
+  {
+   "index": 152,
+   "start": 37.771,
+   "end": 41.375,
+   "description": "Close-up of an intertitle displaying dialogue about stolen pearls, static."
+  },
+  {
+   "index": 153,
+   "start": 41.375,
+   "end": 50.251,
+   "description": "Medium shot of C1, C2, and another character standing near a staircase, static camera."
+  },
+  {
+   "index": 154,
+   "start": 50.251,
+   "end": 52.82,
+   "description": "Medium shot of C1 looking at C2, who is talking on the phone, static camera."
+  },
+  {
+   "index": 155,
+   "start": 52.82,
+   "end": 55.923,
+   "description": "Medium shot of C1 and C2 talking, static."
+  },
+  {
+   "index": 156,
+   "start": 55.923,
+   "end": 61.662,
+   "description": "Close-up of text showing dialogue, static."
+  },
+  {
+   "index": 157,
+   "start": 61.662,
+   "end": 67.034,
+   "description": "Medium shot of C1 standing and turning to C2, then walking away, static camera."
+  },
+  {
+   "index": 158,
+   "start": 67.034,
+   "end": 72.706,
+   "description": "Medium shot of C1 and C2 talking near a pool table, static."
+  },
+  {
+   "index": 159,
+   "start": 72.706,
+   "end": 74.808,
+   "description": "Close-up of C1 holding billiard balls, static."
+  },
+  {
+   "index": 160,
+   "start": 74.808,
+   "end": 77.645,
+   "description": "Close-up of C1 pointing to a billiard ball and then holding it, static camera."
+  },
+  {
+   "index": 161,
+   "start": 77.645,
+   "end": 79.179,
+   "description": "Close-up of C1 placing pool balls into a triangle, static."
+  },
+  {
+   "index": 162,
+   "start": 79.179,
+   "end": 83.35,
+   "description": "Medium shot of C1 standing in a library, looking up with objects in hand. C2 enters the frame and stands beside C1 as C1 turns to place the objects back onto a bookshelf, static camera."
+  },
+  {
+   "index": 163,
+   "start": 83.35,
+   "end": 84.385,
+   "description": "Wide shot of a sapling shaking in the wind, static camera."
+  },
+  {
+   "index": 164,
+   "start": 84.385,
+   "end": 87.788,
+   "description": "Medium shot of an explosion billow smoke, static camera."
+  },
+  {
+   "index": 165,
+   "start": 87.788,
+   "end": 100.067,
+   "description": "Medium shot of C1 and C2 standing indoors, talking and gesturing; static camera."
+  },
+  {
+   "index": 166,
+   "start": 100.067,
+   "end": 103.437,
+   "description": "Medium shot of C1 and C2 conversing indoors, static."
+  },
+  {
+   "index": 167,
+   "start": 103.437,
+   "end": 105.973,
+   "description": "Close-up of a hand pointing at a toy plough, static."
+  },
+  {
+   "index": 168,
+   "start": 105.973,
+   "end": 115.249,
+   "description": "Medium shot of C1 watching C2 pick up an axe, static."
+  },
+  {
+   "index": 169,
+   "start": 115.249,
+   "end": 119.219,
+   "description": "Close-up of C1 reaching for a doorknob, static."
+  },
+  {
+   "index": 170,
+   "start": 119.219,
+   "end": 121.989,
+   "description": "Medium shot of C1 and C2 standing next to each other and talking, static."
+  },
+  {
+   "index": 171,
+   "start": 121.989,
+   "end": 137.871,
+   "description": "Medium shot of C1 waiting by a door as it opens to reveal C2 standing outside, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 137.871
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0016-scr",
+ "descriptions_available": true
+}

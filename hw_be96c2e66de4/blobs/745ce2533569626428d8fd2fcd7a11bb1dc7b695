@@ -1,0 +1,57 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L1-0082",
+  "start": 2094.159,
+  "end": 2113.244,
+  "shots": 5,
+  "lines": 0
+ },
+ "duration": 19.085,
+ "cuts": [
+  2.235,
+  5.472,
+  12.345,
+  16.817
+ ],
+ "shots": [
+  {
+   "index": 276,
+   "start": -0.0,
+   "end": 2.235,
+   "description": "Medium shot of C1 running, static."
+  },
+  {
+   "index": 277,
+   "start": 2.235,
+   "end": 5.472,
+   "description": "Medium shot of C1 walking towards a building, static camera."
+  },
+  {
+   "index": 278,
+   "start": 5.472,
+   "end": 12.345,
+   "description": "Long shot of C1 entering frame and stopping in an alley way while C2 plays the accordion, static."
+  },
+  {
+   "index": 279,
+   "start": 12.345,
+   "end": 16.817,
+   "description": "Medium shot of C1 wearing a portable tie display case, turning around to face the camera, static."
+  },
+  {
+   "index": 280,
+   "start": 16.817,
+   "end": 19.085,
+   "description": "Medium shot of C1 and C2 walking hurriedly past a wooden building, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 19.085
+  }
+ ],
+ "task_id": "sherlock_jr-L1-0082-scr",
+ "descriptions_available": true
+}

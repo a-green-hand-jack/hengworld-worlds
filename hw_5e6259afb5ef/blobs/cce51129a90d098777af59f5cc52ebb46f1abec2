@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "decided_by": "curator",
+ "decided_at": "2026-10-22",
+ "records": [
+  {
+   "film_id": "caminandes3",
+   "title": "Caminandes 3: Llamigos",
+   "decision": "admit",
+   "scope": "this round's sample (objective section 6)",
+   "reason": "Released by Blender Foundation under CC BY 3.0, which allows copying, adaptation and redistribution with attribution; the benchmark uses the film's text descriptions and clean-room remakes.",
+   "evidence": {
+    "rights_read_at": [
+     "https://archive.org/metadata/CaminandesLlamigos (field metadata.licenseurl)",
+     "https://archive.org/details/CaminandesLlamigos"
+    ],
+    "licenseurl": "http://creativecommons.org/licenses/by/3.0/",
+    "creator": "Blender Foundation",
+    "date": "2016-01-29",
+    "quote": "licenseurl: http://creativecommons.org/licenses/by/3.0/ ; creator: Blender Foundation ; description: \"This short 'Free Culture' animation film was made with the free 3D software Blender\"",
+    "attribution_required": "(CC) Blender Foundation | www.blender.org (Caminandes 3: Llamigos)"
+   },
+   "work_vs_extras": "The work is the 5-minute-class short itself (the dataset's 150.04 s master). Not taken: thumbnails, torrent, ogv/webm re-encodes, Blender Cloud extras and tutorials mentioned in the description (not covered by the item's license statement).",
+   "artifact_chosen": {
+    "file": "Caminandes_ Llamigos-1080p.mp4",
+    "url": "https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.mp4",
+    "size_bytes": 138945811,
+    "sha1": "421a2d931d3994030ce7589cced5a1ee04187e2b",
+    "md5": "4f2beaf26b945d2a7f35be1278a5d5ec",
+    "sha256": "826513349ecf02d83b22f414514704e3bba10ff28fb45408a6cdf6cc57bacc06",
+    "ffprobe": "h264? 1920x1080 24 fps, audio present, format duration 150.148 s"
+   },
+   "alternatives_passed_over": [
+    {
+     "file": "Caminandes_ Llamigos-1080p.webm",
+     "sha1": "7d7ee25178bb27f377383cb41322d5794a7ab60b",
+     "why": "re-encode; mp4 is the highest-quality original upload"
+    },
+    {
+     "file": "Caminandes_ Llamigos-1080p.ogv",
+     "sha1": "adc553f00df255643a4af84deda1dc37a6235d6f",
+     "why": "re-encode, smaller"
+    },
+    {
+     "item": "archive.org/details/caminandes-3-llamigos",
+     "why": "second archive item; its license field was not present in search metadata, so not used"
+    }
+   ],
+   "verification": {
+    "command": "scripts/pin_caminandes3.sh OUTDIR",
+    "log": "corpus/caminandes3_pin_check.log",
+    "result": "fetched; sha1 and md5 match the archive's published values (both 'OK'); sha256 computed locally, no upstream sha256 to compare",
+    "verified_on": "2026-10-22"
+   },
+   "open_issue": "Resolved: dataset master = archive .ogv (sha256 above); 150.04 s in the objective is shots.json duration_s. The mp4 pin in artifact_chosen was fetched and verified but is not what the benchmark uses; keep as alternative.",
+   "artifact_chosen_revised": {
+    "note": "Corrected 2026-10-23: the dataset master is the archive's 1080p .ogv, not the mp4. The pin is the ogv; the mp4 below is an alternative passed over (checked, not used).",
+    "file": "Caminandes_ Llamigos-1080p.ogv",
+    "url": "https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv",
+    "size_bytes": 11872682,
+    "sha1": "adc553f00df255643a4af84deda1dc37a6235d6f",
+    "sha256": "028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f",
+    "sha256_origin": "reported by task-maker (task-maker#5, dataset masters/MANIFEST.tsv); re-computed by curator after fetching from archive.org: match",
+    "verification": {
+     "command": "scripts/pin_caminandes3_ogv.sh OUTDIR",
+     "log": "corpus/caminandes3_ogv_check.log",
+     "result": "sha1 matches archive's published value; sha256 matches dataset master's; both OK",
+     "verified_on": "2026-10-23"
+    },
+    "ffprobe_from_task_maker": "Ogg, 150.108 s, theora 532x300 24 fps, vorbis 44.1 kHz stereo"
+   }
+  },
+  {
+   "film_id": "coffee-run, spirit-chaser, domini-canes, sherlock-jr, a-trip-to-the-moon",
+   "decision": "not decided this round",
+   "reason": "Objective section 1/6: only Caminandes 3 is in scope; the other five are to run later with the same rules. Rights have not been read by curator, so none is admitted here.",
+   "evidence": null
+  }
+ ]
+}

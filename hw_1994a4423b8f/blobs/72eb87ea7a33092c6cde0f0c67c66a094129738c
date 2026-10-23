@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0007",
+  "start": 40.792,
+  "end": 41.792,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.0,
+ "cuts": [
+  1.0
+ ],
+ "shots": [
+  {
+   "index": 7,
+   "start": -0.0,
+   "end": 1.0,
+   "description": "Medium shot of a train driving through the snow, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.0
+  }
+ ]
+}

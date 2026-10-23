@@ -1,0 +1,64 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0004",
+  "start": 70.083,
+  "end": 80.125,
+  "shots": 6,
+  "lines": 0
+ },
+ "duration": 10.042,
+ "cuts": [
+  3.792,
+  4.542,
+  5.375,
+  7.667,
+  8.459
+ ],
+ "shots": [
+  {
+   "index": 20,
+   "start": 0.0,
+   "end": 3.792,
+   "description": "Medium shot of C1 riding a minecart, static."
+  },
+  {
+   "index": 21,
+   "start": 3.792,
+   "end": 4.542,
+   "description": "Medium shot of C1 roaring, static."
+  },
+  {
+   "index": 22,
+   "start": 4.542,
+   "end": 5.375,
+   "description": "Medium shot of C1 dodging falling planks, static camera."
+  },
+  {
+   "index": 23,
+   "start": 5.375,
+   "end": 7.667,
+   "description": "Medium close-up of C1 standing and eating fruit from a bunch, static."
+  },
+  {
+   "index": 24,
+   "start": 7.667,
+   "end": 8.459,
+   "description": "Wide shot of a mine tunnel moving forward rapidly, push in."
+  },
+  {
+   "index": 25,
+   "start": 8.459,
+   "end": 10.042,
+   "description": "Wide shot of a mineshaft collapsing, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 10.042
+  }
+ ],
+ "task_id": "caminandes3-L1-0004-scr",
+ "descriptions_available": true
+}

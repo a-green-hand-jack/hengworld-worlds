@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L1-0009",
+  "start": 154.792,
+  "end": 218.375,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 63.583,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 39,
+   "start": -0.0,
+   "end": 63.583,
+   "description": "Wide shot of a cathedral opening upwards, zooming out."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 63.583
+  }
+ ],
+ "task_id": "domini_canes-L1-0009-ref",
+ "descriptions_available": true
+}

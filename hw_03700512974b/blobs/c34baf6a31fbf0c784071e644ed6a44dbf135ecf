@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "coffee_run-L1-0000",
+  "start": 0.0,
+  "end": 6.792,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 6.792,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 6.792,
+   "description": "Establishing shot of title text showing production credits, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 6.792
+  }
+ ],
+ "task_id": "coffee_run-L1-0000-ref",
+ "descriptions_available": true
+}

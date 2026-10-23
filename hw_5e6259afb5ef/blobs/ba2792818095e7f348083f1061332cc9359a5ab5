@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Medium shot of a deer and a penguin sitting in the snow, with the penguin holding up a small red berry and the deer reacting by looking down, static camera.
+Detailed description:
+setting: P2: Railroad tracks. Outdoor, daytime, clear blue sky with clouds. Snowy ground with broken wooden planks in the foreground and a gravel embankment with steel tracks behind.
+characters: C1: sitting on the left, half-closed eyes looking down at C2, then falls through the ground; C2: lands on the right holding a red berry, then falls through the ground.
+props: One small round red berry; broken wooden planks in the foreground.
+action: C2 lands on the wooden planks next to C1 and holds up the red berry in its wing. Suddenly, the wooden planks give way beneath C2, who falls straight down out of sight, leaving the berry hovering briefly before dropping onto a plank. A split second later, the ground collapses under C1, who also plummets downward out of sight.
+camera: Medium shot, low-angle static camera.
+light_mood: Bright, clear natural daylight; comedic and slapstick mood.
+Frames:
+[frame 1 at 53.62s]
+IMG:9254994a69ebb660e13d0e57b5d2bdb47b92ddde2ea36c3d35c64cb48b2c948a
+[frame 2 at 54.36s]
+IMG:5d27b94153b692341b5364805f767a045baaae36aac2fc9902806f31097723f5
+[frame 3 at 55.10s]
+IMG:3140cd642a73accb66f33b916046ace050c1578cdcf43af06d4ca60323991b43
+[frame 4 at 55.84s]
+IMG:4e7dcdc43d577924845180b96497ae20e21e6cf43f6c0cc7e64586ec747ea999

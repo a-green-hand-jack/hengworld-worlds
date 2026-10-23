@@ -1,0 +1,14 @@
+#!/bin/sh
+# Usage: fetch_master.sh FILM_ID OUTDIR   (FILM_ID in pins.tsv; caminandes3 is handled by fetch_and_verify.sh)
+# Fetches the pinned artifact from its source, writes OUTDIR/<film_id>.<ext>, checks SHA-256 against pins.tsv.
+# Exit 0 = PASS, 1 = checksum mismatch, 2 = fetch failed. No fallback copy exists for these films.
+set -u
+F=${1:?film_id}; OUT=${2:?outdir}; D=$(dirname "$0"); mkdir -p "$OUT"
+ROW=$(grep -v '^#' "$D/pins.tsv" | awk -F'\t' -v f="$F" '$1==f')
+[ -n "$ROW" ] || { echo "UNKNOWN_FILM $F"; exit 2; }
+URL=$(echo "$ROW" | cut -f2); WANT=$(echo "$ROW" | cut -f3)
+EXT=${URL##*.}; DEST="$OUT/$F.$EXT"
+curl -sfL -A "Mozilla/5.0 crewcut-curator" "$URL" -o "$DEST" || { echo "$F FETCH_FAILED"; exit 2; }
+GOT=$(sha256sum "$DEST" | cut -d' ' -f1)
+echo "$F artifact_from=source bytes=$(wc -c <"$DEST") sha256=$GOT"
+[ "$GOT" = "$WANT" ] && echo "$F VERIFY: PASS" || { echo "$F VERIFY: FAIL (want $WANT)"; exit 1; }

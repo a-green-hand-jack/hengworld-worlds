@@ -1,0 +1,3 @@
+Synopsis attempt 1 (discarded). The drafter saw only the detailed shot columns; the checker saw only the one-sentence descriptions, so many statements were flagged unsupported and
+deleting the flagged phrases destroyed the text (one synopsis became "."; two lost sentences). Attempt 2 gives the drafter the corrected one-sentence descriptions as well, adds a
+"narrow" step by the drafter before any deletion, and runs the segments in parallel. The attempt-1 calls stay in ../rich_log.jsonl (their cost is in the ledger).

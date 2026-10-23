@@ -1,0 +1,9 @@
+# Audit criteria, round 2 (objective #7) — written before reading any delivery
+
+Approve only if all hold:
+1. Every component of c for fixed/smoke on caminandes3-L1-0000-scr is either computed from run records + key by a recorded command, or marked "not run" with a reason and no number. Shot correspondence comes from the judge on the previous round's shot descriptions.
+2. Each adaptation of CrewCut code (e.g. judge request settings) is a data record: what changed, why, effect on the result; the measure itself is unchanged (diff of code vs revision df54b3a reviewed).
+3. Judge check: small check shows adapted judge scores a right description above a wrong one; I sample/rerun a few requests (cost stated, within the 40-request cap shared).
+4. Spend ledger: requests by purpose with reported token usage; counts total <= 40 and match response logs; cost only where a price source is given.
+5. Protocol unchanged vs steward's brief; no answer key in executor-readable paths; not-run statement updated with nothing claimed for it.
+6. Result reproducible from the records (rerun scorer command on recorded judge responses and compare).

@@ -1,0 +1,128 @@
+{
+ "queried_on": "2026-10-21",
+ "source": "https://ai.google.dev/gemini-api/docs/pricing (Standard, paid tier, USD per 1M tokens)",
+ "models": {
+  "gemini-3.5-flash-lite": {
+   "input": 0.3,
+   "output": 2.5,
+   "note": "output includes thinking tokens",
+   "source_checked": "2026-10-21 again: input 0.30, output 2.50"
+  },
+  "gemini-3.8-flash": {
+   "input": 0.75,
+   "output": 3.75,
+   "valid_through": "2026-12-31",
+   "from_2027-01-01": {
+    "input": 1.5,
+    "output": 7.5
+   }
+  },
+  "qwen3-vl-plus": {
+   "source": "same Alibaba page",
+   "beijing_usd_per_M_tokens": {
+    "<=32K": {
+     "input": 0.143,
+     "output": 1.434
+    },
+    "32K-128K": {
+     "input": 0.215,
+     "output": 2.15
+    },
+    "128K-256K": {
+     "input": 0.43,
+     "output": 4.301
+    }
+   },
+   "international": {
+    "<=32K": {
+     "input": 0.2,
+     "output": 1.6
+    }
+   }
+  }
+ },
+ "cross_check_with_CrewCut_Issue_13": "not run: Issue #13 not readable from this world (stage A finding, unchanged; asked steward to pass on its content, task-maker issue to steward#9). Official pages stand.",
+ "generators": {
+  "source_note": "Official vendor pages read via WebFetch on 2026-10-21 (page summaries by a small model; numbers quoted, to be re-read by the auditor)",
+  "image_generate_edit": {
+   "source": "https://ai.google.dev/gemini-api/docs/pricing",
+   "usd_per_image": {
+    "gemini-3.1-flash-image": {
+     "0.5K": 0.045,
+     "1K": 0.067,
+     "2K": 0.101,
+     "4K": 0.151
+    },
+    "gemini-3.1-flash-lite-image": {
+     "1K": 0.0336
+    },
+    "gemini-3-pro-image": {
+     "1K": 0.134,
+     "4K": 0.24
+    }
+   },
+   "editing": "no separate listing; same per-model rates as generation",
+   "model_choice": "not made here: executor/tool service picks the model; the table gives all"
+  },
+  "speech": {
+   "source": "https://ai.google.dev/gemini-api/docs/pricing",
+   "gemini-3.8-flash-tts": {
+    "text_in_per_M": 0.5,
+    "audio_out_per_M": 9.0,
+    "usd_per_10s_audio": 0.00225,
+    "valid_through": "2026-12-31",
+    "from_2027-01-01": {
+     "text_in_per_M": 1.0,
+     "audio_out_per_M": 18.0
+    }
+   },
+   "gemini-3.8-flash-lite-tts": {
+    "text_in_per_M": 0.5,
+    "audio_out_per_M": 6.0,
+    "usd_per_10s_audio": 0.0015,
+    "valid_through": "2026-12-31"
+   }
+  },
+  "music": {
+   "source": "https://ai.google.dev/gemini-api/docs/pricing",
+   "lyria-3.5": {
+    "usd_per_song": 0.08
+   },
+   "lyria-3-clip-preview": {
+    "usd_per_30s_clip": 0.04
+   },
+   "lyria-3-pro-preview": {
+    "usd_per_song": 0.08
+   }
+  },
+  "sound_effects": {
+   "source": "https://elevenlabs.io/pricing/api",
+   "usd_per_minute": 0.12,
+   "note": "page also says SFX are billed per generation without giving the per-generation price; the tool service must charge per minute of audio and report this ambiguity"
+  },
+  "video_wan2.2": {
+   "source": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+   "beijing_usd_per_second": {
+    "wan2.2-t2v-plus": {
+     "480P": 0.02007,
+     "1080P": 0.100347
+    },
+    "wan2.2-i2v-plus": {
+     "480P": 0.02007,
+     "1080P": 0.100347
+    }
+   },
+   "international_usd_per_second": {
+    "wan2.2-i2v-flash": {
+     "480P": 0.015,
+     "720P": 0.036
+    },
+    "wan2.2-i2v-plus": {
+     "480P": 0.02,
+     "1080P": 0.1
+    }
+   },
+   "not_read": "Beijing wan2.2-i2v-flash and any 720P plus price: not found in the page text read; the maintainer's account uses the Beijing endpoint"
+  }
+ }
+}

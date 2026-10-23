@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0038",
+  "start": 136.792,
+  "end": 154.792,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 18.0,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 38,
+   "start": -0.0,
+   "end": 18.0,
+   "description": "Extreme close-up of C1 standing, zooming out."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 18.0
+  }
+ ],
+ "task_id": "domini_canes-L0-0038-ref",
+ "descriptions_available": true
+}

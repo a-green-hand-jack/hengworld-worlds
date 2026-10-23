@@ -1,0 +1,14 @@
+# Audit report (auditor)
+
+Reviewed: delivery assembled by `ht-role delivery` (curator 554b28c, task-maker 89689ed, executor 2bfa44a, scorer e30fcb2, steward f030770). CrewCut df54b3a clean checkout, pip install -e + faster-whisper, ffmpeg 9.0.2 (conda-forge).
+
+## Conditions (criteria.md)
+1. Admitted item has decision, evidence, checksum: corpus/admissions.json. I fetched the pinned .ogv from archive.org myself (reproduce.sh step 1); sha256 028d7629...8d7f == configs/films.yaml. Local copy not used for the Breakdown (scorer used it only for a validation check, recorded as such).
+2. Reproduction: I ran `scripts/reproduce.sh /hutian/w1` from the record (69 s, exit 0). Result: my key/ tree is identical to task-maker's key/ (diff -rq); my 90 published packages are identical to published/tasks (excluding the reference clips). Own diff against dataset d509bed: hierarchy.json, dialogue.json identical; shots.json differs only in duration_s (150.04 published vs 150.108345: container vs video-stream duration; explained in comparison.md item 1, maintainer's open item O4); task ids (90) and fields equal per compare.py (tasks_equal, catalogue_equal true). Differences 2-5 in record/comparison.md (descriptions not run, no provenance/truth in dataset to compare, ASR backend, key end-cut O5) are accepted as explained.
+3. Run: executor record shows `--system fixed --profile smoke`, exit 0, 1 attempt, no failures, output hashes. I re-scored the same output with `crewcut score --judge ''` against my own regenerated task+key: Q=1, cut F1 0.8 at 0.5 s and 1.0 s, identical to scorer's file. Q=1 holds with provenance check skipped (no index): stated by scorer. The 0.8 cap comes from key end-cut O5 (not a run defect).
+4. Not run, no claim drawn: shot descriptions, judge/correspondence/S, real generators, screening, provenance comparison. Marked in runs/not_run.md and scores/README.md.
+5. Protocol: I used unmodified CrewCut df54b3a configs (cut_tolerance_s [0.5,1.0] etc.); the record changes none. Maintainer questions (O1-O5, pin file naming, music licence) are recorded, not decided.
+Key isolation: no truth.json or key cuts under published/ or runs/; executor record says answer_key_accessed false.
+
+## Caveats
+Q is not a full delivery check (provenance skipped); steward brief was not re-verified line by line against all CrewCut docs beyond the parameters used.

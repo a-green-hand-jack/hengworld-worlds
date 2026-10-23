@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0028",
+  "start": 86.167,
+  "end": 89.333,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.166,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 28,
+   "start": -0.0,
+   "end": 3.166,
+   "description": "Medium shot of C1 tumbling past C2, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.166
+  }
+ ]
+}

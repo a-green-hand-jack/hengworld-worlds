@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0086",
+  "start": 721.221,
+  "end": 726.092,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 4.871,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 86,
+   "start": -0.0,
+   "end": 4.871,
+   "description": "Extreme close-up of a pawn ticket held by hands, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 4.871
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0086-ref",
+ "descriptions_available": true
+}

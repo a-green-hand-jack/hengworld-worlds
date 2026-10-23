@@ -1,0 +1,54 @@
+"""Loading the fixed benchmark configuration and the film catalogue."""
+from __future__ import annotations
+
+from dataclasses import dataclass
+from functools import lru_cache
+from pathlib import Path
+from typing import Any
+
+import yaml
+
+from . import CONFIG_DIR
+
+
+@lru_cache(maxsize=None)
+def benchmark(path: str | None = None) -> dict[str, Any]:
+    return yaml.safe_load(Path(path or CONFIG_DIR / "benchmark.yaml").read_text())
+
+
+@dataclass(frozen=True)
+class Film:
+    id: str
+    title: str
+    year: int
+    source: str
+    type: str
+    licence: str
+    split: str
+    silent: bool
+    page: str | None
+    duration_min: float
+    master_sha256: str | None
+
+
+def films(path: str | None = None) -> list[Film]:
+    data = yaml.safe_load(Path(path or CONFIG_DIR / "films.yaml").read_text())
+    return [Film(**f) for f in data["films"]]
+
+
+def film(film_id: str) -> Film:
+    for f in films():
+        if f.id == film_id:
+            return f
+    raise KeyError(film_id)
+
+
+def segment_budget(duration_s: float, cfg: dict | None = None) -> dict[str, float]:
+    """Budget for remaking a segment, scaled by its running time (paper Sec. 4.1)."""
+    b = (cfg or benchmark())["budget_per_minute"]
+    minutes = duration_s / 60.0
+    return {
+        "model_usd": round(b["model_usd"] * minutes, 2),
+        "tool_usd": round(b["tool_usd"] * minutes, 2),
+        "wall_clock_s": max(b["wall_clock_hours"] * 3600 * minutes, b["wall_clock_floor_minutes"] * 60),
+    }

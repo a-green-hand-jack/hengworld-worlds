@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L2-0003",
+  "start": 218.375,
+  "end": 260.208,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 41.833,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 40,
+   "start": 0.0,
+   "end": 41.833,
+   "description": "Extreme close-up of a title card showing credits, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 41.833
+  }
+ ],
+ "task_id": "domini_canes-L2-0003-ref",
+ "descriptions_available": true
+}

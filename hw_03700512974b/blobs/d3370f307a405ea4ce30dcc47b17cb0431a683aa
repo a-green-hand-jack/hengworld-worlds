@@ -1,0 +1,36 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L1-0001",
+  "start": 17.76,
+  "end": 29.28,
+  "shots": 2,
+  "lines": 0
+ },
+ "duration": 11.52,
+ "cuts": [
+  7.08
+ ],
+ "shots": [
+  {
+   "index": 2,
+   "start": 0.0,
+   "end": 7.08,
+   "description": "Wide shot of a monolith displaying text, push-in."
+  },
+  {
+   "index": 3,
+   "start": 7.08,
+   "end": 11.52,
+   "description": "Medium shot of C1 standing amongst clouds opens their eyes, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 11.52
+  }
+ ],
+ "task_id": "spirit_chaser-L1-0001-ref",
+ "descriptions_available": true
+}

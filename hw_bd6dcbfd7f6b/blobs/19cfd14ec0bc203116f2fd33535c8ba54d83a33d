@@ -1,0 +1,15 @@
+{
+ "decision": "CrewCut's describe.py (max_tokens=120) and judge.py (max_tokens=3, temperature 0) were run unchanged, but scripts/gemini_log.py (a request-logging wrapper, outside CrewCut) adds reasoning_effort='none' to every request and raises max_tokens to a floor (none for describe; 128 for the judge). The prompts, frames, temperature and the parsing of the answer are CrewCut's.",
+ "why": "With gemini-3.8-flash and CrewCut's own parameters the reply content is null: describe (max_tokens 120, default thinking) returned finish_reason=length, completion_tokens 0 (record/gemini/attempt0-describe-requests.jsonl) and CrewCut crashes on None.strip(). With reasoning_effort=none describe works (37/37 replies). The judge with max_tokens=3 returns null even with reasoning_effort=none, even for a trivial one-word question (probe: max_tokens 3 -> empty, 16 -> 'Yes'); with floor 16 one of two replies was still null (attempt1-judge-requests-floor16.jsonl); with floor 128 3/3 replies 'No' (attempt2). Raising max_tokens does not change what the judge may answer: the answer is still read by startswith('yes').",
+ "alternatives_not_taken": "editing CrewCut (forbidden: nothing goes back, configuration fixed); another Gemini flash model (gemini-3.8-flash worked once the parameters were set).",
+ "decided_by": "task-maker (agent)",
+ "date": "2026-10-21",
+ "affects": [
+  "shot descriptions",
+  "correspondence"
+ ],
+ "depends_on": [
+  "D6"
+ ],
+ "open_item": "O6"
+}

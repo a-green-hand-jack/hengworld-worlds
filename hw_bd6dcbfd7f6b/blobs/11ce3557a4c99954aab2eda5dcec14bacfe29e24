@@ -1,0 +1,19 @@
+"""Judge validation controls on the pinned master with CrewCut's ContinuityJudge + correspondence().
+usage: judge_controls.py MASTER DESCRIPTIONS_JSON SHOTS_JSON OUT_JSON   (positive: own descriptions; negative: descriptions rotated by 7 shots)"""
+import json, pathlib, sys
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+import gemini_meter  # noqa
+from crewcut.scoring.judge import ContinuityJudge
+from crewcut.scoring import continuity as C
+master, dj, sj, out = sys.argv[1:5]
+d = json.load(open(dj)); s = json.load(open(sj)); fps = s["fps"]
+b = [0.0] + [c / fps for c in s["cuts"]] + [s["duration"]]
+n = len(b) - 1
+j = ContinuityJudge(pathlib.Path(master))
+res = {}
+for name, shift in (("positive_own_description", 0), ("negative_rotated_by_7", 7)):
+    shots = [{"start": b[i], "end": b[i + 1], "description": d[str((i + shift) % n)]} for i in range(n)]
+    c, v = C.correspondence(shots, j)
+    res[name] = {"correspondence": round(c, 4), "accepted_shots": sum(v), "shots": n, "verdicts": v}
+    print(name, res[name]["correspondence"], sum(v), n, flush=True)
+json.dump(res, open(out, "w"), indent=1)

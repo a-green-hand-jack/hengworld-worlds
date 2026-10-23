@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0014",
+  "start": 52.875,
+  "end": 56.583,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.708,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 14,
+   "start": 0.0,
+   "end": 3.708,
+   "description": "Medium shot of two cartoon animals outdoors in a snowy landscape, where the penguin-like creature lifts a round object and the canine creature lunges downwards, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.708
+  }
+ ]
+}

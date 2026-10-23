@@ -1,0 +1,68 @@
+{
+ "caminandes3-L1-0001": {
+  "segment_id": "caminandes3-L1-0001",
+  "duration_s": 10.415999999999997,
+  "n_sentences_required": 1,
+  "synopsis": "In an alarming outdoor sequence, a steam locomotive speeds along railroad tracks as the train approaches, which causes the watching animal to gasp in shock before the locomotive speeds onward and the alarmed animal glares forward and squinting eyes.",
+  "flags": [],
+  "calls": {
+   "draft": "01cf3a328d33a4214a045223ef3d3dbdddb84ef4c6ff1a40ca4ee97d3d703ca2",
+   "fix0": "3845da118b599b5d1cfa99509c0937fd771750b8d30d03a16c8742bb4ffe9396"
+  }
+ },
+ "caminandes3-L1-0005": {
+  "segment_id": "caminandes3-L1-0005",
+  "duration_s": 34.375,
+  "n_sentences_required": 1,
+  "synopsis": ".",
+  "flags": [],
+  "calls": {
+   "draft": "444f15e0cdb04f880989c8afcc2316573279d4d2217c1622fed862ed4d7ddcff",
+   "fix0": "7ba428dd0a4576bce40d9b56621bb6a06552335216268d2bc049664c3c42737f"
+  }
+ },
+ "caminandes3-L2-0002": {
+  "segment_id": "caminandes3-L2-0002",
+  "duration_s": 23.542,
+  "n_sentences_required": 1,
+  "synopsis": "In a chaotic and comical sequence, smash through scaffolding on steep tracks, and where the exhausted creature screams, winces under collapsing rock and wooden beams, and speeds through another tunnel alongside its calmly snacking companion and catapults the creature and the berries into the sky.",
+  "flags": [],
+  "calls": {
+   "draft": "89448cceed77c012ef047cd92240640116758b52dddcd0f4933d2fb62ba2c11c"
+  }
+ },
+ "caminandes3-L2-0004": {
+  "segment_id": "caminandes3-L2-0004",
+  "duration_s": 26.5,
+  "n_sentences_required": 1,
+  "synopsis": "A character munches on berries beside another character.",
+  "flags": [],
+  "calls": {
+   "draft": "05d5d217df23233cd49e8ebe27cd9305dff8e8113543c6e21689bd0fbe7a1308"
+  }
+ },
+ "caminandes3-L3-0000": {
+  "segment_id": "caminandes3-L3-0000",
+  "duration_s": 150.042,
+  "n_sentences_required": 5,
+  "synopsis": "In a frantic and comedic mood, a llama slips on a frozen pond while reaching for berries and gets its tongue stuck, while a little penguin eats the remaining berry as a steam locomotive barrels toward it. After the train speeds past, the llama catches the berry on its tongue. and plunge in terror down steep subterranean tracks, crashing through scaffolding before bursting out of a mountain exit that catapults the llama and the berries into the sky., while the little penguin tumbles nearby..",
+  "flags": [
+   "3 sentences vs required 5"
+  ],
+  "calls": {
+   "draft": "f0e96cd912249b24f1be0774892fd092dd966334960e8f59d656d0fba6de59ae"
+  }
+ },
+ "caminandes3-L4-0000": {
+  "segment_id": "caminandes3-L4-0000",
+  "duration_s": 150.042,
+  "n_sentences_required": 5,
+  "synopsis": "In a frantic and comedic mood, a llama slips on a frozen pond while reaching for berries and gets its tongue stuck, while a little penguin eats the remaining berry as a steam locomotive barrels toward it. After the train speeds past, the llama catches the berry on its tongue. and plunge in terror down steep subterranean tracks, crashing through scaffolding before bursting out of a mountain exit that catapults the llama and the berries into the sky., while the little penguin tumbles nearby..",
+  "flags": [
+   "3 sentences vs required 5"
+  ],
+  "calls": {
+   "draft": "f0e96cd912249b24f1be0774892fd092dd966334960e8f59d656d0fba6de59ae"
+  }
+ }
+}

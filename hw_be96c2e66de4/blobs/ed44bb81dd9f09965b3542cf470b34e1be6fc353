@@ -1,0 +1,71 @@
+{
+ "segment": {
+  "id": "domini_canes-L1-0002",
+  "start": 47.0,
+  "end": 78.583,
+  "shots": 7,
+  "lines": 0
+ },
+ "duration": 31.583,
+ "cuts": [
+  6.417,
+  14.333,
+  17.417,
+  18.917,
+  20.208,
+  25.625
+ ],
+ "shots": [
+  {
+   "index": 7,
+   "start": 0.0,
+   "end": 6.417,
+   "description": "Wide shot of C1 standing under a starry night sky, static."
+  },
+  {
+   "index": 8,
+   "start": 6.417,
+   "end": 14.333,
+   "description": "Medium close-up of C1 holding a candle, static."
+  },
+  {
+   "index": 9,
+   "start": 14.333,
+   "end": 17.417,
+   "description": "Medium shot of C1 holding out a stick, static camera."
+  },
+  {
+   "index": 10,
+   "start": 17.417,
+   "end": 18.917,
+   "description": "Medium shot of C1 reaching down to pet an animal, static camera."
+  },
+  {
+   "index": 11,
+   "start": 18.917,
+   "end": 20.208,
+   "description": "Medium shot of C1 walking alongside an animal pacing back and forth, panning right."
+  },
+  {
+   "index": 12,
+   "start": 20.208,
+   "end": 25.625,
+   "description": "Wide shot of C1 running, static."
+  },
+  {
+   "index": 13,
+   "start": 25.625,
+   "end": 31.583,
+   "description": "Extreme wide shot of multiple small statues standing in a circle as a single small statue stands in the center with a long trail, zooming out."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 31.583
+  }
+ ],
+ "task_id": "domini_canes-L1-0002-ref",
+ "descriptions_available": true
+}

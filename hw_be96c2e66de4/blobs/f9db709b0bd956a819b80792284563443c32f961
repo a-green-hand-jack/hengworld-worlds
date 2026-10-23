@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0031",
+  "start": 96.667,
+  "end": 101.792,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 5.125,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 31,
+   "start": -0.0,
+   "end": 5.125,
+   "description": "Medium shot of an animal lying on its back in the snow with another animal sitting on it, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 5.125
+  }
+ ],
+ "task_id": "caminandes3-L0-0031-scr",
+ "descriptions_available": true
+}

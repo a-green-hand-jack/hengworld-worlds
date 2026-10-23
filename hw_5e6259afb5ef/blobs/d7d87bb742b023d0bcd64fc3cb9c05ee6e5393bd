@@ -1,0 +1,28 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Medium shot of animals sitting together in the snow, static camera.
+Detailed description:
+setting: P4: Mountain slope and rocky peaks. Outdoor, night, snowy slope with a stone lighthouse tower on a rocky peak and a starry nebula sky above.
+characters: C1: lying in snow on left, eating berries, smiling contentedly; C2: sitting on wooden planks in center, eating a berry; C3: crowd standing around in background.
+props: Red berry bunch, dead fish, glowing lanterns, wooden planks in the snow; stone lighthouse with a bright yellow light beam.
+action: C1 munches on red berries in the snow next to fish and a lantern, then lifts its head to chew happily beside C2, who sits on wooden planks surrounded by C3. The view rises past a stone lighthouse shining a golden beam to the starry night sky where white credits appear.
+camera: Starts in a high-angle close-up on the berries, pulls back to a medium shot, then tilts up to the sky and holds static.
+light_mood: Cool blue night lighting contrasted with warm golden glow from lanterns and the lighthouse beam, creating a peaceful, magical mood.
+Frames:
+[frame 1 at 126.49s]
+IMG:eff95b38a21fbaf0c89061010e8cd5be00bf0684bae74fbd3d7252a2ac5e6a9e
+[frame 2 at 129.43s]
+IMG:32a2499b52202b8437a5c1022fef19bed5024051bf0aaaf58b6d0d924a748a1e
+[frame 3 at 132.37s]
+IMG:ef9deb1fcb28aa47e45e362fa56902e548f0915d19ffc9b49287585130b8b910
+[frame 4 at 135.32s]
+IMG:93e11c4c10e8b837cb9d6f66d5a793e5cffd8a88b07251a2fc02863cc7fe6941
+[frame 5 at 138.26s]
+IMG:ebd0e484ec3b8f63e41128b22b565517a1dba8cf0e85baad1408cc9b7a0c7264
+[frame 6 at 141.21s]
+IMG:837c3f5b7357b12208656e1c4bad4ff2e6325fef9e54846f6661c606e465f731
+[frame 7 at 144.15s]
+IMG:2e2b044f7814b86af3a91a8e195b10b1cb1acb73bbb6f060838eb8d16073db67
+[frame 8 at 147.10s]
+IMG:5a0112f11bb57a73aacee9e190b002e3445b4ae1653401f5882a076079add492

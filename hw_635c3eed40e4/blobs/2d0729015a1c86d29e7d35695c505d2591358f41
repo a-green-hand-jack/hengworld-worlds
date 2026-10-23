@@ -1,0 +1,62 @@
+{
+ "tiers": {
+  "T0": [
+   "image_generation",
+   "image_edit",
+   "speech_synthesis",
+   "music",
+   "sound_effects",
+   "video_edit"
+  ],
+  "T1": [
+   "T0",
+   "video_generation"
+  ]
+ },
+ "tools": {
+  "image_generation": {
+   "model": "gemini-3.1-flash-lite-image",
+   "unit": "image (1K, 1120 tokens)"
+  },
+  "image_edit": {
+   "model": "gemini-3.1-flash-lite-image",
+   "unit": "image (1K, 1120 tokens)"
+  },
+  "speech_synthesis": {
+   "model": "gemini-3.8-flash-lite-tts",
+   "unit": "per 1M tokens (audio output 25 tokens/s)"
+  },
+  "music": {
+   "model": "lyria-3.5",
+   "unit": "song (per request)"
+  },
+  "sound_effects": {
+   "model": "ElevenLabs Sound Effects (model name not stated on the page)",
+   "unit": "minute of generated audio"
+  },
+  "video_edit": {
+   "model": "none (local ffmpeg)",
+   "unit": "call"
+  },
+  "video_generation": {
+   "model": "wan2.2-t2v-plus / wan2.2-i2v-plus",
+   "unit": "second of video"
+  },
+  "model_call": {
+   "model": "gemini-3.5-flash-lite",
+   "unit": "tokens (model budget); for chat calls such as shot descriptions"
+  }
+ },
+ "price_file": "toolservice/prices.json",
+ "service": "toolservice/toolservice.py",
+ "source_check": "Applies to every generator request (image_generation, image_edit, speech_synthesis, music, sound_effects, video_*): each media part of the request is screened against the six masters and a reuse is refused before forwarding (D004). model_call is analysis-only (chat call to gemini-3.5-flash-lite, text answer): it is not source-screened, so Reference-track descriptions may see input-clip frames; its ledger rows carry source_screened=false. Reading per steward decision 16; the maintainer may overrule.",
+ "tier": "T0",
+ "available": [
+  "image_generation",
+  "image_edit",
+  "speech_synthesis",
+  "music",
+  "sound_effects",
+  "video_edit"
+ ]
+}

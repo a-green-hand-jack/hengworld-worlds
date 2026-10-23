@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0018",
+  "start": 89.417,
+  "end": 92.167,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.75,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 18,
+   "start": -0.0,
+   "end": 2.75,
+   "description": "Medium shot of C1 standing, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.75
+  }
+ ],
+ "task_id": "domini_canes-L0-0018-scr",
+ "descriptions_available": true
+}

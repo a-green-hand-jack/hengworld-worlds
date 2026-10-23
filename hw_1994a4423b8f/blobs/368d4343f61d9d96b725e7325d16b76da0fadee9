@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0002",
+  "start": 30.5,
+  "end": 32.292,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.792,
+ "cuts": [
+  1.792
+ ],
+ "shots": [
+  {
+   "index": 2,
+   "start": 0.0,
+   "end": 1.792,
+   "description": "Extreme wide shot of a bird standing on a railroad track, zooming in."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.792
+  }
+ ]
+}

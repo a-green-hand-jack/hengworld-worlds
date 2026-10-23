@@ -1,0 +1,64 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0020",
+  "start": 1886.852,
+  "end": 1901.733,
+  "shots": 6,
+  "lines": 0
+ },
+ "duration": 14.881,
+ "cuts": [
+  0.934,
+  3.737,
+  6.539,
+  9.376,
+  12.178
+ ],
+ "shots": [
+  {
+   "index": 232,
+   "start": -0.0,
+   "end": 0.934,
+   "description": "Long shot of a grocery store at an intersection, static camera."
+  },
+  {
+   "index": 233,
+   "start": 0.934,
+   "end": 3.737,
+   "description": "Long shot of C1 standing on a roof and C2 exiting a shop on the street level below, static camera."
+  },
+  {
+   "index": 234,
+   "start": 3.737,
+   "end": 6.539,
+   "description": "Long shot of C1 standing on the roof, static."
+  },
+  {
+   "index": 235,
+   "start": 6.539,
+   "end": 9.376,
+   "description": "Wide shot of C1 dangling from a pole on a roof, static."
+  },
+  {
+   "index": 236,
+   "start": 9.376,
+   "end": 12.178,
+   "description": "Wide shot of C1 swinging on a railroad crossing gate, static."
+  },
+  {
+   "index": 237,
+   "start": 12.178,
+   "end": 14.881,
+   "description": "Wide shot of a vintage car driving past a grocery store, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 14.881
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0020-scr",
+ "descriptions_available": true
+}

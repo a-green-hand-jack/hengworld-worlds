@@ -1,0 +1,224 @@
+{
+ "hash": "provenance/phash.py (median of 8x8 DCT block, 32x32 gray); check implementation: scripts/s4_images.py provenance()",
+ "threshold": "hamming<=10 voids",
+ "images": [
+  {
+   "file": "character_C1.png",
+   "sha256": "75f565d8266f198d08d00c094519f116c1d10ce960cdcb1700186e0b29660ad2",
+   "provenance_check": {
+    "passed": true,
+    "min_hamming_incl_mirror": 12,
+    "closest": "domini_canes 91.5s mirror"
+   },
+   "request_has_media": false,
+   "request_body_sha256": "15e605ca1952be79837d4a408cd342cfceb31b7eb18f520a437ebc7bec8cc355",
+   "vision_check": {
+    "matches": true,
+    "why": "The image perfectly matches the description. It shows a full-body 3D character design of a llama or guanaco standing against a plain, neutral grey background. The character has slender legs, a long neck, orange-brown fur, a dark brown muzzle, long pointed ears, and distinctively huge, bulging eyes as described."
+   },
+   "attempts": [
+    {
+     "attempt": 1,
+     "png_sha256": "75f565d8266f198d08d00c094519f116c1d10ce960cdcb1700186e0b29660ad2",
+     "provenance": {
+      "min_hamming": 12,
+      "closest_film": "domini_canes",
+      "closest_at": "91.5s mirror",
+      "pass": true
+     },
+     "vision_matches": true
+    }
+   ]
+  },
+  {
+   "file": "character_C2.png",
+   "sha256": "400730062eefd73b3a66754e6cd312c121586197a0c98c638cefc5b49ecc225e",
+   "provenance_check": {
+    "passed": true,
+    "min_hamming_incl_mirror": 16,
+    "closest": "sherlock_jr 1471.5s plain"
+   },
+   "request_has_media": false,
+   "request_body_sha256": "7e6b37cfad5f9fa814bc01f3cea63538a2e26b3f6962d4032601659d7e7810df",
+   "vision_check": {
+    "matches": true,
+    "why": "The image perfectly depicts a baby penguin character. It is small, round, and fluffy with a grey back/head and white belly. It has a small beak and notably large eyes with white sclera and dark pupils. The composition is a full-body shot of a single character against a plain, neutral grey background, matching all criteria in the description."
+   },
+   "attempts": [
+    {
+     "attempt": 1,
+     "png_sha256": "400730062eefd73b3a66754e6cd312c121586197a0c98c638cefc5b49ecc225e",
+     "provenance": {
+      "min_hamming": 16,
+      "closest_film": "sherlock_jr",
+      "closest_at": "1471.5s plain",
+      "pass": true
+     },
+     "vision_matches": true
+    }
+   ]
+  },
+  {
+   "file": "character_C3.png",
+   "sha256": "bd6f181c2284337c13da4185a92688d3002ab5f924de832c5a54293fb111ad57",
+   "provenance_check": {
+    "passed": true,
+    "min_hamming_incl_mirror": 12,
+    "closest": "domini_canes 224.5s plain"
+   },
+   "request_has_media": false,
+   "request_body_sha256": "88f3e4a27bb3ea360424bc5e1979d52b9b1133a705dbf5424c4209b922ae550a",
+   "vision_check": {
+    "matches": true,
+    "why": "The image depicts a single, full-body penguin character on a plain, neutral gray background. The penguin is black and white with distinct facial bands, matching the description. It is holding two large bunches of red berries (or grapes) in its flippers, which aligns perfectly with the text 'holding large bunches of red berries'."
+   },
+   "attempts": [
+    {
+     "attempt": 1,
+     "png_sha256": "add78b360e9c5780f22d0521be50158d376c85f59c205e4d6f369145b59edae4",
+     "provenance": {
+      "min_hamming": 14,
+      "closest_film": "spirit_chaser",
+      "closest_at": "256.5s mirror",
+      "pass": true
+     },
+     "vision_matches": false
+    },
+    {
+     "attempt": 2,
+     "png_sha256": "bd6f181c2284337c13da4185a92688d3002ab5f924de832c5a54293fb111ad57",
+     "provenance": {
+      "min_hamming": 12,
+      "closest_film": "domini_canes",
+      "closest_at": "224.5s plain",
+      "pass": true
+     },
+     "vision_matches": true
+    }
+   ]
+  },
+  {
+   "file": "place_P1.png",
+   "sha256": "c7cd502d2622d87ebd444f3c452d30aca973ec4f84e17937699b82570f270343",
+   "provenance_check": {
+    "passed": true,
+    "min_hamming_incl_mirror": 18,
+    "closest": "caminandes3 73.0s mirror"
+   },
+   "request_has_media": false,
+   "request_body_sha256": "f72f4cd3f65f33e80f9084e03981e106c3d6696665b7d2e324cfe58f0f8111ed",
+   "vision_check": {
+    "matches": true,
+    "why": "The image perfectly depicts the described elements: a frozen blue pond in the foreground, a snowy field, a fence made of wooden posts and ropes/wires running across the scene, and large snowy mountains in the background. It is a landscape shot with no characters present."
+   },
+   "attempts": [
+    {
+     "attempt": 1,
+     "png_sha256": "c7cd502d2622d87ebd444f3c452d30aca973ec4f84e17937699b82570f270343",
+     "provenance": {
+      "min_hamming": 18,
+      "closest_film": "caminandes3",
+      "closest_at": "73.0s mirror",
+      "pass": true
+     },
+     "vision_matches": true
+    }
+   ]
+  },
+  {
+   "file": "place_P2.png",
+   "sha256": "efa7b6a72fd3e74be7aef993d1ce1f97fb4bdfd19b627f06228faeb727907217",
+   "provenance_check": {
+    "passed": true,
+    "min_hamming_incl_mirror": 14,
+    "closest": "caminandes3 66.5s plain"
+   },
+   "request_has_media": false,
+   "request_body_sha256": "8cd330322395b8a7f990f7923de6f86e1affba0005cf122dec0863b39c27e5ad",
+   "vision_check": {
+    "matches": true,
+    "why": "The image perfectly aligns with the description. It features prominent steel railroad tracks on wooden ties and gravel in the foreground. The setting is a snowy landscape with snow-covered trees and mountains. Crucially, there is an oil pumpjack visible in the background on the left side. The image is a wide landscape shot (16:9) and contains no characters."
+   },
+   "attempts": [
+    {
+     "attempt": 1,
+     "png_sha256": "efa7b6a72fd3e74be7aef993d1ce1f97fb4bdfd19b627f06228faeb727907217",
+     "provenance": {
+      "min_hamming": 14,
+      "closest_film": "caminandes3",
+      "closest_at": "66.5s plain",
+      "pass": true
+     },
+     "vision_matches": true
+    }
+   ]
+  },
+  {
+   "file": "place_P3.png",
+   "sha256": "094204269b29b6dcd7b223cad635240ef236dbe5c8147d64fa309bdddcc7c024",
+   "provenance_check": {
+    "passed": true,
+    "min_hamming_incl_mirror": 16,
+    "closest": "spirit_chaser 185.0s plain"
+   },
+   "request_has_media": false,
+   "request_body_sha256": "7c7647d657b4f09f01d9b6715d0d8d04455ed72636e833600c446b7a789713c8",
+   "vision_check": {
+    "matches": true,
+    "why": "The image perfectly aligns with the description. It shows a dark, cavernous underground mine setting bathed in blue ambient light. Key features like the rough rocky walls, extensive wooden support beams framing the tunnels, and the winding, steep minecart tracks are all clearly visible. Additionally, it is a widescreen (16:9) location shot containing no characters."
+   },
+   "attempts": [
+    {
+     "attempt": 1,
+     "png_sha256": "094204269b29b6dcd7b223cad635240ef236dbe5c8147d64fa309bdddcc7c024",
+     "provenance": {
+      "min_hamming": 16,
+      "closest_film": "spirit_chaser",
+      "closest_at": "185.0s plain",
+      "pass": true
+     },
+     "vision_matches": true
+    }
+   ]
+  },
+  {
+   "file": "place_P4.png",
+   "sha256": "37758faca469536ced28054fb02fef9bd4507c9399ca9d8c771817e61b4d90e0",
+   "provenance_check": {
+    "passed": true,
+    "min_hamming_incl_mirror": 16,
+    "closest": "trip_to_the_moon 28.5s mirror"
+   },
+   "request_has_media": false,
+   "request_body_sha256": "d4e1418143d3faa460c0f65f0d80556936763039add8dc49be5b01d1e220ae00",
+   "vision_check": {
+    "matches": true,
+    "why": "The image accurately depicts a high, steep snowy mountain area with jagged rocky peaks and slopes as described. It is a wide (16:9) landscape shot focusing on the location, and there are no characters present in the scene."
+   },
+   "attempts": [
+    {
+     "attempt": 1,
+     "png_sha256": "d53a6869cf8d7a112343e00f365d0e01abb9f3a4b9df5642ba67225a9c28b29c",
+     "provenance": {
+      "min_hamming": 16,
+      "closest_film": "sherlock_jr",
+      "closest_at": "1284.5s mirror",
+      "pass": true
+     },
+     "vision_matches": false
+    },
+    {
+     "attempt": 2,
+     "png_sha256": "37758faca469536ced28054fb02fef9bd4507c9399ca9d8c771817e61b4d90e0",
+     "provenance": {
+      "min_hamming": 16,
+      "closest_film": "trip_to_the_moon",
+      "closest_at": "28.5s mirror",
+      "pass": true
+     },
+     "vision_matches": true
+    }
+   ]
+  }
+ ]
+}

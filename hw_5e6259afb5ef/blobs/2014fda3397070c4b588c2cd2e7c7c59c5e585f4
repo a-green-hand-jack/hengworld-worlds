@@ -1,0 +1,18 @@
+Rewrite the one-sentence description of this shot. Template: '[shot size] of [subject] [action], [camera move]'. Refer to characters by their C labels from the list (a label must name the same character in every shot); do not write colours, lens parameters, art style or other appearance. Reply with the sentence only.
+
+Characters:
+C1: a guanaco (llama). Slender, long-necked quadruped with orange-brown fur, dark brown muzzle, long ears, and huge bulging eyes.
+C2: a baby penguin. Small, round, fluffy bird with a grey-black back and head, white belly, small beak, and large white eyes with dark pupils.
+C3: adult penguins. Medium-sized black and white penguins with distinct black and white facial bands, holding large bunches of red berries.
+
+Old sentence: Medium shot of C1 riding a minecart, static.
+Problem: both models judged the sentence contradicted by the frames
+Frames:
+[frame 1]
+IMG:5ac6266e28b0322439330e7a696bbaf2a32d9fa6cf6f88e4caa9700d124d5e45
+[frame 2]
+IMG:e8f88f8f4a588db54210a905c104021c4266b748d06122fe5c4f9cf3d43dd141
+[frame 3]
+IMG:984af3c3a3cc6e693a22d32bb5130669c5c87e441331a98bcab9741eeeb89946
+[frame 4]
+IMG:0e96e046e97f57d526ed491c0b94775af53f98eb1546b9080d9080ed05795a64

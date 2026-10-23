@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0023",
+  "start": 102.833,
+  "end": 103.375,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.542,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 23,
+   "start": 0.0,
+   "end": 0.542,
+   "description": "Medium shot of C1 running through a crowd of onlookers, panning left to right."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.542
+  }
+ ],
+ "task_id": "domini_canes-L0-0023-scr",
+ "descriptions_available": true
+}

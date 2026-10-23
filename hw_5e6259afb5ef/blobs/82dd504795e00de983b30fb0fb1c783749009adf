@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Medium shot of C1 standing on train tracks with a flower as a train approaches, static.
+Detailed description:
+setting: P2: Railroad tracks. Outdoor, bright daytime. Steel train tracks on wooden ties with patches of snow, snowy hills, and an oil pumpjack on the right.
+characters: C2: popping up into the center foreground on the tracks, holding a single red berry on a stem, looking down at it with a happy expression.
+props: A black steam locomotive with a red cowcatcher and white steam in the center background; a single red berry on a green stem.
+action: A steam train approaches along the tracks in the background. C2 pops up into the foreground, comes into focus, and holds a red berry with both flippers while looking at it.
+camera: Medium close-up at a low ground-level angle on the tracks, static camera, with a rack focus from the distant train to C2 in the foreground.
+light_mood: Bright, clear daylight with cool blue and white tones; ironic, suspenseful yet cute mood.
+Frames:
+[frame 1 at 37.33s]
+IMG:54e6cad92834694723eea8edcf19449590fb3e6a0dd03f3a630ad6813af5325e
+[frame 2 at 37.88s]
+IMG:e6eb8c2306b40f10b5bed4a05084c6bc5cd66fc66958d5763564d81ff1c1ae08
+[frame 3 at 38.42s]
+IMG:fab82fab7e20ec20a6097c344259b6240050b721c489cfa2b19db11644518fef
+[frame 4 at 38.96s]
+IMG:a08b348c73277afb5746a96c204c53152231bc42097974e65cdd676d70c8a8fb

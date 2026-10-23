@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/hutian/.venv/bin/crewcut", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/hutian/work/cc/crewcut/cli.py", line 196, in main
+    a.f(a)
+  File "/hutian/work/cc/crewcut/cli.py", line 59, in cmd_annotate
+    d = annotate(f, _p(a.data), local_master=local, asr_backend=a.asr, whisper_cpp_root=a.whisper_cpp,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/hutian/work/cc/crewcut/build/pipeline.py", line 20, in annotate
+    master = fetch.fetch(film.page or "", d, film.master_sha256 if verify_checksum else None, local_master)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/hutian/work/cc/crewcut/build/fetch.py", line 65, in fetch
+    raise ValueError(f"{dest} does not match the pinned master (sha256 {expected_sha256[:12]}...)")
+ValueError: /hutian/work/data/caminandes3/master.mp4 does not match the pinned master (sha256 028d76297822...)
+
+real	0m13.780s
+user	0m1.658s
+sys	0m0.621s

@@ -1,0 +1,78 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L1-0014",
+  "start": 192.96,
+  "end": 217.28,
+  "shots": 8,
+  "lines": 0
+ },
+ "duration": 24.32,
+ "cuts": [
+  2.2,
+  5.92,
+  10.12,
+  10.92,
+  16.36,
+  19.44,
+  22.08
+ ],
+ "shots": [
+  {
+   "index": 70,
+   "start": 0.0,
+   "end": 2.2,
+   "description": "Medium shot of an abstract light form descending, static camera."
+  },
+  {
+   "index": 71,
+   "start": 2.2,
+   "end": 5.92,
+   "description": "Medium shot of C1 dodging an attack, static camera."
+  },
+  {
+   "index": 72,
+   "start": 5.92,
+   "end": 10.12,
+   "description": "Long shot of C1 slashing at dark mist dissipating into the air, static."
+  },
+  {
+   "index": 73,
+   "start": 10.12,
+   "end": 10.92,
+   "description": "Medium close-up of C1 standing and flexing its arm, static."
+  },
+  {
+   "index": 74,
+   "start": 10.92,
+   "end": 16.36,
+   "description": "Extreme wide shot of floating islands floating among clouds, pan up."
+  },
+  {
+   "index": 75,
+   "start": 16.36,
+   "end": 19.44,
+   "description": "Medium close-up of C1 smiling and then looking shocked, static camera."
+  },
+  {
+   "index": 76,
+   "start": 19.44,
+   "end": 22.08,
+   "description": "Close-up of C1 smiling and looking around, static."
+  },
+  {
+   "index": 77,
+   "start": 22.08,
+   "end": 24.32,
+   "description": "Medium shot of C1 turning away from a floating orb, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 24.32
+  }
+ ],
+ "task_id": "spirit_chaser-L1-0014-ref",
+ "descriptions_available": true
+}

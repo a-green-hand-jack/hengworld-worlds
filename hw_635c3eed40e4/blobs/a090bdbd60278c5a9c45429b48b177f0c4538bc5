@@ -1,0 +1,41 @@
+[
+ {
+  "type": "image",
+  "file": "work/still0.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Wide shot of abstract shapes displaying text, static.",
+  "used_in": "delivery.mp4",
+  "shot": 0
+ },
+ {
+  "type": "image",
+  "file": "work/still1.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Wide shot of a cartoon character running through a hospital ward and then jumping out of a church window into a city, static camera.",
+  "used_in": "delivery.mp4",
+  "shot": 1
+ },
+ {
+  "type": "image",
+  "file": "work/still2.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Wide shot of a cartoon character entering a hospital room, static camera. Wide shot of a cartoon character entering a wedding during a ceremony, static camera. Wide shot of a cartoon character flying between skyscrapers, static camera.",
+  "used_in": "delivery.mp4",
+  "shot": 2
+ },
+ {
+  "type": "image",
+  "file": "work/still3.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Long shot of a cartoon character riding a pram, static camera.",
+  "used_in": "delivery.mp4",
+  "shot": 3
+ },
+ {
+  "type": "music",
+  "file": "work/music.mp3",
+  "model": "lyria-3.5",
+  "prompt": "Gentle instrumental background score for a short animated film about a woman hurrying through a city; light, warm, playful, no vocals.",
+  "used_in": "delivery.mp4"
+ }
+]

@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Over-the-shoulder shot of C1 looking at penguins holding berries, static.
+Detailed description:
+setting: P4: Mountain slope and rocky peaks. Outdoor, twilight, snow-covered slopes with distant rocky ridges.
+characters: C1: blurred in left foreground, back of head and right eye visible; C2: on snow at right, holding a red berry branch, looking up; C3: group in background walking forward, front four holding red berry bunches.
+props: Branches and large bunches of bright red berries held by C2 and C3.
+action: C1 looks down at C2, who stands in the snow holding a branch of red berries and smiling up. The view then tilts up past C2 to reveal a large group of C3 waddling forward over the snowy ridge, several carrying large bunches of red berries.
+camera: Over-the-shoulder medium shot from behind C1, high angle tilting up to eye level to reveal C3 in the background.
+light_mood: Soft, cool twilight illumination with warm highlights on C1, creating a heartwarming, uplifting mood.
+Frames:
+[frame 1 at 119.74s]
+IMG:c3ca283e939d19da683db1a1affca123be1b39626b85854a6c76e421ea22b56a
+[frame 2 at 120.69s]
+IMG:fd0aeeb338c3579069f7fe8ea2b458968b41d623b6f9c131f9ddcbaa52c934dd
+[frame 3 at 121.64s]
+IMG:852ffe4eaf185b256f4c26b7238faa8bcfc2ff8917cdbb2bc2847dc022f5eee1
+[frame 4 at 122.59s]
+IMG:72dd1e9d092dd6bfb1b2eac81bbee3270153d280e4d154b3631bb89a5fe274c1

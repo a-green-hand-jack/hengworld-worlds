@@ -1,0 +1,5 @@
+Judge record for shot correspondence (objective §二 评分 c).
+- Model `qwen3-vl-plus`, temperature 0, max_tokens 2000, via the world's `alibaba` resource (OpenAI-compatible chat completions). Prompt: the protocol's verbatim text (`scores/code/judge_shots.py`).
+- Run **once** on the 28 Coffee Run T0 runs, after the Q check passed for all of them (Q gates the judge). 50 requests (one per original shot), 0 errors, 0 retries; 48,980 prompt tokens, 100 completion tokens in total as reported by the API. Replies were exactly "yes"/"no" (any case); accepted = reply starts with "yes".
+- Frames: remake frames within the original shot's time span, n = clamp(ceil(span s), 2, 8) frames evenly spaced at (k+0.5)/n of the span, JPEG width 448. (The protocol says "1 frame/s, min 2, max 8"; the exact sample positions are not given — this choice is recorded here.)
+- `judge_calls.jsonl`: one line per call: task, shot, span, frame times, prompt sha256, raw reply, token usage, error, accepted. Descriptions (answer key) are not published. Cost: the world's `alibaba` resource is metered by request count (50 of 2000); no price list is given in the world, so no currency amount is claimed.

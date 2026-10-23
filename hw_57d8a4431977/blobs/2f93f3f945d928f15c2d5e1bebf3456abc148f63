@@ -1,0 +1,40 @@
+# Audit report (auditor)
+
+Delivery audited: curator 42ba08b, task-maker dc1c556, executor b5a7178, scorer 70e344f, steward 793004e. Judged against the objective's five release conditions.
+
+## 1. Corpus
+- Master: fetched `reproduce.sh` -> `fetch_and_verify.sh` from archive.org by me; 11,872,682 bytes, SHA-256 028d7629...8d7f = pin; the backup copy has the same hash (no fallback used).
+- Admission has decision, licence evidence (IA metadata licenseurl CC BY 3.0), work-vs-extras, alternatives. Caveat recorded by curator: no separate licence statement for the music; left to the maintainer.
+
+## 2. Independent reproduction (clean dirs, task-maker's commands, my own environment: ffmpeg, opencv, faster-whisper 1.2.1)
+- `commands/reproduce.sh` run by me: two builds byte-identical (tree SHA-256 9885164273bd...bee63, equal to `data/build_log.json`); my rebuilt data, tasks and key equal the committed ones (only the two result files differ by absence in the build).
+- Comparison with dataset d509bed, run by me with task-maker's `compare_dataset.py` and spot-checked directly (cut_frames, hierarchy.json, dialogue.json equal): 15/15 items equal, 36 cuts/37 shots, 0 dialogue lines, hierarchy and 90 task ids/records equal. **Differences: none.**
+- `duration_s`: video stream 150.04 s (= published) vs container 150.108 s. Choice of the video stream is justified (equals the published value; the container basis drops the last shot from the truth of four tasks). Agreed.
+- Descriptions (paid step): not rerun (done once; $0.039). Sampled: 37 entries in the call log all `gemini-3.5-flash-lite`, temperature 0, max_tokens 1024; format matches protocol; shot 1 checked by eye against the frame. Descriptions are uncorrected model drafts (stated). The published dataset has empty descriptions, so none are comparable.
+- Fingerprints: no published counterpart; self-consistency only (task-maker states this).
+- Package release: tarball sha 17b62d4b...2a05 equals the one the executor ran; 90 packages, no truth/key file or key field; key/ is outside the release.
+
+## 3. Runs and scores
+- Executor: attempts 1 and 2 failed (environment), recorded with decisions; attempt 3 ok from the published package only; no key access; model spend 0.
+- Scorer: Q=1 (all checks); cut F1 1.0/1.0 — I re-detected the cuts in the film: 21.375 s and 30.5 s = key. Note: the Screenplay input lists the shot times, so cut F1 = 1.0 is expected for `fixed`. Correspondence 0.0 (placeholder frames; the judge's small check: 2/3 right accepted, 0/6 wrong accepted, n=9 only). Scene order 1.0. WER/onset/speaker purity not applicable (0 lines); character purity, S marked not run. Run is `official: false`. Judge `gemini-3.8-flash` marked temporary for qwen3-vl-plus. Not run: Q*c combination (protocol gives none).
+- Not rerun by me: the paid judge calls (12 requests, ~$0.06); cuts, Q duration and key content checked independently as above.
+
+## 4. Protocol
+- `configs/benchmark.yaml` and `films.yaml` are byte-identical to df54b3a; adaptations (D-adaptations.json) change no measure.
+
+## 5. Cost (reported tokens x costs/prices.json; not the provider's invoice)
+| position | purpose | requests | needed | tokens in/out | USD |
+|---|---|---|---|---|---|
+| task-maker | shot descriptions, gemini-3.5-flash-lite | 37 | 37 | 125,282/587 | 0.039 (with 4 probe requests: 41 total) |
+| scorer | judge scoring (3) + judge check (9), gemini-3.8-flash | 12 | 12 | 80,208/12 | 0.060 |
+| executor | none | 0 | 0 | 0 | 0 |
+| auditor | none | 0 | 0 | 0 | 0 |
+Total 53 requests of 150; about $0.10 of $30.
+
+## 6. Scans
+- No credentials or key text found in the delivery. Host-path scan: only the world mount `/crewcut/...` (backup-master fallback path in the fetch script, protocol sources in curator's admissions, price note) — a documented resource path, not a host-specific one; noted, not blocking, but to be reviewed before the Hugging Face publication.
+
+## Not run / open
+- Price table cross-check with CrewCut Issue #13 (not readable; official page used).
+- Real generators, other systems/films, screening score, qwen3-vl-plus judge, human correction of descriptions.
+- Maintainer's open decisions (protocol/gaps.md G1-G8) untouched.

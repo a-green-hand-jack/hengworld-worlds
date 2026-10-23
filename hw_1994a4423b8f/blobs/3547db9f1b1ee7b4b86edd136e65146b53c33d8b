@@ -1,0 +1,15 @@
+# Caminandes 3 rebuilt vs published dataset d509bed (records/comparison.json)
+
+| item | result |
+|---|---|
+| cuts (shots.json cut_frames, cut_times_s) | 36 cuts, 37 shots, identical frame by frame |
+| dialogue.json | byte-identical (language en, 0 lines) |
+| hierarchy.json | byte-identical (L0 37, L1..L4 as published) |
+| task ids | 90 = 90, identical sets |
+| task fields (level, segment_id, track, start_s, end_s, n_shots, n_lines) | 0 differences over all 90 |
+
+## Differences (all)
+1. `shots.json` field `duration_s`: rebuilt 150.108345, published 150.04. Cause: `shots.probe` takes the container duration (ffprobe format=duration, 150.108345 = audio stream), the video stream is 150.041667 s; the published file evidently used the video duration (150.04, as does hierarchy.json in both, since hierarchy rounds from the shots). No effect on cuts, hierarchy, tasks. Reproduced identically from the pinned master; the released value is therefore not what the current `shots.py` writes. Flag for CrewCut's maintainer.
+2. Task package contents not in the published dataset (it lists tasks only): our `descriptions` are non-empty (the published dataset holds none), so `shotlist.csv` of Screenplay tasks and `truth.json` shots carry them. Nothing to compare against.
+3. Reproduction by `rebuild.sh`: 3 of 585 published files differ byte-wise from my first build (`L0-0027-ref`, `L1-0002-ref`, `L4-0000-ref` input/original.mp4) — re-encoding with libx264 is not byte-deterministic across runs here; packages in the release are the first build, manifest in records/packages_manifest.json.
+4. Observation (not a difference): in `segment_truth`, a cut that is the last shot boundary of a segment appears in truth `cuts` due to rounding (e.g. L1-0000 cuts include 32.292 = segment end). For maintainer/scorer.

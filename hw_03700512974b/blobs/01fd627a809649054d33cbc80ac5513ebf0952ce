@@ -1,0 +1,64 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L1-0008",
+  "start": 109.64,
+  "end": 122.8,
+  "shots": 6,
+  "lines": 0
+ },
+ "duration": 13.16,
+ "cuts": [
+  5.04,
+  6.0,
+  7.92,
+  8.48,
+  11.6
+ ],
+ "shots": [
+  {
+   "index": 37,
+   "start": 0.0,
+   "end": 5.04,
+   "description": "Medium shot of C1 dodging an opponent, static camera."
+  },
+  {
+   "index": 38,
+   "start": 5.04,
+   "end": 6.0,
+   "description": "Medium shot of C1 gliding, static."
+  },
+  {
+   "index": 39,
+   "start": 6.0,
+   "end": 7.92,
+   "description": "Medium shot of C1 absorbing energy, static camera."
+  },
+  {
+   "index": 40,
+   "start": 7.92,
+   "end": 8.48,
+   "description": "Medium shot of C1 tumbling backwards, static camera."
+  },
+  {
+   "index": 41,
+   "start": 8.48,
+   "end": 11.6,
+   "description": "Medium shot of C1 resting on a road while a tadpole-like creature floats in the sky, static camera."
+  },
+  {
+   "index": 42,
+   "start": 11.6,
+   "end": 13.16,
+   "description": "Medium shot of C1 playing an electric guitar, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 13.16
+  }
+ ],
+ "task_id": "spirit_chaser-L1-0008-scr",
+ "descriptions_available": true
+}

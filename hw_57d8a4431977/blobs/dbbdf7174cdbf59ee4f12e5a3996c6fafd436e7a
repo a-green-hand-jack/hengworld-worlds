@@ -1,0 +1,48 @@
+"""Stage 4, Budget: cost and process measures from the production log, and the Pareto frontier."""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+
+
+def read(path: Path) -> list[dict]:
+    return [json.loads(l) for l in open(path) if l.strip()]
+
+
+def budget_report(run_dir: Path, delivered_seconds: float) -> dict:
+    events = read(run_dir / "log.jsonl") if (run_dir / "log.jsonl").exists() else []
+    run = json.loads((run_dir / "run.json").read_text()) if (run_dir / "run.json").exists() else {}
+    model = sum(e["cost_usd"] for e in events if e["type"] == "model_call")
+    tool = sum(e["cost_usd"] for e in events if e["type"] == "tool_call")
+    generated = {o for e in events if e["type"] == "tool_call" and e.get("tool") != "media.ffmpeg" for o in e["outputs"]}
+    used = set()
+    for e in events:
+        if e["type"] == "tool_call" and e.get("tool") == "media.ffmpeg":
+            used |= set(e["inputs"])
+    manifest = run_dir / "output" / "manifest.json"
+    if manifest.exists():
+        text = manifest.read_text()
+        used |= {g for g in generated if g in text}
+    minutes = max(delivered_seconds / 60, 1e-9)
+    by_actor: dict[str, float] = {}
+    for e in events:
+        by_actor[e["actor"]] = by_actor.get(e["actor"], 0.0) + e["cost_usd"]
+    return {"usd": round(model + tool, 4), "usd_per_minute": round((model + tool) / minutes, 4),
+            "model_usd": round(model, 4), "tool_usd": round(tool, 4),
+            "hours_per_minute": round(run.get("wall_clock_s", 0) / 3600 / minutes, 4),
+            "model_calls": sum(e["type"] == "model_call" for e in events),
+            "tool_calls": sum(e["type"] == "tool_call" for e in events),
+            "versions_delivered": sum(e["type"] == "publish" and "film.mp4" in " ".join(e["outputs"]) for e in events),
+            "unused_generated_share": round(1 - len(generated & used) / len(generated), 4) if generated else None,
+            "spend_by_actor": {k: round(v, 4) for k, v in sorted(by_actor.items(), key=lambda kv: -kv[1])}}
+
+
+def pareto_front(points: list[tuple[str, float, float]]) -> list[str]:
+    """Names on the frontier of (cost lower is better, quality higher is better)."""
+    front, best = [], float("-inf")
+    for name, cost, q in sorted(points, key=lambda p: (p[1], -p[2])):
+        if q > best:
+            front.append(name)
+            best = q
+    return front

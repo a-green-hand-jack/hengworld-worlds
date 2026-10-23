@@ -1,0 +1,29 @@
+You write the detailed shot description for one shot of a short film, so that it can be remade from text. You see the shot's frames in time order and its audio. Reply with ONE JSON object: {"setting": "place, indoor/outdoor, time, weather and surroundings; at most 30 words; call the place by the name given in the places list", "characters": "format 'C1: ...; C2: ...', for each character visible in the shot its position, clothing/held items and expression changes in this shot; at most 25 words per character; the basic appearance is already in the character list, so write only what differs from it", "props": "important objects; at most 25 words", "action": "what happens in order; at most 60 words", "camera": "shot size, angle, camera movement and composition changes; at most 25 words", "light_mood": "lighting, colour tone and mood; at most 25 words", "sound": "ambient sound, effects, music or silence; at most 25 words", "description_consistent": true or false (does the given one-sentence description agree with the frames), "description_note": "why, if not"}
+Rules: write only facts that can be confirmed in the frames or audio; do not guess; use the C labels of the character list; no proper names, no film title; no scene numbers, no grouping of shots, no mention of other shots or of frames.
+
+Overall look: 3D CGI animated cartoon style with exaggerated facial expressions, bright daylight in snowy mountain landscapes, and dark blue-lit underground mine caves.
+Characters:
+C1: a guanaco (llama). Slender, long-necked quadruped with orange-brown fur, dark brown muzzle, long ears, and huge bulging eyes.
+C2: a baby penguin. Small, round, fluffy bird with a grey-black back and head, white belly, small beak, and large white eyes with dark pupils.
+C3: adult penguins. Medium-sized black and white penguins with distinct black and white facial bands, holding large bunches of red berries.
+Places:
+P1: Frozen pond and snowy field. A snowy plain with a frozen blue puddle, a wire fence with wooden posts, and distant snowy mountains.
+P2: Railroad tracks. Steel train tracks on wooden ties and gravel cutting through a snowy landscape with an oil pumpjack in the background.
+P3: Underground mine. A dark, cavernous underground mine with blue ambient lighting, rocky walls, wooden support beams, and steep minecart tracks.
+P4: Mountain slope and rocky peaks. A high, steep snowy mountain area with jagged rocky peaks covered in snow and ice.
+
+Previous shot's detailed description (for continuity only; describe THIS shot from its own frames):
+{"setting": "P4: Mountain slope and rocky peaks. Outdoor, daytime, snowy rocky mountain slope with a wooden mine tunnel entrance and wooden structures in the background.", "characters": "C1: on the left side of the minecart, wide-eyed at first, then drooping its eyelids with a dazed, exhausted expression; C2: on the right side of the minecart, holding a bunch of red berries, smiling and eating a berry.", "props": "Wooden minecart with metal straps, a large bunch of red berries on a green stem, wooden mine entrance and scaffolding.", "action": "The minecart bursts out of the wooden mine entrance into the snowy outdoors. C1's head bobbles as its eyes droop half-shut in exhaustion, while C2 happily munches on the red berries beside it as the cart rolls forward.", "camera": "Medium close-up at eye level, tracking backward locked onto the front of the moving minecart as the background recedes.", "light_mood": "Bright, diffused natural daylight with cool snowy tones; comedic relief and exhausted mood.", "sound": "Rattling and clattering of minecart wheels on tracks, C1 exhaling a tired sigh, C2's quick munching sounds, and upbeat rhythmic music."}
+
+Shot 21 one-sentence description: Medium shot of C1 roaring, static.
+
+Frames (4):
+[frame 1 at 74.03s]
+IMG:0c8058cabb74978b6614327e29e9b5bcdf1ed2d0d7f8458c4d5d398efdd0d6ac
+[frame 2 at 74.17s]
+IMG:82b27fbc61cf381ed3409a7caf9bf6fd3607b6e90ab4bbe03f5f14778fbe0e46
+[frame 3 at 74.33s]
+IMG:dafb49a294adcfd01f9bc97a5bee438cc2fb72fabbf6f529a3b852ecc797174f
+[frame 4 at 74.47s]
+IMG:631f495ae8a20e3970c4dc5149a637268f3c808a9d31ca30473ebc91260c666b
+AUD:5d39b700ff37cd6f710d4376f6a701800be194a7625364404178e500d0271083

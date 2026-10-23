@@ -1,0 +1,52 @@
+"""Readers that accept both the pipeline's working files and the released (Hugging Face) format."""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+
+def read_shots(p: Path) -> dict:
+    r = json.loads(Path(p).read_text())
+    return {"fps": r["fps"], "duration": r.get("duration", r.get("duration_s")),
+            "cuts": r.get("cuts", r.get("cut_frames", [])), **{k: v for k, v in r.items() if k.startswith("shot_") or k == "mean_sat"}}
+
+
+def read_dialogue(p: Path) -> dict:
+    if not Path(p).exists():
+        return {"lang": "", "lines": []}
+    r = json.loads(Path(p).read_text())
+    lines = []
+    for l in r.get("lines", []):
+        if isinstance(l, dict):
+            lines.append([l["start"], l["end"], l["text"], l.get("speaker")])
+        else:
+            lines.append(list(l) + [None] * (4 - len(l)))
+    return {"lang": r.get("lang", r.get("language", "")), "lines": lines}
+
+
+def read_hierarchy(p: Path) -> dict:
+    r = json.loads(Path(p).read_text())
+    fid = r.get("film_id", r.get("name"))
+    out = {"film_id": fid, "duration_s": r.get("duration_s", r.get("duration"))}
+    for lv in ("L0", "L1", "L2", "L3", "L4"):
+        out[lv] = [{"id": s.get("id", f"{fid}-{lv}-{i:04d}"), "start": s["start"], "end": s["end"],
+                    "shots": s["shots"], "lines": s["lines"]} for i, s in enumerate(r.get(lv, []))]
+    return out
+
+
+def release_files(film_id: str, shots_rec: dict, dialogue: dict, hier: dict, out_dir: Path) -> None:
+    """Write the three released annotation files of a film."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    fps = shots_rec["fps"]
+    (out_dir / "shots.json").write_text(json.dumps({
+        "film_id": film_id, "fps": fps, "duration_s": shots_rec["duration"], "cut_frames": shots_rec["cuts"],
+        "cut_times_s": [round(c / fps, 3) for c in shots_rec["cuts"]]}, indent=1))
+    (out_dir / "dialogue.json").write_text(json.dumps({
+        "film_id": film_id, "language": dialogue["lang"],
+        "lines": [{"start": l[0], "end": l[1], "text": l[2], "speaker": l[3] if len(l) > 3 else None}
+                  for l in dialogue["lines"]]}, indent=1, ensure_ascii=False))
+    h = {"film_id": film_id, "duration_s": hier.get("duration_s", hier.get("duration"))}
+    for lv in ("L0", "L1", "L2", "L3", "L4"):
+        h[lv] = [{"id": f"{film_id}-{lv}-{i:04d}", **{k: s[k] for k in ("start", "end", "shots", "lines")}}
+                 for i, s in enumerate(hier[lv])]
+    (out_dir / "hierarchy.json").write_text(json.dumps(h, indent=1))

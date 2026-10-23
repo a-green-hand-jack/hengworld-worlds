@@ -1,0 +1,6 @@
+/hutian/inst/_anthropic-ai_claude-code/node_modules/.bin/claude --version
+2.1.307 (Claude Code)
+exit=0
+/hutian/inst/_openai_codex/node_modules/.bin/codex --version
+codex-cli 0.163.0
+exit=0

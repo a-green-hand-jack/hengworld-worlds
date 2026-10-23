@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0020",
+  "start": 228.428,
+  "end": 231.832,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.404,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 20,
+   "start": 0.0,
+   "end": 3.404,
+   "description": "Medium shot of C1 standing in a store, leaning on a counter while looking at the shop assistant, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.404
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0020-scr",
+ "descriptions_available": true
+}

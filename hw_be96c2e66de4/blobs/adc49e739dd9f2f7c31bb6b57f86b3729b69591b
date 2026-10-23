@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0030",
+  "start": 107.333,
+  "end": 109.625,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.292,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 30,
+   "start": 0.0,
+   "end": 2.292,
+   "description": "Medium close-up of C1 standing and holding two glowing objects, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.292
+  }
+ ],
+ "task_id": "domini_canes-L0-0030-ref",
+ "descriptions_available": true
+}

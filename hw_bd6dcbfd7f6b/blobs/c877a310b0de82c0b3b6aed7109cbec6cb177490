@@ -1,0 +1,9 @@
+"""CrewCut score_run with the continuity judge (Gemini), metered. usage: score_run.py RUN_DIR TASK_DIR OUT_JSON MODEL
+TASK_DIR holds task.json and a truth.json whose shots carry descriptions (answer key: not published)."""
+import json, pathlib, sys
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+import gemini_meter  # noqa
+from crewcut.scoring.score import score_run
+r = score_run(pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2]), None, sys.argv[4])
+pathlib.Path(sys.argv[3]).write_text(json.dumps(r, indent=1))
+print(json.dumps(r["continuity"]), r.get("notes"))

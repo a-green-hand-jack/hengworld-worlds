@@ -1,0 +1,11 @@
+#!/bin/bash
+# usage: fetch_verify.sh OUTDIR  -> downloads each master, checks size+sha256, writes verify_results.tsv
+out=${1:?}; mkdir -p "$out"; res="$out/verify_results.tsv"; : > "$res"
+while IFS=$'\t' read -r id url size sha ext; do
+  f="$out/$id.$ext"
+  http=$(curl -sSL -o "$f" -w '%{http_code}' "$url") || http=fail
+  gotsize=$(stat -c %s "$f" 2>/dev/null || echo 0)
+  gotsha=$(sha256sum "$f" 2>/dev/null | cut -d' ' -f1)
+  if [ "$http" = 200 ] && [ "$gotsize" = "$size" ] && [ "$gotsha" = "$sha" ]; then r=PASS; else r=FAIL; fi
+  printf '%s\t%s\thttp=%s\tsize=%s/%s\tsha256=%s\texpected=%s\t%s\n' "$id" "$r" "$http" "$gotsize" "$size" "$gotsha" "$sha" "$(date -u +%FT%TZ)" | tee -a "$res"
+done < "$(dirname "$0")/masters.tsv"

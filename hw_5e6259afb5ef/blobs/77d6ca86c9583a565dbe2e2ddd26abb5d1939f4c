@@ -1,0 +1,16 @@
+Here is your detailed description of shot 8:
+{"setting": "P2: Railroad tracks. Outdoor, bright daytime, clear blue sky above a snowy ground.", "characters": "C1: positioned left of center facing forward; starts with wide eyes and open mouth in shock, then squints its eyes into narrow slits and closes its mouth.", "props": "None.", "action": "C1 starts with its head up, mouth open, and eyes wide in alarm, then quickly lowers its head slightly, flattens its ears, closes its mouth, and squints its eyes tightly as it glares forward.", "camera": "Medium close-up at eye level, slight push in toward C1.", "light_mood": "Bright, crisp daylight with warm orange tones on C1 against cool blue sky and snow; tense and determined mood.", "sound": "Loud train horn blast, chugging steam engine, and dramatic orchestral music."}
+An independent checker looking at the same frames flagged:
+- sound: 'Loud train horn blast' -> unsupported
+Rewrite the whole JSON (same keys, same limits, no description_* keys needed) so that every statement is confirmed by the frames or audio. Reply with JSON only.
+
+Frames:
+[frame 1 at 41.98s]
+IMG:ebe6e8b25d463ef19b6a529bb720ba944ead66dfc128e6b579bc3d57d07fe84b
+[frame 2 at 42.16s]
+IMG:156fd60b6910f238046ae964d73e3117e566369609b9f4c44f4c037fd13f54be
+[frame 3 at 42.34s]
+IMG:a1953d0b1a7161676dc989c6e110d263f2a17c1477282eb8b0036ef2000832dc
+[frame 4 at 42.52s]
+IMG:9f775350820a938f8ecbd6a7bd46a5df3ea7a38bc756c569afe5fd68e7790c1b
+AUD:a29de14e2225d2f6d66d5a5cd2ec879936ab16b984a8ebaaf3b1ad2374e096c4

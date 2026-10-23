@@ -1,0 +1,497 @@
+{
+ "film_id": "trip_to_the_moon",
+ "duration_s": 771.62,
+ "L0": [
+  {
+   "id": "trip_to_the_moon-L0-0000",
+   "start": 0.0,
+   "end": 102.25,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0001",
+   "start": 102.25,
+   "end": 178.625,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0002",
+   "start": 178.625,
+   "end": 181.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0003",
+   "start": 181.917,
+   "end": 226.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0004",
+   "start": 226.917,
+   "end": 252.042,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0005",
+   "start": 252.042,
+   "end": 253.458,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0006",
+   "start": 253.458,
+   "end": 283.417,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0007",
+   "start": 283.417,
+   "end": 334.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0008",
+   "start": 334.792,
+   "end": 338.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0009",
+   "start": 338.917,
+   "end": 340.333,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0010",
+   "start": 340.333,
+   "end": 356.167,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0011",
+   "start": 356.167,
+   "end": 357.667,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0012",
+   "start": 357.667,
+   "end": 359.375,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0013",
+   "start": 359.375,
+   "end": 360.167,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0014",
+   "start": 360.167,
+   "end": 362.292,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0015",
+   "start": 362.292,
+   "end": 373.0,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0016",
+   "start": 373.0,
+   "end": 379.958,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0017",
+   "start": 379.958,
+   "end": 408.708,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0018",
+   "start": 408.708,
+   "end": 522.417,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0019",
+   "start": 522.417,
+   "end": 575.208,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0020",
+   "start": 575.208,
+   "end": 581.708,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0021",
+   "start": 581.708,
+   "end": 607.875,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0022",
+   "start": 607.875,
+   "end": 629.875,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0023",
+   "start": 629.875,
+   "end": 635.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0024",
+   "start": 635.917,
+   "end": 642.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0025",
+   "start": 642.917,
+   "end": 644.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0026",
+   "start": 644.792,
+   "end": 670.708,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0027",
+   "start": 670.708,
+   "end": 673.167,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0028",
+   "start": 673.167,
+   "end": 676.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0029",
+   "start": 676.792,
+   "end": 677.375,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0030",
+   "start": 677.375,
+   "end": 685.958,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0031",
+   "start": 685.958,
+   "end": 687.625,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0032",
+   "start": 687.625,
+   "end": 698.958,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0033",
+   "start": 698.958,
+   "end": 716.458,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0034",
+   "start": 716.458,
+   "end": 759.167,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L0-0035",
+   "start": 759.167,
+   "end": 771.625,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L1": [
+  {
+   "id": "trip_to_the_moon-L1-0000",
+   "start": 0.0,
+   "end": 102.25,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0001",
+   "start": 102.25,
+   "end": 178.625,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0002",
+   "start": 178.625,
+   "end": 181.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0003",
+   "start": 181.917,
+   "end": 226.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0004",
+   "start": 226.917,
+   "end": 253.458,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0005",
+   "start": 253.458,
+   "end": 283.417,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0006",
+   "start": 283.417,
+   "end": 334.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0007",
+   "start": 334.792,
+   "end": 338.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0008",
+   "start": 338.917,
+   "end": 360.167,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0009",
+   "start": 360.167,
+   "end": 379.958,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0010",
+   "start": 379.958,
+   "end": 408.708,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0011",
+   "start": 408.708,
+   "end": 522.417,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0012",
+   "start": 522.417,
+   "end": 575.208,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0013",
+   "start": 575.208,
+   "end": 581.708,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0014",
+   "start": 581.708,
+   "end": 607.875,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0015",
+   "start": 607.875,
+   "end": 635.917,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0016",
+   "start": 635.917,
+   "end": 673.167,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0017",
+   "start": 673.167,
+   "end": 698.958,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0018",
+   "start": 698.958,
+   "end": 716.458,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0019",
+   "start": 716.458,
+   "end": 759.167,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L1-0020",
+   "start": 759.167,
+   "end": 771.625,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L2": [
+  {
+   "id": "trip_to_the_moon-L2-0000",
+   "start": 0.0,
+   "end": 226.917,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L2-0001",
+   "start": 226.917,
+   "end": 253.458,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L2-0002",
+   "start": 253.458,
+   "end": 338.917,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L2-0003",
+   "start": 338.917,
+   "end": 379.958,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L2-0004",
+   "start": 379.958,
+   "end": 522.417,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L2-0005",
+   "start": 522.417,
+   "end": 635.917,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L2-0006",
+   "start": 635.917,
+   "end": 698.958,
+   "shots": 9,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L2-0007",
+   "start": 698.958,
+   "end": 759.167,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L2-0008",
+   "start": 759.167,
+   "end": 771.625,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L3": [
+  {
+   "id": "trip_to_the_moon-L3-0000",
+   "start": 0.0,
+   "end": 379.958,
+   "shots": 17,
+   "lines": 0
+  },
+  {
+   "id": "trip_to_the_moon-L3-0001",
+   "start": 379.958,
+   "end": 771.625,
+   "shots": 19,
+   "lines": 0
+  }
+ ],
+ "L4": [
+  {
+   "id": "trip_to_the_moon-L4-0000",
+   "start": 0.0,
+   "end": 771.625,
+   "shots": 36,
+   "lines": 0
+  }
+ ]
+}

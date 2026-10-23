@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0021",
+  "start": 73.875,
+  "end": 74.625,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.75,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 21,
+   "start": 0.0,
+   "end": 0.75,
+   "description": "Close-up of a camel howling, static shot."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.75
+  }
+ ]
+}

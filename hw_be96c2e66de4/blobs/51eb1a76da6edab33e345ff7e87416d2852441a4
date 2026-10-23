@@ -1,0 +1,245 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L3-0000",
+  "start": 0.0,
+  "end": 303.069,
+  "shots": 29,
+  "lines": 0
+ },
+ "duration": 303.069,
+ "cuts": [
+  92.859,
+  106.306,
+  109.343,
+  111.845,
+  114.181,
+  121.722,
+  126.893,
+  138.472,
+  149.616,
+  150.884,
+  164.031,
+  167.134,
+  169.202,
+  171.338,
+  173.173,
+  183.917,
+  191.558,
+  193.86,
+  226.593,
+  228.428,
+  231.832,
+  242.275,
+  261.161,
+  273.74,
+  275.842,
+  291.324,
+  296.429,
+  299.933
+ ],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 92.859,
+   "description": "A static title card displaying text, static."
+  },
+  {
+   "index": 1,
+   "start": 92.859,
+   "end": 106.306,
+   "description": "Medium shot of C1 reading a book called 'How to be a Detective', then looking down, then putting the book away, static."
+  },
+  {
+   "index": 2,
+   "start": 106.306,
+   "end": 109.343,
+   "description": "Medium close-up of C1 opening a book and reading it, static."
+  },
+  {
+   "index": 3,
+   "start": 109.343,
+   "end": 111.845,
+   "description": "Medium shot of C1 walking towards a broom while reading a letter, static camera."
+  },
+  {
+   "index": 4,
+   "start": 111.845,
+   "end": 114.181,
+   "description": "Medium shot of C1 looking upset and shifting his gaze downwards, static."
+  },
+  {
+   "index": 5,
+   "start": 114.181,
+   "end": 121.722,
+   "description": "Close-up of an intertitle displaying text, static camera."
+  },
+  {
+   "index": 6,
+   "start": 121.722,
+   "end": 126.893,
+   "description": "Medium shot of C1 sweeping trash, static camera."
+  },
+  {
+   "index": 7,
+   "start": 126.893,
+   "end": 138.472,
+   "description": "Medium shot of C1 sitting on the grass alongside a dog, holding a biscuit, static."
+  },
+  {
+   "index": 8,
+   "start": 138.472,
+   "end": 149.616,
+   "description": "Title card shot of text explaining the plot, static."
+  },
+  {
+   "index": 9,
+   "start": 149.616,
+   "end": 150.884,
+   "description": "Medium shot of C1 smiling slyly, static."
+  },
+  {
+   "index": 10,
+   "start": 150.884,
+   "end": 164.031,
+   "description": "Medium shot of C1 leaving through the curtained doorway, static camera."
+  },
+  {
+   "index": 11,
+   "start": 164.031,
+   "end": 167.134,
+   "description": "Medium shot of C1 walking down a sidewalk and stopping to look into a shop window, static."
+  },
+  {
+   "index": 12,
+   "start": 167.134,
+   "end": 169.202,
+   "description": "Extreme close-up of a sweet store display sitting on a shelf, static shot."
+  },
+  {
+   "index": 13,
+   "start": 169.202,
+   "end": 171.338,
+   "description": "Medium shot of C1 standing on the street, static camera."
+  },
+  {
+   "index": 14,
+   "start": 171.338,
+   "end": 173.173,
+   "description": "Medium shot of a photograph featuring C1 posing in display window, static."
+  },
+  {
+   "index": 15,
+   "start": 173.173,
+   "end": 183.917,
+   "description": "Medium shot of C1 holding money, static camera."
+  },
+  {
+   "index": 16,
+   "start": 183.917,
+   "end": 191.558,
+   "description": "Medium shot of C1 standing in a store talking to a shop assistant, static."
+  },
+  {
+   "index": 17,
+   "start": 191.558,
+   "end": 193.86,
+   "description": "Medium shot of C1 smiling, static camera."
+  },
+  {
+   "index": 18,
+   "start": 193.86,
+   "end": 226.593,
+   "description": "Medium shot of C1 sweeping the floor before falling over, static."
+  },
+  {
+   "index": 19,
+   "start": 226.593,
+   "end": 228.428,
+   "description": "Medium shot of C1 walking past a shop window, static."
+  },
+  {
+   "index": 20,
+   "start": 228.428,
+   "end": 231.832,
+   "description": "Medium shot of C1 standing in a store, leaning on a counter while looking at the shop assistant, static."
+  },
+  {
+   "index": 21,
+   "start": 231.832,
+   "end": 242.275,
+   "description": "Medium shot of C1 leaning on a counter while talking to a man, static camera."
+  },
+  {
+   "index": 22,
+   "start": 242.275,
+   "end": 261.161,
+   "description": "Medium shot of C1 dropping a broom and then hiding behind a curtain, static camera."
+  },
+  {
+   "index": 23,
+   "start": 261.161,
+   "end": 273.74,
+   "description": "Medium shot of C1 talking to a woman, static camera."
+  },
+  {
+   "index": 24,
+   "start": 273.74,
+   "end": 275.842,
+   "description": "Medium shot of C1 and C2 talking, static camera."
+  },
+  {
+   "index": 25,
+   "start": 275.842,
+   "end": 291.324,
+   "description": "Medium shot of C1 showing money to C2 before C2 walks away, static."
+  },
+  {
+   "index": 26,
+   "start": 291.324,
+   "end": 296.429,
+   "description": "Medium shot of C1 standing and C2 kneeling to pick up a pile of clothes from the floor, static camera."
+  },
+  {
+   "index": 27,
+   "start": 296.429,
+   "end": 299.933,
+   "description": "Medium shot of C1 standing and C2 kneeling on the floor to pick up paper scraps, C1 crouching down to help. Static camera."
+  },
+  {
+   "index": 28,
+   "start": 299.933,
+   "end": 303.069,
+   "description": "Medium shot of C1 crying into a handkerchief, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 92.859
+  },
+  {
+   "start": 92.859,
+   "end": 150.884
+  },
+  {
+   "start": 150.884,
+   "end": 169.202
+  },
+  {
+   "start": 169.202,
+   "end": 191.558
+  },
+  {
+   "start": 191.558,
+   "end": 242.275
+  },
+  {
+   "start": 242.275,
+   "end": 303.069
+  }
+ ],
+ "task_id": "sherlock_jr-L3-0000-scr",
+ "descriptions_available": true
+}

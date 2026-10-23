@@ -1,0 +1,99 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0019",
+  "start": 1806.638,
+  "end": 1886.852,
+  "shots": 11,
+  "lines": 0
+ },
+ "duration": 80.214,
+ "cuts": [
+  4.104,
+  15.482,
+  29.43,
+  31.565,
+  41.675,
+  47.314,
+  50.117,
+  72.239,
+  73.474,
+  79.146
+ ],
+ "shots": [
+  {
+   "index": 221,
+   "start": 0.0,
+   "end": 4.104,
+   "description": "Medium shot of C1 holding an umbrella, static."
+  },
+  {
+   "index": 222,
+   "start": 4.104,
+   "end": 15.482,
+   "description": "Medium shot of C1 adjusting his tie with C2 watching, then C1 disappearing, static."
+  },
+  {
+   "index": 223,
+   "start": 15.482,
+   "end": 29.43,
+   "description": "Medium shot of C1 opening a vault door and walking away towards the street, static camera."
+  },
+  {
+   "index": 224,
+   "start": 29.43,
+   "end": 31.565,
+   "description": "Medium shot of C1 driving a car and looking backward, static camera."
+  },
+  {
+   "index": 225,
+   "start": 31.565,
+   "end": 41.675,
+   "description": "Medium long shot of C1 standing on the sidewalk next to a post as a car passes in the background, static camera."
+  },
+  {
+   "index": 226,
+   "start": 41.675,
+   "end": 47.314,
+   "description": "Medium shot of C1 walking down a sidewalk and meeting C2 near a parked car, static camera."
+  },
+  {
+   "index": 227,
+   "start": 47.314,
+   "end": 50.117,
+   "description": "Medium shot of C1 standing on the sidewalk and entering a building, with a static camera."
+  },
+  {
+   "index": 228,
+   "start": 50.117,
+   "end": 72.239,
+   "description": "Medium wide shot of C1 ascending a ladder to the ceiling, static."
+  },
+  {
+   "index": 229,
+   "start": 72.239,
+   "end": 73.474,
+   "description": "Medium shot of C1 standing on a roof, static camera."
+  },
+  {
+   "index": 230,
+   "start": 73.474,
+   "end": 79.146,
+   "description": "Medium shot of C1 lifting up a trapdoor on a rooftop and dropping a top hat down, static."
+  },
+  {
+   "index": 231,
+   "start": 79.146,
+   "end": 80.214,
+   "description": "Medium shot of C1 walking on a roof, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 80.214
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0019-scr",
+ "descriptions_available": true
+}

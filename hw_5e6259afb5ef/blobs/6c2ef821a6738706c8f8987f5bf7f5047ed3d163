@@ -1,0 +1,35 @@
+"""Review sheets (not part of any package): per shot, the frames used + detailed description + cross-check verdicts."""
+import sys, textwrap; sys.path.insert(0, "scripts")
+from lib import *
+from PIL import Image, ImageDraw
+rich = json.load(open(ANN / "descriptions_rich.json"))["shots"]
+corr = json.load(open(ANN / "descriptions.json"))["descriptions"]
+xc = {}
+for l in open(ANN / "rich_crosscheck.jsonl"):
+    r = json.loads(l); w = r["where"]
+    if isinstance(w, dict) and "shot" in w: xc.setdefault(w["shot"], []).append(r)
+shots, _ = film_info(); OUT = ROOT / "review"; OUT.mkdir(exist_ok=True)
+W = 1280
+for k, r in rich.items():
+    i = int(k); ts = frame_times(*shots[i]); n = len(ts); cols = 4
+    th = [Image.open(frame_path(t)).resize((320, 180)) for t in ts]
+    rowsn = math.ceil(n / cols)
+    lines = [f"shot {i}  {shots[i][0]:.2f}-{shots[i][1]:.2f}s   frames at " + ", ".join(f"{t:.2f}" for t in ts), "one-sentence (corrected): " + corr[k]]
+    for c in ["setting", "characters", "props", "action", "camera", "light_mood", "sound"]: lines.append(f"{c}: {r[c]}")
+    lines.append(f"drafter says sentence consistent: {r['drafter_description_consistent']}  checker says contradicted: {r['checker_description_contradicted']}")
+    for x in xc.get(i, []):
+        chk = x["check"]; tag = "RECHECK" if x["where"].get("recheck") else "CHECK"
+        for c, lst in (chk.get("columns") or {}).items():
+            for s in lst: lines.append(f"[{tag}] {c}: {s.get('verdict')} frames{s.get('frames')} '{(s.get('quote') or '')[:90]}'")
+        if x.get("sound_check"):
+            for c, lst in (x["sound_check"].get("columns") or {}).items():
+                for s in lst: lines.append(f"[{tag} audio] {c}: {s.get('verdict')} '{(s.get('quote') or '')[:90]}'")
+        if chk.get("omissions"): lines.append(f"[{tag}] omissions noted: " + "; ".join(chk["omissions"])[:300])
+    wrapped = [w for l in lines for w in textwrap.wrap(l, 170) or [""]]
+    H = rowsn * 180 + 16 * len(wrapped) + 20
+    sheet = Image.new("RGB", (W, H), "white"); d = ImageDraw.Draw(sheet)
+    for j, im in enumerate(th): sheet.paste(im, ((j % cols) * 320, (j // cols) * 180))
+    y = rowsn * 180 + 8
+    for w in wrapped: d.text((8, y), w, fill=(0, 0, 0)); y += 16
+    sheet.convert("RGB").save(OUT / f"shot_{i:02d}.jpg", quality=80)
+print("sheets", len(rich))

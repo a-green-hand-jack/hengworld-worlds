@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0031",
+  "start": 102.12,
+  "end": 104.04,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.92,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 31,
+   "start": 0.0,
+   "end": 1.92,
+   "description": "Extreme wide shot of an alien landscape with lightning flashing, panning right."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.92
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0031-scr",
+ "descriptions_available": true
+}

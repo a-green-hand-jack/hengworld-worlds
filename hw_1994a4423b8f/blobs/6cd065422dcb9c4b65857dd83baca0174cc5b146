@@ -1,0 +1,8 @@
+# Audit verdict, round 2 (objective #7)
+Checked (scorer 5f8117a, executor 7843b9d, steward 34f962f, task-maker 9dd842b):
+- Adapted judge (`scores/judge/judge_adapted.py`) vs CrewCut df54b3a `judge.py`: same prompt, frames, yes/no parse, temperature 0; only max_tokens 3->1024, empty-answer error, ledger. Measure unchanged. Accepted.
+- Ledger tally recomputed from the JSONL files: 13 requests, 89,112 prompt / 13 completion tokens, cost 0.0268 USD at the recorded price (SCORES.md says 0.0272; rounding from per-line rounding, immaterial). Within 40.
+- Judge check: right 3/3 yes; wrong 1/6 yes (ledger answers match the check files). Small n, stated as such.
+- c: correspondence 0.0 (3 shots, all "no", placeholder solid-colour frames: consistent); cut F1 0.8 recomputed by hand (P=1, R=2/3); WER/onset n/a; purity, S, provenance, T0/T1 not run with reasons; nothing claimed.
+- Executor: run unchanged, no Gemini requests; no key found in executor repo.
+Not done: I did not rerun Gemini requests myself (no cost incurred by audit); verified from ledgers and code.

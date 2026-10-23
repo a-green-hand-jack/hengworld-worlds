@@ -1,0 +1,10 @@
+# Audit criteria (written before reading the makers' claims)
+
+Approval requires all of:
+1. Every admitted item (Caminandes 3) has a decision, evidence and a sha256 verified by a check (compare with configs/films.yaml).
+2. Task data (shots/cuts, dialogue, hierarchy, task ids, fields) reproduced from the record by the recorded commands, and equal to dataset d509bed, or each difference listed and explained with evidence.
+3. At least one task (caminandes3-L1-0000-scr) ran under the protocol (--system fixed --profile smoke) from the published package only; records complete (command, log, cost, failures); score c computed by the protocol's measures (Q, cut F1, shot correspondence, others); WER/onset marked not applicable.
+4. Anything needing a missing resource (T0 generators, screening, S, any uncomputable component) is "not run" with a reason and no claim.
+5. Protocol unchanged: steward's brief equals CrewCut docs; configs untouched.
+Also: no answer key in the executor-readable paths; Gemini requests across all positions <= 150, ledger matches response logs.
+Status: no delivery reviewed yet (see later records).

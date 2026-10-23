@@ -1,0 +1,112 @@
+{
+ "film_id": "coffee_run",
+ "duration_s": 184.58,
+ "L0": [
+  {
+   "id": "coffee_run-L0-0000",
+   "start": 0.0,
+   "end": 6.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "coffee_run-L0-0001",
+   "start": 6.792,
+   "end": 56.458,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "coffee_run-L0-0002",
+   "start": 56.458,
+   "end": 106.667,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "coffee_run-L0-0003",
+   "start": 106.667,
+   "end": 170.125,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "coffee_run-L0-0004",
+   "start": 170.125,
+   "end": 184.583,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L1": [
+  {
+   "id": "coffee_run-L1-0000",
+   "start": 0.0,
+   "end": 6.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "coffee_run-L1-0001",
+   "start": 6.792,
+   "end": 56.458,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "coffee_run-L1-0002",
+   "start": 56.458,
+   "end": 106.667,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "coffee_run-L1-0003",
+   "start": 106.667,
+   "end": 170.125,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "coffee_run-L1-0004",
+   "start": 170.125,
+   "end": 184.583,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L2": [
+  {
+   "id": "coffee_run-L2-0000",
+   "start": 0.0,
+   "end": 170.125,
+   "shots": 4,
+   "lines": 0
+  },
+  {
+   "id": "coffee_run-L2-0001",
+   "start": 170.125,
+   "end": 184.583,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L3": [
+  {
+   "id": "coffee_run-L3-0000",
+   "start": 0.0,
+   "end": 184.583,
+   "shots": 5,
+   "lines": 0
+  }
+ ],
+ "L4": [
+  {
+   "id": "coffee_run-L4-0000",
+   "start": 0.0,
+   "end": 184.583,
+   "shots": 5,
+   "lines": 0
+  }
+ ]
+}

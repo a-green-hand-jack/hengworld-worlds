@@ -1,0 +1,49 @@
+# Brief — CrewCut round (Caminandes 3, one stretch per pipeline)
+
+Sources: objective = steward#1; Issue 3 = `/crewcut/crewcut-issue-3.md` (I3); code = `/crewcut/crewcut.git` dev @ df54b3a (`configs/benchmark.yaml` = BM, `configs/films.yaml` = FILMS, `configs/prices.yaml` = PRICES, `configs/tools.yaml` = TOOLS, README, `.agents/memory/project/agentic-pipelines.md` = AP). Published dataset: `crewcut-dataset` resource, revision d509bed (not visible to steward's resource list).
+
+## 1. What the objective asks (quoted)
+1. "Breakdown, only the dev film Caminandes 3 (2.5 minutes, 37 shots, no dialogue): from the catalogue query to its task packages (find the candidate and read its licence for this film only, fetch the pinned master from its source and check its sha256 against `configs/films.yaml`, then shots, dialogue, hierarchy, provenance if feasible, tasks). Compare the result with the published dataset at revision d509bed: cuts, dialogue, hierarchy, task ids and fields. List every difference and explain it."
+2. "Shot descriptions: draft the description of every shot of the film with CrewCut's own describe step, on the `gemini` resource, and record the model that drafted them."
+3. "Evaluation, one of those tasks (for example caminandes3-L1-0000-scr) run with the fixed pipeline (`--system fixed --profile smoke`, the placeholder generator), scored to a complete c: the delivery check (Q), cut F1, shot correspondence judged through CrewCut's continuity judge on the `gemini` resource from those descriptions, and every other component of c the code computes for that run. The film has no dialogue, so WER and line-onset error do not apply: record them as not applicable. A component that cannot be computed is marked "not run" with the reason, without a conclusion."
+4. "The spend: the requests made to Gemini, by purpose, with the token usage the responses report, and the cost where a price is known (CrewCut's `configs/prices.yaml` or the provider's published price, with its source and date)."
+- Out: "The real generators (T0), screening and the score S are out of this round: mark them "not run"."
+- Rules: judgment by agents recorded as data; commands reproducible with checks. "Do not change CrewCut's fixed configuration or protocol; a gap or inconsistency in its documents, and every decision Issue #3 leaves open, belongs to CrewCut's maintainer: record it, do not choose. Nothing goes back to CrewCut." Install with pip, core only.
+- Deliver: benchmark files and records (decisions as data, commands run with outcomes, comparison with each difference explained, descriptions with model, evaluation result with each component of c and how computed, spend) and a statement of what was not run.
+- Budget: 60 turns, 3600 model seconds for the whole world, two hours wall clock, at most 150 requests to Gemini.
+
+## 2. Protocol, verbatim from the documents
+### BM (`configs/benchmark.yaml`, version "0.1.0")
+- hierarchy: beat {min_shots 2, max_shots 8, max_seconds 40}; scene {link_window_shots 3, kappa 1.0, min_seconds 12}; sequence {min_scenes 2, max_scenes 6, max_seconds 600}; film {max_seconds 900} (L4 only for films ≤15 min); sample_per_film {L0: 30, L1: 15} (duration-stratified, fixed seed per film); evaluate_levels [L0..L4].
+- tracks: [ref, scr].
+- delivery: mp4; video h264, yuv420p, 1280x720, 24 fps; audio aac, 2 ch, 48000 Hz; subtitles webvtt, en; duration_tolerance 0.05.
+- budget_per_minute (of the segment): model_usd 20.0; tool_usd 5.0; wall_clock_hours 1.0; wall_clock_floor_minutes 15.
+- tiers: T0 [image.generate, image.edit, speech.synthesize, music.generate, sfx.generate, media.ffmpeg]; T1 = T0 + video.generate; T2 open (ranked separately).
+- runs: default 3, L4 2.
+- continuity: cut_tolerance_s [0.5, 1.0]; judge_frames_per_second 1; judge_frames_min 2; judge_frames_max 8.
+- screening: pairs 500, raters_per_pair 3, judge_min_agreement 0.75.
+- provenance: frame_sample_fps 2; phash_max_hamming 10; dino_min_cosine 0.92; audio_min_match 0.35; max_false_flag_rate 0.01.
+- reshoots: levels [L2, L3]; per_log 3; budget_fraction 0.30.
+- annotation_check_fraction 0.20; decision_check_fraction 0.10.
+### FILMS (`configs/films.yaml`), caminandes3
+id caminandes3; title "Caminandes 3"; year 2016; source "Blender open movie"; type Animation; licence "CC BY 3.0"; split dev; silent false; page https://archive.org/details/CaminandesLlamigos; duration_min 2.5; master_sha256 `028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f` (also in `/crewcut/SOURCES.md`; the local copy `/crewcut/masters/caminandes3.ogv` is for use only when the pinned file cannot be fetched from its source, and its use must be recorded).
+### I3 (Issue 3)
+- Selection (§1.2): licence CC0/CC BY/CC BY-SA or US public domain; no NC/ND; no third-party rights content (human judgment); PD needs a stated basis; one pinned master file with checksum. Making-ofs, trailers, clips are never candidates.
+- Annotations (§1.3): shots (cut frame+time, automatic); dialogue (ASR); shot descriptions (VLM draft, 1–3 sentences, "[shot size] of [subject] [action], [camera move]", characters as C1, C2, no colour/lens/style; model recorded); hierarchy L0–L4 (derived); provenance fingerprints (from master). Human correction of speakers/characters/descriptions is out of scope.
+- Hierarchy (§1.4): L1 beat 2–8 shots in one scene, ≤40 s (longer or lone shot = own beat); L2 scene by shot-appearance similarity, boundary where none of the 3 shots before and after are similar, scenes <12 s merged into previous; L3 2–6 scenes ≤10 min; L4 whole film, films ≤15 min. L2/L3/L4 segments are all tasks; L0 samples 30 shots, L1 15 beats, stratified by duration, seed by film; fewer ⇒ all. Two tracks per segment: Reference, Screenplay. Task contains: instruction, delivery spec, tool list, budget, input, ground truth (not visible to systems).
+- Published counts (§1.4): dev 299 segments / 598 tasks overall (all dev films, not Caminandes 3 alone). Caminandes 3: 37 shots, 0 dialogue lines, 2.5 min. I3 §1.6 probe: dialogue and hierarchy identical to release, 36 cuts identical, 90 task ids identical.
+- Evaluation (§2.4): R=(Q, Q·c, Q·S, $). Q: decodes with picture and sound; format per spec; duration ±5%; subtitles cover every line; log shows no generator read original input; provenance check finds no original frame/audio. Q fail ⇒ c and S zero. c: cut F1 at 0.5 s and 1.0 s; shot correspondence (judge sees only the original's shot description and the remake's frames of the same span, 1 fps, 2–8 frames, weighted by duration); WER and line-onset error; speaker/character purity; scene order. Judge must be from a different vendor than the system under test. Speaker/character purity needs human speaker labels (§2.7: missing).
+- Run rules (§2.2, 2.3): metered model calls; tool server; production log; sandbox; fixed pipeline = floor system (one still + slow push-in per shot, synthetic voice per speaker, background music, cut on the cut points).
+- Smoke command (README): `crewcut run --system fixed --task tasks/caminandes3-L1-0000-scr --runs runs --profile smoke`; `crewcut score --run runs/<run_id> --task ... --index <provenance.npz>`. TOOLS `profiles.smoke`: every generator replaced by placeholder; such runs are unofficial.
+- PRICES: models.default {input 5.00, output 25.00, cache_read 0.50, cache_write 6.25} USD/M tokens; unlisted model billed at default with detail.price_missing=true; "Pin these per benchmark version from the providers' pricing pages before any official run." No gemini entry exists.
+- TOOLS prices: image.generate/edit per_call 0.04; speech per_1k_chars 0.015; music/sfx per_second 0.002; video per_gpu_second 0.0008; ffmpeg 0.
+### AP
+Pipelines are agentic: agent does judgment, product code gives measured stages and gates; choices recorded as data; don't add drivers/resolvers; keep measured stages deterministic and pinned.
+
+## 3. Belongs to CrewCut's maintainer (record, do not choose)
+From I3 "待定事项": (1) which VLM drafts shot descriptions, and whether ~9,716-shot description spend is capped; (2) the version's generators, model prices, judge model (must differ in vendor from the system under test); (3) official run scale (full test = 5,030 min, ≈$125,700 per system-round at budget cap, 3 runs per task) or sampling; (4) source of raters (500 pairs x 3).
+Also: the gemini model id and prices used this round are not fixed by the documents (PRICES has no gemini entry; judge env `CREWCUT_JUDGE_*` is "chosen per benchmark version") — use what the resource gives, record it as a round-local choice, flag it as the maintainer's. Any inconsistency found between code and documents (e.g. README says 13 tests; FILMS duration vs measured; Issue §1.6 vs observed) is recorded as a gap, not resolved.
+Pending/unspecified that must be marked "not run" or open: T0 real generators, T1, screening, S, speaker/character purity (needs human labels), reshoots, controlled damage and provenance stress test at official scale (the scorer may run small validation; not protocol results).
+
+## 4. Out of scope
+Human annotation round; changing fixed parameters; new dataset release; paper rename.

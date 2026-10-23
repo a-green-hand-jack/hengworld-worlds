@@ -1,0 +1,70 @@
+"""Protocol measures (pure functions). No tuning: tolerances 0.5 s / 1.0 s, WER on lowercase words."""
+import re, statistics
+
+def match_cuts(ref, hyp, tol):
+    """One-to-one greedy matching on two sorted lists; returns number matched."""
+    ref, hyp = sorted(ref), sorted(hyp)
+    i = j = m = 0
+    while i < len(ref) and j < len(hyp):
+        d = hyp[j] - ref[i]
+        if abs(d) <= tol:
+            m += 1; i += 1; j += 1
+        elif d < 0: j += 1
+        else: i += 1
+    return m
+
+def cut_f1(ref, hyp, tol):
+    if not ref and not hyp: return 1.0
+    m = match_cuts(ref, hyp, tol)
+    if m == 0: return 0.0
+    p, r = m / len(hyp), m / len(ref)
+    return 2 * p * r / (p + r)
+
+def _words(t):
+    t = t.lower()
+    t = re.sub(r"[^\w\s']", " ", t)
+    return t.split()
+
+def edit_distance(a, b):
+    prev = list(range(len(b) + 1))
+    for i, x in enumerate(a, 1):
+        cur = [i]
+        for j, y in enumerate(b, 1):
+            cur.append(min(prev[j] + 1, cur[j-1] + 1, prev[j-1] + (x != y)))
+        prev = cur
+    return prev[-1]
+
+def wer(ref_text, hyp_text):
+    r = _words(ref_text)
+    if not r: return None
+    return edit_distance(r, _words(hyp_text)) / len(r)
+
+def onset_median_error(ref_starts, hyp_starts):
+    """Median |onset error| after pairing each reference line with the nearest unused hypothesis line."""
+    if not ref_starts or not hyp_starts: return None
+    used, errs = set(), []
+    for r in ref_starts:
+        best = min((k for k in range(len(hyp_starts)) if k not in used),
+                   key=lambda k: abs(hyp_starts[k] - r), default=None)
+        if best is None: break
+        used.add(best); errs.append(abs(hyp_starts[best] - r))
+    return statistics.median(errs) if errs else None
+
+def recover_scene_labels(orig_scenes, remake_scenes):
+    """Objective §二 场景顺序: each remake scene -> the original scene it overlaps most in time (scenes are (start, end)).
+    Recorded choices (not rules of the objective): ties go to the earlier original scene; a remake scene overlapping no original scene
+    gets the label None, which equals no original scene; repeated labels are kept as they are (no merging)."""
+    out = []
+    for a, b in remake_scenes:
+        ov = [max(0.0, min(b, e) - max(a, s)) for s, e in orig_scenes]
+        out.append(None if not ov or max(ov) <= 0 else ov.index(max(ov)))
+    return out
+
+def scene_order(ref_seq, hyp_seq):
+    if not ref_seq: return None
+    return max(0.0, 1 - edit_distance(list(ref_seq), list(hyp_seq)) / len(ref_seq))
+
+def shot_correspondence(shots, accepted):
+    """shots: [(start,end)], accepted: [bool] -> accepted duration share."""
+    tot = sum(e - s for s, e in shots)
+    return sum(e - s for (s, e), a in zip(shots, accepted) if a) / tot if tot else None

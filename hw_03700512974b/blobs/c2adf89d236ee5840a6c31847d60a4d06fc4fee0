@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0021",
+  "start": 100.125,
+  "end": 100.708,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.583,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 21,
+   "start": 0.0,
+   "end": 0.583,
+   "description": "Medium shot of C1 standing in profile while holding a lit candle, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.583
+  }
+ ],
+ "task_id": "domini_canes-L0-0021-ref",
+ "descriptions_available": true
+}

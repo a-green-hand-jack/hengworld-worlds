@@ -1,0 +1,63 @@
+"""Draft shot descriptions with the pinned VLM; paid, resumable, one request per shot.
+
+Usage: describe_shots.py MASTER SHOTS_JSON OUT_DIR [--limit N]
+Writes OUT_DIR/descriptions.json (shot index -> text) and appends every request to
+OUT_DIR/gemini_calls.jsonl (purpose, model, settings, reported tokens). Never repeats a shot
+already described. Exits non-zero if any shot is left without a description.
+ADAPTATIONS (see decisions/D-adaptations.json): fields are read through crewcut.io.read_shots
+(published `cut_frames`/`duration_s`); the endpoint rejects reasoning_effort=none for this model (HTTP 400), so it is omitted;
+max_tokens=1024 leaves room for any thinking tokens; frames are taken inside each shot via the old crewcut.build.describe.
+"""
+import json, os, sys, time, urllib.request
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from crewcut.build.describe import PROMPT, frames_b64
+from crewcut.io import read_shots
+
+MODEL = "gemini-3.5-flash-lite"
+SETTINGS = {"temperature": 0, "max_tokens": 1024, "n_frames": 3, "frame_width": 448}
+
+
+def main():
+    master, shots_p, out = Path(sys.argv[1]), Path(sys.argv[2]), Path(sys.argv[3])
+    limit = int(sys.argv[sys.argv.index("--limit") + 1]) if "--limit" in sys.argv else None
+    out.mkdir(parents=True, exist_ok=True)
+    s = read_shots(shots_p)
+    fps = s["fps"]
+    bounds = [0.0] + [c / fps for c in s["cuts"]] + [s["duration"]]
+    dp, lp = out / "descriptions.json", out / "gemini_calls.jsonl"
+    desc = json.loads(dp.read_text()) if dp.exists() else {}
+    base = os.environ["HT_GEMINI_URL"].rstrip("/")
+    key = os.environ["HT_RESOURCE_TOKEN"]
+    done = 0
+    for i, (a, b) in enumerate(zip(bounds[:-1], bounds[1:])):
+        if str(i) in desc:
+            continue
+        if limit is not None and done >= limit:
+            break
+        content = [{"type": "text", "text": PROMPT.format(chars="none yet")}]
+        content += [{"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{x}"}}
+                    for x in frames_b64(master, a, b, SETTINGS["n_frames"], SETTINGS["frame_width"])]
+        body = {"model": MODEL, "messages": [{"role": "user", "content": content}],
+                "temperature": SETTINGS["temperature"],
+                "max_tokens": SETTINGS["max_tokens"]}
+        req = urllib.request.Request(base + "/chat/completions", json.dumps(body).encode(),
+                                     {"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+        r = json.load(urllib.request.urlopen(req, timeout=180))
+        text = (r["choices"][0]["message"].get("content") or "").strip()
+        with open(lp, "a") as f:
+            f.write(json.dumps({"purpose": "shot-description", "shot": i, "model": r.get("model", MODEL),
+                                "requested_model": MODEL, "settings": SETTINGS, "usage": r.get("usage"),
+                                "ok": bool(text), "t": int(time.time())}) + "\n")
+        if not text:
+            print(f"shot {i}: empty reply", file=sys.stderr); sys.exit(3)
+        desc[str(i)] = text
+        dp.write_text(json.dumps(desc, indent=1, ensure_ascii=False))
+        done += 1
+    missing = [i for i in range(len(bounds) - 1) if str(i) not in desc]
+    print(f"described={len(desc)} missing={len(missing)}")
+    sys.exit(0 if (not missing or limit is not None) else 4)
+
+
+if __name__ == "__main__":
+    main()

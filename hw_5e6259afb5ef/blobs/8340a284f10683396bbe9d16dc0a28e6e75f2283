@@ -1,0 +1,17 @@
+Here is your detailed description of shot 21:
+{"setting": "P1: Frozen pond and snowy field. Outdoor, daytime, clear blue sky with soft white clouds and distant snowy mountains in the background.", "characters": "C1: center-left, head and long neck visible, eyelids tightly shut, mouth wide open with tongue sticking out in an exaggerated scream.", "props": "None.", "action": "C1 stands with its head tilted back, eyes squeezed shut, and mouth wide open, letting out a loud, high-pitched scream while its tongue wiggles and its tail briefly pops up on the right.", "camera": "Close-up, slightly low angle, static camera.", "light_mood": "Bright natural sunlight with warm tones on the fur against a cool cyan sky; comedic and frantic mood.", "sound": "A loud, high-pitched, panicked animal scream/bray."}
+An independent checker looking at the same frames flagged:
+- setting: 'P1: Frozen pond and snowy field.' -> unsupported
+- action: 'letting out a loud, high-pitched scream' -> unsupported
+Rewrite the whole JSON (same keys, same limits, no description_* keys needed) so that every statement is confirmed by the frames or audio. Reply with JSON only.
+
+Frames:
+[frame 1 at 74.03s]
+IMG:0c8058cabb74978b6614327e29e9b5bcdf1ed2d0d7f8458c4d5d398efdd0d6ac
+[frame 2 at 74.17s]
+IMG:82b27fbc61cf381ed3409a7caf9bf6fd3607b6e90ab4bbe03f5f14778fbe0e46
+[frame 3 at 74.33s]
+IMG:dafb49a294adcfd01f9bc97a5bee438cc2fb72fabbf6f529a3b852ecc797174f
+[frame 4 at 74.47s]
+IMG:631f495ae8a20e3970c4dc5149a637268f3c808a9d31ca30473ebc91260c666b
+AUD:5d39b700ff37cd6f710d4376f6a701800be194a7625364404178e500d0271083

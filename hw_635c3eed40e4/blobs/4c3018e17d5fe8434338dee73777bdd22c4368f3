@@ -1,0 +1,9 @@
+# Costs (USD, official prices from the published prices.json, queried 2026-10-22; borne by the world's paid key: gemini, gemini-native)
+Final runs (all calls through the issuing ToolService, ledgers written by it after each response):
+- 28 delivered runs (14 Screenplay + 14 Reference): 4.0858 total (summary.csv; image stills x 0.0336, music 0.08 per run, Reference description calls by reported tokens via model_call).
+- Failed attempts in this round: Reference L0-0002 attempt 1 (music answer without `candidates`; booked 0.08 + stills = 0.1493, kept in attempts/ref-L0-0002-attempt1/); the 14 Reference rerun-1 attempts rejected by the source check (0.00, attempts/ref-rerun-1-model_call-rejected/).
+- Superseded earlier runs (direct generator calls, non-frame-exact clips): 4.1539 (runs/superseded/v1-direct-calls/), plus earlier failed attempts 0.1587, discarded test 0.1136, probes 0.1136 (lyria 0.08 + image 0.0336). Everything counts toward the executor's spend: ≈ 8.7 USD in total, far below the 200 USD cap.
+- Fixed pipeline per finished minute: 1845.8 s = 30.76 min delivered → 0.1328 USD/min (final runs); with the failed attempt 0.1376.
+- Wall clock per run: manifest.json (3 runs in parallel).
+Reading applied (steward decision 16 / task-maker D004): model_call (description) is billed and logged but not source-screened; ledger rows carry source_screened=false. Generator tools are screened.
+Pipeline revisions: t0.py hash is recorded in decisions.md; the last edit (logging a music answer without candidates) was made after the first 13 Reference runs; L0-0002 ran with the final version, the others with the version before it (the difference only adds a log line and an explicit error).

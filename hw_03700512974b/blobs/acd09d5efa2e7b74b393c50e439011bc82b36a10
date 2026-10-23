@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L1-0004",
+  "start": 69.2,
+  "end": 74.4,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 5.2,
+ "cuts": [
+  0.96,
+  1.52,
+  2.64
+ ],
+ "shots": [
+  {
+   "index": 13,
+   "start": 0.0,
+   "end": 0.96,
+   "description": "Medium shot of C1 wielding energy weapon, static."
+  },
+  {
+   "index": 14,
+   "start": 0.96,
+   "end": 1.52,
+   "description": "Wide shot of C1 swinging an object, static camera."
+  },
+  {
+   "index": 15,
+   "start": 1.52,
+   "end": 2.64,
+   "description": "Medium shot of C1 riding a hoverboard and kicking a glowing orb, static camera."
+  },
+  {
+   "index": 16,
+   "start": 2.64,
+   "end": 5.2,
+   "description": "Wide shot of C1 floating forward through a tunnel lined with eyes, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 5.2
+  }
+ ],
+ "task_id": "spirit_chaser-L1-0004-ref",
+ "descriptions_available": true
+}

@@ -1,0 +1,3 @@
+Does this image match the text description? Description: Frozen pond and snowy field. A snowy plain with a frozen blue puddle, a wire fence with wooden posts, and distant snowy mountains.
+The image should be a 16:9 location image with no characters. Reply JSON {"matches": true|false, "why": "..."}.
+IMG:bf053cb7b74d750e05711054b57c4ee54ba74580a5028b444dc0b0b89b932f1b

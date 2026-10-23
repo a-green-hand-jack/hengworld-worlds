@@ -1,0 +1,44 @@
+# Brief — CrewCut round (steward)
+
+Sources (all read-only, `crewcut` resource): README = `crewcut.git` @df54b3a `README.md`; Issue #3 = `crewcut-issue-3.md`; cfg = `configs/benchmark.yaml` (the fixed configuration; its header: "Change it only with a new benchmark version"); memory = `.agents/memory/project/agentic-pipelines.md`; dataset = `crewcut-dataset-d509bed/` (HF `Jack-Jieke-Wu/crewcut`, revision d509bed73a9cad9f6afe0e6b35a6fe3464e5cae1).
+
+## 1. What the objective asks (issue steward#1, quoted)
+- Install the CrewCut code with pip, its core only.
+- "Breakdown, only the dev film Caminandes 3 (2.5 minutes, 37 shots, no dialogue): from the catalogue query to its task packages (find the candidate and read its licence for this film only, fetch the pinned master from its source and check its sha256 against `configs/films.yaml`, then shots, dialogue, hierarchy, provenance if feasible, tasks)."
+- "Compare the result with the published dataset at revision d509bed: cuts, dialogue, hierarchy, task ids and fields. List every difference and explain it."
+- "`masters/caminandes3.ogv` ... to be used only if the pinned file cannot be fetched from its source; record it if you use it."
+- "Evaluation, one of those tasks (for example caminandes3-L1-0000-scr) run with the fixed pipeline (`--system fixed --profile smoke`, the placeholder generator), scored up to the delivery check (Q) and cut F1."
+- No API keys: "do not run what needs one (shot descriptions, the judge, real generators, screening) and mark each such part 'not run' ..., without drawing a conclusion from it."
+- Judgment is done by agents and recorded as data; commands are reproducible steps with checks. "Do not change CrewCut's fixed configuration or protocol"; gaps/inconsistencies and every decision Issue #3 leaves open "belong to CrewCut's maintainer: record it, do not choose. Nothing goes back to CrewCut."
+- Deliver: benchmark files and records (decisions as data, commands with outcomes, comparison with each difference explained, evaluation result with Q and cut F1) and a statement of what was not run.
+- Budget: 60 turns, 3600 model seconds, two hours wall clock (whole world).
+
+## 2. Protocol, item by item
+Film (cfg none; `configs/films.yaml` id `caminandes3`): title "Caminandes 3", year 2016, source "Blender open movie", licence "CC BY 3.0", split dev, silent false, page https://archive.org/details/CaminandesLlamigos, duration_min 2.5, master_sha256 `028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f`. Issue #3 §1.1 table: 37 shots, 0 dialogue lines. Issue #3 §1.6: pinned file is the Internet Archive auto-transcoded small `.ogv` (not the largest file).
+
+Selection (Issue #3 §1.2): licence CC0, CC BY, CC BY-SA or US public domain; any NC/ND excluded; no third-party-held content (human judgment); pinned exact master file with checksum. Only features, not making-ofs/trailers/clips, are candidates. `configs/exclusions.yaml` overrides licence tags (substring match on title; nine films listed).
+
+Hierarchy (cfg `hierarchy`): beat min_shots 2, max_shots 8, max_seconds 40; scene link_window_shots 3, kappa 1.0, min_seconds 12; sequence min_scenes 2, max_scenes 6, max_seconds 600; film max_seconds 900 (L4 only films ≤15 min); sample_per_film L0 30, L1 15; levels L0–L4. Issue #3 §1.4 words the same rules; README: "`hierarchy.build` reproduces the released L0–L4 segmentation exactly for all 37 films."
+Tasks (Issue #3 §1.4): L2–L4 segments all tasks; L0/L1 fixed duration-stratified sample, seed from the film; two tracks `ref`, `scr` (cfg `tracks: [ref, scr]`). Each package: instructions, delivery spec, tier tool list, budget, input (ref: original segment; scr: script + shot table), ground truth for scoring only (hidden from the system). Dev counts: L0 155 segments/310 tasks, L1 69/138, L2 56/112, L3 14/28, L4 5/10 (all dev films, not Caminandes 3 alone). Issue §1.6 probe: for this film 36 cuts and 90 task ids matched the release.
+Annotations (Issue #3 §1.3): shots = cut frame numbers and times from automatic detection; dialogue = ASR (Whisper behind Silero VAD); descriptions = VLM draft "[shot size] of [subject] [action], [camera move]" (needs a VLM key: not run); provenance = frame and audio fingerprints from the master.
+
+Delivery (cfg `delivery`): container mp4; video h264, yuv420p, 1280×720, 24 fps; audio aac, 2 channels, 48000 Hz; subtitles webvtt, en; duration_tolerance 0.05.
+Budget (cfg `budget_per_minute`): model_usd 20.0, tool_usd 5.0 per minute of segment; wall_clock_hours 1.0; wall_clock_floor_minutes 15.
+Tiers (cfg `tiers`): T0 image.generate, image.edit, speech.synthesize, music.generate, sfx.generate, media.ffmpeg; T1 = T0 + video.generate; T2 open. Runs: default 3, L4 2. Smoke profile (`configs/tools.yaml`): all generators → placeholder back end; runs using it are marked unofficial.
+Scoring (Issue #3 §2.4; cfg `continuity`): R=(Q, Q·c, Q·S, $). Q passes iff: decodes with picture and sound; format matches the spec; duration within ±5%; subtitles cover every dialogue line; no generator read the original input in the log; provenance check finds no original frame/audio in the film. Q fail → c and S zero. Cut F1 tolerances `cut_tolerance_s: [0.5, 1.0]` (seconds). In this round only Q and cut F1 are scored. Judge: frames 1 per second, min 2, max 8 (not run). Screening: 500 pairs, 3 raters, judge_min_agreement 0.75 (not run). Provenance (cfg): frame_sample_fps 2, phash_max_hamming 10, dino_min_cosine 0.92, audio_min_match 0.35, max_false_flag_rate 0.01. Reshoots (levels L2,L3; per_log 3; budget_fraction 0.30) — outside this round. `annotation_check_fraction` 0.20, `decision_check_fraction` 0.10 (cfg; no use stated in the documents read).
+Fixed-pipeline command (README): `crewcut run --system fixed --task tasks/caminandes3-L1-0000-scr --runs runs --profile smoke`; score: `crewcut score --run runs/<run_id> --task tasks/<id> [--index data/<film>/provenance.npz]`. Benchmark version 0.1.0.
+Method rules (memory file): agent does judgment and records it as data; no batch drivers/per-catalogue scripts/retry loops added; measured stages deterministic and pinned.
+
+## 3. Decisions that belong to CrewCut's maintainer (recorded, untouched)
+From Issue #3 "待定事项": (1) which VLM drafts shot descriptions and whether a cost cap applies; (2) the version's generators, model prices (`configs/prices.yaml` has only a `default` row, no model-id rows), judge model; (3) scale of official runs (5,030 test minutes; max ≈$125,700 per system per round at 3 runs) and total budget; (4) source of the screening raters (500 pairs × 3). Also left to the maintainer: human annotation round (speakers, characters, description corrections); dataset card wording; renaming Figure 1 in the paper.
+Gaps/inconsistencies found in the documents (not resolved here; maintainer's):
+- G1 Issue §1.6 says the Blender catalogue's 23 candidates are all dropped by the licence audit (licence strings unrecognised) and Commons returns none; the documents do not say whether to extend the recogniser or record an agent decision instead. Per memory file, the agent records a decision as data.
+- G2 Issue §1.6 says the downloaded file was the largest, not the pinned one; the documents give the sha256 but no direct URL for the pinned file in `films.yaml` (only the `page`).
+- G3 ASR failed on a fresh install (library incompatibility; GPU runtime missing). The documents name no pinned ASR model/version/backend for the dialogue stage.
+- G4 The sampling seed for L0/L1 is "determined by the film"; the documents do not state the derivation. Which of the two cut-F1 tolerances is the headline is not stated.
+- G5 `films.yaml` has `silent: false` for Caminandes 3 while the film has no dialogue; Issue table says 0 lines. Not contradictory but noted. README says tests count "13"; unverified.
+- G6 The Issue's L-level counts (§1.4) are for all dev films; the per-film figure to compare (90 task ids) comes only from the §1.6 probe.
+Any other gap found by a position is to be sent to steward with evidence; it is then recorded here or named as the maintainer's.
+
+## 4. Which position delivers what
+See `assignment.json` (read with `ht-role assignment`). Proposed layout: curator `corpus/`, executor `runs/`, scorer `scores/`, auditor `audit/`, task-maker repository root. The not-run statement: executor. Any requirement lacking a position should be raised with steward.

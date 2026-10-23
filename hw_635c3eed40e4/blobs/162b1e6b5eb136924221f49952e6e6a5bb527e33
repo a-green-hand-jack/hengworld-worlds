@@ -1,0 +1,25 @@
+[
+ {
+  "type": "image",
+  "file": "work/still0.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Wide shot of a cartoon character running out of a room past a cartoon character and a cartoon character towards a large window, static camera. Medium shot of a cartoon character flying out of a church building and over a city, static camera. Long shot of a cartoon character skydiving down a city, static camera.",
+  "used_in": "delivery.mp4",
+  "shot": 0
+ },
+ {
+  "type": "image",
+  "file": "work/still1.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Wide shot of a cartoon character kneeling to propose to a cartoon character in a cafe, static.",
+  "used_in": "delivery.mp4",
+  "shot": 1
+ },
+ {
+  "type": "music",
+  "file": "work/music.mp3",
+  "model": "lyria-3.5",
+  "prompt": "Gentle instrumental background score for a short animated film about a woman hurrying through a city; light, warm, playful, no vocals.",
+  "used_in": "delivery.mp4"
+ }
+]

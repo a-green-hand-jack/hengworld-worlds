@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0031",
+  "start": 109.625,
+  "end": 111.0,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.375,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 31,
+   "start": 0.0,
+   "end": 1.375,
+   "description": "Medium shot of a crowd of hooded figures holding candles, panning right."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.375
+  }
+ ],
+ "task_id": "domini_canes-L0-0031-scr",
+ "descriptions_available": true
+}

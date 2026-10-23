@@ -1,0 +1,29 @@
+You check a production bible written by another model. Below, for each character and place, one frame from the film and the written description. Judge each item independently from the frame. Reply with ONE JSON object: {"characters": [{"id": "C1", "appearance_accurate": true|false, "issues": [{"quote": "exact substring of the appearance text", "verdict": "contradicted|unsupported", "why": "..."}]}], "places": [{"id": "P1", "description_accurate": true|false, "issues": [same form on the description text]}], "same_character_check": [{"id": "C1", "ids_consistent": true|false, "note": "..."}]}
+'contradicted' = the frame shows the opposite; 'unsupported' = cannot be confirmed in the frame. Quotes must be exact substrings. Items:
+
+[character C1] (a guanaco (llama-like camelid)) text: Slender body with orange-brown fur, cream-colored neck and belly, long neck, large bulging brown eyes with dark eyelids and patterned lower rims, long snout, and small ears.
+IMG:dda88f918a3a86d16fa3d53f0d25ef0f28d405bef012d4a6f59a7da2406a0f0d
+
+[character C2] (a baby penguin) text: Small, round body covered in fluffy grey and white feathers, large blue eyes set in a white heart-shaped facial patch, tiny black beak, and small flippers.
+IMG:e375c8135ae003b34012574ba52575b5511707a37f9bcdf7ae294a3356eb49d4
+
+[character C3] (adult penguins) text: Medium-sized black and white penguins with distinct black and white striped markings on their heads and chests, holding large bunches of red berries.
+IMG:0142fb8db5c6c251437ddfbb42e4bba19f545e374c7297facc334973aef55ad7
+
+[place P1] (Frozen pond) text: A patch of smooth blue ice surrounded by snow, rocks, and a wooden post fence, with snowy mountains in the distance and a small berry bush.
+IMG:dda88f918a3a86d16fa3d53f0d25ef0f28d405bef012d4a6f59a7da2406a0f0d
+
+[place P2] (Snowy railroad tracks) text: Wooden-tied metal train tracks cutting through a bright, snowy, hilly landscape with an oil pumpjack visible in the background.
+IMG:e375c8135ae003b34012574ba52575b5511707a37f9bcdf7ae294a3356eb49d4
+
+[place P3] (Underground mine) text: A dark, cavernous underground mine with blue-lit icy walls, deep chasms, and precarious wooden trestle tracks for minecarts.
+IMG:665498b179f7d2e7cce3b2ba52b559639701cc518b0fd3a6588ed53791bfe791
+
+[place P4] (Mine entrance) text: A wooden mine shaft exit built into a steep, snow-covered mountain slope.
+IMG:c5cd0442566bd666809791c45f5e794d020c742f608d28235fe8f02332002171
+
+[place P5] (Jagged mountain peaks) text: A rugged snowy landscape featuring sharp, rocky, snow-dusted mountain spires and slopes.
+IMG:f2412a7c40acec70d0a1bedb1c7f1d1c614a697f2ad775fe32eba040db56d196
+
+[place P6] (Rocky hill at night) text: A rocky outcrop surrounded by snow-covered hills under a dark blue night sky filled with stars and a glowing nebula.
+IMG:348ae99fe7de3195e99dc68490776b6305591ce683e9f33b7bd16c67fbbf5002

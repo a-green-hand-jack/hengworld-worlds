@@ -1,0 +1,4 @@
+#!/bin/bash
+T=/hutian/task-maker
+echo control $(python3 -I $T/tools/fingerprint.py check $T/annotations/coffee_run/fingerprint /hutian/work/clips/coffee_run-L0-0004-ref/clip.mp4; echo rc=$?)
+for d in /hutian/work/rel/d/*/; do n=$(basename $d); for f in coffee_run caminandes3 spirit_chaser domini_canes sherlock_jr trip_to_the_moon; do echo $n $f $(python3 -I $T/tools/fingerprint.py check $T/annotations/$f/fingerprint $d/delivery.mp4; echo rc=$?); done; done

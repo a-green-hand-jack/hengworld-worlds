@@ -1,0 +1,17 @@
+Here is your detailed description of shot 10:
+{"setting": "P2: Railroad tracks. Outdoor, daytime, snowy ground littered with shattered wooden splinters and gravel, with a speeding train and billowing white steam in the background.", "characters": "C1: sitting on the snow in the center foreground, eyes closed in fear at first, then opening wide with a goofy smile and protruding tongue.", "props": "Shattered wooden tie fragments on the snow, a speeding train in the background, and a single red berry landing on C1's tongue.", "action": "As the train blurs past in the background and steam clears, C1 sits on the snow, opens its eyes, sticks out its tongue, and catches a single red berry on the tip of its tongue.", "camera": "Medium shot at eye level, static camera.", "light_mood": "Cool, bright daylight with white steam dissipating to reveal a clear background; comedic and relieved mood.", "sound": "A loud train horn and roaring pass-by fade out quickly, followed by a soft, quirky plucked string note as the berry lands."}
+An independent checker looking at the same frames flagged:
+- setting: 'Railroad tracks.' -> unsupported
+- characters: 'eyes closed in fear at first' -> contradicted
+Rewrite the whole JSON (same keys, same limits, no description_* keys needed) so that every statement is confirmed by the frames or audio. Reply with JSON only.
+
+Frames:
+[frame 1 at 44.53s]
+IMG:6cc73dd925440b5304adc64c0b46708c4aee4db4db242851bde5b97194f0a033
+[frame 2 at 45.15s]
+IMG:960525b6137d992f01dde6850a4390378b058ae0881273c8fe5c8de206da9b1f
+[frame 3 at 45.77s]
+IMG:3d3f1fb682ffdd53c7e05d42db06287732235ece1a5f923d44ff4b5266ce9b41
+[frame 4 at 46.38s]
+IMG:b5c7136d67d3259cfbfe8498be26cac705d073a823890211f508e6e6d91ce824
+AUD:ff2bd76869f4abc9cc0a3ffe3395e92082eaaa17d1a0c141a6285ca6891faa9a

@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0005",
+  "start": 36.792,
+  "end": 39.5,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.708,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 5,
+   "start": -0.0,
+   "end": 2.708,
+   "description": "Wide shot of C1 standing on train tracks and smelling a flower while a train approaches, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.708
+  }
+ ]
+}

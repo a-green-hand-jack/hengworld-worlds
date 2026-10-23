@@ -1,0 +1,39 @@
+import json,subprocess,os,sys,glob
+os.environ['PYTHONPATH']='/crewcut-algorithms'
+M='/hutian/work/masters'; O='/hutian/work/recompute'; R='/crewcut-dataset'
+films=["coffee_run","caminandes3","spirit_chaser","domini_canes","trip_to_the_moon","sherlock_jr"]
+silent={"sherlock_jr","trip_to_the_moon"}
+res={}
+ref_tasks=[json.loads(l)['task_id'] for l in open(f'{R}/tasks/dev.jsonl')]
+all_ids=[]
+for f in films:
+    os.makedirs(f'{O}/{f}',exist_ok=True)
+    p=glob.glob(f'{M}/{f}.*')[0]
+    if not os.path.exists(f'{O}/{f}/shotrec.json'):
+        subprocess.run(['python3','-m','crewcut_algorithms','cuts',p,f'{O}/{f}/shotrec.json'],check=True)
+    r=json.load(open(f'{O}/{f}/shotrec.json'))
+    fps=r['fps']; dur=round(r['nframes']/fps,2)
+    ref=json.load(open(f'{R}/annotations/{f}/shots.json'))
+    d={'cuts_equal':r['cuts']==ref['cut_frames'],'fps_equal':fps==ref['fps'],'dur_built':dur,'dur_ref':ref['duration_s'],'n_cuts':len(r['cuts'])}
+    # dialogue: the maker's file is the input (ASR not rerun here)
+    dl=f'/hutian/task-maker/annotations/{f}/dialogue.json'
+    cmd=['python3','-m','crewcut_algorithms','hierarchy',f,f'{O}/{f}/shotrec.json',f'{O}/{f}/hier_raw.json','--dialogue',dl]+(['--silent'] if f in silent else [])
+    subprocess.run(cmd,check=True)
+    h=json.load(open(f'{O}/{f}/hier_raw.json')); rh=json.load(open(f'{R}/annotations/{f}/hierarchy.json'))
+    lv={}
+    for L in ['L0','L1','L2','L3','L4']:
+        a=[(s.get('id'),s['start'],s['end'],s['shots'],s['lines']) for s in h[L]]
+        b=[(s['id'],s['start'],s['end'],s['shots'],s['lines']) for s in rh[L]]
+        # raw output may lack ids / use other types; compare numerically on start,end
+        a2=[(x[1],x[2]) for x in a]; b2=[(x[1],x[2]) for x in b]
+        lv[L]={'n_built':len(a),'n_ref':len(b),'bounds_equal':a2==b2}
+    d['hierarchy']=lv
+    subprocess.run(['python3','-m','crewcut_algorithms','tasks',f,f'{O}/{f}/hier_raw.json',f'{O}/{f}/tasks.json'],check=True)
+    ids=json.load(open(f'{O}/{f}/tasks.json'))['task_ids']; all_ids+=ids
+    d['n_task_ids']=len(ids)
+    res[f]=d; print(f,json.dumps(d),flush=True)
+d_ids=sorted(all_ids)==sorted(ref_tasks)
+res['_tasks']={'built':len(all_ids),'ref':len(ref_tasks),'ids_equal':d_ids,'only_built':sorted(set(all_ids)-set(ref_tasks)),'only_ref':sorted(set(ref_tasks)-set(all_ids))}
+print(json.dumps(res['_tasks']),flush=True)
+json.dump(res,open(f'{O}/result.json','w'),indent=1)
+print('HUTIAN_WAKE: recompute done',flush=True)

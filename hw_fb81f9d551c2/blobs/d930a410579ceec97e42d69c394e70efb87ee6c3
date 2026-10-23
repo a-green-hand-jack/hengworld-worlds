@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0004",
+  "start": 33.875,
+  "end": 36.792,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.917,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 4,
+   "start": 0.0,
+   "end": 2.917,
+   "description": "Medium close-up of a startled camelid animal blinking and turning its head, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.917
+  }
+ ]
+}

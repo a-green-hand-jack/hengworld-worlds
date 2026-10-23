@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L1-0002",
+  "start": 29.28,
+  "end": 59.84,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 30.56,
+ "cuts": [
+  11.4,
+  15.28,
+  17.84
+ ],
+ "shots": [
+  {
+   "index": 4,
+   "start": 0.0,
+   "end": 11.4,
+   "description": "Wide shot of C1 emerging from a portal, static."
+  },
+  {
+   "index": 5,
+   "start": 11.4,
+   "end": 15.28,
+   "description": "Wide shot of C1 floating through the air, with a static camera."
+  },
+  {
+   "index": 6,
+   "start": 15.28,
+   "end": 17.84,
+   "description": "Medium shot of C1 somersaulting in mid-air, with a static camera."
+  },
+  {
+   "index": 7,
+   "start": 17.84,
+   "end": 30.56,
+   "description": "A medium shot of C1 floating in the air, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 30.56
+  }
+ ],
+ "task_id": "spirit_chaser-L1-0002-ref",
+ "descriptions_available": true
+}

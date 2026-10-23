@@ -1,0 +1,50 @@
+{
+ "differences": [
+  {
+   "file": "shots.json",
+   "field": "duration_s",
+   "rebuilt": 150.108345,
+   "published": 150.04
+  }
+ ],
+ "identical": [
+  {
+   "file": "shots (other fields)",
+   "note": "all other fields equal"
+  },
+  {
+   "file": "dialogue",
+   "sha256": "18564ec9304539466d31b195a7285c0aebb9a9beb46b6fc529ff001e21fb006e",
+   "byte_identical": true
+  },
+  {
+   "file": "hierarchy",
+   "sha256": "192dc20c2ff4dd202c5be56880a22e98df8726abe9cb68557f6f322e2d2099cb",
+   "byte_identical": true
+  }
+ ],
+ "cuts": {
+  "rebuilt": 36,
+  "published": 36,
+  "frames_equal": true
+ },
+ "tasks": {
+  "rebuilt": 90,
+  "published": 90,
+  "ids_equal": true,
+  "only_rebuilt": [],
+  "only_published": [],
+  "field_differences": [],
+  "fields_compared": [
+   "end_s",
+   "film_id",
+   "level",
+   "n_lines",
+   "n_shots",
+   "segment_id",
+   "start_s",
+   "task_id",
+   "track"
+  ]
+ }
+}

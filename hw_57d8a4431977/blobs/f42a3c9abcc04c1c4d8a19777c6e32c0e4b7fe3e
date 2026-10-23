@@ -1,0 +1,335 @@
+{
+ "checks": [
+  {
+   "measure": "Q",
+   "case": "intact",
+   "expected": "pass",
+   "Q": 1,
+   "qc": {
+    "decodes": true,
+    "format": true,
+    "duration": true,
+    "subtitles": true,
+    "clean_room_log": true,
+    "provenance": true
+   },
+   "behaves": true
+  },
+  {
+   "measure": "Q",
+   "case": "reencoded_same_content",
+   "expected": "pass",
+   "Q": 1,
+   "qc": {
+    "decodes": true,
+    "format": true,
+    "duration": true,
+    "subtitles": true,
+    "clean_room_log": true,
+    "provenance": true
+   },
+   "behaves": true
+  },
+  {
+   "measure": "Q",
+   "case": "truncated_10s",
+   "expected": "fail (duration)",
+   "Q": 0,
+   "qc": {
+    "decodes": true,
+    "format": true,
+    "duration": "10.08s vs 32.29s",
+    "subtitles": true,
+    "clean_room_log": true,
+    "provenance": true
+   },
+   "behaves": true
+  },
+  {
+   "measure": "Q",
+   "case": "duration_minus_4pct",
+   "expected": "pass",
+   "Q": 1,
+   "qc": {
+    "decodes": true,
+    "format": true,
+    "duration": true,
+    "subtitles": true,
+    "clean_room_log": true,
+    "provenance": true
+   },
+   "behaves": true
+  },
+  {
+   "measure": "Q",
+   "case": "duration_minus_8pct",
+   "expected": "fail (duration)",
+   "Q": 0,
+   "qc": {
+    "decodes": true,
+    "format": true,
+    "duration": "29.79s vs 32.29s",
+    "subtitles": true,
+    "clean_room_log": true,
+    "provenance": true
+   },
+   "behaves": true
+  },
+  {
+   "measure": "Q",
+   "case": "no_audio",
+   "expected": "fail (format)",
+   "Q": 0,
+   "qc": {
+    "decodes": true,
+    "format": "missing video or audio stream",
+    "duration": true,
+    "subtitles": true,
+    "clean_room_log": true,
+    "provenance": true
+   },
+   "behaves": true
+  },
+  {
+   "measure": "Q",
+   "case": "wrong_size_640x360",
+   "expected": "fail (format)",
+   "Q": 0,
+   "qc": {
+    "decodes": true,
+    "format": "size 640x360",
+    "duration": true,
+    "subtitles": true,
+    "clean_room_log": true,
+    "provenance": true
+   },
+   "behaves": true
+  },
+  {
+   "measure": "Q",
+   "case": "corrupt_bytes",
+   "expected": "fail (decodes)",
+   "Q": 0,
+   "qc": {
+    "decodes": false,
+    "format": "missing video or audio stream",
+    "duration": "0.00s vs 32.29s",
+    "subtitles": true,
+    "clean_room_log": true,
+    "provenance": "film could not be decoded for the provenance check"
+   },
+   "behaves": true
+  },
+  {
+   "measure": "Q",
+   "case": "missing_film",
+   "expected": "fail (None)",
+   "Q": 0,
+   "qc": {
+    "delivered": "output/film.mp4 missing"
+   },
+   "behaves": true
+  },
+  {
+   "measure": "Q",
+   "case": "missing_vtt",
+   "expected": "fail (subtitles)",
+   "Q": 0,
+   "qc": {
+    "decodes": true,
+    "format": true,
+    "duration": true,
+    "subtitles": "film.en.vtt missing",
+    "clean_room_log": true,
+    "provenance": true
+   },
+   "behaves": true
+  },
+  {
+   "measure": "Q",
+   "case": "generator_read_original_input",
+   "expected": "fail (clean_room_log)",
+   "Q": 0,
+   "qc": {
+    "decodes": true,
+    "format": true,
+    "duration": true,
+    "subtitles": true,
+    "clean_room_log": "generator calls on original input: ['evt-6449c746e1fc']",
+    "provenance": true
+   },
+   "behaves": true
+  },
+  {
+   "measure": "Q",
+   "case": "original_clip_as_remake",
+   "expected": "fail (provenance)",
+   "Q": 0,
+   "qc": {
+    "decodes": true,
+    "format": true,
+    "duration": true,
+    "subtitles": true,
+    "clean_room_log": true,
+    "provenance": "98.5% of frames match the original by pHash; audio fingerprint match 0.86"
+   },
+   "behaves": true
+  },
+  {
+   "measure": "Q",
+   "case": "original_clip_recoloured_reencoded",
+   "expected": "fail (provenance)",
+   "Q": 0,
+   "qc": {
+    "decodes": true,
+    "format": true,
+    "duration": true,
+    "subtitles": true,
+    "clean_room_log": true,
+    "provenance": "98.5% of frames match the original by pHash; audio fingerprint match 0.86"
+   },
+   "behaves": true
+  },
+  {
+   "measure": "cut_f1",
+   "case": "run_output_intact",
+   "detected_cuts": [
+    21.375,
+    30.5
+   ],
+   "f1_05": 1.0,
+   "f1_10": 1.0,
+   "expected": "equal to the best possible 0.8 given the key lists the segment end as a cut"
+  },
+  {
+   "measure": "cut_f1",
+   "case": "original_clip_cfr",
+   "f1_05": 1.0,
+   "f1_10": 1.0,
+   "expected": "high: same film, same cut places (clip normalised to 24 fps CFR)"
+  },
+  {
+   "measure": "cut_f1",
+   "case": "cuts_shifted_0.3s",
+   "detected_cuts": [
+    21.708,
+    30.542
+   ],
+   "f1_05": 1.0,
+   "f1_10": 1.0,
+   "expected": "F1 falls as the cuts move away: 0.3s holds at both tolerances, 0.8s holds only at 1.0s, 3s fails both; a cut-free film scores 0"
+  },
+  {
+   "measure": "cut_f1",
+   "case": "cuts_shifted_0.8s",
+   "detected_cuts": [
+    22.208,
+    30.542
+   ],
+   "f1_05": 0.5,
+   "f1_10": 1.0,
+   "expected": "F1 falls as the cuts move away: 0.3s holds at both tolerances, 0.8s holds only at 1.0s, 3s fails both; a cut-free film scores 0"
+  },
+  {
+   "measure": "cut_f1",
+   "case": "cuts_shifted_3s",
+   "detected_cuts": [
+    24.375,
+    30.5
+   ],
+   "f1_05": 0.5,
+   "f1_10": 0.5,
+   "expected": "F1 falls as the cuts move away: 0.3s holds at both tolerances, 0.8s holds only at 1.0s, 3s fails both; a cut-free film scores 0"
+  },
+  {
+   "measure": "cut_f1",
+   "case": "no_cuts_single_shot",
+   "detected_cuts": [],
+   "f1_05": 0.0,
+   "f1_10": 0.0,
+   "expected": "a film without cuts scores 0"
+  }
+ ],
+ "damage_cut_cases": [],
+ "unit": [
+  {
+   "case": "cut_f1 identical",
+   "got": 1.0,
+   "expected": 1.0,
+   "behaves": true
+  },
+  {
+   "case": "cut_f1 disjoint",
+   "got": 0.0,
+   "expected": 0.0,
+   "behaves": true
+  },
+  {
+   "case": "cut_f1 extra detections",
+   "got": 0.8571428571428571,
+   "expected": 0.857143,
+   "behaves": true
+  },
+  {
+   "case": "cut_f1 empty vs empty",
+   "got": 1.0,
+   "expected": 1.0,
+   "behaves": true
+  },
+  {
+   "case": "correspondence all yes",
+   "got": 1.0,
+   "expected": 1.0,
+   "behaves": true
+  },
+  {
+   "case": "correspondence all no",
+   "got": 0.0,
+   "expected": 0.0,
+   "behaves": true
+  },
+  {
+   "case": "correspondence duration weighted (accept only the 4 s shot)",
+   "got": 0.285714,
+   "expected": 0.285714,
+   "behaves": true
+  },
+  {
+   "case": "scene_order in order",
+   "got": 1.0,
+   "expected": 1.0,
+   "behaves": true
+  },
+  {
+   "case": "scene_order shuffled",
+   "got": 0.33333333333333337,
+   "expected": 0.333333,
+   "behaves": true
+  },
+  {
+   "case": "scene_order one scene dropped",
+   "got": 0.6666666666666667,
+   "expected": 0.666667,
+   "behaves": true
+  },
+  {
+   "case": "wer identical",
+   "got": 0.0,
+   "expected": 0.0,
+   "behaves": true
+  },
+  {
+   "case": "wer one substitution of four",
+   "got": 0.25,
+   "expected": 0.25,
+   "behaves": true
+  },
+  {
+   "case": "wer empty hypothesis",
+   "got": 1.0,
+   "expected": 1.0,
+   "behaves": true
+  }
+ ],
+ "all_behave": true
+}

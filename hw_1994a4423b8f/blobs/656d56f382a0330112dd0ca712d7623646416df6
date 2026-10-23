@@ -1,0 +1,21 @@
+{"decided_by": "task-maker (agent)", "date": "2026-10-21", "film": "caminandes3", "decisions": [
+ {"id": "D1", "what": "Candidate: Blender PeerTube item 'Caminandes 3: Llamigos - Funny 3D Animated Short' (video.blender.org/videos/watch/23f3ef79-15dc-44c5-aa45-cf92e78a4509, 150 s) and the Internet Archive item CaminandesLlamigos (runtime 2:30, year 2016). 'Making of Caminandes: Llamigos' (286 s) rejected: making-of, not the film.",
+  "evidence": "records/crawl/blender.jsonl; IA advancedsearch identifier:CaminandesLlamigos -> licenseurl http://creativecommons.org/licenses/by/3.0/",
+  "effect": "film kept; page = https://archive.org/details/CaminandesLlamigos as in configs/films.yaml"},
+ {"id": "D2", "what": "Licence read for this film only: CC BY 3.0 (IA licenseurl http://creativecommons.org/licenses/by/3.0/; PeerTube label 'Attribution'); creator Blender Foundation. Derivatives allowed; no NC/ND; no third-party content claim found in the IA/PeerTube metadata (human check of the film's credits not possible from metadata alone; limited to the metadata read).",
+  "evidence": "records/crawl/blender_audited.jsonl shows `crewcut audit` rejects ALL 23 Blender candidates ('Attribution' / 'Unknown' not recognised: audit.normalise only knows URLs and 'CC BY' strings). The code's audit decision for this film is therefore overridden by this recorded judgment, not changed in code.",
+  "effect": "film admitted for this round"},
+ {"id": "D3", "what": "Master pinned: IA file 'Caminandes_ Llamigos-1080p.ogv' (11,872,682 bytes, IA derivative). Not the largest file (fetch.ia_files sorts largest first and would pick the 139 MB original .mp4).",
+  "evidence": "downloaded from https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv; sha256 028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f equals configs/films.yaml master_sha256 and equals /crewcut/masters/caminandes3.ogv (the fallback copy was not needed)",
+  "effect": "annotate run with --local-dir so fetch.fetch does not use ia_files; checksum re-verified inside annotate"},
+ {"id": "D4", "what": "Installed faster-whisper (the [asr] extra) in addition to the core install, because annotate always runs ASR for films with silent:false and the core install lacks it (ModuleNotFoundError). Deviation from 'core only' is therefore recorded.",
+  "evidence": "tasks/steps.md step 5; result lines.json = {lang en, lines []} which equals the published dialogue.json (0 lines)",
+  "effect": "dialogue step run (not skipped). CPU, base model, no GPU problem occurred."},
+ {"id": "D5", "what": "Descriptions drafted with gemini-3.5-flash-lite. gemini-3.8-flash (the world's suggested model) was tried first and refused as unsuitable: describe.py fixes max_tokens=120, the model spends the budget on hidden reasoning and returned finish_reason=length with reply 'A'. gemini-2.5-flash-lite returned HTTP 404 (no longer available to new users), message recommended gemini-3.5-flash-lite.",
+  "evidence": "descriptions/gemini_ledger_attempt1_gemini-3.8-flash.jsonl; gemini_ledger.jsonl",
+  "effect": "37 drafts, all finish_reason=stop; model recorded in descriptions/descriptions_meta.json. Whether this is the benchmark's VLM is Issue #3 open item 1 (maintainer's)."},
+ {"id": "D6", "what": "describe_film reads shots.json expecting keys 'cuts'/'duration', but both the pipeline's released-format shots.json and the published one use 'cut_frames'/'duration_s' (KeyError). I ran it on a directory whose shots.json is the pipeline's work/shots_full.json (same cuts) with the master symlinked; no product code was changed.",
+  "effect": "descriptions.json copied to data/caminandes3/"},
+ {"id": "D7", "what": "Published packages = built packages minus truth.json; key = truth.json per task, kept in key/. Reference clips (input/original.mp4) are in the release tarball, not in git.",
+  "effect": "scan_key.py check passes"}
+]}

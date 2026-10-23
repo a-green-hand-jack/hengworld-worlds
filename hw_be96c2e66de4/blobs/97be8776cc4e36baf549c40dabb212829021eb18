@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "coffee_run-L1-0004",
+  "start": 170.125,
+  "end": 184.583,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 14.458,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 4,
+   "start": 0.0,
+   "end": 14.458,
+   "description": "Extreme close-up of credits showing, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 14.458
+  }
+ ],
+ "task_id": "coffee_run-L1-0004-ref",
+ "descriptions_available": true
+}

@@ -1,0 +1,78 @@
+{
+ "segment": {
+  "id": "domini_canes-L1-0005",
+  "start": 100.708,
+  "end": 107.333,
+  "shots": 8,
+  "lines": 0
+ },
+ "duration": 6.625,
+ "cuts": [
+  2.125,
+  2.667,
+  3.5,
+  4.084,
+  4.667,
+  5.292,
+  6.125
+ ],
+ "shots": [
+  {
+   "index": 22,
+   "start": 0.0,
+   "end": 2.125,
+   "description": "Medium shot of C1 holding a stick, static camera. Medium shot of a wolf jumping through a crowd of C1s holding a stick, tracking shot."
+  },
+  {
+   "index": 23,
+   "start": 2.125,
+   "end": 2.667,
+   "description": "Medium shot of C1 running through a crowd of onlookers, panning left to right."
+  },
+  {
+   "index": 24,
+   "start": 2.667,
+   "end": 3.5,
+   "description": "Wide shot of a wolf running past statues, tracking right."
+  },
+  {
+   "index": 25,
+   "start": 3.5,
+   "end": 4.084,
+   "description": "Low angle shot of a crowd standing, tracking forward."
+  },
+  {
+   "index": 26,
+   "start": 4.084,
+   "end": 4.667,
+   "description": "Wide shot of characters standing in a group, camera pan."
+  },
+  {
+   "index": 27,
+   "start": 4.667,
+   "end": 5.292,
+   "description": "Low-angle medium shot of a crowd standing, static."
+  },
+  {
+   "index": 28,
+   "start": 5.292,
+   "end": 6.125,
+   "description": "Wide shot of crowd standing, pushing in."
+  },
+  {
+   "index": 29,
+   "start": 6.125,
+   "end": 6.625,
+   "description": "Low-angle shot of a crowd standing, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 6.625
+  }
+ ],
+ "task_id": "domini_canes-L1-0005-scr",
+ "descriptions_available": true
+}

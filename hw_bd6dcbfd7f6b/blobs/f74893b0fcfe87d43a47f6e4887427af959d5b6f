@@ -1,0 +1,20 @@
+"""Aggregate metered Gemini calls: usage.py LOG... -> JSON (requests, tokens by purpose; cost at given USD/Mtok)."""
+import json, sys, collections
+IN, OUT = float(sys.argv[1]), float(sys.argv[2])   # USD per million tokens
+agg = collections.OrderedDict()
+for p in sys.argv[3:]:
+    for l in open(p):
+        r = json.loads(l)
+        k = (r["purpose"], p.split("/")[-1])
+        a = agg.setdefault(k, dict(purpose=r["purpose"], log=k[1], requests=0, errors=0, empty=0, prompt=0, completion=0, total=0))
+        a["requests"] += 1
+        if "error" in r: a["errors"] += 1; continue
+        a["empty"] += r["empty_content"]
+        u = r["usage"]; a["prompt"] += u["prompt_tokens"]; a["completion"] += u["completion_tokens"]; a["total"] += u["total_tokens"]
+rows = []
+for a in agg.values():
+    a["hidden_reasoning"] = a["total"] - a["prompt"] - a["completion"]
+    a["usd"] = round((a["prompt"] * IN + (a["total"] - a["prompt"]) * OUT) / 1e6, 5)
+    rows.append(a)
+tot = {k: sum(a[k] for a in rows) for k in ("requests", "errors", "empty", "prompt", "completion", "hidden_reasoning", "total", "usd")}
+print(json.dumps({"price_usd_per_mtok": {"input": IN, "output_incl_thinking": OUT}, "rows": rows, "total": tot}, indent=1))

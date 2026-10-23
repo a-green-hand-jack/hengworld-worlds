@@ -1,0 +1,16 @@
+Here is your detailed description of shot 32:
+{"setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, clear sky, vast snowy mountain slope with rocky cliffs on left and right.", "characters": "C2: sliding on its belly away from camera down the snowy slope; C3: a large colony standing in the distant background on the right.", "props": "Snow-covered rocks and dry grass blades in the right foreground.", "action": "C2 slides on its belly down the snowy slope away from the camera, kicking its little feet and leaving a trail in the snow, heading toward the distant colony of C3 on the right.", "camera": "Wide shot, high angle looking down the slope, static camera.", "light_mood": "Bright, clear daylight with soft blue shadows on the snow; hopeful and heartwarming mood.", "sound": "Sliding sound in the snow, cute happy squeaks from C2, and distant chattering calls of a penguin colony."}
+An independent checker looking at the same frames flagged:
+- sound: 'cute happy squeaks from C2' -> unsupported
+Rewrite the whole JSON (same keys, same limits, no description_* keys needed) so that every statement is confirmed by the frames or audio. Reply with JSON only.
+
+Frames:
+[frame 1 at 102.18s]
+IMG:1be60798029918bfe50a852f191dc828a77dc998bf02fce389741bfe03dc0885
+[frame 2 at 102.58s]
+IMG:1849c11c75ae8e5b04b4a954c0b28eaf5b58068dc0cb1acbeaf02604a764e3fb
+[frame 3 at 102.97s]
+IMG:dcf458a0b4b464197974b0b21f5456243ada350b898fef809b3554f011d68abe
+[frame 4 at 103.36s]
+IMG:141cc79973f836784c7fece2a8824c58ec577b1fa98613ec497957a09ef91257
+AUD:a69d6f9c7f90a1353bbb25ecfd29ed6c09aaa0e67746049e70caf70f41cdf3d0

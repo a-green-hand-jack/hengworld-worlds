@@ -1,0 +1,42 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0000",
+  "start": 0.0,
+  "end": 32.292,
+  "shots": 3,
+  "lines": 0
+ },
+ "duration": 32.292,
+ "cuts": [
+  21.375,
+  30.5,
+  32.292
+ ],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 21.375,
+   "description": "Wide shot of a llama-like animal ice skating on a frozen puddle in a snowy landscape, as the camera tilts down from the sky and tracks it."
+  },
+  {
+   "index": 1,
+   "start": 21.375,
+   "end": 30.5,
+   "description": "Medium close-up of a small bird running off-screen right as C1, an animal lying on the ground, opens their eyes, static camera."
+  },
+  {
+   "index": 2,
+   "start": 30.5,
+   "end": 32.292,
+   "description": "Medium shot of a small penguin standing on a railroad track looking at a flower growing in the snow, zooming in slightly."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 32.292
+  }
+ ]
+}

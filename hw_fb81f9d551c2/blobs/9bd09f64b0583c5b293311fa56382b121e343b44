@@ -1,0 +1,62 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0004",
+  "start": 70.083,
+  "end": 80.125,
+  "shots": 6,
+  "lines": 0
+ },
+ "duration": 10.042,
+ "cuts": [
+  3.792,
+  4.542,
+  5.375,
+  7.667,
+  8.459
+ ],
+ "shots": [
+  {
+   "index": 20,
+   "start": 0.0,
+   "end": 3.792,
+   "description": "Medium shot of a gopher and a penguin riding in a cart, panning left."
+  },
+  {
+   "index": 21,
+   "start": 3.792,
+   "end": 4.542,
+   "description": "Close-up of a llama yelling, static camera."
+  },
+  {
+   "index": 22,
+   "start": 4.542,
+   "end": 5.375,
+   "description": "Medium shot of C1 getting hit in the face with a piece of wood, panning slightly with the hit."
+  },
+  {
+   "index": 23,
+   "start": 5.375,
+   "end": 7.667,
+   "description": "Medium close-up of C1 eating a bunch of fruit, static."
+  },
+  {
+   "index": 24,
+   "start": 7.667,
+   "end": 8.459,
+   "description": "Wide shot of a mineshaft rushing forward, tracking forward."
+  },
+  {
+   "index": 25,
+   "start": 8.459,
+   "end": 10.042,
+   "description": "Wide shot of a mineshaft collapsing, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 10.042
+  }
+ ]
+}

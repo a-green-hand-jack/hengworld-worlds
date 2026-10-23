@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0075",
+  "start": 209.32,
+  "end": 212.4,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.08,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 75,
+   "start": 0.0,
+   "end": 3.08,
+   "description": "Medium close-up of C1 smiling and then looking shocked, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.08
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0075-scr",
+ "descriptions_available": true
+}

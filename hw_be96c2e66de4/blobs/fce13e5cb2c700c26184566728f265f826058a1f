@@ -1,0 +1,288 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0021",
+  "start": 1901.733,
+  "end": 2094.159,
+  "shots": 38,
+  "lines": 0
+ },
+ "duration": 192.426,
+ "cuts": [
+  7.641,
+  14.882,
+  19.019,
+  23.957,
+  44.378,
+  51.752,
+  54.822,
+  59.593,
+  62.362,
+  64.865,
+  67.468,
+  70.337,
+  71.038,
+  100.4,
+  101.902,
+  107.241,
+  109.843,
+  113.447,
+  118.619,
+  121.121,
+  126.293,
+  136.103,
+  141.308,
+  143.076,
+  146.613,
+  151.084,
+  153.654,
+  154.555,
+  155.622,
+  158.992,
+  159.96,
+  165.566,
+  168.402,
+  170.37,
+  173.54,
+  181.348,
+  183.851
+ ],
+ "shots": [
+  {
+   "index": 238,
+   "start": 0.0,
+   "end": 7.641,
+   "description": "Medium shot of C1 driving a car while C2 reclines in the back seat, tracking right."
+  },
+  {
+   "index": 239,
+   "start": 7.641,
+   "end": 14.882,
+   "description": "Medium shot of C1 getting out of a car and entering a house, static camera."
+  },
+  {
+   "index": 240,
+   "start": 14.882,
+   "end": 19.019,
+   "description": "Medium wide shot of four men surrounding a table, static."
+  },
+  {
+   "index": 241,
+   "start": 19.019,
+   "end": 23.957,
+   "description": "Medium shot of C1 ducking as C2 stands up from inside a car, static camera."
+  },
+  {
+   "index": 242,
+   "start": 23.957,
+   "end": 44.378,
+   "description": "Medium shot of C1 and C2 opening a tyre cover, static camera."
+  },
+  {
+   "index": 243,
+   "start": 44.378,
+   "end": 51.752,
+   "description": "Medium shot of C1 and C2 looking at pocket watch, static camera."
+  },
+  {
+   "index": 244,
+   "start": 51.752,
+   "end": 54.822,
+   "description": "Medium shot of C1 holding a spare tire while C2 runs away, static camera."
+  },
+  {
+   "index": 245,
+   "start": 54.822,
+   "end": 59.593,
+   "description": "Medium shot of C1 walking towards the building and pushing a round object through a window, static camera."
+  },
+  {
+   "index": 246,
+   "start": 59.593,
+   "end": 62.362,
+   "description": "Medium shot of C1 walking towards a car parked outside a building, static."
+  },
+  {
+   "index": 247,
+   "start": 62.362,
+   "end": 64.865,
+   "description": "Medium shot of four men looking at the wall, static."
+  },
+  {
+   "index": 248,
+   "start": 64.865,
+   "end": 67.468,
+   "description": "Medium shot of C1 standing in profile by a car and a box, looking around and whistling, static camera."
+  },
+  {
+   "index": 249,
+   "start": 67.468,
+   "end": 70.337,
+   "description": "Medium shot of C1 standing in a room with three other men, while one of the men flees, static camera."
+  },
+  {
+   "index": 250,
+   "start": 70.337,
+   "end": 71.038,
+   "description": "Medium shot of C1 getting thrown backward through a doorway, static camera."
+  },
+  {
+   "index": 251,
+   "start": 71.038,
+   "end": 100.4,
+   "description": "Medium shot of a group of men surrounding a young man as they inspect something he's holding, static camera."
+  },
+  {
+   "index": 252,
+   "start": 100.4,
+   "end": 101.902,
+   "description": "Medium shot of C1 standing in a room and looking around nervously, static camera."
+  },
+  {
+   "index": 253,
+   "start": 101.902,
+   "end": 107.241,
+   "description": "Medium shot of C1 arguing with C2 while other men watch, static camera."
+  },
+  {
+   "index": 254,
+   "start": 107.241,
+   "end": 109.843,
+   "description": "Medium shot of C1 inside a cage, static camera."
+  },
+  {
+   "index": 255,
+   "start": 109.843,
+   "end": 113.447,
+   "description": "Medium shot of C1 and C2 talking, static camera."
+  },
+  {
+   "index": 256,
+   "start": 113.447,
+   "end": 118.619,
+   "description": "A close-up shot of title card showing text 'That's a detective. When he's dead I'll put you in there.', static camera."
+  },
+  {
+   "index": 257,
+   "start": 118.619,
+   "end": 121.121,
+   "description": "Medium shot of C1 and C2 talking, static."
+  },
+  {
+   "index": 258,
+   "start": 121.121,
+   "end": 126.293,
+   "description": "Intertitle displaying text on screen, static camera."
+  },
+  {
+   "index": 259,
+   "start": 126.293,
+   "end": 136.103,
+   "description": "Long shot of a wooden building and a car with C1 and C2, static camera."
+  },
+  {
+   "index": 260,
+   "start": 136.103,
+   "end": 141.308,
+   "description": "Medium shot of C1 sitting down at a table and C2 opening a door, static."
+  },
+  {
+   "index": 261,
+   "start": 141.308,
+   "end": 143.076,
+   "description": "Medium close-up of C1 and C2 talking, static."
+  },
+  {
+   "index": 262,
+   "start": 143.076,
+   "end": 146.613,
+   "description": "Medium shot of title card showing text, static."
+  },
+  {
+   "index": 263,
+   "start": 146.613,
+   "end": 151.084,
+   "description": "Medium shot of C1 leaning in and threatening C2, static camera."
+  },
+  {
+   "index": 264,
+   "start": 151.084,
+   "end": 153.654,
+   "description": "Medium shot of a building standing still, static camera."
+  },
+  {
+   "index": 265,
+   "start": 153.654,
+   "end": 154.555,
+   "description": "Wide shot of C1 and C2 talking inside a garage, static."
+  },
+  {
+   "index": 266,
+   "start": 154.555,
+   "end": 155.622,
+   "description": "Wide shot of C1 standing in a garage with two other men, static."
+  },
+  {
+   "index": 267,
+   "start": 155.622,
+   "end": 158.992,
+   "description": "Medium shot of C1 showing a tape measure to C2, static camera."
+  },
+  {
+   "index": 268,
+   "start": 158.992,
+   "end": 159.96,
+   "description": "Wide shot of C1 inside a workshop, stationary."
+  },
+  {
+   "index": 269,
+   "start": 159.96,
+   "end": 165.566,
+   "description": "A wide shot of C1 inside a shop and C2 creeping outside, static camera."
+  },
+  {
+   "index": 270,
+   "start": 165.566,
+   "end": 168.402,
+   "description": "Medium shot of C1, C2, and another man dodging around each other outside a wooden building, static."
+  },
+  {
+   "index": 271,
+   "start": 168.402,
+   "end": 170.37,
+   "description": "Medium shot of multiple people running away from a house, static camera."
+  },
+  {
+   "index": 272,
+   "start": 170.37,
+   "end": 173.54,
+   "description": "Medium shot of C1 leaning against a car and scratching their head, static."
+  },
+  {
+   "index": 273,
+   "start": 173.54,
+   "end": 181.348,
+   "description": "Medium shot of C1 walking outside, followed by static camera. Medium shot of C1 and C2 walking together outside, followed by static camera. Medium shot of C1 and C2 walking together, followed by static camera."
+  },
+  {
+   "index": 274,
+   "start": 181.348,
+   "end": 183.851,
+   "description": "Medium long shot of C1 and C2 walking alongside a wooden fence, panning right as they start running."
+  },
+  {
+   "index": 275,
+   "start": 183.851,
+   "end": 192.426,
+   "description": "Medium shot of C1 carrying C2 on their back along a wooden fence, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 192.426
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0021-ref",
+ "descriptions_available": true
+}

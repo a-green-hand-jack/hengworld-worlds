@@ -1,0 +1,138 @@
+"""Step 2 + 5 + 6 for shots: detailed descriptions (draft, sequential for continuity), cross-check, resolution, one-sentence description corrections."""
+import sys; sys.path.insert(0, "scripts")
+from lib import *
+from resolve import *
+from concurrent.futures import ThreadPoolExecutor
+
+COLS = ["setting", "characters", "props", "action", "camera", "light_mood", "sound"]
+LIMITS = {"setting": 30, "props": 25, "action": 60, "camera": 25, "light_mood": 25, "sound": 25}
+film = json.load(open(ANN / "film.json"))
+shots, dur = film_info()
+DESC = json.load(open(DS / "annotations" / FILM / "descriptions.json"))["descriptions"]
+ONLY = [int(x) for x in sys.argv[1].split(",")] if len(sys.argv) > 1 else list(range(len(shots)))
+
+def bible():
+    ch = "\n".join(f"{c['id']}: {c['kind']}. {c['appearance']}" for c in film["characters"])
+    pl = "\n".join(f"{p['id']}: {p['name']}. {p['description']}" for p in film["places"])
+    return f"Overall look: {film['look']}\nCharacters:\n{ch}\nPlaces:\n{pl}"
+
+def frames_for(i):
+    a, b = shots[i]; ts = frame_times(a, b)
+    return ts, [x for t in ts for x in (f"[frame {ts.index(t)+1} at {t:.2f}s]", img_part(frame_path(t)))]
+
+def audio_part(i):
+    a, b = shots[i]; p, silent = shot_audio(i, a, b)
+    if silent: return None, True
+    return {"type": "input_audio", "input_audio": {"data": base64.b64encode(p.read_bytes()).decode(), "format": "wav"}}, False
+
+def validate(d):
+    errs = []
+    for c in COLS:
+        if c not in d or not isinstance(d[c], str): errs.append(f"{c} missing"); continue
+        if c in LIMITS and words(d[c]) > LIMITS[c]: errs.append(f"{c} has {words(d[c])} words, limit {LIMITS[c]}")
+    if isinstance(d.get("characters"), str):
+        for ent in [e for e in d["characters"].split(";") if e.strip()]:
+            if words(ent.split(":", 1)[-1]) > 25: errs.append("a characters entry exceeds 25 words")
+    return errs
+
+def draft(i, prev):
+    a, b = shots[i]; ts, fparts = frames_for(i); ap, silent = audio_part(i)
+    instr = ("You write the detailed shot description for one shot of a short film, so that it can be remade from text. You see the shot's frames in time order" + ("" if silent else " and its audio") + ". "
+        "Reply with ONE JSON object: {\"setting\": \"place, indoor/outdoor, time, weather and surroundings; at most 30 words; call the place by the name given in the places list\", "
+        "\"characters\": \"format 'C1: ...; C2: ...', for each character visible in the shot its position, clothing/held items and expression changes in this shot; at most 25 words per character; the basic appearance is already in the character list, so write only what differs from it\", "
+        "\"props\": \"important objects; at most 25 words\", \"action\": \"what happens in order; at most 60 words\", \"camera\": \"shot size, angle, camera movement and composition changes; at most 25 words\", "
+        "\"light_mood\": \"lighting, colour tone and mood; at most 25 words\", \"sound\": \"ambient sound, effects, music or silence; at most 25 words" + ("" if not silent else "; this shot has no audio, so write exactly: silent") + "\", "
+        "\"description_consistent\": true or false (does the given one-sentence description agree with the frames), \"description_note\": \"why, if not\"}\n"
+        "Rules: write only facts that can be confirmed in the frames" + ("" if silent else " or audio") + "; do not guess; use the C labels of the character list; no proper names, no film title; no scene numbers, no grouping of shots, no mention of other shots or of frames.\n\n")
+    ctx = bible() + "\n\nPrevious shot's detailed description (for continuity only; describe THIS shot from its own frames):\n" + (json.dumps(prev, ensure_ascii=False) if prev else "none (first shot)") + f"\n\nShot {i} one-sentence description: {DESC[str(i)]}\n\nFrames ({len(ts)}):"
+    parts = [instr + ctx] + fparts + ([ap] if ap else [])
+    fts = [round(t, 3) for t in ts]
+    rec, d = call_json("shot-detail-draft", DRAFT, parts, {"film": FILM, "shot": i, "step": 2}, frames_s=fts)
+    for r in range(2):
+        errs = validate(d)
+        if not errs: break
+        rec, d = call_json("shot-detail-lengthfix", DRAFT, parts + [f"\nYour previous reply:\n{json.dumps(d, ensure_ascii=False)}\nViolated limits: {'; '.join(errs)}. Rewrite the whole JSON within the limits."], {"film": FILM, "shot": i, "step": 2, "fix": r}, frames_s=fts)
+    return rec, d, silent
+
+CHK_INSTR = ("You verify a detailed shot description written by another model, from the same frames{aud}. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames{aud2}), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). "
+             "Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {{\"columns\": {{\"<column>\": [{{\"quote\": \"exact substring of the column text\", \"verdict\": \"supported|contradicted|unsupported\", \"frames\": [1]}}]}}, "
+             "\"omissions\": [\"...\"], \"description_contradicted\": true|false, \"description_note\": \"...\"}}\n"
+             "'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: {cols}.\n")
+
+def check(i, d, silent):
+    ts, fparts = frames_for(i)
+    txt = "\n".join(f"{c}: {d[c]}" for c in COLS)
+    vis = [c for c in COLS if c != "sound"]
+    p1 = [CHK_INSTR.format(aud="", aud2="", cols=", ".join(vis)) + f"\nOne-sentence description: {DESC[str(i)]}\nDetailed description:\n" + "\n".join(f"{c}: {d[c]}" for c in vis) + "\nFrames:"] + fparts
+    rec, r = call_json("shot-detail-check", CHECK, p1, {"film": FILM, "shot": i, "step": 5}, frames_s=[round(t, 3) for t in ts])
+    snd = None
+    if not silent:
+        ap, _ = audio_part(i)
+        ap = {"type": "input_audio", "input_audio": {"data": "data:;base64," + ap["input_audio"]["data"], "format": "wav"}}  # qwen-omni wants a data URI
+        p2 = [CHK_INSTR.format(aud=" and the audio", aud2=" or audio", cols="sound") + f"\nOne-sentence description: {DESC[str(i)]}\nsound: {d['sound']}\nFrames and audio:"] + fparts[:2 * 3] + [ap]
+        rec2, snd = call_json("shot-sound-check", CHECK_AUDIO, p2, {"film": FILM, "shot": i, "step": 5}, stream=True)
+    return rec, r, snd
+
+def bad(r, snd):
+    out = []
+    for c, lst in (r.get("columns") or {}).items():
+        for s in lst:
+            if s.get("verdict") in ("contradicted", "unsupported"): out.append((c, s))
+    if snd:
+        for c, lst in (snd.get("columns") or {}).items():
+            for s in lst:
+                if s.get("verdict") in ("contradicted", "unsupported"): out.append(("sound", s))
+    return out
+
+def process(i, prev):
+    rec, d, silent = draft(i, prev)
+    d0 = {c: d[c] for c in COLS}
+    chk_rec, r, snd = check(i, d, silent)
+    jl_append(ANN / "rich_crosscheck.jsonl", {"where": {"film": FILM, "shot": i}, "draft_call": rec["key"], "check_call": chk_rec["key"], "check": r, "sound_check": snd})
+    b = bad(r, snd); res = []
+    final = dict(d0); rw_rec = None
+    if b:
+        ts, fparts = frames_for(i)
+        remarks = "\n".join(f"- {c}: '{s.get('quote')}' -> {s['verdict']}" for c, s in b)
+        ap, _ = audio_part(i)
+        parts = [f"Here is your detailed description of shot {i}:\n{json.dumps(d0, ensure_ascii=False)}\nAn independent checker looking at the same frames flagged:\n{remarks}\nRewrite the whole JSON (same keys, same limits, no description_* keys needed) so that every statement is confirmed by the frames" + ("" if silent else " or audio") + ". Reply with JSON only.\n\nFrames:"] + fparts + ([ap] if ap else [])
+        rw_rec, d2 = call_json("shot-detail-rewrite", DRAFT, parts, {"film": FILM, "shot": i, "step": 6}, frames_s=[round(t, 3) for t in ts])
+        errs = validate(d2)
+        if errs: d2 = d0  # keep draft if the rewrite breaks limits; flagged below
+        final = {c: d2[c] for c in COLS}
+        chk2, r2, snd2 = check(i, final, silent)
+        jl_append(ANN / "rich_crosscheck.jsonl", {"where": {"film": FILM, "shot": i, "recheck": True}, "draft_call": rw_rec["key"], "check_call": chk2["key"], "check": r2, "sound_check": snd2})
+        for c, s in bad(r2, snd2):
+            before = final[c]; final[c] = delete_quote(final[c], s.get("quote", ""))
+            res.append({"where": {"film": FILM, "shot": i, "column": c}, "draft": d0[c], "rewrite": before, "check_remark": s,
+                        "treatment": "disputed statement deleted after one rewrite and recheck" if final[c] != before else "quote not located in text; unchanged, flagged", "after": final[c]})
+        if not res:
+            res.append({"where": {"film": FILM, "shot": i}, "draft": d0, "check_remark": remarks, "treatment": "rewritten once; recheck found no contradicted/unsupported statement", "after": final})
+        for x in res: x["calls"] = {"draft": rec["key"], "check": chk_rec["key"], "rewrite": rw_rec["key"], "recheck": chk2["key"]}; jl_append(ANN / "rich_resolutions.jsonl", x)
+    else:
+        r2 = None
+    return {"shot": i, "start": shots[i][0], "end": shots[i][1], **final, "draft_columns": d0, "drafter_description_consistent": d.get("description_consistent"), "drafter_description_note": d.get("description_note"),
+            "checker_description_contradicted": r.get("description_contradicted"), "checker_description_note": r.get("description_note"), "omissions": r.get("omissions"), "audio_silent": silent,
+            "n_frames": frame_n(shots[i][1] - shots[i][0]), "calls": {"draft": rec["key"], "check": chk_rec["key"], "rewrite": rw_rec["key"] if rw_rec else None}}
+
+def main():
+    outp = ANN / "descriptions_rich.json"
+    out = json.load(open(outp)) if outp.exists() else {"film_id": FILM, "drafter": DRAFT, "drafter_params": {"temperature": 0, "reasoning_effort": "low", "max_tokens": 16000}, "checker": CHECK, "audio_checker": CHECK_AUDIO,
+                                                         "checker_params": {"temperature": 0, "max_tokens": 4000}, "frames_rule": "n=min(8,max(4,ceil(dur/2))) at (k+1)/(n+1), 24 fps decode, 640 px JPEG",
+                                                         "continuity_rule": "each shot's draft is given the previous shot's DRAFT detailed description", "shots": {}}
+    # phase A: drafts in order (continuity); phase B: checks / rewrites / rechecks in parallel
+    prevs = {}; prev = None
+    for i in ONLY:
+        prevs[i] = prev
+        rec, d, silent = draft(i, prev); prev = {c: d[c] for c in COLS}
+    print("drafts done", flush=True)
+    todo = [i for i in ONLY if str(i) not in out["shots"]]
+    with ThreadPoolExecutor(6) as ex:
+        futs = {i: ex.submit(process, i, prevs[i]) for i in todo}
+        for i in todo:
+            out["shots"][str(i)] = futs[i].result()
+            json.dump(out, open(outp, "w"), indent=1, ensure_ascii=False); print("shot", i, "done", flush=True)
+    out["shots"] = {k: out["shots"][k] for k in sorted(out["shots"], key=int)}
+    json.dump(out, open(outp, "w"), indent=1, ensure_ascii=False)
+
+if __name__ == "__main__": main()

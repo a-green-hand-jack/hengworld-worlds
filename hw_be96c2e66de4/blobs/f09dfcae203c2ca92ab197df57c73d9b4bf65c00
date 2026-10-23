@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0353",
+  "start": 2397.228,
+  "end": 2400.465,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.237,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 353,
+   "start": 0.0,
+   "end": 3.237,
+   "description": "Medium shot of C1 driving while C2 sits in the passenger seat, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.237
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0353-scr",
+ "descriptions_available": true
+}

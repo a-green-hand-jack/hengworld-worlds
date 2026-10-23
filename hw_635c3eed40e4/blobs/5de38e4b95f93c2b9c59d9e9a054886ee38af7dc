@@ -1,0 +1,23 @@
+coffee_run en 0
+caminandes3 en 0
+spirit_chaser en 0
+domini_canes en 0
+coffee_run True
+caminandes3 True
+spirit_chaser True
+domini_canes True
+trip_to_the_moon True
+sherlock_jr True
+coffee_run True
+caminandes3 True
+spirit_chaser True
+domini_canes True
+trip_to_the_moon True
+sherlock_jr True
+598 598 0 0 0
+IDENTICAL annotations
+IDENTICAL tasks
+IDENTICAL packages
+IDENTICAL key
+HUTIAN_WAKE: doublebuild identical
+exit 0

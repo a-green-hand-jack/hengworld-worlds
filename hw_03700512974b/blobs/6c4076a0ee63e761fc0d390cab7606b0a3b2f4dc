@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0001",
+  "start": 21.375,
+  "end": 30.5,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 9.125,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 1,
+   "start": 0.0,
+   "end": 9.125,
+   "description": "Close-up of C1 lying on the ice and falling asleep, panning right."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 9.125
+  }
+ ],
+ "task_id": "caminandes3-L0-0001-ref",
+ "descriptions_available": true
+}

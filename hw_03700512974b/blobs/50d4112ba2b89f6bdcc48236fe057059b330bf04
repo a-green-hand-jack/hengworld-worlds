@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0037",
+  "start": 109.64,
+  "end": 114.68,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 5.04,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 37,
+   "start": 0.0,
+   "end": 5.04,
+   "description": "Medium shot of C1 dodging an opponent, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 5.04
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0037-ref",
+ "descriptions_available": true
+}

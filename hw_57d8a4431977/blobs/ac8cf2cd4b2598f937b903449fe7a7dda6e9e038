@@ -1,0 +1,57 @@
+{
+ "Q": 1,
+ "S": null,
+ "budget": {
+  "hours_per_minute": 0.0076,
+  "model_calls": 0,
+  "model_usd": 0,
+  "spend_by_actor": {
+   "agent": 0.1846,
+   "harness": 0.0
+  },
+  "tool_calls": 9,
+  "tool_usd": 0.1846,
+  "unused_generated_share": 0.0,
+  "usd": 0.1846,
+  "usd_per_minute": 0.343,
+  "versions_delivered": 1
+ },
+ "continuity": {
+  "character_purity": null,
+  "correspondence": 0.0,
+  "cut_f1_05": 1.0,
+  "cut_f1_10": 1.0,
+  "onset_error_median_s": null,
+  "scene_order": 1.0,
+  "speaker_purity": null,
+  "wer": null
+ },
+ "judge": {
+  "model": "gemini-3.8-flash",
+  "role": "TEMPORARY stand-in for qwen3-vl-plus (not available in this world); temperature 0, reasoning_effort none, max_tokens 1024, 1 fps frames, 2-8 per shot, prompt of df54b3a"
+ },
+ "not_applicable": [
+  "wer",
+  "onset_error_median_s",
+  "speaker_purity"
+ ],
+ "not_run": {
+  "S": "screening (human pair ratings) is outside this round",
+  "character_purity": "not run: needs per-appearance visual embeddings (no model in the world; outside the protocol items listed for this round)",
+  "onset_error_median_s": "not applicable: 0 dialogue lines",
+  "speaker_purity": "no dialogue lines in the segment: not applicable",
+  "wer": "not applicable: 0 dialogue lines"
+ },
+ "official": false,
+ "qc": {
+  "clean_room_log": true,
+  "decodes": true,
+  "duration": true,
+  "format": true,
+  "provenance": true,
+  "subtitles": true
+ },
+ "rescored": "cuts rescored against the key republished by task-maker at dc1c556 (segment end removed from cuts); the judge verdicts are unchanged because shots and descriptions did not change",
+ "run": "fixed-caminandes3-L1-0000-scr-smoke-attempt3",
+ "task_id": "caminandes3-L1-0000-scr"
+}

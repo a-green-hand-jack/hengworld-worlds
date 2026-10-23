@@ -1,0 +1,16 @@
+# Steps, commands, checks, outcomes (task-maker, 2026-10-21; crewcut df54b3a installed with `pip install -e .`, plus faster-whisper and openai)
+
+| # | step | command | check | outcome |
+|---|---|---|---|---|
+| 1 | catalogue query | `crewcut crawl --catalogues blender --out blender.jsonl` | count | 23 candidates (records/crawl/blender.jsonl) |
+| 2 | licence audit | `crewcut audit blender.jsonl --out blender_audited.jsonl` | kept count | **kept 0 of 23**; all labels unrecognised -> FINDING G1; judgment D1/D2 recorded |
+| 3 | IA metadata | advancedsearch identifier:CaminandesLlamigos; /metadata listing | licenseurl | CC BY 3.0; 3 video files (mp4 original 139 MB, webm 38 MB, ogv derivative 11.9 MB) |
+| 4 | fetch master | curl IA ogv; `sha256sum` | equals configs/films.yaml master_sha256 | OK 028d7629... (D3) |
+| 5 | shots, dialogue, hierarchy, provenance index | `crewcut annotate --data data --film caminandes3 --local-dir masters` | exit code; first run (core only) failed: no faster_whisper (G2); after installing it: OK (12 s) | files in data/caminandes3 |
+| 6 | descriptions | `commands/describe_run.py desc records/gemini_ledger.jsonl` (wraps describe_film) | 37 entries, finish_reason=stop | see D5, D6 |
+| 7 | tasks | `crewcut tasks --data data --film caminandes3 --out tasks` | 90 packages | OK |
+| 8 | split + key scan | `commands/publish_split.py`, `commands/scan_key.py packages key` | exit 0 | 585 published files, 90 keys, 0 hits |
+| 9 | comparison | `commands/compare.py` -> records/comparison.json | list differences | see COMPARISON.md |
+| 10 | reproduction | `commands/rebuild.sh /tmp/rebuild` (log in logs/rebuild_run.log) | manifest equality | 582/585 files identical; 3 reference clips differ in bytes (see COMPARISON.md) |
+
+Not run by me: evaluation (run + score) -> executor, scorer. Provenance index built (records/provenance_npz.sha256); no published counterpart, so not compared. DINOv2 not used.

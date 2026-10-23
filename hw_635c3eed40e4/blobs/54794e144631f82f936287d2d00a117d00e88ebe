@@ -1,0 +1,6 @@
+{
+ "model_usd": 0.25,
+ "tools_usd": 0.0625,
+ "wall_clock_s": 900.0,
+ "rule": "per minute of segment: model 20 USD, tools 5 USD, wall clock 1 h; wall clock at least 15 min"
+}

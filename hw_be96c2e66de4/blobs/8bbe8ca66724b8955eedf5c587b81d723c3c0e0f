@@ -1,0 +1,43 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0029",
+  "start": 2505.937,
+  "end": 2520.251,
+  "shots": 3,
+  "lines": 0
+ },
+ "duration": 14.314,
+ "cuts": [
+  3.336,
+  10.01
+ ],
+ "shots": [
+  {
+   "index": 386,
+   "start": -0.0,
+   "end": 3.336,
+   "description": "Wide shot of an audience watching a movie, static camera."
+  },
+  {
+   "index": 387,
+   "start": 3.336,
+   "end": 10.01,
+   "description": "Medium close-up of C1 standing and working in a projection room, static."
+  },
+  {
+   "index": 388,
+   "start": 10.01,
+   "end": 14.314,
+   "description": "Medium shot of C1 talking to C2 indoors, static camera. C1 gestures angrily at C2, and C2 leaves the room, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 14.314
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0029-ref",
+ "descriptions_available": true
+}

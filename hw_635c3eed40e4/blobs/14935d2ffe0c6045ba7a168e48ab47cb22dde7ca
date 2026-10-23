@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+"""Damage/stress checks on a real run output (coffee_run-L2-0000-scr). Usage: validate_real.py DELIV KEY WORK OUT.json
+Variants of delivery.mp4 made with ffmpeg; each is run through the same Q checks and cut detection (crewcut_algorithms cuts, unmodified).
+Expected: reencode holds (F1 stays), shift>1 s / truncated / shuffled drop F1 or fail Q, silenced keeps picture (Q still passes, c unchanged: no dialogue here)."""
+import json, os, subprocess, sys, shutil, importlib.util
+sys.path.insert(0, os.path.dirname(__file__))
+import score_run
+deliv, key, work, out = sys.argv[1:5]
+task = "coffee_run-L2-0000-scr"
+truth = json.load(open(f"{key}/{task}/truth.json")); src = f"{deliv}/{task}/delivery.mp4"
+spec = importlib.util.spec_from_file_location("fp", os.environ["FPPY"]); fp = importlib.util.module_from_spec(spec); spec.loader.exec_module(fp)
+V = os.path.abspath(os.path.join(work, "validation_variants")); os.makedirs(V, exist_ok=True)
+def ff(*a): subprocess.run(["ffmpeg", "-y", "-v", "error", *a], check=True)
+def enc(vf=None, af=None):
+    r = ["-c:v", "libx264", "-r", "24", "-pix_fmt", "yuv420p", "-c:a", "aac", "-ar", "48000", "-ac", "2"]
+    return r
+variants = {}
+variants["identical_copy"] = lambda o: shutil.copy(src, o)
+variants["reencoded"] = lambda o: ff("-i", src, "-c:v", "libx264", "-crf", "30", "-c:a", "aac", "-b:a", "96k", "-ar", "48000", o)
+variants["silenced"] = lambda o: ff("-i", src, "-c:v", "copy", "-af", "volume=0", "-c:a", "aac", "-ar", "48000", o)
+variants["truncated_half"] = lambda o: ff("-i", src, "-t", str(truth["duration"] / 2), "-c:v", "libx264", "-c:a", "aac", "-ar", "48000", o)
+variants["shifted_3s_front_pad"] = lambda o: ff("-i", src, "-vf", "tpad=start_duration=3:color=black", "-af", "adelay=3000:all=1", "-c:v", "libx264", "-c:a", "aac", "-ar", "48000", o)
+def shuffled(o):
+    d = truth["duration"]; cuts = [0] + truth["cuts"] + [d]
+    parts = []
+    for i, order in enumerate([2, 0, 3, 1]):
+        p = f"{V}/part{i}.mp4"; ff("-i", src, "-ss", str(cuts[order]), "-to", str(cuts[order + 1]), "-c:v", "libx264", "-r", "24", "-c:a", "aac", "-ar", "48000", p); parts.append(p)
+    open(f"{V}/list.txt", "w").write("".join(f"file '{p}'\n" for p in parts))
+    ff("-f", "concat", "-safe", "0", "-i", f"{V}/list.txt", "-c:v", "libx264", "-r", "24", "-c:a", "aac", "-ar", "48000", o)
+variants["shot_order_shuffled"] = shuffled
+res = {}
+for name, mk in variants.items():
+    o = f"{V}/{name}.mp4"; mk(o)
+    d = f"{V}/{name}_dir"; os.makedirs(d, exist_ok=True)
+    shutil.copy(o, f"{d}/delivery.mp4")
+    for f in ("subtitles.vtt", "production_log.jsonl", "ledger.jsonl"): shutil.copy(f"{deliv}/{task}/{f}", d)
+    q = score_run.q_task(d, truth, os.environ["FPP"], fp)
+    r = {"Q": q["Q"], "Q_failed": q["Q_failed"], "duration_s": q["duration_s"]}
+    if q["Q"]:
+        cp = f"{work}/cuts/val_{name}.json"
+        subprocess.run([sys.executable, "-m", "crewcut_algorithms", "cuts", o, cp], check=True, capture_output=True, env={**os.environ, "PYTHONPATH": "/crewcut-algorithms"})
+        os.makedirs(f"{work}/cuts", exist_ok=True)
+        rec = json.load(open(cp)); hyp = [c / rec["fps"] for c in rec["cuts"]]
+        r["hyp_cuts"] = [round(h, 3) for h in hyp]
+        r["F1_0.5"] = score_run.cut_f1(truth["cuts"], hyp, 0.5); r["F1_1.0"] = score_run.cut_f1(truth["cuts"], hyp, 1.0)
+    res[name] = r; print(name, r, flush=True)
+res["_truth_cuts"] = truth["cuts"]
+json.dump(res, open(out, "w"), indent=1)

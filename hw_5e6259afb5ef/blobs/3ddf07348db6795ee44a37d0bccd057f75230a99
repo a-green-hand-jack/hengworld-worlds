@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Close-up of C1 looking around with bulging eyes, static camera.
+Detailed description:
+setting: P1: Frozen pond and snowy field. Outdoor, bright daytime, clear blue sky with snowy hills in the background.
+characters: C1: positioned left of center, facing forward, initially with mouth open in shock, then closing its mouth with a panicked, wide-eyed expression.
+props: None.
+action: C1 stands against the blue sky, gasps with its mouth open in shock, then closes its mouth and leans forward slightly while turning its head to the right, staring intensely with huge bulging eyes.
+camera: Close-up at a slightly low angle, camera pushes in slightly on C1.
+light_mood: Bright natural daylight with vivid blue sky and warm orange fur tones; frantic, comedic and alarmed mood.
+Frames:
+[frame 1 at 39.76s]
+IMG:94d25c2fc7dab8918eecbe0e7bc27e0b29b12051a8e06f55ec5e85b9052f3c46
+[frame 2 at 40.02s]
+IMG:36cc288a4472c50123f9c54b78bcab3572c677e116062f7c801560f5fe118c9b
+[frame 3 at 40.28s]
+IMG:5b7b0488f0ab3077131f1e4aa85f488cf348350971d3ca7b54f4d737235d3c14
+[frame 4 at 40.53s]
+IMG:fcaaa8edffc8d70f6e43447c933dd4bc9c23a6bbc7a866c9b0f1202db56ad60d

@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0012",
+  "start": 49.875,
+  "end": 52.292,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.417,
+ "cuts": [
+  2.417
+ ],
+ "shots": [
+  {
+   "index": 12,
+   "start": 0.0,
+   "end": 2.417,
+   "description": "Close-up of C1 exhaling a small ball into the air, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.417
+  }
+ ]
+}

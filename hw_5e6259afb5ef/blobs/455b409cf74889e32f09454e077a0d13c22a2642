@@ -1,0 +1,3 @@
+Does this image match the text description? Description: adult penguins. Medium-sized black and white penguins with distinct black and white facial bands, holding large bunches of red berries.
+The image should be a full-body character design on a plain neutral background, one character. Reply JSON {"matches": true|false, "why": "..."}.
+IMG:b64b7cba83a04453505278895471c0b88f00cefd4aede3e430cef97e3da9cbc7

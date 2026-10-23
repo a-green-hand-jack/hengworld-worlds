@@ -1,0 +1,25 @@
+[
+ {
+  "type": "image",
+  "file": "work/still0.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Medium shot of a cartoon character running through a hospital room, then tumbling down church stairs into a cityscape, transitioning to a wide shot of a cartoon character flying through the air, static framing.",
+  "used_in": "delivery.mp4",
+  "shot": 0
+ },
+ {
+  "type": "image",
+  "file": "work/still1.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Medium shot of a cartoon character embracing and kissing another person in a cafe, static camera.",
+  "used_in": "delivery.mp4",
+  "shot": 1
+ },
+ {
+  "type": "music",
+  "file": "work/music.mp3",
+  "model": "lyria-3.5",
+  "prompt": "Instrumental background score, no vocals, about 50 seconds, for a film whose shots are described as follows: Medium shot of a character running through a hospital room, then tumbling down church stairs into a cityscape, transitioning to a wide shot of a character flying through the air, static framing. Medium shot of a character embracing and kissing another person in a cafe, static camera.",
+  "used_in": "delivery.mp4"
+ }
+]

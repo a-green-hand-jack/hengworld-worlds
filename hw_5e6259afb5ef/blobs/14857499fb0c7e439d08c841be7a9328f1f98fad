@@ -1,0 +1,24 @@
+import json, re
+from pathlib import Path
+
+def jl_append(path, row):
+    """append one record; identical records (reruns replaying saved answers) are not added twice."""
+    line = json.dumps(row, ensure_ascii=False)
+    p = Path(path)
+    if p.exists() and line in p.read_text().splitlines(): return
+    with open(p, "a") as f: f.write(line + "\n")
+
+def delete_quote(text, quote):
+    """remove an exact quoted statement from text (the only edit the pipeline makes to model text); unchanged if not found."""
+    if not quote or quote not in text: return text
+    t = text.replace(quote, "", 1)
+    t = re.sub(r"\s+([,.;:])", r"\1", t); t = re.sub(r"([,;:])\s*([,;.])", r"\2", t)
+    t = re.sub(r"\s{2,}", " ", t).strip(" ,;")
+    # drop function words left dangling by the deletion ("... with." / "... and, ...")
+    dang = r"(?:with|and|or|a|an|the|of|in|on|at|to|by|from|while|that|holding|set in)"
+    for _ in range(3):
+        t = re.sub(r"\s+" + dang + r"\s*(?=[,.;:]|$)", "", t, flags=re.I)
+        t = re.sub(r"\s+([,.;:])", r"\1", t); t = re.sub(r"([,;:])\s*([,;.])", r"\2", t)
+    t = t.strip(" ,;")
+    if t and t[-1] not in ".!?" and text.rstrip()[-1:] in ".!?": t += text.rstrip()[-1]
+    return t

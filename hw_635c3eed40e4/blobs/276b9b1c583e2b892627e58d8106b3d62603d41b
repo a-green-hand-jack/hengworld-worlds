@@ -1,0 +1,37 @@
+# usage: clip_edges.py MASTER CLIPS_DIR [FILM FPS [MAXSEG]] (defaults coffee_run 24, all segments; with MAXSEG a spread sample incl. first/last/L4) ; compares first/last clip frame with master frame at start/end-1 (+-1 neighbours) via the reference algorithm's frame reader
+import sys,json,numpy as np
+sys.path.insert(0,'/crewcut-algorithms')
+from crewcut_algorithms import cuts
+master,clips=sys.argv[1:3]
+film=sys.argv[3] if len(sys.argv)>3 else 'coffee_run'; fps=float(sys.argv[4]) if len(sys.argv)>4 else 24
+h=json.load(open(f'/crewcut-dataset/annotations/{film}/hierarchy.json'))
+seg={s['id']:s for lv in ['L0','L1','L2','L3','L4'] for s in h[lv]}
+import os
+seg={k:v for k,v in seg.items() if os.path.exists(f'{clips}/{k}-ref/clip.mp4')}
+if len(sys.argv)>5:
+    ks=list(seg); n=int(sys.argv[5]); pick=sorted({ks[int(i*(len(ks)-1)/(n-1))] for i in range(n)}|{k for k in ks if '-L4-' in k or '-L3-' in k})
+    seg={k:seg[k] for k in pick}
+need={}
+for sid,s in seg.items():
+    a=round(s['start']*fps); b=round(s['end']*fps)
+    for f in (a-1,a,a+1,b-2,b-1,b): need.setdefault(f,None)
+for i,fr in enumerate(cuts.frames(master)):
+    if i in need: need[i]=fr.astype(np.int16)
+    if i>max(need): break
+def edges(p):
+    first=last=None
+    for i,fr in enumerate(cuts.frames(p)):
+        if i==0: first=fr.astype(np.int16)
+        last=fr.astype(np.int16)
+    return first,last
+bad=0
+for sid,s in seg.items():
+    a=round(s['start']*fps); b=round(s['end']*fps)
+    f,l=edges(f'{clips}/{sid}-ref/clip.mp4')
+    d=lambda x,y: float(np.abs(x-y).mean()) if y is not None else None
+    df=[d(f,need.get(a+k)) for k in (-1,0,1)]; dl=[d(l,need.get(b-1+k)) for k in (-1,0,1)]
+    TOL=0.1  # static shots: neighbouring frames differ by < TOL, so a tie within TOL is accepted and flagged
+    okf=df[1] is not None and df[1]<=min(x for x in df if x is not None)+TOL; okl=dl[1]<=min(x for x in dl if x is not None)+TOL
+    bad+=not(okf and okl)
+    print(sid,'first',[None if x is None else round(x,2) for x in df],'last',[None if x is None else round(x,2) for x in dl],okf and okl)
+sys.exit(1 if bad else 0)

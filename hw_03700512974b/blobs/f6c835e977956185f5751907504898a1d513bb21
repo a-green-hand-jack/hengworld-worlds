@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/hutian/repo/runs/pipeline/t0.py", line 67, in <module>
+    content.append({"type": "image_url", "image_url": {"url": "data:image/jpeg;base64," + base64.b64encode(open(fp, "rb").read()).decode()}})
+                                                                                                           ^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/hutian/runs_out/coffee_run-L1-0001-ref/work/d1_2.jpg'

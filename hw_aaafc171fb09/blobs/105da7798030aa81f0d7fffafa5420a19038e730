@@ -1,0 +1,4 @@
+# Environment (executor)
+- CrewCut: clone of /crewcut/crewcut.git at df54b3a3918e16bfc8e61ff6215e01b6abca3849 (benchmark version 0.1.0), `pip install -e ".[dev]"` (core only) in /hutian/.venv; exit 0.
+- mcp 1.30.0, numpy 2.4.6, opencv-python-headless 5.0.0.93.
+- ffmpeg 9.0.2 (conda-forge, micromamba into /hutian/.mamba) installed because none was on PATH; see record.json.

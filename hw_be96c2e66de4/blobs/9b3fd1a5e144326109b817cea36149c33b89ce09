@@ -1,0 +1,7 @@
+# Not run
+- S (viewing score): no raters.
+- Speaker/character consistency: no human labels.
+- Scene order: the rule for recovering the remake's scene sequence is not specified (brief gap 4); no rule invented.
+- Dialogue WER / onset median error: not applicable, Coffee Run has no dialogue lines.
+- Sound effects exist in no run (executor: not run), which is not a scoring item.
+Everything else (Q, cut F1 @0.5/1.0, shot correspondence, $) is computed for all 28 runs: scores.csv.

@@ -1,0 +1,13 @@
+import sys, json, itertools
+sys.path.insert(0, "scripts")
+from phash import *
+film, path = sys.argv[1], sys.argv[2]
+fp = json.load(open(f"/crewcut-dataset/annotations/{film}/fingerprint_video.json"))["hashes"]
+fr = master_frames(path)
+n = min(len(fr), len(fp)); print("frames", len(fr), "fp", len(fp))
+for v in ["median_all", "median_nodc", "mean_all", "mean_nodc"]:
+    bits = 0; same = 0; tot = 0
+    for i in range(n):
+        h = hash_gray32(fr[i], v); dist = hamming(h, fp[i]); bits += 64 - dist; tot += 64
+        same += dist == 0
+    print(v, "bit-agree %.4f" % (bits / tot), "exact", same, "/", n)

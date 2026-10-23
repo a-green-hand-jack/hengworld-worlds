@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Medium shot of C1 roaring, static.
+Detailed description:
+setting: Outdoor, daytime, clear blue sky with soft white clouds and distant snowy mountains in the background.
+characters: C1: center-left, head and long neck visible, eyelids tightly shut, mouth wide open with tongue sticking out in an exaggerated scream.
+props: None.
+action: C1 stands with its head tilted back, eyes squeezed shut, and mouth wide open while its tongue wiggles and its tail briefly pops up on the right.
+camera: Close-up, slightly low angle, static camera.
+light_mood: Bright natural sunlight with warm tones on the fur against a cool cyan sky; comedic and frantic mood.
+Frames:
+[frame 1 at 74.03s]
+IMG:0c8058cabb74978b6614327e29e9b5bcdf1ed2d0d7f8458c4d5d398efdd0d6ac
+[frame 2 at 74.17s]
+IMG:82b27fbc61cf381ed3409a7caf9bf6fd3607b6e90ab4bbe03f5f14778fbe0e46
+[frame 3 at 74.33s]
+IMG:dafb49a294adcfd01f9bc97a5bee438cc2fb72fabbf6f529a3b852ecc797174f
+[frame 4 at 74.47s]
+IMG:631f495ae8a20e3970c4dc5149a637268f3c808a9d31ca30473ebc91260c666b

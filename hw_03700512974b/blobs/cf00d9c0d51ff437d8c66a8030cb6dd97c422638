@@ -1,0 +1,1 @@
+{"id":"probe-002","time":"2026-10-22","what":"re-probe of gemini-native gemini-3.1-flash-lite-image, same request as probe-001","result":"HTTP 402 RESOURCE_EXHAUSTED credits depleted","cost_usd":0,"decision":"Every T0 step (still image, speech, music) needs Gemini; no part of the fixed pipeline can run. All Coffee Run runs stay 'not run'. Re-probe when woken again."}

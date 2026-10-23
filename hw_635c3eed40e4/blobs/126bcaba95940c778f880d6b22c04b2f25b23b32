@@ -1,0 +1,25 @@
+[
+ {
+  "type": "image",
+  "file": "work/still0.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: The user wants a description of the provided film shot based on specific instructions:\n1. Use the template: `[shot size] of [subject] [action], [camera move]`\n2. Refer to people consistently as a cartoon character, a cartoon character, etc. (none known yet, so identify them: a cartoon character is the person who gets married and then flies/jumps, let's trace a cartoon character as the main female character).\n3. Do not mention colours, lens, art style, or other appearance details that a remake could change.\n4. Reply with the description only.\n\nLet's break down the scene across the frames:\n- Frame 1: a cartoon character in a hospital-like room walking towards the right, while a cartoon character and a cartoon character are sitting.\n- Frame 2: a cartoon character crashing/bursting through a church where a wedding is happening (a cartoon character getting married to someone).\n- Frame 3: a cartoon character flying through the city sky.\n\nLet's combine this into a single shot/sequence or describe the progression using the requested format. Wait, the prompt says \"frames from one shot of a film\". Ah, it's a single continuous shot (tracking/pan as a cartoon character moves through rooms/city).\n\nLet's draft the description:\nShot size: Long shot or Medium long shot? Let's use Medium long shot.\nSubject: a cartoon character.\nAction: walks through a room, then bursts into a church during a wedding, and finally flies through the city sky, static camera. Wait, the camera tracks or pans.\n\nLet's refine:\n\"Medium long shot of a cartoon character walking through a hospital room before bursting into a church and flying through the city sky, panning right.\"\n\nLet's check the template: `[shot size] of [subject] [action], [camera move]`\n- Shot size: Medium long shot\n- Subject: a cartoon character\n- Action: walks through a hospital room, crashes into a church wedding, and flies through the city sky\n- Camera move: panning right\n\nLet's check constraints:\n- One to three sentences? Yes (one sentence).\n- Template followed? Yes.\n- Characters named a cartoon character, etc.? Yes (a cartoon character).\n- No colours, lens, art style? Checked.\n- Reply with description only? Yes.\n\nDraft:\nMedium long shot of a cartoon character walking through a hospital room, bursting into a church wedding, and flying through the city sky, panning right.",
+  "used_in": "delivery.mp4",
+  "shot": 0
+ },
+ {
+  "type": "image",
+  "file": "work/still1.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Medium shot of customers in a cafe, static.",
+  "used_in": "delivery.mp4",
+  "shot": 1
+ },
+ {
+  "type": "music",
+  "file": "work/music.mp3",
+  "model": "lyria-3.5",
+  "prompt": "Instrumental background score, no vocals, about 50 seconds, for a film whose shots are described as follows: The user wants a description of the provided film shot based on specific instructions:\n1. Use the template: `[shot size] of [subject] [action], [camera move]`\n2. Refer to people consistently as a character, a character, etc. (none known yet, so identify them: a character is the person who gets married and then flies/jumps, let's trace a character as the main female character).\n3. Do not mention colours, lens, art style, or other appearance details that a remake could change.\n4. Reply with the description only.\n\nLet's break down the scene across the frames:\n- Frame 1: a character in a hospital-like room walking towards the right, while a character and a character are sitting.\n- Frame 2: a character crashing/bursting through a church where a wedding is happening (a character getting married to someone).\n- Frame 3: a character flying through the city sky.\n\nLet's combine this into a single shot/sequence or describe the progression using the requested format. Wait, the prompt says \"frames from one shot of a film\". Ah, it's a single continuous shot (tracking/pan as a character moves through rooms/city).\n\nLet's draft the description:\nShot size: Long shot or Medium long shot? Let's use Medium long shot.\nSubject: a character.\nAction: walks through a room, then bursts into a church during a wedding, and finally flies through the city sky, static camera. Wait, the camera tracks or pans.\n\nLet's refine:\n\"Medium long shot of a character walking through a hospital room before bursting into a church and flying through the city sky, panning right.\"\n\nLet's check the template: `[shot size] of [subject] [action], [camera move]`\n- Shot size: Medium long shot\n- Subject: a character\n- ",
+  "used_in": "delivery.mp4"
+ }
+]

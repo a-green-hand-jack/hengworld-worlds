@@ -1,0 +1,83 @@
+{
+ "segment": {
+  "id": "caminandes3-L2-0000",
+  "start": 0.0,
+  "end": 42.708,
+  "shots": 9,
+  "lines": 0
+ },
+ "duration": 42.708,
+ "cuts": [
+  21.375,
+  30.5,
+  32.292,
+  33.875,
+  36.792,
+  39.5,
+  40.792,
+  41.792
+ ],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 21.375,
+   "description": "Medium shot of C1 ice-skating, static camera."
+  },
+  {
+   "index": 1,
+   "start": 21.375,
+   "end": 30.5,
+   "description": "Medium shot of an animal lying on ice, panning left."
+  },
+  {
+   "index": 2,
+   "start": 30.5,
+   "end": 32.292,
+   "description": "Medium shot of a puffin looking at a flower between train tracks, tracking right."
+  },
+  {
+   "index": 3,
+   "start": 32.292,
+   "end": 33.875,
+   "description": "Wide shot of a steam locomotive driving along a snowy track, static."
+  },
+  {
+   "index": 4,
+   "start": 33.875,
+   "end": 36.792,
+   "description": "Medium close-up of a startled camelid animal blinking and turning its head, static camera."
+  },
+  {
+   "index": 5,
+   "start": 36.792,
+   "end": 39.5,
+   "description": "Wide shot of C1 standing on train tracks and smelling a flower while a train approaches, static."
+  },
+  {
+   "index": 6,
+   "start": 39.5,
+   "end": 40.792,
+   "description": "Medium shot of C1 dodging something, static camera."
+  },
+  {
+   "index": 7,
+   "start": 40.792,
+   "end": 41.792,
+   "description": "Wide shot of a steam locomotive driving through the snow, static camera."
+  },
+  {
+   "index": 8,
+   "start": 41.792,
+   "end": 42.708,
+   "description": "Close-up of C1 looking shocked, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 42.708
+  }
+ ]
+}

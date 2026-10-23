@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0020",
+  "start": 70.083,
+  "end": 73.875,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.792,
+ "cuts": [
+  0.0
+ ],
+ "shots": [
+  {
+   "index": 20,
+   "start": 0.0,
+   "end": 3.792,
+   "description": "Medium shot of a gopher-like animal and a small bird riding in a wooden crate, panning right."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.792
+  }
+ ]
+}

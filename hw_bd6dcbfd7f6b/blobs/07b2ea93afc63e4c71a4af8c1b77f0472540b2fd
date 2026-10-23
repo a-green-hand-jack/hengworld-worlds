@@ -1,0 +1,10 @@
+{
+ "decision": "describe_film was given a film dir whose shots.json is the pipeline's full shot record work/shots_full.json (keys cuts, fps, duration) and master.ogv; the released data/caminandes3/shots.json (keys cut_frames, duration_s) is not readable by describe_film (KeyError 'cuts').",
+ "evidence": "traceback in this turn's first run; crewcut/build/describe.py line 42 reads shots['cuts'] and shots['duration']; crewcut/io.py release_files writes cut_frames/duration_s. Both files describe the same 36 cuts (checked: shots_full.json cuts=36).",
+ "decided_by": "task-maker (agent)",
+ "date": "2026-10-21",
+ "open_item": "O8",
+ "affects": [
+  "shot descriptions"
+ ]
+}

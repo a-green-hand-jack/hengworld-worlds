@@ -1,0 +1,17 @@
+You verify a synopsis against the only information allowed to support it: one-sentence shot descriptions and dialogue. For each statement (a self-contained clause) judge 'supported' (can be inferred from them), or 'unsupported'. Each quote must be a complete self-contained clause so that deleting it leaves grammatical text. Also report whether the synopsis mentions any shot count, cut, time, shot size, camera move, colour or other appearance detail, or uses a C label. Reply with JSON {"statements": [{"quote": "exact substring", "verdict": "supported|unsupported"}], "forbidden_content": ["..."]}.
+
+One-sentence descriptions (C labels name the characters):
+shot 0: Full shot of C1 falling through the air behind a bunch of berries, pulling back.
+shot 1: Medium close-up of C1 screaming and flailing its legs while flying through the air, tracking shot.
+shot 2: Medium close-up of C2 falling while waving, static camera.
+shot 3: Close-up of C1 gasping and blinking in alarm, static.
+shot 4: Extreme long shot of a furry creature falling from the sky and crashing into a snowy landscape, zooming in.
+shot 5: Medium shot of an animal lying on its back in the snow with another animal sitting on it, static camera.
+shot 6: Wide shot of C2 sliding down a snowy slope, static camera.
+shot 7: Close-up of C1 lowering its head out of frame, static.
+
+Dialogue:
+(no dialogue)
+
+Synopsis:
+While floating high above the snowy mountains in a comedic yet ultimately melancholic sequence, a llama eagerly reaches for a drifting bunch of berries before a penguin grabs onto its back in mid-air, causing a baby penguin to tumble alongside them as the startled llama curls into a ball and plummets onto the rocky slope, where the little penguin slides off the dazed llama's chest to rejoin a distant penguin colony, leaving the bruised llama standing alone and dejected on a cliff near a lighthouse.

@@ -1,0 +1,71 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0005",
+  "start": 242.275,
+  "end": 303.069,
+  "shots": 7,
+  "lines": 0
+ },
+ "duration": 60.794,
+ "cuts": [
+  18.886,
+  31.465,
+  33.567,
+  49.049,
+  54.154,
+  57.658
+ ],
+ "shots": [
+  {
+   "index": 22,
+   "start": 0.0,
+   "end": 18.886,
+   "description": "Medium shot of C1 dropping a broom and then hiding behind a curtain, static camera."
+  },
+  {
+   "index": 23,
+   "start": 18.886,
+   "end": 31.465,
+   "description": "Medium shot of C1 talking to a woman, static camera."
+  },
+  {
+   "index": 24,
+   "start": 31.465,
+   "end": 33.567,
+   "description": "Medium shot of C1 and C2 talking, static camera."
+  },
+  {
+   "index": 25,
+   "start": 33.567,
+   "end": 49.049,
+   "description": "Medium shot of C1 showing money to C2 before C2 walks away, static."
+  },
+  {
+   "index": 26,
+   "start": 49.049,
+   "end": 54.154,
+   "description": "Medium shot of C1 standing and C2 kneeling to pick up a pile of clothes from the floor, static camera."
+  },
+  {
+   "index": 27,
+   "start": 54.154,
+   "end": 57.658,
+   "description": "Medium shot of C1 standing and C2 kneeling on the floor to pick up paper scraps, C1 crouching down to help. Static camera."
+  },
+  {
+   "index": 28,
+   "start": 57.658,
+   "end": 60.794,
+   "description": "Medium shot of C1 crying into a handkerchief, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 60.794
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0005-scr",
+ "descriptions_available": true
+}

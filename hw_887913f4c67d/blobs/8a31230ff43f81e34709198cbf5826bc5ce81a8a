@@ -1,0 +1,18 @@
+"""Summarise Gemini ledgers (jsonl, one response per line) by purpose and model. usage: spend.py OUT.json LEDGER...
+Prices (USD per 1M tokens, paid tier standard) are from https://ai.google.dev/gemini-api/docs/pricing, page 'last updated 2026-10-19 UTC', read 2026-10-21."""
+import json, sys
+from collections import defaultdict
+PRICE = {"gemini-3.5-flash-lite": (0.30, 2.50), "gemini-3.8-flash": (0.75, 3.75)}
+agg = defaultdict(lambda: dict(responses=0, prompt_tokens=0, completion_tokens=0, total_tokens=0))
+for p in sys.argv[2:]:
+    for l in open(p):
+        r = json.loads(l); a = agg[(r["purpose"], r["model_requested"])]
+        u = r["usage"] or {}
+        a["responses"] += 1
+        for k in ("prompt_tokens", "completion_tokens", "total_tokens"): a[k] += u.get(k) or 0
+out = []
+for (pur, m), a in sorted(agg.items()):
+    pi, po = PRICE.get(m, (None, None))
+    cost = None if pi is None else round(a["prompt_tokens"] * pi / 1e6 + (a["total_tokens"] - a["prompt_tokens"]) * po / 1e6, 6)
+    out.append(dict(purpose=pur, model=m, **a, price_in_per_M=pi, price_out_per_M=po, cost_usd=cost))
+json.dump(out, open(sys.argv[1], "w"), indent=1); print(json.dumps(out, indent=1))

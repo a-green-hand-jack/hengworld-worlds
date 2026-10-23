@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0006",
+  "start": 46.083,
+  "end": 47.0,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.917,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 6,
+   "start": 0.0,
+   "end": 0.917,
+   "description": "Medium close-up of C1 reaching up towards a branch, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.917
+  }
+ ],
+ "task_id": "domini_canes-L0-0006-ref",
+ "descriptions_available": true
+}

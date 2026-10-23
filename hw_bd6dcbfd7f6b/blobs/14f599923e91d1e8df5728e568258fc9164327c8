@@ -1,0 +1,29 @@
+"""Aggregate record/gemini/*.jsonl into spend.json: requests by purpose/attempt, reported token usage, cost under two price tables."""
+import glob, json, sys, collections
+P = {"crewcut_default_row": {"input": 5.00, "output": 25.00, "cache_read": 0.50},
+     "google_published_gemini-3.8-flash_to_2026-12-31": {"input": 0.75, "output": 3.75}}
+rows = collections.OrderedDict()
+for f in sorted(glob.glob(sys.argv[1] + "/*requests*.jsonl")):
+    name = f.rsplit("/", 1)[1]
+    a = rows.setdefault(name, dict(purpose=None, requests=0, errors=0, empty_reply=0, prompt_tokens=0, completion_tokens=0, total_tokens=0, cached_tokens=0))
+    for l in open(f):
+        r = json.loads(l); a["purpose"] = r["purpose"]; a["requests"] += 1
+        if "error" in r: a["errors"] += 1; continue
+        if r["reply"] is None: a["empty_reply"] += 1
+        u = r["usage"] or {}
+        a["prompt_tokens"] += u.get("prompt_tokens") or 0; a["completion_tokens"] += u.get("completion_tokens") or 0
+        a["total_tokens"] += u.get("total_tokens") or 0
+        a["cached_tokens"] += ((u.get("prompt_tokens_details") or {}).get("cached_tokens") or 0)
+def cost(rs, p, cache=False):
+    pt = sum(r["prompt_tokens"] for r in rs); ct = sum(r["completion_tokens"] for r in rs)  # hidden thinking tokens = total - prompt - completion
+    th = sum(r["total_tokens"] - r["prompt_tokens"] - r["completion_tokens"] for r in rs)
+    return round((pt * p["input"] + (ct + th) * p["output"]) / 1e6, 6)
+rs = list(rows.values())
+by_purpose = collections.defaultdict(list)
+for r in rs: by_purpose[r["purpose"]].append(r)
+out = {"per_file": rows, "by_purpose": {k: {"requests": sum(x["requests"] for x in v), "prompt_tokens": sum(x["prompt_tokens"] for x in v),
+       "completion_tokens": sum(x["completion_tokens"] for x in v), "total_tokens": sum(x["total_tokens"] for x in v),
+       "cost_usd": {n: cost(v, p) for n, p in P.items()}} for k, v in by_purpose.items()},
+       "logged_requests": sum(r["requests"] for r in rs), "prices": P,
+       "cost_note": "cost = prompt_tokens*input + (total_tokens - prompt_tokens)*output; no cache discount applied (upper bound; cached_tokens reported separately in per_file)"}
+json.dump(out, open(sys.argv[1] + "/spend.json", "w"), indent=1); print(json.dumps(out["by_purpose"], indent=1), out["logged_requests"])

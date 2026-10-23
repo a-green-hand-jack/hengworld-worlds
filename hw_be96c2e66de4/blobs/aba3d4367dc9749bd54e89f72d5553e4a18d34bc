@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0002",
+  "start": 30.5,
+  "end": 32.292,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.792,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 2,
+   "start": 0.0,
+   "end": 1.792,
+   "description": "Wide shot of C1 standing on railroad tracks and looking at a sprout, zooming in."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.792
+  }
+ ],
+ "task_id": "caminandes3-L0-0002-scr",
+ "descriptions_available": true
+}

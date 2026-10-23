@@ -1,0 +1,17 @@
+Here is your detailed description of shot 17:
+{"setting": "P3: Underground mine. Indoor, dark cavern with blue light, rocky walls and wooden beams blurring rapidly upwards in the background.", "characters": "C1: on the left, dark circular marks around eyes, mouth wide open screaming in terror; C2: on the right, holding a bunch of red berries, looking happily at them.", "props": "A large bunch of red berries held by C2.", "action": "As they plummet downwards, the rocky cave walls blur upwards behind them. C1 on the left screams in terror with its mouth wide open and wind blowing its fur, while C2 on the right happily hugs the bunch of red berries.", "camera": "Medium close-up, low angle, tracking downwards with the falling characters.", "light_mood": "Dark cavern with cool blue background light and warm rim light on C1; chaotic, fast-paced, and comedic mood.", "sound": "A loud, comical, panicked scream from C1 mixed with rushing wind."}
+An independent checker looking at the same frames flagged:
+- setting: 'P3: Underground mine.' -> unsupported
+- sound: 'mixed with rushing wind' -> unsupported
+Rewrite the whole JSON (same keys, same limits, no description_* keys needed) so that every statement is confirmed by the frames or audio. Reply with JSON only.
+
+Frames:
+[frame 1 at 66.62s]
+IMG:3689dfa7ca49779cd114e9fd69f227e298bcfdcc5da2cbe807b8712c1469988a
+[frame 2 at 66.82s]
+IMG:e5f4f233af168d988ee8560b18755527d84dc80020a089d027dc2bf73268d3d7
+[frame 3 at 67.02s]
+IMG:de010896f59aaac53c58b0ec38ef241f1627d753e649c9bfde6ee6d208c4d48d
+[frame 4 at 67.22s]
+IMG:280a9f1d739dc811b6fd6e6af3ba830d1ff6b722a9365b72581ca58075fdfac4
+AUD:f27e6e6fb96d955369f7c9157c7b061d68edb1414d998385052e955537a37150

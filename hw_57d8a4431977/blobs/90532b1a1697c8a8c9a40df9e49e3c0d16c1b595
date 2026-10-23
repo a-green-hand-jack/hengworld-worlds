@@ -1,0 +1,41 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0000",
+  "start": 0.0,
+  "end": 32.292,
+  "shots": 3,
+  "lines": 0
+ },
+ "duration": 32.292,
+ "cuts": [
+  21.375,
+  30.5
+ ],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 21.375,
+   "description": "Medium shot of C1 ice-skating, static camera."
+  },
+  {
+   "index": 1,
+   "start": 21.375,
+   "end": 30.5,
+   "description": "Medium shot of an animal lying on ice, panning left."
+  },
+  {
+   "index": 2,
+   "start": 30.5,
+   "end": 32.292,
+   "description": "Medium shot of a puffin looking at a flower between train tracks, tracking right."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 32.292
+  }
+ ]
+}

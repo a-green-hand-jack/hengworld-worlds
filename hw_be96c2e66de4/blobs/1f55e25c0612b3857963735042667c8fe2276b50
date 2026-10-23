@@ -1,0 +1,43 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L1-0028",
+  "start": 708.675,
+  "end": 726.092,
+  "shots": 3,
+  "lines": 0
+ },
+ "duration": 17.417,
+ "cuts": [
+  5.071,
+  12.546
+ ],
+ "shots": [
+  {
+   "index": 84,
+   "start": -0.0,
+   "end": 5.071,
+   "description": "Medium shot of C1 speaking, static."
+  },
+  {
+   "index": 85,
+   "start": 5.071,
+   "end": 12.546,
+   "description": "Medium shot of C1, C2, and another man standing in a room, with C1 stepping into the other man's arms, static camera."
+  },
+  {
+   "index": 86,
+   "start": 12.546,
+   "end": 17.417,
+   "description": "Extreme close-up of a pawn ticket held by hands, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 17.417
+  }
+ ],
+ "task_id": "sherlock_jr-L1-0028-scr",
+ "descriptions_available": true
+}

@@ -1,0 +1,16 @@
+# Audit criteria (written before reading makers' claims)
+
+Standard: objective (auditor#1) and steward brief.md @ c61fdda. Judged by auditor; nothing here decides a maintainer question.
+
+## Approval conditions (all required)
+A1. Every admitted film has a decision record, evidence (URL, licence text per site) and a SHA-256 that I verify against the objective's table by recomputing from masters/.
+A2. Task data reproduced by me from the record with unmodified /crewcut-algorithms equals the reference release d509bed (/crewcut-dataset) for shots, hierarchy, task list (598 ids), or each difference is listed and explained with evidence. Duration = decoded frames / fps. Dialogue differences vs ASR are expected and must be explained (reference dialogue is not from these masters' pipeline necessarily).
+A3. Double build byte-identical: I rerun the recorded commands and compare checksums.
+A4. At least one task ran under the protocol (Coffee Run, T0): records complete (model/tool calls, file writes, messages, versions), cost ledger rows per call, score computed with the protocol's measures (Q, cut F1 0.5/1.0, shot correspondence qwen3-vl-plus, WER, onset median, scene order, $).
+A5. Anything lacking a resource (ElevenLabs SFX, S, speaker consistency, etc.) is "not run" and nothing is claimed for it; protocol (parameters, prompts, tolerances, budgets) unchanged vs objective text.
+A6. No answer key (truth.json or derived) in packages/ or anywhere executor can read; key-leak scan reproduced.
+A7. Total converted cost <= 200 USD, ledger sums verified; paid steps done once by their owner; any paid step I rerun is recorded with cost.
+
+## Method
+Clean clone of each repo; run recorded commands only; sample paid steps (descriptions: sample N shots; judge: sample N shots) rather than rerun in full; compare files by hash and by item; every difference -> row in audit/comparison.md with cause and owner's explanation judged on evidence.
+Unmet items -> request in the owner's repository with finding and evidence.

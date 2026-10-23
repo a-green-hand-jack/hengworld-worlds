@@ -1,0 +1,387 @@
+{
+ "film_id": "caminandes3",
+ "model": "gemini-3.5-flash-lite",
+ "params": {
+  "temperature": 0,
+  "reasoning_effort": "minimal",
+  "max_tokens": 600
+ },
+ "frames_per_shot": 3,
+ "jpeg_width": 448,
+ "prompt": "You see frames from one shot of a film. Describe the shot in one to three sentences using the template '[shot size] of [subject] [action], [camera move]'. Refer to people as C1, C2 and so on, consistently with these known characters: {chars}. Do not mention colours, lens, art style or other appearance details that a remake could legitimately change. Reply with the description only.",
+ "chars_rule": "labels C1..Ck seen in this film's earlier answers, else 'none yet' (maintainer question: brief gap 12)",
+ "descriptions": {
+  "0": "Medium shot of C1 slipping on ice, static.",
+  "1": "Close-up of C1 lying on the ice and falling asleep, panning right.",
+  "2": "Wide shot of C1 standing on railroad tracks and looking at a sprout, zooming in.",
+  "3": "Medium shot of a train speeding through a snowy landscape, tracking forward.",
+  "4": "Medium close-up of C1 standing outdoors in a snowy landscape and looking around, static camera.",
+  "5": "Medium shot of C1 standing on train tracks with a flower as a train approaches, static.",
+  "6": "Close-up of C1 looking around with bulging eyes, static camera.",
+  "7": "Wide shot of a steam locomotive moving forward through a snowy landscape, static.",
+  "8": "Medium shot of C1 widening its eyes in shock, static camera.",
+  "9": "Medium shot of C1 sitting on the train track eating, static camera.",
+  "10": "Medium shot of C1 looking at a cherry on a stick, static camera.",
+  "11": "Medium shot of C1 peering over a surface, static camera.",
+  "12": "Medium close-up of C1 blowing on a party horn, static camera.",
+  "13": "Medium shot of C1 getting thrown off a weasel's head, static camera.",
+  "14": "Medium shot of a deer and a penguin sitting in the snow, with the penguin holding up a small red berry and the deer reacting by looking down, static camera.",
+  "15": "Medium shot of C1 waking up and looking around, static.",
+  "16": "Medium shot of C1 riding in a mine cart inside a cave, static camera.",
+  "17": "Medium close-up of C1 and another animal looking excitedly while riding a vehicle, static camera.",
+  "18": "Wide shot of roller coaster tracks running through a dark cave, tracking forward.",
+  "19": "Wide shot of C1 riding a minecart crashing through wood structures, track-right.",
+  "20": "Medium shot of C1 riding a minecart, static.",
+  "21": "Medium shot of C1 roaring, static.",
+  "22": "Medium shot of C1 dodging falling planks, static camera.",
+  "23": "Medium close-up of C1 standing and eating fruit from a bunch, static.",
+  "24": "Wide shot of a mine tunnel moving forward rapidly, push in.",
+  "25": "Wide shot of a mineshaft collapsing, static.",
+  "26": "Medium shot of C1 leaping through the air while chasing fruit, tracking right.",
+  "27": "Medium close-up of C1 screaming and running, tracking shot.",
+  "28": "Medium close-up of C1 falling while waving, static camera.",
+  "29": "Medium close-up of C1 looking panicked while turning its head, static.",
+  "30": "Extreme long shot of a furry creature falling from the sky and crashing into a snowy landscape, zooming in.",
+  "31": "Medium shot of an animal lying on its back in the snow with another animal sitting on it, static camera.",
+  "32": "Wide shot of C1 sliding down a snowy slope, panning right.",
+  "33": "Medium shot of C1 ducking down, zoom out.",
+  "34": "Medium shot of C1 looking around while sitting on a rocky hill, static camera.",
+  "35": "Over-the-shoulder shot of C1 looking at penguins holding berries, static.",
+  "36": "Medium shot of animals sitting together in the snow, static camera."
+ },
+ "calls": [
+  {
+   "shot": 0,
+   "chars": "none yet",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 11,
+   "total_tokens": 3397,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 1,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 17,
+   "total_tokens": 3403,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 2,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 18,
+   "total_tokens": 3404,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 3,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 14,
+   "total_tokens": 3400,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 4,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 20,
+   "total_tokens": 3406,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 5,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 19,
+   "total_tokens": 3405,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 6,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 15,
+   "total_tokens": 3401,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 7,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 15,
+   "total_tokens": 3401,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 8,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 14,
+   "total_tokens": 3400,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 9,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 15,
+   "total_tokens": 3401,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 10,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 16,
+   "total_tokens": 3402,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 11,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 13,
+   "total_tokens": 3399,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 12,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 16,
+   "total_tokens": 3402,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 13,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 18,
+   "total_tokens": 3404,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 14,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 33,
+   "total_tokens": 3419,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 15,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 13,
+   "total_tokens": 3399,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 16,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 17,
+   "total_tokens": 3403,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 17,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 20,
+   "total_tokens": 3406,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 18,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 15,
+   "total_tokens": 3401,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 19,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 18,
+   "total_tokens": 3404,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 20,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 12,
+   "total_tokens": 3398,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 21,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 9,
+   "total_tokens": 3395,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 22,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 12,
+   "total_tokens": 3398,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 23,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 17,
+   "total_tokens": 3403,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 24,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 13,
+   "total_tokens": 3399,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 25,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 10,
+   "total_tokens": 3396,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 26,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 16,
+   "total_tokens": 3402,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 27,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 14,
+   "total_tokens": 3400,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 28,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 14,
+   "total_tokens": 3400,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 29,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 16,
+   "total_tokens": 3402,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 30,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 21,
+   "total_tokens": 3407,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 31,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 22,
+   "total_tokens": 3408,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 32,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 14,
+   "total_tokens": 3400,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 33,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 12,
+   "total_tokens": 3398,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 34,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 17,
+   "total_tokens": 3403,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 35,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 17,
+   "total_tokens": 3403,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 36,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3386,
+   "completion_tokens": 13,
+   "total_tokens": 3399,
+   "finish_reason": "stop"
+  }
+ ]
+}

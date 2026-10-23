@@ -1,0 +1,64 @@
+{
+ "segment": {
+  "id": "caminandes3-L2-0001",
+  "start": 42.708,
+  "end": 56.583,
+  "shots": 6,
+  "lines": 0
+ },
+ "duration": 13.875,
+ "cuts": [
+  1.209,
+  4.292,
+  7.167,
+  9.584,
+  10.167
+ ],
+ "shots": [
+  {
+   "index": 9,
+   "start": 0.0,
+   "end": 1.209,
+   "description": "Medium shot of C1 sitting on the train track eating, static camera."
+  },
+  {
+   "index": 10,
+   "start": 1.209,
+   "end": 4.292,
+   "description": "Medium shot of C1 looking at a cherry on a stick, static camera."
+  },
+  {
+   "index": 11,
+   "start": 4.292,
+   "end": 7.167,
+   "description": "Medium shot of C1 peering over a surface, static camera."
+  },
+  {
+   "index": 12,
+   "start": 7.167,
+   "end": 9.584,
+   "description": "Medium close-up of C1 blowing on a party horn, static camera."
+  },
+  {
+   "index": 13,
+   "start": 9.584,
+   "end": 10.167,
+   "description": "Medium shot of C1 getting thrown off a weasel's head, static camera."
+  },
+  {
+   "index": 14,
+   "start": 10.167,
+   "end": 13.875,
+   "description": "Medium shot of a deer and a penguin sitting in the snow, with the penguin holding up a small red berry and the deer reacting by looking down, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 13.875
+  }
+ ],
+ "task_id": "caminandes3-L2-0001-scr",
+ "descriptions_available": true
+}

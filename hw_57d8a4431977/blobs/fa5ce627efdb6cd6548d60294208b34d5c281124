@@ -1,0 +1,45 @@
+"""Score one run: R = (Q, Q*c, Q*S, $). Screening ratings are attached later, across runs."""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+from ..config import benchmark
+from . import continuity as C
+from .cost import budget_report
+from .qc import probe, run_qc
+
+
+def score_run(run_dir: Path, task_dir: Path, provenance_index: Path | None = None, judge: str | None = "auto",
+              asr_backend: str = "none", judge_log: Path | None = None) -> dict:
+    truth = json.loads((task_dir / "truth.json").read_text())
+    qc = run_qc(run_dir, task_dir, provenance_index)
+    film = run_dir / "output" / "film.mp4"
+    delivered = float(probe(film).get("format", {}).get("duration", 0)) if film.exists() else 0.0
+    out = {"run": run_dir.name, "task_id": json.loads((task_dir / "task.json").read_text())["task_id"],
+           "Q": int(qc.passed), "qc": qc.checks, "budget": budget_report(run_dir, delivered or truth["duration"])}
+    c = {k: None for k in ("cut_f1_05", "cut_f1_10", "correspondence", "wer", "onset_error_median_s",
+                           "speaker_purity", "character_purity", "scene_order")}
+    if qc.passed:
+        tol = benchmark()["continuity"]["cut_tolerance_s"]
+        cuts = C.detect_cuts(film)
+        c["cut_f1_05"] = round(C.cut_f1(truth["cuts"], cuts, tol[0]), 4)
+        c["cut_f1_10"] = round(C.cut_f1(truth["cuts"], cuts, tol[1]), 4)
+        if judge:
+            try:
+                from .judge import ContinuityJudge
+                j = ContinuityJudge(film, None if judge == "auto" else judge, log=judge_log)
+                c["correspondence"], verdicts = C.correspondence(truth["shots"], j)
+                c["correspondence"] = round(c["correspondence"], 4)
+            except RuntimeError as e:
+                out["notes"] = str(e)
+        if truth["lines"]:
+            out["notes"] = (out.get("notes", "") + " dialogue measures not run: ASR not available here").strip()
+        else:
+            out["not_applicable"] = ["wer", "onset_error_median_s", "speaker_purity"]  # segment has no dialogue lines
+        remake_bounds = [0.0] + cuts + [delivered]
+        scenes = [(s["start"], s["end"]) for s in truth.get("scenes", [])] or [(0.0, truth["duration"])]
+        c["scene_order"] = round(C.scene_order(scenes, list(zip(remake_bounds[:-1], remake_bounds[1:]))), 4)
+    out["continuity"] = c
+    out["S"] = None  # filled by `crewcut screen`
+    return out

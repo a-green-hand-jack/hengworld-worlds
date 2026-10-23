@@ -1,0 +1,21 @@
+"""Check that no published package carries answer-key content. Exit 1 on any hit.
+usage: scan_key.py PACKAGES_DIR KEY_DIR"""
+import hashlib, json, sys
+from pathlib import Path
+pk, key = Path(sys.argv[1]), Path(sys.argv[2])
+bad = []
+keyhash = {hashlib.sha256((k / "truth.json").read_bytes()).hexdigest() for k in key.iterdir()}
+for f in pk.rglob("*"):
+    if not f.is_file(): continue
+    if f.name == "truth.json" or hashlib.sha256(f.read_bytes()).hexdigest() in keyhash: bad.append((str(f), "key file"))
+    elif f.suffix in {".json", ".md", ".csv", ".txt"}:
+        t = f.read_text()
+        if '"cuts"' in t or '"scenes"' in t or "truth" in t.lower(): bad.append((str(f), "key-like content"))
+# by design the screenplay track shows the shot list and script; the reference track must carry only the clip
+for d in pk.iterdir():
+    inputs = sorted(p.name for p in (d / "input").iterdir())
+    exp = ["original.mp4"] if d.name.endswith("-ref") else ["script.csv", "shotlist.csv"]
+    if inputs != exp: bad.append((str(d), f"unexpected inputs {inputs}"))
+for b in bad: print("KEY SCAN HIT", b)
+print("packages scanned:", sum(1 for _ in pk.iterdir()), "hits:", len(bad))
+sys.exit(1 if bad else 0)

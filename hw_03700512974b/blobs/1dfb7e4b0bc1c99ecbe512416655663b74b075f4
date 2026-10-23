@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0028",
+  "start": 2492.223,
+  "end": 2505.937,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 13.714,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 385,
+   "start": 0.0,
+   "end": 13.714,
+   "description": "Medium shot of C1 getting shocked while sitting on a stool and falling to the ground, with static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 13.714
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0028-scr",
+ "descriptions_available": true
+}

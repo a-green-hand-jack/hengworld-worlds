@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0085",
+  "start": 713.746,
+  "end": 721.221,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 7.475,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 85,
+   "start": 0.0,
+   "end": 7.475,
+   "description": "Medium shot of C1, C2, and another man standing in a room, with C1 stepping into the other man's arms, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 7.475
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0085-scr",
+ "descriptions_available": true
+}

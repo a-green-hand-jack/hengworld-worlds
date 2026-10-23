@@ -1,0 +1,197 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0022",
+  "start": 2094.159,
+  "end": 2215.914,
+  "shots": 25,
+  "lines": 0
+ },
+ "duration": 121.755,
+ "cuts": [
+  2.235,
+  5.472,
+  12.345,
+  16.817,
+  19.085,
+  36.803,
+  47.113,
+  50.75,
+  56.122,
+  71.638,
+  73.506,
+  79.179,
+  82.716,
+  85.118,
+  91.558,
+  96.396,
+  103.036,
+  106.206,
+  107.173,
+  109.242,
+  109.743,
+  113.213,
+  114.581,
+  119.486
+ ],
+ "shots": [
+  {
+   "index": 276,
+   "start": -0.0,
+   "end": 2.235,
+   "description": "Medium shot of C1 running, static."
+  },
+  {
+   "index": 277,
+   "start": 2.235,
+   "end": 5.472,
+   "description": "Medium shot of C1 walking towards a building, static camera."
+  },
+  {
+   "index": 278,
+   "start": 5.472,
+   "end": 12.345,
+   "description": "Long shot of C1 entering frame and stopping in an alley way while C2 plays the accordion, static."
+  },
+  {
+   "index": 279,
+   "start": 12.345,
+   "end": 16.817,
+   "description": "Medium shot of C1 wearing a portable tie display case, turning around to face the camera, static."
+  },
+  {
+   "index": 280,
+   "start": 16.817,
+   "end": 19.085,
+   "description": "Medium shot of C1 and C2 walking hurriedly past a wooden building, static."
+  },
+  {
+   "index": 281,
+   "start": 19.085,
+   "end": 36.803,
+   "description": "Wide shot of C1 ducking as C2 flies backwards from the force of a punch and collides with another man, static camera."
+  },
+  {
+   "index": 282,
+   "start": 36.803,
+   "end": 47.113,
+   "description": "Medium shot of C1 and C2 walking up to a wooden wall and trying to tear off paper, static camera."
+  },
+  {
+   "index": 283,
+   "start": 47.113,
+   "end": 50.75,
+   "description": "Wide shot of C1 and C2 running away from the camera, static camera."
+  },
+  {
+   "index": 284,
+   "start": 50.75,
+   "end": 56.122,
+   "description": "Medium shot of C1 running away from C2 on a street, tracking backward."
+  },
+  {
+   "index": 285,
+   "start": 56.122,
+   "end": 71.638,
+   "description": "Medium shot of C1 riding a motorcycle and pulling C2, panning right."
+  },
+  {
+   "index": 286,
+   "start": 71.638,
+   "end": 73.506,
+   "description": "Medium shot of C1 leaning against a car, static."
+  },
+  {
+   "index": 287,
+   "start": 73.506,
+   "end": 79.179,
+   "description": "Medium shot of C1 talking with C2, who is straddling a motorcycle, static camera."
+  },
+  {
+   "index": 288,
+   "start": 79.179,
+   "end": 82.716,
+   "description": "Medium shot of C1 riding a motorcycle while C2 sits on the front, tracking forward."
+  },
+  {
+   "index": 289,
+   "start": 82.716,
+   "end": 85.118,
+   "description": "Medium shot of C1 riding a vehicle with C2 while pointing and talking, panning."
+  },
+  {
+   "index": 290,
+   "start": 85.118,
+   "end": 91.558,
+   "description": "Medium long shot of four men running away from a building and getting into a car, static."
+  },
+  {
+   "index": 291,
+   "start": 91.558,
+   "end": 96.396,
+   "description": "Medium shot of C1 and C2 riding a motorcycle fast, tracking right."
+  },
+  {
+   "index": 292,
+   "start": 96.396,
+   "end": 103.036,
+   "description": "Wide shot of C1 crashing in a puddle, static."
+  },
+  {
+   "index": 293,
+   "start": 103.036,
+   "end": 106.206,
+   "description": "Medium shot of C1 riding a motorcycle while looking back, tracking forward."
+  },
+  {
+   "index": 294,
+   "start": 106.206,
+   "end": 107.173,
+   "description": "Medium shot of C1 riding a motorcycle down a street, tracking forward."
+  },
+  {
+   "index": 295,
+   "start": 107.173,
+   "end": 109.242,
+   "description": "Medium shot of C1 riding a motorcycle down a street, tracking forward."
+  },
+  {
+   "index": 296,
+   "start": 109.242,
+   "end": 109.743,
+   "description": "Medium wide shot of C1 riding a motorcycle away down the street, static camera."
+  },
+  {
+   "index": 297,
+   "start": 109.743,
+   "end": 113.213,
+   "description": "Medium shot of vintage cars driving erratically, static camera."
+  },
+  {
+   "index": 298,
+   "start": 113.213,
+   "end": 114.581,
+   "description": "Medium shot of C1 riding a motorcycle down a street, tracking forward."
+  },
+  {
+   "index": 299,
+   "start": 114.581,
+   "end": 119.486,
+   "description": "Insert shot of title card showing text, static."
+  },
+  {
+   "index": 300,
+   "start": 119.486,
+   "end": 121.755,
+   "description": "Medium shot of C1 riding a motorcycle while lifting his legs into the air, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 121.755
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0022-scr",
+ "descriptions_available": true
+}

@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0240",
+  "start": 1916.615,
+  "end": 1920.752,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 4.137,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 240,
+   "start": -0.0,
+   "end": 4.137,
+   "description": "Medium wide shot of four men surrounding a table, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 4.137
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0240-ref",
+ "descriptions_available": true
+}

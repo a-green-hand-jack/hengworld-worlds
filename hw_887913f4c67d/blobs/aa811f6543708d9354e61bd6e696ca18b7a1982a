@@ -1,0 +1,10 @@
+# CrewCut task caminandes3-L0-0031-scr
+
+Make a clean-room remake of the input film segment. Tell the same story with the same scenes,
+shots, dialogue and timing, using new picture and new sound. You may watch and analyse the
+original, but none of its frames or audio may appear in your output or be passed to any generator.
+
+Deliver `output/film.mp4`, `output/film.en.vtt` and `output/manifest.json` to the specification in
+`spec.json`, within the budget in `budget.json`, using only the tools in `tools.json`.
+
+Track: **Screenplay**. Segment: L0 (shot), 5.1 s, 1 shots, 0 lines.

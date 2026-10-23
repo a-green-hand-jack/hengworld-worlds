@@ -1,0 +1,25 @@
+"""Smoke test of the tool server with the placeholder profile: prices, tiers, clean-room refusal incl. derived files."""
+import json, subprocess, sys, tempfile
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from toolserver.log import ProductionLog
+from toolserver.server import ToolServer
+
+d = Path(tempfile.mkdtemp()); (d / "input").mkdir()
+subprocess.run(["ffmpeg", "-v", "error", "-f", "lavfi", "-i", "color=c=red:s=320x180:d=1:r=24", "-pix_fmt", "yuv420p", str(d / "input/original.mp4")], check=True)
+log = ProductionLog(d / "log.jsonl", "r", "t", "T1")
+s = ToolServer(d, "T1", log, 1.0, profile="smoke")
+r = s.call("image.generate", {"prompt": "x"}); assert r["cost_usd"] == 0.0336, r
+r = s.call("speech.synthesize", {"text": "hello world", "voice": "a"}); assert abs(r["cost_usd"] - 0.00015 * 0.78) < 1e-5 or r["cost_usd"] > 0, r
+r = s.call("music.generate", {"prompt": "m", "duration_s": 3}); assert r["cost_usd"] == 0.08, r
+r = s.call("sfx.generate", {"prompt": "m", "duration_s": 3}); assert abs(r["cost_usd"] - 0.006) < 1e-4, r
+r = s.call("video.generate", {"prompt": "m", "duration_s": 2}); assert r["cost_usd"] > 0.19, r
+e = s.call("image.edit", {"image": "input/original.mp4", "prompt": "x"}); assert "clean-room" in e["error"], e
+f = s.call("media.ffmpeg", {"args": ["-i", "input/original.mp4", "-frames:v", "1", "artefacts/frame.png"]}); assert "outputs" in f, f
+e = s.call("image.edit", {"image": "artefacts/frame.png", "prompt": "x"}); assert "clean-room" in e["error"], e   # derived file
+s2 = ToolServer(d, "T0", log, 1.0, profile="smoke")
+try:
+    s2.call("video.generate", {"prompt": "x"}); raise SystemExit("T0 must not offer video")
+except ValueError:
+    pass
+print("toolserver tests: ok;", json.dumps(log.spend()))

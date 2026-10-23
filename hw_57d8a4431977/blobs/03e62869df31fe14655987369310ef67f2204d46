@@ -1,0 +1,63 @@
+{
+ "judge_model": "gemini-3.8-flash",
+ "temperature": 0,
+ "rows": [
+  {
+   "frames_of_shot": 0,
+   "description_of_shot": 0,
+   "right": true,
+   "verdict": 0
+  },
+  {
+   "frames_of_shot": 0,
+   "description_of_shot": 1,
+   "right": false,
+   "verdict": 0
+  },
+  {
+   "frames_of_shot": 0,
+   "description_of_shot": 2,
+   "right": false,
+   "verdict": 0
+  },
+  {
+   "frames_of_shot": 1,
+   "description_of_shot": 0,
+   "right": false,
+   "verdict": 0
+  },
+  {
+   "frames_of_shot": 1,
+   "description_of_shot": 1,
+   "right": true,
+   "verdict": 1
+  },
+  {
+   "frames_of_shot": 1,
+   "description_of_shot": 2,
+   "right": false,
+   "verdict": 0
+  },
+  {
+   "frames_of_shot": 2,
+   "description_of_shot": 0,
+   "right": false,
+   "verdict": 0
+  },
+  {
+   "frames_of_shot": 2,
+   "description_of_shot": 1,
+   "right": false,
+   "verdict": 0
+  },
+  {
+   "frames_of_shot": 2,
+   "description_of_shot": 2,
+   "right": true,
+   "verdict": 1
+  }
+ ],
+ "accept_rate_right": 0.6666666666666666,
+ "accept_rate_wrong": 0.0,
+ "separates": true
+}

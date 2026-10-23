@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Wide shot of roller coaster tracks running through a dark cave, tracking forward.
+Detailed description:
+setting: P3: Underground mine. Indoor, dark rocky cavern with vertical minecart tracks, wooden barriers, and blue-lit ice formations.
+characters: 
+props: Steep vertical minecart tracks, wooden support beams, and wooden plank barriers.
+action: The view plunges rapidly downwards through a narrow rocky shaft, passing brown rock walls, blue ice formations, and wooden beams, towards vertical minecart tracks and wooden plank barriers.
+camera: Wide POV shot, high angle looking straight down, fast forward tracking movement.
+light_mood: Dark, dimly lit with cool blue accents on ice and warm light on wooden planks; intense, dizzying, fast-paced mood.
+Frames:
+[frame 1 at 67.53s]
+IMG:971fc1be4302d3407ad41426a05c6b9c1795062defdef0c2ba64e65bc6f6ff3a
+[frame 2 at 67.65s]
+IMG:78bf05ae85c2312a93dc5fb8c5874fb486d06be9a968ede5dd05bff34f938efa
+[frame 3 at 67.77s]
+IMG:04f6c29a7f49ce12786d5e52d5b2f41378cc1b923aab960ac744f412afa82c08
+[frame 4 at 67.88s]
+IMG:45995d4e61120887be0203bc98465e8c5a1318f6add4049cad263a40d828d185

@@ -1,0 +1,60 @@
+{
+ "open_for_maintainer": [
+  {
+   "id": "O1",
+   "what": "crewcut.build.audit.normalise does not recognise the PeerTube licence label 'Attribution' (and likely 'Attribution - ShareAlike' etc.), so audit rejects Caminandes 3 from the Blender catalogue crawl; the Internet Archive licenseurl form is accepted. Issue #3 s1.6 lists this as a known stuck point.",
+   "status": "recorded, not decided here; worked around per film by D1 using the IA licence URL"
+  },
+  {
+   "id": "O2",
+   "what": "crewcut.build.fetch.resolve/ia_files picks the largest file first, which downloads the 139 MB .mp4 instead of the pinned .ogv; the pipeline has no way to name the pinned file besides --local-dir. Known stuck point in Issue #3 s1.6.",
+   "status": "recorded; worked around by D2"
+  },
+  {
+   "id": "O3",
+   "what": "Shot-description VLM and the cost cap (Issue #3 open item 1) are the maintainer's; descriptions not produced.",
+   "status": "open, not run"
+  },
+  {
+   "id": "O4",
+   "what": "duration_s: published shots.json has 150.04 (video stream duration), a rebuild with crewcut df54b3a gives 150.108345 (ffprobe container duration = longer audio stream). The docs do not say which is intended; downstream, tasks use the shot times, QC uses truth['duration'] of each segment (the last segment's end is the film duration only for L4/last segments).",
+   "status": "recorded, effect on tasks checked in comparison"
+  },
+  {
+   "id": "O5",
+   "what": "crewcut/build/tasks.py segment_truth keeps a cut when `a < c < b`, with c = frame/fps unrounded and b the segment end rounded to 3 decimals in hierarchy.json. For the L1 segment caminandes3-L1-0000 the end is the real cut 775/24 = 32.29167 s stored as 32.292, so that cut passes the filter and truth.cuts = [21.375, 30.5, 32.292] with duration 32.292: the last 'cut' sits at the segment end. 32 of the 90 Caminandes 3 key files have a last cut equal to their duration. A detector does not report a cut at the clip end, so cut F1 against such a key is capped (scr L1-0000: 0.8 max). Whether this is intended is not stated in the documents; the same rebuild also reproduces the published task list exactly, and the published dataset holds no truth.json to compare against.",
+   "status": "recorded, not decided; key left exactly as CrewCut produces it"
+  },
+  {
+   "id": "O6",
+   "what": "judge.py uses max_tokens=3 and describe.py max_tokens=120; with a thinking model (gemini-3.8-flash) the reply content is null (hidden reasoning/thought-signature tokens consume the budget) and both steps crash on None.strip(). Whether to change the limits or pin a non-thinking model is the maintainer's.",
+   "status": "recorded, not decided; worked around outside CrewCut by D7"
+  },
+  {
+   "id": "O7",
+   "what": "Which model drafts descriptions and which judges (Issue #3 left open); here both are gemini-3.8-flash; the same-vendor rule for the judge is stated against the system's base model only.",
+   "status": "recorded, not decided"
+  },
+  {
+   "id": "O8",
+   "what": "describe_film reads shots.json keys cuts/duration, but the released shots.json has cut_frames/duration_s, so the describe step cannot run on a released film dir.",
+   "status": "recorded, not decided; D8"
+  },
+  {
+   "id": "O9",
+   "what": "Descriptions are in the truth but the generated scr task package has an empty description column in shotlist.csv; whether descriptions belong in the scr shot table (and so in the published package) is not stated.",
+   "status": "recorded, not decided; D9"
+  },
+  {
+   "id": "O10",
+   "what": "configs/prices.yaml has only the default row ($5/$25 per M tokens); no Gemini row. Spend is reported under both the default row and the provider's published price.",
+   "status": "recorded, not decided"
+  },
+  {
+   "id": "O11",
+   "what": "segment_truth keeps a shot only if its end <= segment end + 1e-3. The L4 segment of Caminandes 3 ends at 150.042 (hierarchy.json, identical in release d509bed; task.json says shots=37) but the last shot ends at the film duration 150.108, so the key's L4 truth and the scr shotlist.csv have 36 shots (the last listed shot is 118.792-123.542) instead of 37. Same family as O5 (rounding of segment ends).",
+   "detail": "In caminandes3-L4-0000 the 36th listed shot ends 123.542, and the 37th (123.542-150.108) is dropped; the package duration (end_s 150.042) therefore also excludes the film's last 0.066 s but the shot list stops 26.5 s before it.",
+   "status": "recorded, not decided; packages and key left as CrewCut produced them"
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0048",
+  "start": 135.4,
+  "end": 165.28,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 29.88,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 48,
+   "start": 0.0,
+   "end": 29.88,
+   "description": "Medium close-up of C1 approaching, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 29.88
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0048-ref",
+ "descriptions_available": true
+}

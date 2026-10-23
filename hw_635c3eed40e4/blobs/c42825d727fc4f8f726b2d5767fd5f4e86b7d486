@@ -1,0 +1,31 @@
+# CrewCut 6-film dataset (task-maker)
+Commands (numbered, each with its check) in `tools/`; decisions in `decisions/`; data in `data/`.
+
+| step | command | check | result |
+|---|---|---|---|
+| 1 masters | tools/fetch_masters.py | SHA-256 + size of 6 masters | data/masters_check.json (6/6 OK) |
+| 2 cuts | tools/step2_cuts.sh (reference `cuts`, unmodified) | step 4 | |
+| 3 dialogue | tools/step3_dialogue.py, step3_run.sh | 0 lines in all 4 spoken films (same as reference) | annotations/*/dialogue.json |
+| 4 shots | tools/step4_shots.py | identical to reference shots.json for 6/6 films | |
+| 5 hierarchy | tools/step5_hier.sh, step5b_format.py (reference `hierarchy`, `tasks`) | hierarchy.json identical to reference 6/6 | |
+| 6 descriptions | tools/step6a_frames.py, step6b_describe.py, step6b_run.sh | 603/603 shots answered, 0 empty (decisions/D003; D001 superseded) | annotations/*/descriptions.json, describe_log.jsonl |
+| 7 fingerprints | tools/fingerprint.py, step7_fingerprints.sh | self-check reports reuse; negative control passes | annotations/*/fingerprint_* |
+| 8 tasks/packages/key | tools/step8_tasks.py, tools/leak_scan.py | 598 task ids = reference dev.jsonl exactly; no key in packages | tasks/dev.jsonl, packages/, tasks/key_manifest.json (key itself not committed) |
+| 9 clips | tools/step9_clips.py | per clip: decoded frame count == end_frame-start_frame (exit 1 otherwise, all 299 clips), first/last frame match the reference algorithm's frame at that number | release `clips-v2` (large files), clips_manifest.json |
+| 6c cost lines | tools/step6c_costlines.py | 603 lines, all with token counts | data/cost_lines_descriptions.jsonl |
+| tool service | tests/test_toolservice.py | master frame/audio rejected before forwarding; success booked once; failure books 0 | toolservice/ |
+
+`key/` (answer key, scoring/audit only) is **not committed** (`.gitignore`) and not delivered. Regenerate it locally: `python3 tools/step8_tasks.py WORK REPO` (WORK = build tree of steps 2-5, see `tools/step10_doublebuild.sh`) writes `key/<task id>/truth.json`; verify with `tasks/key_manifest.json` (sha256 per file, no content). `toolservice/` is the tool service (tool list, official prices with date and source, source-side rejection check, per-call ledger).
+Licences/attribution: see curator's material (rights notes) — to be merged into this README before release.
+
+## Status and notes
+- The answer key is not in the repository tree or any release; scorer and auditor regenerate it (above) and check the bytes against `tasks/key_manifest.json`.
+- shots.json, dialogue.json, hierarchy.json and the task list were **recomputed from the masters** (not copied) with the unmodified reference algorithms; they equal reference release d509bed (6/6 shots, 6/6 hierarchy, 598/598 task ids, 0 field differences; `data/tasks_vs_reference.json`). Dialogue: 0 lines in every film, as in the reference.
+- Descriptions: gemini-3.5-flash-lite, temperature 0, reasoning_effort minimal, run once (603 calls, 1,996,461 prompt / 9,824 completion tokens); per-call tokens in `annotations/*/describe_log.jsonl` (D003). Screenplay shotlists and key truth now contain them. The tool service's live generator calls remain untested by task-maker (executor exercises them).
+- Adaptation (D002): Silero VAD is the copy bundled in faster-whisper (ONNX) instead of the standalone torch package; Whisper base = Systran/faster-whisper-base, int8, beam 5, temperature 0. The brief leaves versions open (gap 1).
+- Reference clips (v2, frame-exact): each master is first decoded to constant frame rate exactly as the reference algorithm does (ffmpeg cfr at r_frame_rate; matters for Sherlock Jr., 78,987 raw vs 79,364 cfr frames), then frames [round(start*fps), round(end*fps)) are selected (film end = decoded frame count) and encoded libx264 crf 23 veryfast, height <= 720, AAC 128k. `clips_manifest.json` carries start/end frame, decoded frames, expected frames, first/last-frame differences. Published: release `clips-v2` (assets `clips_v2.tar` sha256 32b92c2315127c0043dcb3a63de52f02c6211d7b831e961d22ea18c040eb86b9, 299 clips as `<task id>/clip.mp4`; `clips_manifest.json` sha256 a358b610e9cb0c63601288d7354f00854ab2522d6617187f455ae38d69bfaf9f; step9 exit 0, 299 clips, 0 bad); the Coffee Run subset is also in `clips-v2-coffee_run`, same bytes. Package `input/clip.mp4` for the Reference track is supplied from this release. `clips-v1` (seconds-based cut) had 8/14 Coffee Run clips off by one frame and is superseded.
+- Tool service (#12 item 3): the service sends the request itself (native Gemini paths or chat), screens every media part inside the request body, books only after a successful response. Finding: `fingerprint.check` crashed on still images / audio-only files (and ignored single frames because of `fps=2`); fixed in `tools/fingerprint.py`, fingerprints of the masters unchanged.
+- Cost lines for the 603 description calls: `data/cost_lines_descriptions.jsonl` (total about 0.6235 USD at the prices in toolservice/prices.json, borne by the maintainer's prepaid Gemini key).
+- Double-build check: `tools/step10_doublebuild.sh` (reuses the paid description outputs); result in `data/doublebuild.txt`: annotations, tasks, packages IDENTICAL and key equal to the manifest after the descriptions run (revision c4fe559).
+- Licences and attribution: see curator's `corpus/` rights notes (to be merged here before release).
+- Source check scope (D004, steward decision 16): generator requests are screened; `model_call` (description model only, text answer) is not, so the Reference-track description of the input clip works; stated in `toolservice/tools.json`. The maintainer may overrule.

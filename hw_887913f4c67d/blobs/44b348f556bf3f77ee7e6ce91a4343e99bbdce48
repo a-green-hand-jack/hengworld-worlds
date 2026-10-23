@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Rebuild Caminandes 3 data and packages from the record. Needs: crewcut (df54b3a) installed, faster-whisper, openai, ffmpeg.
+# Gemini is paid: the descriptions are NOT regenerated; records/descriptions are reused (descriptions/descriptions.json).
+set -euo pipefail
+HERE=$(cd "$(dirname "$0")/.." && pwd); W=${1:-/tmp/rebuild}; mkdir -p $W/masters; cd $W
+# step 1 fetch the pinned file named in records/decisions.json (D3), check sha256 (exits non-zero on mismatch)
+curl -fL -o masters/caminandes3.ogv "https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv"
+echo "028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f  masters/caminandes3.ogv" | sha256sum -c -
+# step 2 shots, dialogue, hierarchy, provenance index (annotate verifies the pinned sha256 again)
+crewcut annotate --data data --film caminandes3 --local-dir masters
+# step 3 descriptions: reuse the published draft
+cp "$HERE/descriptions/descriptions.json" data/caminandes3/descriptions.json
+# step 4 tasks, split, key scan
+crewcut tasks --data data --film caminandes3 --out tasks
+python3 "$HERE/commands/publish_split.py" tasks packages key manifest.json
+python3 "$HERE/commands/scan_key.py" packages key
+python3 "$HERE/commands/compare.py" data tasks /crewcut-dataset/crewcut-dataset-d509bed comparison.json

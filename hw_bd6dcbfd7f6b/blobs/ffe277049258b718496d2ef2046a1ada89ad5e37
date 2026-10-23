@@ -1,0 +1,26 @@
+"""Logging wrapper: records every chat.completions request (purpose, model, usage, reply) without changing CrewCut."""
+import json, os, sys, time
+from openai.resources.chat.completions import Completions
+
+def install(log_path, purpose):
+    orig = Completions.create
+    def create(self, *a, **kw):
+        if os.environ.get('GEMINI_REASONING_EFFORT'):
+            kw['reasoning_effort'] = os.environ['GEMINI_REASONING_EFFORT']  # transport parameter added outside CrewCut (see decision D6)
+        mt0 = kw.get('max_tokens')
+        if os.environ.get('GEMINI_MAX_TOKENS_FLOOR'):
+            kw['max_tokens'] = max(kw.get('max_tokens') or 0, int(os.environ['GEMINI_MAX_TOKENS_FLOOR']))  # see decision D7
+        t = time.time()
+        rec = {"purpose": purpose, "model_requested": kw.get("model"), "max_tokens": kw.get("max_tokens"), "max_tokens_crewcut": mt0, "reasoning_effort": kw.get("reasoning_effort"), "t": t}
+        try:
+            r = orig(self, *a, **kw)
+        except Exception as e:
+            rec.update(error=repr(e)[:500]); open(log_path, "a").write(json.dumps(rec) + "\n"); raise
+        u = getattr(r, "usage", None)
+        rec.update(model_reported=r.model, usage=u.model_dump() if u else None,
+                   finish_reason=r.choices[0].finish_reason, reply=r.choices[0].message.content)
+        text = [p["text"] for p in kw["messages"][0]["content"] if p["type"] == "text"]
+        rec.update(n_images=len(kw["messages"][0]["content"]) - len(text), prompt=text[0], latency_s=round(time.time() - t, 2))
+        open(log_path, "a").write(json.dumps(rec, ensure_ascii=False) + "\n")
+        return r
+    Completions.create = create
