@@ -1,0 +1,158 @@
+"""Stage (b): build the L0-L4 hierarchy of one film from its shots and dialogue.
+
+Rules (paper Sec. 3.3 and Appendix C; parameters in ``configs/benchmark.yaml``)
+
+* L0 shot.
+* L1 beat, a maximal run of 2-8 consecutive shots within a scene lasting at most 40 s; a shot
+  longer than 40 s, or a lone shot, forms its own beat.
+* L2 scene, a continuous span in one place and time. Drafted by shot-similarity linking: a
+  boundary falls where no shot among the previous W shots resembles any shot among the next W
+  shots; drafted scenes under MIN_SCENE seconds join the preceding scene.
+* L3 sequence, 2-6 consecutive scenes lasting at most 10 min; a longer scene stands alone.
+* L4 the whole film, only for films of at most 15 min.
+
+The scene parameters were chosen against hand-marked scene starts on Elephants Dream, Sintel and
+A Trip to the Moon and scene counts judged from contact sheets of Charade, His Girl Friday and
+Carnival of Souls.
+"""
+import json
+
+import numpy as np
+
+W = 3            # linking window in shots
+KAPPA = 1.0      # boundary when every cross-window pair is farther apart than KAPPA film-medians
+MIN_SCENE = 12.0  # seconds
+
+
+def bhat(a, b):
+    return float(np.sqrt(max(0.0, 1.0 - np.sum(np.sqrt(a * b)))))
+
+
+class Feat:
+    """Shot-to-shot appearance distance, normalised per film.
+
+    Two cues are used, a colour histogram (a 32-bin luminance histogram for
+    black-and-white films) and a 16x9 luminance layout thumbnail.  Each is
+    divided by its median over consecutive shots of the same film, so that
+    one threshold serves animation, colour live action and black and white,
+    and the larger of the two normalised distances is used."""
+
+    def __init__(self, S):
+        gray = S.get("mean_sat", 99) < 40
+        self.H = [np.asarray(h) for h in (S["shot_ghist"] if gray else S["shot_hist"])]
+        self.T = [np.asarray(t, dtype=float) for t in S["shot_thumb"]]
+        n = len(self.H)
+        self.cache = {}
+        hs = [bhat(self.H[i], self.H[i + 1]) for i in range(n - 1)] or [1.0]
+        ts = [self._t(i, i + 1) for i in range(n - 1)] or [1.0]
+        self.mh = max(float(np.median(hs)), 1e-3)
+        self.mt = max(float(np.median(ts)), 1e-3)
+        self.tau = KAPPA
+
+    def _t(self, i, j):
+        return float(np.abs(self.T[i] - self.T[j]).mean() / 255.0)
+
+    def d(self, i, j):
+        k = (min(i, j), max(i, j))
+        if k not in self.cache:
+            self.cache[k] = max(bhat(self.H[i], self.H[j]) / self.mh, self._t(i, j) / self.mt)
+        return self.cache[k]
+
+
+def scenes_from_shots(F, dur):
+    n = len(dur)
+    bounds = [0]
+    for i in range(n - 1):
+        left = range(max(0, i - W + 1), i + 1)
+        right = range(i + 1, min(n, i + 1 + W))
+        if min(F.d(a, b) for a in left for b in right) > F.tau:
+            bounds.append(i + 1)
+    bounds.append(n)
+    sc = []
+    for a, b in zip(bounds[:-1], bounds[1:]):
+        # a drafted scene shorter than MIN_SCENE joins the preceding scene
+        if sc and sum(dur[a:b]) < MIN_SCENE:
+            sc[-1].extend(range(a, b))
+        else:
+            sc.append(list(range(a, b)))
+    if len(sc) > 1 and sum(dur[i] for i in sc[0]) < MIN_SCENE:
+        sc[1] = sc[0] + sc[1]
+        sc.pop(0)
+    return sc
+
+
+def split_runs(items, cost_len, max_n, max_len, gap):
+    """Greedy maximal runs under count/length caps; when a cap is hit the cut
+    goes at the largest gap among the admissible positions of the run."""
+    out, cur = [], []
+    for it in items:
+        if cur and (len(cur) + 1 > max_n or sum(cost_len[i] for i in cur) + cost_len[it] > max_len):
+            if len(cur) >= 2:
+                lo = max(1, len(cur) // 2)
+                best = max(range(lo, len(cur) + 1),
+                           key=lambda p: gap(cur[p - 1], it if p == len(cur) else cur[p]))
+            else:
+                best = len(cur)
+            out.append(cur[:best])
+            cur = cur[best:]
+        cur.append(it)
+    if cur:
+        out.append(cur)
+    return out
+
+
+def build(name, S, L=None, silent=False, cfg=None):
+    """Return the hierarchy dict for a film given its shot record ``S`` and dialogue lines ``L``."""
+    cfg = cfg or {}
+    beat_n, beat_s = cfg.get("beat", {}).get("max_shots", 8), cfg.get("beat", {}).get("max_seconds", 40.0)
+    seq_n, seq_s = cfg.get("sequence", {}).get("max_scenes", 6), cfg.get("sequence", {}).get("max_seconds", 600.0)
+    film_s = cfg.get("film", {}).get("max_seconds", 900.0)
+    fps = S["fps"]
+    if S.get("duration") and abs(S["nframes"] / fps / S["duration"] - 1) > 0.01:
+        fps = S["nframes"] / S["duration"]  # decoder emitted frames at another rate
+    cuts = [0] + S["cuts"] + [S["nframes"]]
+    st = [c / fps for c in cuts[:-1]]
+    en = [c / fps for c in cuts[1:]]
+    dur = [b - a for a, b in zip(st, en)]
+    F = Feat(S)
+    L = [] if silent else (L or [])
+    line_t = np.array([l[0] for l in L]) if L else np.array([])
+
+    def nlines(a, b):
+        return int(((line_t >= a) & (line_t < b)).sum()) if len(line_t) else 0
+
+    scenes = scenes_from_shots(F, dur)
+    beats = []
+    for s in scenes:
+        for run in split_runs(s, dur, beat_n, beat_s, F.d):
+            buf = []
+            for i in run:
+                if dur[i] > beat_s:
+                    if buf:
+                        beats.append(buf)
+                        buf = []
+                    beats.append([i])
+                else:
+                    buf.append(i)
+            if buf:
+                beats.append(buf)
+    sdur = [sum(dur[i] for i in s) for s in scenes]
+    sgap = lambda a, b: F.d(scenes[a][-1], scenes[b][0])
+    seqs = split_runs(list(range(len(scenes))), sdur, seq_n, seq_s, sgap)
+
+    def seg(shots):
+        a, b = st[shots[0]], en[shots[-1]]
+        return {"start": round(a, 3), "end": round(b, 3), "dur": round(b - a, 3),
+                "shots": len(shots), "lines": nlines(a, b)}
+
+    total = en[-1]
+    hier = {
+        "name": name, "duration": round(total, 2), "fps": fps,
+        "L0": [seg([i]) for i in range(len(dur))],
+        "L1": [seg(b) for b in beats],
+        "L2": [seg(s) for s in scenes],
+        "L3": [seg([i for k in q for i in scenes[k]]) for q in seqs],
+        "L4": [seg(list(range(len(dur))))] if total <= film_s else [],
+        "n_lines": len(L),
+    }
+    return hier

@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L1-0104",
+  "start": 2545.143,
+  "end": 2577.708,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 32.565,
+ "cuts": [
+  4.537,
+  14.981,
+  27.627
+ ],
+ "shots": [
+  {
+   "index": 393,
+   "start": -0.0,
+   "end": 4.537,
+   "description": "Medium shot of C1 standing in profile while C2 looks towards C1 from a mirror frame, static camera."
+  },
+  {
+   "index": 394,
+   "start": 4.537,
+   "end": 14.981,
+   "description": "Medium shot of C1 holding C2's shoulder, static."
+  },
+  {
+   "index": 395,
+   "start": 14.981,
+   "end": 27.627,
+   "description": "Medium shot of C1 and C2 standing and holding hands, static camera."
+  },
+  {
+   "index": 396,
+   "start": 27.627,
+   "end": 32.565,
+   "description": "Medium shot of C1 kissing C2's hand, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 32.565
+  }
+ ],
+ "task_id": "sherlock_jr-L1-0104-scr",
+ "descriptions_available": true
+}

@@ -1,0 +1,46 @@
+You verify a synopsis against the only information allowed to support it: one-sentence shot descriptions and dialogue. For each statement (a self-contained clause) judge 'supported' (can be inferred from them), or 'unsupported'. Each quote must be a complete self-contained clause so that deleting it leaves grammatical text. Also report whether the synopsis mentions any shot count, cut, time, shot size, camera move, colour or other appearance detail, or uses a C label. Reply with JSON {"statements": [{"quote": "exact substring", "verdict": "supported|unsupported"}], "forbidden_content": ["..."]}.
+
+One-sentence descriptions (C labels name the characters):
+shot 0: Full shot of C1 slipping on ice while reaching for berries as C2 jumps in the background, tilting down to static.
+shot 1: Close-up of C2 standing next to C1 who is lying on the ice and struggling to stay awake, panning left.
+shot 2: Wide shot of C2 standing on railroad tracks and looking at a sprout, zooming in.
+shot 3: Medium shot of a train speeding through a snowy landscape, tracking forward.
+shot 4: Medium close-up of C1 standing outdoors in a snowy landscape and looking around, static camera.
+shot 5: Medium shot of C2 standing on train tracks with a flower as a train approaches, static.
+shot 6: Close-up of C1 walking forward and looking around, tracking camera.
+shot 7: Wide shot of a steam locomotive moving forward through a snowy landscape, dollying in.
+shot 8: Medium close-up of C1 gasping in shock before narrowing its eyes in annoyance, static camera.
+shot 9: Medium shot of C2 sitting on the train track eating, static camera.
+shot 10: Full shot of C1 sitting in the snow and sticking out its tongue with a berry on it, static camera.
+shot 11: Medium shot of C2 peering over a surface, static camera.
+shot 12: Close-up of C1 tossing and catching a berry on its tongue, static camera.
+shot 13: Medium shot of C2 getting thrown off C1's head, static camera.
+shot 14: Medium shot of a deer and a penguin sitting in the snow, with the penguin holding up a small red berry and the deer reacting by looking down, static camera.
+shot 15: Medium shot of C1 waking up and looking around, static.
+shot 16: Wide shot of C1 and C2 riding in a mine cart on broken tracks inside a cave, static camera.
+shot 17: Medium close-up of C1 and C3 speeding forward through a tunnel while C3 holds a bunch of berries, tracking camera.
+shot 18: Wide shot of roller coaster tracks running through a dark cave, tracking forward.
+shot 19: Wide shot of C1 riding a minecart crashing through wood structures, track-right.
+shot 20: Medium shot of C1 and C3 riding a minecart, tracking backward.
+shot 21: Close-up of C1 screaming with its mouth wide open and eyes closed, static.
+shot 22: Close-up of C1 tilting its head up in shock as a large structure falls over it, slight camera movement.
+shot 23: Medium close-up of C2 standing and eating fruit from a bunch, static.
+shot 24: Wide shot of a mine tunnel moving forward rapidly, push in.
+shot 25: Wide shot of a minecart crashing at a mineshaft exit and launching C1 and berries into the air, cutting from a fast forward tracking POV to a static exterior angle.
+shot 26: Full shot of C1 falling through the air behind a bunch of berries, pulling back.
+shot 27: Medium close-up of C1 screaming and flailing its legs while flying through the air, tracking shot.
+shot 28: Medium close-up of C2 falling while waving, static camera.
+shot 29: Close-up of C1 gasping and blinking in alarm, static.
+shot 30: Extreme long shot of a furry creature falling from the sky and crashing into a snowy landscape, zooming in.
+shot 31: Medium shot of an animal lying on its back in the snow with another animal sitting on it, static camera.
+shot 32: Wide shot of C2 sliding down a snowy slope, static camera.
+shot 33: Close-up of C1 lowering its head out of frame, static.
+shot 34: Full shot of C1 yawning and looking around while sitting on a rocky ledge, static camera.
+shot 35: Over-the-shoulder shot of C1 looking at C2 and C3 holding berries in the snow, tilt up.
+shot 36: Extreme close-up of C1 eating berries next to C2 while surrounded by C3, pulling back and tilting up to the night sky for the end credits.
+
+Dialogue:
+(no dialogue)
+
+Synopsis:
+In a slapstick comedic mood, a llama slips on a frozen pond while reaching for berries and gets its tongue stuck, allowing a baby penguin to eat the fruit before wandering onto railroad tracks in front of an oncoming steam train. After the train passes, leaving the llama with the berry and an adult penguin making a threatening gesture, the baby penguin snatches the fruit back just before the ground collapses beneath the pair, dropping them into an underground cavern. Spotting more berries inside a minecart, the two climb aboard and trigger a terrifying, chaotic plunge down steep subterranean tracks that violently launches them out of a mountain exit and high into the sky. Although the llama eagerly reaches for the airborne berries, the adult penguin intercepts it in mid-air, sending the llama and the baby penguin crashing down onto the snowy mountain peaks. The baby penguin slides away to rejoin its colony while the bruised llama weeps alone on a cliffside until nightfall, when the penguins return bearing abundant berries to share a joyful, heartwarming feast beside a lighthouse.

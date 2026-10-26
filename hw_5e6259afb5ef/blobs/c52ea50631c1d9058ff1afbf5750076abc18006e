@@ -1,0 +1,127 @@
+"""Step 6 (one-sentence description corrections) and step 3 + 5 (synopses)."""
+import sys; sys.path.insert(0, "scripts")
+from lib import *
+from resolve import *
+
+film = json.load(open(ANN / "film.json"))
+rich = json.load(open(ANN / "descriptions_rich.json"))
+orig = json.load(open(DS / "annotations" / FILM / "descriptions.json"))
+DESC = orig["descriptions"]
+shots, dur = film_info()
+tasks = {json.loads(l)["segment_id"]: json.loads(l) for l in open(DS / "tasks" / "dev.jsonl") if json.loads(l)["track"] == "scr" and json.loads(l)["film_id"] == FILM}
+
+def seg_shots(sid):
+    t = tasks[sid]
+    idx = [i for i, (a, b) in enumerate(shots) if a >= t["start_s"] - 0.01 and b <= t["end_s"] + 0.01]
+    assert len(idx) == t["n_shots"], (sid, len(idx), t["n_shots"])
+    return idx
+
+def bible():
+    return "Characters:\n" + "\n".join(f"{c['id']}: {c['kind']}. {c['appearance']}" for c in film["characters"])
+
+def fparts(i):
+    a, b = shots[i]; ts = frame_times(a, b)
+    return ts, [x for k, t in enumerate(ts) for x in (f"[frame {k+1}]", img_part(frame_path(t)))]
+
+def corrections():
+    mixed = {}
+    for m in film.get("mixed_ids", []):
+        for s in m["shots"]: mixed[int(s)] = m
+    new = dict(DESC); rows = []
+    users = lambda i: [sid for sid in SAMPLE if i in seg_shots(sid)]
+    from concurrent.futures import ThreadPoolExecutor
+    def one(k):
+        r = rich["shots"][k]; i = int(k)
+        dr = r["drafter_description_consistent"] is False; ck = bool(r["checker_description_contradicted"])
+        mx = mixed.get(i)
+        if not (dr or ck or mx): return None
+        base = {"tasks": [s + sfx for s in users(i) for sfx in ("-scr", "-rich")], "shot": i, "old": DESC[k], "drafter_judgment": {"consistent": r["drafter_description_consistent"], "note": r["drafter_description_note"]},
+                "checker_judgment": {"contradicted": r["checker_description_contradicted"], "note": r["checker_description_note"]}, "frames_s": [round(t, 3) for t in frame_times(*shots[i])]}
+        if not ((dr and ck) or mx):
+            return {**base, "status": "disputed", "new": None, "note": "only one model judged the sentence contradicted; not changed"}
+        reason = ("label reuse: " + mx["reason"]) if mx else "both models judged the sentence contradicted by the frames"
+        ts, fp = fparts(i); newsent = None; attempts = []
+        for att in range(2):
+            p = [f"Rewrite the one-sentence description of this shot. Template: '[shot size] of [subject] [action], [camera move]'. Refer to characters by their C labels from the list (a label must name the same character in every shot); do not write colours, lens parameters, art style or other appearance. Reply with the sentence only.\n\n{bible()}\n\nOld sentence: {DESC[k]}\nProblem: {reason}\n" + (f"Attempt {att+1}; the previous rewrite was rejected: {attempts[-1][1]}\n" if att else "") + "Frames:"] + fp
+            rec, _ = (lambda r_: (r_, None))(call_chat("description-rewrite", DRAFT, p, {"film": FILM, "shot": i, "step": 6, "att": att}, frames_s=[round(t, 3) for t in ts]))
+            cand = rec["response"].strip().strip('"')
+            q = [f"Does this one-sentence description of a shot agree with the frames (shot size, subject, action, camera move)? Description: {cand}\nCharacter list (labels C1.. name the characters):\n{bible()}\nReply with JSON {{\"matches\": true|false, \"why\": \"...\"}}.\nFrames:"] + fp
+            rec2, v = call_json("description-confirm", CHECK, q, {"film": FILM, "shot": i, "step": 6, "att": att})
+            attempts.append((cand, v.get("why"), rec["key"], rec2["key"], bool(v.get("matches"))))
+            if v.get("matches"): newsent = cand; break
+        row = {**base, "reason": reason, "attempts": [{"candidate": a[0], "checker_why": a[1], "draft_call": a[2], "check_call": a[3], "matches": a[4]} for a in attempts]}
+        if newsent: row.update(status="corrected", new=newsent)
+        else: row.update(status="kept_old", new=None, note="two rewrites not confirmed; old sentence kept")
+        return row
+    with ThreadPoolExecutor(6) as ex:
+        results = list(ex.map(one, sorted(rich["shots"], key=int)))
+    for row in results:
+        if row is None: continue
+        jl_append(ANN / "description_corrections.jsonl", row)
+        if row["status"] == "corrected": new[str(row["shot"])] = row["new"]
+    out = {k: v for k, v in orig.items() if k != "descriptions"}
+    out["descriptions"] = new; out["corrected_from"] = "dataset revision df03c79 descriptions.json; changes listed in description_corrections.jsonl"
+    json.dump(out, open(ANN / "descriptions.json", "w"), indent=1, ensure_ascii=False)
+    return new
+
+BAN = re.compile(r"\b(C\d+|shots?|cuts?|close-?up|wide|medium|zoom\w*|pan\w*|tracking|camera|angle|frames?|scenes?|seconds?|minutes?)\b|\d", re.I)
+
+def n_sentences(s): return len([x for x in re.split(r"(?<=[.!?])\s+", s.strip()) if x])
+
+def one_synopsis(sid, new):
+    t = tasks[sid]; idx = seg_shots(sid); d = t["end_s"] - t["start_s"]; n = max(1, min(12, round(d / 30)))
+    lines = read_csv(DS / "packages" / f"{sid}-scr" / "input" / "script.csv")[1:]
+    det = "\n".join(f"shot {j}: {new[str(i)]}  || " + " | ".join(f"{c}: {rich['shots'][str(i)][c]}" for c in ["setting", "characters", "props", "action"]) for j, i in enumerate(idx))
+    dl = "\n".join(",".join(x) for x in lines) or "(no dialogue)"
+    base = (f"Write the synopsis of a film segment as ONE continuous English paragraph (no bullets, no headings) of exactly {n} sentence{'s' if n > 1 else ''}. Say only what happens at story level: who does what with whom, in what order, and the broad mood. "
+            "Every fact you state must follow from the one-sentence description of the shots (the text before '||' on each line) and the dialogue; the detailed columns after '||' are only there to help you read them, do not add facts that the one-sentence descriptions do not support. "
+            "Refer to characters by kind or identity ('a llama', 'two penguins'), never by labels like C1 or by name. Do not mention shots, cuts, timing, camera or shot sizes, colours or other appearance details, and do not include digits. Reply with the paragraph only.\n\n"
+            f"Shots in order:\n{det}\n\nDialogue lines:\n{dl}\n")
+    rec = call_chat("synopsis-draft2", DRAFT, [base], {"segment": sid, "step": 3})
+    text = rec["response"].strip(); calls = {"draft": rec["key"]}
+    def bad_form(tx):
+        return ([f"{n_sentences(tx)} sentences instead of {n}"] if n_sentences(tx) != n else []) + ([f"forbidden content: {sorted(set(m.group(0) for m in BAN.finditer(tx)))}"] if BAN.search(tx) else [])
+    for r in range(2):
+        errs = bad_form(text)
+        if not errs: break
+        rec = call_chat("synopsis-fix2", DRAFT, [base + f"\nYour previous reply:\n{text}\nIt violated: {'; '.join(errs)}. Rewrite it."], {"segment": sid, "step": 3, "fix": r}); text = rec["response"].strip(); calls[f"fix{r}"] = rec["key"]
+    sd = "\n".join(f"shot {j}: {new[str(i)]}" for j, i in enumerate(idx))
+    def chk(txt, tag):
+        q = ("You verify a synopsis against the only information allowed to support it: one-sentence shot descriptions and dialogue. For each statement (a self-contained clause) judge 'supported' (can be inferred from them), or 'unsupported'. Each quote must be a complete self-contained clause so that deleting it leaves grammatical text. "
+             "Also report whether the synopsis mentions any shot count, cut, time, shot size, camera move, colour or other appearance detail, or uses a C label. Reply with JSON {\"statements\": [{\"quote\": \"exact substring\", \"verdict\": \"supported|unsupported\"}], \"forbidden_content\": [\"...\"]}.\n"
+             f"\nOne-sentence descriptions (C labels name the characters):\n{sd}\n\nDialogue:\n{dl}\n\nSynopsis:\n{txt}")
+        return call_json("synopsis-check2", CHECK, [q], {"segment": sid, "step": 5, "tag": tag})
+    def disputed(c): return [s for s in c.get("statements", []) if s.get("verdict") != "supported"]
+    crec, c = chk(text, "first"); jl_append(ANN / "rich_crosscheck.jsonl", {"where": {"segment": sid}, "draft_call": calls, "check_call": crec["key"], "check": c})
+    final = text; rows = []
+    if disputed(c):
+        rem = "\n".join(f"- '{s['quote']}' -> {s['verdict']}" for s in disputed(c))
+        rw = call_chat("synopsis-rewrite2", DRAFT, [base + f"\nYour previous reply:\n{text}\nAn independent checker, who sees only the one-sentence shot descriptions and the dialogue, could not confirm:\n{rem}\nRewrite it keeping the rules and exactly {n} sentence(s), using only facts that follow from that information."], {"segment": sid, "step": 6}); t2 = rw["response"].strip()
+        crec2, c2 = chk(t2, "recheck"); jl_append(ANN / "rich_crosscheck.jsonl", {"where": {"segment": sid, "recheck": True}, "draft_call": rw["key"], "check_call": crec2["key"], "check": c2})
+        final = t2; calls["rewrite"] = rw["key"]
+        rows.append({"where": {"segment": sid}, "draft": text, "check_remark": rem, "rewrite": t2, "treatment": "rewritten once by drafter, rechecked", "recheck_disputed": disputed(c2), "after": t2})
+        if disputed(c2):
+            rem2 = "\n".join(f"- '{s['quote']}' -> {s['verdict']}" for s in disputed(c2))
+            nw = call_chat("synopsis-narrow2", DRAFT, [base + f"\nCurrent text:\n{t2}\nThe independent checker still could not confirm:\n{rem2}\nReplace each of these statements by a narrower statement that certainly follows from the one-sentence descriptions, keeping exactly {n} sentence(s). Reply with the paragraph only."], {"segment": sid, "step": 6}); t3 = nw["response"].strip()
+            crec3, c3 = chk(t3, "narrow"); jl_append(ANN / "rich_crosscheck.jsonl", {"where": {"segment": sid, "narrow": True}, "draft_call": nw["key"], "check_call": crec3["key"], "check": c3})
+            final = t3; calls["narrow"] = nw["key"]
+            rows.append({"where": {"segment": sid}, "draft": t2, "check_remark": rem2, "treatment": "narrowed once by drafter, rechecked", "recheck_disputed": disputed(c3), "after": t3})
+            for s in disputed(c3):
+                before = final; cand = delete_quote(final, s["quote"])
+                # a deletion is only applied when it leaves the required number of sentences; otherwise the statement stays and is flagged
+                if n_sentences(cand) == n and cand.strip(" .") != "": final = cand; trt = "disputed statement deleted"
+                else: trt = "deletion would break the sentence count; statement kept and flagged for the maintainer"
+                rows.append({"where": {"segment": sid}, "draft": before, "check_remark": s, "treatment": trt, "after": final})
+    for x in rows: jl_append(ANN / "rich_resolutions.jsonl", x)
+    problems = bad_form(final) + ([f"{len(disputed(c))} statements disputed in first check"] if disputed(c) else [])
+    return {"segment_id": sid, "duration_s": d, "n_sentences_required": n, "synopsis": final, "flags": bad_form(final), "calls": calls, "first_check_disputed": len(disputed(c))}
+
+def synopses(new):
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(6) as ex: res = list(ex.map(lambda s: one_synopsis(s, new), SAMPLE))
+    out = {r["segment_id"]: r for r in res}
+    json.dump(out, open(ANN / "synopses.json", "w"), indent=1, ensure_ascii=False)
+    for k, v in out.items(): print(k, v["flags"], v["synopsis"][:300])
+
+if __name__ == "__main__":
+    new = corrections(); synopses(new)

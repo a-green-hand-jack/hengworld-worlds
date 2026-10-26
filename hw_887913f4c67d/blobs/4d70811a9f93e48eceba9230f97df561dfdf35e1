@@ -1,0 +1,32 @@
+"""Run CrewCut's own describe step (crewcut.build.describe.describe_film) and log every Gemini request.
+
+The product code is not modified. Usage reported by each response is appended to the ledger.
+usage: describe_run.py FILM_DIR LEDGER.jsonl [--limit N]
+"""
+import json, sys, time
+from pathlib import Path
+import openai.resources.chat.completions as cc
+from crewcut.build import describe
+
+film_dir, ledger = Path(sys.argv[1]), Path(sys.argv[2])
+limit = int(sys.argv[4]) if len(sys.argv) > 4 else None
+orig = cc.Completions.create
+count = [0]
+
+def logged(self, *a, **kw):
+    if limit is not None and count[0] >= limit:
+        raise SystemExit("limit reached")
+    count[0] += 1
+    t = time.time()
+    r = orig(self, *a, **kw)
+    u = r.usage
+    rec = {"purpose": "shot-description", "ts": t, "model_requested": kw.get("model"), "model_reported": r.model,
+           "max_tokens": kw.get("max_tokens"), "finish_reason": r.choices[0].finish_reason,
+           "usage": u.model_dump() if u else None, "reply": r.choices[0].message.content}
+    with open(ledger, "a") as f:
+        f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    return r
+
+cc.Completions.create = logged
+d = describe.describe_film(film_dir)
+print(len(d), "descriptions")

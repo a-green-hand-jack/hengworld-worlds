@@ -1,0 +1,10 @@
+"""score.py KEY RUN_OUTPUT -> JSON. Deliverability check first (8 lines, each an integer), then
+exact match per line and accuracy. Key is read, never printed."""
+import json, sys
+key = [c["words"] for c in json.load(open(sys.argv[1]))["counts"]]
+raw = open(sys.argv[2], encoding="utf-8").read().splitlines()
+ok = len(raw) == len(key) and all(l.strip().lstrip("-").isdigit() for l in raw)
+if not ok:
+    print(json.dumps({"deliverable": False, "accuracy": None, "per_line": None, "note": "not 8 integer lines; not scored"})); sys.exit(0)
+em = [int(int(l) == k) for l, k in zip(raw, key)]
+print(json.dumps({"deliverable": True, "per_line_exact": em, "correct": sum(em), "accuracy": sum(em) / len(em)}))

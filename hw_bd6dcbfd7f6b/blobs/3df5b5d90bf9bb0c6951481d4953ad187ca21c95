@@ -1,0 +1,7 @@
+"""Run CrewCut's own describe_film on a film dir (shots.json + master.*). usage: describe_run.py FILM_DIR"""
+import sys, pathlib
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+import gemini_meter  # noqa
+from crewcut.build.describe import describe_film
+d = describe_film(pathlib.Path(sys.argv[1]))
+print(len(d), "descriptions")

@@ -1,0 +1,57 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0004",
+  "start": 191.558,
+  "end": 242.275,
+  "shots": 5,
+  "lines": 0
+ },
+ "duration": 50.717,
+ "cuts": [
+  2.302,
+  35.035,
+  36.87,
+  40.274
+ ],
+ "shots": [
+  {
+   "index": 17,
+   "start": 0.0,
+   "end": 2.302,
+   "description": "Medium shot of C1 smiling, static camera."
+  },
+  {
+   "index": 18,
+   "start": 2.302,
+   "end": 35.035,
+   "description": "Medium shot of C1 sweeping the floor before falling over, static."
+  },
+  {
+   "index": 19,
+   "start": 35.035,
+   "end": 36.87,
+   "description": "Medium shot of C1 walking past a shop window, static."
+  },
+  {
+   "index": 20,
+   "start": 36.87,
+   "end": 40.274,
+   "description": "Medium shot of C1 standing in a store, leaning on a counter while looking at the shop assistant, static."
+  },
+  {
+   "index": 21,
+   "start": 40.274,
+   "end": 50.717,
+   "description": "Medium shot of C1 leaning on a counter while talking to a man, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 50.717
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0004-scr",
+ "descriptions_available": true
+}

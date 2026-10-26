@@ -1,0 +1,16 @@
+# Audit (interim, auditor)
+Ground truth: independently recomputed (split on whitespace) from /wordcount-source/sentences.txt: [6,4,6,4,4,1,2,6].
+Equals task-maker key/answer_key.json and /wordcount-reference/reference.json: 0 differences. Package sentences.txt is byte-identical to source; TASK.md matches README rule; no key in packages/.
+My own unpaid run of the unchanged system (sanity, not the executor's record): [6,5,6,5,2,1,3,6] -> lines 2,4,5,7 differ (accuracy 4/8); cause to be explained from the lines once executor's record is in.
+Pending: executor run record (runs/), scorer score (scores/). Not approved yet.
+
+## Update: run record and wrong lines
+Run record executor runs/run1 checked: system sha256 ed48f5…90ce matches source; sentences sha256 24566e… equals task-maker package and source; output [6,5,6,5,2,1,3,6] equals my rerun; exit 0, cost 0, no key accessed, no retries. Package checksums (task-maker packages/wordcount.SHA256SUMS) verified.
+Wrong lines (cause: system uses line.split(' '), not whitespace split):
+- L2 "Rain  fell all night." double space -> empty token: 5 vs 4
+- L4 " A leading space here." leading space -> empty token: 5 vs 4
+- L5 tabs not split on space: 2 vs 4
+- L7 "Trailing space " trailing space -> empty token: 3 vs 2
+Expected accuracy 4/8 = 0.5. Still pending: scorer's score in scores/ (scorer#3 says it scores now that runs/ exists); I will compare it with this.
+
+Score check: scorer scores/run1_score.json exact [1,0,1,0,0,1,0,1], accuracy 0.5 = my recomputation. All conditions hold; approved.

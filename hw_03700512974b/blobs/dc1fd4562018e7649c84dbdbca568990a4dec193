@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0022",
+  "start": 242.275,
+  "end": 261.161,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 18.886,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 22,
+   "start": 0.0,
+   "end": 18.886,
+   "description": "Medium shot of C1 dropping a broom and then hiding behind a curtain, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 18.886
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0022-ref",
+ "descriptions_available": true
+}

@@ -1,0 +1,4 @@
+# Word-count task
+Input: `sentences.txt` (8 lines). For each line, output the number of words, by the rule: a word is a maximal run of non-whitespace characters (spaces, tabs); hyphenated words and numbers count as one.
+Output format: exactly 8 lines, line i holding the integer count for input line i, nothing else.
+Run: `python3 count_words.py sentences.txt > output.txt`

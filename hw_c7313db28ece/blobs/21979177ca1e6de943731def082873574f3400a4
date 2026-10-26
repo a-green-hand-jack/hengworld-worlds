@@ -1,0 +1,5 @@
+# Word-count task
+Input: `sentences.txt`, eight lines of UTF-8 text.
+Output: for each line, the number of words on it, one integer per line, in order (8 lines, stdout).
+A word is a maximal run of characters that are not whitespace (spaces, tabs). A hyphenated word or a number counts as one word.
+Scoring: exact match per line; accuracy over the eight lines.

@@ -1,0 +1,13 @@
+Shot 3 detailed description (JSON):
+{"setting": "P2: Railroad tracks. Outdoor, bright daytime. Steel tracks on gravel cutting through a snowy landscape under a blue sky, with a distant oil pumpjack.", "characters": "", "props": "A large black steam locomotive with red accents, a white star on the nose, a yellow-and-black striped cowcatcher, and billowing white smoke.", "action": "The black steam locomotive speeds rapidly from left to right along the tracks, billowing thick white smoke from its smokestack and steam from its lower pistons.", "camera": "Low-angle medium shot, tracking rapidly alongside the front right side of the speeding locomotive.", "light_mood": "Bright, clear daylight with high contrast between the dark train and white snow; urgent, intense mood.", "sound": "A loud, blaring train horn, heavy chugging, hissing steam, and dramatic brass music."}
+It breaks these format rules: characters has no 'C<n>: ...' entry. Rules: 'characters' is 'C1: ...; C2: ...' (each entry begins with the C label and a colon, at most 25 words after the colon; or exactly 'none' if no character is visible); setting<=30 words, props<=25, action<=60, camera<=25, light_mood<=25, sound<=25. Keep every statement that is confirmed by the frames; do not add facts. Reply with the whole JSON (same seven keys) only.
+Frames:
+[frame 1 at 32.61s]
+IMG:df6c5e6d7d51bbacf26db5388c13b822963525446a019facecdec200f4449130
+[frame 2 at 32.93s]
+IMG:d558f0a169934bda407673f0e8dde918ecb481aff3d56e88d23df49439e67f96
+[frame 3 at 33.24s]
+IMG:4dae76ecafcf9a3fc5f8df5dc46a50f61d423925de525648c7610b9d17ca6149
+[frame 4 at 33.56s]
+IMG:740d3ace80b017b869a8391cc82dfd052078f3b91bf1fdf11f343d5805b38bae
+AUD:f9e943b3f468257f1321cf8b522e4cba0ced6dac746fde8c0e18fae74814a56f

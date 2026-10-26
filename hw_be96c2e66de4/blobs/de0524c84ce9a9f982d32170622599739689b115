@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""Shot-correspondence judge (objective §二 评分 c). qwen3-vl-plus, temperature 0, via the world's `alibaba` resource.
+Usage: judge_shots.py DELIV_DIR KEY_DIR OUT_CALLS.jsonl
+Per original shot: frames of the remake in the shot's time span, 1 frame/s, min 2, max 8 (evenly spaced at (k+.5)/n of the span,
+n=clamp(ceil(span),2,8)), JPEG width 448; verbatim protocol prompt with the shot description. Accepted = reply starts with "yes".
+Done once: calls already in OUT_CALLS are not repeated. The call record keeps task, shot, frame times, sha256 of the prompt, raw reply,
+token counts; it does NOT keep the description text (answer key)."""
+import base64, hashlib, json, math, os, subprocess, sys, glob, urllib.request
+PROMPT = ("You will see a written description of a shot from a film and several frames from another video at the same time. "
+          "Answer yes if the frames show the same subject, the same action and a similar framing intent as the description, "
+          "even if the visual style, colours or character designs differ. Otherwise answer no. Answer with one word.\n\nDescription: {description}")
+MODEL, MAX_TOKENS = "qwen3-vl-plus", 2000
+deliv, key, out = sys.argv[1:4]
+base = subprocess.run(["ht-resource", "url", "alibaba"], capture_output=True, text=True, check=True).stdout.strip() + "/compatible-mode/v1/chat/completions"
+tok = os.environ["HT_RESOURCE_TOKEN"]
+done = set()
+if os.path.exists(out):
+    for l in open(out):
+        e = json.loads(l); done.add((e["task"], e["shot"]))
+def frame(mp4, t):
+    r = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{t:.3f}", "-i", mp4, "-frames:v", "1", "-vf", "scale=448:-2", "-f", "image2pipe", "-vcodec", "mjpeg", "-"], capture_output=True, check=True)
+    return base64.b64encode(r.stdout).decode()
+for tdir in sorted(glob.glob(os.path.join(key, "coffee_run-*"))):
+    task = os.path.basename(tdir); truth = json.load(open(os.path.join(tdir, "truth.json")))
+    mp4 = os.path.join(deliv, task, "delivery.mp4")
+    for sh in truth["shots"]:
+        if (task, sh["index"]) in done: continue
+        s, e = sh["start"], sh["end"]
+        n = min(8, max(2, math.ceil(e - s)))
+        times = [s + (e - s) * (k + 0.5) / n for k in range(n)]
+        content = [{"type": "image_url", "image_url": {"url": "data:image/jpeg;base64," + frame(mp4, t)}} for t in times]
+        prompt = PROMPT.format(description=sh["description"])
+        content.append({"type": "text", "text": prompt})
+        body = {"model": MODEL, "temperature": 0, "max_tokens": MAX_TOKENS, "messages": [{"role": "user", "content": content}]}
+        req = urllib.request.Request(base, json.dumps(body).encode(), {"Content-Type": "application/json", "Authorization": "Bearer " + tok})
+        try:
+            r = json.load(urllib.request.urlopen(req, timeout=300))
+            reply = r["choices"][0]["message"]["content"] or ""; usage = r.get("usage"); err = None
+        except Exception as ex:
+            reply, usage, err = "", None, repr(ex)[:300]
+        rec = {"task": task, "shot": sh["index"], "span": [s, e], "frame_times": [round(t, 3) for t in times], "model": MODEL, "temperature": 0,
+               "max_tokens": MAX_TOKENS, "prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(), "reply": reply, "usage": usage, "error": err,
+               "accepted": reply.strip().lower().startswith("yes")}
+        open(out, "a").write(json.dumps(rec) + "\n")
+        print(task, sh["index"], repr(reply[:20]), usage, err, flush=True)

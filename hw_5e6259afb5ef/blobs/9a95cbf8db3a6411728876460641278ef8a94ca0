@@ -1,0 +1,74 @@
+"""Format / byte-identity / leakage / no-key / image checks over packages. Exits non-zero on any failure; writes checks/package_checks.json."""
+import sys, hashlib; sys.path.insert(0, "scripts")
+from lib import *
+PK = ROOT / "packages"
+res = []; fail = 0
+def ok(name, cond, detail=""):
+    global fail
+    res.append({"check": name, "pass": bool(cond), "detail": detail})
+    if not cond: fail += 1; print("FAIL", name, detail)
+def same(a, b): return a.read_bytes() == b.read_bytes()
+LIM = {"setting": 30, "props": 25, "action": 60, "camera": 25, "light_mood": 25, "sound": 25}
+syn = json.load(open(ANN / "synopses.json"))
+newtasks = [json.loads(l) for l in open(ROOT / "tasks" / "dev_new_tracks.jsonl")]
+ok("12 new task rows", len(newtasks) == 12 and len({t["task_id"] for t in newtasks}) == 12)
+existing = {json.loads(l)["task_id"] for l in open(DS / "tasks" / "dev.jsonl")}
+ok("task ids not already in dev.jsonl", not ({t["task_id"] for t in newtasks} & existing))
+for sid in SAMPLE:
+    S = DS / "packages" / f"{sid}-scr"; R = PK / f"{sid}-rich"; Y = PK / f"{sid}-syn"; C = PK / f"{sid}-scr"
+    for tr, d in (("rich", R), ("syn", Y)):
+        for f in ("spec.json", "tools.json", "budget.json"): ok(f"{sid}-{tr} {f} identical to -scr", same(d / f, S / f))
+        tj = json.load(open(d / "task.json")); st = json.load(open(S / "task.json"))
+        ok(f"{sid}-{tr} task.json", tj["task_id"] == f"{sid}-{tr}" and tj["track"] == tr and tj["tier"] == "T0" and {k: v for k, v in tj.items() if k not in ("task_id", "track")} == {k: v for k, v in st.items() if k not in ("task_id", "track")})
+        ok(f"{sid}-{tr} README equals the -scr package README", same(d / "README.md", C / "README.md"))
+        ok(f"{sid}-{tr} script.csv identical", same(d / "input" / "script.csv", S / "input" / "script.csv"))
+    ok(f"{sid} -ref README same", same(PK / f"{sid}-ref" / "README.md", C / "README.md"))
+    ok(f"{sid} synopsis identical rich/syn", same(R / "input" / "synopsis.md", Y / "input" / "synopsis.md"))
+    ok(f"{sid}-syn input files exactly", sorted(p.name for p in (Y / "input").iterdir()) == ["script.csv", "synopsis.md"])
+    ok(f"{sid}-rich input files", sorted(p.name for p in (R / "input").iterdir()) == ["characters.json", "references", "script.csv", "shotlist.csv", "synopsis.md"])
+    # shotlists
+    sc = read_csv(C / "input" / "shotlist.csv"); rc = read_csv(R / "input" / "shotlist.csv")
+    ok(f"{sid} rich header", rc[0] == ["shot", "start", "end", "description", "setting", "characters", "props", "action", "camera", "light_mood", "sound"])
+    ok(f"{sid} rich first four columns == updated -scr (and times == original -scr)", [r[:4] for r in rc] == sc and [r[:3] for r in sc] == [r[:3] for r in read_csv(S / "input" / "shotlist.csv")])
+    for r in rc[1:]:
+        for c, l in LIM.items():
+            ok(f"{sid} shot {r[0]} {c} <= {l} words", words(r[rc[0].index(c)]) <= l, str(words(r[rc[0].index(c)])))
+        ents = [e for e in re.split(r";\s*(?=C\d+:)", r[5]) if e.strip()]
+        for ent in ents:
+            ok(f"{sid} shot {r[0]} characters entry form/len", re.match(r"^\s*C\d+:", ent) and words(ent.split(":", 1)[1]) <= 25, ent[:60]) if r[5].strip().lower().rstrip(".") not in ("none", "") else None  # empty = every statement was deleted as disputed (see rich_resolutions.jsonl); reported below
+    for r in rc[1:]:
+        if not r[5].strip(): res.append({"check": f"{sid} shot {r[0]} characters empty (all statements deleted as disputed)", "pass": True, "detail": "informational"})
+    chars = json.load(open(R / "input" / "characters.json"))
+    for c in chars:
+        ok(f"{sid} {c['id']} fields/limits", set(c) == {"id", "kind", "appearance", "role", "reference"} and words(c["appearance"]) <= 80 and words(c["role"]) <= 30 and (R / "input" / c["reference"]).exists())
+    used = set(re.findall(r"\bC\d+\b", " ".join(" ".join(r[3:]) for r in rc[1:])))
+    ok(f"{sid} characters.json covers every C label used", used <= {c["id"] for c in chars}, f"{used - {c['id'] for c in chars}}")
+    # synopsis
+    t = (R / "input" / "synopsis.md").read_text()
+    n = syn[sid]["n_sentences_required"]
+    ok(f"{sid} synopsis sentence count == {n}", len([x for x in re.split(r"(?<=[.!?])\s+", t.strip()) if x]) == n)
+    ok(f"{sid} synopsis: single paragraph", "\n" not in t.strip())
+    ok(f"{sid} synopsis no C label / digits / shot-camera words", not re.search(r"\bC\d+\b|\d|\b(shots?|cuts?|close-?up|camera|zoom\w*|pan\w*)\b", t, re.I))
+    # leakage
+    alltext = ""
+    for p in R.rglob("*"):
+        if p.is_file() and p.suffix in (".csv", ".json", ".md") and p.name != "task.json": alltext += p.read_text() + "\n"  # task.json carries the task/film id by design
+    ok(f"{sid}-rich no scene/group fields or words", not re.search(r"\bscenes?[ _-]?(\d|number|id|boundar|break|change)|\bscene_|\"(scene|group|sequence|act)\w*\"\s*:|\bshots?[ _]group", alltext, re.I) and "scene" not in str(rc[0]).lower())
+    ok(f"{sid}-rich no film/character proper names", not re.search(r"caminandes|\bkoro\b|\boti\b|llamigos", alltext, re.I))
+    # media / key
+    for d in (R, Y):
+        for p in d.rglob("*"):
+            if p.is_file(): ok(f"{p.relative_to(PK)} allowed file type", p.suffix in (".csv", ".json", ".md", ".png"), p.suffix)
+        names = {p.name for p in d.rglob("*")}
+        ok(f"{d.name} no answer-file names", not names & {"shots.json", "descriptions.json", "hierarchy.json", "dialogue.json", "annotations", "fingerprint_video.json", "fingerprint_audio.bin.gz"})
+    mj = json.load(open(R / "input" / "references" / "manifest.json"))
+    for m in mj["images"]:
+        f = R / "input" / "references" / m["file"]
+        ok(f"{sid} image {m['file']} sha matches manifest", hashlib.sha256(f.read_bytes()).hexdigest() == m["sha256"])
+        ok(f"{sid} image {m['file']} provenance passed (>10) and no media in request", m["provenance_check"]["passed"] and m["provenance_check"]["min_hamming_incl_mirror"] > 10 and m["request_has_media"] is False)
+        ok(f"{sid} image {m['file']} vision check passed", m["vision_check"].get("matches") is True)
+    ok(f"{sid} all images in dir listed in manifest", sorted(p.name for p in (R / "input" / "references").glob("*.png")) == sorted(m["file"] for m in mj["images"]))
+ok("no master-derived media in packages", not [p for p in PK.rglob("*") if p.suffix in (".mp4", ".wav", ".jpg", ".ogv", ".webm", ".mp3")])
+(ROOT / "checks").mkdir(exist_ok=True)
+json.dump({"n_checks": len(res), "n_failed": fail, "results": res}, open(ROOT / "checks" / "package_checks.json", "w"), indent=1)
+print(len(res), "checks,", fail, "failed"); sys.exit(1 if fail else 0)

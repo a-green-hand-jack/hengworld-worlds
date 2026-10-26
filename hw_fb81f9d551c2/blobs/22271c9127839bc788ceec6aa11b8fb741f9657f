@@ -1,0 +1,182 @@
+"""Provenance index of an original film and the clean-room check against it.
+
+The index stores, for frames sampled at ``frame_sample_fps``, a 64-bit DCT perceptual hash and
+(optionally) a DINOv2 embedding, plus landmark audio fingerprints (pairs of spectrogram peaks
+hashed with their time offset). A remake fails the clean-room check if a run of its frames
+matches the original closely in hash or embedding space, or if its mix shares a consistent-offset
+run of audio landmarks with the original. Thresholds are set on the stress test of
+``scripts/provenance_stress.py`` so that every altered copy fails and no more than 1% of
+independent remakes are falsely flagged.
+"""
+from __future__ import annotations
+
+import subprocess
+from dataclasses import dataclass
+from pathlib import Path
+
+import numpy as np
+
+HASH_SIZE = 8
+SIDE = 32
+
+
+# ----------------------------------------------------------------- frames
+def sample_frames(video: Path, fps: float = 2.0, side: int = SIDE) -> tuple[np.ndarray, np.ndarray]:
+    """Grayscale ``side x side`` frames sampled at ``fps``, and their timestamps in seconds."""
+    cmd = ["ffmpeg", "-v", "error", "-i", str(video), "-an", "-sn",
+           "-vf", f"fps={fps},scale={side}:{side}:flags=area,format=gray", "-f", "rawvideo", "-"]
+    raw = subprocess.run(cmd, capture_output=True, check=True).stdout
+    frames = np.frombuffer(raw, np.uint8).reshape(-1, side, side).astype(np.float32)
+    return frames, np.arange(len(frames)) / fps
+
+
+def _dct_matrix(n: int) -> np.ndarray:
+    k = np.arange(n)
+    m = np.cos(np.pi * (2 * k[None, :] + 1) * k[:, None] / (2 * n)) * np.sqrt(2 / n)
+    m[0] /= np.sqrt(2)
+    return m
+
+
+_D = _dct_matrix(SIDE)
+
+
+def phash(frames: np.ndarray) -> np.ndarray:
+    """64-bit pHash per frame, packed into uint64."""
+    c = _D @ frames @ _D.T
+    low = c[:, :HASH_SIZE, :HASH_SIZE].reshape(len(frames), -1)
+    med = np.median(low[:, 1:], axis=1, keepdims=True)
+    bits = (low > med).astype(np.uint8)
+    return np.packbits(bits, axis=1).view(">u8").ravel().astype(np.uint64)
+
+
+def hamming(a: np.ndarray, b: np.ndarray) -> np.ndarray:
+    """Pairwise Hamming distance between two uint64 hash vectors."""
+    x = np.bitwise_xor(a[:, None], b[None, :])
+    return np.unpackbits(x.view(np.uint8).reshape(*x.shape, 8), axis=-1).sum(-1)
+
+
+def dino_embed(video: Path, fps: float = 2.0, model: str = "dinov2_vits14") -> np.ndarray | None:
+    """Optional DINOv2 CLS embeddings (needs ``torch``); returns ``None`` when unavailable."""
+    try:
+        import torch
+    except ImportError:
+        return None
+    frames, _ = sample_frames_rgb(video, fps, 224)
+    net = torch.hub.load("facebookresearch/dinov2", model).eval()
+    mean = torch.tensor([0.485, 0.456, 0.406]).view(1, 3, 1, 1)
+    std = torch.tensor([0.229, 0.224, 0.225]).view(1, 3, 1, 1)
+    out = []
+    with torch.no_grad():
+        for i in range(0, len(frames), 64):
+            x = torch.from_numpy(frames[i:i + 64]).permute(0, 3, 1, 2).float() / 255
+            e = net((x - mean) / std)
+            out.append(torch.nn.functional.normalize(e, dim=-1).numpy())
+    return np.concatenate(out) if out else np.zeros((0, 384), np.float32)
+
+
+def sample_frames_rgb(video: Path, fps: float, side: int) -> tuple[np.ndarray, np.ndarray]:
+    cmd = ["ffmpeg", "-v", "error", "-i", str(video), "-an", "-sn",
+           "-vf", f"fps={fps},scale={side}:{side},format=rgb24", "-f", "rawvideo", "-"]
+    raw = subprocess.run(cmd, capture_output=True, check=True).stdout
+    f = np.frombuffer(raw, np.uint8).reshape(-1, side, side, 3)
+    return f, np.arange(len(f)) / fps
+
+
+# ----------------------------------------------------------------- audio
+def load_audio(video: Path, sr: int = 8000) -> np.ndarray:
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(video), "-vn", "-ac", "1", "-ar", str(sr),
+                          "-f", "s16le", "-"], capture_output=True).stdout
+    return np.frombuffer(raw, np.int16).astype(np.float32) / 32768.0
+
+
+def audio_landmarks(x: np.ndarray, sr: int = 8000, n_fft: int = 1024, hop: int = 256,
+                    fan_out: int = 5, max_dt: int = 40) -> np.ndarray:
+    """Landmark hashes as rows of (hash, frame_index)."""
+    if len(x) < n_fft:
+        return np.zeros((0, 2), np.int64)
+    win = np.hanning(n_fft).astype(np.float32)
+    n = 1 + (len(x) - n_fft) // hop
+    idx = np.arange(n_fft)[None, :] + hop * np.arange(n)[:, None]
+    S = np.log1p(np.abs(np.fft.rfft(x[idx] * win, axis=1)))
+    peaks = []
+    bands = np.array_split(np.arange(S.shape[1]), 6)
+    for t in range(S.shape[0]):
+        for b in bands:
+            f = b[np.argmax(S[t, b])]
+            if S[t, f] > S[t].mean() + 2 * S[t].std():
+                peaks.append((t, f))
+    peaks = np.array(peaks, dtype=np.int64).reshape(-1, 2)
+    rows = []
+    for i, (t1, f1) in enumerate(peaks):
+        for t2, f2 in peaks[i + 1:i + 1 + fan_out]:
+            dt = t2 - t1
+            if 0 < dt <= max_dt:
+                rows.append(((f1 << 20) | (f2 << 8) | dt, t1))
+    return np.array(rows, dtype=np.int64).reshape(-1, 2)
+
+
+# ----------------------------------------------------------------- index and check
+def build_index(video: Path, out: Path, fps: float = 2.0, with_dino: bool = False) -> Path:
+    frames, ts = sample_frames(video, fps)
+    data = {"phash": phash(frames), "t": ts, "audio": audio_landmarks(load_audio(video)), "fps": np.array(fps)}
+    if with_dino:
+        e = dino_embed(video, fps)
+        if e is not None:
+            data["dino"] = e.astype(np.float16)
+    np.savez_compressed(out, **data)
+    return out
+
+
+@dataclass
+class ProvenanceResult:
+    passed: bool
+    frame_match_rate: float
+    dino_match_rate: float | None
+    audio_match: float
+    detail: str
+
+
+def check(remake: Path, index_path: Path, phash_max_hamming: int = 10, dino_min_cosine: float = 0.92,
+          audio_min_match: float = 0.35, max_frame_match_rate: float = 0.05) -> ProvenanceResult:
+    idx = np.load(index_path)
+    fps = float(idx["fps"])
+    frames, _ = sample_frames(remake, fps)
+    ref = idx["phash"]
+
+    def nearest(h):
+        return np.concatenate([hamming(h[i:i + 512], ref).min(1) for i in range(0, len(h), 512)]) if len(h) else np.array([])
+
+    # mirrored copies are matched too, so a horizontal flip does not hide a reused frame
+    best = np.minimum(nearest(phash(frames)), nearest(phash(frames[:, :, ::-1].copy()))) if len(frames) else np.array([])
+    frame_rate = float((best <= phash_max_hamming).mean()) if len(best) else 0.0
+    dino_rate = None
+    if "dino" in idx.files:
+        e = dino_embed(remake, fps)
+        if e is not None and len(e):
+            sims = e @ idx["dino"].astype(np.float32).T
+            dino_rate = float((sims.max(1) >= dino_min_cosine).mean())
+    a = audio_landmarks(load_audio(remake))
+    audio = _audio_match(a, idx["audio"])
+    bad = []
+    if frame_rate > max_frame_match_rate:
+        bad.append(f"{frame_rate:.1%} of frames match the original by pHash")
+    if dino_rate is not None and dino_rate > max_frame_match_rate:
+        bad.append(f"{dino_rate:.1%} of frames match the original by DINOv2")
+    if audio >= audio_min_match:
+        bad.append(f"audio fingerprint match {audio:.2f}")
+    return ProvenanceResult(not bad, frame_rate, dino_rate, audio, "; ".join(bad) or "clean")
+
+
+def _audio_match(q: np.ndarray, ref: np.ndarray) -> float:
+    """Share of query landmarks that agree with the original at the single best time offset."""
+    if len(q) == 0 or len(ref) == 0:
+        return 0.0
+    order = np.argsort(ref[:, 0])
+    rh, rt = ref[order, 0], ref[order, 1]
+    lo = np.searchsorted(rh, q[:, 0], "left")
+    hi = np.searchsorted(rh, q[:, 0], "right")
+    offs = [rt[a:b] - t for (a, b, t) in zip(lo, hi, q[:, 1]) if b > a]
+    if not offs:
+        return 0.0
+    vals, counts = np.unique(np.concatenate(offs), return_counts=True)
+    return float(counts.max() / len(q))

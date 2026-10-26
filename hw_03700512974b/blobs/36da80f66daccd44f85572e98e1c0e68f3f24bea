@@ -1,0 +1,92 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0007",
+  "start": 317.217,
+  "end": 383.149,
+  "shots": 10,
+  "lines": 0
+ },
+ "duration": 65.932,
+ "cuts": [
+  7.774,
+  15.115,
+  19.319,
+  22.723,
+  26.026,
+  31.732,
+  50.017,
+  55.522,
+  59.793
+ ],
+ "shots": [
+  {
+   "index": 32,
+   "start": -0.0,
+   "end": 7.774,
+   "description": "Medium shot of C1 and C2 kneeling on the floor, with C2 examining money and C1 wiping tears with a handkerchief, static camera."
+  },
+  {
+   "index": 33,
+   "start": 7.774,
+   "end": 15.115,
+   "description": "Medium shot of C1 tipping hat while C2 walks past, static camera."
+  },
+  {
+   "index": 34,
+   "start": 15.115,
+   "end": 19.319,
+   "description": "Medium shot of C1 standing dejectedly, static."
+  },
+  {
+   "index": 35,
+   "start": 19.319,
+   "end": 22.723,
+   "description": "Medium shot of C1 straightening up and C2 standing still, static camera."
+  },
+  {
+   "index": 36,
+   "start": 22.723,
+   "end": 26.026,
+   "description": "Medium close-up of C1 standing and looking ahead, static."
+  },
+  {
+   "index": 37,
+   "start": 26.026,
+   "end": 31.732,
+   "description": "Medium shot of C1 standing in a room while C2 walks into another room, static."
+  },
+  {
+   "index": 38,
+   "start": 31.732,
+   "end": 50.017,
+   "description": "Medium shot of C1 and C2 standing on the street, C1 dropping papers to the floor, static camera."
+  },
+  {
+   "index": 39,
+   "start": 50.017,
+   "end": 55.522,
+   "description": "Medium shot of C1 entering a room and taking a dollar bill from his pocket, static camera."
+  },
+  {
+   "index": 40,
+   "start": 55.522,
+   "end": 59.793,
+   "description": "Medium shot of C1 walking on the sidewalk past a storefront while C2 sneaks behind, static camera."
+  },
+  {
+   "index": 41,
+   "start": 59.793,
+   "end": 65.932,
+   "description": "Medium shot of C1 standing in a cafe while C2 takes out paper money and hands it to C1, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 65.932
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0007-scr",
+ "descriptions_available": true
+}

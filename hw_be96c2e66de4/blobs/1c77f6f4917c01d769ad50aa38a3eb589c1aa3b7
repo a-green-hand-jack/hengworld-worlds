@@ -1,0 +1,43 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0013",
+  "start": 968.067,
+  "end": 986.385,
+  "shots": 3,
+  "lines": 0
+ },
+ "duration": 18.318,
+ "cuts": [
+  4.772,
+  12.112
+ ],
+ "shots": [
+  {
+   "index": 115,
+   "start": 0.0,
+   "end": 4.772,
+   "description": "Long shot of an audience watching a movie, the camera pans up."
+  },
+  {
+   "index": 116,
+   "start": 4.772,
+   "end": 12.112,
+   "description": "Medium shot of C1 walking outside a pawn shop, static camera."
+  },
+  {
+   "index": 117,
+   "start": 12.112,
+   "end": 18.318,
+   "description": "Medium shot of C1 talking, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 18.318
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0013-scr",
+ "descriptions_available": true
+}

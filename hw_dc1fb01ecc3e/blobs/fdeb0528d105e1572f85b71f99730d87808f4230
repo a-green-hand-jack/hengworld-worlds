@@ -1,0 +1,2 @@
+# Decision 001: ground truth rule
+Chosen: Python `str.split()` (any whitespace run) per README rule; leading/trailing whitespace ignored. Evidence: README quote; result equals /wordcount-reference/reference.json on all 8 lines (data/key/reference_comparison.json). Effect: data/key/answers.json. Depends: scorer, auditor.

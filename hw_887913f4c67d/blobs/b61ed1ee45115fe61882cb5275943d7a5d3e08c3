@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0034",
+  "start": 114.5,
+  "end": 118.792,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 4.292,
+ "cuts": [
+  4.292
+ ],
+ "shots": [
+  {
+   "index": 34,
+   "start": 0.0,
+   "end": 4.292,
+   "description": "Medium shot of a cartoon animal sitting on a snowy cliff, looking around, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 4.292
+  }
+ ]
+}

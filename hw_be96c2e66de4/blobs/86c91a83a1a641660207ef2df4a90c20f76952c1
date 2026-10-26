@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0005",
+  "start": 36.792,
+  "end": 39.5,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.708,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 5,
+   "start": -0.0,
+   "end": 2.708,
+   "description": "Medium shot of C1 standing on train tracks with a flower as a train approaches, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.708
+  }
+ ],
+ "task_id": "caminandes3-L0-0005-scr",
+ "descriptions_available": true
+}

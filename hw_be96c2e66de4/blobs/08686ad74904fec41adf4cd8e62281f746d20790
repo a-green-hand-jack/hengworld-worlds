@@ -1,0 +1,8 @@
+# Costs (USD, official prices from the published prices.json, queried 2026-10-22)
+- 28 delivered runs: 4.1539 total (ledgers; 115 priced calls: stills x 0.0336, 28 music x 0.08, Reference description calls by tokens; per task in summary.csv)
+- failed attempts (kept under attempts/): 0.1587
+- discarded test run: 0.1136; probes: lyria probe 0.08 (not in a repo ledger, logged here), image probe-003 0.0336 (probe-001/002 were 402, 0)
+- Round total for executor ≈ 4.54 USD; borne by the world's paid key (gemini, gemini-native).
+- Finished minutes delivered: 1845.8 s = 30.76 min → fixed pipeline 0.135 USD per finished minute (delivered runs only), 0.140 with failed attempts.
+- Wall clock: see manifest.json per run (3 runs in parallel).
+Note: the wall-clock budget (≥15 min/task) and model/tool caps were never approached (largest task: 0.253 USD vs tools cap 15.4 USD).

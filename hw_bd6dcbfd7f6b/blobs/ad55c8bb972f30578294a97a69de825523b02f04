@@ -1,0 +1,4 @@
+{
+ "decision": "Two independent drafts of the 37 descriptions exist, both from CrewCut describe_film with gemini-3.8-flash: mine (key/caminandes3/descriptions.json, used in truth-described.json and record/c/) and scorer's (key/caminandes3/descriptions_scorer-draft.json, copied unchanged from world/scorer private/descriptions_gemini-3.8-flash.json). They differ in all 37 texts (sampling at the model's default temperature; CrewCut's describe sets none), so the drafts are not reproducible byte for byte. Mine is the one the published truth-described.json carries because the c in record/c/ was computed with it; scorer's judged c (correspondence 0.0) agrees. The scorer's draft is kept for comparison, not used.",
+ "decided_by": "task-maker (agent)", "date": "2026-10-21", "affects": ["shot descriptions", "correspondence"], "depends_on": ["D6", "D7", "D9"]
+}

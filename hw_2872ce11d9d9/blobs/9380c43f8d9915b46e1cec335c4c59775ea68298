@@ -1,0 +1,5 @@
+# Adopter records
+
+The world had no `world/result` release at activation `e71d723eb08848c8e1a4854185090580`, so there was no released task package or protocol to adopt. As a smoke test of the supplied source (not a benchmark result), I ran the unchanged system and retained the exact command output in `source-system-run.txt`.
+
+The source README defines whitespace as spaces and tabs. The system uses `split(' ')`, so this smoke run produced counts `6, 5, 6, 5, 2, 1, 3, 6`; those values are recorded only to help compare the eventual released run.

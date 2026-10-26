@@ -1,0 +1,49 @@
+[
+ {
+  "type": "image",
+  "file": "work/still0.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Extreme wide shot of titles appearing, static.",
+  "used_in": "delivery.mp4",
+  "shot": 0
+ },
+ {
+  "type": "image",
+  "file": "work/still1.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Medium shot of a cartoon character running through a hospital room, then diving out of a church window into the city, static camera.",
+  "used_in": "delivery.mp4",
+  "shot": 1
+ },
+ {
+  "type": "image",
+  "file": "work/still2.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Wide shot of a cartoon character walking in a hospital, static camera. Medium wide shot of a cartoon character running out of a church, static camera. Medium wide shot of a cartoon character flying over a city, static camera.",
+  "used_in": "delivery.mp4",
+  "shot": 2
+ },
+ {
+  "type": "image",
+  "file": "work/still3.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Wide shot of a cartoon character riding a pram through a city landscape, panning left.",
+  "used_in": "delivery.mp4",
+  "shot": 3
+ },
+ {
+  "type": "image",
+  "file": "work/still4.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Extreme wide shot of landscape with credits, static.",
+  "used_in": "delivery.mp4",
+  "shot": 4
+ },
+ {
+  "type": "music",
+  "file": "work/music.mp3",
+  "model": "lyria-3.5",
+  "prompt": "Instrumental background score, no vocals, about 185 seconds, for a film whose shots are described as follows: Extreme wide shot of titles appearing, static. Medium shot of a character running through a hospital room, then diving out of a church window into the city, static camera. Wide shot of a character walking in a hospital, static camera. Medium wide shot of a character running out of a church, static camera. Medium wide shot of a character flying over a city, static camera. Wide shot of a character riding a pram through a city landscape, panning left. Extreme wide shot of landscape with credits, static.",
+  "used_in": "delivery.mp4"
+ }
+]

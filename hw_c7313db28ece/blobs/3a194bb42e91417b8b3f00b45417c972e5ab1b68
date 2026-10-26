@@ -1,0 +1,38 @@
+{
+ "rule": "maximal run of non-whitespace characters",
+ "sha256": "24566eb35aef8e056134f78d6901ef73eb2aaae72d49057e727def9abb24211d",
+ "counts": [
+  {
+   "line": 1,
+   "words": 6
+  },
+  {
+   "line": 2,
+   "words": 4
+  },
+  {
+   "line": 3,
+   "words": 6
+  },
+  {
+   "line": 4,
+   "words": 4
+  },
+  {
+   "line": 5,
+   "words": 4
+  },
+  {
+   "line": 6,
+   "words": 1
+  },
+  {
+   "line": 7,
+   "words": 2
+  },
+  {
+   "line": 8,
+   "words": 6
+  }
+ ]
+}

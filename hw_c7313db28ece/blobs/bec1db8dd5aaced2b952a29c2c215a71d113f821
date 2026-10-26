@@ -1,0 +1,4 @@
+ok {"deliverable": true, "lines": 8, "per_line": [true, true, true, true, true, true, true, true], "correct": 8, "accuracy": 1.0}
+d1 {"deliverable": true, "lines": 8, "per_line": [true, true, true, true, true, true, true, false], "correct": 7, "accuracy": 0.875}
+d0 {"deliverable": true, "lines": 8, "per_line": [false, false, false, false, false, false, false, false], "correct": 0, "accuracy": 0.0}
+bad {"deliverable": false, "lines": 1, "accuracy": null, "note": "not deliverable: not scored"}

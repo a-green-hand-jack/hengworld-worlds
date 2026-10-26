@@ -1,0 +1,16 @@
+Does this one-sentence description of a shot agree with the frames (shot size, subject, action, camera move)? Description: Close-up of C1 gasping and blinking in alarm, static.
+Character list (labels C1.. name the characters):
+Characters:
+C1: a guanaco (llama). Slender, long-necked quadruped with orange-brown fur, dark brown muzzle, long ears, and huge bulging eyes.
+C2: a baby penguin. Small, round, fluffy bird with a grey-black back and head, white belly, small beak, and large white eyes with dark pupils.
+C3: adult penguins. Medium-sized black and white penguins with distinct black and white facial bands, holding large bunches of red berries.
+Reply with JSON {"matches": true|false, "why": "..."}.
+Frames:
+[frame 1]
+IMG:2e3398478c406ad0db6aa372ae18edddd73c106b504f9ca9e6ceca7ea7869817
+[frame 2]
+IMG:e3c9c1d9e4816ecbae1b6a89dd1d50447cf57b21861a277d9894c6776f2684c0
+[frame 3]
+IMG:d7b2a2513d507bd74369c5d81f9a3d149a16917bbcf98d63ed3de24768df3b09
+[frame 4]
+IMG:ae654de0138f125eb488b5a9036002a9f8ee720008cb5f6699c47cb35402600e

@@ -1,0 +1,2 @@
+# curator
+`corpus/admissions.json` — admission records; `corpus/fetch_and_verify.sh` — fetch + SHA-256 check; `corpus/verification_log.txt` — result; `corpus/ia_metadata_CaminandesLlamigos.json` — source metadata snapshot.

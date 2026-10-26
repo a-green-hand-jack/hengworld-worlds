@@ -1,0 +1,10 @@
+# Audit criteria (written before reading makers' claims)
+
+Approval requires all of:
+1. Every admitted item has a decision, evidence and a checksum, verified by a check I re-run (sha256 of the pinned master vs configs/films.yaml).
+2. Task data reproduced by me from the record (recorded commands on recorded decisions) equals dataset d509bed, or each difference is listed and explained with evidence.
+3. At least one task ran under the protocol (--system fixed --profile smoke); run records complete (command, version, log, cost, failures); Q and cut F1 recomputed by me and equal to the scorer's.
+4. Everything needing a missing key/resource (shot descriptions, judge, real generators, screening, provenance if infeasible) is marked "not run", with no claim or conclusion drawn.
+5. Protocol unchanged: configs/protocol equal CrewCut's at the pinned commit and equal steward's brief; no maintainer decision made by any position (recorded as open instead).
+Also: no answer key in executor-readable paths; no placeholder presented as a result; local master copy used only if fetch failed, and recorded.
+Never approve on a statement or plan.

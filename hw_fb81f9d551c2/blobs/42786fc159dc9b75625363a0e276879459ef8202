@@ -1,0 +1,36 @@
+{
+ "position": "task-maker",
+ "step": "shot descriptions (paid, done once)",
+ "model": "gemini-3.5-flash-lite",
+ "settings": {
+  "temperature": 0,
+  "max_tokens": 1024,
+  "frames_per_shot": 3,
+  "frame_width_px": 448,
+  "characters_hint": "none yet"
+ },
+ "requests": {
+  "shot_descriptions": 37,
+  "probes_and_rejected": 4,
+  "total_task_maker": 41,
+  "world_limit": 150,
+  "needed": 37,
+  "note": "37 shots need 37 requests; 4 extra are the diagnosis of the HTTP 400 (reasoning_effort=none unsupported)"
+ },
+ "tokens_reported": {
+  "input": 125288,
+  "output": 607,
+  "shot_descriptions": {
+   "input": 125282,
+   "output": 587
+  },
+  "probes": {
+   "input": 6,
+   "output": 20,
+   "note": "two rejected calls reported no usage"
+  }
+ },
+ "cost_usd": 0.039104,
+ "cost_basis": "reported tokens x costs/prices.json; reported token usage only, not the provider's invoice",
+ "other_positions": "not task-maker's; see their repositories"
+}

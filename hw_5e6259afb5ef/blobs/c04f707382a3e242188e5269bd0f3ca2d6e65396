@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Medium shot of a train speeding through a snowy landscape, tracking forward.
+Detailed description:
+setting: P2: Railroad tracks. Outdoor, bright daytime. Steel tracks on gravel cutting through a snowy landscape under a blue sky, with a distant oil pumpjack.
+characters: 
+props: A large black steam locomotive with red accents, a white star on the nose, a yellow-and-black striped cowcatcher, and billowing white smoke.
+action: The black steam locomotive speeds rapidly from left to right along the tracks, billowing thick white smoke from its smokestack and steam from its lower pistons.
+camera: Low-angle medium shot, tracking rapidly alongside the front right side of the speeding locomotive.
+light_mood: Bright, clear daylight with high contrast between the dark train and white snow; urgent, intense mood.
+Frames:
+[frame 1 at 32.61s]
+IMG:df6c5e6d7d51bbacf26db5388c13b822963525446a019facecdec200f4449130
+[frame 2 at 32.93s]
+IMG:d558f0a169934bda407673f0e8dde918ecb481aff3d56e88d23df49439e67f96
+[frame 3 at 33.24s]
+IMG:4dae76ecafcf9a3fc5f8df5dc46a50f61d423925de525648c7610b9d17ca6149
+[frame 4 at 33.56s]
+IMG:740d3ace80b017b869a8391cc82dfd052078f3b91bf1fdf11f343d5805b38bae

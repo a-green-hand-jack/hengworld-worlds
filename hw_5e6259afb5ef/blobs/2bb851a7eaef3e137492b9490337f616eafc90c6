@@ -1,0 +1,33 @@
+"""Format repair after resolution: shots whose final columns break the format rules get one drafter fix call (rules quoted back), then are re-checked by the other model; disputed statements removed as in step 6."""
+import sys; sys.argv = sys.argv[:1]
+sys.path.insert(0, "scripts")
+from s2_detail import *
+
+def strict(d):
+    errs = [e for e in validate({**d, "characters": "x"}) if not e.startswith("characters")]
+    ch = d["characters"].strip()
+    if ch.lower().rstrip(".") == "none": return errs
+    ents = [e for e in re.split(r";\s*(?=C\d+:)", ch) if e.strip()]
+    for e in ents:
+        if not re.match(r"^\s*C\d+:", e): errs.append(f"characters entry does not start with 'C<n>:': {e[:40]}")
+        elif words(e.split(":", 1)[1]) > 25: errs.append(f"a characters entry has {words(e.split(':', 1)[1])} words, limit 25: {e[:40]}")
+    if not ents: errs.append("characters has no 'C<n>: ...' entry")
+    return errs
+
+outp = ANN / "descriptions_rich.json"; out = json.load(open(outp))
+for k, r in out["shots"].items():
+    cur = {c: r[c] for c in COLS}; errs = strict(cur)
+    if not errs: continue
+    i = int(k); ts, fp = frames_for(i); ap, silent = audio_part(i)
+    p = [f"Shot {i} detailed description (JSON):\n{json.dumps(cur, ensure_ascii=False)}\nIt breaks these format rules: {'; '.join(errs)}. Rules: 'characters' is 'C1: ...; C2: ...' (each entry begins with the C label and a colon, at most 25 words after the colon; or exactly 'none' if no character is visible); setting<=30 words, props<=25, action<=60, camera<=25, light_mood<=25, sound<=25. Keep every statement that is confirmed by the frames; do not add facts. Reply with the whole JSON (same seven keys) only.\nFrames:"] + fp + ([ap] if ap else [])
+    rec, d2 = call_json("shot-detail-formatfix", DRAFT, p, {"film": FILM, "shot": i, "step": 6}, frames_s=[round(t, 3) for t in ts])
+    new = {c: d2[c] for c in COLS}; errs2 = strict(new)
+    chk_rec, rr, snd = check(i, new, silent)
+    jl_append(ANN / "rich_crosscheck.jsonl", {"where": {"film": FILM, "shot": i, "recheck": True, "after": "formatfix"}, "draft_call": rec["key"], "check_call": chk_rec["key"], "check": rr, "sound_check": snd})
+    final = dict(new)
+    for c, s in bad(rr, snd):
+        before = final[c]; final[c] = delete_quote(final[c], s.get("quote", ""))
+        jl_append(ANN / "rich_resolutions.jsonl", {"where": {"film": FILM, "shot": i, "column": c}, "draft": before, "check_remark": s, "treatment": "disputed statement deleted after format-fix rewrite and recheck", "after": final[c], "calls": {"formatfix": rec["key"], "check": chk_rec["key"]}})
+    jl_append(ANN / "rich_resolutions.jsonl", {"where": {"film": FILM, "shot": i}, "draft": cur, "check_remark": errs, "treatment": "format fix by drafter, rechecked", "after": final, "remaining_format_errors": strict(final)})
+    r.update(final); r["format_fixed"] = True; print("fixed", i, strict(final), flush=True)
+json.dump(out, open(outp, "w"), indent=1, ensure_ascii=False)

@@ -1,0 +1,5 @@
+# Not run
+- Real generators (Gemini image/TTS/music, ElevenLabs sfx, Wan 2.2 T1): outside this round's scope (placeholder only).
+- Systems other than fixed, other tasks, tiers other than smoke, repeat runs (protocol 3 per task): outside this round's scope; one run only.
+- Reference track (needs the original clip): not run.
+- Speech synthesis in this run: not exercised, the package has 0 dialogue lines.

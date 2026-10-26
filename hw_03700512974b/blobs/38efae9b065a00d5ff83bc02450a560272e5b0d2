@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0342",
+  "start": 2359.424,
+  "end": 2362.46,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.036,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 342,
+   "start": -0.0,
+   "end": 3.036,
+   "description": "Medium shot of C1 sitting on a chair and C2 sitting on a table talking, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.036
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0342-scr",
+ "descriptions_available": true
+}

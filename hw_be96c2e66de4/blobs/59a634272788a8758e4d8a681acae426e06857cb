@@ -1,0 +1,8 @@
+Damage/stress evidence for the measures.
+1. Synthetic (`validate_measures.py` → `validation_measures.json`, 19 checks): identical → perfect, shifted beyond tolerance → 0, dropped/noisy cuts → lower, silence → WER 1, reversed scenes → 0.
+2. Real output (`scores/code/validate_real.py` → `validation_real.json`), task coffee_run-L2-0000-scr (3 true cuts), same Q checks and unmodified cut detector:
+   - identical copy, re-encoded (crf 30), audio silenced: Q=1, cut F1 1.0/1.0 (holds; no dialogue so silencing cannot change c);
+   - truncated to half: Q=0 (duration check) → c = 0;
+   - 3 s front padding: cuts move +3 s → F1 0.0/0.0;
+   - shot order shuffled: F1 0.0 @0.5 s, 0.333 @1.0 s (drops).
+   Shot correspondence has no real-output damage check beyond the Screenplay/Reference contrast (scr 1.0 vs ref 0.51); the judge was run once and not repeated for damaged variants (paid step done once).

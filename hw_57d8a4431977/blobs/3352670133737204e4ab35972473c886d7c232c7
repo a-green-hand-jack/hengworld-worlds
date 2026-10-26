@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0009",
+  "start": 42.708,
+  "end": 43.917,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.209,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 9,
+   "start": 0.0,
+   "end": 1.209,
+   "description": "Medium shot of a penguin sitting on the railway while a train is approaching, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.209
+  }
+ ]
+}

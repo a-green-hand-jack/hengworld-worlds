@@ -1,0 +1,65 @@
+"""The continuity judge and the screening judge (paper Appendix H).
+
+The continuity judge sees an original shot's *description* and frames of the remake in the same
+interval (1 frame per second, at least 2 and at most 8), never the original's pixels, and answers
+yes or no. It is reached through any OpenAI-compatible endpoint; the judge model must come from a
+different vendor than the system's base model (``configs/benchmark.yaml``).
+"""
+from __future__ import annotations
+
+import base64
+import os
+import subprocess
+from pathlib import Path
+
+from ..config import benchmark
+
+CONTINUITY_PROMPT = (
+    "You will see a written description of a shot from a film and several frames from another video at the "
+    "same time. Answer yes if the frames show the same subject, the same action and a similar framing intent "
+    "as the description, even if the visual style, colours or character designs differ. Otherwise answer no. "
+    "Answer with one word.\n\nDescription: {description}"
+)
+
+
+def frames(film: Path, start: float, end: float) -> list[str]:
+    c = benchmark()["continuity"]
+    n = int(min(c["judge_frames_max"], max(c["judge_frames_min"], round((end - start) * c["judge_frames_per_second"]))))
+    out = []
+    for k in range(n):
+        t = start + (end - start) * (k + 0.5) / n
+        jpg = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{t:.3f}", "-i", str(film), "-frames:v", "1",
+                              "-vf", "scale=448:-2", "-f", "image2pipe", "-vcodec", "mjpeg", "-"],
+                             capture_output=True).stdout
+        if jpg:
+            out.append(base64.b64encode(jpg).decode())
+    return out
+
+
+class ContinuityJudge:
+    def __init__(self, film: Path, model: str | None = None, base_url: str | None = None, api_key: str | None = None, log=None):
+        from openai import OpenAI  # optional dependency
+        self.film = film
+        self.log = log
+        self.model = model or os.environ.get("CREWCUT_JUDGE_MODEL")
+        if not self.model:
+            raise RuntimeError("set CREWCUT_JUDGE_MODEL (and CREWCUT_JUDGE_BASE_URL / CREWCUT_JUDGE_API_KEY)")
+        self.client = OpenAI(base_url=base_url or os.environ.get("CREWCUT_JUDGE_BASE_URL"),
+                             api_key=api_key or os.environ.get("CREWCUT_JUDGE_API_KEY"))
+
+    def __call__(self, description: str, start: float, end: float) -> int:
+        content = [{"type": "text", "text": CONTINUITY_PROMPT.format(description=description)}]
+        content += [{"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{f}"}} for f in frames(self.film, start, end)]
+        # ADAPTATION S1: max_tokens 3 -> 1024 and reasoning_effort none (thinking models return empty content otherwise)
+        r = self.client.chat.completions.create(model=self.model, messages=[{"role": "user", "content": content}],
+                                                max_tokens=1024, temperature=0, reasoning_effort="none")
+        ans = (r.choices[0].message.content or "").strip()
+        u = r.usage
+        if self.log:
+            import json
+            with open(self.log, "a") as f:
+                f.write(json.dumps({"purpose": "continuity judge", "model": self.model, "description": description,
+                                    "start": start, "end": end, "answer": ans,
+                                    "prompt_tokens": getattr(u, "prompt_tokens", None),
+                                    "completion_tokens": getattr(u, "completion_tokens", None)}) + "\n")
+        return int(ans.lower().startswith("yes"))

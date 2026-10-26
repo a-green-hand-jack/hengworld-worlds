@@ -1,0 +1,13 @@
+{
+ "identical_output_holds": true,
+ "damage_1_lines_accuracy": 0.875,
+ "damage_1_drops_exactly": true,
+ "damage_4_lines_accuracy": 0.5,
+ "damage_4_drops_exactly": true,
+ "damage_8_lines_accuracy": 0.0,
+ "damage_8_drops_exactly": true,
+ "trailing_whitespace_holds": true,
+ "truncated_not_deliverable": true,
+ "nonnumeric_not_deliverable": true,
+ "empty_not_deliverable": true
+}

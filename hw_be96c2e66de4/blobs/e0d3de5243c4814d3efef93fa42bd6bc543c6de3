@@ -1,0 +1,18 @@
+
+## Pass 3 (task-maker c4fe559)
+- shots (cut_frames, duration_s), hierarchy and dialogue for all 6 films equal reference d509bed (compared by me from the committed files; not yet recomputed from masters by me).
+- 598 task ids = reference (data/tasks_vs_reference.json); 598 packages, no truth* under packages/; README states key/ is in no release; task-maker has no releases.
+- Descriptions run once (D003, 603 calls, reasoning_effort minimal adaptation recorded). Not yet sampled/rerun by me.
+- Still open: master recompute, double-build result file, package leak scan by me, and — blocking — no Coffee Run T0 runs/scores.
+
+## Pass 4 (task-maker 4787948)
+- data/doublebuild.txt: annotations, tasks, packages, key IDENTICAL on second build (descriptions reused, paid step once).
+- Release packages-v1 packages.tar.gz: 4786 entries, none named truth/key.
+- Still open: runs/scores (blocking), my recompute from masters, description sampling.
+
+## Pass 5 (executor 59edcdd, release coffee-run-t0-v1)
+- Release tar sha256 matches SHA256SUMS. 28 runs (14 ref + 14 scr). All 28 delivery.mp4: h264 1280x720 24fps, aac 48k stereo, duration within ±5% of segment (checked with ffprobe).
+- No "key/" or "truth" string in runs/ (logs, pipeline, docs). Executor states it did not open key/, which appears in its delivery directory (key/ is also in the assembled delivery: 598 files) -- noted, not a read.
+- Sound effects not run (no ElevenLabs), no speech (0 dialogue lines): marked, nothing claimed.
+- Failed attempts kept (6 ref runs). Cost 4.154 USD + 0.159 failed.
+- Still open: scorer has not scored these runs (scores/not_run.md predates them). Blocking until Q/c scores exist; I have not yet rerun generators or checked provenance (fingerprint) on deliveries.

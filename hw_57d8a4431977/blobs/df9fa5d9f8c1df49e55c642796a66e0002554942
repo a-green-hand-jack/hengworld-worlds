@@ -1,0 +1,50 @@
+# Scores — `fixed` / `smoke` on `caminandes3-L1-0000-scr`
+
+Scored run: executor's `attempt3` (attempts 1 and 2 failed before producing output; see executor's `runs/attempts.json`).
+Inputs: executor `runs/` at b5a7178; answer key from task-maker at dc1c556 (rescored after their fix; first scoring used 3db4b41) (not published here); task package asset
+sha256 `17b62d4b…2a05` (equals the one the executor used). Scored by the code in `tools/` of this repository (the revision that delivers
+this directory), derived from df54b3a `crewcut/scoring` + task-maker's `crewcut` (shots, provenance, config), `configs/benchmark.yaml` unchanged.
+
+## Result (`scores.json`)
+| | |
+|---|---|
+| **Q** | **1** — decodes, format, duration (32.292 s vs key, within ±5%), subtitles, clean-room log, provenance all pass |
+| cut F1 (0.5 s / 1.0 s) | 1.0 / 1.0 — detected cuts 21.375, 30.5 match the key's (against the first key, which also listed the segment end as a cut, it was 0.8 / 0.8) |
+| shot correspondence (judge) | 0.0 — the judge refused all 3 shots (placeholder frames show none of the described content) |
+| scene order | 1.0 (key has one scene) |
+| WER, onset error, speaker purity | not applicable — the segment has 0 dialogue lines |
+| character purity | not run — needs visual embedding models, none in this world |
+| S (screening) | not run — human ratings outside this round |
+| $ | model 0, tool 0.1846 nominal (placeholder calls at old price table; real spend 0), per `scores.json: budget` |
+Q·c is not summarised into one number: the protocol lists sub-items without a combination rule (gap, not filled in).
+
+## Commands
+```
+python3 tools/score_run.py RUN_DIR TASK_DIR PROV_INDEX OUT.json --judge gemini-3.8-flash   # RUN_DIR: output/, log.jsonl, run.json of attempt3
+python3 tools/validate_free.py RUN_DIR TASK_DIR PROV_INDEX ORIG_CLIP_CFR WORKDIR OUT.json SHOT_ARTEFACTS_DIR
+python3 tools/judge_check.py ORIG_CLIP_CFR TASK_DIR OUT.json gemini-3.8-flash
+```
+`TASK_DIR` = the package's task/spec/budget json plus the key's `truth.json`. `ORIG_CLIP_CFR` = the Reference clip re-timed to constant 24 fps
+(`ffmpeg -vf fps=24`), because the clip is variable-frame-rate (765 frames) and the cut detector converts frame index to time.
+Tools: ffmpeg 9.0.2 (conda-forge), numpy 2.4.6, opencv-python-headless, openai client.
+
+## Judge (temporary)
+`gemini-3.8-flash` via the `gemini` resource, temperature 0, reasoning_effort none, max_tokens 1024, frames 1 fps (2–8) at 448 px wide, prompt unchanged
+from df54b3a. **This stands in for the maintainer's decided judge `qwen3-vl-plus`, which this world lacks; temporary.** The system under test has no model, so there is no same-vendor issue.
+Paid steps, each done once: scoring 3 requests (`judge_calls_scoring.jsonl`), judge check 9 requests (`judge_calls_validation.jsonl`).
+Total 12 requests, 80,208 prompt + 12 completion tokens as reported; at the price table of task-maker's `costs/prices.json` (input 0.75, output 3.75 USD per 1M) ≈ **$0.060**. Descriptions are stored as hashes only.
+
+## Validation (`validation_free.json`, `validation_judge.json`)
+* Q: intact and a re-encode pass; −4% duration passes (inside ±5%); −8%, 10 s truncation, no audio, 640×360, corrupt file, missing film, missing subtitles file, a log with a generator reading `input/`, and the original clip (plain and recoloured/re-encoded) as the remake all give Q=0 on the intended check.
+* Cut F1: the cut-free film scores 0; cuts moved 0.3 s hold (1.0, 1.0), moved 0.8 s drop at 0.5 s only (0.5 / 1.0), moved 3 s drop at both (0.5 / 0.5; the second cut stays).
+* Unit checks: F1, duration-weighted correspondence, scene order, WER behave as defined (all `behaves: true`).
+* Judge: frames of the original clip against each shot's own (right) and the other shots' (wrong) descriptions: accepted 2 of 3 right (shot 0, whose description names the character only as "C1", was refused), 0 of 6 wrong. Separates, with a low-recall tendency; n=9, a small check only.
+
+## Adaptations (none changes a measure)
+* S1 judge: `max_tokens` 3 → 1024 and `reasoning_effort` none (thinking model returns empty content otherwise); call logging added.
+* S2 QC: provenance check on an undecodable file now fails Q instead of crashing.
+* S3 harness `log.read` inlined; dialogue ASR removed from scoring (0 lines here, so nothing to transcribe; with lines it would be "not run").
+
+## Findings
+* The first key listed the segment end (32.292) as a cut (`segment_truth` rounding), capping cut F1 at 0.8. Reported in task-maker#7; fixed at dc1c556; cuts and validation rescored (free); the judge result was not redone since shots and descriptions did not change.
+* The Reference clip is VFR (avg 23.6 fps), so cut times detected on it directly are inflated ~2%.

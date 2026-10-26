@@ -1,0 +1,38 @@
+{
+ "deliverable": true,
+ "per_line": [
+  {
+   "line": 1,
+   "exact": 1
+  },
+  {
+   "line": 2,
+   "exact": 0
+  },
+  {
+   "line": 3,
+   "exact": 1
+  },
+  {
+   "line": 4,
+   "exact": 0
+  },
+  {
+   "line": 5,
+   "exact": 0
+  },
+  {
+   "line": 6,
+   "exact": 1
+  },
+  {
+   "line": 7,
+   "exact": 0
+  },
+  {
+   "line": 8,
+   "exact": 1
+  }
+ ],
+ "accuracy": 0.5
+}

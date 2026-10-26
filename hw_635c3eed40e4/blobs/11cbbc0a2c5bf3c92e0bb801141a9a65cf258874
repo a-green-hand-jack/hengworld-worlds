@@ -1,0 +1,41 @@
+[
+ {
+  "type": "image",
+  "file": "work/still0.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Establishing shot of title text showing production credits, static.",
+  "used_in": "delivery.mp4",
+  "shot": 0
+ },
+ {
+  "type": "image",
+  "file": "work/still1.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Wide shot of a cartoon character running, then flying away from a hospital, static camera.",
+  "used_in": "delivery.mp4",
+  "shot": 1
+ },
+ {
+  "type": "image",
+  "file": "work/still2.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Wide shot of a cartoon character flying through a hospital room, church, and city, static camera.",
+  "used_in": "delivery.mp4",
+  "shot": 2
+ },
+ {
+  "type": "image",
+  "file": "work/still3.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Wide shot of a cartoon character surfing on a stroller, panning right.",
+  "used_in": "delivery.mp4",
+  "shot": 3
+ },
+ {
+  "type": "music",
+  "file": "work/music.mp3",
+  "model": "lyria-3.5",
+  "prompt": "Gentle instrumental background score for a short animated film about a woman hurrying through a city; light, warm, playful, no vocals.",
+  "used_in": "delivery.mp4"
+ }
+]

@@ -1,0 +1,10 @@
+# Audit record (auditor, 2026-10-22)
+Reproduced (task-maker e1e6486, executor 36220bb): sentences.txt sha256 24566eb3...211d equals the pin and the published copy; ground truth by own regex `\S+` = [6,4,6,4,4,1,2,6] equals /wordcount-reference/reference.json (no differences) and task-maker's key. Published package has no key. I reran system/count_words.py (sha ed48f533...90ce6, unchanged) locally, free: output [6,5,6,5,2,1,3,6] byte-identical to executor's output.txt. Run record: exit 0, cost 0, key_accessed false.
+Expected score from record: 4/8 = 0.5 exact match. Wrong lines (system splits on single ' ' only, README rule is any whitespace run):
+- 2 "Rain  fell all night." double space: gave 5, true 4
+- 4 " A leading space here." leading space: gave 5, true 4
+- 5 tabs: gave 2, true 4 (tabs not split)
+- 7 "Trailing space " trailing space: gave 3, true 2
+Pending: scorer's scores/ (not yet delivered); approval withheld until they reproduce 0.5 with these lines.
+
+Scorer's scores/scores.json (1ed0e8c) = my reproduction: 4/8 = 0.5, lines 2,4,5,7 wrong. make.py rerun clean, no diffs. Validation checks behave. Approved.

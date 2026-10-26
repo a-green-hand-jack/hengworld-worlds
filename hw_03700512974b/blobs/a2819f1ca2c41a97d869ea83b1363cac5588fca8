@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0030",
+  "start": 101.6,
+  "end": 102.12,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.52,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 30,
+   "start": 0.0,
+   "end": 0.52,
+   "description": "Extreme wide shot of feathers falling, panning down."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.52
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0030-scr",
+ "descriptions_available": true
+}

@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0025",
+  "start": 104.208,
+  "end": 104.792,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.584,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 25,
+   "start": 0.0,
+   "end": 0.584,
+   "description": "Low angle shot of a crowd standing, tracking forward."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.584
+  }
+ ],
+ "task_id": "domini_canes-L0-0025-scr",
+ "descriptions_available": true
+}

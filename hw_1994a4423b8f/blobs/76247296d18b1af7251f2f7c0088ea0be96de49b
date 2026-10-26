@@ -1,0 +1,15 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  3 11.3M    3  367k    0     0   115k      0  0:01:40  0:00:03  0:01:37  185k 83 11.3M   83 9695k    0     0  2292k      0  0:00:05  0:00:04  0:00:01 3188k100 11.3M  100 11.3M    0     0  2667k      0  0:00:04  0:00:04 --:--:-- 3670k
+masters/caminandes3.ogv: OK
+[2026-10-21 12:39:55.798] [ctranslate2] [thread 3990] [warning] The compute type inferred from the saved model is float16, but the target device or backend do not support efficient float16 computation. The model weights have been automatically converted to use the float32 compute type instead.
+annotated caminandes3 -> /tmp/rebuild/data/caminandes3
+90 task packages -> tasks
+585 published files; 90 keys
+packages scanned: 90 hits: 0
+{"cuts": {"rebuilt": 36, "published": 36, "frames_equal": true}} task ids equal: True field diffs: 0 annotation diffs: [{'file': 'shots.json', 'field': 'duration_s', 'rebuilt': 150.108345, 'published': 150.04}]
+
+real	1m14.825s
+user	1m49.432s
+sys	0m5.895s

@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0047",
+  "start": 134.44,
+  "end": 135.4,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.96,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 47,
+   "start": 0.0,
+   "end": 0.96,
+   "description": "Long shot of C1 falling through a swirling sky, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.96
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0047-ref",
+ "descriptions_available": true
+}

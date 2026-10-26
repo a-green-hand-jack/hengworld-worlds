@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0036",
+  "start": 108.28,
+  "end": 109.64,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.36,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 36,
+   "start": 0.0,
+   "end": 1.36,
+   "description": "Wide shot of an energy bolt shooting toward an eye, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.36
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0036-scr",
+ "descriptions_available": true
+}

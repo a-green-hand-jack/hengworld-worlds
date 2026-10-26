@@ -1,0 +1,50 @@
+{
+ "shots.fps": {
+  "equal": true
+ },
+ "shots.cut_frames": {
+  "equal": true
+ },
+ "shots.cut_times_s": {
+  "equal": true
+ },
+ "shots.duration_s": {
+  "equal": true
+ },
+ "shots.count": {
+  "equal": true
+ },
+ "dialogue": {
+  "equal": true
+ },
+ "hierarchy.duration_s": {
+  "equal": true
+ },
+ "hierarchy.L0": {
+  "equal": true
+ },
+ "hierarchy.L1": {
+  "equal": true
+ },
+ "hierarchy.L2": {
+  "equal": true
+ },
+ "hierarchy.L3": {
+  "equal": true
+ },
+ "hierarchy.L4": {
+  "equal": true
+ },
+ "tasks.ids": {
+  "equal": true
+ },
+ "tasks.records": {
+  "equal": true
+ },
+ "duration_bases": {
+  "video_stream_s": 150.041667,
+  "container_s": 150.108345,
+  "published_duration_s": 150.04
+ },
+ "differences": []
+}

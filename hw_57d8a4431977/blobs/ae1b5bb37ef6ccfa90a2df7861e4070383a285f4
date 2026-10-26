@@ -1,0 +1,10 @@
+# Not run
+- Real generators (Gemini image/TTS/music, ElevenLabs sfx, Wan 2.2 T1): outside this round's scope (placeholder only).
+- Systems other than fixed, other tasks, tiers other than smoke, repeat runs (protocol 3 per task): outside this round's scope; one run only.
+- Reference track (needs the original clip): not run.
+- Speech synthesis in this run: not exercised, the package has 0 dialogue lines.
+
+## Stage B systems (recorded 2026-10-21T23:30Z)
+- Claude Code 2.1.307 and Codex CLI 0.163.0 install via npm through heng-network (runs/install-attempts/); they start (`--version`). No subscription/API login exists in the sandbox and none is sought: runs of these systems are NOT RUN until auth is supplied (HuTian#326).
+- Antigravity CLI: no npm package found (`npm search antigravity` returns an unrelated package; probe in runs/install-attempts/agy_probe.log); not installed, NOT RUN.
+- All stage B task runs: NOT RUN so far; waiting on published packages (only caminandes3 exists; Coffee Run needs curator#7 master pin) and on hosted tool back-end checks.

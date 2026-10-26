@@ -1,0 +1,10 @@
+# Round 2 audit criteria (written before reading makers' claims)
+
+Approve only if all hold:
+1. Descriptions: every shot of Caminandes 3 has a description drafted by CrewCut's own build/describe.py; the model id is recorded per shot/run; if gemini-3.8-flash was refused, the fallback and the refusal reason are recorded.
+2. c components: shot correspondence comes from CrewCut's scoring/judge.py on those descriptions; cut F1 equals the previous round's measured value; every other component the code computes is present with how it was computed; WER and line-onset error recorded "not applicable" (no dialogue); anything not computable is "not run" with a reason and no conclusion.
+3. Reproduction: I rerun the recorded commands on the recorded inputs (scores recompute from run records and the judge's recorded responses; judge outputs reused, not re-asked, except a small sample if budget allows) and get the same numbers.
+4. Spend: request log by purpose, token usage from the responses, cost with price source and date (configs/prices.yaml or provider page); total requests <= 300 and matches the log.
+5. Protocol/config unchanged (git diff vs CrewCut pin is empty); no T0 claims, no adapter written; open maintainer decisions recorded, not chosen; nothing sent to CrewCut.
+6. No answer key in executor-readable paths; no key content in published descriptions beyond what the shot descriptions legitimately are.
+7. Updated not-run statement is consistent with items 1-5.

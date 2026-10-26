@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "domini_canes-L1-0003",
+  "start": 78.583,
+  "end": 89.417,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 10.834,
+ "cuts": [
+  2.125,
+  4.417,
+  7.042
+ ],
+ "shots": [
+  {
+   "index": 14,
+   "start": 0.0,
+   "end": 2.125,
+   "description": "Close-up of C1 holding a stick, static."
+  },
+  {
+   "index": 15,
+   "start": 2.125,
+   "end": 4.417,
+   "description": "Medium shot of C1 walking towards the camera, static camera."
+  },
+  {
+   "index": 16,
+   "start": 4.417,
+   "end": 7.042,
+   "description": "Close-up of C1 waiting with a sword, static."
+  },
+  {
+   "index": 17,
+   "start": 7.042,
+   "end": 10.834,
+   "description": "Close-up of C1 holding a stick, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 10.834
+  }
+ ],
+ "task_id": "domini_canes-L1-0003-ref",
+ "descriptions_available": true
+}

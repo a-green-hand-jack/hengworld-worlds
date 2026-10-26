@@ -1,0 +1,9 @@
+#!/bin/sh
+# Fetch the pinned artifact and verify it against the Internet Archive's published sha1/md5. Usage: pin_caminandes3.sh OUTDIR
+set -eu
+out=$1; mkdir -p "$out"
+url='https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.mp4'
+curl -sfLo "$out/master_1080p.mp4" "$url"
+echo "421a2d931d3994030ce7589cced5a1ee04187e2b  $out/master_1080p.mp4" | sha1sum -c -
+echo "4f2beaf26b945d2a7f35be1278a5d5ec  $out/master_1080p.mp4" | md5sum -c -
+sha256sum "$out/master_1080p.mp4"

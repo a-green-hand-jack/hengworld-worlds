@@ -1,0 +1,17 @@
+"""Split built task packages into published packages (no truth.json) and the answer key.
+usage: publish_split.py TASKS_DIR PACKAGES_DIR KEY_DIR MANIFEST.json
+Layout: PACKAGES_DIR/<task>/... (everything but truth.json); KEY_DIR/<task>/truth.json."""
+import hashlib, json, shutil, sys
+from pathlib import Path
+tasks, pk, key, man = map(Path, sys.argv[1:5])
+for d in (pk, key):
+    if d.exists(): shutil.rmtree(d)
+m = {}
+for t in sorted(tasks.iterdir()):
+    (key / t.name).mkdir(parents=True)
+    shutil.copy2(t / "truth.json", key / t.name / "truth.json")
+    shutil.copytree(t, pk / t.name, ignore=shutil.ignore_patterns("truth.json"))
+    for f in sorted((pk / t.name).rglob("*")):
+        if f.is_file(): m[str(f.relative_to(pk))] = hashlib.sha256(f.read_bytes()).hexdigest()
+Path(man).write_text(json.dumps(m, indent=1))
+print(len(m), "published files;", len(list(key.iterdir())), "keys")

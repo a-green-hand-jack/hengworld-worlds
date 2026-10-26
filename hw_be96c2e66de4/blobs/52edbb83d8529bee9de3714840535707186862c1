@@ -1,0 +1,321 @@
+{
+ "segment": {
+  "id": "domini_canes-L4-0000",
+  "start": 0.0,
+  "end": 260.208,
+  "shots": 41,
+  "lines": 0
+ },
+ "duration": 260.208,
+ "cuts": [
+  17.917,
+  20.417,
+  30.333,
+  31.708,
+  41.167,
+  46.083,
+  47.0,
+  53.417,
+  61.333,
+  64.417,
+  65.917,
+  67.208,
+  72.625,
+  78.583,
+  80.708,
+  83.0,
+  85.625,
+  89.417,
+  92.167,
+  94.167,
+  100.125,
+  100.708,
+  102.833,
+  103.375,
+  104.208,
+  104.792,
+  105.375,
+  106.0,
+  106.833,
+  107.333,
+  109.625,
+  111.0,
+  112.292,
+  121.542,
+  122.292,
+  129.167,
+  135.458,
+  136.792,
+  154.792,
+  218.375
+ ],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 17.917,
+   "description": "Wide shot of C1 standing under a starry sky beside a tree, static camera."
+  },
+  {
+   "index": 1,
+   "start": 17.917,
+   "end": 20.417,
+   "description": "Wide shot of C1 standing, static camera."
+  },
+  {
+   "index": 2,
+   "start": 20.417,
+   "end": 30.333,
+   "description": "Medium shot of C1 peeking from behind a curtain, static."
+  },
+  {
+   "index": 3,
+   "start": 30.333,
+   "end": 31.708,
+   "description": "Medium shot of a wolf puppet standing, static."
+  },
+  {
+   "index": 4,
+   "start": 31.708,
+   "end": 41.167,
+   "description": "Wide shot of C1 petting a wolf, static."
+  },
+  {
+   "index": 5,
+   "start": 41.167,
+   "end": 46.083,
+   "description": "Medium shot of C1 lifting her hand towards a branch, static camera."
+  },
+  {
+   "index": 6,
+   "start": 46.083,
+   "end": 47.0,
+   "description": "Medium close-up of C1 reaching up towards a branch, static camera."
+  },
+  {
+   "index": 7,
+   "start": 47.0,
+   "end": 53.417,
+   "description": "Wide shot of C1 standing under a starry night sky, static."
+  },
+  {
+   "index": 8,
+   "start": 53.417,
+   "end": 61.333,
+   "description": "Medium close-up of C1 holding a candle, static."
+  },
+  {
+   "index": 9,
+   "start": 61.333,
+   "end": 64.417,
+   "description": "Medium shot of C1 holding out a stick, static camera."
+  },
+  {
+   "index": 10,
+   "start": 64.417,
+   "end": 65.917,
+   "description": "Medium shot of C1 reaching down to pet an animal, static camera."
+  },
+  {
+   "index": 11,
+   "start": 65.917,
+   "end": 67.208,
+   "description": "Medium shot of C1 walking alongside an animal pacing back and forth, panning right."
+  },
+  {
+   "index": 12,
+   "start": 67.208,
+   "end": 72.625,
+   "description": "Wide shot of C1 running, static."
+  },
+  {
+   "index": 13,
+   "start": 72.625,
+   "end": 78.583,
+   "description": "Extreme wide shot of multiple small statues standing in a circle as a single small statue stands in the center with a long trail, zooming out."
+  },
+  {
+   "index": 14,
+   "start": 78.583,
+   "end": 80.708,
+   "description": "Close-up of C1 holding a stick, static."
+  },
+  {
+   "index": 15,
+   "start": 80.708,
+   "end": 83.0,
+   "description": "Medium shot of C1 walking towards the camera, static camera."
+  },
+  {
+   "index": 16,
+   "start": 83.0,
+   "end": 85.625,
+   "description": "Close-up of C1 waiting with a sword, static."
+  },
+  {
+   "index": 17,
+   "start": 85.625,
+   "end": 89.417,
+   "description": "Close-up of C1 holding a stick, static."
+  },
+  {
+   "index": 18,
+   "start": 89.417,
+   "end": 92.167,
+   "description": "Medium shot of C1 standing, static camera."
+  },
+  {
+   "index": 19,
+   "start": 92.167,
+   "end": 94.167,
+   "description": "Medium close-up of C1 standing, static camera."
+  },
+  {
+   "index": 20,
+   "start": 94.167,
+   "end": 100.125,
+   "description": "Medium shot of C1 standing up straight, holding a candle and facing right, static camera."
+  },
+  {
+   "index": 21,
+   "start": 100.125,
+   "end": 100.708,
+   "description": "Medium shot of C1 standing in profile while holding a lit candle, static."
+  },
+  {
+   "index": 22,
+   "start": 100.708,
+   "end": 102.833,
+   "description": "Medium shot of C1 holding a stick, static camera. Medium shot of a wolf jumping through a crowd of C1s holding a stick, tracking shot."
+  },
+  {
+   "index": 23,
+   "start": 102.833,
+   "end": 103.375,
+   "description": "Medium shot of C1 running through a crowd of onlookers, panning left to right."
+  },
+  {
+   "index": 24,
+   "start": 103.375,
+   "end": 104.208,
+   "description": "Wide shot of a wolf running past statues, tracking right."
+  },
+  {
+   "index": 25,
+   "start": 104.208,
+   "end": 104.792,
+   "description": "Low angle shot of a crowd standing, tracking forward."
+  },
+  {
+   "index": 26,
+   "start": 104.792,
+   "end": 105.375,
+   "description": "Wide shot of characters standing in a group, camera pan."
+  },
+  {
+   "index": 27,
+   "start": 105.375,
+   "end": 106.0,
+   "description": "Low-angle medium shot of a crowd standing, static."
+  },
+  {
+   "index": 28,
+   "start": 106.0,
+   "end": 106.833,
+   "description": "Wide shot of crowd standing, pushing in."
+  },
+  {
+   "index": 29,
+   "start": 106.833,
+   "end": 107.333,
+   "description": "Low-angle shot of a crowd standing, static camera."
+  },
+  {
+   "index": 30,
+   "start": 107.333,
+   "end": 109.625,
+   "description": "Medium close-up of C1 standing and holding two glowing objects, static camera."
+  },
+  {
+   "index": 31,
+   "start": 109.625,
+   "end": 111.0,
+   "description": "Medium shot of a crowd of hooded figures holding candles, panning right."
+  },
+  {
+   "index": 32,
+   "start": 111.0,
+   "end": 112.292,
+   "description": "Medium shot of multiple hooded figures standing still while holding torches, truck right."
+  },
+  {
+   "index": 33,
+   "start": 112.292,
+   "end": 121.542,
+   "description": "Extreme wide shot of a vast crowd standing underneath a starry night sky, static."
+  },
+  {
+   "index": 34,
+   "start": 121.542,
+   "end": 122.292,
+   "description": "Extreme close-up of C1 fading in, static."
+  },
+  {
+   "index": 35,
+   "start": 122.292,
+   "end": 129.167,
+   "description": "Medium shot of C1 standing against the starry night sky and looking around, static."
+  },
+  {
+   "index": 36,
+   "start": 129.167,
+   "end": 135.458,
+   "description": "Close-up of C1 looking, static."
+  },
+  {
+   "index": 37,
+   "start": 135.458,
+   "end": 136.792,
+   "description": "Extreme close-up of C1 staring intently, static."
+  },
+  {
+   "index": 38,
+   "start": 136.792,
+   "end": 154.792,
+   "description": "Extreme close-up of C1 standing, zooming out."
+  },
+  {
+   "index": 39,
+   "start": 154.792,
+   "end": 218.375,
+   "description": "Wide shot of a cathedral opening upwards, zooming out."
+  },
+  {
+   "index": 40,
+   "start": 218.375,
+   "end": 260.208,
+   "description": "Extreme close-up of a title card showing credits, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 17.917
+  },
+  {
+   "start": 17.917,
+   "end": 129.167
+  },
+  {
+   "start": 129.167,
+   "end": 218.375
+  },
+  {
+   "start": 218.375,
+   "end": 260.208
+  }
+ ],
+ "task_id": "domini_canes-L4-0000-scr",
+ "descriptions_available": true
+}

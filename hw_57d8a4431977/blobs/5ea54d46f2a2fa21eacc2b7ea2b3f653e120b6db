@@ -1,0 +1,114 @@
+"""Stage 1, Delivery QC. A remake passes only if every check passes.
+
+* the file decodes completely and has picture and sound;
+* it matches the delivery format (codec, size, frame rate, audio layout);
+* its duration is within +-5% of the segment;
+* subtitles exist and every line of the ground truth has an overlapping cue;
+* the production log shows no generator call that received a file from ``input/``;
+* the provenance check finds none of the original's frames or audio in the film.
+"""
+from __future__ import annotations
+
+import json
+import re
+import subprocess
+from dataclasses import asdict, dataclass, field
+from pathlib import Path
+
+from ..build import provenance
+from ..config import benchmark
+
+
+@dataclass
+class QCResult:
+    passed: bool
+    checks: dict = field(default_factory=dict)
+
+    def to_dict(self):
+        return asdict(self)
+
+
+def probe(path: Path) -> dict:
+    out = subprocess.run(["ffprobe", "-v", "error", "-show_streams", "-show_format", "-of", "json", str(path)],
+                         capture_output=True, text=True)
+    return json.loads(out.stdout or "{}")
+
+
+def decodes(path: Path) -> bool:
+    r = subprocess.run(["ffmpeg", "-v", "error", "-i", str(path), "-f", "null", "-"], capture_output=True, text=True)
+    return r.returncode == 0 and not r.stderr.strip()
+
+
+def parse_vtt(text: str) -> list[tuple[float, float]]:
+    def sec(s):
+        p = s.replace(",", ".").split(":")
+        p = [0.0] * (3 - len(p)) + [float(x) for x in p]
+        return p[0] * 3600 + p[1] * 60 + p[2]
+    return [(sec(a), sec(b)) for a, b in re.findall(r"([\d:.,]+)\s*-->\s*([\d:.,]+)", text)]
+
+
+def check_format(info: dict, spec: dict) -> tuple[bool, str]:
+    v = next((s for s in info.get("streams", []) if s["codec_type"] == "video"), None)
+    a = next((s for s in info.get("streams", []) if s["codec_type"] == "audio"), None)
+    if v is None or a is None:
+        return False, "missing video or audio stream"
+    want_v, want_a = spec["video"], spec["audio"]
+    num, den = v.get("avg_frame_rate", "0/1").split("/")
+    fps = float(num) / float(den) if float(den) else 0
+    problems = []
+    if v["codec_name"] != want_v["codec"]:
+        problems.append(f"video codec {v['codec_name']}")
+    if (v["width"], v["height"]) != (want_v["width"], want_v["height"]):
+        problems.append(f"size {v['width']}x{v['height']}")
+    if abs(fps - want_v["fps"]) > 0.05:
+        problems.append(f"fps {fps:.3f}")
+    if v.get("pix_fmt") != want_v["pix_fmt"]:
+        problems.append(f"pix_fmt {v.get('pix_fmt')}")
+    if a["codec_name"] != want_a["codec"] or int(a["sample_rate"]) != want_a["sample_rate"] or a["channels"] != want_a["channels"]:
+        problems.append(f"audio {a['codec_name']} {a['sample_rate']} Hz {a['channels']} ch")
+    return not problems, "; ".join(problems) or "ok"
+
+
+def run_qc(run_dir: Path, task_dir: Path, provenance_index: Path | None) -> QCResult:
+    cfg = benchmark()
+    spec = json.loads((task_dir / "spec.json").read_text())
+    truth = json.loads((task_dir / "truth.json").read_text())
+    film = run_dir / "output" / "film.mp4"
+    c: dict = {}
+    if not film.exists():
+        return QCResult(False, {"delivered": "output/film.mp4 missing"})
+    c["decodes"] = decodes(film)
+    info = probe(film)
+    ok, msg = check_format(info, spec)
+    c["format"] = msg if not ok else True
+    dur = float(info.get("format", {}).get("duration", 0))
+    tol = cfg["delivery"]["duration_tolerance"]
+    c["duration"] = True if abs(dur - truth["duration"]) <= tol * truth["duration"] else f"{dur:.2f}s vs {truth['duration']:.2f}s"
+    vtt = run_dir / "output" / "film.en.vtt"
+    if not vtt.exists():
+        c["subtitles"] = "film.en.vtt missing"
+    else:
+        cues = parse_vtt(vtt.read_text())
+        missing = [l for l in truth["lines"] if not any(a < l["end"] + 1.0 and b > l["start"] - 1.0 for a, b in cues)]
+        c["subtitles"] = True if not missing else f"{len(missing)} of {len(truth['lines'])} lines without a cue"
+    log = run_dir / "log.jsonl"
+    leaks = []
+    if log.exists():
+        for line in open(log):
+            e = json.loads(line)
+            if e["type"] == "tool_call" and e["status"] == "ok" and any(i.startswith("input/") for i in e["inputs"]) \
+                    and e.get("tool") != "media.ffmpeg":
+                leaks.append(e["id"])
+    c["clean_room_log"] = True if not leaks else f"generator calls on original input: {leaks[:5]}"
+    if provenance_index is not None and provenance_index.exists():
+        p = cfg["provenance"]
+        # ADAPTATION S2: a file that cannot be decoded cannot be checked; that is a failure, not a crash
+        try:
+            res = provenance.check(film, provenance_index, p["phash_max_hamming"], p["dino_min_cosine"], p["audio_min_match"])
+            c["provenance"] = True if res.passed else res.detail
+        except subprocess.CalledProcessError:
+            c["provenance"] = "film could not be decoded for the provenance check"
+    else:
+        c["provenance"] = "skipped (no index)"
+    passed = all(v is True for k, v in c.items() if k != "provenance") and c["provenance"] in (True, "skipped (no index)")
+    return QCResult(passed, c)

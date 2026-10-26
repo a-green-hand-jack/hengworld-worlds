@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0058",
+  "start": 180.88,
+  "end": 181.64,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.76,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 58,
+   "start": 0.0,
+   "end": 0.76,
+   "description": "Medium close-up of wings folding upward around lightning, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.76
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0058-ref",
+ "descriptions_available": true
+}

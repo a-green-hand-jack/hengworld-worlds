@@ -1,0 +1,4 @@
+{"system":"/wordcount-source/system/count_words.py","system_sha256":"ed48f533e271da1aac99a6a8b15c496f570fb0efbd5c546ff2bc881087290ce6","unchanged":true,
+"package":"task-maker@870622e4bd8e package/sentences.txt","package_sha256":"24566eb35aef8e056134f78d6901ef73eb2aaae72d49057e727def9abb24211d",
+"command":"python3 count_words.py sentences.txt","python":"Python 3.11.2","parameters":"none","attempts":[{"n":1,"exit_code":0,"seconds":null,"stdout":"runs/output.txt","stderr":"runs/stderr.txt"}],
+"failures":[],"decisions":"none needed; no retry","cost":"0 (no paid resource)","key_accessed":false,"note":"key/answers.json was in the assembled delivery dir but not opened; not scored here"}

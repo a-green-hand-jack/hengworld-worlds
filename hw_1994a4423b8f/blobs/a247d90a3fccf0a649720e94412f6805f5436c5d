@@ -1,0 +1,9 @@
+# Gemini spend by task-maker (records/spend_task-maker.json, built by commands/spend.py from the ledgers)
+
+| purpose | model | requests | prompt tok | completion+reasoning tok | cost (USD) |
+|---|---|---|---|---|---|
+| shot descriptions (kept) | gemini-3.5-flash-lite | 37 | 125,282 | 617 | 0.0391 |
+| shot description attempt (rejected, truncated) | gemini-3.8-flash | 1 | 3,386 | 116 (1 visible + hidden reasoning; total 3,502) | 0.0030 |
+| shot description attempt | gemini-2.5-flash-lite | 1 (HTTP 404, no usage reported) | - | - | 0 |
+
+Total requests by me: 39 (of the world's 150). Prices: $0.30/$2.50 per M (3.5 Flash-Lite) and $0.75/$3.75 per M (3.8 Flash, rate through 2026-12-31) from https://ai.google.dev/gemini-api/docs/pricing, "Last updated 2026-10-19 UTC", read 2026-10-21; hidden reasoning tokens are billed as output (total - prompt). `configs/prices.yaml` has no entry for these models. Evaluation-judge spend belongs to scorer.

@@ -1,0 +1,46 @@
+{
+ "results": {
+  "cut_f1_identical": 1.0,
+  "cut_f1_shift0.3_tol0.5": 1.0,
+  "cut_f1_shift0.3_tol1.0": 1.0,
+  "cut_f1_shift0.8_tol0.5": 0.0,
+  "cut_f1_shift0.8_tol1.0": 1.0,
+  "cut_f1_no_cuts": 0.0,
+  "cut_f1_half_dropped": 0.6666666666666666,
+  "cut_f1_extra_noise": 0.6666666666666666,
+  "wer_identical": 0.0,
+  "wer_half_words_removed": 0.49230769230769234,
+  "wer_silence": 1.0,
+  "wer_case_punct_invariant": 0.0,
+  "onset_identical": 0.0,
+  "onset_shift2s": 2.0,
+  "scene_identical": 1.0,
+  "scene_reversed": 0.0,
+  "scene_empty": 0.0,
+  "shot_all_yes": 1.0,
+  "shot_half_yes": 0.5,
+  "shot_none": 0.0,
+  "recover_identical_scenes": [
+   0,
+   1
+  ],
+  "recover_swapped": [
+   0,
+   0
+  ],
+  "recover_split_scene_repeats_label": [
+   0,
+   0,
+   1
+  ],
+  "recover_no_overlap_none": [
+   null
+  ],
+  "recover_tie_earlier": [
+   0
+  ],
+  "scene_split_remake": 0.5
+ },
+ "checks_passed": 26,
+ "checks_total": 26
+}

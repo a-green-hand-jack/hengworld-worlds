@@ -1,0 +1,5 @@
+# Executor cost record
+- gemini requests: 0 (no model in the fixed pipeline; placeholder generator).
+- Model tokens: 0. Model spend: $0.00 (run.json model_usd 0.0).
+- Paid generators: none. run.json tool_usd 0.1846 is nominal (old price table applied to placeholder calls), real spend $0.
+- Network: only to fetch the task package release and Python/conda packages.

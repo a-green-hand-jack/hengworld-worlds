@@ -1,0 +1,9 @@
+-e git+file:///crewcut/crewcut.git@df54b3a3918e16bfc8e61ff6215e01b6abca3849#egg=crewcut
+ctranslate2==4.8.3
+faster-whisper==1.2.1
+mcp==1.30.0
+numpy==2.4.6
+opencv-python-headless==5.0.0.93
+PyYAML==6.0.3
+requests==2.34.2
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers

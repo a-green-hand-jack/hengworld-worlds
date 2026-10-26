@@ -1,0 +1,18 @@
+Here is your detailed description of shot 25:
+{"setting": "P4: Mountain slope and rocky peaks. Outdoor, bright clear daytime on a steep snow-covered hillside with a wooden mine exit protruding from the slope and distant snowy peaks.", "characters": "C1: launched out of the minecart into the air toward the upper right, motion-blurred; C2: launched out of the minecart alongside C1, motion-blurred.", "props": "Wooden mine exit structure, broken wooden tracks, a wooden minecart with metal wheels, and a bunch of red berries flying through the air.", "action": "A speeding wooden minecart bursts out of the wooden mine exit on the snowy slope and abruptly halts at the broken end of the tracks, violently catapulting C1, C2, and a bunch of red berries high into the clear blue sky off-screen to the right.", "camera": "Wide shot, slightly low angle, static camera showing the mine exit on the left and open sky on the right.", "light_mood": "Bright natural daylight with crisp white snow and a vivid turquoise-blue sky; comedic and abrupt action mood.", "sound": "Loud crashing of wood and metal as the cart stops, orchestral music cutting off abruptly, and a high-pitched comedic vocal yelp as characters fly."}
+An independent checker looking at the same frames flagged:
+- setting: 'and distant snowy peaks.' -> unsupported
+- characters: 'C2: launched out of the minecart alongside C1, motion-blurred.' -> unsupported
+- action: 'violently catapulting C1, C2, and a bunch of red berries high into the clear blue sky off-screen to the right.' -> unsupported
+Rewrite the whole JSON (same keys, same limits, no description_* keys needed) so that every statement is confirmed by the frames or audio. Reply with JSON only.
+
+Frames:
+[frame 1 at 78.86s]
+IMG:59f89e0638b653fe8ba80c95afe0f4d56992cfb55eac3eb9555eb0c00c44b1c9
+[frame 2 at 79.18s]
+IMG:c2812c2538065e65353b8ed705271e5f93d06f6feff1fff4e2266b7be2b4d3b5
+[frame 3 at 79.49s]
+IMG:dac603e0bce18225e88bc2681800d1b2f2a0fcc45d22faf7d28065ad3e5122a4
+[frame 4 at 79.81s]
+IMG:c842c117b38c810f88c8de6804f746f949833dc3dd305e0343c062ed31648227
+AUD:e407e2abb13668c4174bcbec461dfca5a3c14674d6d16e6f8b121f71587d0c99

@@ -1,0 +1,594 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L3-0005",
+  "start": 1806.638,
+  "end": 2215.914,
+  "shots": 80,
+  "lines": 0
+ },
+ "duration": 409.276,
+ "cuts": [
+  4.104,
+  15.482,
+  29.43,
+  31.565,
+  41.675,
+  47.314,
+  50.117,
+  72.239,
+  73.474,
+  79.146,
+  80.214,
+  81.148,
+  83.951,
+  86.754,
+  89.59,
+  92.392,
+  95.095,
+  102.736,
+  109.977,
+  114.114,
+  119.052,
+  139.473,
+  146.847,
+  149.917,
+  154.688,
+  157.457,
+  159.96,
+  162.563,
+  165.432,
+  166.133,
+  195.495,
+  196.997,
+  202.336,
+  204.938,
+  208.542,
+  213.714,
+  216.216,
+  221.388,
+  231.198,
+  236.403,
+  238.171,
+  241.708,
+  246.179,
+  248.749,
+  249.65,
+  250.717,
+  254.087,
+  255.055,
+  260.661,
+  263.497,
+  265.465,
+  268.635,
+  276.443,
+  278.946,
+  287.521,
+  289.756,
+  292.993,
+  299.866,
+  304.338,
+  306.606,
+  324.324,
+  334.634,
+  338.271,
+  343.643,
+  359.159,
+  361.028,
+  366.7,
+  370.237,
+  372.639,
+  379.079,
+  383.917,
+  390.557,
+  393.727,
+  394.694,
+  396.763,
+  397.264,
+  400.734,
+  402.102,
+  407.007
+ ],
+ "shots": [
+  {
+   "index": 221,
+   "start": 0.0,
+   "end": 4.104,
+   "description": "Medium shot of C1 holding an umbrella, static."
+  },
+  {
+   "index": 222,
+   "start": 4.104,
+   "end": 15.482,
+   "description": "Medium shot of C1 adjusting his tie with C2 watching, then C1 disappearing, static."
+  },
+  {
+   "index": 223,
+   "start": 15.482,
+   "end": 29.43,
+   "description": "Medium shot of C1 opening a vault door and walking away towards the street, static camera."
+  },
+  {
+   "index": 224,
+   "start": 29.43,
+   "end": 31.565,
+   "description": "Medium shot of C1 driving a car and looking backward, static camera."
+  },
+  {
+   "index": 225,
+   "start": 31.565,
+   "end": 41.675,
+   "description": "Medium long shot of C1 standing on the sidewalk next to a post as a car passes in the background, static camera."
+  },
+  {
+   "index": 226,
+   "start": 41.675,
+   "end": 47.314,
+   "description": "Medium shot of C1 walking down a sidewalk and meeting C2 near a parked car, static camera."
+  },
+  {
+   "index": 227,
+   "start": 47.314,
+   "end": 50.117,
+   "description": "Medium shot of C1 standing on the sidewalk and entering a building, with a static camera."
+  },
+  {
+   "index": 228,
+   "start": 50.117,
+   "end": 72.239,
+   "description": "Medium wide shot of C1 ascending a ladder to the ceiling, static."
+  },
+  {
+   "index": 229,
+   "start": 72.239,
+   "end": 73.474,
+   "description": "Medium shot of C1 standing on a roof, static camera."
+  },
+  {
+   "index": 230,
+   "start": 73.474,
+   "end": 79.146,
+   "description": "Medium shot of C1 lifting up a trapdoor on a rooftop and dropping a top hat down, static."
+  },
+  {
+   "index": 231,
+   "start": 79.146,
+   "end": 80.214,
+   "description": "Medium shot of C1 walking on a roof, static camera."
+  },
+  {
+   "index": 232,
+   "start": 80.214,
+   "end": 81.148,
+   "description": "Long shot of a grocery store at an intersection, static camera."
+  },
+  {
+   "index": 233,
+   "start": 81.148,
+   "end": 83.951,
+   "description": "Long shot of C1 standing on a roof and C2 exiting a shop on the street level below, static camera."
+  },
+  {
+   "index": 234,
+   "start": 83.951,
+   "end": 86.754,
+   "description": "Long shot of C1 standing on the roof, static."
+  },
+  {
+   "index": 235,
+   "start": 86.754,
+   "end": 89.59,
+   "description": "Wide shot of C1 dangling from a pole on a roof, static."
+  },
+  {
+   "index": 236,
+   "start": 89.59,
+   "end": 92.392,
+   "description": "Wide shot of C1 swinging on a railroad crossing gate, static."
+  },
+  {
+   "index": 237,
+   "start": 92.392,
+   "end": 95.095,
+   "description": "Wide shot of a vintage car driving past a grocery store, static camera."
+  },
+  {
+   "index": 238,
+   "start": 95.095,
+   "end": 102.736,
+   "description": "Medium shot of C1 driving a car while C2 reclines in the back seat, tracking right."
+  },
+  {
+   "index": 239,
+   "start": 102.736,
+   "end": 109.977,
+   "description": "Medium shot of C1 getting out of a car and entering a house, static camera."
+  },
+  {
+   "index": 240,
+   "start": 109.977,
+   "end": 114.114,
+   "description": "Medium wide shot of four men surrounding a table, static."
+  },
+  {
+   "index": 241,
+   "start": 114.114,
+   "end": 119.052,
+   "description": "Medium shot of C1 ducking as C2 stands up from inside a car, static camera."
+  },
+  {
+   "index": 242,
+   "start": 119.052,
+   "end": 139.473,
+   "description": "Medium shot of C1 and C2 opening a tyre cover, static camera."
+  },
+  {
+   "index": 243,
+   "start": 139.473,
+   "end": 146.847,
+   "description": "Medium shot of C1 and C2 looking at pocket watch, static camera."
+  },
+  {
+   "index": 244,
+   "start": 146.847,
+   "end": 149.917,
+   "description": "Medium shot of C1 holding a spare tire while C2 runs away, static camera."
+  },
+  {
+   "index": 245,
+   "start": 149.917,
+   "end": 154.688,
+   "description": "Medium shot of C1 walking towards the building and pushing a round object through a window, static camera."
+  },
+  {
+   "index": 246,
+   "start": 154.688,
+   "end": 157.457,
+   "description": "Medium shot of C1 walking towards a car parked outside a building, static."
+  },
+  {
+   "index": 247,
+   "start": 157.457,
+   "end": 159.96,
+   "description": "Medium shot of four men looking at the wall, static."
+  },
+  {
+   "index": 248,
+   "start": 159.96,
+   "end": 162.563,
+   "description": "Medium shot of C1 standing in profile by a car and a box, looking around and whistling, static camera."
+  },
+  {
+   "index": 249,
+   "start": 162.563,
+   "end": 165.432,
+   "description": "Medium shot of C1 standing in a room with three other men, while one of the men flees, static camera."
+  },
+  {
+   "index": 250,
+   "start": 165.432,
+   "end": 166.133,
+   "description": "Medium shot of C1 getting thrown backward through a doorway, static camera."
+  },
+  {
+   "index": 251,
+   "start": 166.133,
+   "end": 195.495,
+   "description": "Medium shot of a group of men surrounding a young man as they inspect something he's holding, static camera."
+  },
+  {
+   "index": 252,
+   "start": 195.495,
+   "end": 196.997,
+   "description": "Medium shot of C1 standing in a room and looking around nervously, static camera."
+  },
+  {
+   "index": 253,
+   "start": 196.997,
+   "end": 202.336,
+   "description": "Medium shot of C1 arguing with C2 while other men watch, static camera."
+  },
+  {
+   "index": 254,
+   "start": 202.336,
+   "end": 204.938,
+   "description": "Medium shot of C1 inside a cage, static camera."
+  },
+  {
+   "index": 255,
+   "start": 204.938,
+   "end": 208.542,
+   "description": "Medium shot of C1 and C2 talking, static camera."
+  },
+  {
+   "index": 256,
+   "start": 208.542,
+   "end": 213.714,
+   "description": "A close-up shot of title card showing text 'That's a detective. When he's dead I'll put you in there.', static camera."
+  },
+  {
+   "index": 257,
+   "start": 213.714,
+   "end": 216.216,
+   "description": "Medium shot of C1 and C2 talking, static."
+  },
+  {
+   "index": 258,
+   "start": 216.216,
+   "end": 221.388,
+   "description": "Intertitle displaying text on screen, static camera."
+  },
+  {
+   "index": 259,
+   "start": 221.388,
+   "end": 231.198,
+   "description": "Long shot of a wooden building and a car with C1 and C2, static camera."
+  },
+  {
+   "index": 260,
+   "start": 231.198,
+   "end": 236.403,
+   "description": "Medium shot of C1 sitting down at a table and C2 opening a door, static."
+  },
+  {
+   "index": 261,
+   "start": 236.403,
+   "end": 238.171,
+   "description": "Medium close-up of C1 and C2 talking, static."
+  },
+  {
+   "index": 262,
+   "start": 238.171,
+   "end": 241.708,
+   "description": "Medium shot of title card showing text, static."
+  },
+  {
+   "index": 263,
+   "start": 241.708,
+   "end": 246.179,
+   "description": "Medium shot of C1 leaning in and threatening C2, static camera."
+  },
+  {
+   "index": 264,
+   "start": 246.179,
+   "end": 248.749,
+   "description": "Medium shot of a building standing still, static camera."
+  },
+  {
+   "index": 265,
+   "start": 248.749,
+   "end": 249.65,
+   "description": "Wide shot of C1 and C2 talking inside a garage, static."
+  },
+  {
+   "index": 266,
+   "start": 249.65,
+   "end": 250.717,
+   "description": "Wide shot of C1 standing in a garage with two other men, static."
+  },
+  {
+   "index": 267,
+   "start": 250.717,
+   "end": 254.087,
+   "description": "Medium shot of C1 showing a tape measure to C2, static camera."
+  },
+  {
+   "index": 268,
+   "start": 254.087,
+   "end": 255.055,
+   "description": "Wide shot of C1 inside a workshop, stationary."
+  },
+  {
+   "index": 269,
+   "start": 255.055,
+   "end": 260.661,
+   "description": "A wide shot of C1 inside a shop and C2 creeping outside, static camera."
+  },
+  {
+   "index": 270,
+   "start": 260.661,
+   "end": 263.497,
+   "description": "Medium shot of C1, C2, and another man dodging around each other outside a wooden building, static."
+  },
+  {
+   "index": 271,
+   "start": 263.497,
+   "end": 265.465,
+   "description": "Medium shot of multiple people running away from a house, static camera."
+  },
+  {
+   "index": 272,
+   "start": 265.465,
+   "end": 268.635,
+   "description": "Medium shot of C1 leaning against a car and scratching their head, static."
+  },
+  {
+   "index": 273,
+   "start": 268.635,
+   "end": 276.443,
+   "description": "Medium shot of C1 walking outside, followed by static camera. Medium shot of C1 and C2 walking together outside, followed by static camera. Medium shot of C1 and C2 walking together, followed by static camera."
+  },
+  {
+   "index": 274,
+   "start": 276.443,
+   "end": 278.946,
+   "description": "Medium long shot of C1 and C2 walking alongside a wooden fence, panning right as they start running."
+  },
+  {
+   "index": 275,
+   "start": 278.946,
+   "end": 287.521,
+   "description": "Medium shot of C1 carrying C2 on their back along a wooden fence, static camera."
+  },
+  {
+   "index": 276,
+   "start": 287.521,
+   "end": 289.756,
+   "description": "Medium shot of C1 running, static."
+  },
+  {
+   "index": 277,
+   "start": 289.756,
+   "end": 292.993,
+   "description": "Medium shot of C1 walking towards a building, static camera."
+  },
+  {
+   "index": 278,
+   "start": 292.993,
+   "end": 299.866,
+   "description": "Long shot of C1 entering frame and stopping in an alley way while C2 plays the accordion, static."
+  },
+  {
+   "index": 279,
+   "start": 299.866,
+   "end": 304.338,
+   "description": "Medium shot of C1 wearing a portable tie display case, turning around to face the camera, static."
+  },
+  {
+   "index": 280,
+   "start": 304.338,
+   "end": 306.606,
+   "description": "Medium shot of C1 and C2 walking hurriedly past a wooden building, static."
+  },
+  {
+   "index": 281,
+   "start": 306.606,
+   "end": 324.324,
+   "description": "Wide shot of C1 ducking as C2 flies backwards from the force of a punch and collides with another man, static camera."
+  },
+  {
+   "index": 282,
+   "start": 324.324,
+   "end": 334.634,
+   "description": "Medium shot of C1 and C2 walking up to a wooden wall and trying to tear off paper, static camera."
+  },
+  {
+   "index": 283,
+   "start": 334.634,
+   "end": 338.271,
+   "description": "Wide shot of C1 and C2 running away from the camera, static camera."
+  },
+  {
+   "index": 284,
+   "start": 338.271,
+   "end": 343.643,
+   "description": "Medium shot of C1 running away from C2 on a street, tracking backward."
+  },
+  {
+   "index": 285,
+   "start": 343.643,
+   "end": 359.159,
+   "description": "Medium shot of C1 riding a motorcycle and pulling C2, panning right."
+  },
+  {
+   "index": 286,
+   "start": 359.159,
+   "end": 361.028,
+   "description": "Medium shot of C1 leaning against a car, static."
+  },
+  {
+   "index": 287,
+   "start": 361.028,
+   "end": 366.7,
+   "description": "Medium shot of C1 talking with C2, who is straddling a motorcycle, static camera."
+  },
+  {
+   "index": 288,
+   "start": 366.7,
+   "end": 370.237,
+   "description": "Medium shot of C1 riding a motorcycle while C2 sits on the front, tracking forward."
+  },
+  {
+   "index": 289,
+   "start": 370.237,
+   "end": 372.639,
+   "description": "Medium shot of C1 riding a vehicle with C2 while pointing and talking, panning."
+  },
+  {
+   "index": 290,
+   "start": 372.639,
+   "end": 379.079,
+   "description": "Medium long shot of four men running away from a building and getting into a car, static."
+  },
+  {
+   "index": 291,
+   "start": 379.079,
+   "end": 383.917,
+   "description": "Medium shot of C1 and C2 riding a motorcycle fast, tracking right."
+  },
+  {
+   "index": 292,
+   "start": 383.917,
+   "end": 390.557,
+   "description": "Wide shot of C1 crashing in a puddle, static."
+  },
+  {
+   "index": 293,
+   "start": 390.557,
+   "end": 393.727,
+   "description": "Medium shot of C1 riding a motorcycle while looking back, tracking forward."
+  },
+  {
+   "index": 294,
+   "start": 393.727,
+   "end": 394.694,
+   "description": "Medium shot of C1 riding a motorcycle down a street, tracking forward."
+  },
+  {
+   "index": 295,
+   "start": 394.694,
+   "end": 396.763,
+   "description": "Medium shot of C1 riding a motorcycle down a street, tracking forward."
+  },
+  {
+   "index": 296,
+   "start": 396.763,
+   "end": 397.264,
+   "description": "Medium wide shot of C1 riding a motorcycle away down the street, static camera."
+  },
+  {
+   "index": 297,
+   "start": 397.264,
+   "end": 400.734,
+   "description": "Medium shot of vintage cars driving erratically, static camera."
+  },
+  {
+   "index": 298,
+   "start": 400.734,
+   "end": 402.102,
+   "description": "Medium shot of C1 riding a motorcycle down a street, tracking forward."
+  },
+  {
+   "index": 299,
+   "start": 402.102,
+   "end": 407.007,
+   "description": "Insert shot of title card showing text, static."
+  },
+  {
+   "index": 300,
+   "start": 407.007,
+   "end": 409.276,
+   "description": "Medium shot of C1 riding a motorcycle while lifting his legs into the air, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 80.214
+  },
+  {
+   "start": 80.214,
+   "end": 95.095
+  },
+  {
+   "start": 95.095,
+   "end": 287.521
+  },
+  {
+   "start": 287.521,
+   "end": 409.276
+  }
+ ],
+ "task_id": "sherlock_jr-L3-0005-scr",
+ "descriptions_available": true
+}

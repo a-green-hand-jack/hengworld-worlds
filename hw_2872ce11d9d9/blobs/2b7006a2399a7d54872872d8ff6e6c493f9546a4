@@ -1,0 +1,2 @@
+import json
+k=json.load(open('key/score.json')); assert k['accuracy']==sum(x['exact'] for x in k['per_line'])/8; assert k['wrong_lines']==[x['line'] for x in k['per_line'] if not x['exact']]; print('score check: PASS')

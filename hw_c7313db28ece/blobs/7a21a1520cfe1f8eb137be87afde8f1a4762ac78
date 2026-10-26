@@ -1,0 +1,6 @@
+{"item":"wordcount-source/sentences.txt","decision":"admit",
+ "reason":"Provided by the world as the benchmark's single source; objective says no other sources.",
+ "evidence":"/wordcount-source/README.md: 'eight lines of English text, UTF-8'; rule for a word given there. Provided by the world's owner as a resource; no separate licence text found, use is the objective's own.",
+ "artifact":"sentences.txt","alternatives_passed_over":["system/count_words.py (system under test, not a corpus item)"],
+ "source_location":"/wordcount-source/sentences.txt","decided_by":"task-maker","date":"2026-10-25",
+ "pin":"corpus/pin.sha256","affects":"scripts/make_truth.py, scripts/make_package.sh"}

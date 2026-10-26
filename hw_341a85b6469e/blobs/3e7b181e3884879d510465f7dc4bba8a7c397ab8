@@ -1,0 +1,3 @@
+# Word-count task
+Input: `sentences.txt` (8 lines, UTF-8). For each line, report the number of words: a word is a maximal run of non-whitespace characters (spaces, tabs); hyphenated words and numbers are one word.
+Output: one integer per line on stdout, in order, 8 lines, no other text.

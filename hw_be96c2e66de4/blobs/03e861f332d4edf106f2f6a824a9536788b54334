@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0012",
+  "start": 901.167,
+  "end": 968.067,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 66.9,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 114,
+   "start": -0.0,
+   "end": 66.9,
+   "description": "Wide shot of a water tower spilling water, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 66.9
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0012-ref",
+ "descriptions_available": true
+}

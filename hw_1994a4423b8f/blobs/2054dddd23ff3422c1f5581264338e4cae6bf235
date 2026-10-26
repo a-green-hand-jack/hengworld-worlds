@@ -1,0 +1,42 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0000",
+  "start": 0.0,
+  "end": 32.292,
+  "shots": 3,
+  "lines": 0
+ },
+ "duration": 32.292,
+ "cuts": [
+  21.375,
+  30.5,
+  32.292
+ ],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 21.375,
+   "description": "A medium shot of C1 ice skating on frozen ground, static."
+  },
+  {
+   "index": 1,
+   "start": 21.375,
+   "end": 30.5,
+   "description": "Medium shot of C1 standing in snow while C2 lies on ice, pan right."
+  },
+  {
+   "index": 2,
+   "start": 30.5,
+   "end": 32.292,
+   "description": "Extreme wide shot of a bird standing on a railroad track, zooming in."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 32.292
+  }
+ ]
+}

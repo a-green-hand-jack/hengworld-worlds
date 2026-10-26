@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0022",
+  "start": 100.708,
+  "end": 102.833,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.125,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 22,
+   "start": 0.0,
+   "end": 2.125,
+   "description": "Medium shot of C1 holding a stick, static camera. Medium shot of a wolf jumping through a crowd of C1s holding a stick, tracking shot."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.125
+  }
+ ],
+ "task_id": "domini_canes-L0-0022-scr",
+ "descriptions_available": true
+}

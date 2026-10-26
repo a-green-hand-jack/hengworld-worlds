@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Rebuild the Caminandes 3 Breakdown stretch from the record. Usage: scripts/reproduce.sh WORKDIR
+# Needs: python3 with crewcut installed from commit df54b3a (pip install -e <clone>) + faster-whisper, ffmpeg/ffprobe on PATH.
+# Every step is followed by a check; `set -e` makes any failed check stop the run non-zero.
+set -euo pipefail
+W=$(realpath "$1"); mkdir -p "$W"; HERE=$(cd "$(dirname "$0")/.." && pwd)
+CC_FILMS=$(python3 -c "import crewcut.config as c;print(c.CONFIG_DIR/'films.yaml')")
+
+# step 1: fetch the pinned master from its source (decision D2: the .ogv derivative, not the largest file)
+URL=$(python3 -c "import json;print(json.load(open('$HERE/record/decisions/D2-master-choice.json'))['url'])")
+mkdir -p "$W/masters"; curl -fsSL -o "$W/masters/caminandes3.ogv" "$URL"
+# check 1: sha256 against configs/films.yaml
+PIN=$(python3 -c "import yaml;print([f for f in yaml.safe_load(open('$CC_FILMS'))['films'] if f['id']=='caminandes3'][0]['master_sha256'])")
+GOT=$(sha256sum "$W/masters/caminandes3.ogv" | cut -d' ' -f1)
+[ "$PIN" = "$GOT" ] || { echo "CHECK FAILED: master sha256 $GOT != pinned $PIN"; exit 1; }
+echo "check 1 ok: master sha256 == pinned $PIN"
+
+# step 2: shots, dialogue, hierarchy, provenance index (annotate, local master named by decision D2)
+crewcut annotate --data "$W/data" --film caminandes3 --local-dir "$W/masters"
+# step 3: task packages
+crewcut tasks --data "$W/data" --out "$W/tasks_full" --film caminandes3
+# step 4: split key from published packages, then key scan
+python3 -I "$HERE/scripts/split_and_scan.py" "$W/tasks_full" "$W/published" "$W/key"
+# step 5: comparison with dataset d509bed
+python3 -I "$HERE/scripts/compare.py" "$W/data/caminandes3" "$W/tasks_full" "${DATASET:-/crewcut/crewcut-dataset-d509bed}" "$W/comparison.json"

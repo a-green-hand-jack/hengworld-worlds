@@ -1,0 +1,71 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L1-0007",
+  "start": 101.6,
+  "end": 109.64,
+  "shots": 7,
+  "lines": 0
+ },
+ "duration": 8.04,
+ "cuts": [
+  0.52,
+  2.44,
+  3.48,
+  4.88,
+  5.64,
+  6.68
+ ],
+ "shots": [
+  {
+   "index": 30,
+   "start": 0.0,
+   "end": 0.52,
+   "description": "Extreme wide shot of feathers falling, panning down."
+  },
+  {
+   "index": 31,
+   "start": 0.52,
+   "end": 2.44,
+   "description": "Extreme wide shot of an alien landscape with lightning flashing, panning right."
+  },
+  {
+   "index": 32,
+   "start": 2.44,
+   "end": 3.48,
+   "description": "Wide shot of an eyeball creature looking up, static camera."
+  },
+  {
+   "index": 33,
+   "start": 3.48,
+   "end": 4.88,
+   "description": "Wide shot of an orb object resting in a landscape as lightning strikes, static camera."
+  },
+  {
+   "index": 34,
+   "start": 4.88,
+   "end": 5.64,
+   "description": "Close-up of a lightning bolt flashing, static camera."
+  },
+  {
+   "index": 35,
+   "start": 5.64,
+   "end": 6.68,
+   "description": "Medium shot of energy streaking across the screen, static camera."
+  },
+  {
+   "index": 36,
+   "start": 6.68,
+   "end": 8.04,
+   "description": "Wide shot of an energy bolt shooting toward an eye, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 8.04
+  }
+ ],
+ "task_id": "spirit_chaser-L1-0007-ref",
+ "descriptions_available": true
+}

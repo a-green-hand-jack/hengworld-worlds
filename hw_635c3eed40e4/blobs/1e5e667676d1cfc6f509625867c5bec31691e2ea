@@ -1,0 +1,767 @@
+{
+ "coffee_run-L0-0000-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 6.791667,
+   "segment_s": 6.792,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 2,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 14,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.04756756756756757,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [],
+   "hyp_cuts": [],
+   "F1_0.5": 1.0,
+   "F1_1.0": 1.0,
+   "trivial_no_cuts": true
+  },
+  "scene": {
+   "orig_scenes": 1,
+   "remake_scenes": [
+    [
+     0.0,
+     6.792
+    ]
+   ],
+   "recovered_labels": [
+    0
+   ],
+   "scene_order": 1.0
+  }
+ },
+ "coffee_run-L0-0001-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 49.667318,
+   "segment_s": 49.666,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 3,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 99,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.0307172044525856,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [],
+   "hyp_cuts": [
+    49.667
+   ],
+   "F1_0.5": 0.0,
+   "F1_1.0": 0.0,
+   "trivial_no_cuts": false
+  },
+  "scene": {
+   "orig_scenes": 1,
+   "remake_scenes": [
+    [
+     0.0,
+     49.751
+    ]
+   ],
+   "recovered_labels": [
+    0
+   ],
+   "scene_order": 1.0
+  }
+ },
+ "coffee_run-L0-0002-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 50.208333,
+   "segment_s": 50.209,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 3,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 100,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.022063595068137574,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [],
+   "hyp_cuts": [
+    50.208
+   ],
+   "F1_0.5": 0.0,
+   "F1_1.0": 0.0,
+   "trivial_no_cuts": false
+  },
+  "scene": {
+   "orig_scenes": 1,
+   "remake_scenes": [
+    [
+     0.0,
+     50.292
+    ]
+   ],
+   "recovered_labels": [
+    0
+   ],
+   "scene_order": 1.0
+  }
+ },
+ "coffee_run-L0-0003-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 63.458333,
+   "segment_s": 63.458,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 2,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 127,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.018907563025210083,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [],
+   "hyp_cuts": [],
+   "F1_0.5": 1.0,
+   "F1_1.0": 1.0,
+   "trivial_no_cuts": true
+  },
+  "scene": {
+   "orig_scenes": 1,
+   "remake_scenes": [
+    [
+     0.0,
+     63.458
+    ]
+   ],
+   "recovered_labels": [
+    0
+   ],
+   "scene_order": 1.0
+  }
+ },
+ "coffee_run-L0-0004-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 14.458333,
+   "segment_s": 14.458,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 2,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 29,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.03866348448687351,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [],
+   "hyp_cuts": [],
+   "F1_0.5": 1.0,
+   "F1_1.0": 1.0,
+   "trivial_no_cuts": true
+  },
+  "scene": {
+   "orig_scenes": 1,
+   "remake_scenes": [
+    [
+     0.0,
+     14.458
+    ]
+   ],
+   "recovered_labels": [
+    0
+   ],
+   "scene_order": 1.0
+  }
+ },
+ "coffee_run-L1-0000-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 6.791667,
+   "segment_s": 6.792,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 2,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 14,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.06535947712418301,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [],
+   "hyp_cuts": [],
+   "F1_0.5": 1.0,
+   "F1_1.0": 1.0,
+   "trivial_no_cuts": true
+  },
+  "scene": {
+   "orig_scenes": 1,
+   "remake_scenes": [
+    [
+     0.0,
+     6.792
+    ]
+   ],
+   "recovered_labels": [
+    0
+   ],
+   "scene_order": 1.0
+  }
+ },
+ "coffee_run-L1-0001-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 49.667318,
+   "segment_s": 49.666,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 3,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 99,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.02549800796812749,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [],
+   "hyp_cuts": [
+    49.667
+   ],
+   "F1_0.5": 0.0,
+   "F1_1.0": 0.0,
+   "trivial_no_cuts": false
+  },
+  "scene": {
+   "orig_scenes": 1,
+   "remake_scenes": [
+    [
+     0.0,
+     49.751
+    ]
+   ],
+   "recovered_labels": [
+    0
+   ],
+   "scene_order": 1.0
+  }
+ },
+ "coffee_run-L1-0002-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 50.208333,
+   "segment_s": 50.209,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 3,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 100,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.027349319507453014,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [],
+   "hyp_cuts": [
+    50.208
+   ],
+   "F1_0.5": 0.0,
+   "F1_1.0": 0.0,
+   "trivial_no_cuts": false
+  },
+  "scene": {
+   "orig_scenes": 1,
+   "remake_scenes": [
+    [
+     0.0,
+     50.292
+    ]
+   ],
+   "recovered_labels": [
+    0
+   ],
+   "scene_order": 1.0
+  }
+ },
+ "coffee_run-L1-0003-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 63.458333,
+   "segment_s": 63.458,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 2,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 127,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.013704735376044568,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [],
+   "hyp_cuts": [],
+   "F1_0.5": 1.0,
+   "F1_1.0": 1.0,
+   "trivial_no_cuts": true
+  },
+  "scene": {
+   "orig_scenes": 1,
+   "remake_scenes": [
+    [
+     0.0,
+     63.458
+    ]
+   ],
+   "recovered_labels": [
+    0
+   ],
+   "scene_order": 1.0
+  }
+ },
+ "coffee_run-L1-0004-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 14.458333,
+   "segment_s": 14.458,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 2,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 29,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.1251798561151079,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [],
+   "hyp_cuts": [],
+   "F1_0.5": 1.0,
+   "F1_1.0": 1.0,
+   "trivial_no_cuts": true
+  },
+  "scene": {
+   "orig_scenes": 1,
+   "remake_scenes": [
+    [
+     0.0,
+     14.458
+    ]
+   ],
+   "recovered_labels": [
+    0
+   ],
+   "scene_order": 1.0
+  }
+ },
+ "coffee_run-L2-0000-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 170.126302,
+   "segment_s": 170.125,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 5,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 340,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.016727272727272726,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [
+    6.792,
+    56.458,
+    106.667
+   ],
+   "hyp_cuts": [
+    6.792,
+    56.459,
+    106.667
+   ],
+   "F1_0.5": 1.0,
+   "F1_1.0": 1.0,
+   "trivial_no_cuts": false
+  },
+  "scene": {
+   "orig_scenes": 1,
+   "remake_scenes": [
+    [
+     0.0,
+     56.459
+    ],
+    [
+     56.459,
+     170.126
+    ]
+   ],
+   "recovered_labels": [
+    0,
+    0
+   ],
+   "scene_order": 0.0
+  }
+ },
+ "coffee_run-L2-0001-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 14.458333,
+   "segment_s": 14.458,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 2,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 29,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.06205250596658711,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [],
+   "hyp_cuts": [],
+   "F1_0.5": 1.0,
+   "F1_1.0": 1.0,
+   "trivial_no_cuts": true
+  },
+  "scene": {
+   "orig_scenes": 1,
+   "remake_scenes": [
+    [
+     0.0,
+     14.458
+    ]
+   ],
+   "recovered_labels": [
+    0
+   ],
+   "scene_order": 1.0
+  }
+ },
+ "coffee_run-L3-0000-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 184.585368,
+   "segment_s": 184.583,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 6,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 369,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.02570694087403599,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [
+    6.792,
+    56.458,
+    106.667,
+    170.125
+   ],
+   "hyp_cuts": [
+    6.792,
+    56.459,
+    106.668,
+    170.127
+   ],
+   "F1_0.5": 1.0,
+   "F1_1.0": 1.0,
+   "trivial_no_cuts": false
+  },
+  "scene": {
+   "orig_scenes": 2,
+   "remake_scenes": [
+    [
+     0.0,
+     170.127
+    ],
+    [
+     170.127,
+     184.585
+    ]
+   ],
+   "recovered_labels": [
+    0,
+    1
+   ],
+   "scene_order": 1.0
+  }
+ },
+ "coffee_run-L4-0000-ref": {
+  "Q": {
+   "decodable": true,
+   "decode_stderr": "",
+   "has_picture_and_sound": true,
+   "format_ok": true,
+   "duration_s": 184.585368,
+   "segment_s": 184.583,
+   "duration_ok": true,
+   "vtt_valid": true,
+   "ref_lines": 0,
+   "vtt_cues": 0,
+   "subtitles_cover_lines": true,
+   "generator_calls": 6,
+   "generator_rows_source_screened": true,
+   "generator_calls_with_media_input": 0,
+   "ledger_non_ok": 0,
+   "no_generator_read_original": true,
+   "provenance": {
+    "plain_hits": 0,
+    "frames": 369,
+    "mirror_hits": 0,
+    "video_frac": 0.0,
+    "audio_frac": 0.009874326750448833,
+    "reused": false
+   },
+   "provenance_clean": true,
+   "Q": 1,
+   "Q_failed": []
+  },
+  "cut": {
+   "ref_cuts": [
+    6.792,
+    56.458,
+    106.667,
+    170.125
+   ],
+   "hyp_cuts": [
+    6.792,
+    56.459,
+    106.668,
+    170.127
+   ],
+   "F1_0.5": 1.0,
+   "F1_1.0": 1.0,
+   "trivial_no_cuts": false
+  },
+  "scene": {
+   "orig_scenes": 2,
+   "remake_scenes": [
+    [
+     0.0,
+     170.127
+    ],
+    [
+     170.127,
+     184.585
+    ]
+   ],
+   "recovered_labels": [
+    0,
+    1
+   ],
+   "scene_order": 1.0
+  }
+ }
+}

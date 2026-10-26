@@ -1,0 +1,219 @@
+{
+ "coffee_run": {
+  "cuts_equal": true,
+  "fps_equal": true,
+  "dur_built": 184.58,
+  "dur_ref": 184.58,
+  "n_cuts": 4,
+  "hierarchy": {
+   "L0": {
+    "n_built": 5,
+    "n_ref": 5,
+    "bounds_equal": true
+   },
+   "L1": {
+    "n_built": 5,
+    "n_ref": 5,
+    "bounds_equal": true
+   },
+   "L2": {
+    "n_built": 2,
+    "n_ref": 2,
+    "bounds_equal": true
+   },
+   "L3": {
+    "n_built": 1,
+    "n_ref": 1,
+    "bounds_equal": true
+   },
+   "L4": {
+    "n_built": 1,
+    "n_ref": 1,
+    "bounds_equal": true
+   }
+  },
+  "n_task_ids": 28
+ },
+ "caminandes3": {
+  "cuts_equal": true,
+  "fps_equal": true,
+  "dur_built": 150.04,
+  "dur_ref": 150.04,
+  "n_cuts": 36,
+  "hierarchy": {
+   "L0": {
+    "n_built": 37,
+    "n_ref": 37,
+    "bounds_equal": true
+   },
+   "L1": {
+    "n_built": 8,
+    "n_ref": 8,
+    "bounds_equal": true
+   },
+   "L2": {
+    "n_built": 5,
+    "n_ref": 5,
+    "bounds_equal": true
+   },
+   "L3": {
+    "n_built": 1,
+    "n_ref": 1,
+    "bounds_equal": true
+   },
+   "L4": {
+    "n_built": 1,
+    "n_ref": 1,
+    "bounds_equal": true
+   }
+  },
+  "n_task_ids": 90
+ },
+ "spirit_chaser": {
+  "cuts_equal": true,
+  "fps_equal": true,
+  "dur_built": 266.72,
+  "dur_ref": 266.72,
+  "n_cuts": 79,
+  "hierarchy": {
+   "L0": {
+    "n_built": 80,
+    "n_ref": 80,
+    "bounds_equal": true
+   },
+   "L1": {
+    "n_built": 17,
+    "n_ref": 17,
+    "bounds_equal": true
+   },
+   "L2": {
+    "n_built": 4,
+    "n_ref": 4,
+    "bounds_equal": true
+   },
+   "L3": {
+    "n_built": 1,
+    "n_ref": 1,
+    "bounds_equal": true
+   },
+   "L4": {
+    "n_built": 1,
+    "n_ref": 1,
+    "bounds_equal": true
+   }
+  },
+  "n_task_ids": 102
+ },
+ "domini_canes": {
+  "cuts_equal": true,
+  "fps_equal": true,
+  "dur_built": 260.21,
+  "dur_ref": 260.21,
+  "n_cuts": 40,
+  "hierarchy": {
+   "L0": {
+    "n_built": 41,
+    "n_ref": 41,
+    "bounds_equal": true
+   },
+   "L1": {
+    "n_built": 11,
+    "n_ref": 11,
+    "bounds_equal": true
+   },
+   "L2": {
+    "n_built": 4,
+    "n_ref": 4,
+    "bounds_equal": true
+   },
+   "L3": {
+    "n_built": 1,
+    "n_ref": 1,
+    "bounds_equal": true
+   },
+   "L4": {
+    "n_built": 1,
+    "n_ref": 1,
+    "bounds_equal": true
+   }
+  },
+  "n_task_ids": 94
+ },
+ "trip_to_the_moon": {
+  "cuts_equal": true,
+  "fps_equal": true,
+  "dur_built": 771.62,
+  "dur_ref": 771.62,
+  "n_cuts": 35,
+  "hierarchy": {
+   "L0": {
+    "n_built": 36,
+    "n_ref": 36,
+    "bounds_equal": true
+   },
+   "L1": {
+    "n_built": 21,
+    "n_ref": 21,
+    "bounds_equal": true
+   },
+   "L2": {
+    "n_built": 9,
+    "n_ref": 9,
+    "bounds_equal": true
+   },
+   "L3": {
+    "n_built": 2,
+    "n_ref": 2,
+    "bounds_equal": true
+   },
+   "L4": {
+    "n_built": 1,
+    "n_ref": 1,
+    "bounds_equal": true
+   }
+  },
+  "n_task_ids": 114
+ },
+ "sherlock_jr": {
+  "cuts_equal": true,
+  "fps_equal": true,
+  "dur_built": 2648.11,
+  "dur_ref": 2648.11,
+  "n_cuts": 403,
+  "hierarchy": {
+   "L0": {
+    "n_built": 404,
+    "n_ref": 404,
+    "bounds_equal": true
+   },
+   "L1": {
+    "n_built": 107,
+    "n_ref": 107,
+    "bounds_equal": true
+   },
+   "L2": {
+    "n_built": 32,
+    "n_ref": 32,
+    "bounds_equal": true
+   },
+   "L3": {
+    "n_built": 8,
+    "n_ref": 8,
+    "bounds_equal": true
+   },
+   "L4": {
+    "n_built": 0,
+    "n_ref": 0,
+    "bounds_equal": true
+   }
+  },
+  "n_task_ids": 170
+ },
+ "_tasks": {
+  "built": 598,
+  "ref": 598,
+  "ids_equal": true,
+  "only_built": [],
+  "only_ref": []
+ }
+}

@@ -1,0 +1,39 @@
+#!/bin/sh
+# Reproduce ground truth, package, and checks. Exits non-zero on any failure.
+set -eu
+cd "$(dirname "$0")"
+want=$(python3 -I -c "import json;print(json.load(open('corpus/admission.json'))['sha256'])")
+got=$(sha256sum corpus/sentences.txt | cut -d' ' -f1)
+[ "$want" = "$got" ] || { echo "pin mismatch"; exit 1; }
+cmp -s corpus/sentences.txt /wordcount-source/sentences.txt || { echo "differs from source"; exit 1; }
+python3 -I - <<'PY'
+import json,re
+# rule: maximal runs of non-whitespace (README: spaces, tabs)
+lines=open('corpus/sentences.txt',encoding='utf-8').read().split('\n')
+if lines[-1]=='': lines.pop()
+assert len(lines)==8
+gt=[{"line":i+1,"words":len(re.findall(r'[^ \t]+',l))} for i,l in enumerate(lines)]
+json.dump({"counts":gt},open('key/answer_key.json','w'),indent=1)
+ref=json.load(open('/wordcount-reference/reference.json'))['counts']
+diff=[(a,b) for a,b in zip(gt,ref) if a!=b]
+json.dump({"differences_vs_reference":diff,"compared":len(ref)},open('records/reference_comparison.json','w'),indent=1)
+assert not diff and len(ref)==len(gt),"reference mismatch"
+PY
+mkdir -p tasks/package
+cp corpus/sentences.txt tasks/package/sentences.txt
+cat > tasks/package/README.md <<'E2'
+# Word-count task
+Input: `sentences.txt` (8 lines). For each line, output the number of words, by the rule: a word is a maximal run of non-whitespace characters (spaces, tabs); hyphenated words and numbers count as one.
+Output format: exactly 8 lines, line i holding the integer count for input line i, nothing else.
+Run: `python3 count_words.py sentences.txt > output.txt`
+E2
+# key scan: no key file or answer listing in package
+! ls tasks/package | grep -qi key
+python3 -I -c "
+import json,os
+k=''.join(str(c['words']) for c in json.load(open('key/answer_key.json'))['counts'])
+for f in os.listdir('tasks/package'):
+    t=open('tasks/package/'+f).read()
+    assert 'answer' not in t.lower() and 'words\":' not in t,f
+"
+echo OK > records/check_result.txt; echo "all checks passed"

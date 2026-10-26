@@ -1,0 +1,8 @@
+"""Run CrewCut's own describe step (crewcut.build.describe.describe_film) with request logging.
+usage: describe.py FILM_DIR LOG.jsonl   (env CREWCUT_VLM_*)"""
+import sys; sys.path.insert(0, __file__.rsplit("/", 1)[0])
+from pathlib import Path
+import gemini_log; gemini_log.install(sys.argv[2], "shot-description")
+from crewcut.build.describe import describe_film
+d = describe_film(Path(sys.argv[1]))
+print(len(d), "descriptions")

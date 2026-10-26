@@ -1,0 +1,18 @@
+# scores/rerun — scores of the corrected reruns (current scores; run-1 in `scores/` one level up is superseded)
+
+**Status: all 28 reruns scored** (14 Screenplay at executor 99c4ecdd60d1, 14 Reference at executor **aa5f8faa7de5**; pipeline `runs/pipeline/t0.py` sha256 0557db9a…45bf at aa5f8fa). Run-1 scores in `scores/` one level up are superseded (kept as history).
+
+- Runs scored: executor `runs/coffee_run/*-scr` at **99c4ecdd60d1** and `*-ref` at **aa5f8faa7de5** (on `clips-v2-coffee_run`, frame-exact; `coffee_run-L0-0002-ref` is the executor's attempt 2, attempt 1 is not a delivered run) (54ddf5b: redone through the issuing tool service, prompt template from task inputs only). SHA-256 of each `delivery.mp4`, `manifest.json`, `ledger.jsonl`, `production_log.jsonl` as scored: `deliverables.sha256` (scr), `deliverables_ref.sha256` (ref).
+- Truth: regenerated locally from the master, 28/28 equal to task-maker's `tasks/key_manifest.json` (`../key_check.md`, `../code/regen_truth.sh`). Not published here.
+- Order: Q first (all 14 Q=1; `q_cuts_scr.json`, `q_cuts_ref.json` carry every check; the "no generator read original" check reads each run's production log `tool_call` entries (text prompts only, none carries media) and the service-written ledger; provenance check = task-maker `tools/fingerprint.py` on `annotations/coffee_run/fingerprint`), then cut F1 and scene order (`code/run_q_cuts.py`, unmodified from run-1), then the judge once (`code/judge_shots.py`; 25 requests per track, 0 errors; calls in `../../judge/rerun/judge_calls_scr.jsonl` and `judge_calls_ref.jsonl`), then `code/assemble.py` → `scores.csv`, `scores.json`.
+- Scorer code revision: the commit that carries this file (assemble.py skips an empty track; judge_cost.py takes a run label; measures unchanged).
+- Q for the Reference runs, per steward decision 16 / task-maker D004: the rule "no generator read the original input" counts generator tools (image, music); `model_call` rows (description model on frames of the input clip) are analysis calls, `source_screened=false`. Checked on the real logs: no generator `tool_call` entry carries a media input, and every generator ledger row is `ok` and `source_screened=true` (recorded in `scores.json` as `generator_rows_source_screened`, evidence, not a gate; `score_run.py` now counts `model_call` rows separately).
+- Results (plain means over 14 tasks per track; per-task in `scores.csv`):
+
+| track | Q | cut F1 @0.5 | cut F1 @1.0 | shot corr. | scene order | $ / run |
+|---|---|---|---|---|---|---|
+| ref | 1.00 | 0.714 | 0.714 | 0.340 | 0.929 | 0.1518 |
+| scr | 1.00 | 1.000 | 1.000 | 1.000 | 0.964 | 0.1400 |
+
+- Reference L0/L1 `-0001` and `-0002` (4 tasks): F1 0 and shot correspondence 0 because the pipeline's own cut detection on the input clip finds a cut 2 frames before the clip end (frame 1190 of 1192 / 1203 of 1205), the remake therefore has a 2-frame last shot, while the truth has no cut. That is the system's measured behaviour on the clip (clips-v2 are frame-exact, the cut is the detector's), not a scoring artifact; I did not look into why the detector fires there. Scene order: `L2-0000-ref` 0.0 (3 remake scenes vs 1 original), Screenplay `L3-0000-scr` 0.5 (4 vs 2 scenes). Not run: S, speaker/character consistency, dialogue WER/onset (0 lines): `../not_run.md`.
+- Judge cost: `../../judge/rerun/cost.json`: 50 calls (25 scr + 25 ref), 48,980 prompt + 100 completion tokens, USD 0.007148 (scr 0.003574, ref 0.003574; per-call lines `cost_lines.jsonl`) (same price table as run-1, `../../judge/README.md`). Run-1 judge (50 calls, 0.007148) stays recorded as superseded.

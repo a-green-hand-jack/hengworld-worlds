@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+"""Score Coffee Run T0 runs. Usage: score_run.py q|cuts DELIV_DIR KEY_DIR WORK OUT.json
+q    : Q checks (objective §二 评分 Q) per task.
+cuts : remake cuts (crewcut_algorithms cuts, unmodified; records in WORK/cuts/<task>.json) vs truth cuts, F1 @0.5 s and 1.0 s.
+Measures come from measures.py; nothing here is tuned."""
+import json, os, subprocess, sys, glob
+sys.path.insert(0, os.path.dirname(__file__))
+from measures import cut_f1
+
+def probe(p):
+    r = subprocess.run(["ffprobe", "-v", "error", "-show_streams", "-of", "json", p], capture_output=True, text=True)
+    return json.loads(r.stdout)["streams"] if r.returncode == 0 else None
+
+def decode_ok(p):
+    r = subprocess.run(["ffmpeg", "-v", "error", "-i", p, "-f", "null", "-"], capture_output=True, text=True)
+    return r.returncode == 0 and r.stderr.strip() == "", r.stderr.strip()[:200]
+
+def q_task(d, truth, fp_prefix, fpmod):
+    out = {}
+    mp4 = os.path.join(d, "delivery.mp4")
+    st = probe(mp4) if os.path.exists(mp4) else None
+    out["decodable"], out["decode_stderr"] = decode_ok(mp4) if st else (False, "missing/unprobeable")
+    v = [s for s in st or [] if s["codec_type"] == "video"]; a = [s for s in st or [] if s["codec_type"] == "audio"]
+    out["has_picture_and_sound"] = bool(v and a)
+    out["format_ok"] = bool(v and a and v[0]["codec_name"] == "h264" and v[0]["width"] == 1280 and v[0]["height"] == 720
+                            and v[0]["r_frame_rate"] == "24/1" and a[0]["codec_name"] == "aac" and a[0]["sample_rate"] == "48000" and a[0]["channels"] == 2)
+    seg = truth["duration"]
+    dur = float(v[0].get("duration") or 0) if v else 0.0
+    out["duration_s"], out["segment_s"] = dur, seg
+    out["duration_ok"] = abs(dur - seg) <= 0.05 * seg
+    vtt = os.path.join(d, "subtitles.vtt")
+    txt = open(vtt).read() if os.path.exists(vtt) else None
+    out["vtt_valid"] = txt is not None and txt.lstrip("﻿").startswith("WEBVTT")
+    n_cues = sum(1 for l in (txt or "").splitlines() if "-->" in l)
+    out["ref_lines"], out["vtt_cues"] = len(truth["lines"]), n_cues
+    out["subtitles_cover_lines"] = out["vtt_valid"] and n_cues >= len(truth["lines"])  # trivially true when no lines
+    # no generator read original input: generator tool calls carry text prompts only, none carries a media path/inputs; ledger entries all ok
+    bad = []
+    for l in open(os.path.join(d, "production_log.jsonl")):
+        e = json.loads(l)
+        if "tool" in e and any(k in e for k in ("input", "inputs", "image", "images", "file", "media", "audio", "video")):
+            bad.append(e["tool"])
+    ledger = [json.loads(l) for l in open(os.path.join(d, "ledger.jsonl"))]
+    out["generator_calls"] = sum(1 for e in ledger if e.get("service") != "chat/completions")
+    out["generator_calls_with_media_input"] = len(bad)
+    out["ledger_non_ok"] = sum(1 for e in ledger if e.get("status") != "ok")
+    out["no_generator_read_original"] = not bad
+    chk = fpmod.check(fp_prefix, mp4) if st else {"reused": None}
+    out["provenance"] = chk
+    out["provenance_clean"] = chk["reused"] is False
+    keys = ["decodable", "has_picture_and_sound", "format_ok", "duration_ok", "vtt_valid", "subtitles_cover_lines", "no_generator_read_original", "provenance_clean"]
+    out["Q"] = int(all(out[k] for k in keys))
+    out["Q_failed"] = [k for k in keys if not out[k]]
+    return out
+
+def cuts_task(work, task, truth):
+    rec = json.load(open(os.path.join(work, "cuts", task + ".json")))
+    fps = rec["fps"]
+    hyp = [c / fps for c in rec["cuts"]]
+    ref = [float(c) for c in truth["cuts"]]  # truth cuts are segment-relative? see below
+    return {"ref_cuts": ref, "hyp_cuts": [round(h, 3) for h in hyp],
+            "F1_0.5": cut_f1(ref, hyp, 0.5), "F1_1.0": cut_f1(ref, hyp, 1.0), "trivial_no_cuts": not ref and not hyp}

@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+"""score.py KEY.json OUTPUT.txt -> JSON scores. Deliverability check first: 8 integer lines."""
+import json,sys
+key=[c["words"] for c in json.load(open(sys.argv[1]))["counts"]]
+lines=open(sys.argv[2]).read().split("\n")
+if lines and lines[-1]=="": lines.pop()
+ok=len(lines)==len(key) and all(l.strip().lstrip("-").isdigit() for l in lines)
+res={"deliverable":ok,"lines":len(lines)}
+if ok:
+    m=[int(l)==k for l,k in zip(lines,key)]
+    res.update(per_line=m,correct=sum(m),accuracy=sum(m)/len(key))
+else: res.update(accuracy=None,note="not deliverable: not scored")
+print(json.dumps(res))

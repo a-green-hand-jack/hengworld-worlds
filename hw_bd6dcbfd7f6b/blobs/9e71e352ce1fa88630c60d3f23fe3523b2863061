@@ -1,0 +1,68 @@
+{
+ "model": "gemini-3.8-flash (accepted; not refused)",
+ "cap": 300,
+ "by_purpose": {
+  "probe": {
+   "requests": 2,
+   "prompt_tokens": 6,
+   "completion_tokens": 1,
+   "total_tokens": 9,
+   "detail": [
+    {
+     "purpose": "availability probe (curl, model gemini-3.8-flash, no reasoning_effort)",
+     "usage": {
+      "prompt_tokens": 3,
+      "completion_tokens": 0,
+      "total_tokens": 5
+     },
+     "result": "HTTP 200, empty content, finish_reason length (thinking consumed max_tokens=5)"
+    },
+    {
+     "purpose": "probe (curl, reasoning_effort none)",
+     "usage": {
+      "prompt_tokens": 3,
+      "completion_tokens": 1,
+      "total_tokens": 4
+     },
+     "result": "HTTP 200, content 'ok'"
+    }
+   ]
+  },
+  "shot-description attempt 1 (kept, failed: every reply truncated)": {
+   "requests": 37,
+   "prompt_tokens": 125282,
+   "completion_tokens": 120,
+   "total_tokens": 129574,
+   "log": "gemini_calls_attempt1.jsonl",
+   "finish_reasons": "all 'length'; reported total_tokens exceed prompt+completion: the difference is thinking tokens not itemised by the endpoint"
+  },
+  "shot-description attempt 2 (used)": {
+   "requests": 37,
+   "prompt_tokens": 125282,
+   "completion_tokens": 1057,
+   "total_tokens": 126339,
+   "log": "gemini_calls_attempt2.jsonl",
+   "finish_reasons": "all 'stop'"
+  },
+  "continuity judge": {
+   "requests": 0,
+   "note": "not run by executor: judging a run's output is scoring; handed to scorer (see requests)"
+  }
+ },
+ "total_so_far": {
+  "requests": 76,
+  "prompt_tokens": 250570,
+  "completion_tokens": 1178,
+  "total_tokens": 255922
+ },
+ "requests_left_of_300": 224,
+ "cost": {
+  "usd": null,
+  "reason": "configs/prices.yaml has only a 'default' row (input 5.00, output 25.00 USD per M tokens, flagged price_missing for any model without a row); no price for gemini-3.8-flash is in CrewCut or known to me from a source I could cite. No provider price page was fetched. Cost is therefore not stated.",
+  "illustration_only_default_row": {
+   "note": "NOT a cost: tokens x 'default' row, which CrewCut itself flags as a stand-in; thinking tokens (total - prompt - completion) counted at output rate would be extra",
+   "attempt2_input_usd": 0.6264,
+   "attempt2_output_usd": 0.0264
+  }
+ }
+}

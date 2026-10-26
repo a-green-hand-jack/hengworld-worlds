@@ -1,0 +1,12 @@
+# CrewCut tool server (stage B)
+Run per task sandbox (needs python deps `requests pyyaml mcp`, ffmpeg):
+
+    python -m toolserver.server --sandbox DIR --tier T0|T1 --log DIR/log.jsonl --budget USD \
+        --run-id RUN --task-id TASK [--profile smoke] [--port 8765]
+
+MCP (streamable HTTP at /mcp) with tools image_generate, image_edit, speech_synthesize, music_generate,
+sfx_generate, (T1) video_generate, media_ffmpeg; each takes an optional `actor`. Without MCP, import
+`toolserver.server.ToolServer(...).call(tool, args, actor)`.
+Environment for the hosted back ends: GOOGLE_GEMINI_BASE_URL, GEMINI_API_KEY, ELEVENLABS_API_KEY,
+DASHSCOPE_BASE_URL, DASHSCOPE_API_KEY. `--profile smoke` uses placeholders. Prices: configs/tools.yaml.
+Test: `python tests/test_toolserver.py`.

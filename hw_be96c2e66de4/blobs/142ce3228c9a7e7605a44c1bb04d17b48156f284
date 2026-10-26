@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0022",
+  "start": 74.625,
+  "end": 75.458,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.833,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 22,
+   "start": 0.0,
+   "end": 0.833,
+   "description": "Medium shot of C1 dodging falling planks, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.833
+  }
+ ],
+ "task_id": "caminandes3-L0-0022-ref",
+ "descriptions_available": true
+}

@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+"""Pin the source, derive ground truth by the README rule, compare to reference. Exits non-zero on any failure."""
+import hashlib, json, sys
+SRC='/wordcount-source/sentences.txt'; REF='/wordcount-reference/reference.json'
+data=open(SRC,'rb').read()
+sha=hashlib.sha256(data).hexdigest()
+try:
+    pin=open('corpus/pin.sha256').read().split()[0]
+except FileNotFoundError:
+    open('corpus/pin.sha256','w').write(sha+'  sentences.txt\n'); pin=sha
+if pin!=sha: sys.exit('checksum mismatch %s != %s'%(sha,pin))
+lines=data.decode('utf-8').split('\n')
+if lines and lines[-1]=='': lines.pop()
+assert len(lines)==8, len(lines)
+truth=[{"line":i+1,"words":len(l.split())} for i,l in enumerate(lines)]  # str.split() = maximal non-whitespace runs
+ref=json.load(open(REF))['counts']
+diffs=[(t,r) for t,r in zip(truth,ref) if t!=r]
+json.dump({"rule":"maximal run of non-whitespace characters","sha256":sha,"counts":truth},open('key/answer_key.json','w'),indent=1)
+json.dump({"checked":"derived truth vs /wordcount-reference/reference.json","lines":len(truth),"differences":diffs,"pass":not diffs and len(ref)==len(truth)},open('records/truth_check.json','w'),indent=1)
+if diffs or len(ref)!=len(truth): sys.exit('differs from reference: %s'%diffs)
+print('ok',sha)

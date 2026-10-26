@@ -1,0 +1,2394 @@
+{
+ "caminandes3-L0-0000-ref": {
+  "bytes": 930644,
+  "duration": 21.385261,
+  "expected": 21.375,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "cf36e1c52535a7eda981e8516ab62e12acbd5086987773a324d8d0f7a274006c"
+ },
+ "caminandes3-L0-0001-ref": {
+  "bytes": 434965,
+  "duration": 9.125011,
+  "expected": 9.125,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "4a6db10ffca4e6455329555a4328d619ea4c007d8da24375a9442d24d82459bc"
+ },
+ "caminandes3-L0-0002-ref": {
+  "bytes": 130436,
+  "duration": 1.791995,
+  "expected": 1.792,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "1980f224311e5551e1c6d2b425d9249e753d7de79d4d6dc6c0254ec6dd698935"
+ },
+ "caminandes3-L0-0004-ref": {
+  "bytes": 133554,
+  "duration": 2.917007,
+  "expected": 2.917,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "d1b08ba414ff182fb5b798465fec7362578fcd30d38167dee489a32474a6cc34"
+ },
+ "caminandes3-L0-0005-ref": {
+  "bytes": 213969,
+  "duration": 2.708333,
+  "expected": 2.708,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "783376560a86b99874e960f18e2f1f5af6d0eff9a26881726580aae9b4487106"
+ },
+ "caminandes3-L0-0006-ref": {
+  "bytes": 113799,
+  "duration": 1.291995,
+  "expected": 1.292,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "56196fb1064c3f9a58a8d7244a6d7ea7a766977bac47976abfb7387bb663d84d"
+ },
+ "caminandes3-L0-0007-ref": {
+  "bytes": 95394,
+  "duration": 1.0,
+  "expected": 1.0,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "4bf93ce2f1d90b36c264b96f97ebf7df541feb3909147c1ff0fdf918b6f23774"
+ },
+ "caminandes3-L0-0009-ref": {
+  "bytes": 85679,
+  "duration": 1.209002,
+  "expected": 1.209,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "a57319bd9406f9403d46bcab4d7fcf123cb2e7e06b6998f456bfa15011ac1dd1"
+ },
+ "caminandes3-L0-0011-ref": {
+  "bytes": 131184,
+  "duration": 2.875011,
+  "expected": 2.875,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "aed26f46773f79129c6d8ed1b6a498377144ff997762832a2a55cf72a7847cc0"
+ },
+ "caminandes3-L0-0012-ref": {
+  "bytes": 109399,
+  "duration": 2.417007,
+  "expected": 2.417,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "a451d7eddd67a603c898ec2385d31d1fe08960a8fa82de5f0fba7cc499fbbd05"
+ },
+ "caminandes3-L0-0013-ref": {
+  "bytes": 42582,
+  "duration": 0.583333,
+  "expected": 0.583,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "94a5d174515307b1a3bf1b3272fc1c898cde7414d1e420ae738000bf5326b8a3"
+ },
+ "caminandes3-L0-0014-ref": {
+  "bytes": 360601,
+  "duration": 3.708333,
+  "expected": 3.708,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5692059dcee2b0f1bf8f1a88be4d2b82c094d2310e5444532fae2993d1cd3a0a"
+ },
+ "caminandes3-L0-0015-ref": {
+  "bytes": 311105,
+  "duration": 5.667007,
+  "expected": 5.667,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7fceea53821f54fdfac48b4dd3511291ca5b5c5cb93393bfcb2bd16f5908fe54"
+ },
+ "caminandes3-L0-0016-ref": {
+  "bytes": 153894,
+  "duration": 4.167007,
+  "expected": 4.167,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9735173685beb24d4f74191ca579b5587c313308d14da672c0c968ff603180a2"
+ },
+ "caminandes3-L0-0017-ref": {
+  "bytes": 134149,
+  "duration": 1.0,
+  "expected": 1.0,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "49fed565f6259d6936d30edb8a2633ee1a3f208609e789a8f728beefd6536ad5"
+ },
+ "caminandes3-L0-0018-ref": {
+  "bytes": 64190,
+  "duration": 0.583333,
+  "expected": 0.583,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "ec6bd334be5989c5edd57db638e144cdddcd090d02d2a812a43d4a12f2c18dba"
+ },
+ "caminandes3-L0-0019-ref": {
+  "bytes": 203024,
+  "duration": 2.083333,
+  "expected": 2.083,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "eeeb154d8f852b8ce2444395c0496f653dcf6bce1133378b4b56909154501168"
+ },
+ "caminandes3-L0-0020-ref": {
+  "bytes": 525830,
+  "duration": 3.791995,
+  "expected": 3.792,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "a3d23f56c7b35ae8f7dacae07cbcd575efef4c7fb3720dd2f66e70ca2c844e67"
+ },
+ "caminandes3-L0-0021-ref": {
+  "bytes": 53871,
+  "duration": 0.75,
+  "expected": 0.75,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "efc305afc51c2395faa4a97360f345c6fc01b55925fad1b40567b805d25887b9"
+ },
+ "caminandes3-L0-0022-ref": {
+  "bytes": 87647,
+  "duration": 0.833333,
+  "expected": 0.833,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e28e7fc49c5b64a8dfe6e5e0945eaa1677beb3df0fc6c59b7058dcad1a1df24d"
+ },
+ "caminandes3-L0-0024-ref": {
+  "bytes": 141849,
+  "duration": 0.797415,
+  "expected": 0.792,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "660c00ad7f7b86e4535f6a60ad0c0f13b6b220ce01c24fb15f9d661740b66bc2"
+ },
+ "caminandes3-L0-0025-ref": {
+  "bytes": 117169,
+  "duration": 1.583333,
+  "expected": 1.583,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5e4220e2c1eafb0137df88339d2305a90264846c2bdcb59eaf286bb2f9be8030"
+ },
+ "caminandes3-L0-0026-ref": {
+  "bytes": 336309,
+  "duration": 3.333333,
+  "expected": 3.333,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "420fde148bd0560cb39507f81142ac2ced018837decc8e8894bdd71a1408c6d6"
+ },
+ "caminandes3-L0-0027-ref": {
+  "bytes": 255407,
+  "duration": 2.709002,
+  "expected": 2.709,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7ad84b9e8ba4ef5f9758aa86fceffdbd08dcdb68c7f69abc50b82a37992eb82a"
+ },
+ "caminandes3-L0-0028-ref": {
+  "bytes": 299023,
+  "duration": 3.176621,
+  "expected": 3.166,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "b6856f7f563140fefcbed5f127439e9f501f9c3dcd97f62f56ab05b103ab4f31"
+ },
+ "caminandes3-L0-0030-ref": {
+  "bytes": 350951,
+  "duration": 3.625011,
+  "expected": 3.625,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "77abfd18e7565a6bb87ccbfd1b7bb29fce2d1703123e1461d27913b151a95f69"
+ },
+ "caminandes3-L0-0031-ref": {
+  "bytes": 205155,
+  "duration": 5.125011,
+  "expected": 5.125,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "81ba5e62b0229e0c749c2abb6d9deb01c1625575b4ed8c39d28f346743c5d101"
+ },
+ "caminandes3-L0-0032-ref": {
+  "bytes": 97790,
+  "duration": 1.958333,
+  "expected": 1.958,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "64550332a304ab29d63a08d43a754b50cef8e244051fa7759a74a5be8fd003fc"
+ },
+ "caminandes3-L0-0033-ref": {
+  "bytes": 389174,
+  "duration": 10.75,
+  "expected": 10.75,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "86b437f7c907df2ce5e6b54841910096d511221253c2eca3f9799c7be5826626"
+ },
+ "caminandes3-L0-0034-ref": {
+  "bytes": 184601,
+  "duration": 4.291995,
+  "expected": 4.292,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "de7228c8988578d33e64a873d92b8b7ad9b0729401cf7bbfd4bf563530977f5d"
+ },
+ "caminandes3-L1-0000-ref": {
+  "bytes": 1499088,
+  "duration": 32.292494,
+  "expected": 32.292,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5c6b42bf56110d6c1f83ee5317c6d1fe52d9732ce9fa4f166e28e103628bcd9f"
+ },
+ "caminandes3-L1-0001-ref": {
+  "bytes": 847439,
+  "duration": 10.416667,
+  "expected": 10.416,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "481fe9f4a5a3f65e5e1e3cee8cd879bbc1e59cccf396b7d025692aec0d8400b7"
+ },
+ "caminandes3-L1-0002-ref": {
+  "bytes": 993001,
+  "duration": 13.875011,
+  "expected": 13.875,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "2d689859b63e9f639608b46159f36df8ffffd35f7459da4d3ba08df64c999dfe"
+ },
+ "caminandes3-L1-0003-ref": {
+  "bytes": 865754,
+  "duration": 13.5,
+  "expected": 13.5,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e0d0001071ee7935e071b39d67ca498b7d0538912a1826307c00e629ec0c212a"
+ },
+ "caminandes3-L1-0004-ref": {
+  "bytes": 1212910,
+  "duration": 10.041995,
+  "expected": 10.042,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "f79d5b31e52f1badb5d365c9c6203a127d956edac4264d276d70e9a583066368"
+ },
+ "caminandes3-L1-0005-ref": {
+  "bytes": 2254966,
+  "duration": 34.375011,
+  "expected": 34.375,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "ee79ec7c6cb8d4b9d14aaf35f3a555d23e01139829b5270712400f226e2facd3"
+ },
+ "caminandes3-L1-0006-ref": {
+  "bytes": 481344,
+  "duration": 9.041995,
+  "expected": 9.042,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7a5526a57220d0e59f515c2fd9b7dc88a2a9110eaacf4777c24b1132f3997f7f"
+ },
+ "caminandes3-L1-0007-ref": {
+  "bytes": 1598837,
+  "duration": 26.5,
+  "expected": 26.5,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e9c88d49f7c8009fbe724c991c7783abaa83fa3a8b9261da644ee54d3b11a413"
+ },
+ "caminandes3-L2-0000-ref": {
+  "bytes": 2347690,
+  "duration": 42.708503,
+  "expected": 42.708,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "836cd00e543037110695b6da51421af57a88eb99eb93bd94f99a94d592f21c20"
+ },
+ "caminandes3-L2-0001-ref": {
+  "bytes": 993001,
+  "duration": 13.875011,
+  "expected": 13.875,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "2d689859b63e9f639608b46159f36df8ffffd35f7459da4d3ba08df64c999dfe"
+ },
+ "caminandes3-L2-0002-ref": {
+  "bytes": 2078864,
+  "duration": 23.541995,
+  "expected": 23.542,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c818cb2f6a3e57521102d66c130718bac89e2c65a5ec2e31b1a1f787dc215970"
+ },
+ "caminandes3-L2-0003-ref": {
+  "bytes": 2738745,
+  "duration": 43.417007,
+  "expected": 43.417,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "cbedd86b033bb2b89a0cef92daba3e2268c73874e3662b576ba04eb4d0e38f16"
+ },
+ "caminandes3-L2-0004-ref": {
+  "bytes": 1598837,
+  "duration": 26.5,
+  "expected": 26.5,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e9c88d49f7c8009fbe724c991c7783abaa83fa3a8b9261da644ee54d3b11a413"
+ },
+ "caminandes3-L3-0000-ref": {
+  "bytes": 9762154,
+  "duration": 150.042494,
+  "expected": 150.042,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9d803506826c6d00702f9f4b7f83e1ba88da6d07ba8c305d77346b9e8783536f"
+ },
+ "caminandes3-L4-0000-ref": {
+  "bytes": 9762154,
+  "duration": 150.042494,
+  "expected": 150.042,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9d803506826c6d00702f9f4b7f83e1ba88da6d07ba8c305d77346b9e8783536f"
+ },
+ "coffee_run-L0-0000-ref": {
+  "bytes": 324138,
+  "duration": 6.833333,
+  "expected": 6.792,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "b017d9273a8e12a8aabca14dd3fc58e4585e5a002dbcc4a793bf32e5b62f7daf"
+ },
+ "coffee_run-L0-0001-ref": {
+  "bytes": 6739993,
+  "duration": 49.666667,
+  "expected": 49.666,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c023a557d7f58a8db2e3a53b92aa65e20398b28a5d53e3b21b4d9798ce2b1f20"
+ },
+ "coffee_run-L0-0002-ref": {
+  "bytes": 6956432,
+  "duration": 50.25,
+  "expected": 50.209,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "2aaa80f49d1b5340bf563d2548ec5f491edaf36669c9d07ea6d05cfb38780090"
+ },
+ "coffee_run-L0-0003-ref": {
+  "bytes": 7849425,
+  "duration": 63.458334,
+  "expected": 63.458,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "056d08a25ae1b17d538bf87f55a31eedd5a6ecd5ddaeb4627e8ff1d40aed708a"
+ },
+ "coffee_run-L0-0004-ref": {
+  "bytes": 877556,
+  "duration": 14.458333,
+  "expected": 14.458,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5020b5f21375048d29961d6c90159cb18c74b6506581bcbfc4f7e7e5711f294c"
+ },
+ "coffee_run-L1-0000-ref": {
+  "bytes": 324138,
+  "duration": 6.833333,
+  "expected": 6.792,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "b017d9273a8e12a8aabca14dd3fc58e4585e5a002dbcc4a793bf32e5b62f7daf"
+ },
+ "coffee_run-L1-0001-ref": {
+  "bytes": 6739993,
+  "duration": 49.666667,
+  "expected": 49.666,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c023a557d7f58a8db2e3a53b92aa65e20398b28a5d53e3b21b4d9798ce2b1f20"
+ },
+ "coffee_run-L1-0002-ref": {
+  "bytes": 6956432,
+  "duration": 50.25,
+  "expected": 50.209,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "2aaa80f49d1b5340bf563d2548ec5f491edaf36669c9d07ea6d05cfb38780090"
+ },
+ "coffee_run-L1-0003-ref": {
+  "bytes": 7849425,
+  "duration": 63.458334,
+  "expected": 63.458,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "056d08a25ae1b17d538bf87f55a31eedd5a6ecd5ddaeb4627e8ff1d40aed708a"
+ },
+ "coffee_run-L1-0004-ref": {
+  "bytes": 877556,
+  "duration": 14.458333,
+  "expected": 14.458,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5020b5f21375048d29961d6c90159cb18c74b6506581bcbfc4f7e7e5711f294c"
+ },
+ "coffee_run-L2-0000-ref": {
+  "bytes": 21875241,
+  "duration": 170.125011,
+  "expected": 170.125,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "f25ec8de7dfcb58051e0b22daa481d52e38fca0f26ba3e4dc3fe018336191f7e"
+ },
+ "coffee_run-L2-0001-ref": {
+  "bytes": 877556,
+  "duration": 14.458333,
+  "expected": 14.458,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5020b5f21375048d29961d6c90159cb18c74b6506581bcbfc4f7e7e5711f294c"
+ },
+ "coffee_run-L3-0000-ref": {
+  "bytes": 22754028,
+  "duration": 184.583333,
+  "expected": 184.583,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7dca40fd32335506709a787a92a0c0da39a896260e6507cf816212efd47de873"
+ },
+ "coffee_run-L4-0000-ref": {
+  "bytes": 22754028,
+  "duration": 184.583333,
+  "expected": 184.583,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7dca40fd32335506709a787a92a0c0da39a896260e6507cf816212efd47de873"
+ },
+ "domini_canes-L0-0002-ref": {
+  "bytes": 389341,
+  "duration": 9.916667,
+  "expected": 9.916,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "11f2501b6b2fb880e539924c29da1270abea95b26e79c1575fd118c0b59c284e"
+ },
+ "domini_canes-L0-0004-ref": {
+  "bytes": 291250,
+  "duration": 9.459,
+  "expected": 9.459,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5ef55aa2563c2f082acc9bc53bc75bfb149125e4ad4fb4130610d6a59d0ee7c0"
+ },
+ "domini_canes-L0-0005-ref": {
+  "bytes": 230441,
+  "duration": 4.916667,
+  "expected": 4.916,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "f82df2d876953257251581c2f6ae4cfb85751a6ba79a626cc422352b27cd9670"
+ },
+ "domini_canes-L0-0006-ref": {
+  "bytes": 105140,
+  "duration": 0.917,
+  "expected": 0.917,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "18e214734f4202e4f401ae61dcda2a10ee5dfbea7c16ae361b5157f638537c36"
+ },
+ "domini_canes-L0-0007-ref": {
+  "bytes": 232112,
+  "duration": 6.417,
+  "expected": 6.417,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "318119f20923fc2370c6cf665c04e28bfb74d82951c38c19cd03e5c758a2fbfa"
+ },
+ "domini_canes-L0-0009-ref": {
+  "bytes": 148749,
+  "duration": 3.084,
+  "expected": 3.084,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "b64a735f9a1ea978152ae42363735f2831df3bc6e971b3c5c553125766df6ebe"
+ },
+ "domini_canes-L0-0010-ref": {
+  "bytes": 197015,
+  "duration": 1.5,
+  "expected": 1.5,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "543264d479a0ab0d36651c7bb8eea837d7f97b26ef8f1593e8d351649e4b8fbb"
+ },
+ "domini_canes-L0-0012-ref": {
+  "bytes": 349362,
+  "duration": 5.417,
+  "expected": 5.417,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5f86c35c669d929d12689faeccb63d2b74f01e449973b0b57e71d71088d825c0"
+ },
+ "domini_canes-L0-0013-ref": {
+  "bytes": 649212,
+  "duration": 5.958333,
+  "expected": 5.958,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "8558ec6ab8edb68bfd6ad1463ad38864d002f9026a4186f2951ecff11c126b99"
+ },
+ "domini_canes-L0-0015-ref": {
+  "bytes": 399059,
+  "duration": 2.292,
+  "expected": 2.292,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "cf7ab7828bf082b9d3dbca341144ac92c01a48bb5edf3d3cfd0407ca555c68e1"
+ },
+ "domini_canes-L0-0016-ref": {
+  "bytes": 156267,
+  "duration": 2.625,
+  "expected": 2.625,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "3697f9e937b1ce59de45e3a303049c635d083517575dd0dc9e132193ad5aacd0"
+ },
+ "domini_canes-L0-0018-ref": {
+  "bytes": 216623,
+  "duration": 2.75,
+  "expected": 2.75,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "62bc64fd20c338f2eb3a6413bc45498702410c72f0e93098029b4b374a27d11a"
+ },
+ "domini_canes-L0-0019-ref": {
+  "bytes": 90702,
+  "duration": 2.0,
+  "expected": 2.0,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "061cdefdf3f0db538cbea2880435315ebe868693da99bf19aadf8ee4a9a74ff7"
+ },
+ "domini_canes-L0-0021-ref": {
+  "bytes": 55476,
+  "duration": 0.583333,
+  "expected": 0.583,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "af732178d207123f74a928d01a79f4e1d86abb91b94efb4e7baa16600c4364f6"
+ },
+ "domini_canes-L0-0022-ref": {
+  "bytes": 449551,
+  "duration": 2.125,
+  "expected": 2.125,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e647a62d1fa6948c4a648e94046a1eac9a1bf2b89750601f41c422d23a6d22c0"
+ },
+ "domini_canes-L0-0023-ref": {
+  "bytes": 158567,
+  "duration": 0.542,
+  "expected": 0.542,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "67372a109e0a6236b297735a9bff3d216975ae27dc43d7840be8344fb846ab2b"
+ },
+ "domini_canes-L0-0024-ref": {
+  "bytes": 241973,
+  "duration": 0.833333,
+  "expected": 0.833,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "ffaf99dd0c164a800ddcdc87106b8dd74ea471e1f4ff3a253f30c9d8f4cf7b1d"
+ },
+ "domini_canes-L0-0025-ref": {
+  "bytes": 111817,
+  "duration": 0.584,
+  "expected": 0.584,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "f09a07acde95fb1c089aa6a669796fee5e93b30e704c0d2319fdb5ad9559f639"
+ },
+ "domini_canes-L0-0027-ref": {
+  "bytes": 116980,
+  "duration": 0.625,
+  "expected": 0.625,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "39e721615e8b2bb698e7d115443cefb09568b62ac2c6bf478c9b9646b621380c"
+ },
+ "domini_canes-L0-0028-ref": {
+  "bytes": 142435,
+  "duration": 0.833333,
+  "expected": 0.833,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "00d41b94f0007a16c6a89cd9cae0bb4e56add82cf709bf4ac2eade5a281713b0"
+ },
+ "domini_canes-L0-0029-ref": {
+  "bytes": 85081,
+  "duration": 0.5,
+  "expected": 0.5,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "72d9a306f4a5084eb0cd57313c89e5e75ea7afb2e6c455595855d518c1878bfd"
+ },
+ "domini_canes-L0-0030-ref": {
+  "bytes": 161651,
+  "duration": 2.292,
+  "expected": 2.292,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "41d3f3816f778fa9597990d9980d9080819d42346433096523d930080d2c6dd6"
+ },
+ "domini_canes-L0-0031-ref": {
+  "bytes": 233500,
+  "duration": 1.375,
+  "expected": 1.375,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "1e1973ec8a55ca04b63ca9f87999762299df50573a52a272b91868746ef782c3"
+ },
+ "domini_canes-L0-0032-ref": {
+  "bytes": 240307,
+  "duration": 1.292,
+  "expected": 1.292,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9b0db5d997107213bf0172001d264c3492f614de491b87431f53794d5cca1e54"
+ },
+ "domini_canes-L0-0033-ref": {
+  "bytes": 572491,
+  "duration": 9.25,
+  "expected": 9.25,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "353e1ee6952396581b05a9f3fac273e8c840c3b6b28056ee12e4184598a71988"
+ },
+ "domini_canes-L0-0035-ref": {
+  "bytes": 486000,
+  "duration": 6.875,
+  "expected": 6.875,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5bf18ab58a4c756b0cc0ab919ed418ca119a70efc88039617a938404420d94f2"
+ },
+ "domini_canes-L0-0036-ref": {
+  "bytes": 586967,
+  "duration": 6.291667,
+  "expected": 6.291,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "06610b9dc60921474c8ea6ceb96f1dd468a82e37bec95648e2d9d00c1baeb2e1"
+ },
+ "domini_canes-L0-0037-ref": {
+  "bytes": 165398,
+  "duration": 1.334,
+  "expected": 1.334,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "3ea9fd05e3c770acaa94957f6ce35f5adc6b1f2a8a0cc43fc9a7cd689ad134ee"
+ },
+ "domini_canes-L0-0038-ref": {
+  "bytes": 1389596,
+  "duration": 18.0,
+  "expected": 18.0,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "ca449ff6d71a7bfd4a0fb90130e276788ba6a247187dcbb383732ac886037754"
+ },
+ "domini_canes-L0-0039-ref": {
+  "bytes": 3329602,
+  "duration": 63.583333,
+  "expected": 63.583,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "2a8a385cd546d678bdc77c5f6592318cec2dab1466a0d2824b7b70b9997c5be5"
+ },
+ "domini_canes-L1-0000-ref": {
+  "bytes": 458339,
+  "duration": 17.919667,
+  "expected": 17.917,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "013331d1129655bf994afb2249b7378141159941d801a3b169d739e618a374f9"
+ },
+ "domini_canes-L1-0001-ref": {
+  "bytes": 1150530,
+  "duration": 29.083333,
+  "expected": 29.083,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "6a8ff48d11f4840f2c8c6d82a0c330ae97e3fef8eea658b4fcdd6a1c9e07a5c0"
+ },
+ "domini_canes-L1-0002-ref": {
+  "bytes": 2114196,
+  "duration": 31.583333,
+  "expected": 31.583,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "17dd529d94a0c20566b688d93f96b7acb94b834c2e5033985bfd28b770455eea"
+ },
+ "domini_canes-L1-0003-ref": {
+  "bytes": 888048,
+  "duration": 10.834,
+  "expected": 10.834,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "26fb1f9004bab5149edcf7ca27ced870494eb4d3536ec44262263d04ba9d06fe"
+ },
+ "domini_canes-L1-0004-ref": {
+  "bytes": 618117,
+  "duration": 11.291667,
+  "expected": 11.291,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c7b13a2ce7211d71dee0b5baa15d73a43f548ae2c9126b5fcfeacb121f9329e6"
+ },
+ "domini_canes-L1-0005-ref": {
+  "bytes": 1399144,
+  "duration": 6.625,
+  "expected": 6.625,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "fbdebcd76b43faf76f49f810614ef1603cc192d98d75d62da0b01f2e8b6bf857"
+ },
+ "domini_canes-L1-0006-ref": {
+  "bytes": 1744755,
+  "duration": 21.834,
+  "expected": 21.834,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "0c28fd02566155926f3d5b62f1a99ade3b067c97ffe912c55d88976fbc4d2acf"
+ },
+ "domini_canes-L1-0007-ref": {
+  "bytes": 745714,
+  "duration": 7.625,
+  "expected": 7.625,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "3bd5d006ec14a1592410ca4185bdf28078c217ac7c01c07343079f74cdefa43d"
+ },
+ "domini_canes-L1-0008-ref": {
+  "bytes": 1389596,
+  "duration": 18.0,
+  "expected": 18.0,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "ca449ff6d71a7bfd4a0fb90130e276788ba6a247187dcbb383732ac886037754"
+ },
+ "domini_canes-L1-0009-ref": {
+  "bytes": 3329602,
+  "duration": 63.583333,
+  "expected": 63.583,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "2a8a385cd546d678bdc77c5f6592318cec2dab1466a0d2824b7b70b9997c5be5"
+ },
+ "domini_canes-L1-0010-ref": {
+  "bytes": 988764,
+  "duration": 41.833333,
+  "expected": 41.833,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "68abc5b999ee7b0f812381dfa08623d309b31560a7d15144b0fa6df13b0650c4"
+ },
+ "domini_canes-L2-0000-ref": {
+  "bytes": 458339,
+  "duration": 17.919667,
+  "expected": 17.917,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "013331d1129655bf994afb2249b7378141159941d801a3b169d739e618a374f9"
+ },
+ "domini_canes-L2-0001-ref": {
+  "bytes": 7904442,
+  "duration": 111.25,
+  "expected": 111.25,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "a20f03cf39b6457c8c58b177afc76d879a9a8cc094ae7b4bc8e9f7654c979b94"
+ },
+ "domini_canes-L2-0002-ref": {
+  "bytes": 5485206,
+  "duration": 89.208333,
+  "expected": 89.208,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "3457cb2262d7ed9dcad136689e42d139f18bb27684626d176e6f474905b026a7"
+ },
+ "domini_canes-L2-0003-ref": {
+  "bytes": 988764,
+  "duration": 41.833333,
+  "expected": 41.833,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "68abc5b999ee7b0f812381dfa08623d309b31560a7d15144b0fa6df13b0650c4"
+ },
+ "domini_canes-L3-0000-ref": {
+  "bytes": 14848102,
+  "duration": 260.223667,
+  "expected": 260.208,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "cc6afda0023852949272ba2f6eaba301a757f3caaab569f6424ecbc3792090b3"
+ },
+ "domini_canes-L4-0000-ref": {
+  "bytes": 14848102,
+  "duration": 260.223667,
+  "expected": 260.208,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "cc6afda0023852949272ba2f6eaba301a757f3caaab569f6424ecbc3792090b3"
+ },
+ "sherlock_jr-L0-0020-ref": {
+  "bytes": 181877,
+  "duration": 3.403991,
+  "expected": 3.404,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "909c702229c2a978fee784e1faf4345520d8e585543042fb569c4cdd3d3664bf"
+ },
+ "sherlock_jr-L0-0022-ref": {
+  "bytes": 732761,
+  "duration": 18.886009,
+  "expected": 18.886,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "3a005d24e9db9e34eddeb1b844e59254b9853a99c6b8973751a99ace98cbeba3"
+ },
+ "sherlock_jr-L0-0032-ref": {
+  "bytes": 339164,
+  "duration": 7.774441,
+  "expected": 7.774,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9963f19e57f701173ca6eeea6c85c3b97d539b4ea4e7fe65434079eb0a71786c"
+ },
+ "sherlock_jr-L0-0076-ref": {
+  "bytes": 76081,
+  "duration": 2.302993,
+  "expected": 2.303,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5516da032f426419ef2532c06e2098bb178fb2e223723e83d714ef5b0129e788"
+ },
+ "sherlock_jr-L0-0085-ref": {
+  "bytes": 309071,
+  "duration": 7.475011,
+  "expected": 7.475,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "b31d14daf121468ebb400e094ae7b34d08ecb00157b4e25e2288365c5676305b"
+ },
+ "sherlock_jr-L0-0086-ref": {
+  "bytes": 133598,
+  "duration": 4.871538,
+  "expected": 4.871,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "a9ec029ba6773a4fd32deb6a957246f9c51b85e6d6e5625eaf432475f101c892"
+ },
+ "sherlock_jr-L0-0098-ref": {
+  "bytes": 248217,
+  "duration": 5.606009,
+  "expected": 5.606,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "757611a4486246fea015b318eb749c22218994688cc2eeb23ab89e9ab0aa42e6"
+ },
+ "sherlock_jr-L0-0099-ref": {
+  "bytes": 128758,
+  "duration": 3.73707,
+  "expected": 3.737,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "b8e7a57c42e6da9a90d4f908e8ef4975e699b7822663b58b29b095459e1a015f"
+ },
+ "sherlock_jr-L0-0100-ref": {
+  "bytes": 306778,
+  "duration": 11.211211,
+  "expected": 11.211,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "048c7e12bd5c5f851dfff4bdc7ce128105d99a8620f1a3fbbd88638b768dd58d"
+ },
+ "sherlock_jr-L0-0107-ref": {
+  "bytes": 220762,
+  "duration": 4.371038,
+  "expected": 4.371,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "196738dd23ac5ffa0a9591f98e455057b616f6c24d884b5d2933bb56ceaf6084"
+ },
+ "sherlock_jr-L0-0138-ref": {
+  "bytes": 187692,
+  "duration": 9.476143,
+  "expected": 9.476,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5f895c2c5cced5cb96bbcde7e293a53666a9ddda58ef6941a74203a6045bfe57"
+ },
+ "sherlock_jr-L0-0160-ref": {
+  "bytes": 76524,
+  "duration": 2.837007,
+  "expected": 2.837,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "f9a21d84fa7c13d69bca017047f7ea0e1af4193a883cca94874bbae54a4b9cb6"
+ },
+ "sherlock_jr-L0-0180-ref": {
+  "bytes": 774701,
+  "duration": 20.887554,
+  "expected": 20.887,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "375ce7a1b0da5ee1da6cd6956a55933886de33a7abc5938ed97d377dad584586"
+ },
+ "sherlock_jr-L0-0190-ref": {
+  "bytes": 54290,
+  "duration": 2.636009,
+  "expected": 2.636,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "054f89e638e3b1521aeb983801703892d5b71d43f99f023b3109caa3db64912d"
+ },
+ "sherlock_jr-L0-0200-ref": {
+  "bytes": 52120,
+  "duration": 1.668335,
+  "expected": 1.668,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "d6e1e373406bff9f13923f122df2dcbe5a50650ff619b7c3d7db79b1ae32c373"
+ },
+ "sherlock_jr-L0-0203-ref": {
+  "bytes": 57186,
+  "duration": 1.935269,
+  "expected": 1.935,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "176e032cba549f1bf6afae8072ccb440e086c892f465d71b37bf38a2e1847c9c"
+ },
+ "sherlock_jr-L0-0207-ref": {
+  "bytes": 144630,
+  "duration": 5.105105,
+  "expected": 5.105,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "40a76fba21ec7eee5ca2ef280d9555aaad25c64f4a9f6ba36a6050c5ed1b1e46"
+ },
+ "sherlock_jr-L0-0229-ref": {
+  "bytes": 75774,
+  "duration": 1.236916,
+  "expected": 1.235,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "f70be3aa44e8fb904e79c90205ead300ad96899e2806265c2a77ed358671f765"
+ },
+ "sherlock_jr-L0-0240-ref": {
+  "bytes": 217717,
+  "duration": 4.137471,
+  "expected": 4.137,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "35fb06c70ae81674a53d7225c11d527ca70b2a4efb819cd646c09bb2fd4445ff"
+ },
+ "sherlock_jr-L0-0265-ref": {
+  "bytes": 35172,
+  "duration": 0.900998,
+  "expected": 0.901,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5a76acb68a26a02803a96e8be9ad697e62e02ef07dbe12a72f8f645b6bfb943f"
+ },
+ "sherlock_jr-L0-0276-ref": {
+  "bytes": 86591,
+  "duration": 2.235569,
+  "expected": 2.235,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "6daede2689613fc5121478aef60638258ec1d39107875b3281715a78383db5a4"
+ },
+ "sherlock_jr-L0-0309-ref": {
+  "bytes": 72752,
+  "duration": 1.101101,
+  "expected": 1.101,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "188850b4af8eb8d878b7236ec021f66957fcbfee6540ae50d034bf38209bfafd"
+ },
+ "sherlock_jr-L0-0328-ref": {
+  "bytes": 108670,
+  "duration": 6.44,
+  "expected": 6.44,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "4669c91aa50efaedb507704a5317a4b28a8ab83cdef632660b6aedd753330605"
+ },
+ "sherlock_jr-L0-0329-ref": {
+  "bytes": 1401731,
+  "duration": 14.481148,
+  "expected": 14.481,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "90c2f8ca23cfde540391b6a7dd4a92200f60add0fc622eaf3b7d20c54c7ef916"
+ },
+ "sherlock_jr-L0-0342-ref": {
+  "bytes": 135908,
+  "duration": 3.03637,
+  "expected": 3.036,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "68a03a6d45c9f71498c453f6efa8397cb04299a9dc23c4486d7ed58e114bdf06"
+ },
+ "sherlock_jr-L0-0350-ref": {
+  "bytes": 190824,
+  "duration": 2.736069,
+  "expected": 2.736,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5c2d1877bdcc275cdec3ec89fd199b3f103c1c2f45f215c2e8a960fa86cbcc32"
+ },
+ "sherlock_jr-L0-0353-ref": {
+  "bytes": 299295,
+  "duration": 3.237007,
+  "expected": 3.237,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "32676d37bdc5663dff953b4443023794bd892e1919444be45679c81d85106131"
+ },
+ "sherlock_jr-L0-0391-ref": {
+  "bytes": 151662,
+  "duration": 5.706009,
+  "expected": 5.706,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e0f29882761eddc195a3ad308b82b01fdf8ec0b9f8d0336c4c784fa2ed8425e8"
+ },
+ "sherlock_jr-L0-0392-ref": {
+  "bytes": 324919,
+  "duration": 8.641995,
+  "expected": 8.642,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "2191b8f7524489f8c92d0b8fe672b2defef01c078fc714541e3f2405f0002ef6"
+ },
+ "sherlock_jr-L0-0401-ref": {
+  "bytes": 419964,
+  "duration": 13.013013,
+  "expected": 13.013,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "54ed22fc149fd31494d15732a58c5caef12437a3a3b11728fe6d3e4631ffe118"
+ },
+ "sherlock_jr-L1-0001-ref": {
+  "bytes": 704903,
+  "duration": 21.321995,
+  "expected": 21.322,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5deb6858c8c4ea2b865bcf0dd09f9cbe0078962ece2366ccba4b4c2d256fa11e"
+ },
+ "sherlock_jr-L1-0024-ref": {
+  "bytes": 537594,
+  "duration": 15.949283,
+  "expected": 15.949,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "815f7c80e99774d8f2a14ac2979d325e26c27999b7eccd2f0459424ab0fab108"
+ },
+ "sherlock_jr-L1-0028-ref": {
+  "bytes": 588582,
+  "duration": 17.417417,
+  "expected": 17.417,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "a7fe94676fa137241f7f8dbcbc5a7e8a8fef9dfe1a3bae7363869a8621969926"
+ },
+ "sherlock_jr-L1-0031-ref": {
+  "bytes": 1062440,
+  "duration": 28.895562,
+  "expected": 28.895,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5e42715e7a62278b2eb0219290d5d52a54c28e104ae4f64ad97cd29e39174f91"
+ },
+ "sherlock_jr-L1-0045-ref": {
+  "bytes": 919367,
+  "duration": 38.606009,
+  "expected": 38.606,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "763f36dc41de42acb0b1863a7bbb1fba7807c7ddbdf3b5e79d540fbc651db5dc"
+ },
+ "sherlock_jr-L1-0049-ref": {
+  "bytes": 800482,
+  "duration": 30.930998,
+  "expected": 30.931,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "b2ec3771e34049cebb9dbe9061eb4d220022523eb0c8086087d1f6800a996d7b"
+ },
+ "sherlock_jr-L1-0056-ref": {
+  "bytes": 817764,
+  "duration": 27.560998,
+  "expected": 27.561,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "6c7167abb8b93a0525a95d4895e85c4cbf94c6334a47235618b81b719e5fd4dd"
+ },
+ "sherlock_jr-L1-0058-ref": {
+  "bytes": 119819,
+  "duration": 5.939273,
+  "expected": 5.939,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "2120ca3d8e1debd287265738875bf78948a2cb7dc1c26b8f2228656523f47883"
+ },
+ "sherlock_jr-L1-0065-ref": {
+  "bytes": 516842,
+  "duration": 15.382049,
+  "expected": 15.382,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "476f7213a5efdb798403d82b54bd115bd1e6d1d66168bd65d5343bf041bf7651"
+ },
+ "sherlock_jr-L1-0082-ref": {
+  "bytes": 921792,
+  "duration": 19.085752,
+  "expected": 19.085,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "ac122eb5dba3550f9c18500643617972ff8409aefde3be916209a9300e4ace0d"
+ },
+ "sherlock_jr-L1-0092-ref": {
+  "bytes": 2321504,
+  "duration": 32.766099,
+  "expected": 32.766,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "1adb358e6e1866e92c417d4a4d10205c13995ba040ed542628d9e2ff23062fcc"
+ },
+ "sherlock_jr-L1-0101-ref": {
+  "bytes": 604010,
+  "duration": 13.713991,
+  "expected": 13.714,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "1eb202602053f10846ddba89d222d7299c3136364ae3abadd61b3888e483e525"
+ },
+ "sherlock_jr-L1-0103-ref": {
+  "bytes": 931226,
+  "duration": 24.891995,
+  "expected": 24.892,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c8b439976514515d24aaa1b4d87b608c414b825af3310167c5a72b5373bb65b4"
+ },
+ "sherlock_jr-L1-0104-ref": {
+  "bytes": 993033,
+  "duration": 32.565899,
+  "expected": 32.565,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "64f4b057316f51eefdb42091812096ffcf144825720b6c05ff4e698e7b768222"
+ },
+ "sherlock_jr-L1-0105-ref": {
+  "bytes": 1146789,
+  "duration": 37.971995,
+  "expected": 37.972,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "b324659696ce66234b90cbf8cc1643c184d0959d06f68cc24f77fbb1b2b091ac"
+ },
+ "sherlock_jr-L2-0000-ref": {
+  "bytes": 1633969,
+  "duration": 92.859526,
+  "expected": 92.859,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "ac3370081405ecb74a9da0940e52916d75c2a6ede8734be7c514ccc8d581e348"
+ },
+ "sherlock_jr-L2-0001-ref": {
+  "bytes": 1968576,
+  "duration": 58.025011,
+  "expected": 58.025,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "3a6b4b6293c1f8d45ed2e516d6fe23062bb68b391cfb550e509e96aa13cab4ce"
+ },
+ "sherlock_jr-L2-0002-ref": {
+  "bytes": 662808,
+  "duration": 18.318318,
+  "expected": 18.318,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "317a355d1aa7aef7b8bf94fe2dbfa23a4bc1b1d39aca4c11a58a74124fb9d93a"
+ },
+ "sherlock_jr-L2-0003-ref": {
+  "bytes": 1028870,
+  "duration": 22.356009,
+  "expected": 22.356,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "53796ef4382acca91478d1093cac9768c635641cb024fda7770285d125eb663d"
+ },
+ "sherlock_jr-L2-0004-ref": {
+  "bytes": 2161702,
+  "duration": 50.717384,
+  "expected": 50.717,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "f581d42bf451b43a1c53586d7dae369c6ba5d12f317bb41d0f597befe0df9138"
+ },
+ "sherlock_jr-L2-0005-ref": {
+  "bytes": 2420347,
+  "duration": 60.794127,
+  "expected": 60.794,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5143749eab15b3100e8c075afdf04daa3d661aabd9ff54e1bbfd4e1e373797b1"
+ },
+ "sherlock_jr-L2-0006-ref": {
+  "bytes": 377987,
+  "duration": 14.148005,
+  "expected": 14.148,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "79936c127f94bf602ac193cde41b0de961de33620f4958aa5168456adf4a9653"
+ },
+ "sherlock_jr-L2-0007-ref": {
+  "bytes": 2634415,
+  "duration": 65.932599,
+  "expected": 65.932,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "cafe71ee10bcbc28b550f016249de6438e7d49d3b904fa4005260854e1db228c"
+ },
+ "sherlock_jr-L2-0008-ref": {
+  "bytes": 10839473,
+  "duration": 262.229002,
+  "expected": 262.229,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "8880fae60f9f0be868295501a3764fae99faf573cabcc0025df5af94c977d392"
+ },
+ "sherlock_jr-L2-0009-ref": {
+  "bytes": 4922232,
+  "duration": 126.36,
+  "expected": 126.36,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "af4ea526533511e983b0ef030af7f3b74e2b39ab67bde97b973ce5301303e379"
+ },
+ "sherlock_jr-L2-0010-ref": {
+  "bytes": 5024957,
+  "duration": 109.309309,
+  "expected": 109.309,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "decfd6e0197634d757faa6d9d7b5d82f7e2447cd887dcdfca10b2eb79fd18b4d"
+ },
+ "sherlock_jr-L2-0011-ref": {
+  "bytes": 679832,
+  "duration": 20.12012,
+  "expected": 20.12,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7f9af68b727c89a81ac73f93f2b360798c12a67dc9dc8f2616dba4213743a5c3"
+ },
+ "sherlock_jr-L2-0012-ref": {
+  "bytes": 2428247,
+  "duration": 66.900234,
+  "expected": 66.9,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9c4e7e286ee061f928e290c7a5591d292335db56ac0541036fd0906224f81248"
+ },
+ "sherlock_jr-L2-0013-ref": {
+  "bytes": 589560,
+  "duration": 18.318318,
+  "expected": 18.318,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "83de3e27af9a6ec303de31e199f965b36f622bce21142a3689a35fb26aba08fd"
+ },
+ "sherlock_jr-L2-0014-ref": {
+  "bytes": 6409675,
+  "duration": 202.77,
+  "expected": 202.77,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "1f3be3df06f6add9a349c2053e4c25ca595759becc40b49afbb8899e37bd06fd"
+ },
+ "sherlock_jr-L2-0015-ref": {
+  "bytes": 2896359,
+  "duration": 110.543877,
+  "expected": 110.543,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "79a43338e67abbbdfe0897e96cad700b7328239b407dc1fd9875c7a486baaaf9"
+ },
+ "sherlock_jr-L2-0016-ref": {
+  "bytes": 4314250,
+  "duration": 137.871205,
+  "expected": 137.871,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9f448e80ff126c38812d1d12133c228bfce26ecadccb71ced954ce321d0ef118"
+ },
+ "sherlock_jr-L2-0017-ref": {
+  "bytes": 6010046,
+  "duration": 179.78,
+  "expected": 179.78,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "ff7f2a5dd78a4f0f8c86c4e9b0ebb9e3cbed95af30fc5ab1778ba383e148c2ca"
+ },
+ "sherlock_jr-L2-0018-ref": {
+  "bytes": 5633959,
+  "duration": 189.289289,
+  "expected": 189.289,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "ced1ada7125edfb3fa9173a78164e67f859b6b60ee2a687b6a2a5b38f8c951a5"
+ },
+ "sherlock_jr-L2-0019-ref": {
+  "bytes": 3014977,
+  "duration": 80.213991,
+  "expected": 80.214,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "a6bdc2b7cb4f0a2f3ae7c57a11785ef688b44206a0177939b74423e4a82cd284"
+ },
+ "sherlock_jr-L2-0020-ref": {
+  "bytes": 748943,
+  "duration": 14.881548,
+  "expected": 14.881,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "126121b92656ba3591326b3e2579c6bae8c9384d8bbed6ad105106d77dc84ae7"
+ },
+ "sherlock_jr-L2-0021-ref": {
+  "bytes": 8937431,
+  "duration": 192.426009,
+  "expected": 192.426,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "ef7931d0cb1b380bffd3c5720ff71504ee282c5b9e726e6fc6d01b3703e0d530"
+ },
+ "sherlock_jr-L2-0022-ref": {
+  "bytes": 6603564,
+  "duration": 121.755088,
+  "expected": 121.755,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "fe8d2d08b60f76ffd3fbcfc05d16b6190d67dfb4926beb9c432b2bfa39cf8373"
+ },
+ "sherlock_jr-L2-0023-ref": {
+  "bytes": 813561,
+  "duration": 12.779446,
+  "expected": 12.779,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9c0a8347d91f29bb59d4c92e53c77dc575e5bcfd1dc5cc1db81e14e89e5c7816"
+ },
+ "sherlock_jr-L2-0024-ref": {
+  "bytes": 4270025,
+  "duration": 61.428095,
+  "expected": 61.428,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "aa1eb6c0d1f3c4f42ec6f41d91011812cf9a20dbe7a34809e2f23157a952dd6e"
+ },
+ "sherlock_jr-L2-0025-ref": {
+  "bytes": 1177053,
+  "duration": 27.060998,
+  "expected": 27.061,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "94bfdeb23e0ee5f8300dff1196a3270e2ac46c9ed6fdc56fb345fb18eae3166a"
+ },
+ "sherlock_jr-L2-0026-ref": {
+  "bytes": 2321504,
+  "duration": 32.766099,
+  "expected": 32.766,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "1adb358e6e1866e92c417d4a4d10205c13995ba040ed542628d9e2ff23062fcc"
+ },
+ "sherlock_jr-L2-0027-ref": {
+  "bytes": 8680680,
+  "duration": 142.275011,
+  "expected": 142.275,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "6df09108e42d570ee0dea5dfb48c9bc55806c88aec995f2eaaa27997c7a8fa98"
+ },
+ "sherlock_jr-L2-0028-ref": {
+  "bytes": 604010,
+  "duration": 13.713991,
+  "expected": 13.714,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "1eb202602053f10846ddba89d222d7299c3136364ae3abadd61b3888e483e525"
+ },
+ "sherlock_jr-L2-0029-ref": {
+  "bytes": 571091,
+  "duration": 14.314314,
+  "expected": 14.314,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "56edd3dfe3e39c46c5bc0b4937624353685e946638c1381bd844d86de2c03855"
+ },
+ "sherlock_jr-L2-0030-ref": {
+  "bytes": 931226,
+  "duration": 24.891995,
+  "expected": 24.892,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c8b439976514515d24aaa1b4d87b608c414b825af3310167c5a72b5373bb65b4"
+ },
+ "sherlock_jr-L2-0031-ref": {
+  "bytes": 3009656,
+  "duration": 102.969636,
+  "expected": 102.969,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "4141e948b10524b5dfd06261a385fa98fcc87ab255a3a38a1b104c5b5018aa03"
+ },
+ "sherlock_jr-L3-0000-ref": {
+  "bytes": 9872356,
+  "duration": 303.069736,
+  "expected": 303.069,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "aa44aaff94a3fd7809af9717d214a22eb950d7893002022af28b4d8be42c3e24"
+ },
+ "sherlock_jr-L3-0001-ref": {
+  "bytes": 18773444,
+  "duration": 468.669002,
+  "expected": 468.669,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "d367a5f89eba523b6d7d00f98df494ec963471fb797b3a9d68ff6ed1cb4b2521"
+ },
+ "sherlock_jr-L3-0002-ref": {
+  "bytes": 8722568,
+  "duration": 214.647981,
+  "expected": 214.647,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "55fcd00c2d7d6c2352dc640dd10abd1ca32274cfb68a7462722ca81c5a7ab8d3"
+ },
+ "sherlock_jr-L3-0003-ref": {
+  "bytes": 13620607,
+  "duration": 451.184518,
+  "expected": 451.184,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "106997ed0d363c76d80c9008f619ca38043574f09bb8b26bb07bff9766fd0d5b"
+ },
+ "sherlock_jr-L3-0004-ref": {
+  "bytes": 11643156,
+  "duration": 369.069069,
+  "expected": 369.069,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "4ee7307cf40ca6332f24ffdb841d40272326830f88e15f72006a32a7add2a71d"
+ },
+ "sherlock_jr-L3-0005-ref": {
+  "bytes": 19303322,
+  "duration": 409.276009,
+  "expected": 409.276,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7c0cc6dd44215179a3a29d0ee916b1bebe6188e2f2bd946734c41f25118d5061"
+ },
+ "sherlock_jr-L3-0006-ref": {
+  "bytes": 6258533,
+  "duration": 101.268005,
+  "expected": 101.268,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "79e292a265a68d6509cb99a0c55dbb55c31fabdb12b32997fb8bc27eb8e38376"
+ },
+ "sherlock_jr-L3-0007-ref": {
+  "bytes": 16113795,
+  "duration": 330.930931,
+  "expected": 330.93,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "affff925230432cd664ac57bb21ca6be4374c7eef41660fb1731b24bb5336a32"
+ },
+ "spirit_chaser-L0-0001-ref": {
+  "bytes": 81593,
+  "duration": 2.2,
+  "expected": 2.2,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "d9371cfda8058f6b3406592ddba9edd8bd48b44ac0b2b30d9c99169efa94787f"
+ },
+ "spirit_chaser-L0-0003-ref": {
+  "bytes": 191470,
+  "duration": 4.44,
+  "expected": 4.44,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "83c94da2240ae8b87cb3fa8f79324b3e7548232f511971dc04c738de006dfca1"
+ },
+ "spirit_chaser-L0-0005-ref": {
+  "bytes": 351049,
+  "duration": 3.88,
+  "expected": 3.88,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "6b2e3e400e8b41652769b5cc14ca61f7b2b1cd1fb027348b1dd58a55afdb4ad7"
+ },
+ "spirit_chaser-L0-0006-ref": {
+  "bytes": 198264,
+  "duration": 2.56,
+  "expected": 2.56,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "3fcb779bd9aafe96875d8d45c69056c6a1b757e7acc82a11ff1ee1fbe4c57a8f"
+ },
+ "spirit_chaser-L0-0007-ref": {
+  "bytes": 1344610,
+  "duration": 12.72,
+  "expected": 12.72,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "8024c00b9e1a8795a1ee1b35259d53502a37e242179e403e21d536ad9a4b6973"
+ },
+ "spirit_chaser-L0-0010-ref": {
+  "bytes": 72904,
+  "duration": 2.72,
+  "expected": 2.72,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "3b5b0fadffceb26bb7eca18d8f6b9d2da7ef0315b772d194419246d381c94cee"
+ },
+ "spirit_chaser-L0-0015-ref": {
+  "bytes": 121764,
+  "duration": 1.12,
+  "expected": 1.12,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c2ed5aac172c54ec77025841c348ca4209c7736992af91a153249fa4ef26d0ff"
+ },
+ "spirit_chaser-L0-0018-ref": {
+  "bytes": 237721,
+  "duration": 2.52,
+  "expected": 2.52,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e4383f01493173aef0b21fd2ca40ba41d1187bead5e8fc5d0afba733963d9732"
+ },
+ "spirit_chaser-L0-0028-ref": {
+  "bytes": 89041,
+  "duration": 0.52,
+  "expected": 0.52,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "56e3b37fa6c7075ad81b7aadb39a270e655b3b777f47a69c2234be77953c3e71"
+ },
+ "spirit_chaser-L0-0029-ref": {
+  "bytes": 78918,
+  "duration": 0.56,
+  "expected": 0.56,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7908653a83daaec93b8f0ca153fcdfe637788ed00fa0596cde779459a75e44b6"
+ },
+ "spirit_chaser-L0-0030-ref": {
+  "bytes": 77787,
+  "duration": 0.52,
+  "expected": 0.52,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c132ecd52ece5ce760323a66896b8476b923d60a7c56ced421b87bd12785108d"
+ },
+ "spirit_chaser-L0-0031-ref": {
+  "bytes": 198815,
+  "duration": 1.92,
+  "expected": 1.92,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9cb0a43ee412b7e9df9d0949673e5e6a0c83bf48693f6523ea45b4d747bd0865"
+ },
+ "spirit_chaser-L0-0032-ref": {
+  "bytes": 105939,
+  "duration": 1.04,
+  "expected": 1.04,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "dde483b52ec77202e871dcd22175e30852ccf909656cd4d5f0009b561738f45c"
+ },
+ "spirit_chaser-L0-0036-ref": {
+  "bytes": 110109,
+  "duration": 1.36,
+  "expected": 1.36,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5ca2502c5b68c5eb4236965339d8eef2346d137130133b8c96bbb596b2b70afb"
+ },
+ "spirit_chaser-L0-0037-ref": {
+  "bytes": 512137,
+  "duration": 5.04,
+  "expected": 5.04,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "71c119c464cee64bd735c21d2046c2f797bf9e923620c354753ecfc7804c2b72"
+ },
+ "spirit_chaser-L0-0040-ref": {
+  "bytes": 63356,
+  "duration": 0.56,
+  "expected": 0.56,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "99154947eabdd20f525a4b806448e72d2c592885cc6851feb0857a1237ecc2bf"
+ },
+ "spirit_chaser-L0-0042-ref": {
+  "bytes": 172391,
+  "duration": 1.56,
+  "expected": 1.56,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "220479655b59e8478baa6a5fe070d6af148d7f70f13296cfbe391113771e1e95"
+ },
+ "spirit_chaser-L0-0047-ref": {
+  "bytes": 53796,
+  "duration": 0.96,
+  "expected": 0.96,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "884ad529ebb2ebb3983ecd3797dc26aed29071beabc95af5fcd61c49ac361251"
+ },
+ "spirit_chaser-L0-0048-ref": {
+  "bytes": 921852,
+  "duration": 29.88,
+  "expected": 29.88,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "99a58c0448da7ac324301dd6f0848179c26cdb329874756070e0b15cdd68d6f1"
+ },
+ "spirit_chaser-L0-0051-ref": {
+  "bytes": 84812,
+  "duration": 1.52,
+  "expected": 1.52,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "3270fe262be42aa6b9c7b370f7261d3b2ae5e239367b8008f5f723a7650ed55b"
+ },
+ "spirit_chaser-L0-0052-ref": {
+  "bytes": 287540,
+  "duration": 8.12,
+  "expected": 8.12,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "51082ff2e1462794527ac0cadcf36feed95d5ac68c03849ed31efc4bb3e2d44c"
+ },
+ "spirit_chaser-L0-0058-ref": {
+  "bytes": 76219,
+  "duration": 0.76,
+  "expected": 0.76,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "8f2769ef6c238375cc7470867012b003d36d50c050a6752e10345af5a9953713"
+ },
+ "spirit_chaser-L0-0060-ref": {
+  "bytes": 51986,
+  "duration": 0.48,
+  "expected": 0.48,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e8429d26f124f0a3127f1b1a77fd967dd5d6ee8e7d278a51e4fc749f3f7ea381"
+ },
+ "spirit_chaser-L0-0063-ref": {
+  "bytes": 60905,
+  "duration": 0.68,
+  "expected": 0.68,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "11f657d3f7be7b01700a5dbfa1b30c5a5fcbc9a2acfab7dbf402e37f259ac453"
+ },
+ "spirit_chaser-L0-0064-ref": {
+  "bytes": 146422,
+  "duration": 1.16,
+  "expected": 1.16,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "11b4802be0d86c7490ce1fa4191715009ecdae281d85ddc5ee9ec4c522e232c5"
+ },
+ "spirit_chaser-L0-0065-ref": {
+  "bytes": 150356,
+  "duration": 1.4,
+  "expected": 1.4,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5ab0c51315d0c7d0778eccdfa3998de404a0344a7df171dcc4db02229afc1f69"
+ },
+ "spirit_chaser-L0-0067-ref": {
+  "bytes": 58202,
+  "duration": 0.48,
+  "expected": 0.48,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "68ffc7242baa241a027f84bec95cce48bf63da24550761cf633156f948e434e0"
+ },
+ "spirit_chaser-L0-0071-ref": {
+  "bytes": 422872,
+  "duration": 3.72,
+  "expected": 3.72,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "6f0d3e990a27eec166309366c2b96349eeb431c4caac4f08ee6be80413e9ddb3"
+ },
+ "spirit_chaser-L0-0073-ref": {
+  "bytes": 69062,
+  "duration": 0.8,
+  "expected": 0.8,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "355b9fc1f4427b6a3a65fb090c0b4dda9b7ac82fb0b8cefa268f1402b965d7c8"
+ },
+ "spirit_chaser-L0-0075-ref": {
+  "bytes": 132985,
+  "duration": 3.08,
+  "expected": 3.08,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5c60cf378f3cdbc44ba21098604ae13963bee061dd9985da1d6dfb0eefee0f82"
+ },
+ "spirit_chaser-L1-0000-ref": {
+  "bytes": 637750,
+  "duration": 17.770333,
+  "expected": 17.76,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7d4ba1a600f0109788753f763307fefa3999531a571cbfbea6cbd7b71e1d20c9"
+ },
+ "spirit_chaser-L1-0001-ref": {
+  "bytes": 608001,
+  "duration": 11.52,
+  "expected": 11.52,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "f023dbf815654e6757a8824d8f9b75f261376c1572a3955d6dd7a487e3ee6db3"
+ },
+ "spirit_chaser-L1-0002-ref": {
+  "bytes": 2322923,
+  "duration": 30.56,
+  "expected": 30.56,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "3bee098be26f0a275a516ca10b549d69b9739ca0d1d02453d287af854d6eb9ca"
+ },
+ "spirit_chaser-L1-0003-ref": {
+  "bytes": 664696,
+  "duration": 9.36,
+  "expected": 9.36,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "6f69430b93d1d0b06636510c742a81ef28d62862e65094ec8ef1373cbd7fc2e0"
+ },
+ "spirit_chaser-L1-0004-ref": {
+  "bytes": 493137,
+  "duration": 5.2,
+  "expected": 5.2,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c38375bb535468d54c41eb1b43f6c356924f14c7a11161275c21de4f28e75f3a"
+ },
+ "spirit_chaser-L1-0005-ref": {
+  "bytes": 1172103,
+  "duration": 15.0,
+  "expected": 15.0,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "0d5da76d7c28cd12caf1c2750ab97ee39e916fb59e2b00ab44e04e4e19851cef"
+ },
+ "spirit_chaser-L1-0006-ref": {
+  "bytes": 1248165,
+  "duration": 12.2,
+  "expected": 12.2,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "522a7459ecf184e77cc1251c92bdc5c3903b74c61be486161d572fdd480f0a09"
+ },
+ "spirit_chaser-L1-0007-ref": {
+  "bytes": 783524,
+  "duration": 8.04,
+  "expected": 8.04,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c782865f43629d4dee54d7940adde108fbaa762e03a4161874470c236ca9bcd3"
+ },
+ "spirit_chaser-L1-0008-ref": {
+  "bytes": 1217680,
+  "duration": 13.16,
+  "expected": 13.16,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "798c18b635b3333c11d708798d6801f2978960e961011dbc96e70f26665edc50"
+ },
+ "spirit_chaser-L1-0011-ref": {
+  "bytes": 720194,
+  "duration": 14.08,
+  "expected": 14.08,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "bef42b8e8285ca1c467fa9780eade2bc9954325e6897c8cedd595f4c5fa87aa1"
+ },
+ "spirit_chaser-L1-0012-ref": {
+  "bytes": 739937,
+  "duration": 7.16,
+  "expected": 7.16,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "affab4a66c74285dda09600166f89eb6c29607ed1a734d2ba2b3ecccd69db2aa"
+ },
+ "spirit_chaser-L1-0013-ref": {
+  "bytes": 294287,
+  "duration": 4.16,
+  "expected": 4.16,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "cd30132a35048481e8e76aa181ad470b1cebfded145ff29984705cfb39ad0682"
+ },
+ "spirit_chaser-L1-0014-ref": {
+  "bytes": 1533539,
+  "duration": 24.32,
+  "expected": 24.32,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "1db19f98211bab930f5c40884063ac7dcf0050d0caf107fb5da1da58979659b7"
+ },
+ "spirit_chaser-L1-0015-ref": {
+  "bytes": 208554,
+  "duration": 5.16,
+  "expected": 5.16,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "4abc5b3e38a224d9defd1bdfcf85d59328cd2af8f1fab1f0f59b9a257f07c54b"
+ },
+ "spirit_chaser-L1-0016-ref": {
+  "bytes": 897652,
+  "duration": 44.28,
+  "expected": 44.28,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9d766daeccf67650e5bc42cfca602a5d601ba232dee7ec6439301b802f62a055"
+ },
+ "spirit_chaser-L2-0000-ref": {
+  "bytes": 4726390,
+  "duration": 74.410333,
+  "expected": 74.4,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "fa0f8b5810504113c7c80c98d9cfb469b3da4dd4a642c53696290deec006bad1"
+ },
+ "spirit_chaser-L2-0001-ref": {
+  "bytes": 5124000,
+  "duration": 61.0,
+  "expected": 61.0,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "2031a0acbfaea264ffc3ee2b1dae0cb0027c59b71401a4a7212dd602c9224697"
+ },
+ "spirit_chaser-L2-0002-ref": {
+  "bytes": 4538462,
+  "duration": 87.04,
+  "expected": 87.04,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "ced1682bf76999154a7246323c8eaf82072b7d0fcb076976c7db8ce57fa98eff"
+ },
+ "spirit_chaser-L2-0003-ref": {
+  "bytes": 897652,
+  "duration": 44.28,
+  "expected": 44.28,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9d766daeccf67650e5bc42cfca602a5d601ba232dee7ec6439301b802f62a055"
+ },
+ "spirit_chaser-L3-0000-ref": {
+  "bytes": 15292656,
+  "duration": 266.730333,
+  "expected": 266.72,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e702c68babe5cc98f59b18531868e31f057de4e8c210107ae7c5bba400bfb8ec"
+ },
+ "spirit_chaser-L4-0000-ref": {
+  "bytes": 15292656,
+  "duration": 266.730333,
+  "expected": 266.72,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e702c68babe5cc98f59b18531868e31f057de4e8c210107ae7c5bba400bfb8ec"
+ },
+ "trip_to_the_moon-L0-0001-ref": {
+  "bytes": 7840819,
+  "duration": 76.375011,
+  "expected": 76.375,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "dbf86a1b3a2b596903b7d5989f00d0d3dab3bb40f5ac7e2490ed0ca5db7595fd"
+ },
+ "trip_to_the_moon-L0-0002-ref": {
+  "bytes": 349841,
+  "duration": 3.291995,
+  "expected": 3.292,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "8ef70b9a0c16c5ae9c750f4c49689245b910a2bb12db36fea799172df2fd58fc"
+ },
+ "trip_to_the_moon-L0-0003-ref": {
+  "bytes": 4002464,
+  "duration": 45.0,
+  "expected": 45.0,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9908900283353fab6444dcec65e4b8635a5d8f3bd82b058ecd93e00462291d92"
+ },
+ "trip_to_the_moon-L0-0004-ref": {
+  "bytes": 1443334,
+  "duration": 25.125011,
+  "expected": 25.125,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "f2a772a9bc68eab93707491706cf18f8cc3d221b333e5e268ce0c01d10da2384"
+ },
+ "trip_to_the_moon-L0-0005-ref": {
+  "bytes": 105195,
+  "duration": 1.416667,
+  "expected": 1.416,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9dcb24c7b5632bb5735eb1d91bb782246e34269efdec0f37556982f53a90fe20"
+ },
+ "trip_to_the_moon-L0-0006-ref": {
+  "bytes": 1901144,
+  "duration": 29.959002,
+  "expected": 29.959,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "0d95d9ca16fe716faed94a98b9f3fb99e5da4bb306b020bab18ec94cbacec3cf"
+ },
+ "trip_to_the_moon-L0-0007-ref": {
+  "bytes": 3127723,
+  "duration": 51.375011,
+  "expected": 51.375,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "f9ae6ef75f342a06938f957f9a7bd88ab8732e6afdfce480f18777809cc0670b"
+ },
+ "trip_to_the_moon-L0-0008-ref": {
+  "bytes": 380579,
+  "duration": 4.125011,
+  "expected": 4.125,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5380b55fecd6f4fb22fc0eff63acb0e54246bdd7ca085124180fccb7f9625c6c"
+ },
+ "trip_to_the_moon-L0-0009-ref": {
+  "bytes": 111194,
+  "duration": 1.416667,
+  "expected": 1.416,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "28a20085f9e888d02c2ec06bb12baf33a72a7c80ba42707ac4f504870776c2ec"
+ },
+ "trip_to_the_moon-L0-0010-ref": {
+  "bytes": 1213924,
+  "duration": 15.833991,
+  "expected": 15.834,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "dc177af0bd197047768590bb5cb1e4a6cc8772fbfa6863d30b0b1bd5b15a63c8"
+ },
+ "trip_to_the_moon-L0-0011-ref": {
+  "bytes": 108608,
+  "duration": 1.5,
+  "expected": 1.5,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "0b97ba75bb50f64d10f6a713f10001dabba2e98720498e9fe211947dce392a81"
+ },
+ "trip_to_the_moon-L0-0012-ref": {
+  "bytes": 135221,
+  "duration": 1.708333,
+  "expected": 1.708,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c546b58e06e4374516106fe56e7a21512c8c1ae4eefbe43c9a0550c04a76995d"
+ },
+ "trip_to_the_moon-L0-0013-ref": {
+  "bytes": 99569,
+  "duration": 0.791995,
+  "expected": 0.792,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "8aca800f4dd7d34d71f95cd60c294536fba5aa0251d634923fae8e98683efe8c"
+ },
+ "trip_to_the_moon-L0-0014-ref": {
+  "bytes": 190973,
+  "duration": 2.125011,
+  "expected": 2.125,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "10bef1a588cff6b62accd004ca03b9bd68f24560d442ed8b1dc643fdc56126b5"
+ },
+ "trip_to_the_moon-L0-0015-ref": {
+  "bytes": 360304,
+  "duration": 10.708333,
+  "expected": 10.708,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "0bc1e178a9928e8e6360b15f176a212d4e9503e9f61932ef5afd6380005dcd49"
+ },
+ "trip_to_the_moon-L0-0016-ref": {
+  "bytes": 305671,
+  "duration": 6.958005,
+  "expected": 6.958,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "8252ecbfcc146d9de8e5040d6c7da99ddd9fb2865ddb7d80a78b4fcc03140911"
+ },
+ "trip_to_the_moon-L0-0017-ref": {
+  "bytes": 2301923,
+  "duration": 28.75,
+  "expected": 28.75,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7455731d2dd1b8555e86f65baa73781ec90e4a4a8a6e5ecc9e2fb5e4d6d44ea3"
+ },
+ "trip_to_the_moon-L0-0018-ref": {
+  "bytes": 9796189,
+  "duration": 113.709002,
+  "expected": 113.709,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "0b7d2772d6709bf7dccb68921e7ee93555d03c8425f1017a5fc03f9ad1c0b516"
+ },
+ "trip_to_the_moon-L0-0019-ref": {
+  "bytes": 4019183,
+  "duration": 52.791667,
+  "expected": 52.791,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "36b93dfa231c60b77e6030f4ac497dcbbb7bf62ccc73bfdafff54b6319772de2"
+ },
+ "trip_to_the_moon-L0-0020-ref": {
+  "bytes": 472712,
+  "duration": 6.5,
+  "expected": 6.5,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c4eb71684eb7fa1f40dbbff116ee9ade97105ac667adc566e44c51bede748d10"
+ },
+ "trip_to_the_moon-L0-0021-ref": {
+  "bytes": 3070615,
+  "duration": 26.167007,
+  "expected": 26.167,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "01115c25d53cb48ee8fa5c57a630dcaf8e4663eb204723a72cf611dcaa0b07ec"
+ },
+ "trip_to_the_moon-L0-0023-ref": {
+  "bytes": 597405,
+  "duration": 6.041995,
+  "expected": 6.042,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "ba349ca63e0f075001e097f19d07b8b43df90d490aafd7b90a839d31338419f5"
+ },
+ "trip_to_the_moon-L0-0025-ref": {
+  "bytes": 115012,
+  "duration": 1.875011,
+  "expected": 1.875,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "498b2fefe043e3dd1ee8b4e0e527e7e95a21675d395f69692636e93a1d63bed8"
+ },
+ "trip_to_the_moon-L0-0026-ref": {
+  "bytes": 1837622,
+  "duration": 25.916667,
+  "expected": 25.916,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e0afa7ff33778b1defed54311eba25d0f9a582fba40f94389df795527e49b046"
+ },
+ "trip_to_the_moon-L0-0027-ref": {
+  "bytes": 127462,
+  "duration": 2.459002,
+  "expected": 2.459,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "36e955d4c88fa43f0fc8cdbbf5aae3ffc01d1592be5355e1b2a8e9498335f8ec"
+ },
+ "trip_to_the_moon-L0-0029-ref": {
+  "bytes": 39089,
+  "duration": 0.583333,
+  "expected": 0.583,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5a0c510e38a10e9d8c8b97586efbeb1e5aaa55302663fa850908306763e60697"
+ },
+ "trip_to_the_moon-L0-0030-ref": {
+  "bytes": 553326,
+  "duration": 8.583333,
+  "expected": 8.583,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "f359db70803fc34ee92236d25152a9b79cea2c947148377254e7f79cc2983144"
+ },
+ "trip_to_the_moon-L0-0032-ref": {
+  "bytes": 869107,
+  "duration": 11.333333,
+  "expected": 11.333,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "6a17b0c382f8e485febf504056475db34f6d7326a160a354285176b33399ee94"
+ },
+ "trip_to_the_moon-L0-0033-ref": {
+  "bytes": 1815472,
+  "duration": 17.5,
+  "expected": 17.5,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e1c2fac1e3c32b2d4acd44c6f2bfc625969fce6492f773e873461f6902417234"
+ },
+ "trip_to_the_moon-L0-0035-ref": {
+  "bytes": 956620,
+  "duration": 12.458005,
+  "expected": 12.458,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7c0e4c69519eb3bc67ebe325b065b9eb90ed09fc775ced4f6c72e21d4c76b2da"
+ },
+ "trip_to_the_moon-L1-0001-ref": {
+  "bytes": 7840819,
+  "duration": 76.375011,
+  "expected": 76.375,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "dbf86a1b3a2b596903b7d5989f00d0d3dab3bb40f5ac7e2490ed0ca5db7595fd"
+ },
+ "trip_to_the_moon-L1-0002-ref": {
+  "bytes": 349841,
+  "duration": 3.291995,
+  "expected": 3.292,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "8ef70b9a0c16c5ae9c750f4c49689245b910a2bb12db36fea799172df2fd58fc"
+ },
+ "trip_to_the_moon-L1-0003-ref": {
+  "bytes": 4002464,
+  "duration": 45.0,
+  "expected": 45.0,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "9908900283353fab6444dcec65e4b8635a5d8f3bd82b058ecd93e00462291d92"
+ },
+ "trip_to_the_moon-L1-0004-ref": {
+  "bytes": 1549592,
+  "duration": 26.541667,
+  "expected": 26.541,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "add9e28b8e447c4fd7b6bb48b49f1c4af28a9ecf81d291f648fa514936a6d577"
+ },
+ "trip_to_the_moon-L1-0005-ref": {
+  "bytes": 1901144,
+  "duration": 29.959002,
+  "expected": 29.959,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "0d95d9ca16fe716faed94a98b9f3fb99e5da4bb306b020bab18ec94cbacec3cf"
+ },
+ "trip_to_the_moon-L1-0006-ref": {
+  "bytes": 3127723,
+  "duration": 51.375011,
+  "expected": 51.375,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "f9ae6ef75f342a06938f957f9a7bd88ab8732e6afdfce480f18777809cc0670b"
+ },
+ "trip_to_the_moon-L1-0007-ref": {
+  "bytes": 380579,
+  "duration": 4.125011,
+  "expected": 4.125,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5380b55fecd6f4fb22fc0eff63acb0e54246bdd7ca085124180fccb7f9625c6c"
+ },
+ "trip_to_the_moon-L1-0009-ref": {
+  "bytes": 852129,
+  "duration": 19.790998,
+  "expected": 19.791,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7c4d6de44f5e09d35b2a68e6afebe4707de2fd3d92c5722ca4fab33e22be0409"
+ },
+ "trip_to_the_moon-L1-0010-ref": {
+  "bytes": 2301923,
+  "duration": 28.75,
+  "expected": 28.75,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7455731d2dd1b8555e86f65baa73781ec90e4a4a8a6e5ecc9e2fb5e4d6d44ea3"
+ },
+ "trip_to_the_moon-L1-0011-ref": {
+  "bytes": 9796189,
+  "duration": 113.709002,
+  "expected": 113.709,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "0b7d2772d6709bf7dccb68921e7ee93555d03c8425f1017a5fc03f9ad1c0b516"
+ },
+ "trip_to_the_moon-L1-0013-ref": {
+  "bytes": 472712,
+  "duration": 6.5,
+  "expected": 6.5,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c4eb71684eb7fa1f40dbbff116ee9ade97105ac667adc566e44c51bede748d10"
+ },
+ "trip_to_the_moon-L1-0014-ref": {
+  "bytes": 3070615,
+  "duration": 26.167007,
+  "expected": 26.167,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "01115c25d53cb48ee8fa5c57a630dcaf8e4663eb204723a72cf611dcaa0b07ec"
+ },
+ "trip_to_the_moon-L1-0017-ref": {
+  "bytes": 1949451,
+  "duration": 25.791667,
+  "expected": 25.791,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "5f81b91d938fdf3660489aa3f6718380f45e857b08768902d6e1083c24b91d52"
+ },
+ "trip_to_the_moon-L1-0018-ref": {
+  "bytes": 1815472,
+  "duration": 17.5,
+  "expected": 17.5,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e1c2fac1e3c32b2d4acd44c6f2bfc625969fce6492f773e873461f6902417234"
+ },
+ "trip_to_the_moon-L1-0019-ref": {
+  "bytes": 4912821,
+  "duration": 42.709002,
+  "expected": 42.709,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "29f6b33f3ffbb0d77901b386930aa49164aea94ba5f01fd373a66491ee657a43"
+ },
+ "trip_to_the_moon-L2-0000-ref": {
+  "bytes": 19686760,
+  "duration": 226.917007,
+  "expected": 226.917,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "98e2215005bc942ef534d30352c0e2d083eaa21e80180ae09c090e978d0f98ed"
+ },
+ "trip_to_the_moon-L2-0001-ref": {
+  "bytes": 1549592,
+  "duration": 26.541667,
+  "expected": 26.541,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "add9e28b8e447c4fd7b6bb48b49f1c4af28a9ecf81d291f648fa514936a6d577"
+ },
+ "trip_to_the_moon-L2-0002-ref": {
+  "bytes": 5425149,
+  "duration": 85.459002,
+  "expected": 85.459,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "059f05b6ec6ad836e659dd64f4cd0f3edecb12c941780a91df845ac09ea2dc52"
+ },
+ "trip_to_the_moon-L2-0003-ref": {
+  "bytes": 2491845,
+  "duration": 41.040998,
+  "expected": 41.041,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "d74721f330b4ddcc0e337b742fe795123e5b54512d3cf9b7be8f1ee5796c7bdf"
+ },
+ "trip_to_the_moon-L2-0004-ref": {
+  "bytes": 12115959,
+  "duration": 142.459002,
+  "expected": 142.459,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "50b92650d5bf3903fdabb74671fc99c18f4a51c284cd46e4a53c132ec9da3ed9"
+ },
+ "trip_to_the_moon-L2-0005-ref": {
+  "bytes": 10461268,
+  "duration": 113.5,
+  "expected": 113.5,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "c312a49810590bf5482ed72dd51bf988d06c55b6ee7bbe0ec0b06a5ceb981c0b"
+ },
+ "trip_to_the_moon-L2-0006-ref": {
+  "bytes": 4523417,
+  "duration": 63.041667,
+  "expected": 63.041,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "b46de144a832ceaed890eb6cf67c095c5215548fdbf4b5dcf8a9da95a5b05065"
+ },
+ "trip_to_the_moon-L2-0007-ref": {
+  "bytes": 6730678,
+  "duration": 60.209002,
+  "expected": 60.209,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "4fbf6bfd8169d54406972895cc6e321739f18a807c1a359d80c736ed248b2b48"
+ },
+ "trip_to_the_moon-L2-0008-ref": {
+  "bytes": 956620,
+  "duration": 12.458005,
+  "expected": 12.458,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "7c0e4c69519eb3bc67ebe325b065b9eb90ed09fc775ced4f6c72e21d4c76b2da"
+ },
+ "trip_to_the_moon-L3-0000-ref": {
+  "bytes": 29165431,
+  "duration": 379.958333,
+  "expected": 379.958,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "0107fb7eb8c3f7ef149c93c8872b599db3bab3bd370408d18748aeb34588dd29"
+ },
+ "trip_to_the_moon-L3-0001-ref": {
+  "bytes": 34820116,
+  "duration": 391.667007,
+  "expected": 391.667,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "af2e130955754c2d8895864dc5846262cb023789e4fc1e3cad91f01fef70e2e5"
+ },
+ "trip_to_the_moon-L4-0000-ref": {
+  "bytes": 63988180,
+  "duration": 771.625011,
+  "expected": 771.625,
+  "has_audio": true,
+  "ok": true,
+  "sha256": "e9be0cc340beb3b6c5d744a15160eaafd44a58a81cbe838a652324743720ee4e"
+ }
+}

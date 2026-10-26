@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0002",
+  "start": 30.5,
+  "end": 32.292,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.792,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 2,
+   "start": 0.0,
+   "end": 1.792,
+   "description": "Medium shot of a puffin looking at a flower between train tracks, tracking right."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.792
+  }
+ ]
+}

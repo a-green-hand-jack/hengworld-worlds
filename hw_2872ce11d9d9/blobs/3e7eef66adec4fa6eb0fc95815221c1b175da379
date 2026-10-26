@@ -1,0 +1,4 @@
+import pathlib,sys
+vals=pathlib.Path(sys.argv[1]).read_text().split()
+assert len(vals)==8 and all(v.isdigit() for v in vals)
+print('SUT output check: PASS')

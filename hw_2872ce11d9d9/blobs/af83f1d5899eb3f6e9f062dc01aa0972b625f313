@@ -1,0 +1,7 @@
+# Review of task-maker PR #4 head f51246a
+
+**Decision: approved.**
+
+The corrected answer key and ground truth both equal the reference counts `[6,4,6,4,4,1,2,6]`. From a clean checkout I ran the recorded SUT command and reproduced `6,5,6,5,2,1,3,6`; the tab-separated line produces 2 because the unchanged implementation splits only on literal spaces. The recorded score correctly marks lines 2, 4, 5, and 7 wrong and reports accuracy 4/8 = 0.5.
+
+I ran the executable checks: ground truth, reference comparison, SUT output, answer-free package scan, and score; all passed. The task package contains no answer key. The corpus decision includes source evidence and SHA-256, and the protocol matches the source README/objective. Adopter feedback before publication reported no release, so adoption was pending and does not block this release approval.

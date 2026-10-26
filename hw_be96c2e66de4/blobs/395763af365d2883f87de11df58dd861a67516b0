@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0036",
+  "start": 129.167,
+  "end": 135.458,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 6.291,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 36,
+   "start": -0.0,
+   "end": 6.291,
+   "description": "Close-up of C1 looking, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 6.291
+  }
+ ],
+ "task_id": "domini_canes-L0-0036-scr",
+ "descriptions_available": true
+}

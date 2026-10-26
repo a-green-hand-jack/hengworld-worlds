@@ -1,0 +1,5 @@
+Validation run against task-maker key at e1e648689b84; scores of the real run follow once executor's runs/ exists (not run yet).
+
+## Real run
+Command: `python3 -I scores/score.py <key> runs/output.txt` -> scores/scores.json
+Inputs: executor runs/output.txt at 36220bb78784d6935ed37a2cb2b9c58052fdda07; key from task-maker at e1e648689b841e3ac8b3a20ea49e034485ae38f0. Deliverability check passed first (see "deliverable" in scores.json). No paid resource.

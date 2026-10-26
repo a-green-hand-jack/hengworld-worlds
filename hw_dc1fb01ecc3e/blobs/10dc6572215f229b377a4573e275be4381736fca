@@ -1,0 +1,10 @@
+{
+ "identical_is_1.0": true,
+ "no_trailing_newline_holds": true,
+ "damage_1_lines_acc": true,
+ "damage_4_lines_acc": true,
+ "damage_8_lines_acc": true,
+ "all_wrong_0": true,
+ "truncated_undeliverable": true,
+ "extra_text_undeliverable": true
+}

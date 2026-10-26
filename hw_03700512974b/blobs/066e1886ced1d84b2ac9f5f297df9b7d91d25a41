@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0067",
+  "start": 191.44,
+  "end": 191.92,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.48,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 67,
+   "start": 0.0,
+   "end": 0.48,
+   "description": "Medium close-up of C1 striking forward with a blade, zoom in."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.48
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0067-ref",
+ "descriptions_available": true
+}

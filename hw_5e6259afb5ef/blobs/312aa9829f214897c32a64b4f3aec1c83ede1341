@@ -1,0 +1,8 @@
+{"assignment_schema":1,
+"objective":"CrewCut: Screenplay-rich and Synopsis tracks for the Caminandes 3 sample (steward#1)",
+"items":[
+{"owner":"task-maker","work":"All generation and packaging: film tables, per-shot detail, synopses, reference images (text-only requests, saved request bodies), description corrections, 12 -rich/-syn packages, updated -scr shotlists, tasks/dev_new_tracks.jsonl, provenance-check implementation + master-hash verification + per-image results, the form/leak/monotonic checks, review pictures, call log and cost breakdown with per-shot/per-image averages and the 6-film extrapolation formula, byte-identical repack check. Paid draft/check/image calls are made once, here.","paths":["annotations/caminandes3/","references/caminandes3/","packages/","tasks/dev_new_tracks.jsonl","review/","provenance/","cost/"]},
+{"owner":"auditor","work":"Independent re-check: own look at >=20% of shots (fixed seed by film and shot number), independent re-run of the check model on them, judgment of every reference image, repack reproducibility, compliance with the protocol, cost of its own calls (counted in the USD 30 cap), approval.","paths":["audit/"]},
+{"owner":"steward","work":"Brief, assignment, protocol answers, and the list of questions for the maintainer (reference-image granularity, frame count, disputed corrections, gaps).","paths":["maintainer_questions.md"]},
+{"owner":"curator","work":"Record that the Caminandes 3 master used is the pinned dataset item, with its checksum and the open license reading, as data; no other film.","paths":["corpus/"]}
+]}

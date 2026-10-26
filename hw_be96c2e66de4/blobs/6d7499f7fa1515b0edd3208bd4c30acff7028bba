@@ -1,0 +1,43 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0002",
+  "start": 150.884,
+  "end": 169.202,
+  "shots": 3,
+  "lines": 0
+ },
+ "duration": 18.318,
+ "cuts": [
+  13.147,
+  16.25
+ ],
+ "shots": [
+  {
+   "index": 10,
+   "start": 0.0,
+   "end": 13.147,
+   "description": "Medium shot of C1 leaving through the curtained doorway, static camera."
+  },
+  {
+   "index": 11,
+   "start": 13.147,
+   "end": 16.25,
+   "description": "Medium shot of C1 walking down a sidewalk and stopping to look into a shop window, static."
+  },
+  {
+   "index": 12,
+   "start": 16.25,
+   "end": 18.318,
+   "description": "Extreme close-up of a sweet store display sitting on a shelf, static shot."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 18.318
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0002-ref",
+ "descriptions_available": true
+}

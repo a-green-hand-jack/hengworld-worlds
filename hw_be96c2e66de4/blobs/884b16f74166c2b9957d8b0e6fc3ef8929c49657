@@ -1,0 +1,5 @@
+#!/bin/bash
+# runs every Coffee Run package once, 3 in parallel; a task whose output dir exists with manifest.json is skipped (never silently re-run)
+. /hutian/repo/runs/pipeline/env.sh
+P=/hutian/deliv/d1/packages; O=/hutian/runs_out
+ls $P | grep '^coffee_run-' | xargs -P 3 -I{} bash -c '[ -f '$O'/{}/manifest.json ] || python3 /hutian/repo/runs/pipeline/t0.py '$P'/{} /hutian/deliv/clips '$O'/{} > '$O'/{}.stdout 2>&1; echo HUTIAN_DONE {}'

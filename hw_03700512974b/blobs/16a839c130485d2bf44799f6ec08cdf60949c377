@@ -1,0 +1,99 @@
+{
+ "segment": {
+  "id": "caminandes3-L2-0002",
+  "start": 56.583,
+  "end": 80.125,
+  "shots": 11,
+  "lines": 0
+ },
+ "duration": 23.542,
+ "cuts": [
+  5.667,
+  9.834,
+  10.834,
+  11.417,
+  13.5,
+  17.292,
+  18.042,
+  18.875,
+  21.167,
+  21.959
+ ],
+ "shots": [
+  {
+   "index": 15,
+   "start": 0.0,
+   "end": 5.667,
+   "description": "Medium shot of C1 waking up and looking around, static."
+  },
+  {
+   "index": 16,
+   "start": 5.667,
+   "end": 9.834,
+   "description": "Medium shot of C1 riding in a mine cart inside a cave, static camera."
+  },
+  {
+   "index": 17,
+   "start": 9.834,
+   "end": 10.834,
+   "description": "Medium close-up of C1 and another animal looking excitedly while riding a vehicle, static camera."
+  },
+  {
+   "index": 18,
+   "start": 10.834,
+   "end": 11.417,
+   "description": "Wide shot of roller coaster tracks running through a dark cave, tracking forward."
+  },
+  {
+   "index": 19,
+   "start": 11.417,
+   "end": 13.5,
+   "description": "Wide shot of C1 riding a minecart crashing through wood structures, track-right."
+  },
+  {
+   "index": 20,
+   "start": 13.5,
+   "end": 17.292,
+   "description": "Medium shot of C1 riding a minecart, static."
+  },
+  {
+   "index": 21,
+   "start": 17.292,
+   "end": 18.042,
+   "description": "Medium shot of C1 roaring, static."
+  },
+  {
+   "index": 22,
+   "start": 18.042,
+   "end": 18.875,
+   "description": "Medium shot of C1 dodging falling planks, static camera."
+  },
+  {
+   "index": 23,
+   "start": 18.875,
+   "end": 21.167,
+   "description": "Medium close-up of C1 standing and eating fruit from a bunch, static."
+  },
+  {
+   "index": 24,
+   "start": 21.167,
+   "end": 21.959,
+   "description": "Wide shot of a mine tunnel moving forward rapidly, push in."
+  },
+  {
+   "index": 25,
+   "start": 21.959,
+   "end": 23.542,
+   "description": "Wide shot of a mineshaft collapsing, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 23.542
+  }
+ ],
+ "task_id": "caminandes3-L2-0002-ref",
+ "descriptions_available": true
+}

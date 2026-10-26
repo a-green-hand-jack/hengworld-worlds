@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0265",
+  "start": 2055.387,
+  "end": 2056.288,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.901,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 265,
+   "start": -0.0,
+   "end": 0.901,
+   "description": "Wide shot of C1 and C2 talking inside a garage, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.901
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0265-ref",
+ "descriptions_available": true
+}

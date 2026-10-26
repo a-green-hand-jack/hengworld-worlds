@@ -1,0 +1,88 @@
+"""Step 4: reference images from text only; provenance check (pHash vs all 6 dev films, incl. mirror) and a vision check; max 3 attempts per image."""
+import sys; sys.path.insert(0, "scripts")
+from lib import *
+from resolve import *
+from phash import hash_gray32, hamming
+import requests
+from PIL import Image
+import numpy as np
+
+REF = ROOT / "references" / FILM
+film = json.load(open(ANN / "film.json"))
+BLOCK = re.compile(r"caminandes|koro|\boti\b|llamigos|\bpina\b|blender", re.I)
+FILMS = ["caminandes3", "coffee_run", "spirit_chaser", "domini_canes", "sherlock_jr", "trip_to_the_moon"]
+FP = {f: json.load(open(DS / "annotations" / f / "fingerprint_video.json"))["hashes"] for f in FILMS}
+
+def img_hashes(path):
+    im = Image.open(path).convert("L").resize((32, 32), Image.BOX)
+    a = np.asarray(im, dtype=np.uint8)
+    return hash_gray32(a), hash_gray32(a[:, ::-1])
+
+def provenance(path):
+    h, hm = img_hashes(path); best = (65, None, None)
+    for f, hs in FP.items():
+        for j, x in enumerate(hs):
+            for tag, hh in (("plain", h), ("mirror", hm)):
+                d = hamming(hh, x)
+                if d < best[0]: best = (d, f, f"{j/2:.1f}s {tag}")
+    return {"min_hamming": best[0], "closest_film": best[1], "closest_at": best[2], "pass": best[0] > 10}
+
+def gen(prompt, aspect, tag):
+    base, tok = env("gemini-native")
+    body = {"contents": [{"role": "user", "parts": [{"text": prompt}]}], "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": aspect}}}
+    media = [p for c in body["contents"] for p in c["parts"] if set(p) - {"text"}]
+    assert not media, "request carries media"
+    (REF / "requests").mkdir(parents=True, exist_ok=True)
+    bj = json.dumps(body, sort_keys=True, ensure_ascii=False)
+    (REF / "requests" / f"{tag}.request.json").write_text(bj)
+    t0 = time.time(); err = None
+    for a in range(3):
+        try:
+            r = requests.post(f"{base}/v1beta/models/{IMG_MODEL}:generateContent", headers={"x-goog-api-key": tok, "content-type": "application/json"}, data=bj.encode(), timeout=600)
+            r.raise_for_status(); j = r.json()
+            parts = j["candidates"][0]["content"]["parts"]
+            data = next(base64.b64decode(p["inlineData"]["data"]) for p in parts if "inlineData" in p)
+            return data, j.get("usageMetadata"), j["candidates"][0].get("finishReason"), sha(bj), round(time.time() - t0, 1), r.json().get("modelVersion")
+        except Exception as e: err = e; time.sleep(10)
+    raise RuntimeError(err)
+
+def main():
+    REF.mkdir(parents=True, exist_ok=True)
+    items = [("character", c["id"], c["kind"], c["appearance"], "2:3") for c in film["characters"]] + [("place", p["id"], p["name"], p["description"], "16:9") for p in film["places"]]
+    mpath = REF / "manifest.json"
+    manifest = json.load(open(mpath)) if mpath.exists() else {"film_id": FILM, "model": IMG_MODEL, "fallback_used": False, "images": [], "failed": [], "granularity": "one image per character, one per place (first round, maintainer to confirm)"}
+    done = {m["id"] for m in manifest["images"]} | {m["id"] for m in manifest["failed"]}
+    for kind, id_, name, text, aspect in items:
+        if id_ in done: continue
+        if kind == "character":
+            prompt = f"Character design reference sheet: a single character, full body, standing and facing the viewer, on a plain neutral light-grey background, no text, no other characters. Visual style: {film['look']} The character is {name}. {text}"
+        else:
+            prompt = f"Atmospheric establishing image of a location, wide 16:9 composition, no characters, no animals, no text. Visual style: {film['look']} Location: {name}. {text}"
+        assert not BLOCK.search(prompt), prompt
+        attempts = []
+        for att in range(3):
+            tag = f"{kind}_{id_}_a{att+1}"
+            data, usage, fin, rsha, secs, mv = gen(prompt, aspect, tag)
+            fn = f"{kind}_{id_}.png" if True else None
+            tmp = REF / f"_{tag}.png"; tmp.write_bytes(data)
+            prov = provenance(tmp)
+            q = [f"Does this image match the text description? Description: {name}. {text}\nThe image should be {'a full-body character design on a plain neutral background, one character' if kind=='character' else 'a 16:9 location image with no characters'}. Reply JSON {{\"matches\": true|false, \"why\": \"...\"}}.", img_part_png(tmp)]
+            rec, v = call_json("reference-image-check", CHECK, q, {"film": FILM, "image": id_, "step": 4, "att": att})
+            att_rec = {"attempt": att + 1, "file_tmp": tmp.name, "png_sha256": sha(data), "request_sha256": rsha, "provenance": prov, "vision_check": v, "vision_call": rec["key"], "usage": usage, "finish_reason": fin, "seconds": secs}
+            attempts.append(att_rec)
+            append_log({"key": sha(rsha + str(att)), "purpose": "reference-image", "model": IMG_MODEL, "params": {"responseModalities": ["IMAGE"], "aspectRatio": aspect}, "prompt_sha256": sha(prompt), "prompt_text": prompt,
+                        "ctx": {"film": FILM, "image": id_, "attempt": att + 1, "request_body_sha256": rsha, "request_file": f"references/{FILM}/requests/{tag}.request.json"}, "response": f"image {sha(data)}", "usage": usage, "finish_reason": fin, "model_version": mv, "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
+            if prov["pass"] and v.get("matches"):
+                fnp = REF / fn; tmp.rename(fnp)
+                manifest["images"].append({"file": fn, "sha256": sha(data), "category": kind, "id": id_, "name": name, "prompt": prompt, "model": IMG_MODEL, "request_params": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": aspect}},
+                                           "request_has_media": False, "request_body_sha256": rsha, "provenance_check": {"passed": True, "min_hamming_incl_mirror": prov["min_hamming"], "closest": f"{prov['closest_film']} {prov['closest_at']}"},
+                                           "vision_check": v, "attempts": attempts})
+                break
+        else:
+            manifest["failed"].append({"id": id_, "category": kind, "prompt": prompt, "attempts": attempts})
+        json.dump(manifest, open(mpath, "w"), indent=1, ensure_ascii=False); print(id_, "ok" if any(m["id"] == id_ for m in manifest["images"]) else "FAILED", flush=True)
+
+def img_part_png(p):
+    return {"type": "image_url", "image_url": {"url": "data:image/png;base64," + base64.b64encode(Path(p).read_bytes()).decode()}}
+
+if __name__ == "__main__": main()

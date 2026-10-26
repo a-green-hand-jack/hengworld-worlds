@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0033",
+  "start": 112.292,
+  "end": 121.542,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 9.25,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 33,
+   "start": -0.0,
+   "end": 9.25,
+   "description": "Extreme wide shot of a vast crowd standing underneath a starry night sky, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 9.25
+  }
+ ],
+ "task_id": "domini_canes-L0-0033-ref",
+ "descriptions_available": true
+}

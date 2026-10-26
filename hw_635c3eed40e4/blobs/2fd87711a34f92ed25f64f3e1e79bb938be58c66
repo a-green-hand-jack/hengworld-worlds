@@ -1,0 +1,17 @@
+[
+ {
+  "type": "image",
+  "file": "work/still0.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Extreme close-up of credits showing, static.",
+  "used_in": "delivery.mp4",
+  "shot": 0
+ },
+ {
+  "type": "music",
+  "file": "work/music.mp3",
+  "model": "lyria-3.5",
+  "prompt": "Instrumental background score, no vocals, about 14 seconds, for a film whose shots are described as follows: Extreme close-up of credits showing, static.",
+  "used_in": "delivery.mp4"
+ }
+]

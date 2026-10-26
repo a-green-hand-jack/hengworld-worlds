@@ -1,0 +1,64 @@
+{
+ "segment": {
+  "id": "domini_canes-L1-0006",
+  "start": 107.333,
+  "end": 129.167,
+  "shots": 6,
+  "lines": 0
+ },
+ "duration": 21.834,
+ "cuts": [
+  2.292,
+  3.667,
+  4.959,
+  14.209,
+  14.959
+ ],
+ "shots": [
+  {
+   "index": 30,
+   "start": 0.0,
+   "end": 2.292,
+   "description": "Medium close-up of C1 standing and holding two glowing objects, static camera."
+  },
+  {
+   "index": 31,
+   "start": 2.292,
+   "end": 3.667,
+   "description": "Medium shot of a crowd of hooded figures holding candles, panning right."
+  },
+  {
+   "index": 32,
+   "start": 3.667,
+   "end": 4.959,
+   "description": "Medium shot of multiple hooded figures standing still while holding torches, truck right."
+  },
+  {
+   "index": 33,
+   "start": 4.959,
+   "end": 14.209,
+   "description": "Extreme wide shot of a vast crowd standing underneath a starry night sky, static."
+  },
+  {
+   "index": 34,
+   "start": 14.209,
+   "end": 14.959,
+   "description": "Extreme close-up of C1 fading in, static."
+  },
+  {
+   "index": 35,
+   "start": 14.959,
+   "end": 21.834,
+   "description": "Medium shot of C1 standing against the starry night sky and looking around, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 21.834
+  }
+ ],
+ "task_id": "domini_canes-L1-0006-scr",
+ "descriptions_available": true
+}

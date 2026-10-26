@@ -1,0 +1,10 @@
+# Round 2 (executor)
+- `descriptions.json` — 37 shot descriptions, model gemini-3.8-flash (+reasoning_effort none), CrewCut df54b3a `describe_film` unmodified. Drafts, not corrected by annotators.
+- `gemini_calls_attempt1.jsonl` (failed, kept), `gemini_calls_attempt2.jsonl` (used) — one line per request: purpose, model, usage as reported, finish_reason, reply.
+- `spend.json` — requests by purpose, tokens, cost status. `decisions.md` — decisions D1–D5.
+- `logged_run.py` — wraps openai `create()` only to log (and add `ROUND2_EXTRA_BODY`); command used:
+  `ROUND2_EXTRA_BODY='{"reasoning_effort":"none"}' CREWCUT_VLM_BASE_URL=$(ht-resource url gemini) CREWCUT_VLM_API_KEY=$HT_RESOURCE_TOKEN CREWCUT_VLM_MODEL=gemini-3.8-flash python -I logged_run.py describe <film_dir with master.ogv, shots.json> <log.jsonl>`
+- c components of the run `fixed-caminandes3-L1-0000-scr-T0-5e9dec`: cut F1 and the rest come from scorer (scores/); correspondence needs the judge, handed to scorer. Executor states no c value.
+
+## Status after steward#8 (Gemini calls belong to scorer; executor does not call Gemini)
+My 76 requests (spend.json) were made before that assignment and duplicate task-maker's round-1 describe/judge calls (49 requests). My `descriptions.json` is a second, independent draft, NOT the delivered descriptions; the delivered ones are task-maker's/scorer's. No further Gemini calls from executor. The 76 requests count against the world's 300 together with the others; the ledger is scorer's (scores/), where these should be added. D2 (thinking eats max_tokens) is useful evidence for the judge settings.

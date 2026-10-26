@@ -1,0 +1,89 @@
+{
+ "per_file": {
+  "attempt0-describe-requests.jsonl": {
+   "purpose": "shot-description",
+   "requests": 1,
+   "errors": 0,
+   "empty_reply": 1,
+   "prompt_tokens": 3386,
+   "completion_tokens": 0,
+   "total_tokens": 3502,
+   "cached_tokens": 0
+  },
+  "attempt0-judge-requests.jsonl": {
+   "purpose": "continuity-judge",
+   "requests": 1,
+   "errors": 0,
+   "empty_reply": 1,
+   "prompt_tokens": 8901,
+   "completion_tokens": 0,
+   "total_tokens": 8901,
+   "cached_tokens": 0
+  },
+  "attempt1-describe-requests.jsonl": {
+   "purpose": "shot-description",
+   "requests": 37,
+   "errors": 0,
+   "empty_reply": 0,
+   "prompt_tokens": 125282,
+   "completion_tokens": 1079,
+   "total_tokens": 126361,
+   "cached_tokens": 0
+  },
+  "attempt1-judge-requests-floor16.jsonl": {
+   "purpose": "continuity-judge",
+   "requests": 2,
+   "errors": 0,
+   "empty_reply": 1,
+   "prompt_tokens": 17802,
+   "completion_tokens": 1,
+   "total_tokens": 17816,
+   "cached_tokens": 6861
+  },
+  "attempt2-judge-requests-floor128.jsonl": {
+   "purpose": "continuity-judge",
+   "requests": 3,
+   "errors": 0,
+   "empty_reply": 0,
+   "prompt_tokens": 20096,
+   "completion_tokens": 3,
+   "total_tokens": 20197,
+   "cached_tokens": 6861
+  }
+ },
+ "by_purpose": {
+  "shot-description": {
+   "requests": 38,
+   "prompt_tokens": 128668,
+   "completion_tokens": 1079,
+   "total_tokens": 129863,
+   "cost_usd": {
+    "crewcut_default_row": 0.673215,
+    "google_published_gemini-3.8-flash_to_2026-12-31": 0.100982
+   }
+  },
+  "continuity-judge": {
+   "requests": 6,
+   "prompt_tokens": 46799,
+   "completion_tokens": 4,
+   "total_tokens": 46914,
+   "cost_usd": {
+    "crewcut_default_row": 0.23687,
+    "google_published_gemini-3.8-flash_to_2026-12-31": 0.03553
+   }
+  }
+ },
+ "logged_requests": 44,
+ "prices": {
+  "crewcut_default_row": {
+   "input": 5.0,
+   "output": 25.0,
+   "cache_read": 0.5
+  },
+  "google_published_gemini-3.8-flash_to_2026-12-31": {
+   "input": 0.75,
+   "output": 3.75
+  }
+ },
+ "cost_note": "cost = prompt_tokens*input + (total_tokens - prompt_tokens)*output; no cache discount applied (upper bound; cached_tokens reported separately in per_file)"
+}

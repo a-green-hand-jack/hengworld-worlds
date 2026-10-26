@@ -1,0 +1,358 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0027",
+  "start": 2349.948,
+  "end": 2492.223,
+  "shots": 48,
+  "lines": 0
+ },
+ "duration": 142.275,
+ "cuts": [
+  1.968,
+  3.87,
+  4.371,
+  5.105,
+  9.476,
+  12.512,
+  13.313,
+  16.149,
+  27.36,
+  28.128,
+  32.399,
+  34.367,
+  38.471,
+  41.207,
+  45.278,
+  47.28,
+  50.517,
+  52.252,
+  55.855,
+  59.292,
+  62.362,
+  64.064,
+  67.133,
+  71.438,
+  72.405,
+  76.743,
+  78.845,
+  82.649,
+  85.652,
+  86.953,
+  89.789,
+  95.428,
+  98.264,
+  103.87,
+  104.704,
+  105.405,
+  108.208,
+  111.011,
+  113.847,
+  114.848,
+  122.555,
+  123.089,
+  125.759,
+  133.867,
+  135.702,
+  138.505,
+  141.307
+ ],
+ "shots": [
+  {
+   "index": 337,
+   "start": -0.0,
+   "end": 1.968,
+   "description": "Long shot of C1 riding a bicycle towards the camera, static."
+  },
+  {
+   "index": 338,
+   "start": 1.968,
+   "end": 3.87,
+   "description": "Medium shot of C1 riding a motorcycle while struggling to control it, static."
+  },
+  {
+   "index": 339,
+   "start": 3.87,
+   "end": 4.371,
+   "description": "Medium long shot of C1 crashing a motorcycle into a pile of logs, static."
+  },
+  {
+   "index": 340,
+   "start": 4.371,
+   "end": 5.105,
+   "description": "Long shot of C1 and C2 sitting at a table in a wooden cabin, with C1 falling off the chair and onto the table, static camera."
+  },
+  {
+   "index": 341,
+   "start": 5.105,
+   "end": 9.476,
+   "description": "Medium shot of C1 getting up from the ground near a broken wooden door, static camera."
+  },
+  {
+   "index": 342,
+   "start": 9.476,
+   "end": 12.512,
+   "description": "Medium shot of C1 sitting on a chair and C2 sitting on a table talking, static camera."
+  },
+  {
+   "index": 343,
+   "start": 12.512,
+   "end": 13.313,
+   "description": "Long shot of a car driving past a barn, static."
+  },
+  {
+   "index": 344,
+   "start": 13.313,
+   "end": 16.149,
+   "description": "Wide shot of C1 jumping out of a car and running towards a barn, static camera."
+  },
+  {
+   "index": 345,
+   "start": 16.149,
+   "end": 27.36,
+   "description": "Wide shot of people driving car away from shed, static."
+  },
+  {
+   "index": 346,
+   "start": 27.36,
+   "end": 28.128,
+   "description": "High angle shot of a car driving past a barn, static."
+  },
+  {
+   "index": 347,
+   "start": 28.128,
+   "end": 32.399,
+   "description": "Long shot of C1 driving a car with C2, panning right."
+  },
+  {
+   "index": 348,
+   "start": 32.399,
+   "end": 34.367,
+   "description": "Long shot of a car driving along a road, panning to the right."
+  },
+  {
+   "index": 349,
+   "start": 34.367,
+   "end": 38.471,
+   "description": "Medium shot of a car driving away, static."
+  },
+  {
+   "index": 350,
+   "start": 38.471,
+   "end": 41.207,
+   "description": "Long shot of C1 and C2 riding in a car, static."
+  },
+  {
+   "index": 351,
+   "start": 41.207,
+   "end": 45.278,
+   "description": "Medium shot of C1 and C2 riding on the side of a moving car, tracking left."
+  },
+  {
+   "index": 352,
+   "start": 45.278,
+   "end": 47.28,
+   "description": "Long shot of a car driving fast on a dusty road, static camera."
+  },
+  {
+   "index": 353,
+   "start": 47.28,
+   "end": 50.517,
+   "description": "Medium shot of C1 driving while C2 sits in the passenger seat, static camera."
+  },
+  {
+   "index": 354,
+   "start": 50.517,
+   "end": 52.252,
+   "description": "Close-up of C1 shifting gears in a car, static."
+  },
+  {
+   "index": 355,
+   "start": 52.252,
+   "end": 55.855,
+   "description": "Medium shot of C1 driving a car with C2 standing up in the back, static."
+  },
+  {
+   "index": 356,
+   "start": 55.855,
+   "end": 59.292,
+   "description": "Long shot of C1 and C2 falling out of a car while it speeds past, static camera."
+  },
+  {
+   "index": 357,
+   "start": 59.292,
+   "end": 62.362,
+   "description": "Wide shot of a car driving along a road in front of a hillside, static camera."
+  },
+  {
+   "index": 358,
+   "start": 62.362,
+   "end": 64.064,
+   "description": "Wide shot of C1 driving a vintage car, tracking right."
+  },
+  {
+   "index": 359,
+   "start": 64.064,
+   "end": 67.133,
+   "description": "Close-up of a spare car tire bearing the text \"FOUR WHEEL BRAKES\" mounted on the back of a vehicle, static."
+  },
+  {
+   "index": 360,
+   "start": 67.133,
+   "end": 71.438,
+   "description": "Medium shot of C1 driving while C2 points ahead from the passenger seat, static camera."
+  },
+  {
+   "index": 361,
+   "start": 71.438,
+   "end": 72.405,
+   "description": "Extreme close-up of C1 slamming down on a pedal, static camera."
+  },
+  {
+   "index": 362,
+   "start": 72.405,
+   "end": 76.743,
+   "description": "Wide shot of car parked by lake, static."
+  },
+  {
+   "index": 363,
+   "start": 76.743,
+   "end": 78.845,
+   "description": "Medium shot of C1 and C2 riding in a car half-submerged in water, static."
+  },
+  {
+   "index": 364,
+   "start": 78.845,
+   "end": 82.649,
+   "description": "Medium shot of C1 driving a car with C2, static camera."
+  },
+  {
+   "index": 365,
+   "start": 82.649,
+   "end": 85.652,
+   "description": "Long shot of C1 driving a car in the water, panning left."
+  },
+  {
+   "index": 366,
+   "start": 85.652,
+   "end": 86.953,
+   "description": "Medium shot of C1 driving a car partially submerged in water, static camera."
+  },
+  {
+   "index": 367,
+   "start": 86.953,
+   "end": 89.789,
+   "description": "Medium long shot of C1 and C2 sitting inside a partially submerged car in water, C2 falls backward out of the car into the water, static camera."
+  },
+  {
+   "index": 368,
+   "start": 89.789,
+   "end": 95.428,
+   "description": "Medium shot of C1 sitting in a submerged car while C2 climbs out of the water, static camera."
+  },
+  {
+   "index": 369,
+   "start": 95.428,
+   "end": 98.264,
+   "description": "Medium shot of C1 and C2 in a car standing in water, static."
+  },
+  {
+   "index": 370,
+   "start": 98.264,
+   "end": 103.87,
+   "description": "Medium shot of C1 standing in a car stuck in water while C2 hangs onto the convertible roof, static camera."
+  },
+  {
+   "index": 371,
+   "start": 103.87,
+   "end": 104.704,
+   "description": "Long shot of C1 and C2 riding an amphibious vehicle on water, static camera."
+  },
+  {
+   "index": 372,
+   "start": 104.704,
+   "end": 105.405,
+   "description": "Long shot of C1 and C2 riding in a boat with a large upright tail moving across the water, static camera."
+  },
+  {
+   "index": 373,
+   "start": 105.405,
+   "end": 108.208,
+   "description": "Medium long shot of C1 and C2 riding in a vehicle on water, static camera."
+  },
+  {
+   "index": 374,
+   "start": 108.208,
+   "end": 111.011,
+   "description": "Long shot of C1 and C2 riding in a floating car, static camera."
+  },
+  {
+   "index": 375,
+   "start": 111.011,
+   "end": 113.847,
+   "description": "Long shot of C1 and C2 riding in a car-boat on the water, static."
+  },
+  {
+   "index": 376,
+   "start": 113.847,
+   "end": 114.848,
+   "description": "Long shot of C1 and C2 riding an amphibious car on the water, static."
+  },
+  {
+   "index": 377,
+   "start": 114.848,
+   "end": 122.555,
+   "description": "Medium shot of C1 and C2 sitting inside a car parked near a body of water, C2 gets up and steps outside, static camera."
+  },
+  {
+   "index": 378,
+   "start": 122.555,
+   "end": 123.089,
+   "description": "Long shot of C1 and C2 embracing in a sinking car, static camera."
+  },
+  {
+   "index": 379,
+   "start": 123.089,
+   "end": 125.759,
+   "description": "Long shot of C1 and C2 sitting in a car stranded in a river, static."
+  },
+  {
+   "index": 380,
+   "start": 125.759,
+   "end": 133.867,
+   "description": "Long shot of C1 and C2 in a sinking car, static."
+  },
+  {
+   "index": 381,
+   "start": 133.867,
+   "end": 135.702,
+   "description": "Long shot of a sea creature submerging, static camera."
+  },
+  {
+   "index": 382,
+   "start": 135.702,
+   "end": 138.505,
+   "description": "Wide shot of C1 swimming, static camera."
+  },
+  {
+   "index": 383,
+   "start": 138.505,
+   "end": 141.307,
+   "description": "Long shot of C1 and C2 swimming in a river, static."
+  },
+  {
+   "index": 384,
+   "start": 141.307,
+   "end": 142.275,
+   "description": "Long shot of C1 swimming in the water, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 142.275
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0027-scr",
+ "descriptions_available": true
+}

@@ -1,0 +1,6 @@
+# film_id	url	sha256	artifact_description
+coffee_run	https://archive.org/download/coffee-run/Coffee%20Run.ia.mp4	f40ce7f497b2f56e6a672cea6ef15d191da3d19bd61aeed5d3730e5d73f6aebf	IA derivative "Coffee Run.ia.mp4" (h.264 IA), 17475695 bytes
+spirit_chaser	https://upload.wikimedia.org/wikipedia/commons/transcoded/c/ca/Karl_Pajak_-_Spirit_Chaser_%282016%29.webm/Karl_Pajak_-_Spirit_Chaser_%282016%29.webm.480p.vp9.webm	cce14605b8dc2fbe0593ca1207b8972d13676e3050bd6f48c92efd44f0013182	Commons 480p VP9 transcode, 13659889 bytes
+domini_canes	https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Jakub_Bednarz_-_Domini_Canes_%282016%29.webm/Jakub_Bednarz_-_Domini_Canes_%282016%29.webm.480p.vp9.webm	70b8515d4afc4a392644d315666583b4c83386f9cf50f3710fd228d92aa29586	Commons 480p VP9 transcode, 18483687 bytes
+sherlock_jr	https://archive.org/download/MyMovie_20190318/My%20Movie.ogv	8931dc7b1dd72fababe7c48176774d01ade1f994c7c6cb3643c2fe1a0b7a7442	IA derivative "My Movie.ogv" (Ogg Video), 170849579 bytes
+trip_to_the_moon	https://archive.org/download/ATripToTheMoonGeorgeMelies/A%20Trip%20to%20the%20Moon-George%20M%C3%A9li%C3%A8s.ogv	084dc2ec7391f56a993cdda4ec9f385513d3c4a2f46fe9bb18875c5abb269fab	IA derivative ogv, 60618423 bytes

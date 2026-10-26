@@ -1,0 +1,12 @@
+# task-maker: Caminandes 3 Breakdown stretch
+
+CrewCut commit df54b3a (`dev`); install: `pip install -e <clone of crewcut.git at df54b3a> faster-whisper`, ffmpeg on PATH (see D3).
+
+- `scripts/reproduce.sh WORKDIR`: fetch pinned master + sha256 check, annotate, tasks, key split + key scan, comparison. Fails non-zero on any failed check.
+- `record/decisions/`: D1 candidate/licence, D2 master choice, D3 ASR install, D4 screenplay input, D5 not run. `record/open-items.json`: gaps that belong to CrewCut's maintainer (not decided).
+- `record/comparison.md` + `record/results/comparison.json`: comparison with dataset d509bed, every difference explained.
+- `record/results/`: logs of the run, versions, published-manifest.sha256.
+- `published/tasks/`: published packages without answer key and without the reference clips `input/original.mp4`; the full set (with clips) is the release asset `crewcut-caminandes3-tasks-published.tar.gz`.
+- `key/<task_id>/truth.json`: answer key (scorer and auditor only).
+
+Not run: shot descriptions (VLM), judge, real generators, screening (no keys). Provenance index was built but is compared with nothing.

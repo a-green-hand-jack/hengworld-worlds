@@ -1,0 +1,9 @@
+{"id":"D-duration","decided_by":"task-maker","decided_on":"2026-10-21",
+ "question":"duration_s: video-stream duration or container duration? (protocol silent)",
+ "choice":"video stream duration (stream=duration of v:0), released rounded to 2 decimals",
+ "evidence":{"video_stream_s":150.041667,"container_s":150.108345,"published_duration_s":150.04,
+  "reason_container_longer":"the Vorbis audio stream is 150.108 s, the container takes the longer of the two",
+  "frames":"3601 frames at 24 fps = 150.0417 s = exactly the video stream; hierarchy end times are frames/fps"},
+ "effect_of_the_other_basis":"With the container duration the last shot would end at 150.108 s in segment_truth while its segment ends at 150.042 s; the 1 ms tolerance then drops the last shot from the truth of caminandes3-L1-0007, -L2-0004, -L3-0000 and -L4-0000 (0, 0, 36 and 36 shots instead of 1, 1, 37 and 37) and shots.json.duration_s would read 150.11 instead of 150.04. Cuts and hierarchy are otherwise unchanged. Checked 2026-10-21 by running segment_truth on both values.",
+ "applied_in":"crewcut/build/shots.py probe(); commands/build.py (round(...,2) on release); check 'truth shot count' in commands/build.py",
+ "depends":["data/caminandes3/shots.json","key/*/truth.json","tasks/dev.jsonl"]}

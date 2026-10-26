@@ -1,0 +1,29 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0027",
+  "start": 83.458,
+  "end": 86.167,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.709,
+ "cuts": [
+  0.0,
+  2.709
+ ],
+ "shots": [
+  {
+   "index": 27,
+   "start": 0.0,
+   "end": 2.709,
+   "description": "Close-up of a rodent creature running, tracking shot."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.709
+  }
+ ]
+}

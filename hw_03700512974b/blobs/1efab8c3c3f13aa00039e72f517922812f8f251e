@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0027",
+  "start": 83.458,
+  "end": 86.167,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.709,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 27,
+   "start": 0.0,
+   "end": 2.709,
+   "description": "Medium close-up of C1 screaming and running, tracking shot."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.709
+  }
+ ],
+ "task_id": "caminandes3-L0-0027-ref",
+ "descriptions_available": true
+}

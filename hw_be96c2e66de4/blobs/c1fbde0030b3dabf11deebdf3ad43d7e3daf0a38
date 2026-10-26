@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0032",
+  "start": 317.217,
+  "end": 324.991,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 7.774,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 32,
+   "start": -0.0,
+   "end": 7.774,
+   "description": "Medium shot of C1 and C2 kneeling on the floor, with C2 examining money and C1 wiping tears with a handkerchief, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 7.774
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0032-ref",
+ "descriptions_available": true
+}

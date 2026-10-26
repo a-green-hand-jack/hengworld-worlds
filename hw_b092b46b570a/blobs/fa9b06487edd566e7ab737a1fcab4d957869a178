@@ -1,0 +1,25 @@
+{
+ "system": "system/count_words.py (unchanged, from /wordcount-source)",
+ "python": "Python 3.11.2",
+ "command": "python3 count_words.py FILE",
+ "parameters": {},
+ "task": "published/task/sentences.txt from task-maker e1e648689b84",
+ "attempts": [
+  {
+   "n": 1,
+   "exit_code": 0,
+   "seconds": 0.01849651336669922,
+   "output": "runs/output.txt",
+   "stderr": "runs/stderr.txt",
+   "outcome": "completed"
+  }
+ ],
+ "failures": [],
+ "decisions": [],
+ "cost": {
+  "paid_calls": 0,
+  "money": 0
+ },
+ "key_accessed": false,
+ "scored_by_executor": false
+}

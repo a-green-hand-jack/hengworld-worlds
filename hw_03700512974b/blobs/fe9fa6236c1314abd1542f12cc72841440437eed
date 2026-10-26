@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L1-0013",
+  "start": 188.8,
+  "end": 192.96,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 4.16,
+ "cuts": [
+  2.64,
+  3.12,
+  3.64
+ ],
+ "shots": [
+  {
+   "index": 66,
+   "start": 0.0,
+   "end": 2.64,
+   "description": "Extreme long shot of energy surge exploding and fading out, static camera."
+  },
+  {
+   "index": 67,
+   "start": 2.64,
+   "end": 3.12,
+   "description": "Medium close-up of C1 striking forward with a blade, zoom in."
+  },
+  {
+   "index": 68,
+   "start": 3.12,
+   "end": 3.64,
+   "description": "Close-up of C1 moving, static."
+  },
+  {
+   "index": 69,
+   "start": 3.64,
+   "end": 4.16,
+   "description": "Extreme close-up of C1's eye looking around, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 4.16
+  }
+ ],
+ "task_id": "spirit_chaser-L1-0013-ref",
+ "descriptions_available": true
+}

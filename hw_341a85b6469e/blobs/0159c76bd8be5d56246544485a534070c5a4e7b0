@@ -1,0 +1,13 @@
+import json,sys,re
+def parse(text):
+    lines=text.strip().split("\n") if text.strip() else []
+    if len(lines)!=8 or not all(re.fullmatch(r"\s*-?\d+\s*",l) for l in lines): return None
+    return [int(l) for l in lines]
+def score(out,key):
+    p=parse(out)
+    if p is None: return {"deliverable":False,"exact":[0]*8,"accuracy":0.0}
+    ex=[int(a==b) for a,b in zip(p,key)]
+    return {"deliverable":True,"exact":ex,"accuracy":sum(ex)/8}
+if __name__=="__main__":
+    key=json.load(open(sys.argv[1]))["counts"]
+    print(json.dumps(score(open(sys.argv[2]).read(),key),indent=1))

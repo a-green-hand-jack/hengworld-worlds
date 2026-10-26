@@ -1,0 +1,1361 @@
+{
+ "film_id": "caminandes3",
+ "drafter": "gemini-4-argon",
+ "drafter_params": {
+  "temperature": 0,
+  "reasoning_effort": "low",
+  "max_tokens": 16000
+ },
+ "checker": "qwen3.5-plus",
+ "audio_checker": "qwen3.5-omni-plus",
+ "checker_params": {
+  "temperature": 0,
+  "max_tokens": 4000
+ },
+ "frames_rule": "n=min(8,max(4,ceil(dur/2))) at (k+1)/(n+1), 24 fps decode, 640 px JPEG",
+ "continuity_rule": "each shot's draft is given the previous shot's DRAFT detailed description",
+ "shots": {
+  "0": {
+   "shot": 0,
+   "start": 0.0,
+   "end": 21.375,
+   "setting": "P1: Frozen pond and snowy field. Outdoor, bright daytime, clear blue sky with clouds above a snowy plain, frozen pond, wire fence, and distant mountains.",
+   "characters": "C1: stands on ice, tongue out eagerly, looks surprised, then collapses flat on belly; C2: falls from the sky in the background above C1.",
+   "props": "Orange 3D title text in the sky; a small green plant with red berries sticking out of the ice.",
+   "action": "The camera tilts down from 3D title text in the sky to C1 on a frozen pond. C1 reaches for berries, slips with legs splaying out, and falls flat onto its chin, crushing the berries except one. As C1 looks at the last berry, C2 drops down in the background.",
+   "camera": "Starts facing the sky, tilts down to a wide eye-level shot of C1 on the pond, then remains static.",
+   "light_mood": "Bright, crisp daylight with cool blue and white snow tones contrasted by C1's warm orange fur; lighthearted comedic mood.",
+   "sound": "Dreamy opening chimes transition into playful plucked strings, hooves slipping and clattering on ice, comical vocal grunts, a heavy thud, and a descending whistle.",
+   "draft_columns": {
+    "setting": "P1: Frozen pond and snowy field. Outdoor, bright daytime, clear blue sky with clouds above a snowy plain, frozen pond, wire fence, and distant mountains.",
+    "characters": "C1: stands on ice, tongue out eagerly, looks surprised, then collapses flat on belly; C2: falls from the sky in the background above C1.",
+    "props": "Orange 3D title text in the sky; a small green plant with red berries sticking out of the ice.",
+    "action": "The camera tilts down from 3D title text in the sky to C1 on a frozen pond. C1 reaches for berries, slips with legs splaying out, and falls flat onto its chin, crushing the berries except one. As C1 looks at the last berry, C2 drops down in the background.",
+    "camera": "Starts facing the sky, tilts down to a wide eye-level shot of C1 on the pond, then remains static.",
+    "light_mood": "Bright, crisp daylight with cool blue and white snow tones contrasted by C1's warm orange fur; lighthearted comedic mood.",
+    "sound": "Dreamy opening chimes transition into playful plucked strings, hooves slipping and clattering on ice, comical vocal grunts, a heavy thud, and a descending whistle."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The camera is not static throughout; it tilts down from the sky title card before becoming static, and C2 also appears at the end.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The description states 'Medium shot', but the frames show a Wide/Long shot (full body of C1 with extensive background). It also states 'static', but the sequence involves a transition (tilt or cut) from the sky title to the ground scene.",
+   "omissions": [
+    "The specific text 'Caminandes' visible in the sky",
+    "C2 is identifiable as a penguin"
+   ],
+   "audio_silent": false,
+   "n_frames": 8,
+   "calls": {
+    "draft": "891b3acccdc0acef5f2cae1fa5c5eccf1ebc685373204aa35dc7a95bdba06a5e",
+    "check": "ae043fee24d107dca5f73b8e01438188e49f8144e1901e669e9cf5ddc02bae40",
+    "rewrite": null
+   }
+  },
+  "1": {
+   "shot": 1,
+   "start": 21.375,
+   "end": 30.5,
+   "setting": "P1: Frozen pond and snowy field. Outdoor, bright daytime. Smooth ice surface in the foreground with a blurred snowy hill, rocks, and wooden fence posts behind.",
+   "characters": "C1: lies flat on the ice on the left, narrows eyes angrily, then tries to lift head with wide strained eyes; C2: stands on the ice in the center, eats a berry, then hops away.",
+   "props": "Crushed green plant leaves on the snow; red berry stains on the ice.",
+   "action": "C2 stands next to C1's head, chews, swallows the berry, looks at C1, and hops off to the right as the camera pans left onto C1. C1 glares with narrowed eyes, then struggles to lift its chin off the ice, finding its tongue stuck frozen to the surface.",
+   "camera": "Low-angle close-up at ice level; starts on C2 and C1's snout, pans left to center on C1 as C2 leaves, then remains static.",
+   "light_mood": "Bright natural daylight with soft shadows on the snow and ice; comedic and frustrated mood.",
+   "sound": "High-pitched squeaks, a springy hop sound, dramatic low strings.",
+   "draft_columns": {
+    "setting": "P1: Frozen pond and snowy field. Outdoor, bright daytime. Smooth ice surface in the foreground with a blurred snowy hill, rocks, and wooden fence posts behind.",
+    "characters": "C1: lies flat on the ice on the left, narrows eyes angrily, then tries to lift head with wide strained eyes; C2: stands on the ice in the center, eats a berry, then hops away.",
+    "props": "Crushed green plant leaves on the snow; red berry stains on the ice.",
+    "action": "C2 stands next to C1's head, chews, swallows the berry, looks at C1, and hops off to the right as the camera pans left onto C1. C1 glares with narrowed eyes, then struggles to lift its chin off the ice, finding its tongue stuck frozen to the surface.",
+    "camera": "Low-angle close-up at ice level; starts on C2 and C1's snout, pans left to center on C1 as C2 leaves, then remains static.",
+    "light_mood": "Bright natural daylight with soft shadows on the snow and ice; comedic and frustrated mood.",
+    "sound": "High-pitched squeaks, chewing and gulping sounds, a springy hop sound, dramatic low strings, and strained vocal grunts from C1."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "C1 does not fall asleep and the camera does not pan right; C2 is present eating the berry, the camera pans left, and C1's tongue is stuck to the ice.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description states C1 is 'falling asleep' and the camera is 'panning right'. The frames show C1 struggling with its tongue stuck to the ice (Frame 4) rather than sleeping, and the camera pans left to center C1 (moving from Frame 1 where C1 is left-edge to Frame 3 where C1 is centered).",
+   "omissions": [],
+   "audio_silent": false,
+   "n_frames": 5,
+   "calls": {
+    "draft": "0e448a63edc038b103d630584953adf19dee6e7b9b1e5777df0620cce7c6b18d",
+    "check": "25509acbcb341ee08719e76400545d2c72b357755e888895094ce73a5843bb29",
+    "rewrite": "5fb7789e108243bba6c8bfb193322c65fe0d46e9f870533ac89aab21be776474"
+   }
+  },
+  "2": {
+   "shot": 2,
+   "start": 30.5,
+   "end": 32.292,
+   "setting": "P2: Railroad tracks. Outdoor, daytime. Horizontal steel train tracks on wooden ties and gravel covered in snow, set against a white snowy slope.",
+   "characters": "C2: stands on a wooden railroad tie between the steel rails in the center, facing right with wide eyes.",
+   "props": "A small green plant sprout with a single red berry on the snow between the rails.",
+   "action": "The camera rapidly zooms in on the center of the railroad tracks, revealing C2 standing on a wooden tie and staring intently at a red berry on a green stem in the snow.",
+   "camera": "Starts as a wide shot of the horizontal tracks, then rapidly crash-zooms in to a medium shot centered on C2.",
+   "light_mood": "Bright, crisp daylight against white snow; sudden dramatic and comical mood.",
+   "sound": "A loud, dramatic orchestral brass chord accompanied by a rapid whooshing sound effect.",
+   "draft_columns": {
+    "setting": "P2: Railroad tracks. Outdoor, daytime. Horizontal steel train tracks on wooden ties and gravel covered in snow, set against a white snowy slope.",
+    "characters": "C2: stands on a wooden railroad tie between the steel rails in the center, facing right with wide eyes.",
+    "props": "A small green plant sprout with a single red berry on the snow between the rails.",
+    "action": "The camera rapidly zooms in on the center of the railroad tracks, revealing C2 standing on a wooden tie and staring intently at a red berry on a green stem in the snow.",
+    "camera": "Starts as a wide shot of the horizontal tracks, then rapidly crash-zooms in to a medium shot centered on C2.",
+    "light_mood": "Bright, crisp daylight against white snow; sudden dramatic and comical mood.",
+    "sound": "A loud, dramatic orchestral brass chord accompanied by the rhythmic clacking and rumble of an approaching train."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The character on the railroad tracks is C2 (the baby penguin), not C1 (the guanaco).",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description states 'Wide shot of C1 standing on railroad tracks and looking at a sprout', but Frame 1 (the wide shot) shows only the tracks; the character and sprout are not clearly visible or identifiable until the zoom/cut to Frame 2. Additionally, the character is referred to as 'C1' instead of 'C2'.",
+   "omissions": [
+    "The character (C2) is a penguin.",
+    "The plant appears to be a flower bud or sprout with a red tip.",
+    "The one-sentence description labels the character as 'C1' while the detailed description uses 'C2'."
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "ea53876a030dd0b3533c9a44986697715efb81d45d60da071de461c3c9f876e1",
+    "check": "ea41862534977df399efa0de2d06cf7fad57926ab1cf441f37f9f41219b49767",
+    "rewrite": "2fb9d8e45dd8337dc1d9ca18fcd61cd1d92af8536bd28e90d662d93b6870fe3a"
+   }
+  },
+  "3": {
+   "shot": 3,
+   "start": 32.292,
+   "end": 33.875,
+   "setting": "P2: Railroad tracks. Outdoor, bright daytime. Steel tracks on gravel cutting through a snowy landscape under a blue sky, with a distant oil pumpjack.",
+   "characters": "none",
+   "props": "A large black steam locomotive with red accents, a white star on the nose, a yellow-and-black striped cowcatcher, and billowing white smoke.",
+   "action": "The black steam locomotive speeds rapidly from left to right along the tracks, billowing thick white smoke from its smokestack and steam from its lower pistons.",
+   "camera": "Low-angle medium shot, tracking rapidly alongside the front right side of the speeding locomotive.",
+   "light_mood": "Bright, clear daylight with high contrast between the dark train and white snow; urgent, intense mood.",
+   "sound": "A loud, blaring train horn, heavy chugging, hissing steam, and dramatic brass music.",
+   "draft_columns": {
+    "setting": "P2: Railroad tracks. Outdoor, bright daytime. Steel tracks on gravel cutting through a snowy landscape under a blue sky, with a distant oil pumpjack.",
+    "characters": "",
+    "props": "A large black steam locomotive with red accents, a white star on the nose, a yellow-and-black striped cowcatcher, and billowing white smoke.",
+    "action": "The black steam locomotive speeds rapidly from left to right along the tracks, billowing thick white smoke from its smokestack and steam from its lower pistons.",
+    "camera": "Low-angle medium shot, tracking rapidly alongside the front right side of the speeding locomotive.",
+    "light_mood": "Bright, clear daylight with high contrast between the dark train and white snow; urgent, intense mood.",
+    "sound": "A loud, blaring train horn, heavy chugging, hissing steam, and dramatic brass music."
+   },
+   "drafter_description_consistent": true,
+   "drafter_description_note": "",
+   "checker_description_contradicted": false,
+   "checker_description_note": "The one-sentence description accurately summarizes the visual content: a medium shot of a train in a snowy landscape with a tracking camera movement.",
+   "omissions": [],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "5a5156dd3862f5d4a5141e21da2ccfab746c68725c4fa0d4d88c7b9eca185ebd",
+    "check": "5b2346ae0e1448501ba1c13b4003075efc8ecb7859265bf298b5ede8910e1f56",
+    "rewrite": null
+   },
+   "format_fixed": true
+  },
+  "4": {
+   "shot": 4,
+   "start": 33.875,
+   "end": 36.792,
+   "setting": "Outdoor, bright daytime. A snowy plain with rocks, a wire fence with wooden posts, and a snowy hill in the background.",
+   "characters": "C1: standing in the left foreground facing forward, wide-eyed and chewing, then turning its head slightly to look forward with a confused expression.",
+   "props": "",
+   "action": "C1 stands in the snow, looking slightly to the right while chewing slowly, then turns its head to look straight ahead.",
+   "camera": "Medium close-up at eye level, static camera.",
+   "light_mood": "Bright, clear daylight with cool blue and white snow tones contrasting with C1's warm orange fur; comical, bewildered mood.",
+   "sound": "Dramatic, swelling orchestral music.",
+   "draft_columns": {
+    "setting": "P1: Frozen pond and snowy field. Outdoor, bright daytime. A snowy plain with rocks, a wire fence with wooden posts, and a snowy hill in the background.",
+    "characters": "C1: standing in the left foreground facing forward, wide-eyed and chewing, then turning its head slightly to look forward with a confused expression.",
+    "props": "",
+    "action": "C1 stands in the snow, looking slightly to the right while chewing slowly, then turns its head to look straight ahead as its jaw drops slightly.",
+    "camera": "Medium close-up at eye level, static camera.",
+    "light_mood": "Bright, clear daylight with cool blue and white snow tones contrasting with C1's warm orange fur; comical, bewildered mood.",
+    "sound": "Distant train chugging, a soft animal vocalization, and dramatic, swelling orchestral music."
+   },
+   "drafter_description_consistent": true,
+   "drafter_description_note": "",
+   "checker_description_contradicted": false,
+   "checker_description_note": "The one-sentence description accurately summarizes the visual content.",
+   "omissions": [
+    "Frozen pond is not visible (only snow)",
+    "Wire on the fence is not clearly visible"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "dd0833a355e63e90d828a01d93f9e5933a67717b77a982fab4069324e91811f8",
+    "check": "232afc9625956a2de1e47d030aec16e7b2e4abffb530a4525791c2d9b56d68ae",
+    "rewrite": "7722f90b0cef8bc3be62d5e805b49a2f7de8c6fb0e15cb610d40c5b88bb95251"
+   }
+  },
+  "5": {
+   "shot": 5,
+   "start": 36.792,
+   "end": 39.5,
+   "setting": "P2: Railroad tracks. Outdoor, bright daytime. Steel train tracks on wooden ties with patches of snow, snowy hills, and an oil pumpjack on the right.",
+   "characters": "C2: popping up into the center foreground on the tracks, holding a single red berry on a stem, looking down at it with a happy expression.",
+   "props": "A black steam locomotive with a red cowcatcher and white steam in the center background; a single red berry on a green stem.",
+   "action": "A steam train approaches along the tracks in the background. C2 pops up into the foreground, comes into focus, and holds a red berry with both flippers while looking at it.",
+   "camera": "Medium close-up at a low ground-level angle on the tracks, static camera, with a rack focus from the distant train to C2 in the foreground.",
+   "light_mood": "Bright, clear daylight with cool blue and white tones; ironic, suspenseful yet cute mood.",
+   "sound": "Loud, dramatic orchestral music with brass and strings.",
+   "draft_columns": {
+    "setting": "P2: Railroad tracks. Outdoor, bright daytime. Steel train tracks on wooden ties with patches of snow, snowy hills, and an oil pumpjack on the right.",
+    "characters": "C2: popping up into the center foreground on the tracks, holding a single red berry on a stem, looking down at it with a happy expression.",
+    "props": "A black steam locomotive with a red cowcatcher and white steam in the center background; a single red berry on a green stem.",
+    "action": "A steam train approaches along the tracks in the background. C2 pops up into the foreground, comes into focus, and holds a red berry with both flippers while looking at it.",
+    "camera": "Medium close-up at a low ground-level angle on the tracks, static camera, with a rack focus from the distant train to C2 in the foreground.",
+    "light_mood": "Bright, clear daylight with cool blue and white tones; ironic, suspenseful yet cute mood.",
+    "sound": "Loud, dramatic orchestral music with brass and strings, accompanied by the rhythmic chugging of a train and a faint, cute vocalization."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The character on the tracks is C2 holding a red berry, not C1 holding a flower.",
+   "checker_description_contradicted": false,
+   "checker_description_note": "The one-sentence description is generally accurate but misidentifies the character as C1 (detailed says C2) and the object as a flower (detailed says berry). It also omits the dynamic 'popping up' action and the rack focus.",
+   "omissions": [
+    "rack focus technique",
+    "oil pumpjack",
+    "popping up action (summarized as standing)",
+    "low camera angle"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "ee320c72b28d79f73d8ea4dd234fdf14b50f6f9a7131f773659a3106ac94b843",
+    "check": "3fe0ae477d2e9373802a2080b2668a2587db76acf74b58dbe6b28c7990b8fb6e",
+    "rewrite": "96901f7d08df6434d7aa968283632f3d55cfbe3d80798e3fd94ca2956475debc"
+   }
+  },
+  "6": {
+   "shot": 6,
+   "start": 39.5,
+   "end": 40.792,
+   "setting": "P1: Frozen pond and snowy field. Outdoor, bright daytime, clear blue sky with snowy hills in the background.",
+   "characters": "C1: positioned left of center, facing forward, initially with mouth open in shock, then closing its mouth with a panicked, wide-eyed expression.",
+   "props": "None.",
+   "action": "C1 stands against the blue sky, gasps with its mouth open in shock, then closes its mouth and leans forward slightly while turning its head to the right, staring intensely with huge bulging eyes.",
+   "camera": "Close-up at a slightly low angle, camera pushes in slightly on C1.",
+   "light_mood": "Bright natural daylight with vivid blue sky and warm orange fur tones; frantic, comedic and alarmed mood.",
+   "sound": "Loud, fast-paced, dramatic orchestral music with brass and strings.",
+   "draft_columns": {
+    "setting": "P1: Frozen pond and snowy field. Outdoor, bright daytime, clear blue sky with snowy hills in the background.",
+    "characters": "C1: positioned left of center, facing forward, initially with mouth open in shock, then closing its mouth with a panicked, wide-eyed expression.",
+    "props": "None.",
+    "action": "C1 stands against the blue sky, gasps with its mouth open in shock, then closes its mouth and leans forward slightly while turning its head to the right, staring intensely with huge bulging eyes.",
+    "camera": "Close-up at a slightly low angle, camera pushes in slightly on C1.",
+    "light_mood": "Bright natural daylight with vivid blue sky and warm orange fur tones; frantic, comedic and alarmed mood.",
+    "sound": "Loud, fast-paced, dramatic orchestral music with brass and strings, accompanied by the chugging sound of a train."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The camera is not completely static; it pushes in slightly towards C1 as C1 leans forward.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description claims a 'static camera', but the frames show the character getting significantly larger (Frame 1 to 3), indicating a camera push-in or movement, which aligns with the detailed description but contradicts the summary.",
+   "omissions": [
+    "Rocky outcrop visible on the right side in frame 4",
+    "Character looking off-screen to the left in frame 4"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "02a055d09a9a34278a1ffefea1b287eb5634e1c02b6815c8966af6387865e3f6",
+    "check": "6438a52a59f4ab1cbbd95d4f64db8338b05ae04ed3ab5844a450f0d8eab6d947",
+    "rewrite": "2f02079e6c1cd8e00faf9028ec54dd361996c632b9cd1fa8a6426b5113c26ea0"
+   }
+  },
+  "7": {
+   "shot": 7,
+   "start": 40.792,
+   "end": 41.792,
+   "setting": "P2: Railroad tracks. Outdoor, bright daytime, clear blue sky with scattered white clouds, snow-covered hills and rocks along the tracks.",
+   "characters": "None.",
+   "props": "A black and red steam locomotive with a white star on the front, billowing white smoke; a yellow and black oil pumpjack in the background.",
+   "action": "A steam locomotive speeds forward along the tracks from the left background toward the right foreground, billowing thick white smoke from its smokestack and steam around its wheels while the distant oil pumpjack operates.",
+   "camera": "Wide shot at a low angle near the tracks, camera pushes in slightly toward the approaching train.",
+   "light_mood": "Bright, crisp daylight with high contrast between the white snow, blue sky, and dark train; urgent, suspenseful mood.",
+   "sound": "Loud, rhythmic chugging of a steam train and a dramatic, fast-paced orchestral score.",
+   "draft_columns": {
+    "setting": "P2: Railroad tracks. Outdoor, bright daytime, clear blue sky with scattered white clouds, snow-covered hills and rocks along the tracks.",
+    "characters": "None.",
+    "props": "A black and red steam locomotive with a white star on the front, billowing white smoke; a yellow and black oil pumpjack in the background.",
+    "action": "A steam locomotive speeds forward along the tracks from the left background toward the right foreground, billowing thick white smoke from its smokestack and steam around its wheels while the distant oil pumpjack operates.",
+    "camera": "Wide shot at a low angle near the tracks, camera pushes in slightly toward the approaching train.",
+    "light_mood": "Bright, crisp daylight with high contrast between the white snow, blue sky, and dark train; urgent, suspenseful mood.",
+    "sound": "Loud, rhythmic chugging of a steam train and a dramatic, fast-paced orchestral score."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The camera is not static; it pushes in slightly toward the approaching train.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description states the shot is 'static', but the frames show the camera pushing in (foreground elements shift position relative to the frame edges and the train grows larger).",
+   "omissions": [],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "0d307c6a8c7b9c8f729e6ea526891016b610b280069822089856021614cfea6e",
+    "check": "545499a05e8ef708c75aa5d96c87923763faaacfdda8359d0e59c3f4ac56ba25",
+    "rewrite": null
+   }
+  },
+  "8": {
+   "shot": 8,
+   "start": 41.792,
+   "end": 42.708,
+   "setting": "Outdoor, bright daytime, clear blue sky above a snowy ground.",
+   "characters": "C1: positioned left of center facing forward; starts with wide eyes and open mouth in shock, then squints into narrow slits and closes its mouth.",
+   "props": "None.",
+   "action": "C1 starts with its head up, mouth open, and eyes wide in alarm, then quickly lowers its head slightly, flattens its ears, closes its mouth, and squints its eyes tightly as it glares forward.",
+   "camera": "Medium close-up at eye level, slight push in toward C1.",
+   "light_mood": "Bright, crisp daylight with warm orange tones on C1 against cool blue sky and snow; tense and determined mood.",
+   "sound": "Chugging steam engine and dramatic orchestral music.",
+   "draft_columns": {
+    "setting": "P2: Railroad tracks. Outdoor, bright daytime, clear blue sky above a snowy ground.",
+    "characters": "C1: positioned left of center facing forward; starts with wide eyes and open mouth in shock, then squints its eyes into narrow slits and closes its mouth.",
+    "props": "None.",
+    "action": "C1 starts with its head up, mouth open, and eyes wide in alarm, then quickly lowers its head slightly, flattens its ears, closes its mouth, and squints its eyes tightly as it glares forward.",
+    "camera": "Medium close-up at eye level, slight push in toward C1.",
+    "light_mood": "Bright, crisp daylight with warm orange tones on C1 against cool blue sky and snow; tense and determined mood.",
+    "sound": "Loud train horn blast, chugging steam engine, and dramatic orchestral music."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "C1 starts with wide eyes in shock and then narrows/squints them, rather than widening them.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description states C1 is 'widening its eyes', but the frames clearly show the character starting with wide eyes and then squinting them shut/narrow. It also describes the camera as 'static', but the framing shifts significantly from left to center.",
+   "omissions": [
+    "The camera also pans right to center the character (from left of center to center), which is not explicitly mentioned in the detailed description (only 'push in' is noted)."
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "dbc4e5ce81f95bc54ef5214457acf3568dccc6ed5a35af23fe3bd54d2bb6793b",
+    "check": "6ae84b7225766f1c1901f9b09c64befabcb26a0d57bceb3cfef2b82cd3927065",
+    "rewrite": "f5e068ab4323734f4e0fc91052c5082a1fb0e138622fc447adbf123713194935"
+   },
+   "format_fixed": true
+  },
+  "9": {
+   "shot": 9,
+   "start": 42.708,
+   "end": 43.917,
+   "setting": "P2: Railroad tracks. Outdoor, bright daytime, partly cloudy blue sky, snow-covered wooden ties, distant snowy hills, and an oil pumpjack on the right.",
+   "characters": "C2: sitting centered in the foreground between the rails facing forward, with a single red berry in its open mouth, wide-eyed and oblivious.",
+   "props": "A single red berry in C2's mouth, a green plant stem, and a black and red steam locomotive with a white star on the front.",
+   "action": "C2 sits completely still on the wooden railroad tie with a red berry in its mouth, while in the background the massive steam locomotive rapidly barrels straight toward C2, billowing white steam.",
+   "camera": "Medium shot at low ground-level angle on the tracks, static camera with shallow depth of field.",
+   "light_mood": "Bright daylight with cool blue sky and white snow contrasting with the dark approaching train; suspenseful and perilous mood.",
+   "sound": "Loud, frantic orchestral music with brass swells and roaring steam engine sounds growing louder.",
+   "draft_columns": {
+    "setting": "P2: Railroad tracks. Outdoor, bright daytime, partly cloudy blue sky, snow-covered wooden ties, distant snowy hills, and an oil pumpjack on the right.",
+    "characters": "C2: sitting centered in the foreground between the rails facing forward, holding a single red berry against its chest, wide-eyed and oblivious.",
+    "props": "A single red berry held by C2, a green plant stem, and a black and red steam locomotive with a white star on the front.",
+    "action": "C2 sits completely still on the wooden railroad tie holding a red berry, while in the background the massive steam locomotive rapidly barrels straight toward C2, billowing white steam.",
+    "camera": "Medium shot at low ground-level angle on the tracks, static camera with shallow depth of field.",
+    "light_mood": "Bright daylight with cool blue sky and white snow contrasting with the dark approaching train; suspenseful and perilous mood.",
+    "sound": "Loud, frantic orchestral music, blaring train horn, and roaring steam engine sounds growing louder."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The character sitting on the train track is C2 (baby penguin) holding a berry, not C1, and a train is rapidly approaching behind it.",
+   "checker_description_contradicted": false,
+   "checker_description_note": "The one-sentence description accurately reflects the visual content (character eating on tracks, static camera). The label 'C1' in the summary differs from 'C2' in the detailed description, but visually refers to the same character.",
+   "omissions": [
+    "The character appears to be a penguin.",
+    "The locomotive has yellow and black hazard stripes on the front pilot.",
+    "The berry is held at the beak/mouth, indicating eating."
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "159b0a6b1f3bcdb6ad54c63f16d1f9e447b3936b618b7a1235917b6da8e896a0",
+    "check": "946faafbaad0938b037c8bb357dd2e2b1bfea5bdf5de7ecf52b741b7c0bb00d3",
+    "rewrite": "dc3aa23973c25b9435636c5b230d1a93dedd4bf71d981d7a4639a26e9db71835"
+   }
+  },
+  "10": {
+   "shot": 10,
+   "start": 43.917,
+   "end": 47.0,
+   "setting": "P2: Snowy ground beside the train path. Outdoor, daytime, snowy ground littered with shattered wooden splinters and rocks, with a speeding train and billowing white steam in the background.",
+   "characters": "C1: sitting on the snow in the center foreground, eyelids closed at first, then opening wide with a goofy smile and protruding tongue.",
+   "props": "Shattered wooden fragments and rocks on the snow, a speeding train in the background, and a single red berry landing on C1's tongue.",
+   "action": "As the train blurs past in the background and steam clears, C1 sits on the snow, opens its eyes, sticks out its tongue, and catches a single red berry on the tip of its tongue.",
+   "camera": "Medium shot at eye level, static camera.",
+   "light_mood": "Cool, bright daylight with white steam dissipating to reveal a clear background; comedic and relieved mood.",
+   "sound": "A loud train horn and roaring pass-by fade out quickly, followed by a soft, quirky plucked string note as the berry lands.",
+   "draft_columns": {
+    "setting": "P2: Railroad tracks. Outdoor, daytime, snowy ground littered with shattered wooden splinters and gravel, with a speeding train and billowing white steam in the background.",
+    "characters": "C1: sitting on the snow in the center foreground, eyes closed in fear at first, then opening wide with a goofy smile and protruding tongue.",
+    "props": "Shattered wooden tie fragments on the snow, a speeding train in the background, and a single red berry landing on C1's tongue.",
+    "action": "As the train blurs past in the background and steam clears, C1 sits on the snow, opens its eyes, sticks out its tongue, and catches a single red berry on the tip of its tongue.",
+    "camera": "Medium shot at eye level, static camera.",
+    "light_mood": "Cool, bright daylight with white steam dissipating to reveal a clear background; comedic and relieved mood.",
+    "sound": "A loud train horn and roaring pass-by fade out quickly, followed by a soft, quirky plucked string note as the berry lands."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The red berry is on C1's tongue, not on a stick.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description claims C1 is looking at a 'cherry on a stick', but the frames show C1 catching a loose red berry on its tongue/nose (Frame 4) with no stick visible.",
+   "omissions": [
+    "Character appears to be a young deer or antelope",
+    "Background transitions from a blue blurry mass to a clear sky",
+    "Berry lands on the tip of the nose/snout"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "0185ae8eebe0143dd14f5081462a554f4ae904dae9abd45a717aa6d1e84d76a1",
+    "check": "40be5dcb455dc0d3221658709a61d9c783857cceb8a2f1b8e49a2fecaeef7427",
+    "rewrite": "25566889acd5a0285883dd498ba92dcb1f036771e063bb8580e914a3a9d053b8"
+   }
+  },
+  "11": {
+   "shot": 11,
+   "start": 47.0,
+   "end": 49.875,
+   "setting": "P2: Railroad tracks. Outdoor, daytime, clear blue sky with soft white clouds and lingering steam, with a steel train rail in the foreground on snowy ground.",
+   "characters": "C3: one adult penguin positioned behind the horizontal steel rail, blinking, squinting its eyes, and making a cut-throat gesture across its neck with its flipper.",
+   "props": "Horizontal steel train rail in the foreground.",
+   "action": "As white steam clears from the frame, a single C3 stands behind the steel rail, blinks, narrows its eyes menacingly, and slices its flipper across its throat.",
+   "camera": "Medium close-up at a slightly low angle, static camera.",
+   "light_mood": "Cool, bright daylight emerging as white haze dissipates; tense, comedic, and vengeful mood.",
+   "sound": "Soft wind ambiance, a brief high-pitched squeak at the start.",
+   "draft_columns": {
+    "setting": "P2: Railroad tracks. Outdoor, daytime, clear blue sky with soft white clouds and lingering steam, with a steel train rail in the foreground on snowy ground.",
+    "characters": "C3: one adult penguin positioned behind the horizontal steel rail, blinking, squinting its eyes, and making a cut-throat gesture across its neck with its flipper.",
+    "props": "Horizontal steel train rail in the foreground.",
+    "action": "As white steam clears from the frame, a single C3 stands behind the steel rail, blinks, narrows its eyes menacingly, and slices its flipper across its throat.",
+    "camera": "Medium close-up at a slightly low angle, static camera.",
+    "light_mood": "Cool, bright daylight emerging as white haze dissipates; tense, comedic, and vengeful mood.",
+    "sound": "Soft wind ambiance, a brief high-pitched squeak at the start, followed by a sharp, swift slicing whoosh sound as C3 gestures."
+   },
+   "drafter_description_consistent": null,
+   "drafter_description_note": null,
+   "checker_description_contradicted": false,
+   "checker_description_note": "The one-sentence description refers to the character as C1, while the detailed description identifies it as C3. The one-sentence description is vague ('peering') and omits the specific cut-throat action and steam clearing visible in the frames.",
+   "omissions": [
+    "cut-throat gesture",
+    "squinting/narrowing eyes",
+    "clearing of steam/haze",
+    "penguin character type"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "56ec90f1a6ffd7b36fb907445dbbe4bd520a9da17dc73357fdb6911c106b6833",
+    "check": "32213b94241931cdcde450143313a2c563d23498406d44a9675ce18fdd839597",
+    "rewrite": "6b36f81008e0eea383329d7d0815732714246869c2f8c53ad1a137c9e065b3ad"
+   }
+  },
+  "12": {
+   "shot": 12,
+   "start": 49.875,
+   "end": 52.292,
+   "setting": "Outdoor, daytime, clear blue sky with soft white clouds, and a blurred snowy plain with distant mountains in the background.",
+   "characters": "C1: head and neck visible, facing right, with a long pink tongue sticking out, staring cross-eyed at a red berry balanced on its tongue.",
+   "props": "One small round red berry.",
+   "action": "C1 stands still with its tongue sticking out, balancing a red berry on the tip; it flicks its tongue upward, tossing the berry into the air and catching it back on its tongue.",
+   "camera": "Close-up at eye level, static camera.",
+   "light_mood": "Bright, crisp natural daylight; quirky, lighthearted, and comedic mood.",
+   "sound": "Playful, bouncy instrumental music with brass and plucked strings.",
+   "draft_columns": {
+    "setting": "P2: Railroad tracks. Outdoor, daytime, clear blue sky with soft white clouds, and a blurred snowy plain with distant mountains in the background.",
+    "characters": "C1: head and neck visible, facing right, with a long pink tongue sticking out, staring cross-eyed at a red berry balanced on its tongue.",
+    "props": "One small round red berry.",
+    "action": "C1 stands still with its tongue sticking out, balancing a red berry on the tip; it flicks its tongue upward, tossing the berry into the air and catching it back on its tongue.",
+    "camera": "Close-up at eye level, static camera.",
+    "light_mood": "Bright, crisp natural daylight; quirky, lighthearted, and comedic mood.",
+    "sound": "Playful, bouncy instrumental music with brass and plucked strings, accompanied by a soft pop sound as the berry lands back on the tongue."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "C1 is not blowing on a party horn; C1 is tossing and catching a red berry on its outstretched pink tongue.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description states C1 is 'blowing on a party horn', but the frames clearly show the character balancing and tossing a berry with its tongue.",
+   "omissions": [
+    "The character has a comically enlarged, bulging left eye",
+    "The character appears to be a camel"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "4e591f0bee6dc0e7e2ee00d3292202135f4aa8361381fe81b443102fd6db4dd4",
+    "check": "02576695ac10eac0b5bdfd40ee8f5d25bea2f07aabbed99e51fed8818df0f814",
+    "rewrite": "aaace2dde6a257503c23f8a7f0fc730a32798c81e908d138c2a3c4f477258761"
+   }
+  },
+  "13": {
+   "shot": 13,
+   "start": 52.292,
+   "end": 52.875,
+   "setting": "Outdoor, daytime, clear blue sky with soft white clouds and a blurred snowy plain in the background.",
+   "characters": "C1: head in bottom foreground facing right, large brown eyes with horizontal pupils and tongue tip sticking out; C2: sitting on C1's head, leaps right with open beak.",
+   "props": "One small round red berry floating in mid-air.",
+   "action": "As a red berry floats in the air on the right, C2 leaps upward and to the right off C1's head toward the berry, flying out of the top-right corner while C1 lifts its head.",
+   "camera": "Close-up, low-angle static camera.",
+   "light_mood": "Bright, crisp natural daylight; playful, fast-paced, and comedic mood.",
+   "sound": "A quick whoosh and a soft vocal grunt.",
+   "draft_columns": {
+    "setting": "P2: Railroad tracks. Outdoor, daytime, clear blue sky with soft white clouds and a blurred snowy plain in the background.",
+    "characters": "C1: head in bottom foreground facing right, eyes squinting shut with tongue tip sticking out; C2: sitting on C1's head, leaps right with open beak.",
+    "props": "One small round red berry floating in mid-air.",
+    "action": "As a red berry floats in the air on the right, C2 leaps upward and to the right off C1's head to catch it in its beak, flying out of the top-right corner while C1 lifts its squinting head.",
+    "camera": "Close-up, low-angle static camera.",
+    "light_mood": "Bright, crisp natural daylight; playful, fast-paced, and comedic mood.",
+    "sound": "A quick whoosh and a high-pitched squeak as C2 jumps and catches the berry."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "It is a close-up of C2 jumping off C1's head to catch a berry, not C1 getting thrown off a weasel's head.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description states 'C1 getting thrown off a weasel's head', but the visual evidence and detailed description identify C1 as the weasel's head itself (the stationary base), while C2 (the penguin) is the one leaping. Additionally, the action is an active leap by C2, not C1 being thrown.",
+   "omissions": [
+    "C1 appears to be a toy or mechanical object with a hollow eye socket containing text/numbers (visible in frames 3-4)",
+    "C2 is a penguin",
+    "The background dark strip is too blurry to confirm as railroad tracks"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "e087ea04cd7fb910c7b679aa698f00e1cb7bdae3cdf6ef007701ba3d31aa217f",
+    "check": "ad5d1b88bb532b6233aee8a3dcb9e5a601c4c4b8f874a5b43021b1bc6a583b04",
+    "rewrite": "1dbc88928b326398458d30c9d867df14ad37c9fc3f892705d6c47b366b453740"
+   }
+  },
+  "14": {
+   "shot": 14,
+   "start": 52.875,
+   "end": 56.583,
+   "setting": "P2: Railroad tracks. Outdoor, daytime, clear blue sky with clouds. Snowy ground with broken wooden planks in the foreground and a gravel embankment with steel tracks behind.",
+   "characters": "C1: sitting on the left, half-closed eyes looking down at C2, then falls through the ground; C2: lands on the right holding a red berry, then falls through the ground.",
+   "props": "One small round red berry; broken wooden planks in the foreground.",
+   "action": "C2 lands on the wooden planks next to C1 and holds up the red berry in its wing. Suddenly, the wooden planks give way beneath C2, who falls straight down out of sight, leaving the berry hovering briefly before dropping onto a plank. A split second later, the ground collapses under C1, who also plummets downward out of sight.",
+   "camera": "Medium shot, low-angle static camera.",
+   "light_mood": "Bright, clear natural daylight; comedic and slapstick mood.",
+   "sound": "Playful flute and percussion music, interrupted by loud wood-cracking and crashing sound effects.",
+   "draft_columns": {
+    "setting": "P2: Railroad tracks. Outdoor, daytime, clear blue sky with clouds. Snowy ground with broken wooden planks in the foreground and a gravel embankment with steel tracks behind.",
+    "characters": "C1: sitting on the left, half-closed eyes looking down at C2, then falls through the ground; C2: lands on the right holding a red berry, then falls through the ground.",
+    "props": "One small round red berry; broken wooden planks in the foreground.",
+    "action": "C2 lands on the wooden planks next to C1 and holds up the red berry in its wing. Suddenly, the wooden planks give way beneath C2, who falls straight down out of sight, leaving the berry hovering briefly before dropping. A split second later, the ground collapses under C1, who also plummets downward out of sight.",
+    "camera": "Medium shot, low-angle static camera.",
+    "light_mood": "Bright, clear natural daylight; comedic and slapstick mood.",
+    "sound": "Playful flute and percussion music, interrupted by loud wood-cracking and crashing sound effects as the characters fall through the planks."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "C1 is a guanaco (llama), not a deer, and the description omits both characters falling through the collapsing wooden planks.",
+   "checker_description_contradicted": false,
+   "checker_description_note": "The one-sentence description accurately captures the state in Frames 1-2 (characters sitting, holding berry, looking down) and the camera setup. It generalizes the location as 'sitting in the snow' rather than 'on wooden planks', but this is not a direct contradiction. It omits the subsequent falling action shown in Frames 3-4.",
+   "omissions": [
+    "Character identities (deer/llama and penguin) are not explicitly named in the 'characters' column (uses C1/C2)",
+    "Final resting position of the berry on the planks (Frame 4)"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "89e688d36b5ea139129ee5ded2147e96b903786979f209a19d6f32942b2e8948",
+    "check": "1b19b270b702e93c2dc83fee1e17a4d65a0ab196e83824e007c62730eb122bc1",
+    "rewrite": "4e67b2a20f1f91d27ced4f1d6c8c585329726cbd3ea4455030bd010851f9adb1"
+   }
+  },
+  "15": {
+   "shot": 15,
+   "start": 56.583,
+   "end": 62.25,
+   "setting": "P3. Indoor, dark underground cavern with rocky walls and dim blue ambient lighting.",
+   "characters": "C1: on the left, eyes closed at first, then opens eyes groggily with dark eyelids and patterned markings underneath; C2: pops up on the right, looking up with wide eyes.",
+   "props": "A bunch of shiny red berries with green leaves hanging in the upper right corner.",
+   "action": "C1 lies with its head down and eyes shut. C1 slowly lifts its head, opens its eyes groggily, and looks around in confusion. Suddenly, C2 pops up into the right foreground and points its wing upward toward a hanging bunch of red berries.",
+   "camera": "Close-up to medium close-up, eye-level static camera.",
+   "light_mood": "Dim, cool blue cave lighting with soft key light on the characters; disoriented mood shifting to curiosity.",
+   "sound": "A loud metallic crash followed by rattling and settling debris, and a brief startled grunt at the end.",
+   "draft_columns": {
+    "setting": "P3: Underground mine. Indoor, dark underground cavern with rocky walls and dim blue ambient lighting.",
+    "characters": "C1: on the left, eyes closed at first, then opens eyes groggily with circular tire marks around its eyes; C2: pops up on the right, looking up with wide eyes.",
+    "props": "A bunch of shiny red berries with green leaves hanging in the upper right corner.",
+    "action": "C1 lies with its head down and eyes shut, sporting dark circular marks under its eyes. C1 slowly lifts its head, opens its eyes groggily, and looks around in confusion. Suddenly, C2 pops up into the right foreground and points its wing upward toward a hanging bunch of red berries.",
+    "camera": "Close-up to medium close-up, eye-level static camera.",
+    "light_mood": "Dim, cool blue cave lighting with soft key light on the characters; disoriented mood shifting to curiosity.",
+    "sound": "Rattling and settling debris sounds, low suspenseful ambient tones, and a cute vocalization from C2 as it points."
+   },
+   "drafter_description_consistent": null,
+   "drafter_description_note": null,
+   "checker_description_contradicted": false,
+   "checker_description_note": "The one-sentence description accurately summarizes the main action of C1 waking up, though it omits the appearance of C2.",
+   "omissions": [
+    "Yellowish nest or bedding material visible under C1",
+    "Distinct markings resembling numbers or symbols on C1's neck (visible in frame 2)"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "71d0a25611389e507561941da5cb7548e76b1890068c967e21ba8f94c8269b05",
+    "check": "7ec079690f6095c6a8f239815d67c9e667b52d32fa601a1a38ce3f803f96e1e1",
+    "rewrite": "be433fa01287c797b112e590ad9bf5774f81add49e0c1477cdde55c2cb8c73f2"
+   }
+  },
+  "16": {
+   "shot": 16,
+   "start": 62.25,
+   "end": 66.417,
+   "setting": "P3: Underground mine. Indoor, dark cavern with blue light, rocky walls, broken wooden tracks suspended over a chasm, and another broken cart in the lower right.",
+   "characters": "C1: sitting in the left side of the minecart with dark circular marks around eyes, stretching forward with an eager expression; C2: sitting on the right rim of the cart, jumping up.",
+   "props": "A wooden minecart on a broken track edge, a bunch of red berries hanging from the rock wall, and a broken cart below.",
+   "action": "The minecart sits precariously on a broken track that ends over a chasm. C2 sits on the right rim, looking at a bunch of red berries hanging from the rock wall. C1 shifts right inside the cart and stretches its neck toward the berries C2 hops up toward the berries.",
+   "camera": "Wide shot.",
+   "light_mood": "Dark cavern with cool blue ambient light from above illuminating the cart and characters; tense and comedic mood.",
+   "sound": "Suspenseful plucking music accompanied by heavy metallic clanks and rattling sounds as the cart shifts.",
+   "draft_columns": {
+    "setting": "P3: Underground mine. Indoor, dark cavern with blue light, rocky walls, broken wooden tracks suspended over a chasm, and another broken cart in the lower right.",
+    "characters": "C1: sitting in the left side of the minecart with dark circular marks around eyes, stretching forward with an eager expression; C2: sitting on the right rim of the cart, jumping up.",
+    "props": "A wooden minecart on a broken track edge, a bunch of red berries hanging from the rock wall, and a broken cart below.",
+    "action": "The minecart sits precariously on a broken track that ends over a chasm. C2 sits on the right rim, looking at a bunch of red berries hanging from the rock wall. C1 stretches its neck forward inside the cart to reach the berries, causing the cart to roll slightly right. C2 hops up toward the berries.",
+    "camera": "Wide shot, eye-level static camera.",
+    "light_mood": "Dark cavern with cool blue ambient light from above illuminating the cart and characters; tense and comedic mood.",
+    "sound": "Suspenseful plucking music, wooden creaking as the cart shifts, and a loud metallic screech at the end."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "It is a wide shot rather than a medium shot, C2 is also visible in the cart, and the cart is mostly stationary on a broken track rather than riding along.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description identifies the shot as a 'Medium shot', but the frames clearly show a Wide shot (characters are small, significant environment visible). Additionally, the detailed action description claims the cart rolls, but it remains static in the frames.",
+   "omissions": [
+    "C1 actually grabs the berries in frame 4",
+    "C2 is a white bird",
+    "C1 appears to be a lemur or raccoon"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "3a76fa4277153b5891c52de5b2d68bd961204176ba02156171bd815344a64356",
+    "check": "9843fa4fbe9f2aa7bf31b16c92a819dd069b85c38555c21b75fd4203228bf3ea",
+    "rewrite": "eb3320a45b829b0fbe95cc81c7ccd32885f6ae5c35afa6c5a5edddc19a8044d6"
+   }
+  },
+  "17": {
+   "shot": 17,
+   "start": 66.417,
+   "end": 67.417,
+   "setting": "Indoor, dark cavern with blue light, rocky walls and wooden beams blurring rapidly upwards in the background.",
+   "characters": "C1: on the left, dark circular marks around eyes, mouth wide open screaming in terror; C2: on the right, holding a bunch of red berries, looking happily at them.",
+   "props": "A large bunch of red berries held by C2.",
+   "action": "As they plummet downwards, the rocky cave walls blur upwards behind them. C1 on the left screams in terror with its mouth wide open and wind blowing its fur, while C2 on the right happily hugs the bunch of red berries.",
+   "camera": "Medium close-up, low angle, tracking downwards with the falling characters.",
+   "light_mood": "Dark cavern with cool blue background light and warm rim light on C1; chaotic, fast-paced, and comedic mood.",
+   "sound": "A loud, comical, panicked scream from C1.",
+   "draft_columns": {
+    "setting": "P3: Underground mine. Indoor, dark cavern with blue light, rocky walls and wooden beams blurring rapidly upwards in the background.",
+    "characters": "C1: on the left, dark circular marks around eyes, mouth wide open screaming in terror; C2: on the right, holding a bunch of red berries, looking happily at them.",
+    "props": "A large bunch of red berries held by C2.",
+    "action": "As they plummet downwards, the rocky cave walls blur upwards behind them. C1 on the left screams in terror with its mouth wide open and wind blowing its fur, while C2 on the right happily hugs the bunch of red berries.",
+    "camera": "Medium close-up, low angle, tracking downwards with the falling characters.",
+    "light_mood": "Dark cavern with cool blue background light and warm rim light on C1; chaotic, fast-paced, and comedic mood.",
+    "sound": "A loud, comical, panicked scream from C1 mixed with rushing wind."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "C1 is screaming in terror while falling, not looking excitedly, and the camera tracks with the falling characters rather than being static in space.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description claims the animals are 'looking excitedly' (C1 is screaming in terror), 'riding a vehicle' (they appear to be plummeting/falling freely), and uses a 'static camera' (the camera is tracking downwards with the fall).",
+   "omissions": [
+    "C1's white crest/tuft of hair on top of its head",
+    "C2's white facial markings/mask",
+    "The specific icy texture of the background walls (described as rocky)"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "4dc56ce7819689a71f21ef4ccb2b642f7bd4b74f8ac9408cf2eab5747cc012c2",
+    "check": "ccf4b592e81ab6e20e408a496c0fbb289234d1e62b22e9359db4c49d8c4de700",
+    "rewrite": "27bb3b5df21395823560988a63e8b139d2425868c12e2a7a2f7168b47409ade7"
+   }
+  },
+  "18": {
+   "shot": 18,
+   "start": 67.417,
+   "end": 68.0,
+   "setting": "P3: Underground mine. Indoor, dark rocky cavern with vertical minecart tracks, wooden barriers, and blue-lit ice formations.",
+   "characters": "none",
+   "props": "Steep vertical minecart tracks, wooden support beams, and wooden plank barriers.",
+   "action": "The view plunges rapidly downwards through a narrow rocky shaft, passing brown rock walls, blue ice formations, and wooden beams, towards vertical minecart tracks and wooden plank barriers.",
+   "camera": "Wide POV shot, high angle looking straight down, fast forward tracking movement.",
+   "light_mood": "Dark, dimly lit with cool blue accents on ice and warm light on wooden planks; intense, dizzying, fast-paced mood.",
+   "sound": "Upbeat, fast-paced orchestral music with brass instruments.",
+   "draft_columns": {
+    "setting": "P3: Underground mine. Indoor, dark rocky cavern with vertical minecart tracks, wooden barriers, and blue-lit ice formations.",
+    "characters": "",
+    "props": "Steep vertical minecart tracks, wooden support beams, and wooden plank barriers.",
+    "action": "The view plunges rapidly downwards through a narrow rocky shaft, passing brown rock walls, blue ice formations, and wooden beams, towards vertical minecart tracks and wooden plank barriers.",
+    "camera": "Wide POV shot, high angle looking straight down, fast forward tracking movement.",
+    "light_mood": "Dark, dimly lit with cool blue accents on ice and warm light on wooden planks; intense, dizzying, fast-paced mood.",
+    "sound": "A fading scream transitions into upbeat, fast-paced orchestral music with brass instruments and rushing wind."
+   },
+   "drafter_description_consistent": true,
+   "drafter_description_note": "",
+   "checker_description_contradicted": false,
+   "checker_description_note": "The one-sentence description is accurate, although 'tracking forward' simplifies the steep vertical drop depicted in the frames.",
+   "omissions": [
+    "Ladder running vertically alongside the tracks",
+    "Minecart with characters visible ahead in the shaft"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "45ab242da1e70e07d8db31669bb0a85179253e046c8aad6f9f7bb91f5ec01e5d",
+    "check": "5755cefe902b9b8c942eab30e51f49f1ca99ee6fc7592148e417f0eadbb9715b",
+    "rewrite": "9a6ef8d1eb366a8a28d7842514e107fc16c5107e19b39e111020b8145a8e50c0"
+   },
+   "format_fixed": true
+  },
+  "19": {
+   "shot": 19,
+   "start": 68.0,
+   "end": 70.083,
+   "setting": "P3: Underground mine. Indoor, dark rocky cavern with steep minecart tracks, wooden support beams, hanging cables, and a blue-lit background shaft.",
+   "characters": "C1: riding in the front of the minecart, gripping the edge, head thrown back screaming in terror; C2: sitting in the back of the minecart.",
+   "props": "Wooden minecart, steep steel tracks, wooden scaffolding and support beams.",
+   "action": "The minecart carrying C1 and C2 plunges down the steep track from the upper left, smashing through wooden scaffolding, whipping past the camera with C1 screaming, and racing away into a tunnel on the right.",
+   "camera": "Starts as a wide shot at eye level, then whip-pans right as the cart passes in close-up and recedes into a wide shot.",
+   "light_mood": "Dark cavern with cool blue backlight in the chasm and warm dim lighting on the rocks and wood; chaotic, frantic mood.",
+   "sound": "Loud wood-smashing crashes, clattering minecart wheels, C1's high-pitched terrified scream, and fast-paced orchestral brass music.",
+   "draft_columns": {
+    "setting": "P3: Underground mine. Indoor, dark rocky cavern with steep minecart tracks, wooden support beams, hanging cables, and a blue-lit background shaft.",
+    "characters": "C1: riding in the front of the minecart, gripping the edge, head thrown back screaming in terror; C2: sitting in the back of the minecart.",
+    "props": "Wooden minecart, steep steel tracks, wooden scaffolding and support beams.",
+    "action": "The minecart carrying C1 and C2 plunges down the steep track from the upper left, smashing through wooden scaffolding, whipping past the camera with C1 screaming, and racing away into a tunnel on the right.",
+    "camera": "Starts as a wide shot at eye level, then whip-pans right as the cart passes in close-up and recedes into a wide shot.",
+    "light_mood": "Dark cavern with cool blue backlight in the chasm and warm dim lighting on the rocks and wood; chaotic, frantic mood.",
+    "sound": "Loud wood-smashing crashes, clattering minecart wheels, C1's high-pitched terrified scream, and fast-paced orchestral brass music."
+   },
+   "drafter_description_consistent": true,
+   "drafter_description_note": "",
+   "checker_description_contradicted": false,
+   "checker_description_note": "The description accurately matches the visual sequence of the minecart crash and movement.",
+   "omissions": [
+    "Characters appear to be Timon (meerkat) and Pumbaa (warthog).",
+    "Flying debris/wood chips from the crash."
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "209d95b8838e9106c008dbdab57db8a5abafed56a77c43b1acd88de309e4eeb6",
+    "check": "ad7b0260676cd9ecce02c7f5d694442e813b0aa9f3b9118e3c471f86b66dc19a",
+    "rewrite": null
+   }
+  },
+  "20": {
+   "shot": 20,
+   "start": 70.083,
+   "end": 73.875,
+   "setting": "P4: Mountain slope and rocky peaks. Outdoor, daytime, snowy rocky mountain slope with a wooden mine tunnel entrance and wooden structures in the background.",
+   "characters": "C1: on the left side of the minecart, wide-eyed at first, then drooping its eyelids with a dazed, exhausted expression; C2: on the right side of the minecart, holding a bunch of red berries, smiling and eating a berry.",
+   "props": "Wooden minecart with metal straps, a large bunch of red berries on a green stem, wooden mine entrance and scaffolding.",
+   "action": "The minecart bursts out of the wooden mine entrance into the snowy outdoors. C1's head bobbles as its eyes droop half-shut in exhaustion, while C2 happily munches on the red berries beside it as the cart rolls forward.",
+   "camera": "Medium close-up at eye level, tracking backward locked onto the front of the moving minecart as the background recedes.",
+   "light_mood": "Bright, diffused natural daylight with cool snowy tones; comedic relief and exhausted mood.",
+   "sound": "Rattling and clattering of minecart wheels on tracks, C1 exhaling a tired sigh, C2's quick munching sounds, and upbeat rhythmic music.",
+   "draft_columns": {
+    "setting": "P4: Mountain slope and rocky peaks. Outdoor, daytime, snowy rocky mountain slope with a wooden mine tunnel entrance and wooden structures in the background.",
+    "characters": "C1: on the left side of the minecart, wide-eyed at first, then drooping its eyelids with a dazed, exhausted expression; C2: on the right side of the minecart, holding a bunch of red berries, smiling and eating a berry.",
+    "props": "Wooden minecart with metal straps, a large bunch of red berries on a green stem, wooden mine entrance and scaffolding.",
+    "action": "The minecart bursts out of the wooden mine entrance into the snowy outdoors. C1's head bobbles as its eyes droop half-shut in exhaustion, while C2 happily munches on the red berries beside it as the cart rolls forward.",
+    "camera": "Medium close-up at eye level, tracking backward locked onto the front of the moving minecart as the background recedes.",
+    "light_mood": "Bright, diffused natural daylight with cool snowy tones; comedic relief and exhausted mood.",
+    "sound": "Rattling and clattering of minecart wheels on tracks, C1 exhaling a tired sigh, C2's quick munching sounds, and upbeat rhythmic music."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The camera is not static; it tracks with the moving minecart, and C2 is also prominently in the shot.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description claims the shot is 'static', but the frames show the background changing significantly (tunnel to rocks to scaffolding) while the cart remains centered, indicating a tracking shot as noted in the detailed description.",
+   "omissions": [
+    "C2 (the second character)",
+    "red berries",
+    "snowy environment",
+    "mine tunnel entrance",
+    "camera movement (tracking)"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "7068462886b4dcd0308a63903c85f22e372e9bb5d1b81b97d34e74ae74a975c2",
+    "check": "16e2ed6d44dbba277e53d4c600ca61fd1afd05bb9711eb461673ba3132813a93",
+    "rewrite": null
+   }
+  },
+  "21": {
+   "shot": 21,
+   "start": 73.875,
+   "end": 74.625,
+   "setting": "Outdoor, daytime, clear blue sky with soft white clouds and distant snowy mountains in the background.",
+   "characters": "C1: center-left, head and long neck visible, eyelids tightly shut, mouth wide open with tongue sticking out in an exaggerated scream.",
+   "props": "None.",
+   "action": "C1 stands with its head tilted back, eyes squeezed shut, and mouth wide open while its tongue wiggles and its tail briefly pops up on the right.",
+   "camera": "Close-up, slightly low angle, static camera.",
+   "light_mood": "Bright natural sunlight with warm tones on the fur against a cool cyan sky; comedic and frantic mood.",
+   "sound": "A loud, high-pitched, panicked animal scream/bray.",
+   "draft_columns": {
+    "setting": "P1: Frozen pond and snowy field. Outdoor, daytime, clear blue sky with soft white clouds and distant snowy mountains in the background.",
+    "characters": "C1: center-left, head and long neck visible, eyelids tightly shut, mouth wide open with tongue sticking out in an exaggerated scream.",
+    "props": "None.",
+    "action": "C1 stands with its head tilted back, eyes squeezed shut, and mouth wide open, letting out a loud, high-pitched scream while its tongue wiggles and its tail briefly pops up on the right.",
+    "camera": "Close-up, slightly low angle, static camera.",
+    "light_mood": "Bright natural sunlight with warm tones on the fur against a cool cyan sky; comedic and frantic mood.",
+    "sound": "A loud, high-pitched, panicked animal scream/bray."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "It is a close-up rather than a medium shot, and C1 is screaming/braying in panic rather than roaring.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description states 'Medium shot', but the frames show a Close-up of the character's head and neck.",
+   "omissions": [
+    "Shallow depth of field (blurry background)",
+    "Vibration/shaking of the head"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "42ea007e8ad61c164e7ae1d4975d9eff7efee1ab76542424c3bedad405cb465d",
+    "check": "d52b0f3050cc39b2a7f7e5014e1c951c460d0e20c6fd93cfa4bf6a605ff3fd1c",
+    "rewrite": "563585885a834a6cd55b75e46a786c763f1e048de20e986d0636f8e65e0f337d"
+   }
+  },
+  "22": {
+   "shot": 22,
+   "start": 74.625,
+   "end": 75.458,
+   "setting": "P1: Frozen pond and snowy field. Outdoor, daytime, clear cyan sky and a snowy mountain peak in the lower-left background.",
+   "characters": "C1: center-left, head and neck visible, red bump on top of head, clenched teeth and looking up in fear, then wincing as dark debris falls.",
+   "props": "Long wooden planks and a large dark rocky structure with falling rubble.",
+   "action": "C1 holds a long wooden plank across its neck while looking up in terror with clenched teeth. Suddenly, a massive dark rock ceiling and wooden beams crash down around and behind C1, casting a dark shadow as C1 flinches.",
+   "camera": "Close-up, low angle, static camera with slight shake upon impact.",
+   "light_mood": "Starts in bright daylight, abruptly shifting to dark, heavy shadow as the structure collapses; chaotic and perilous mood.",
+   "sound": "Loud, heavy crashing and smashing sounds of wood and rock collapsing.",
+   "draft_columns": {
+    "setting": "P1: Frozen pond and snowy field. Outdoor, daytime, clear cyan sky and a snowy mountain peak in the lower-left background.",
+    "characters": "C1: center-left, head and neck visible, red bump on top of head, clenched teeth and looking up in fear, then wincing as dark debris falls.",
+    "props": "Long wooden planks and a large dark rocky structure with falling rubble.",
+    "action": "C1 holds a long wooden plank across its neck while looking up in terror with clenched teeth. Suddenly, a massive dark rock ceiling and wooden beams crash down around and behind C1, casting a dark shadow as C1 flinches.",
+    "camera": "Close-up, low angle, static camera with slight shake upon impact.",
+    "light_mood": "Starts in bright daylight, abruptly shifting to dark, heavy shadow as the structure collapses; chaotic and perilous mood.",
+    "sound": "Loud, heavy crashing and smashing sounds of wood and rock collapsing."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "It is a close-up shot rather than a medium shot, and a large dark rock structure/mine entrance collapses over C1 rather than C1 dodging planks.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description claims a 'Medium shot', but the frames show a Close-up (head and neck only). The detailed description correctly identifies it as a Close-up.",
+   "omissions": [
+    "Small falling debris particles visible in frame 3",
+    "Change in mouth expression from clenched teeth to open/wincing"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "efd5ab8625a32d69961cb9e58df9ba3b8c3df684584d9de9f19da94d2bf2cb6d",
+    "check": "4336297bec5979bf8ed30215a5a4b9ddd75ad32c748acf1edce58d73a8d57851",
+    "rewrite": null
+   }
+  },
+  "23": {
+   "shot": 23,
+   "start": 75.458,
+   "end": 77.75,
+   "setting": "P3: Underground mine. Indoor, dark cavernous interior with blurred wooden support beams and dark rocky walls passing rapidly in the background.",
+   "characters": "C1: far left foreground, only orange-brown neck and torso visible; C2: center, holding a large bunch of red berries, half-closed unbothered eyes, chewing casually.",
+   "props": "A large bunch of red berries on a green stem and a dark wooden minecart edge.",
+   "action": "While riding rapidly downward through the mine behind C1, C2 sits calmly inside the minecart holding a large bunch of red berries, plucking and chewing a berry with a relaxed, nonchalant expression.",
+   "camera": "Close-up on C2, eye-level, tracking rapidly alongside the moving characters while keeping C2 centered.",
+   "light_mood": "Dim underground lighting with soft highlights on C2 and warm tones on the berries and C1's fur; comedic, deadpan mood.",
+   "sound": "Fast-paced, dramatic orchestral action music with prominent brass, strings, and driving percussion.",
+   "draft_columns": {
+    "setting": "P3: Underground mine. Indoor, dark cavernous interior with blurred wooden support beams and dark rocky walls passing rapidly in the background.",
+    "characters": "C1: far left foreground, only orange-brown neck and torso visible; C2: center, holding a large bunch of red berries, half-closed unbothered eyes, chewing casually.",
+    "props": "A large bunch of red berries on a green stem and a dark wooden minecart edge.",
+    "action": "While riding rapidly downward through the mine behind C1, C2 sits calmly inside the minecart holding a large bunch of red berries, plucking and chewing a berry with a relaxed, nonchalant expression.",
+    "camera": "Close-up on C2, eye-level, tracking rapidly alongside the moving characters while keeping C2 centered.",
+    "light_mood": "Dim underground lighting with soft highlights on C2 and warm tones on the berries and C1's fur; comedic, deadpan mood.",
+    "sound": "Fast-paced, dramatic orchestral action music accompanied by the rumbling and rattling of a speeding minecart."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The character eating the fruit is C2 (the baby penguin), not C1 (whose neck is on the left), and the background is moving rapidly, not static.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description states 'C1 standing and eating fruit', but the frames show C2 (the penguin) holding and interacting with the fruit, while C1 is merely a blurry orange foreground element. Additionally, the camera is tracking, not strictly static, though the framing is stable.",
+   "omissions": [
+    "C2 is a penguin",
+    "C1 is out of focus/blurry",
+    "The vehicle is a minecart"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "bd9fe64c52cfa201ebfda87136989a85e03591bcf3add9a0d83667e5e0895642",
+    "check": "af7d98e0d9218210ef816f52ebef2a82252e2f7ea39849c58850e97bb0c2b576",
+    "rewrite": "4140141bb069622e5b4b8eba2eec9c430f418e2b374f18e90928f2cc9b982da7"
+   }
+  },
+  "24": {
+   "shot": 24,
+   "start": 77.75,
+   "end": 78.542,
+   "setting": "P3: Underground mine. Indoor, dark narrow tunnel with wooden support beams, gravel floor, minecart tracks, and a bright white rectangular exit opening ahead.",
+   "characters": "none",
+   "props": "Minecart tracks on wooden ties and wooden tunnel support beams.",
+   "action": "From a first-person perspective along the tracks, the tunnel rushes past rapidly as the viewpoint speeds straight toward the bright white exit at the end of the shaft.",
+   "camera": "Wide point-of-view shot, eye-level, rapidly pushing forward down the center of the tracks toward the tunnel exit.",
+   "light_mood": "Dark interior with warm wooden tones contrasted against blindingly bright white daylight pouring in from the exit; urgent, thrilling mood.",
+   "sound": "Fast-paced orchestral action music building in intensity alongside the loud rattling and rumbling of a speeding minecart on tracks.",
+   "draft_columns": {
+    "setting": "P3: Underground mine. Indoor, dark narrow tunnel with wooden support beams, gravel floor, minecart tracks, and a bright white rectangular exit opening ahead.",
+    "characters": "",
+    "props": "Minecart tracks on wooden ties and wooden tunnel support beams.",
+    "action": "From a first-person perspective along the tracks, the tunnel rushes past rapidly as the viewpoint speeds straight toward the bright white exit at the end of the shaft.",
+    "camera": "Wide point-of-view shot, eye-level, rapidly pushing forward down the center of the tracks toward the tunnel exit.",
+    "light_mood": "Dark interior with warm wooden tones contrasted against blindingly bright white daylight pouring in from the exit; urgent, thrilling mood.",
+    "sound": "Fast-paced orchestral action music building in intensity alongside the loud rattling and rumbling of a speeding minecart on tracks."
+   },
+   "drafter_description_consistent": true,
+   "drafter_description_note": "",
+   "checker_description_contradicted": false,
+   "checker_description_note": "The description accurately captures the scene, action, and mood shown in the frames.",
+   "omissions": [
+    "Small lights mounted on the wooden beams (visible in Frame 2)",
+    "Blueish light sources or objects near the tunnel exit (visible in Frame 4)"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "1ff1f5f51410a183685772c9cbc4c2fbd541a970745ec8d936b7e4ec502be250",
+    "check": "8ffe40564b56512a4dcc58667434f17d1e18505d2588e6a7fcae6c5deacb3da9",
+    "rewrite": null
+   },
+   "format_fixed": true
+  },
+  "25": {
+   "shot": 25,
+   "start": 78.542,
+   "end": 80.125,
+   "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright clear daytime on a steep snow-covered hillside with a wooden mine exit protruding from the slope.",
+   "characters": "C1: launched out of the minecart into the air toward the upper right, motion-blurred.",
+   "props": "Wooden mine exit structure, broken wooden tracks, a wooden minecart with metal wheels, and a bunch of red berries flying through the air.",
+   "action": "A speeding wooden minecart bursts out of the wooden mine exit on the snowy slope and abruptly halts at the broken end of the tracks, violently catapulting C1 and a bunch of red berries high into the clear blue sky off-screen to the right.",
+   "camera": "Wide shot, slightly low angle, static camera showing the mine exit on the left and open sky on the right.",
+   "light_mood": "Bright natural daylight with crisp white snow and a vivid turquoise-blue sky; comedic and abrupt action mood.",
+   "sound": "Loud crashing of wood and metal as the cart stops, and a high-pitched comedic vocal yelp as C1 flies.",
+   "draft_columns": {
+    "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright clear daytime on a steep snow-covered hillside with a wooden mine exit protruding from the slope and distant snowy peaks.",
+    "characters": "C1: launched out of the minecart into the air toward the upper right, motion-blurred; C2: launched out of the minecart alongside C1, motion-blurred.",
+    "props": "Wooden mine exit structure, broken wooden tracks, a wooden minecart with metal wheels, and a bunch of red berries flying through the air.",
+    "action": "A speeding wooden minecart bursts out of the wooden mine exit on the snowy slope and abruptly halts at the broken end of the tracks, violently catapulting C1, C2, and a bunch of red berries high into the clear blue sky off-screen to the right.",
+    "camera": "Wide shot, slightly low angle, static camera showing the mine exit on the left and open sky on the right.",
+    "light_mood": "Bright natural daylight with crisp white snow and a vivid turquoise-blue sky; comedic and abrupt action mood.",
+    "sound": "Loud crashing of wood and metal as the cart stops, orchestral music cutting off abruptly, and a high-pitched comedic vocal yelp as characters fly."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The mineshaft does not collapse; instead, a minecart bursts out of the mine exit and stops at the broken track end, launching the characters into the air.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The description 'mineshaft collapsing' is inaccurate; the frames show a minecart crashing out of the exit and breaking the wooden structure, not the shaft itself collapsing. The primary action involves the cart and characters, which are entirely missing from the one-sentence summary.",
+   "omissions": [
+    "The one-sentence description omits the minecart, which is the central object.",
+    "The one-sentence description omits the characters being ejected.",
+    "The one-sentence description claims the shot is 'static', but Frame 1 shows significant motion blur/POV movement."
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "923427562f033bdf26fb864c42a579fd9143bff3db852faabe94d3a770000257",
+    "check": "6fd96343d02cae3905d0f56d5910cabd28626e4bcd432d20a6d572533e007b88",
+    "rewrite": "174bab5067628218bbe2b767198a61ebd8d7af613e5ae704899ff5e3b6a9b01f"
+   }
+  },
+  "26": {
+   "shot": 26,
+   "start": 80.125,
+   "end": 83.458,
+   "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime high in the air above snow-covered jagged mountain peaks under a blue sky.",
+   "characters": "",
+   "props": "A large bunch of red berries on a green stem floating in the foreground.",
+   "action": "C1 blinks its large eyes, and then falls slightly backward into the lower-left distance with a wide, eager smile while reaching its front hooves toward a bunch of red berries drifting into the upper-right foreground.",
+   "camera": "Close-up on C1's face pulling back to a wide shot as the berries enter the foreground on the right; high angle looking slightly down.",
+   "light_mood": "Bright, clear daylight with cool blue and white mountain tones contrasted by warm orange fur and vibrant red berries; comedic, triumphant mood.",
+   "sound": "Rushing wind, a comedic vocal groan from C1, and triumphant, fast-paced orchestral brass and string music resuming.",
+   "draft_columns": {
+    "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime high in the air above snow-covered jagged mountain peaks under a blue sky.",
+    "characters": "C1: flying in mid-air from lower left toward the camera, initially squinting and blinking, then opening eyes wide with an excited open-mouthed grin.",
+    "props": "A large bunch of red berries on a green stem floating in the foreground.",
+    "action": "C1 soars through the air toward the foreground, blinks its large eyes, and then falls slightly backward into the lower-left distance with a wide, eager smile while reaching its front hooves toward a bunch of red berries drifting into the upper-right foreground.",
+    "camera": "Close-up on C1's face pulling back to a wide shot as the berries enter the foreground on the right; high angle looking slightly down.",
+    "light_mood": "Bright, clear daylight with cool blue and white mountain tones contrasted by warm orange fur and vibrant red berries; comedic, triumphant mood.",
+    "sound": "Rushing wind, a comedic vocal groan from C1, and triumphant, fast-paced orchestral brass and string music resuming."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The shot starts as a close-up on C1's face and pulls back rather than tracking right in a medium shot.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description identifies the shot as a 'Medium shot' and 'tracking right', but the frames show a Close-up pulling back to a Wide shot with the character falling away into the distance.",
+   "omissions": [
+    "The significant camera movement (pulling back/zooming out) is not mentioned in the one-sentence description.",
+    "The change in shot scale from Close-up to Wide shot is not mentioned."
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "d6b69536061f51783e4a630d1a512fa134aebe453134088c1b3c5872199d64f4",
+    "check": "622015303055848e458b662fdf2ae38fbedeb756c93da9d846a3014cb6d916a8",
+    "rewrite": "876a3e1df23308da3ce8562ac712ae24087c5457a80168e395bef6b53fa11257"
+   },
+   "format_fixed": true
+  },
+  "27": {
+   "shot": 27,
+   "start": 83.458,
+   "end": 86.167,
+   "setting": "Outdoor, bright daytime, flying high in the sky against a blurred background of white clouds and blue sky.",
+   "characters": "C1: on left in profile facing right, flying through air; initially has a wide-eyed open-mouthed expression looking up, then closes mouth partway with heavy-lidded disappointed eyes; C3: enters on far left edge.",
+   "props": "None.",
+   "action": "C1 flies horizontally to the right, reaching its front legs forward in mid-air with a wide-eyed, open-mouthed expression while looking upward. Suddenly, C3 enters from the left behind C1 and grabs onto C1's back, causing C1 to lower its eyelids in disappointment.",
+   "camera": "Medium close-up side profile of C1, fast lateral tracking shot moving right alongside C1 against a motion-blurred background.",
+   "light_mood": "Bright, clear daylight with soft white and blue sky tones contrasting with C1's warm orange fur; shifts from excited to comedic disappointment.",
+   "sound": "Triumphant, soaring orchestral music with brass and strings playing throughout, accompanied by a brief comedic vocalization from C1.",
+   "draft_columns": {
+    "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, flying high above blurred snow-covered mountains and clouds.",
+    "characters": "C1: on left in profile facing right, flying through air; initially has a wide-eyed excited open-mouthed grin, then closes mouth with heavy-lidded disappointed eyes; C3: enters on far left edge.",
+    "props": "None.",
+    "action": "C1 flies horizontally to the right, frantically paddling its front legs in mid-air with an eager, open-mouthed grin while looking up to the right. Suddenly, C3 swoops in from the left behind C1, causing C1 to stop smiling, droop its eyelids in disappointment, and turn its head slightly back toward the left.",
+    "camera": "Medium close-up side profile of C1, fast lateral tracking shot moving right alongside C1 against a motion-blurred background.",
+    "light_mood": "Bright, clear daylight with soft white and blue sky tones contrasting with C1's warm orange fur; shifts from excited to comedic disappointment.",
+    "sound": "Triumphant, soaring orchestral music with brass and strings playing throughout, accompanied by a brief comedic vocalization from C1."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "C1 is flying through the air with a happy open-mouthed expression before looking disappointed, rather than screaming and running on the ground.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The description states C1 is 'running', but the character is clearly flying/falling through the air (clouds background, no ground). While legs are paddling, 'flying' is the accurate state. Also, 'screaming' is supported by the open mouth/panic expression, contradicting the detailed description's 'grin'.",
+   "omissions": [
+    "C3 appears to be a blue winged creature (bird).",
+    "C1 is a gazelle/antelope.",
+    "Background is primarily clouds, distinct mountains are not visible."
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "9bc21099f79d7e3943fa2bf92d58667b05e059142bef1dc89ff3e98485b5cf1b",
+    "check": "2ca4f02c6f16246630bc20a7d948e353c3fc87908df1e02e08cf07ee6c69fd01",
+    "rewrite": "cc266198e238422f848548375d7d076ff882029f5825b56796214f7bcdb0d8b3"
+   }
+  },
+  "28": {
+   "shot": 28,
+   "start": 86.167,
+   "end": 89.333,
+   "setting": "P4: Outdoor, bright daytime, mid-air with blurred snowy mountain peaks and pale blue sky in the background.",
+   "characters": "C1: on right foreground, only a raised hoof and furry leg in a patterned cuff visible; C2: in center-left, tumbling in mid-air, eyes wide with big blue irises and slightly open beak.",
+   "props": "None.",
+   "action": "C2 tumbles and flips backward in mid-air next to C1's raised hoof, then stabilizes on its back with wide, sparkling eyes and outstretched flippers while drifting downward to the left.",
+   "camera": "Close-up of C2 with C1's hoof in extreme foreground on the right, tracking with them through the air.",
+   "light_mood": "Bright, soft daylight with cool blue and white background tones; whimsical and heartwarming mood.",
+   "sound": "Soaring orchestral music continues.",
+   "draft_columns": {
+    "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, mid-air with blurred snowy mountain peaks and pale blue sky in the background.",
+    "characters": "C1: on right foreground, only front hoof and leg visible; C2: in center-left, tumbling in mid-air, eyes wide with big blue pupils and open beak.",
+    "props": "None.",
+    "action": "C2 tumbles and flips backward in mid-air next to C1's raised front hoof, then stabilizes on its back with wide, sparkling eyes and outstretched flippers while drifting downward to the left.",
+    "camera": "Close-up of C2 with C1's hoof in extreme foreground on the right, tracking with them through the air.",
+    "light_mood": "Bright, soft daylight with cool blue and white background tones; whimsical and heartwarming mood.",
+    "sound": "Soaring orchestral music continues, accompanied by a cute, high-pitched cooing sound from C2."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The shot focuses on C2 tumbling in mid-air next to C1's front hoof, not a medium close-up of C1 falling while waving.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description claims the camera is 'static', but the frames show a tracking shot following the falling penguin. It also identifies 'C1' as falling, whereas the detailed description (and visual evidence) shows C2 (the penguin) falling while C1 (the foreground limb) remains relatively stationary in the frame.",
+   "omissions": [
+    "The camera is tracking the falling character, not static.",
+    "C1 appears to be a hand or paw with digits, not a hoof.",
+    "C2's beak is closed, not open."
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "3c50133b7183089b9bb4af723f9e7afa6661cbffd0ee54910fa13caa8d90a2a6",
+    "check": "e0e0dfa00c0cca0ab8d354735235e3439f758e5a460a385568090df8dbea9e24",
+    "rewrite": "633886ee2095ed1c9045df88e3b4c95b1f7c1c4e1bf7ab69f646c57eed31f2ea"
+   }
+  },
+  "29": {
+   "shot": 29,
+   "start": 89.333,
+   "end": 93.042,
+   "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, mid-air with blurred snowy mountain peaks, clouds, and pale blue sky in the background.",
+   "characters": "C1: on left and center, facing right, expression shifting from half-lidded droop to wide-eyed panic with open mouth, then confused blinking.",
+   "props": "None.",
+   "action": "While airborne, C1's expression suddenly shifts from a relaxed, half-lidded look to wide-eyed shock and panic as it gasps, then closes its mouth and blinks rapidly while looking around in confusion.",
+   "camera": "Medium close-up of C1's head and neck at eye level, tracking alongside C1 against the moving background.",
+   "light_mood": "Bright natural daylight with cool blue and white background tones; comedic and sudden realization mood.",
+   "sound": "Dramatic orchestral music swells and shifts to a tense tone, accompanied by C1's high-pitched scream and confused grunting vocalizations.",
+   "draft_columns": {
+    "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, mid-air with blurred snowy mountain peaks, clouds, and pale blue sky in the background.",
+    "characters": "C1: on left and center, facing right, expression shifting from half-lidded droop to wide-eyed panic with open mouth, then confused blinking.",
+    "props": "None.",
+    "action": "While airborne, C1's expression suddenly shifts from a relaxed, half-lidded look to wide-eyed shock and panic as it gasps, then closes its mouth and blinks rapidly while looking around in confusion.",
+    "camera": "Medium close-up of C1's head and neck at eye level, tracking alongside C1 against the moving background.",
+    "light_mood": "Bright natural daylight with cool blue and white background tones; comedic and sudden realization mood.",
+    "sound": "Dramatic orchestral music swells and shifts to a tense tone, accompanied by C1's high-pitched scream and confused grunting vocalizations."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The camera is not static; it tracks with C1 through the air as the background moves.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description states the shot is 'static', but the camera is clearly tracking the character (the background moves while the character remains centered). Additionally, the character is not significantly 'turning its head' but rather bobbing/tilting it while facing right.",
+   "omissions": [
+    "C1 is wearing a purple hat or cap on the back of its head."
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "da626133ca7e917561a328baa2e01bb086f9f9f1bb927d1a062440391e47a8c7",
+    "check": "4be48d284899b2530b42076506fe3285ee7876828f0ce4c53ec35d17fef3d829",
+    "rewrite": null
+   }
+  },
+  "30": {
+   "shot": 30,
+   "start": 93.042,
+   "end": 96.667,
+   "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, clear blue sky above jagged snow-covered rocky peaks and a snowy ground.",
+   "characters": "C1: curled into a tight round ball, falling from the sky on upper left.",
+   "props": "Jagged rocks and snow.",
+   "action": "Curled into an orange ball, C1 plummets from the high sky toward the jagged rocky peaks, then bouncing and rolling into the foreground.",
+   "camera": "Extreme wide shot tilting down and panning right to follow C1's descent as C1 moves from extreme distance into a medium shot in the foreground.",
+   "light_mood": "Bright, crisp daylight with cool blue sky and white snow contrasting with C1's warm orange fur; chaotic, action-packed comedic mood.",
+   "sound": "Fast-paced, dramatic orchestral music builds to a crescendo.",
+   "draft_columns": {
+    "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, clear blue sky above jagged snow-covered rocky peaks and a snowy ground.",
+    "characters": "C1: curled into a tight round ball, falling from the sky on upper left, crashing through rocky peaks to the foreground right.",
+    "props": "Jagged rocks and snow.",
+    "action": "Curled into an orange ball, C1 plummets from the high sky toward the jagged rocky peaks, smashing straight through a rock pinnacle in a cloud of debris and snow, then bouncing and rolling into the foreground.",
+    "camera": "Extreme wide shot tilting down and panning right to follow C1's descent as C1 moves from extreme distance into a medium shot in the foreground.",
+    "light_mood": "Bright, crisp daylight with cool blue sky and white snow contrasting with C1's warm orange fur; chaotic, action-packed comedic mood.",
+    "sound": "Fast-paced, dramatic orchestral music builds to a crescendo, accompanied by a loud, echoing crash and crumbling rock sounds as C1 hits the peak."
+   },
+   "drafter_description_consistent": true,
+   "drafter_description_note": "",
+   "checker_description_contradicted": false,
+   "checker_description_note": "The one-sentence description accurately summarizes the fall and crash into the snow, though 'zooming in' is technically a tilt/track with the subject moving closer.",
+   "omissions": [
+    "The creature is identifiable as an orange sloth (Sid from Ice Age).",
+    "The debris in frame 4 is specifically snow/ice particles, not rock debris."
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "48035eb75e3ffa4c5f4bd35a736b88c3afc30c6bc0c5638fb8625d812a0a187b",
+    "check": "2b5db35539998d015006e21acf854f77a078db55ed769357d3b0a3b4ad5db929",
+    "rewrite": "1e42e843ab4345ca80326f9adb023604812daca92d75218f1b1837fc53d6f3b1"
+   }
+  },
+  "31": {
+   "shot": 31,
+   "start": 96.667,
+   "end": 101.792,
+   "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, clear weather, snowy ground in the foreground with jagged snow-covered rocky peaks in the background.",
+   "characters": "C1: lying sprawled on its back in the snow, dazed and half-lidded expression changing to wide-eyed surprise as it lifts its head; C2: sitting upright on C1's chest, wide-eyed, then sliding down C1's body out of view.",
+   "props": "Small yellow grass blades sticking out of the snow on the bottom left.",
+   "action": "C1 lies sprawled on its back in the snow while C2 sits upright on C1's chest. C1 groans and lifts its head with half-closed eyes, looking at C2. C2 tips backward and slides down C1's belly into the snow behind C1. C1's eyes widen as it watches C2 disappear.",
+   "camera": "Medium shot, eye-level angle, static camera.",
+   "light_mood": "Bright, crisp daylight with cool blue shadows on the white snow contrasting with C1's warm orange fur; comedic, dazed mood.",
+   "sound": "Dramatic orchestral chord fades out, followed by a cute squeak from C2, a sliding sound in the snow, and a soft thud.",
+   "draft_columns": {
+    "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, clear weather, snowy ground in the foreground with jagged snow-covered rocky peaks in the background.",
+    "characters": "C1: lying sprawled on its back in the snow, dazed and half-lidded expression changing to wide-eyed surprise as it lifts its head; C2: sitting upright on C1's chest, wide-eyed, then sliding down C1's body out of view.",
+    "props": "Small yellow grass blades sticking out of the snow on the bottom left.",
+    "action": "C1 lies sprawled on its back in the snow while C2 sits upright on C1's chest. C1 groans and lifts its head with half-closed eyes, looking at C2. C2 tips backward and slides down C1's belly into the snow behind C1. C1's eyes widen as it watches C2 disappear.",
+    "camera": "Medium shot, eye-level angle, static camera.",
+    "light_mood": "Bright, crisp daylight with cool blue shadows on the white snow contrasting with C1's warm orange fur; comedic, dazed mood.",
+    "sound": "Dramatic orchestral chord fades out, followed by a cute squeak from C2, a sliding sound in the snow, and a soft thud."
+   },
+   "drafter_description_consistent": true,
+   "drafter_description_note": "",
+   "checker_description_contradicted": false,
+   "checker_description_note": "The one-sentence description accurately summarizes the primary visual setup of the shot.",
+   "omissions": [
+    "C1 is a sloth (specifically Sid from Ice Age).",
+    "C2 is a penguin.",
+    "C1's tongue is lolling out in the first frame."
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "a626ff4fa33c8a253604e968c15ec1029546bef6c170c229290275f290e54507",
+    "check": "139ef0fd29a1b713c23ee5b7e0737de2638370ad6081044018c247ac89b46101",
+    "rewrite": null
+   }
+  },
+  "32": {
+   "shot": 32,
+   "start": 101.792,
+   "end": 103.75,
+   "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, clear sky, vast snowy mountain slope with rocky cliffs on left and right.",
+   "characters": "C2: sliding on its belly away from camera down the snowy slope; C3: a large colony standing in the distant background on the right.",
+   "props": "Snow-covered rocks and dry grass blades in the right foreground.",
+   "action": "C2 slides on its belly down the snowy slope away from the camera, kicking its little feet and leaving a trail in the snow, heading toward the distant colony of C3 on the right.",
+   "camera": "Wide shot, high angle looking down the slope, static camera.",
+   "light_mood": "Bright, clear daylight with soft blue shadows on the snow; hopeful and heartwarming mood.",
+   "sound": "Sliding sound in the snow and distant chattering calls of a penguin colony.",
+   "draft_columns": {
+    "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime, clear sky, vast snowy mountain slope with rocky cliffs on left and right.",
+    "characters": "C2: sliding on its belly away from camera down the snowy slope; C3: a large colony standing in the distant background on the right.",
+    "props": "Snow-covered rocks and dry grass blades in the right foreground.",
+    "action": "C2 slides on its belly down the snowy slope away from the camera, kicking its little feet and leaving a trail in the snow, heading toward the distant colony of C3 on the right.",
+    "camera": "Wide shot, high angle looking down the slope, static camera.",
+    "light_mood": "Bright, clear daylight with soft blue shadows on the snow; hopeful and heartwarming mood.",
+    "sound": "Sliding sound in the snow, cute happy squeaks from C2, and distant chattering calls of a penguin colony."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "It is C2 (the baby penguin) sliding down the slope, not C1, and the camera is static rather than panning right.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description states the camera is 'panning right', but the frames show the background elements (rocks, distant colony) remaining in fixed positions relative to the frame edges, indicating a static camera.",
+   "omissions": [
+    "The one-sentence description identifies the sliding character as 'C1' while the detailed description identifies it as 'C2'.",
+    "The one-sentence description claims the camera is 'panning right', but the frames show a static camera."
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "dacc19494e62e78fb0b3ddacea27d21dcbca6f9b178750eb354f031217b52b64",
+    "check": "cb29b870475de19c2d4241a952c13528394ef9f2716b40808c9332b1f6293b3a",
+    "rewrite": "d576511d211b45c52d0ebfe9950558f1961fccfd9679069965cb85477d92e0a4"
+   }
+  },
+  "33": {
+   "shot": 33,
+   "start": 103.75,
+   "end": 114.5,
+   "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime transitioning to a wide snowy cliff overlooking an ocean with a striped lighthouse on the right at dusk.",
+   "characters": "C1: centered in close-up with a bruised purple left eye, drooping its eyelids and lowering its head, then seen standing sad on a cliff edge.",
+   "props": "A red-and-white striped lighthouse on the snowy slope in the final wide view.",
+   "action": "C1 stands looking ahead with a bruised left eye, then slowly droops its eyelids, pins its ears back, and lowers its head and neck down out of the bottom of the frame, followed by a transition to a wide cliff where C1 stands with its head hung low.",
+   "camera": "Starts as a close-up on C1's head, static as C1 ducks out of frame, then transitions to an extreme wide shot of the cliff.",
+   "light_mood": "Bright, clear daylight with soft background blur, shifting to cool twilight blue and pink tones in the final wide view; melancholic mood.",
+   "sound": "Distant penguin calls fade into gentle, melancholic instrumental music with soft wind, ending with two quiet vocal sighs.",
+   "draft_columns": {
+    "setting": "P4: Mountain slope and rocky peaks. Outdoor, bright daytime transitioning to a wide snowy cliff overlooking an ocean with a striped lighthouse on the right at dusk.",
+    "characters": "C1: centered in close-up with a bruised purple left eye, drooping its eyelids and lowering its head, then seen standing sad on a cliff edge.",
+    "props": "A red-and-white striped lighthouse on the snowy slope in the final wide view.",
+    "action": "C1 stands looking ahead with a bruised left eye, then slowly droops its eyelids, pins its ears back, and lowers its head and neck down out of the bottom of the frame, followed by a transition to a wide cliff where C1 stands with its head hung low.",
+    "camera": "Starts as a close-up on C1's head, static as C1 ducks out of frame, then transitions to an extreme wide shot of the cliff.",
+    "light_mood": "Bright, clear daylight with soft background blur, shifting to cool twilight blue and pink tones in the final wide view; melancholic mood.",
+    "sound": "Distant penguin calls fade into gentle, melancholic instrumental music with soft wind, ending with two quiet vocal sighs."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The camera does not zoom out continuously; C1 ducks out of a static close-up, and the image transitions/cuts to a different wide shot.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The description states 'Medium shot', but the initial frames (1-3) clearly show a Close-Up of the character's head and neck. Additionally, the transition to the final shot appears to be a cut or transition to an Extreme Wide Shot rather than a continuous 'zoom out'.",
+   "omissions": [
+    "The one-sentence description does not mention the change in time of day from bright daylight to dusk/twilight.",
+    "The one-sentence description omits the visible injury (bruised eye) on the character.",
+    "The one-sentence description omits the lighthouse visible in the final shot."
+   ],
+   "audio_silent": false,
+   "n_frames": 6,
+   "calls": {
+    "draft": "ad52dea0517b36a9d9ab0c499adc65057976195b70a215b8af637eb03cce9689",
+    "check": "cf59810119d2424973c4bfdc1812bc052fe2f93934ff918867046aea3cb76a3d",
+    "rewrite": null
+   }
+  },
+  "34": {
+   "shot": 34,
+   "start": 114.5,
+   "end": 118.792,
+   "setting": "P4: Mountain slope and rocky peaks. Outdoor, night or deep twilight, clear dark blue starry sky with snowy mountain ridges in the background and a rocky ledge in the foreground.",
+   "characters": "C1: sitting centered on the rocky ledge with a bruised left eye, drooping ears and closed eyes while crying, then perking up with wide eyes.",
+   "props": "Small rocks and patches of snow on the foreground rocky ledge.",
+   "action": "C1 sits on the rocky hill with its hind legs splayed out, closing its eyes, opening its mouth, and shaking its head while crying, then suddenly stops, perks its ears up, and opens its eyes wide, looking to the left.",
+   "camera": "Full shot of C1 from a slightly low angle, static camera.",
+   "light_mood": "Cool, dim twilight lighting against a deep blue sky, shifting from a sad, tearful mood to sudden surprise and alertness.",
+   "sound": "High-pitched cartoon sobbing and crying sounds over, ending with a surprised, questioning vocal grunt.",
+   "draft_columns": {
+    "setting": "P4: Mountain slope and rocky peaks. Outdoor, night or deep twilight, clear dark blue starry sky with snowy mountain ridges in the background and a rocky ledge in the foreground.",
+    "characters": "C1: sitting centered on the rocky ledge with a bruised left eye, drooping ears and closed eyes while crying, then perking up with wide eyes.",
+    "props": "Small rocks and patches of snow on the foreground rocky ledge.",
+    "action": "C1 sits on the rocky hill with its hind legs splayed out, closing its eyes, opening its mouth, and shaking its head while crying, then suddenly stops, perks its ears up, and opens its eyes wide, looking to the left.",
+    "camera": "Full shot of C1 from a slightly low angle, static camera.",
+    "light_mood": "Cool, dim twilight lighting against a deep blue sky, shifting from a sad, tearful mood to sudden surprise and alertness.",
+    "sound": "High-pitched cartoon sobbing and crying sounds over gentle acoustic guitar music, ending with a surprised, questioning vocal grunt."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "C1 is crying with eyes closed before suddenly looking to the side, rather than casually looking around, and it is a full shot rather than a medium shot.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The shot is a full shot (showing the entire body from head to hooves), not a medium shot. Additionally, the character is primarily crying with eyes closed, rather than 'looking around'.",
+   "omissions": [
+    "Horns on C1's head",
+    "Tufts of dry grass on the rocky ledge"
+   ],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "976d37ff98fe24eaf258adb6cf6764cb86c2c31bdfbddad45ff9738684534011",
+    "check": "f69e72e4a0a1dcd476d4c09e0dc96ff3ad5686852eb45e742ffa85cc4bff804d",
+    "rewrite": "8c7c1b9d340aca2db8d0367a192152899376ec448a679eb9badd6ec6e5914cf9"
+   }
+  },
+  "35": {
+   "shot": 35,
+   "start": 118.792,
+   "end": 123.542,
+   "setting": "P4: Mountain slope and rocky peaks. Outdoor, twilight, snow-covered slopes with distant rocky ridges.",
+   "characters": "C1: blurred in left foreground, back of head and right eye visible; C2: on snow at right, holding a red berry branch, looking up; C3: group in background walking forward, front four holding red berry bunches.",
+   "props": "Branches and large bunches of bright red berries held by C2 and C3.",
+   "action": "C1 looks down at C2, who stands in the snow holding a branch of red berries and smiling up. The view then tilts up past C2 to reveal a large group of C3 waddling forward over the snowy ridge, several carrying large bunches of red berries.",
+   "camera": "Over-the-shoulder medium shot from behind C1, high angle tilting up to eye level to reveal C3 in the background.",
+   "light_mood": "Soft, cool twilight illumination with warm highlights on C1, creating a heartwarming, uplifting mood.",
+   "sound": "Gentle acoustic guitar music accompanied by rhythmic, comical penguin quacking.",
+   "draft_columns": {
+    "setting": "P4: Mountain slope and rocky peaks. Outdoor, twilight, snow-covered slopes with distant rocky ridges.",
+    "characters": "C1: blurred in left foreground, back of head and right eye visible; C2: on snow at right, holding a red berry branch, looking up; C3: group in background walking forward, front four holding red berry bunches.",
+    "props": "Branches and large bunches of bright red berries held by C2 and C3.",
+    "action": "C1 looks down at C2, who stands in the snow holding a branch of red berries and smiling up. The view then tilts up past C2 to reveal a large group of C3 waddling forward over the snowy ridge, several carrying large bunches of red berries.",
+    "camera": "Over-the-shoulder medium shot from behind C1, high angle tilting up to eye level to reveal C3 in the background.",
+    "light_mood": "Soft, cool twilight illumination with warm highlights on C1, creating a heartwarming, uplifting mood.",
+    "sound": "Gentle acoustic guitar music accompanied by rhythmic, comical penguin quacking and waddling sounds."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The camera is not static; it tilts up from C2 to reveal the group of C3 in the background.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description claims the shot is 'static', but the frames clearly show a camera movement (tilt up) transitioning from a close-up of C2 to a wider view of the background group C3.",
+   "omissions": [],
+   "audio_silent": false,
+   "n_frames": 4,
+   "calls": {
+    "draft": "d332a537f229e4052892e7ec3a5018a349c89f00c4acd4d2f93ce5f7c34265de",
+    "check": "4b6075b991dd4456bfdab93bd70776ecff9c16866da2e7f6988ef2d6bbc07a61",
+    "rewrite": "40b1d5dc7b716a074888365ac0c0d137df3765c06f75cb5fe3f571bc6ebb435a"
+   }
+  },
+  "36": {
+   "shot": 36,
+   "start": 123.542,
+   "end": 150.04,
+   "setting": "P4: Mountain slope and rocky peaks. Outdoor, night, snowy slope with a stone lighthouse tower on a rocky peak and a starry nebula sky above.",
+   "characters": "C1: lying in snow on left, eating berries, smiling contentedly; C2: sitting on wooden planks in center, eating a berry; C3: crowd standing around in background.",
+   "props": "Red berry bunch, dead fish, glowing lanterns, wooden planks in the snow; stone lighthouse with a bright yellow light beam.",
+   "action": "C1 munches on red berries in the snow next to fish and a lantern, then lifts its head to chew happily beside C2, who sits on wooden planks surrounded by C3. The view rises past a stone lighthouse shining a golden beam to the starry night sky where white credits appear.",
+   "camera": "Starts in a high-angle close-up on the berries, pulls back to a medium shot, then tilts up to the sky and holds static.",
+   "light_mood": "Cool blue night lighting contrasted with warm golden glow from lanterns and the lighthouse beam, creating a peaceful, magical mood.",
+   "sound": "Sweeping, emotional orchestral music that pauses briefly before transitioning into an upbeat, triumphant brass fanfare.",
+   "draft_columns": {
+    "setting": "P4: Mountain slope and rocky peaks. Outdoor, night, snowy slope with a stone lighthouse tower on a rocky peak and a starry nebula sky above.",
+    "characters": "C1: lying in snow on left, eating berries, smiling contentedly; C2: sitting on wooden planks in center, eating a berry; C3: crowd standing around in background.",
+    "props": "Red berry bunch, dead fish, glowing lanterns, wooden planks in the snow; stone lighthouse with a bright yellow light beam.",
+    "action": "C1 munches on red berries in the snow next to fish and a lantern, then lifts its head to chew happily beside C2, who sits on wooden planks surrounded by C3. The view rises past a stone lighthouse shining a golden beam to the starry night sky where white credits appear.",
+    "camera": "Starts in a high-angle close-up on the berries, pulls back to a medium shot, then tilts up to the sky and holds static.",
+    "light_mood": "Cool blue night lighting contrasted with warm golden glow from lanterns and the lighthouse beam, creating a peaceful, magical mood.",
+    "sound": "Sweeping, emotional orchestral music that pauses briefly before transitioning into an upbeat, triumphant brass fanfare."
+   },
+   "drafter_description_consistent": false,
+   "drafter_description_note": "The camera is not static; it pulls back from a close-up to a medium shot and then tilts up into the night sky for the credits.",
+   "checker_description_contradicted": true,
+   "checker_description_note": "The one-sentence description claims a 'static camera' and a single 'Medium shot', but the frames show a camera that starts in a close-up, pulls back to a medium shot, and then tilts up to the sky for the credits.",
+   "omissions": [
+    "White text credits appearing in the sky (e.g., 'Directed by PABLO VAZQUEZ', 'Rigging JUAN PABLO BOUZA')",
+    "Production logos at the bottom of the screen (Blender Cloud, blender institute, RenderStreet)"
+   ],
+   "audio_silent": false,
+   "n_frames": 8,
+   "calls": {
+    "draft": "d3811964bc931ace8a423ae6bd1f7d635efb8f8e337be1e432e0c9588d21246e",
+    "check": "0baa7e010a975dfaaae52a3716603ae08adb95cdede7c4b32d490d0c2288a482",
+    "rewrite": null
+   }
+  }
+ }
+}

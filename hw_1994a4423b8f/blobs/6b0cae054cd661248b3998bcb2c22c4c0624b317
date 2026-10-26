@@ -1,0 +1,30 @@
+"""Run `crewcut score` unchanged, but log each judge request's usage (purpose=continuity-judge) to JSONL.
+usage: score_logged.py RUN_DIR TASK_DIR LEDGER.jsonl [--judge MODEL]"""
+import json, sys, time
+from pathlib import Path
+from crewcut.scoring import judge as J
+from crewcut.scoring.score import score_run
+
+run, task, ledger = map(Path, sys.argv[1:4])
+model = sys.argv[5] if len(sys.argv) > 5 else "auto"
+orig = J.ContinuityJudge.__call__
+def logged(self, description, start, end):
+    create = self.client.chat.completions.create
+    def wrapped(**kw):
+        r = create(**kw)
+        u = r.usage
+        with open(ledger, "a") as f:
+            f.write(json.dumps({"purpose": "continuity-judge", "model": kw["model"], "response_model": r.model,
+              "start": start, "end": end, "answer": r.choices[0].message.content, "finish_reason": r.choices[0].finish_reason, "usage_raw": u.model_dump() if hasattr(u,"model_dump") else None,
+              "prompt_tokens": getattr(u, "prompt_tokens", None), "completion_tokens": getattr(u, "completion_tokens", None),
+              "total_tokens": getattr(u, "total_tokens", None), "t": time.time()}) + "\n")
+        return r
+    self.client.chat.completions.create = wrapped
+    try:
+        return orig(self, description, start, end)
+    finally:
+        self.client.chat.completions.create = create
+J.ContinuityJudge.__call__ = logged
+res = score_run(run, task, None, judge=model)
+(run / "score.json").write_text(json.dumps(res, indent=1))
+print(json.dumps(res, indent=1))

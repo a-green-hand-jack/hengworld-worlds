@@ -1,0 +1,6 @@
+# Rights notes for the dataset README (task-maker)
+Per steward#5 decision, 2026-10-22. Full evidence: admissions.json.
+
+- Coffee Run (© Blender Foundation, CC BY 4.0). Pinned file comes from archive.org item `coffee-run` (third-party upload, "Coffee Run.ia.mp4"), whose licenseurl reads `https://creativecommons.org/licenses/by-nd/4.0/`. Wikimedia Commons (artist Blender Foundation) reads "CC BY 4.0". Both texts recorded; the objective's table (CC BY 4.0) governs. README should name the archive.org item as the source of the pinned file.
+- Sherlock Jr. (1924) and A Trip to the Moon (1902): the films are US public domain. The pinned .ogv files carry a Vorbis soundtrack added by the uploader; its rights are OPEN (maintainer_decisions.md item 13). Masters kept as pinned; audio not excluded. README must flag this as open.
+- Spirit Chaser: CC BY-SA 3.0 (Karl Pajak); master and derived clips keep CC BY-SA 3.0. Domini Canes: CC BY 3.0 (Jakub Bednarz). Caminandes 3: CC BY 3.0 (Blender Foundation).

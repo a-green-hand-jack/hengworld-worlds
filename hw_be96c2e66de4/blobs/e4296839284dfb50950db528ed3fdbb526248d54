@@ -1,0 +1,225 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0008",
+  "start": 383.149,
+  "end": 645.378,
+  "shots": 29,
+  "lines": 0
+ },
+ "duration": 262.229,
+ "cuts": [
+  4.004,
+  9.91,
+  14.582,
+  16.484,
+  20.387,
+  33.901,
+  41.442,
+  46.413,
+  56.557,
+  71.872,
+  90.157,
+  91.826,
+  110.711,
+  118.919,
+  126.76,
+  134.568,
+  151.118,
+  155.956,
+  158.292,
+  159.693,
+  188.422,
+  195.429,
+  235.803,
+  246.28,
+  247.448,
+  251.352,
+  253.387,
+  259.026
+ ],
+ "shots": [
+  {
+   "index": 42,
+   "start": 0.0,
+   "end": 4.004,
+   "description": "Medium shot of C1 taking a wrapped parcel out of his jacket, static camera."
+  },
+  {
+   "index": 43,
+   "start": 4.004,
+   "end": 9.91,
+   "description": "Extreme close-up of C1 writing on a notepad, static camera."
+  },
+  {
+   "index": 44,
+   "start": 9.91,
+   "end": 14.582,
+   "description": "Long shot of C1 walking up the path and approaching a house, static."
+  },
+  {
+   "index": 45,
+   "start": 14.582,
+   "end": 16.484,
+   "description": "Medium shot of C1 running down the stairs, static camera."
+  },
+  {
+   "index": 46,
+   "start": 16.484,
+   "end": 20.387,
+   "description": "Wide shot of C1 and C2 standing at the front door of a house, static."
+  },
+  {
+   "index": 47,
+   "start": 20.387,
+   "end": 33.901,
+   "description": "Full shot of C1 and C2 walking inside a house, static camera."
+  },
+  {
+   "index": 48,
+   "start": 33.901,
+   "end": 41.442,
+   "description": "Medium wide shot of C1 walking towards a house, static camera."
+  },
+  {
+   "index": 49,
+   "start": 41.442,
+   "end": 46.413,
+   "description": "Medium long shot of C1 walking towards a coat rack and picking up a hat, static."
+  },
+  {
+   "index": 50,
+   "start": 46.413,
+   "end": 56.557,
+   "description": "Medium shot of C1 and C2 sitting on a couch, C2 reaches out to touch C1's hand, static."
+  },
+  {
+   "index": 51,
+   "start": 56.557,
+   "end": 71.872,
+   "description": "Medium shot of C1 standing in a hall and hanging his jacket on a coat rack, static camera."
+  },
+  {
+   "index": 52,
+   "start": 71.872,
+   "end": 90.157,
+   "description": "Medium shot of C1 and C2 sitting on a couch, C2 holding C1's hand, static camera."
+  },
+  {
+   "index": 53,
+   "start": 90.157,
+   "end": 91.826,
+   "description": "Extreme close-up of C1's hand showing a ring on a finger, static."
+  },
+  {
+   "index": 54,
+   "start": 91.826,
+   "end": 110.711,
+   "description": "Medium shot of C1 eating a sweet while C2 watches, static camera."
+  },
+  {
+   "index": 55,
+   "start": 110.711,
+   "end": 118.919,
+   "description": "Medium shot of C1 walking out of the pawn shop, static camera."
+  },
+  {
+   "index": 56,
+   "start": 118.919,
+   "end": 126.76,
+   "description": "Medium shot of C1 and C2 sitting down and blinking, static."
+  },
+  {
+   "index": 57,
+   "start": 126.76,
+   "end": 134.568,
+   "description": "Medium shot of C1 and C2 standing behind a counter, where C2 takes away a picture of herself and hands a flat box to C1, static camera."
+  },
+  {
+   "index": 58,
+   "start": 134.568,
+   "end": 151.118,
+   "description": "Medium shot of C1 and C2 sitting uncomfortably together on a sofa, static."
+  },
+  {
+   "index": 59,
+   "start": 151.118,
+   "end": 155.956,
+   "description": "Medium shot of C1 and another person sitting on a sofa while a third person walks past them, static camera."
+  },
+  {
+   "index": 60,
+   "start": 155.956,
+   "end": 158.292,
+   "description": "Medium shot of C1 taking a package from a man while C2 sits on a chair in the background, static camera."
+  },
+  {
+   "index": 61,
+   "start": 158.292,
+   "end": 159.693,
+   "description": "Medium shot of C1 sitting with hands folded, looking sideways, static."
+  },
+  {
+   "index": 62,
+   "start": 159.693,
+   "end": 188.422,
+   "description": "Medium shot of C1 sitting on a couch and C2 opening a curtain to leave the room, static."
+  },
+  {
+   "index": 63,
+   "start": 188.422,
+   "end": 195.429,
+   "description": "Medium shot of C1, an uncredited woman, and C2 interacting in a room, static."
+  },
+  {
+   "index": 64,
+   "start": 195.429,
+   "end": 235.803,
+   "description": "Medium shot of C1 sitting on a sofa and tidying up his clothes while C2 walks into the living room, static camera."
+  },
+  {
+   "index": 65,
+   "start": 235.803,
+   "end": 246.28,
+   "description": "Medium shot of C1 watching as a man and woman in a doorway exchange a dish, static."
+  },
+  {
+   "index": 66,
+   "start": 246.28,
+   "end": 247.448,
+   "description": "Medium shot of C1, C2 and another person talking, static."
+  },
+  {
+   "index": 67,
+   "start": 247.448,
+   "end": 251.352,
+   "description": "A title card reading \"Some one has stolen my watch.\" appears on screen, static shot."
+  },
+  {
+   "index": 68,
+   "start": 251.352,
+   "end": 253.387,
+   "description": "Medium shot of C1, C2 and another person talking, static."
+  },
+  {
+   "index": 69,
+   "start": 253.387,
+   "end": 259.026,
+   "description": "Medium shot of C1 picking up a book and opening it to read, static."
+  },
+  {
+   "index": 70,
+   "start": 259.026,
+   "end": 262.229,
+   "description": "Medium shot of C1 talking and looking to the side, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 262.229
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0008-scr",
+ "descriptions_available": true
+}

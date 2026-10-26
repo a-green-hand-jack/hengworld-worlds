@@ -1,0 +1,5 @@
+# Word-count task
+Input: `sentences.txt`, eight lines of UTF-8 English text, one sentence per line (lines may have double spaces, leading/trailing spaces or tabs).
+Task: for each line, report the number of words on it. A word is a maximal run of characters that are not whitespace (spaces, tabs); a hyphenated word or a number is one word.
+Output format: exactly eight lines, line i holding the decimal integer count for line i of the input, in order, nothing else.
+Run the system as `python3 count_words.py sentences.txt`.

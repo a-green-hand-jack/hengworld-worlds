@@ -1,0 +1,13 @@
+# Not run (executor)
+
+No API key for a generator, a vision-language model or a judge exists in this world. Each part below is **not run**; no result or conclusion is claimed for it.
+
+| Part | Why not run |
+|---|---|
+| Shot descriptions (VLM draft, Issue #3 §1.3) | needs a VLM key |
+| Judge (continuity c, S; frames 1/s, min 2, max 8) | needs a judge key |
+| Real generators (any non-placeholder back end, tiers T0/T1/T2 with real models) | needs generator keys |
+| Screening (500 pairs, 3 raters) | needs a judge/raters; source of raters is the maintainer's open decision |
+| Measures Q·c, Q·S, $ with real cost | depend on the judge / real generators |
+
+The evaluation stretch uses only `--system fixed --profile smoke` (placeholder generator); such runs are unofficial per `configs/tools.yaml`.

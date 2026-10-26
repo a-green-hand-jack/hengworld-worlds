@@ -1,0 +1,22 @@
+{
+ "run_id": "fixed-caminandes3-L1-0000-scr-T0-5e9dec",
+ "system": "fixed",
+ "task_id": "caminandes3-L1-0000-scr",
+ "tier": "T0",
+ "profile": "smoke",
+ "status": "ok",
+ "exit_code": 0,
+ "wall_clock_s": 14.4,
+ "budget": {
+  "model_usd": 10.76,
+  "tool_usd": 2.69,
+  "wall_clock_s": 1937.52
+ },
+ "model_usd": 0.0,
+ "tool_usd": 0.1846,
+ "official": false
+}
+
+real	0m15.715s
+user	0m22.127s
+sys	0m2.598s

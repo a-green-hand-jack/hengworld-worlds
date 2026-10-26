@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "coffee_run-L2-0000",
+  "start": 0.0,
+  "end": 170.125,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 170.125,
+ "cuts": [
+  6.792,
+  56.458,
+  106.667
+ ],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 6.792,
+   "description": "Establishing shot of title text showing production credits, static."
+  },
+  {
+   "index": 1,
+   "start": 6.792,
+   "end": 56.458,
+   "description": "Wide shot of C1 running, then flying away from a hospital, static camera."
+  },
+  {
+   "index": 2,
+   "start": 56.458,
+   "end": 106.667,
+   "description": "Wide shot of C1 flying through a hospital room, church, and city, static camera."
+  },
+  {
+   "index": 3,
+   "start": 106.667,
+   "end": 170.125,
+   "description": "Wide shot of C1 surfing on a stroller, panning right."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 170.125
+  }
+ ],
+ "task_id": "coffee_run-L2-0000-ref",
+ "descriptions_available": true
+}

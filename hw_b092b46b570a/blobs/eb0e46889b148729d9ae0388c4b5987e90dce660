@@ -1,0 +1,7 @@
+# Brief
+Benchmark: per line of sentences.txt (word-count source), the number of words (maximal runs of non-whitespace, per source README). 
+- task-maker: pin sentences.txt, derive ground truth by a reproducible command, compare with /wordcount-reference (record differences), publish task package without answers.
+- executor: run system/count_words.py unchanged on the published package; keep run record (log, cost 0).
+- scorer: exact match per line + accuracy over 8 lines; check measures behave.
+- auditor: reproduce truth and score, explain every wrong line, approve.
+Fixed: no other sources/systems, no paid services.

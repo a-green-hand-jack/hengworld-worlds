@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+"""Derive ground truth from the pinned file, compare with reference, build key + package, check. Exits non-zero on failure."""
+import hashlib, json, shutil, sys, os
+SRC, REF = '/wordcount-source/sentences.txt', '/wordcount-reference/reference.json'
+pin = json.load(open('corpus/admission.json'))['pinned_sha256']
+raw = open(SRC, 'rb').read()
+if hashlib.sha256(raw).hexdigest() != pin: sys.exit('FAIL: pinned file checksum mismatch')
+lines = raw.decode('utf-8').split('\n')
+if lines[-1] == '': lines.pop()
+truth = [len(l.split()) for l in lines]   # str.split() = maximal runs of non-whitespace
+ref = [c['words'] for c in json.load(open(REF))['counts']]
+diff = [{'line': i+1, 'derived': a, 'reference': b} for i, (a, b) in enumerate(zip(truth, ref)) if a != b]
+if len(truth) != len(ref): diff.append({'length': [len(truth), len(ref)]})
+os.makedirs('key', exist_ok=True); os.makedirs('data', exist_ok=True)
+json.dump({'counts': truth}, open('key/answer_key.json', 'w'), indent=1)
+json.dump({'differences_from_reference': diff, 'n_lines': len(truth)}, open('data/reference_comparison.json', 'w'), indent=1)
+shutil.copy(SRC, 'packages/wordcount/sentences.txt')
+# key-leak check: package must not contain the key file or the counts sequence
+pkg = ''.join(open(os.path.join('packages/wordcount', f), encoding='utf-8').read() for f in os.listdir('packages/wordcount'))
+if 'answer_key' in pkg or json.dumps(truth) in pkg or '\n'.join(map(str, truth)) in pkg: sys.exit('FAIL: key in package')
+if diff: sys.exit('FAIL: differs from reference: %s' % diff)
+print('OK', truth)

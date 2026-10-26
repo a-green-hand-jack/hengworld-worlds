@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0009",
+  "start": 61.333,
+  "end": 64.417,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.084,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 9,
+   "start": 0.0,
+   "end": 3.084,
+   "description": "Medium shot of C1 holding out a stick, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.084
+  }
+ ],
+ "task_id": "domini_canes-L0-0009-scr",
+ "descriptions_available": true
+}

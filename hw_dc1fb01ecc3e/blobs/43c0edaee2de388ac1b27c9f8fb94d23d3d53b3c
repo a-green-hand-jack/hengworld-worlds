@@ -1,0 +1,5 @@
+# Scores
+run1 (executor 16a1839cd02c, output.txt), key from task-maker (git e5ed5cccc6c76cfaaf454b7c0eccf381182d6825).
+Command: python3 scoring/score.py <key answers.json> <run1/output.txt> (scorer revision ed3dbdc50e11).
+Result: deliverable=true; per-line exact match [1,0,1,0,0,1,0,1]; accuracy 0.5 (4/8). Free; no paid step.
+Validation: validation.json (8/8 checks pass).

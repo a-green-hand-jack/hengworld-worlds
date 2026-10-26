@@ -1,0 +1,156 @@
+"""Stage (b): turn a film's hierarchy into task packages for the two tracks.
+
+Every segment at L2-L4 becomes a task; at L0 and L1 a fixed, duration-stratified sample of 30
+shots and 15 beats per film is used (seeded by the film id, so the sample is the same everywhere).
+Each selected segment gives one task in the Reference track (input is the original clip) and one
+in the Screenplay track (input is a script and shot list rendered from the ground truth).
+
+Package layout (paper Appendix D)::
+
+    <task_id>/
+      README.md       instructions given to the system, identical for every system
+      spec.json       delivery specification
+      tools.json      tool manifest of the tier
+      budget.json     model spend, tool spend and wall-clock caps
+      truth.json      ground truth of the segment (kept outside the system's sandbox)
+      input/original.mp4                Reference track only
+      input/script.csv, input/shotlist.csv   Screenplay track only
+"""
+from __future__ import annotations
+
+import csv
+import json
+import random
+import shutil
+import subprocess
+from pathlib import Path
+
+from .. import LEVELS, TRACKS
+from ..config import benchmark, segment_budget
+from ..io import read_dialogue, read_hierarchy, read_shots
+
+INSTRUCTIONS = """# CrewCut task {task_id}
+
+Make a clean-room remake of the input film segment. Tell the same story with the same scenes,
+shots, dialogue and timing, using new picture and new sound. You may watch and analyse the
+original, but none of its frames or audio may appear in your output or be passed to any generator.
+
+Deliver `output/film.mp4`, `output/film.en.vtt` and `output/manifest.json` to the specification in
+`spec.json`, within the budget in `budget.json`, using only the tools in `tools.json`.
+
+Track: **{track_name}**. Segment: {level} ({unit}), {duration:.1f} s, {n_shots} shots, {n_lines} lines.
+"""
+
+UNITS = {"L0": "shot", "L1": "beat", "L2": "scene", "L3": "sequence", "L4": "film"}
+
+
+def select_segments(film_id: str, hier: dict, cfg: dict | None = None) -> dict[str, list[dict]]:
+    cfg = cfg or benchmark()
+    sample = cfg["hierarchy"]["sample_per_film"]
+    rng = random.Random(f"crewcut-{film_id}")
+    out = {}
+    for lv in LEVELS:
+        segs = [dict(s, id=s.get("id", f"{film_id}-{lv}-{i:04d}")) for i, s in enumerate(hier.get(lv, []))]
+        n = sample.get(lv)
+        if n and len(segs) > n:
+            srt = sorted(segs, key=lambda s: s["end"] - s["start"])
+            strata = [srt[i * len(srt) // n:(i + 1) * len(srt) // n] for i in range(n)]
+            segs = sorted((rng.choice(s) for s in strata), key=lambda s: s["start"])
+        out[lv] = segs
+    return out
+
+
+def segment_truth(seg: dict, shots_rec: dict, dialogue: dict, descriptions: dict | None = None,
+                  scenes: list[dict] | None = None) -> dict:
+    """Ground truth restricted to a segment, with times relative to its start."""
+    fps = shots_rec["fps"]
+    a, b = seg["start"], seg["end"]
+    cuts = [c / fps for c in shots_rec["cuts"]]
+    bounds = [0.0] + cuts + [shots_rec["duration"]]
+    shots = []
+    for i, (s, e) in enumerate(zip(bounds[:-1], bounds[1:])):
+        if s >= a - 1e-3 and e <= b + 1e-3:
+            shots.append({"index": i, "start": round(s - a, 3), "end": round(e - a, 3),
+                          "description": (descriptions or {}).get(str(i), "")})
+    lines = [{"start": round(l[0] - a, 2), "end": round(l[1] - a, 2), "text": l[2],
+              "speaker": l[3]}
+             for l in dialogue.get("lines", []) if a <= l[0] < b]
+    sc = [{"start": round(max(x["start"], a) - a, 3), "end": round(min(x["end"], b) - a, 3)}
+          for x in (scenes or []) if x["end"] > a + 1e-3 and x["start"] < b - 1e-3]
+    return {"segment": seg, "duration": round(b - a, 3), "cuts": [round(c - a, 3) for c in cuts if a + 1e-3 < c < b - 1e-3],  # ADAPTATION A6b: cuts within rounding of a segment edge are edges, not cuts
+            "shots": shots, "lines": lines, "scenes": sc}
+
+
+def cut_clip(master: Path, start: float, end: float, out: Path) -> None:
+    out.parent.mkdir(parents=True, exist_ok=True)
+    # ADAPTATION A4: single-threaded, bit-exact container so that two builds are byte-identical
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-threads", "1", "-ss", f"{start:.3f}", "-i", str(master),
+                    "-t", f"{end - start:.3f}", "-map_metadata", "-1", "-fflags", "+bitexact", "-flags:v", "+bitexact",
+                    "-flags:a", "+bitexact", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+                    "-x264-params", "threads=1", "-c:a", "aac", "-b:a", "160k", str(out)],
+                   check=True)
+
+
+def write_package(root: Path, film_id: str, level: str, seg: dict, track: str, truth: dict,
+                  master: Path | None, tier: str = "T0", cfg: dict | None = None) -> Path:
+    cfg = cfg or benchmark()
+    task_id = f"{seg['id']}-{track}"
+    d = root / task_id
+    (d / "input").mkdir(parents=True, exist_ok=True)
+    dur = seg["end"] - seg["start"]
+    (d / "README.md").write_text(INSTRUCTIONS.format(
+        task_id=task_id, track_name="Reference" if track == "ref" else "Screenplay", level=level,
+        unit=UNITS[level], duration=dur, n_shots=seg["shots"], n_lines=seg["lines"]))
+    spec = dict(cfg["delivery"], duration_s=round(dur, 3),
+                outputs=["output/film.mp4", "output/film.en.vtt", "output/manifest.json"])
+    (d / "spec.json").write_text(json.dumps(spec, indent=1))
+    (d / "budget.json").write_text(json.dumps(segment_budget(dur, cfg), indent=1))
+    (d / "tools.json").write_text(json.dumps({"tier": tier, "tools": cfg["tiers"][tier]}, indent=1))
+    (d / "task.json").write_text(json.dumps({"task_id": task_id, "film_id": film_id, "level": level,
+                                             "track": track, "tier": tier, "start_s": seg["start"],
+                                             "end_s": seg["end"]}, indent=1))
+    (d / "truth.json").write_text(json.dumps(truth, indent=1, ensure_ascii=False))
+    if track == "ref":
+        if master is not None:
+            cut_clip(master, seg["start"], seg["end"], d / "input" / "original.mp4")
+    else:
+        with open(d / "input" / "script.csv", "w", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(["line", "speaker", "start", "end", "text"])
+            for i, l in enumerate(truth["lines"]):
+                w.writerow([i + 1, l["speaker"] or "", l["start"], l["end"], l["text"]])
+        with open(d / "input" / "shotlist.csv", "w", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(["shot", "start", "end", "description"])
+            for i, s in enumerate(truth["shots"]):
+                w.writerow([i + 1, s["start"], s["end"], s["description"]])
+    return d
+
+
+def make_tasks(film_dir: Path, out_root: Path, tier: str = "T0", levels=LEVELS, tracks=TRACKS,
+               with_clips: bool = True) -> list[Path]:
+    """Write every task package of one film (``film_dir`` holds shots/dialogue/hierarchy json)."""
+    film_id = film_dir.name
+    hier = read_hierarchy(film_dir / "hierarchy.json")
+    shots_rec = read_shots(film_dir / "shots.json")
+    dialogue = read_dialogue(film_dir / "dialogue.json")
+    desc_p = film_dir / "descriptions.json"
+    descriptions = json.loads(desc_p.read_text()) if desc_p.exists() else None
+    masters = sorted(film_dir.glob("master.*"))
+    master = masters[0] if (masters and with_clips) else None
+    out = []
+    for lv, segs in select_segments(film_id, hier).items():
+        if lv not in levels:
+            continue
+        for seg in segs:
+            truth = segment_truth(seg, shots_rec, dialogue, descriptions, hier["L2"])
+            for tr in tracks:
+                out.append(write_package(out_root, film_id, lv, seg, tr, truth, master, tier))
+    return out
+
+
+def sandbox_copy(task_dir: Path, dest: Path) -> Path:
+    """Copy a task into a run sandbox without the ground truth."""
+    shutil.copytree(task_dir, dest, ignore=shutil.ignore_patterns("truth.json"), dirs_exist_ok=True)
+    (dest / "output").mkdir(exist_ok=True)
+    return dest

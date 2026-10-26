@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0138",
+  "start": 1189.155,
+  "end": 1198.631,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 9.476,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 138,
+   "start": -0.0,
+   "end": 9.476,
+   "description": "Wide shot of C1 performing acrobatics on a theatre stage, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 9.476
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0138-scr",
+ "descriptions_available": true
+}

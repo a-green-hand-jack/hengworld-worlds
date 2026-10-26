@@ -1,0 +1,2128 @@
+{
+ "not_run": [
+  "S (viewing score): no raters",
+  "speaker/character consistency: no human labels",
+  "dialogue WER / onset error: not applicable, Coffee Run has no dialogue lines"
+ ],
+ "tasks": {
+  "coffee_run-L0-0000-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 6.833659,
+    "segment_s": 6.792,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 3,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 14,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.013612565445026177,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [
+     6.875
+    ],
+    "F1_0.5": 0.0,
+    "F1_1.0": 0.0,
+    "trivial_no_cuts": false
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      6.834
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L0-0000-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 0.0,
+    "cut_F1_1.0": 0.0,
+    "cut_trivial_no_cuts_either_side": false,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 1,
+    "n_shots_judged": 1,
+    "cost_usd": 0.149235,
+    "calls": 5,
+    "wall_clock_s": 40.2,
+    "delivery_s": 6.833333333333333,
+    "segment_s": 6.792,
+    "Qc_cut_F1_0.5": 0.0,
+    "Qc_cut_F1_1.0": 0.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L0-0000-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 6.791667,
+    "segment_s": 6.792,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 14,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.10666666666666667,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      6.792
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L0-0000-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.1136,
+    "calls": 2,
+    "wall_clock_s": 30.6,
+    "delivery_s": 6.791666666666667,
+    "segment_s": 6.792,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L0-0001-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 49.667318,
+    "segment_s": 49.666,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 3,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 99,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.01632088520055325,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [
+     49.667
+    ],
+    "F1_0.5": 0.0,
+    "F1_1.0": 0.0,
+    "trivial_no_cuts": false
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      49.751
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L0-0001-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 0.0,
+    "cut_F1_1.0": 0.0,
+    "cut_trivial_no_cuts_either_side": false,
+    "shot_correspondence": 0.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 1,
+    "n_shots_judged": 1,
+    "cost_usd": 0.149319,
+    "calls": 5,
+    "wall_clock_s": 65.7,
+    "delivery_s": 49.666666666666664,
+    "segment_s": 49.666,
+    "Qc_cut_F1_0.5": 0.0,
+    "Qc_cut_F1_1.0": 0.0,
+    "Qc_shot_correspondence": 0.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L0-0001-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 49.666667,
+    "segment_s": 49.666,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 99,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.01757493188010899,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      49.667
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L0-0001-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.1136,
+    "calls": 2,
+    "wall_clock_s": 50.1,
+    "delivery_s": 49.666666666666664,
+    "segment_s": 49.666,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L0-0002-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 50.250651,
+    "segment_s": 50.209,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 3,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 101,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.036986301369863014,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [
+     50.292
+    ],
+    "F1_0.5": 0.0,
+    "F1_1.0": 0.0,
+    "trivial_no_cuts": false
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      50.334
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L0-0002-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 0.0,
+    "cut_F1_1.0": 0.0,
+    "cut_trivial_no_cuts_either_side": false,
+    "shot_correspondence": 0.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 1,
+    "n_shots_judged": 1,
+    "cost_usd": 0.149312,
+    "calls": 5,
+    "wall_clock_s": 76.6,
+    "delivery_s": 50.25,
+    "segment_s": 50.209,
+    "Qc_cut_F1_0.5": 0.0,
+    "Qc_cut_F1_1.0": 0.0,
+    "Qc_shot_correspondence": 0.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L0-0002-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 50.208333,
+    "segment_s": 50.209,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 100,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.029130141604855022,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      50.208
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L0-0002-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.1136,
+    "calls": 2,
+    "wall_clock_s": 45.3,
+    "delivery_s": 50.208333333333336,
+    "segment_s": 50.209,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L0-0003-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 63.458333,
+    "segment_s": 63.458,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 127,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.025649530127142068,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      63.458
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L0-0003-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.11463,
+    "calls": 3,
+    "wall_clock_s": 59.1,
+    "delivery_s": 63.458333333333336,
+    "segment_s": 63.458,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L0-0003-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 63.458333,
+    "segment_s": 63.458,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 127,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.012407512805919181,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      63.458
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L0-0003-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.1136,
+    "calls": 2,
+    "wall_clock_s": 51.5,
+    "delivery_s": 63.458333333333336,
+    "segment_s": 63.458,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L0-0004-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 14.458333,
+    "segment_s": 14.458,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 29,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.03796296296296296,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      14.458
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L0-0004-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.114615,
+    "calls": 3,
+    "wall_clock_s": 45.6,
+    "delivery_s": 14.458333333333334,
+    "segment_s": 14.457999999999998,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L0-0004-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 14.458333,
+    "segment_s": 14.458,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 29,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.022388059701492536,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      14.458
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L0-0004-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.1136,
+    "calls": 2,
+    "wall_clock_s": 36.0,
+    "delivery_s": 14.458333333333334,
+    "segment_s": 14.457999999999998,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L1-0000-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 6.833659,
+    "segment_s": 6.792,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 3,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 14,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.023703703703703703,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [
+     6.875
+    ],
+    "F1_0.5": 0.0,
+    "F1_1.0": 0.0,
+    "trivial_no_cuts": false
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      6.834
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L1-0000-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 0.0,
+    "cut_F1_1.0": 0.0,
+    "cut_trivial_no_cuts_either_side": false,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 1,
+    "n_shots_judged": 1,
+    "cost_usd": 0.14924,
+    "calls": 5,
+    "wall_clock_s": 49.3,
+    "delivery_s": 6.833333333333333,
+    "segment_s": 6.792,
+    "Qc_cut_F1_0.5": 0.0,
+    "Qc_cut_F1_1.0": 0.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L1-0000-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 6.791667,
+    "segment_s": 6.792,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 14,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.03027027027027027,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      6.792
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L1-0000-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.1136,
+    "calls": 2,
+    "wall_clock_s": 36.3,
+    "delivery_s": 6.791666666666667,
+    "segment_s": 6.792,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L1-0001-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 49.667318,
+    "segment_s": 49.666,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 3,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 99,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.01682496607869742,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [
+     49.667
+    ],
+    "F1_0.5": 0.0,
+    "F1_1.0": 0.0,
+    "trivial_no_cuts": false
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      49.751
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L1-0001-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 0.0,
+    "cut_F1_1.0": 0.0,
+    "cut_trivial_no_cuts_either_side": false,
+    "shot_correspondence": 0.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 1,
+    "n_shots_judged": 1,
+    "cost_usd": 0.149366,
+    "calls": 5,
+    "wall_clock_s": 69.2,
+    "delivery_s": 49.666666666666664,
+    "segment_s": 49.666,
+    "Qc_cut_F1_0.5": 0.0,
+    "Qc_cut_F1_1.0": 0.0,
+    "Qc_shot_correspondence": 0.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L1-0001-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 49.666667,
+    "segment_s": 49.666,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 99,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.025216811207471646,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      49.667
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L1-0001-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.1136,
+    "calls": 2,
+    "wall_clock_s": 44.9,
+    "delivery_s": 49.666666666666664,
+    "segment_s": 49.666,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L1-0002-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 50.250651,
+    "segment_s": 50.209,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 3,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 101,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.015516107823800132,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [
+     50.292
+    ],
+    "F1_0.5": 0.0,
+    "F1_1.0": 0.0,
+    "trivial_no_cuts": false
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      50.334
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L1-0002-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 0.0,
+    "cut_F1_1.0": 0.0,
+    "cut_trivial_no_cuts_either_side": false,
+    "shot_correspondence": 0.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 1,
+    "n_shots_judged": 1,
+    "cost_usd": 0.149337,
+    "calls": 5,
+    "wall_clock_s": 60.5,
+    "delivery_s": 50.25,
+    "segment_s": 50.209,
+    "Qc_cut_F1_0.5": 0.0,
+    "Qc_cut_F1_1.0": 0.0,
+    "Qc_shot_correspondence": 0.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L1-0002-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 50.208333,
+    "segment_s": 50.209,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 100,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.025354012137559,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      50.208
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L1-0002-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.1136,
+    "calls": 2,
+    "wall_clock_s": 61.0,
+    "delivery_s": 50.208333333333336,
+    "segment_s": 50.209,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L1-0003-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 63.458333,
+    "segment_s": 63.458,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 127,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.014634146341463415,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      63.458
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L1-0003-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 0.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.114627,
+    "calls": 3,
+    "wall_clock_s": 59.1,
+    "delivery_s": 63.458333333333336,
+    "segment_s": 63.458,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 0.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L1-0003-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 63.458333,
+    "segment_s": 63.458,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 127,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.012240437158469945,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      63.458
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L1-0003-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.1136,
+    "calls": 2,
+    "wall_clock_s": 51.2,
+    "delivery_s": 63.458333333333336,
+    "segment_s": 63.458,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L1-0004-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 14.458333,
+    "segment_s": 14.458,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 29,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.01954022988505747,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      14.458
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L1-0004-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.114632,
+    "calls": 3,
+    "wall_clock_s": 41.2,
+    "delivery_s": 14.458333333333334,
+    "segment_s": 14.457999999999998,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L1-0004-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 14.458333,
+    "segment_s": 14.458,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 29,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.026589595375722544,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      14.458
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L1-0004-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.1136,
+    "calls": 2,
+    "wall_clock_s": 35.9,
+    "delivery_s": 14.458333333333334,
+    "segment_s": 14.457999999999998,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L2-0000-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 170.126302,
+    "segment_s": 170.125,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 5,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 340,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.012611563833915405,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [
+     6.792,
+     56.459,
+     106.667
+    ],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": false
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      170.126
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L2-0000-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": false,
+    "shot_correspondence": 0.3318618662747979,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 3,
+    "n_remake_cuts": 3,
+    "n_shots_judged": 4,
+    "cost_usd": 0.218577,
+    "calls": 9,
+    "wall_clock_s": 129.2,
+    "delivery_s": 170.125,
+    "segment_s": 170.125,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 0.3318618662747979,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L2-0000-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 170.126302,
+    "segment_s": 170.125,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 5,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 340,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.016394763343403826,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [
+     6.792,
+     56.459,
+     106.667
+    ],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": false
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      170.126
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L2-0000-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": false,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 3,
+    "n_remake_cuts": 3,
+    "n_shots_judged": 4,
+    "cost_usd": 0.2144,
+    "calls": 5,
+    "wall_clock_s": 102.5,
+    "delivery_s": 170.125,
+    "segment_s": 170.125,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L2-0001-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 14.458333,
+    "segment_s": 14.458,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 29,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.02635294117647059,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      14.458
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L2-0001-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.114665,
+    "calls": 3,
+    "wall_clock_s": 51.9,
+    "delivery_s": 14.458333333333334,
+    "segment_s": 14.457999999999998,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L2-0001-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 14.458333,
+    "segment_s": 14.458,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 2,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 29,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.046308724832214765,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": true
+   },
+   "scene": {
+    "orig_scenes": 1,
+    "remake_scenes": [
+     [
+      0.0,
+      14.458
+     ]
+    ],
+    "recovered_labels": [
+     0
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L2-0001-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": true,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 0,
+    "n_remake_cuts": 0,
+    "n_shots_judged": 1,
+    "cost_usd": 0.1136,
+    "calls": 2,
+    "wall_clock_s": 42.8,
+    "delivery_s": 14.458333333333334,
+    "segment_s": 14.457999999999998,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L3-0000-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 184.585368,
+    "segment_s": 184.583,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 6,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 369,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.010757855822550831,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [
+     6.792,
+     56.459,
+     106.668,
+     170.127
+    ],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": false
+   },
+   "scene": {
+    "orig_scenes": 2,
+    "remake_scenes": [
+     [
+      0.0,
+      56.459
+     ],
+     [
+      56.459,
+      106.668
+     ],
+     [
+      106.668,
+      170.127
+     ],
+     [
+      170.127,
+      184.585
+     ]
+    ],
+    "recovered_labels": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "scene_order": 0.0
+   },
+   "row": {
+    "task": "coffee_run-L3-0000-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": false,
+    "shot_correspondence": 0.45891550142754206,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 0.0,
+    "n_ref_cuts": 4,
+    "n_remake_cuts": 4,
+    "n_shots_judged": 5,
+    "cost_usd": 0.253181,
+    "calls": 11,
+    "wall_clock_s": 155.7,
+    "delivery_s": 184.58333333333334,
+    "segment_s": 184.583,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 0.45891550142754206,
+    "Qc_scene_order": 0.0
+   }
+  },
+  "coffee_run-L3-0000-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 184.585368,
+    "segment_s": 184.583,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 6,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 369,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.011340593315809238,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [
+     6.792,
+     56.459,
+     106.668,
+     170.127
+    ],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": false
+   },
+   "scene": {
+    "orig_scenes": 2,
+    "remake_scenes": [
+     [
+      0.0,
+      170.127
+     ],
+     [
+      170.127,
+      184.585
+     ]
+    ],
+    "recovered_labels": [
+     0,
+     1
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L3-0000-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": false,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 4,
+    "n_remake_cuts": 4,
+    "n_shots_judged": 5,
+    "cost_usd": 0.248,
+    "calls": 6,
+    "wall_clock_s": 141.0,
+    "delivery_s": 184.58333333333334,
+    "segment_s": 184.583,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  },
+  "coffee_run-L4-0000-ref": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 184.585368,
+    "segment_s": 184.583,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 6,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 369,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.011127651656122069,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [
+     6.792,
+     56.459,
+     106.668,
+     170.127
+    ],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": false
+   },
+   "scene": {
+    "orig_scenes": 2,
+    "remake_scenes": [
+     [
+      0.0,
+      56.459
+     ],
+     [
+      56.459,
+      170.127
+     ],
+     [
+      170.127,
+      184.585
+     ]
+    ],
+    "recovered_labels": [
+     0,
+     0,
+     1
+    ],
+    "scene_order": 0.5
+   },
+   "row": {
+    "task": "coffee_run-L4-0000-ref",
+    "track": "ref",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": false,
+    "shot_correspondence": 0.3058678209802636,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 0.5,
+    "n_ref_cuts": 4,
+    "n_remake_cuts": 4,
+    "n_shots_judged": 5,
+    "cost_usd": 0.253191,
+    "calls": 11,
+    "wall_clock_s": 150.3,
+    "delivery_s": 184.58333333333334,
+    "segment_s": 184.583,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 0.3058678209802636,
+    "Qc_scene_order": 0.5
+   }
+  },
+  "coffee_run-L4-0000-scr": {
+   "Q_checks": {
+    "decodable": true,
+    "decode_stderr": "",
+    "has_picture_and_sound": true,
+    "format_ok": true,
+    "duration_s": 184.585368,
+    "segment_s": 184.583,
+    "duration_ok": true,
+    "vtt_valid": true,
+    "ref_lines": 0,
+    "vtt_cues": 0,
+    "subtitles_cover_lines": true,
+    "generator_calls": 6,
+    "generator_calls_with_media_input": 0,
+    "ledger_non_ok": 0,
+    "no_generator_read_original": true,
+    "provenance": {
+     "plain_hits": 0,
+     "frames": 369,
+     "mirror_hits": 0,
+     "video_frac": 0.0,
+     "audio_frac": 0.007436326454731363,
+     "reused": false
+    },
+    "provenance_clean": true,
+    "Q": 1,
+    "Q_failed": []
+   },
+   "cut": {
+    "hyp_cuts": [
+     6.792,
+     56.459,
+     106.668,
+     170.127
+    ],
+    "F1_0.5": 1.0,
+    "F1_1.0": 1.0,
+    "trivial_no_cuts": false
+   },
+   "scene": {
+    "orig_scenes": 2,
+    "remake_scenes": [
+     [
+      0.0,
+      170.127
+     ],
+     [
+      170.127,
+      184.585
+     ]
+    ],
+    "recovered_labels": [
+     0,
+     1
+    ],
+    "scene_order": 1.0
+   },
+   "row": {
+    "task": "coffee_run-L4-0000-scr",
+    "track": "scr",
+    "Q": 1,
+    "cut_F1_0.5": 1.0,
+    "cut_F1_1.0": 1.0,
+    "cut_trivial_no_cuts_either_side": false,
+    "shot_correspondence": 1.0,
+    "dialogue_WER": null,
+    "dialogue_onset_median_err_s": null,
+    "scene_order": 1.0,
+    "n_ref_cuts": 4,
+    "n_remake_cuts": 4,
+    "n_shots_judged": 5,
+    "cost_usd": 0.248,
+    "calls": 6,
+    "wall_clock_s": 85.4,
+    "delivery_s": 184.58333333333334,
+    "segment_s": 184.583,
+    "Qc_cut_F1_0.5": 1.0,
+    "Qc_cut_F1_1.0": 1.0,
+    "Qc_shot_correspondence": 1.0,
+    "Qc_scene_order": 1.0
+   }
+  }
+ }
+}

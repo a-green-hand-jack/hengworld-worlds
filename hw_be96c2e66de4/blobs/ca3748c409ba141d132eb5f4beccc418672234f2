@@ -1,0 +1,162 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0017",
+  "start": 1437.569,
+  "end": 1617.349,
+  "shots": 20,
+  "lines": 0
+ },
+ "duration": 179.78,
+ "cuts": [
+  9.343,
+  30.064,
+  37.071,
+  41.642,
+  47.314,
+  60.795,
+  64.632,
+  74.809,
+  95.696,
+  101.635,
+  113.581,
+  133.801,
+  137.404,
+  141.642,
+  144.111,
+  156.957,
+  158.592,
+  159.66,
+  162.296
+ ],
+ "shots": [
+  {
+   "index": 172,
+   "start": 0.0,
+   "end": 9.343,
+   "description": "Medium shot of C1 entering a room with guests, static camera."
+  },
+  {
+   "index": 173,
+   "start": 9.343,
+   "end": 30.064,
+   "description": "Medium shot of C1 standing in profile while facing a man, with C2 standing next to the man and looking at C1, static camera."
+  },
+  {
+   "index": 174,
+   "start": 30.064,
+   "end": 37.071,
+   "description": "Medium shot of C1 and C2 entering a room, static camera."
+  },
+  {
+   "index": 175,
+   "start": 37.071,
+   "end": 41.642,
+   "description": "Full shot of intertitle showing dialogue, static."
+  },
+  {
+   "index": 176,
+   "start": 41.642,
+   "end": 47.314,
+   "description": "Medium shot of C1 and C2 standing, then C1 walks out of frame, static."
+  },
+  {
+   "index": 177,
+   "start": 47.314,
+   "end": 60.795,
+   "description": "Medium shot of C1 watching C2 sit down at a billiard table, static camera."
+  },
+  {
+   "index": 178,
+   "start": 60.795,
+   "end": 64.632,
+   "description": "Close-up of C1 opening a poison ampoule, static."
+  },
+  {
+   "index": 179,
+   "start": 64.632,
+   "end": 74.809,
+   "description": "Medium shot of C1 mixing drinks, static camera."
+  },
+  {
+   "index": 180,
+   "start": 74.809,
+   "end": 95.696,
+   "description": "Medium shot of C1 and C2 taking drinks from a tray held by a waiter, static camera."
+  },
+  {
+   "index": 181,
+   "start": 95.696,
+   "end": 101.635,
+   "description": "Close-up of an intertitle displaying dialogue, static."
+  },
+  {
+   "index": 182,
+   "start": 101.635,
+   "end": 113.581,
+   "description": "Medium shot of C1, C2, and a waiter serving drinks, static. Medium shot of C1 and C2 talking, static. Medium shot of C1 and C2 playing billiards, static."
+  },
+  {
+   "index": 183,
+   "start": 113.581,
+   "end": 133.801,
+   "description": "Medium wide shot of C1 playing billiards while C2 stands and watches, static."
+  },
+  {
+   "index": 184,
+   "start": 133.801,
+   "end": 137.404,
+   "description": "Close-up of hands arranging pool balls, static."
+  },
+  {
+   "index": 185,
+   "start": 137.404,
+   "end": 141.642,
+   "description": "Medium shot of C1 taking objects from a wooden box, while C2 walks into the room; static camera."
+  },
+  {
+   "index": 186,
+   "start": 141.642,
+   "end": 144.111,
+   "description": "Medium shot of C1 chalking a pool cue with C1 reflected in a mirror behind the pool cue rack, static."
+  },
+  {
+   "index": 187,
+   "start": 144.111,
+   "end": 156.957,
+   "description": "Wide shot of C1 playing billiards while C2 watches, static camera."
+  },
+  {
+   "index": 188,
+   "start": 156.957,
+   "end": 158.592,
+   "description": "Medium shot of C1 and C2 walking backwards out of a room, static camera."
+  },
+  {
+   "index": 189,
+   "start": 158.592,
+   "end": 159.66,
+   "description": "Medium shot of C1 playing billiards, static camera."
+  },
+  {
+   "index": 190,
+   "start": 159.66,
+   "end": 162.296,
+   "description": "Medium shot of billiard balls rolling, static camera."
+  },
+  {
+   "index": 191,
+   "start": 162.296,
+   "end": 179.78,
+   "description": "Medium shot of C1 playing billiards, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 179.78
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0017-scr",
+ "descriptions_available": true
+}

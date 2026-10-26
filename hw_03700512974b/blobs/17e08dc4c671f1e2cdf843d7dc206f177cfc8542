@@ -1,0 +1,85 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0001",
+  "start": 92.859,
+  "end": 150.884,
+  "shots": 9,
+  "lines": 0
+ },
+ "duration": 58.025,
+ "cuts": [
+  13.447,
+  16.484,
+  18.986,
+  21.322,
+  28.863,
+  34.034,
+  45.613,
+  56.757
+ ],
+ "shots": [
+  {
+   "index": 1,
+   "start": 0.0,
+   "end": 13.447,
+   "description": "Medium shot of C1 reading a book called 'How to be a Detective', then looking down, then putting the book away, static."
+  },
+  {
+   "index": 2,
+   "start": 13.447,
+   "end": 16.484,
+   "description": "Medium close-up of C1 opening a book and reading it, static."
+  },
+  {
+   "index": 3,
+   "start": 16.484,
+   "end": 18.986,
+   "description": "Medium shot of C1 walking towards a broom while reading a letter, static camera."
+  },
+  {
+   "index": 4,
+   "start": 18.986,
+   "end": 21.322,
+   "description": "Medium shot of C1 looking upset and shifting his gaze downwards, static."
+  },
+  {
+   "index": 5,
+   "start": 21.322,
+   "end": 28.863,
+   "description": "Close-up of an intertitle displaying text, static camera."
+  },
+  {
+   "index": 6,
+   "start": 28.863,
+   "end": 34.034,
+   "description": "Medium shot of C1 sweeping trash, static camera."
+  },
+  {
+   "index": 7,
+   "start": 34.034,
+   "end": 45.613,
+   "description": "Medium shot of C1 sitting on the grass alongside a dog, holding a biscuit, static."
+  },
+  {
+   "index": 8,
+   "start": 45.613,
+   "end": 56.757,
+   "description": "Title card shot of text explaining the plot, static."
+  },
+  {
+   "index": 9,
+   "start": 56.757,
+   "end": 58.025,
+   "description": "Medium shot of C1 smiling slyly, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 58.025
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0001-scr",
+ "descriptions_available": true
+}

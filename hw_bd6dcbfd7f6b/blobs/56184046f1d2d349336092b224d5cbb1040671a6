@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <identifier>CaminandesLlamigos</identifier>
+  <mediatype>movies</mediatype>
+  <collection>opensource_movies</collection>
+  <creator>Blender Foundation</creator>
+  <date>2016-01-29</date>
+  <description>In this episode of the Caminandes cartoon series we get to know our hero
+ Koro even better! It's winter in Patagonia, food is getting scarce. 
+Koro the Llama engages with Oti the pesky penguin in an epic fight over 
+that last tasty berry.&lt;br /&gt;&lt;br /&gt;This short 'Free Culture' animation film 
+was made with the free 3D software Blender and funded by the subscribers
+ of the Blender Cloud platform. Already since 2007, Blender Institute 
+successfully combines film and media production with improving a free 
+and open source 3D creation pipeline.&lt;br /&gt;&lt;br /&gt;Currently a lot of extra material and tutorials is being produced, to share the full production with the cloud subscribers.</description>
+  <licenseurl>http://creativecommons.org/licenses/by/3.0/</licenseurl>
+  <scanner>Internet Archive HTML5 Uploader 1.6.3</scanner>
+  <subject>blender</subject>
+  <subject>blender foundation</subject>
+  <subject>patagonia</subject>
+  <subject>animation</subject>
+  <subject>3d</subject>
+  <subject>free culture</subject>
+  <title>Caminandes 3: Llamigos</title>
+  <publicdate>2017-03-05 08:20:57</publicdate>
+  <uploader>thescribblemaniac+archive@gmail.com</uploader>
+  <addeddate>2017-03-05 08:20:57</addeddate>
+  <curation>[curator]validator@archive.org[/curator][date]20170305082122[/date][comment]checked for malware[/comment]</curation>
+  <year>2016</year>
+  <sound>sound</sound>
+  <color>color</color>
+  <runtime>2:30</runtime>
+  <credits>Director: Pablo Vazquez
+Music: Torin Borrowdale
+Sound design: Sander Houtman
+Animation Director and Layout: Hjalti Hjalmarsson
+Character modeling and animation: Sarah Feldlaufer
+Modeling, design, lighting, effects: Andy Goralczyk
+Pipeline and production: Francesco Siddi
+Story artist: Matias Mendiola
+Rigging: Juan Pablo Bouza
+Software support: Sergey Sharybin
+Produced by: Ton Roosendaal
+
+Special thanks goes to the music by Torin Borrowdale, the sfx by Sander Houtman and the render power of RenderStreet.</credits>
+  <links>https://cloud.blender.org/p/caminandes-3</links>
+  <backup_location>ia906309_4</backup_location>
+  <collection>community</collection>
+</metadata>

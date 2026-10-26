@@ -1,0 +1,40 @@
+# Tool server configuration for stage B. Prices are fixed per tool (not per vendor bill) and come from the
+# official pages recorded in costs/prices.json (queried 2026-10-21); choices in decisions/D-toolserver.json.
+tools:
+  image.generate:
+    backend: gemini_image
+    model: gemini-3.1-flash-lite-image
+    price: {per_call: 0.0336}        # 1K output image
+  image.edit:
+    backend: gemini_image
+    model: gemini-3.1-flash-lite-image
+    price: {per_call: 0.0336}        # no separate editing price; same model rate
+  speech.synthesize:
+    backend: gemini_speech
+    model: gemini-3.8-flash-lite-tts
+    price: {per_second: 0.00015}     # 0.0015 USD per 10 s of audio (valid through 2026-12-31)
+  music.generate:
+    backend: gemini_music
+    model: lyria-3.5
+    price: {per_call: 0.08}          # per song
+  sfx.generate:
+    backend: elevenlabs_sfx
+    price: {per_second: 0.002}       # 0.12 USD per minute
+  video.generate:                    # T1 only
+    backend: dashscope_wan
+    model: wan2.2-t2v-plus
+    i2v_model: wan2.2-i2v-plus
+    size: "1280*720"
+    price: {per_second: 0.100347}    # Beijing 1080P rate, the highest listed (no 720P row found); see D-toolserver.json
+  media.ffmpeg:
+    backend: ffmpeg
+    price: {per_call: 0.0}
+
+profiles:
+  smoke:   # every generator replaced by the placeholder; runs are unofficial
+    image.generate: {backend: placeholder}
+    image.edit: {backend: placeholder}
+    speech.synthesize: {backend: placeholder}
+    music.generate: {backend: placeholder}
+    sfx.generate: {backend: placeholder}
+    video.generate: {backend: placeholder}

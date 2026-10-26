@@ -1,0 +1,32 @@
+[
+ {
+  "check": "judge-check right description",
+  "shot": 0,
+  "verdict": 1
+ },
+ {
+  "check": "judge-check right description",
+  "shot": 1,
+  "verdict": 1
+ },
+ {
+  "check": "judge-check right description",
+  "shot": 2,
+  "verdict": 1
+ },
+ {
+  "check": "judge-check wrong description",
+  "shot": 0,
+  "verdict": 1
+ },
+ {
+  "check": "judge-check wrong description",
+  "shot": 1,
+  "verdict": 0
+ },
+ {
+  "check": "judge-check wrong description",
+  "shot": 2,
+  "verdict": 0
+ }
+]

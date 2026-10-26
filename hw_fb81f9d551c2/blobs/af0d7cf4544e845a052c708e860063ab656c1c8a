@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0025",
+  "start": 78.542,
+  "end": 80.125,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.583,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 25,
+   "start": -0.0,
+   "end": 1.583,
+   "description": "Wide shot of a mineshaft collapsing, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.583
+  }
+ ]
+}

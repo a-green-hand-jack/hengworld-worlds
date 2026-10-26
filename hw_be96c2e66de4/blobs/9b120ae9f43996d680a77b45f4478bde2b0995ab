@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0019",
+  "start": 68.0,
+  "end": 70.083,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.083,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 19,
+   "start": 0.0,
+   "end": 2.083,
+   "description": "Wide shot of C1 riding a minecart crashing through wood structures, track-right."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.083
+  }
+ ],
+ "task_id": "caminandes3-L0-0019-ref",
+ "descriptions_available": true
+}

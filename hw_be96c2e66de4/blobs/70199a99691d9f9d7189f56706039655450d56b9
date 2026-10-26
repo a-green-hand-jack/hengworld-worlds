@@ -1,0 +1,36 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0006",
+  "start": 114.5,
+  "end": 123.542,
+  "shots": 2,
+  "lines": 0
+ },
+ "duration": 9.042,
+ "cuts": [
+  4.292
+ ],
+ "shots": [
+  {
+   "index": 34,
+   "start": 0.0,
+   "end": 4.292,
+   "description": "Medium shot of C1 looking around while sitting on a rocky hill, static camera."
+  },
+  {
+   "index": 35,
+   "start": 4.292,
+   "end": 9.042,
+   "description": "Over-the-shoulder shot of C1 looking at penguins holding berries, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 9.042
+  }
+ ],
+ "task_id": "caminandes3-L1-0006-scr",
+ "descriptions_available": true
+}

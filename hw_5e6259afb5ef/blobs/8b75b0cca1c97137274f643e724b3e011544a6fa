@@ -1,0 +1,13 @@
+You verify a detailed shot description written by another model, from the same frames and the audio. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames or audio), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: sound.
+
+One-sentence description: Close-up of C1 lying on the ice and falling asleep, panning right.
+sound: High-pitched squeaks, a springy hop sound, dramatic low strings, and strained vocal grunts from C1.
+Frames and audio:
+[frame 1 at 22.90s]
+IMG:271621ceb3ed887741581f3d255f98707f8a108935e432c1c0236a336d82711c
+[frame 2 at 24.42s]
+IMG:3b09b32d2669d77d413a1dc86f2181a84959a1e831b0bb25b0764d7ba7f0e35b
+[frame 3 at 25.94s]
+IMG:32fced812d6ec7eb4fcbe4623bb1b682f3003877aa2f584ff2e215326f93ad32
+AUD:2c7d39d65f2fad0757203e9ea28c9b70185224b713601a48be7ca76e5ef48356

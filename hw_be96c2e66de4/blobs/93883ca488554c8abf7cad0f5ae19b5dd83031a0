@@ -1,0 +1,427 @@
+{
+ "film_id": "domini_canes",
+ "model": "gemini-3.5-flash-lite",
+ "params": {
+  "temperature": 0,
+  "reasoning_effort": "minimal",
+  "max_tokens": 600
+ },
+ "frames_per_shot": 3,
+ "jpeg_width": 448,
+ "prompt": "You see frames from one shot of a film. Describe the shot in one to three sentences using the template '[shot size] of [subject] [action], [camera move]'. Refer to people as C1, C2 and so on, consistently with these known characters: {chars}. Do not mention colours, lens, art style or other appearance details that a remake could legitimately change. Reply with the description only.",
+ "chars_rule": "labels C1..Ck seen in this film's earlier answers, else 'none yet' (maintainer question: brief gap 12)",
+ "descriptions": {
+  "0": "Wide shot of C1 standing under a starry sky beside a tree, static camera.",
+  "1": "Wide shot of C1 standing, static camera.",
+  "2": "Medium shot of C1 peeking from behind a curtain, static.",
+  "3": "Medium shot of a wolf puppet standing, static.",
+  "4": "Wide shot of C1 petting a wolf, static.",
+  "5": "Medium shot of C1 lifting her hand towards a branch, static camera.",
+  "6": "Medium close-up of C1 reaching up towards a branch, static camera.",
+  "7": "Wide shot of C1 standing under a starry night sky, static.",
+  "8": "Medium close-up of C1 holding a candle, static.",
+  "9": "Medium shot of C1 holding out a stick, static camera.",
+  "10": "Medium shot of C1 reaching down to pet an animal, static camera.",
+  "11": "Medium shot of C1 walking alongside an animal pacing back and forth, panning right.",
+  "12": "Wide shot of C1 running, static.",
+  "13": "Extreme wide shot of multiple small statues standing in a circle as a single small statue stands in the center with a long trail, zooming out.",
+  "14": "Close-up of C1 holding a stick, static.",
+  "15": "Medium shot of C1 walking towards the camera, static camera.",
+  "16": "Close-up of C1 waiting with a sword, static.",
+  "17": "Close-up of C1 holding a stick, static.",
+  "18": "Medium shot of C1 standing, static camera.",
+  "19": "Medium close-up of C1 standing, static camera.",
+  "20": "Medium shot of C1 standing up straight, holding a candle and facing right, static camera.",
+  "21": "Medium shot of C1 standing in profile while holding a lit candle, static.",
+  "22": "Medium shot of C1 holding a stick, static camera. Medium shot of a wolf jumping through a crowd of C1s holding a stick, tracking shot.",
+  "23": "Medium shot of C1 running through a crowd of onlookers, panning left to right.",
+  "24": "Wide shot of a wolf running past statues, tracking right.",
+  "25": "Low angle shot of a crowd standing, tracking forward.",
+  "26": "Wide shot of characters standing in a group, camera pan.",
+  "27": "Low-angle medium shot of a crowd standing, static.",
+  "28": "Wide shot of crowd standing, pushing in.",
+  "29": "Low-angle shot of a crowd standing, static camera.",
+  "30": "Medium close-up of C1 standing and holding two glowing objects, static camera.",
+  "31": "Medium shot of a crowd of hooded figures holding candles, panning right.",
+  "32": "Medium shot of multiple hooded figures standing still while holding torches, truck right.",
+  "33": "Extreme wide shot of a vast crowd standing underneath a starry night sky, static.",
+  "34": "Extreme close-up of C1 fading in, static.",
+  "35": "Medium shot of C1 standing against the starry night sky and looking around, static.",
+  "36": "Close-up of C1 looking, static.",
+  "37": "Extreme close-up of C1 staring intently, static.",
+  "38": "Extreme close-up of C1 standing, zooming out.",
+  "39": "Wide shot of a cathedral opening upwards, zooming out.",
+  "40": "Extreme close-up of a title card showing credits, static."
+ },
+ "calls": [
+  {
+   "shot": 0,
+   "chars": "none yet",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 17,
+   "total_tokens": 3343,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 1,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 10,
+   "total_tokens": 3336,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 2,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 14,
+   "total_tokens": 3340,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 3,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 10,
+   "total_tokens": 3336,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 4,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 11,
+   "total_tokens": 3337,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 5,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 15,
+   "total_tokens": 3341,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 6,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 16,
+   "total_tokens": 3342,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 7,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 14,
+   "total_tokens": 3340,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 8,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 13,
+   "total_tokens": 3339,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 9,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 13,
+   "total_tokens": 3339,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 10,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 15,
+   "total_tokens": 3341,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 11,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 17,
+   "total_tokens": 3343,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 12,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 9,
+   "total_tokens": 3335,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 13,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 28,
+   "total_tokens": 3354,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 14,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 12,
+   "total_tokens": 3338,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 15,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 13,
+   "total_tokens": 3339,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 16,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 13,
+   "total_tokens": 3339,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 17,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 12,
+   "total_tokens": 3338,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 18,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 10,
+   "total_tokens": 3336,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 19,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 12,
+   "total_tokens": 3338,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 20,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 19,
+   "total_tokens": 3345,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 21,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 16,
+   "total_tokens": 3342,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 22,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 32,
+   "total_tokens": 3358,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 23,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 17,
+   "total_tokens": 3343,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 24,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 12,
+   "total_tokens": 3338,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 25,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 11,
+   "total_tokens": 3337,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 26,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 12,
+   "total_tokens": 3338,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 27,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 12,
+   "total_tokens": 3338,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 28,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 9,
+   "total_tokens": 3335,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 29,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 12,
+   "total_tokens": 3338,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 30,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 17,
+   "total_tokens": 3343,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 31,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 14,
+   "total_tokens": 3340,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 32,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 15,
+   "total_tokens": 3341,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 33,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 16,
+   "total_tokens": 3342,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 34,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 12,
+   "total_tokens": 3338,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 35,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 17,
+   "total_tokens": 3343,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 36,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 10,
+   "total_tokens": 3336,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 37,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 12,
+   "total_tokens": 3338,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 38,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 12,
+   "total_tokens": 3338,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 39,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 11,
+   "total_tokens": 3337,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 40,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3326,
+   "completion_tokens": 13,
+   "total_tokens": 3339,
+   "finish_reason": "stop"
+  }
+ ]
+}

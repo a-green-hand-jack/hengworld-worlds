@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0190",
+  "start": 1597.229,
+  "end": 1599.865,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.636,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 190,
+   "start": -0.0,
+   "end": 2.636,
+   "description": "Medium shot of billiard balls rolling, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.636
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0190-scr",
+ "descriptions_available": true
+}

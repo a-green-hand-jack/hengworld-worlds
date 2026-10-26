@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0328",
+  "start": 2310.742,
+  "end": 2317.182,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 6.44,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 328,
+   "start": -0.0,
+   "end": 6.44,
+   "description": "Static insert of text displaying dialogue, with no camera movement."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 6.44
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0328-scr",
+ "descriptions_available": true
+}

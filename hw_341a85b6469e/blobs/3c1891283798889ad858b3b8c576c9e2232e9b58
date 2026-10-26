@@ -1,0 +1,12 @@
+import json,sys
+sys.path.insert(0,"tools"); from score import score
+key=json.load(open(sys.argv[1]))["counts"]
+mk=lambda v:"\n".join(map(str,v))+"\n"
+bad=list(key); bad[0]+=1
+cases={"identical":mk(key),"one_line_damaged":mk(bad),"all_damaged":mk([k+1 for k in key]),
+"truncated":mk(key[:5]),"extra_text":mk(key)+"done\n","non_numeric":"a\n"*8}
+res={k:score(v,key) for k,v in cases.items()}
+exp={"identical":1.0,"one_line_damaged":0.875,"all_damaged":0.0,"truncated":0.0,"extra_text":0.0,"non_numeric":0.0}
+for k in res: res[k]["expected_accuracy"]=exp[k]; res[k]["ok"]=res[k]["accuracy"]==exp[k]
+json.dump(res,sys.stdout,indent=1)
+assert all(r["ok"] for r in res.values())

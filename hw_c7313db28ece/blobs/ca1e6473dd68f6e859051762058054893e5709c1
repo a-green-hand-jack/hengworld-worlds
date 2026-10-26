@@ -1,0 +1,4 @@
+# task-maker
+Run: `python3 -I scripts/make_truth.py && sh scripts/make_package.sh` (both exit non-zero on failure).
+- corpus/: admission record + sha256 pin. records/truth_check.json: comparison with the reference (check result).
+- package/: published task package, no key. key/: answer key (scoring/audit only; not to be published).

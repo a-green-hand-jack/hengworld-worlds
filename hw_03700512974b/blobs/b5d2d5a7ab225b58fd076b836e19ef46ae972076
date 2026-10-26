@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0392",
+  "start": 2536.501,
+  "end": 2545.143,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 8.642,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 392,
+   "start": -0.0,
+   "end": 8.642,
+   "description": "Medium shot of C1 and C2 standing, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 8.642
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0392-ref",
+ "descriptions_available": true
+}

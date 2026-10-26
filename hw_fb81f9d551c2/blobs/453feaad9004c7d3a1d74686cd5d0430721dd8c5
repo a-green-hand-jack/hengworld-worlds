@@ -1,0 +1,46 @@
+{
+  "assignment_schema": 1,
+  "objective": "CrewCut stage A: Caminandes 3 (dev), one round end to end, task caminandes3-L1-0000-scr, system fixed, tier smoke, placeholder generator.",
+  "items": [
+    {
+      "owner": "steward",
+      "paths": [
+        "protocol/"
+      ],
+      "work": "Brief (objective quotes, protocol items with document and place, maintainer's decisions); this assignment; protocol gap/inconsistency log in protocol/gaps.md; answers to protocol questions."
+    },
+    {
+      "owner": "curator",
+      "paths": [
+        "corpus/"
+      ],
+      "work": "Objective req 1: find Caminandes 3, read the licence, fetch the pinned master and verify SHA-256 028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f (configs/films.yaml, df54b3a); every admit/reject as a decision with evidence; record if the fallback copy in /crewcut/masters is used; record the licence-spelling ('Attribution') and fetch-largest-file adaptations."
+    },
+    {
+      "owner": "task-maker",
+      "paths": [],
+      "work": "Objective req 2 and 4a: shots, dialogue, hierarchy, shot descriptions (one gemini-3.5-flash-lite pass, temperature 0, model id pinned, parameters recorded), provenance fingerprints, task packages with a check per step; published answer-key-free packages; answer key kept apart (key/, scorer/auditor only); duration_s basis chosen from the comparison, with reason and both bases reported; adaptations of old-implementation issues as data; double rebuild byte-identical; official price table (source, query date, check against CrewCut Issue #13); own cost ledger and not-run list. Layout proposed by task-maker: data/, packages/, key/, costs/, commands + checks."
+    },
+    {
+      "owner": "executor",
+      "paths": [
+        "runs/"
+      ],
+      "work": "Objective req 4 (run part): run system fixed, tier smoke, placeholder generator on caminandes3-L1-0000-scr from the published package only; run records (log, cost), failures and what was done after them; cost record; not-run list."
+    },
+    {
+      "owner": "scorer",
+      "paths": [
+        "scores/"
+      ],
+      "work": "Objective req 4 (scoring part): Q and each sub-item of c with the protocol's measures against the answer key; judge gemini-3.8-flash as a recorded temporary stand-in for qwen3-vl-plus; small check that the judge separates right from wrong descriptions; judge cost record; not-run list."
+    },
+    {
+      "owner": "auditor",
+      "paths": [
+        "audit/"
+      ],
+      "work": "Objective req 3 (comparison with dataset d509bed, every difference listed and explained, duration_s both bases) and req 5: independent reproduction, check of run records against the protocol, release approval; the overall cost report (requests per position and purpose vs needed, tokens, price-based cost, <=150 gemini requests) and the credential/host-path scan."
+    }
+  ]
+}

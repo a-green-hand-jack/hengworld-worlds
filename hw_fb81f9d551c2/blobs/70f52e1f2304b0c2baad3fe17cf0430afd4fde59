@@ -1,0 +1,410 @@
+# The 37 CrewCut reference films. Generated from the audited catalogue; edit with care.
+# licence: SPDX-like tag or public-domain basis. silent: no dialogue track.
+films:
+  - id: elephants_dream
+    title: "Elephants Dream"
+    year: 2006
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 2.5"
+    split: test
+    silent: false
+    page: "https://archive.org/details/ElephantsDream"
+    duration_min: 10.9
+    master_sha256: fd6dc0e9da3a2f63487957325983f197f23c6ff1cd2b29bb71e64db567e0994c
+  - id: big_buck_bunny
+    title: "Big Buck Bunny"
+    year: 2008
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 3.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/BigBuckBunny_124"
+    duration_min: 9.9
+    master_sha256: acee0f48ea36f53c4b4ba00a8691aa5c4c980e987035fc11a434b6c1bf54d3a3
+  - id: sintel
+    title: "Sintel"
+    year: 2010
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 3.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/Sintel"
+    duration_min: 14.8
+    master_sha256: 93df4e31869e879354a5055a8549fb9335df0f5f73f4963c9bf0db2c888bb704
+  - id: tears_of_steel
+    title: "Tears of Steel"
+    year: 2012
+    source: "Blender open movie"
+    type: "Live action"
+    licence: "CC BY 3.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/Tears-of-Steel"
+    duration_min: 12.2
+    master_sha256: e209ebef3d35775abd4e7aced41ff82658ab5625fc70b64a3a100aecad4354a3
+  - id: caminandes1
+    title: "Caminandes 1"
+    year: 2013
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 3.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/Caminandes1LlamaDrama"
+    duration_min: 1.5
+    master_sha256: 10df5ca42825fc961ce301ea155a4431acdb74d6bbcb60d0109f28f203383180
+  - id: caminandes2
+    title: "Caminandes 2"
+    year: 2013
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY-SA 3.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/Caminandes2GranDillama"
+    duration_min: 2.4
+    master_sha256: e8793bd8e39130b84e1beea9e09dc5d40061bfc7d543e79f2c0a83570ff1825f
+  - id: caminandes3
+    title: "Caminandes 3"
+    year: 2016
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 3.0"
+    split: dev
+    silent: false
+    page: "https://archive.org/details/CaminandesLlamigos"
+    duration_min: 2.5
+    master_sha256: 028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f
+  - id: cosmos_laundromat
+    title: "Cosmos Laundromat"
+    year: 2015
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY-SA 3.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/CosmosLaundromatFirstCycle"
+    duration_min: 12.2
+    master_sha256: ff69a0b312b06644d9a5827d315685b98ea1e068a22618f963c3d33b80ac6289
+  - id: glass_half
+    title: "Glass Half"
+    year: 2015
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 4.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/GlassHalf1080p"
+    duration_min: 3.2
+    master_sha256: 40abab920911d07f32dc58b2f063146e02b6d85c1941953f39d62d43f4280e7b
+  - id: agent327
+    title: "Agent 327"
+    year: 2017
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 3.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/agent327operationbarbershop"
+    duration_min: 3.9
+    master_sha256: fec9ff199bfd1889a3b5c209a9e239b49098b31ec51779f555e5055a236fde30
+  - id: dailydweebs
+    title: "The Daily Dweebs"
+    year: 2017
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 4.0"
+    split: test
+    silent: false
+    page: "https://commons.wikimedia.org/wiki/File:The_Daily_Dweebs_-_Blender_Open_Movie-full_movie.webm"
+    duration_min: 1.0
+    master_sha256: 271b285d0390b87c2f188fc85996abf2b479fa3f2d70727be95dfa19fdf24e6c
+  - id: hero
+    title: "Hero"
+    year: 2018
+    source: "Blender open movie"
+    type: "2D animation"
+    licence: "CC BY 4.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/hero_20260106"
+    duration_min: 3.9
+    master_sha256: 1a2d85e9a0303c1c0eb320b2b755705551a5344b3c60dc3ced8166d93d329800
+  - id: spring
+    title: "Spring"
+    year: 2019
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 4.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/spring_blenderopenmovie"
+    duration_min: 7.7
+    master_sha256: c9f6aa558384ec043a048bf5e8c7044984cde5f2b0146c37b990e14b01706aac
+  - id: coffee_run
+    title: "Coffee Run"
+    year: 2020
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 4.0"
+    split: dev
+    silent: false
+    page: "https://archive.org/details/coffee-run"
+    duration_min: 3.1
+    master_sha256: f40ce7f497b2f56e6a672cea6ef15d191da3d19bd61aeed5d3730e5d73f6aebf
+  - id: sprite_fright
+    title: "Sprite Fright"
+    year: 2021
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 4.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/sprite-fright"
+    duration_min: 10.5
+    master_sha256: 85af52d5f82976256d5f091aea4cf276a3d8599d14d36bae5d51e43a9acfd076
+  - id: charge
+    title: "Charge"
+    year: 2022
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 4.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/charge-blender-open-movie-1608p"
+    duration_min: 4.4
+    master_sha256: 4288be5a6737379b1c16b95b56708bd288c72097665797b2beff1c40ec5ba3e2
+  - id: wing_it
+    title: "Wing It!"
+    year: 2023
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 4.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/wing_it"
+    duration_min: 4.0
+    master_sha256: 6e57e8d0a0d746c04ae1024f1680a53c3b4b24e4cb58ae0bd24e28a9385ee124
+  - id: singularity
+    title: "Singularity"
+    year: 2026
+    source: "Blender open movie"
+    type: "Animation"
+    licence: "CC BY 4.0"
+    split: test
+    silent: false
+    page: "https://commons.wikimedia.org/wiki/File:SINGULARITY_-_Blender_Open_Movie-full_movie.webm"
+    duration_min: 6.5
+    master_sha256: a5fa691d6187eeb20876d58a408214b91a70f8355b6175026494a003b12ea669
+  - id: sita_sings_the_blues
+    title: "Sita Sings the Blues"
+    year: 2008
+    source: "Independent CC film"
+    type: "Animation"
+    licence: "CC0 1.0"
+    split: test
+    silent: false
+    page: "https://archive.org/details/Sita_Sings_the_Blues"
+    duration_min: 81.5
+    master_sha256: a702ac020c6376fd241ef4fc119c9d84661beb28288ce66844874cf8d8f64863
+  - id: valkaama
+    title: "Valkaama"
+    year: 2010
+    source: "Independent CC film"
+    type: "Live action"
+    licence: "CC BY-SA 3.0, with source footage"
+    split: test
+    silent: false
+    page: "https://archive.org/details/valkaama"
+    duration_min: 93.1
+    master_sha256: 7a56ef7376274aecc67c3972a6f9ebb63d85383e376f36ae8196271a4fc50969
+  - id: morevna3
+    title: "Morevna Episode 3"
+    year: 2018
+    source: "Independent CC film"
+    type: "2D animation"
+    licence: "CC BY 4.0"
+    split: test
+    silent: false
+    page: "https://commons.wikimedia.org/wiki/File:Morevna_Episode_3.0.2_(English).webm"
+    duration_min: 10.3
+    master_sha256: d7232197524b7f0e68627ba2e2f3e316332313ed845e2697a5b86bf6015fa985
+  - id: roadkill
+    title: "Roadkill"
+    year: 2018
+    source: "Independent CC film"
+    type: "Animation"
+    licence: "CC BY-SA 3.0"
+    split: test
+    silent: false
+    page: "https://commons.wikimedia.org/wiki/File:Leszek_Mozga_-_Roadkill_(2018).webm"
+    duration_min: 7.8
+    master_sha256: 6b866506d89bdf965186fe795fc31bc0602d3b22ba809cec4ad010adf53f6075
+  - id: tagteam
+    title: "Tag Team"
+    year: 2024
+    source: "Independent CC film"
+    type: "Animation"
+    licence: "CC BY 3.0"
+    split: test
+    silent: false
+    page: "https://commons.wikimedia.org/wiki/File:Joseph_Jones_et_al._-_Tag_Team_(2024).webm"
+    duration_min: 7.3
+    master_sha256: ef4a5d03640eff315a3e282443da26922f794f7593d85e32693a5066cf46d8a5
+  - id: boy_brambles
+    title: "The Boy in the Brambles"
+    year: 2018
+    source: "Independent CC film"
+    type: "Animation"
+    licence: "CC BY 3.0"
+    split: test
+    silent: false
+    page: "https://commons.wikimedia.org/wiki/File:Jamie_Sardo_-_Boy_in_the_Brambles,_The_(2018).webm"
+    duration_min: 5.3
+    master_sha256: 4c37ad493804ef77102f7321bdc34cfd68bf6205516c37afba322d2cc294ea96
+  - id: colourful
+    title: "Colourful"
+    year: 2018
+    source: "Independent CC film"
+    type: "Animation"
+    licence: "CC BY 3.0"
+    split: test
+    silent: false
+    page: "https://commons.wikimedia.org/wiki/File:Seryung_Lee_-_Colourful_(2018).webm"
+    duration_min: 5.5
+    master_sha256: c8a5346b88daef9a31f2601aec406beeb61540e70e91ad43afae14978117ab46
+  - id: spirit_chaser
+    title: "Spirit Chaser"
+    year: 2016
+    source: "Independent CC film"
+    type: "Animation"
+    licence: "CC BY-SA 3.0"
+    split: dev
+    silent: false
+    page: "https://commons.wikimedia.org/wiki/File:Karl_Pajak_-_Spirit_Chaser_(2016).webm"
+    duration_min: 4.4
+    master_sha256: cce14605b8dc2fbe0593ca1207b8972d13676e3050bd6f48c92efd44f0013182
+  - id: domini_canes
+    title: "Domini Canes"
+    year: 2016
+    source: "Independent CC film"
+    type: "Animation"
+    licence: "CC BY 3.0"
+    split: dev
+    silent: false
+    page: "https://commons.wikimedia.org/wiki/File:Jakub_Bednarz_-_Domini_Canes_(2016).webm"
+    duration_min: 4.3
+    master_sha256: 70b8515d4afc4a392644d315666583b4c83386f9cf50f3710fd228d92aa29586
+  - id: night_of_the_living_dead
+    title: "Night of the Living Dead"
+    year: 1968
+    source: "Public domain (US)"
+    type: "Live action"
+    licence: "Missing copyright notice"
+    split: test
+    silent: false
+    page: "https://archive.org/details/NightOfTheLivingDead1968-Restored"
+    duration_min: 95.8
+    master_sha256: 769bbdd24a77f9bdd8dcc88785e5e2326dcb6a274d82f2a9495edb7a720f089a
+  - id: charade
+    title: "Charade"
+    year: 1963
+    source: "Public domain (US)"
+    type: "Live action"
+    licence: "Defective copyright notice"
+    split: test
+    silent: false
+    page: "https://archive.org/details/la35ca-Cinema_35_-_Charade_1963"
+    duration_min: 113.4
+    master_sha256: 2e7db9a7964de0667d54cec6d1df2e1a90406a6c5ce8bfc3eec6117be54018dd
+  - id: carnival_of_souls
+    title: "Carnival of Souls"
+    year: 1962
+    source: "Public domain (US)"
+    type: "Live action"
+    licence: "Missing copyright notice"
+    split: test
+    silent: false
+    page: "https://archive.org/details/CarnivalofSouls"
+    duration_min: 83.0
+    master_sha256: 09edec167cb53e2dc7853bc9146e70f0547d7f8c9e9d5608577f2668d88c6035
+  - id: little_shop_of_horrors
+    title: "The Little Shop of Horrors"
+    year: 1960
+    source: "Public domain (US)"
+    type: "Live action"
+    licence: "Copyright not renewed"
+    split: test
+    silent: false
+    page: "https://archive.org/details/TheLittleShopOfHorrors1960_765"
+    duration_min: 71.5
+    master_sha256: cff5edd47211f08771f585caf5ba47e62be40427276b1601fc42ebfb2b3569a0
+  - id: doa
+    title: "D.O.A."
+    year: 1950
+    source: "Public domain (US)"
+    type: "Live action"
+    licence: "Copyright not renewed"
+    split: test
+    silent: false
+    page: "https://archive.org/details/DOA1950"
+    duration_min: 83.4
+    master_sha256: 838488d1ba57df5e95366a9ebc53aaeaea77dc59773dc0bc99464d8e84608aae
+  - id: meet_john_doe
+    title: "Meet John Doe"
+    year: 1941
+    source: "Public domain (US)"
+    type: "Live action"
+    licence: "Copyright not renewed"
+    split: test
+    silent: false
+    page: "https://archive.org/details/meet_john_doe"
+    duration_min: 122.9
+    master_sha256: 77e0510b1dc4e990ce0559a3a0377cf87dbe2ae8b2ccbe64fbaeee812e30b772
+  - id: his_girl_friday
+    title: "His Girl Friday"
+    year: 1940
+    source: "Public domain (US)"
+    type: "Live action"
+    licence: "Not renewed, source play public domain since 2024"
+    split: test
+    silent: false
+    page: "https://archive.org/details/his_girl_friday"
+    duration_min: 91.7
+    master_sha256: 30d222be93397c17ddd1b865001f4c062e2ec932e174ed5dcb6472f1378224be
+  - id: the_general
+    title: "The General"
+    year: 1926
+    source: "Public domain (US)"
+    type: "Silent"
+    licence: "Published before 1931"
+    split: test
+    silent: true
+    page: "https://archive.org/details/TheGeneral_201312"
+    duration_min: 78.6
+    master_sha256: 2e837494a8bce9bc15038f245cbaa878a11a5185703c21bb4e5431b5d58ed376
+  - id: sherlock_jr
+    title: "Sherlock Jr."
+    year: 1924
+    source: "Public domain (US)"
+    type: "Silent"
+    licence: "Published before 1931"
+    split: dev
+    silent: true
+    page: null
+    duration_min: 44.1
+    master_sha256: 8931dc7b1dd72fababe7c48176774d01ade1f994c7c6cb3643c2fe1a0b7a7442
+  - id: trip_to_the_moon
+    title: "A Trip to the Moon"
+    year: 1902
+    source: "Public domain (US)"
+    type: "Silent"
+    licence: "Published before 1931"
+    split: dev
+    silent: true
+    page: "https://archive.org/details/ATripToTheMoonGeorgeMelies"
+    duration_min: 12.9
+    master_sha256: 084dc2ec7391f56a993cdda4ec9f385513d3c4a2f46fe9bb18875c5abb269fab

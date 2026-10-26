@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0018",
+  "start": 75.44,
+  "end": 77.96,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.52,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 18,
+   "start": 0.0,
+   "end": 2.52,
+   "description": "Medium shot of C1 surfing and doing martial arts poses, panning."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.52
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0018-ref",
+ "descriptions_available": true
+}

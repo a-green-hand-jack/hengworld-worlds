@@ -1,0 +1,16 @@
+"""Run after s7_cost.py: adds per-purpose cost and the itemised extrapolation to cost/summary.json."""
+import json, csv
+s = json.load(open('cost/summary.json')); rows = list(csv.DictReader(open('cost/ledger.csv'))); by = {}
+for r in rows: by.setdefault(r['purpose'], [0, 0]); by[r['purpose']][0] += 1; by[r['purpose']][1] += float(r['usd'])
+s['sample_cost_by_purpose'] = {k: {'calls': v[0], 'usd': round(v[1], 4)} for k, v in sorted(by.items())}
+sa = s['avg_per_shot_draft_check_resolve_usd']
+dev = [json.loads(l) for l in open('/crewcut-dataset/tasks/dev.jsonl') if json.loads(l)['track'] == 'scr']
+a, b = s['synopsis_fit']['a_fixed'], s['synopsis_fit']['b_per_shot']; syn = sum(a + b * t['n_shots'] for t in dev)
+ia = s['avg_per_reference_image_incl_attempts_and_vision_check_usd']
+parts = {f'shots 603 x {sa:.5f}': round(603 * sa, 2),
+         f"one-sentence corrections 603 x {s['description_corrections_usd']/37:.5f} (sample: 28 of 37 shots needed one)": round(603 * s['description_corrections_usd'] / 37, 2),
+         f"film tables+images 6 x ({s['film_table_usd']:.4f} + 9 x {ia:.4f})": round(6 * (s['film_table_usd'] + 9 * ia), 2),
+         f'synopses: sum over the 299 dev segments of ({a:.5f} + {b:.6f} x n_shots)': round(syn, 2)}
+s['extrapolation_parts_usd'] = parts; s['extrapolation_sum_check'] = round(sum(parts.values()), 2)
+s['compression_options_for_maintainer'] = ["fewer frames per shot (n is 4..8 now; the image tokens of draft and check are the largest line)", "share one synopsis between L3 and L4 of a film (same shots)", "measure the one-sentence correction rate on a second film before budgeting (28/37 here)", "skip the audio check for shots whose audio is silent (already skipped) "]
+json.dump(s, open('cost/summary.json', 'w'), indent=1, ensure_ascii=False)

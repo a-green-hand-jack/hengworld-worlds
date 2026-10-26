@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0107",
+  "start": 858.391,
+  "end": 862.762,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 4.371,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 107,
+   "start": -0.0,
+   "end": 4.371,
+   "description": "Full shot of C1 and C2 walking in unison on a street, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 4.371
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0107-ref",
+ "descriptions_available": true
+}

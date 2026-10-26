@@ -1,0 +1,115 @@
+{
+ "steps": [
+  {
+   "step": "master matches pinned sha256",
+   "ok": true,
+   "detail": "028d76297822"
+  },
+  {
+   "step": "shots: cuts strictly increasing, shots >= 0.5 s",
+   "ok": true,
+   "detail": "37 shots, fps 24.0"
+  },
+  {
+   "step": "shots: frame count agrees with stream duration",
+   "ok": true,
+   "detail": "3601 frames, 150.0417 s"
+  },
+  {
+   "step": "dialogue: transcribed (model base, vad on)",
+   "ok": true,
+   "detail": "0 lines, lang=en"
+  },
+  {
+   "step": "hierarchy L0 contiguous and covers the film",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "step": "hierarchy L0 shot counts add up",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "step": "hierarchy L1 contiguous and covers the film",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "step": "hierarchy L1 shot counts add up",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "step": "hierarchy L2 contiguous and covers the film",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "step": "hierarchy L2 shot counts add up",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "step": "hierarchy L3 contiguous and covers the film",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "step": "hierarchy L3 shot counts add up",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "step": "L1 beats within 2-8 shots and 40 s (lone/overlong single shot allowed)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "step": "L3 sequences within 600 s (a lone scene allowed)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "step": "L2 scenes at least 12 s unless the film has one scene",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "step": "L4 present iff film <= 900 s",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "step": "hierarchy L0 count equals shots",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "step": "fingerprint: phash and audio landmarks non-empty",
+   "ok": true,
+   "detail": "300 frames @2fps, 47842 audio landmarks"
+  },
+  {
+   "step": "fingerprint: the master itself is detected by its own index",
+   "ok": true,
+   "detail": "100.0% of frames match the original by pHash; audio fingerprint match 1.00"
+  },
+  {
+   "step": "descriptions: one non-empty description per shot",
+   "ok": true,
+   "detail": "37 descriptions"
+  },
+  {
+   "step": "tasks: every package has task/spec/budget/tools/README and its input",
+   "ok": true,
+   "detail": "90 tasks"
+  },
+  {
+   "step": "key scan: no truth file, cuts, scenes or dialogue key in any package",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "tree_sha256": "9885164273bd939cfbcd9469dc77933b4f67105205f319620c8df5d2463bee63"
+}

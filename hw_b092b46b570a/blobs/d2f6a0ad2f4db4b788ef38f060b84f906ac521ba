@@ -1,0 +1,27 @@
+"""Reproduce corpus pin, ground truth, comparison with reference, package, leak check. Exits non-zero on any failed check."""
+import hashlib, json, re, sys, shutil, os
+SRC='/wordcount-source/sentences.txt'; REF='/wordcount-reference/reference.json'
+sha=lambda p: hashlib.sha256(open(p,'rb').read()).hexdigest()
+rec=json.load(open('corpus/records.json'))
+if sha(SRC)!=rec['admitted'][0]['sha256']: sys.exit('checksum mismatch: pinned file differs')
+lines=open(SRC,encoding='utf-8').read().split('\n')
+if lines[-1]=='': lines.pop()
+assert len(lines)==8, 'expected 8 lines'
+counts=[len(re.findall(r'[^\s]+',l)) for l in lines]  # README rule: runs of non-whitespace
+key={'rule':'maximal run of non-whitespace characters','counts':[{'line':i+1,'words':c} for i,c in enumerate(counts)]}
+os.makedirs('key',exist_ok=True); json.dump(key,open('key/answer_key.json','w'),indent=1)
+ref=[d['words'] for d in json.load(open(REF))['counts']]
+diff=[{'line':i+1,'ours':a,'reference':b} for i,(a,b) in enumerate(zip(counts,ref)) if a!=b]
+json.dump({'differences':diff,'match':not diff},open('key/reference_comparison.json','w'),indent=1)
+os.makedirs('published/task',exist_ok=True); shutil.copy(SRC,'published/task/sentences.txt')
+open('published/task/README.md','w').write("""# Task: count words per line
+Input: `sentences.txt` (8 lines, UTF-8). Run: `python3 count_words.py sentences.txt`.
+Output: one integer per line, in input order, 8 lines, no other text.
+A word is a maximal run of characters that are not whitespace (spaces, tabs). Hyphenated words and numbers count as one word.
+""")
+# leak check: no key file, and no line of the counts-bearing key text in package
+for f in os.listdir('published/task'):
+    t=open('published/task/'+f).read()
+    if 'answer_key' in t or 'reference.json' in t or '"words"' in t: sys.exit('LEAK in '+f)
+if diff: sys.exit('reference differs: %s'%diff)
+print('OK counts',counts,'sha256',sha(SRC))

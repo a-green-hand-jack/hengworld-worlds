@@ -1,0 +1,5 @@
+{"item":"wordcount-source/sentences.txt","decision":"admit","reason":"the only source named by the objective; small, local, read-only",
+"evidence":"README at /wordcount-source/README.md: 'A word is a maximal run of characters that are not whitespace'. No licence stated; world-provided resource for this benchmark, so admitted on that basis.",
+"artifact":"sentences.txt","alternatives_passed_over":["system/count_words.py (system under test, not a corpus item)"],
+"pinned_sha256":"24566eb35aef8e056134f78d6901ef73eb2aaae72d49057e727def9abb24211d","system_sha256":"ed48f533e271da1aac99a6a8b15c496f570fb0efbd5c546ff2bc881087290ce6",
+"decided_by":"task-maker","date":"2026-10-24","fetch_check":"commands/build.py recomputes the checksum and fails on mismatch"}

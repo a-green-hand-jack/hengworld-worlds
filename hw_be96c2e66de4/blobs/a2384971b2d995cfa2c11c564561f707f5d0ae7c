@@ -1,0 +1,510 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L3-0001",
+  "start": 303.069,
+  "end": 771.738,
+  "shots": 68,
+  "lines": 0
+ },
+ "duration": 468.669,
+ "cuts": [
+  1.502,
+  6.34,
+  14.148,
+  21.922,
+  29.263,
+  33.467,
+  36.871,
+  40.174,
+  45.88,
+  64.165,
+  69.67,
+  73.941,
+  80.08,
+  84.084,
+  89.99,
+  94.662,
+  96.564,
+  100.467,
+  113.981,
+  121.522,
+  126.493,
+  136.637,
+  151.952,
+  170.237,
+  171.906,
+  190.791,
+  198.999,
+  206.84,
+  214.648,
+  231.198,
+  236.036,
+  238.372,
+  239.773,
+  268.502,
+  275.509,
+  315.883,
+  326.36,
+  327.528,
+  331.432,
+  333.467,
+  339.106,
+  342.309,
+  345.779,
+  347.448,
+  350.184,
+  361.261,
+  363.53,
+  365.833,
+  370.037,
+  371.371,
+  373.24,
+  376.51,
+  381.281,
+  391.058,
+  405.606,
+  410.677,
+  418.151,
+  423.023,
+  431.165,
+  435.903,
+  440.774,
+  445.179,
+  448.081,
+  451.919,
+  458.559,
+  460.327,
+  467.134
+ ],
+ "shots": [
+  {
+   "index": 29,
+   "start": 0.0,
+   "end": 1.502,
+   "description": "Extreme close-up of title card displaying dialogue, static."
+  },
+  {
+   "index": 30,
+   "start": 1.502,
+   "end": 6.34,
+   "description": "Medium shot of C1 sitting and looking to the side nervously, static camera."
+  },
+  {
+   "index": 31,
+   "start": 6.34,
+   "end": 14.148,
+   "description": "Medium shot of C1 sitting, then turning their head, static."
+  },
+  {
+   "index": 32,
+   "start": 14.148,
+   "end": 21.922,
+   "description": "Medium shot of C1 and C2 kneeling on the floor, with C2 examining money and C1 wiping tears with a handkerchief, static camera."
+  },
+  {
+   "index": 33,
+   "start": 21.922,
+   "end": 29.263,
+   "description": "Medium shot of C1 tipping hat while C2 walks past, static camera."
+  },
+  {
+   "index": 34,
+   "start": 29.263,
+   "end": 33.467,
+   "description": "Medium shot of C1 standing dejectedly, static."
+  },
+  {
+   "index": 35,
+   "start": 33.467,
+   "end": 36.871,
+   "description": "Medium shot of C1 straightening up and C2 standing still, static camera."
+  },
+  {
+   "index": 36,
+   "start": 36.871,
+   "end": 40.174,
+   "description": "Medium close-up of C1 standing and looking ahead, static."
+  },
+  {
+   "index": 37,
+   "start": 40.174,
+   "end": 45.88,
+   "description": "Medium shot of C1 standing in a room while C2 walks into another room, static."
+  },
+  {
+   "index": 38,
+   "start": 45.88,
+   "end": 64.165,
+   "description": "Medium shot of C1 and C2 standing on the street, C1 dropping papers to the floor, static camera."
+  },
+  {
+   "index": 39,
+   "start": 64.165,
+   "end": 69.67,
+   "description": "Medium shot of C1 entering a room and taking a dollar bill from his pocket, static camera."
+  },
+  {
+   "index": 40,
+   "start": 69.67,
+   "end": 73.941,
+   "description": "Medium shot of C1 walking on the sidewalk past a storefront while C2 sneaks behind, static camera."
+  },
+  {
+   "index": 41,
+   "start": 73.941,
+   "end": 80.08,
+   "description": "Medium shot of C1 standing in a cafe while C2 takes out paper money and hands it to C1, static camera."
+  },
+  {
+   "index": 42,
+   "start": 80.08,
+   "end": 84.084,
+   "description": "Medium shot of C1 taking a wrapped parcel out of his jacket, static camera."
+  },
+  {
+   "index": 43,
+   "start": 84.084,
+   "end": 89.99,
+   "description": "Extreme close-up of C1 writing on a notepad, static camera."
+  },
+  {
+   "index": 44,
+   "start": 89.99,
+   "end": 94.662,
+   "description": "Long shot of C1 walking up the path and approaching a house, static."
+  },
+  {
+   "index": 45,
+   "start": 94.662,
+   "end": 96.564,
+   "description": "Medium shot of C1 running down the stairs, static camera."
+  },
+  {
+   "index": 46,
+   "start": 96.564,
+   "end": 100.467,
+   "description": "Wide shot of C1 and C2 standing at the front door of a house, static."
+  },
+  {
+   "index": 47,
+   "start": 100.467,
+   "end": 113.981,
+   "description": "Full shot of C1 and C2 walking inside a house, static camera."
+  },
+  {
+   "index": 48,
+   "start": 113.981,
+   "end": 121.522,
+   "description": "Medium wide shot of C1 walking towards a house, static camera."
+  },
+  {
+   "index": 49,
+   "start": 121.522,
+   "end": 126.493,
+   "description": "Medium long shot of C1 walking towards a coat rack and picking up a hat, static."
+  },
+  {
+   "index": 50,
+   "start": 126.493,
+   "end": 136.637,
+   "description": "Medium shot of C1 and C2 sitting on a couch, C2 reaches out to touch C1's hand, static."
+  },
+  {
+   "index": 51,
+   "start": 136.637,
+   "end": 151.952,
+   "description": "Medium shot of C1 standing in a hall and hanging his jacket on a coat rack, static camera."
+  },
+  {
+   "index": 52,
+   "start": 151.952,
+   "end": 170.237,
+   "description": "Medium shot of C1 and C2 sitting on a couch, C2 holding C1's hand, static camera."
+  },
+  {
+   "index": 53,
+   "start": 170.237,
+   "end": 171.906,
+   "description": "Extreme close-up of C1's hand showing a ring on a finger, static."
+  },
+  {
+   "index": 54,
+   "start": 171.906,
+   "end": 190.791,
+   "description": "Medium shot of C1 eating a sweet while C2 watches, static camera."
+  },
+  {
+   "index": 55,
+   "start": 190.791,
+   "end": 198.999,
+   "description": "Medium shot of C1 walking out of the pawn shop, static camera."
+  },
+  {
+   "index": 56,
+   "start": 198.999,
+   "end": 206.84,
+   "description": "Medium shot of C1 and C2 sitting down and blinking, static."
+  },
+  {
+   "index": 57,
+   "start": 206.84,
+   "end": 214.648,
+   "description": "Medium shot of C1 and C2 standing behind a counter, where C2 takes away a picture of herself and hands a flat box to C1, static camera."
+  },
+  {
+   "index": 58,
+   "start": 214.648,
+   "end": 231.198,
+   "description": "Medium shot of C1 and C2 sitting uncomfortably together on a sofa, static."
+  },
+  {
+   "index": 59,
+   "start": 231.198,
+   "end": 236.036,
+   "description": "Medium shot of C1 and another person sitting on a sofa while a third person walks past them, static camera."
+  },
+  {
+   "index": 60,
+   "start": 236.036,
+   "end": 238.372,
+   "description": "Medium shot of C1 taking a package from a man while C2 sits on a chair in the background, static camera."
+  },
+  {
+   "index": 61,
+   "start": 238.372,
+   "end": 239.773,
+   "description": "Medium shot of C1 sitting with hands folded, looking sideways, static."
+  },
+  {
+   "index": 62,
+   "start": 239.773,
+   "end": 268.502,
+   "description": "Medium shot of C1 sitting on a couch and C2 opening a curtain to leave the room, static."
+  },
+  {
+   "index": 63,
+   "start": 268.502,
+   "end": 275.509,
+   "description": "Medium shot of C1, an uncredited woman, and C2 interacting in a room, static."
+  },
+  {
+   "index": 64,
+   "start": 275.509,
+   "end": 315.883,
+   "description": "Medium shot of C1 sitting on a sofa and tidying up his clothes while C2 walks into the living room, static camera."
+  },
+  {
+   "index": 65,
+   "start": 315.883,
+   "end": 326.36,
+   "description": "Medium shot of C1 watching as a man and woman in a doorway exchange a dish, static."
+  },
+  {
+   "index": 66,
+   "start": 326.36,
+   "end": 327.528,
+   "description": "Medium shot of C1, C2 and another person talking, static."
+  },
+  {
+   "index": 67,
+   "start": 327.528,
+   "end": 331.432,
+   "description": "A title card reading \"Some one has stolen my watch.\" appears on screen, static shot."
+  },
+  {
+   "index": 68,
+   "start": 331.432,
+   "end": 333.467,
+   "description": "Medium shot of C1, C2 and another person talking, static."
+  },
+  {
+   "index": 69,
+   "start": 333.467,
+   "end": 339.106,
+   "description": "Medium shot of C1 picking up a book and opening it to read, static."
+  },
+  {
+   "index": 70,
+   "start": 339.106,
+   "end": 342.309,
+   "description": "Medium shot of C1 talking and looking to the side, static."
+  },
+  {
+   "index": 71,
+   "start": 342.309,
+   "end": 345.779,
+   "description": "Medium shot of C1 standing and C2 sitting reading a letter, static camera."
+  },
+  {
+   "index": 72,
+   "start": 345.779,
+   "end": 347.448,
+   "description": "Extreme close-up of a page displaying four detective rules, static."
+  },
+  {
+   "index": 73,
+   "start": 347.448,
+   "end": 350.184,
+   "description": "Close-up of text displaying the rules, static."
+  },
+  {
+   "index": 74,
+   "start": 350.184,
+   "end": 361.261,
+   "description": "Medium shot of C1 standing and C2 sitting reading a letter, static camera."
+  },
+  {
+   "index": 75,
+   "start": 361.261,
+   "end": 363.53,
+   "description": "Medium shot of C1 reading a book on a couch while C2 and others stand in the background, static camera."
+  },
+  {
+   "index": 76,
+   "start": 363.53,
+   "end": 365.833,
+   "description": "Medium shot of C1 talking, static camera."
+  },
+  {
+   "index": 77,
+   "start": 365.833,
+   "end": 370.037,
+   "description": "Close-up of an intertitle displaying dialogue, static camera."
+  },
+  {
+   "index": 78,
+   "start": 370.037,
+   "end": 371.371,
+   "description": "Medium close-up of C1 talking, static."
+  },
+  {
+   "index": 79,
+   "start": 371.371,
+   "end": 373.24,
+   "description": "Medium shot of C1 arguing with C2 while a woman watches from between them, with a static camera."
+  },
+  {
+   "index": 80,
+   "start": 373.24,
+   "end": 376.51,
+   "description": "Medium shot of C1 getting up from a chair and holding back C2, static camera."
+  },
+  {
+   "index": 81,
+   "start": 376.51,
+   "end": 381.281,
+   "description": "A static close-up shot shows a title card displaying text."
+  },
+  {
+   "index": 82,
+   "start": 381.281,
+   "end": 391.058,
+   "description": "Medium wide shot of C1, C2, and others standing in a room, static."
+  },
+  {
+   "index": 83,
+   "start": 391.058,
+   "end": 405.606,
+   "description": "Medium shot of C1 trying to pat another man on the chest while C2 stands nearby watching, static camera."
+  },
+  {
+   "index": 84,
+   "start": 405.606,
+   "end": 410.677,
+   "description": "Medium shot of C1 speaking, static."
+  },
+  {
+   "index": 85,
+   "start": 410.677,
+   "end": 418.151,
+   "description": "Medium shot of C1, C2, and another man standing in a room, with C1 stepping into the other man's arms, static camera."
+  },
+  {
+   "index": 86,
+   "start": 418.151,
+   "end": 423.023,
+   "description": "Extreme close-up of a pawn ticket held by hands, static camera."
+  },
+  {
+   "index": 87,
+   "start": 423.023,
+   "end": 431.165,
+   "description": "Medium shot of C1 showing a card to C2, static."
+  },
+  {
+   "index": 88,
+   "start": 431.165,
+   "end": 435.903,
+   "description": "Medium shot of C1 and C2 standing close together inside a room, with C1 speaking to C2 while looking downwards. Static camera."
+  },
+  {
+   "index": 89,
+   "start": 435.903,
+   "end": 440.774,
+   "description": "Medium shot of C1 and C2 holding a box, static."
+  },
+  {
+   "index": 90,
+   "start": 440.774,
+   "end": 445.179,
+   "description": "Medium shot of C1, C2, and another man standing indoors while looking at things in their hands, static."
+  },
+  {
+   "index": 91,
+   "start": 445.179,
+   "end": 448.081,
+   "description": "Extreme close-up of C1 holding a pawn ticket, static camera."
+  },
+  {
+   "index": 92,
+   "start": 448.081,
+   "end": 451.919,
+   "description": "Medium shot of C1, C2, and another man standing indoors, with the man holding out a wad of money to C1 while C1 holds cigarettes, static camera."
+  },
+  {
+   "index": 93,
+   "start": 451.919,
+   "end": 458.559,
+   "description": "Medium close-up of C1 looking down and away to the right, static."
+  },
+  {
+   "index": 94,
+   "start": 458.559,
+   "end": 460.327,
+   "description": "Medium close-up of C1 talking, static."
+  },
+  {
+   "index": 95,
+   "start": 460.327,
+   "end": 467.134,
+   "description": "Medium close-up of title card displaying dialogue, static."
+  },
+  {
+   "index": 96,
+   "start": 467.134,
+   "end": 468.669,
+   "description": "Medium shot of C1 talking, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 14.148
+  },
+  {
+   "start": 14.148,
+   "end": 80.08
+  },
+  {
+   "start": 80.08,
+   "end": 342.309
+  },
+  {
+   "start": 342.309,
+   "end": 468.669
+  }
+ ],
+ "task_id": "sherlock_jr-L3-0001-scr",
+ "descriptions_available": true
+}

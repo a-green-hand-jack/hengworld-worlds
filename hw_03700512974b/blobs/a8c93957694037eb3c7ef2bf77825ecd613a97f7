@@ -1,0 +1,10 @@
+{
+ "calls": 50,
+ "prompt_tokens": 48980,
+ "completion_tokens": 100,
+ "total_usd": 0.007148,
+ "price_usd_per_1M": {
+  "input": 0.143,
+  "output": 1.434
+ }
+}

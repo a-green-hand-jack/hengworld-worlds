@@ -1,0 +1,14 @@
+{
+ "decision": "The Screenplay package's input/shotlist.csv and input/script.csv are part of the published package; they are the task input defined by Issue #3 s1.4 (script plus shot table with times and descriptions). All other ground truth (truth.json: segment, cuts, shots, lines, scenes) is key and goes only to key/.",
+ "evidence": [
+  "Issue #3 s1.4 'Screenplay: 输入是剧本...和镜头表（时间、镜头描述）'",
+  "crewcut/build/tasks.py: write_package, ignore_patterns('truth.json') in the run-sandbox copy"
+ ],
+ "effect": "scripts/split_and_scan.py allows exactly those two csv files in -scr packages and nothing else derived from truth; note that for the L1 scr task the shot-list times reveal the cut times by protocol design, which scorer should keep in mind when reading cut F1 for scr tasks.",
+ "decided_by": "task-maker (agent)",
+ "date": "2026-10-21",
+ "affects": [
+  "published packages",
+  "cut F1 interpretation"
+ ]
+}

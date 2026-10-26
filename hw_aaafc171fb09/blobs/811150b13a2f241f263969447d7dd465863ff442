@@ -1,0 +1,11 @@
+{"run_id":"fixed-caminandes3-L1-0000-scr-T0-5e9dec","attempt":1,"attempts_total":1,"failures":[],"retries":[],
+"system":"fixed","profile":"smoke","tier":"T0","official":false,
+"task":"caminandes3-L1-0000-scr","task_package":"world/task-maker release v0.1-caminandes3-tasks, crewcut-caminandes3-tasks-published.tar.gz, sha256 e846797efcd2b94aa02f0d32c50f5b64e01e5632d6d6d8104c5ef158d4eb0861 (verified; no truth.json present)",
+"crewcut":"df54b3a3918e16bfc8e61ff6215e01b6abca3849, benchmark 0.1.0, pip install -e '.[dev]'",
+"command":"PATH=/hutian/.mamba/bin:$PATH crewcut run --system fixed --task <tasks>/caminandes3-L1-0000-scr --runs runs --profile smoke",
+"ffmpeg":"9.0.2 conda-forge (installed via micromamba because none was on PATH)",
+"exit_code":0,"status":"ok","wall_clock_s":14.4,"model_usd":0.0,"tool_usd":0.1846,
+"budget":{"model_usd":10.76,"tool_usd":2.69,"wall_clock_s":1937.52},"within_budget":true,
+"outputs_sha256":{"output/film.mp4":"dbe7652fb3126c68b166935a3e81fcdda6516857e28239de59b53159bca9f26c","output/film.en.vtt":"8eb5aec53542eaedb7502b22fb677161abba1e265b1338f1af1369a1f689837c","output/manifest.json":"e5c4f45d84e6ccf1532e0daa2c7ad0d47da6c93777c2998ffc484d8d8ce547e3"},
+"answer_key_accessed":false,"scored_by_executor":false,
+"note":"Run once; one task only per objective. Placeholder generator, so unofficial. Q and cut F1 are for scorer."}

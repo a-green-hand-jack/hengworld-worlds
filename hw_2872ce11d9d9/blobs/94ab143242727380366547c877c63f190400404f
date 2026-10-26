@@ -1,0 +1,3 @@
+import json
+x=json.load(open('records/ground_truth.json')); r=json.load(open('/wordcount-reference/reference.json'))
+assert x['counts']==r['counts']; print('reference comparison: PASS (no differences)')

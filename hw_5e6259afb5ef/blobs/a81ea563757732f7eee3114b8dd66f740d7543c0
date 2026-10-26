@@ -1,0 +1,76 @@
+"""Step 1: film-level look, characters, places (draft), cross-check, resolution. Writes annotations/caminandes3/film.json + rows to rich_crosscheck / rich_resolutions."""
+import sys; sys.path.insert(0, "scripts")
+from lib import *
+from resolve import *
+
+def main():
+    extract_all_frames()
+    shots, dur = film_info()
+    desc = json.load(open(DS / "annotations" / FILM / "descriptions.json"))["descriptions"]
+    n = len(shots); step = max(1, math.ceil(n / 48)); idx = list(range(0, n, step))[:48]
+    parts = [f"You see {len(idx)} frames, one from the middle of each of the listed shots of a short film, in order. Below them is the one-sentence description of EVERY shot of the film; they refer to characters as C1, C2, ... "
+             "Build the production bible of this film so that it can be remade from text alone. Reply with ONE JSON object and nothing else:\n"
+             '{"look": "overall visual style, at most 40 words",\n "characters": [{"id": "C1", "kind": "species or identity, e.g. a llama", "appearance": "body shape, colours, clothing, notable features; at most 80 words", "role": "at most 30 words", "example_shot": <shot number where it is clearly visible in the frames shown>}],\n'
+             ' "places": [{"id": "P1", "name": "short name", "description": "at most 60 words", "example_shot": <shot number among the frames shown>}],\n'
+             ' "mixed_ids": [{"old_id": "C2", "new_id": "C5", "shots": [shot numbers where the description label old_id actually means the new character], "reason": "..."}]}\n'
+             "Rules: keep the C numbers used in the descriptions. If the same C number refers to different characters in different shots, give the other character a new C number (continuing after the highest used) and list it in mixed_ids (empty list if none). "
+             "Add a new C number for a character that appears in the frames but has no label. Number places P1, P2, ... Describe only what is visible; do not use the film's title or any character's proper name; no scene numbers or groupings of shots; no reference to the frames themselves.\n"
+             "Frames (shot number given before each frame):"]
+    fts = []
+    for i in idx:
+        t = (shots[i][0] + shots[i][1]) / 2; fts.append({"shot": i, "t": round(t, 3)})
+        parts += [f"[shot {i}]", img_part(frame_path(t))]
+    parts.append("\nOne-sentence description of every shot:\n" + "\n".join(f"shot {i}: {desc[str(i)]}" for i in range(n)))
+    rec, film = call_json("film-table-draft", DRAFT, parts, {"film": FILM, "step": 1}, frames_s=fts)
+    # --- cross-check
+    chk_parts = ["You check a production bible written by another model. Below, for each character and place, one frame from the film and the written description. Judge each item independently from the frame. "
+                 "Reply with ONE JSON object: {\"characters\": [{\"id\": \"C1\", \"appearance_accurate\": true|false, \"issues\": [{\"quote\": \"exact substring of the appearance text\", \"verdict\": \"contradicted|unsupported\", \"why\": \"...\"}]}], "
+                 "\"places\": [{\"id\": \"P1\", \"description_accurate\": true|false, \"issues\": [same form on the description text]}], "
+                 "\"same_character_check\": [{\"id\": \"C1\", \"ids_consistent\": true|false, \"note\": \"...\"}]}\n"
+                 "'contradicted' = the frame shows the opposite; 'unsupported' = cannot be confirmed in the frame. Quotes must be exact substrings and complete self-contained phrases (the whole clause or noun phrase with its modifiers, e.g. 'large white eyes with dark pupils', not just 'white'), so that deleting a quote leaves a grammatical text. Items:"]
+    fts2 = []
+    for kind, key in (("character", "characters"), ("place", "places")):
+        for it in film[key]:
+            s = int(it["example_shot"]); t = (shots[s][0] + shots[s][1]) / 2; fts2.append({"id": it["id"], "shot": s, "t": round(t, 3)})
+            txt = it["appearance"] if kind == "character" else it["description"]
+            chk_parts += [f"\n[{kind} {it['id']}] ({it.get('kind') or it.get('name')}) text: {txt}", img_part(frame_path(t))]
+    rec2, chk = call_json("film-table-check", CHECK, chk_parts, {"film": FILM, "step": 1}, frames_s=fts2)
+    issues = []
+    for c in chk.get("characters", []):
+        for iss in c.get("issues", []): issues.append(("characters", c["id"], "appearance", iss))
+    for c in chk.get("places", []):
+        for iss in c.get("issues", []): issues.append(("places", c["id"], "description", iss))
+    jl_append(ANN / "rich_crosscheck.jsonl", {"where": "film-table", "film": FILM, "draft_call": rec["key"], "check_call": rec2["key"], "check": chk})
+    final = json.loads(json.dumps(film))
+    if issues:
+        remarks = "\n".join(f"- {k} {i} ({f}): '{x.get('quote')}' -> {x.get('verdict')}: {x.get('why')}" for k, i, f, x in issues)
+        rw = parts[:-1] + ["\nYour previous draft of this JSON was:\n" + json.dumps(film) + "\nAn independent checker looking at the frames of the example shots raised:\n" + remarks +
+              "\nRewrite the whole JSON object (same schema) so that every statement is supported by the frames. Reply with the JSON only.\n\nOne-sentence description of every shot:\n" + "\n".join(f"shot {i}: {desc[str(i)]}" for i in range(n))]
+        rec3, film2 = call_json("film-table-rewrite", DRAFT, rw, {"film": FILM, "step": 1}, frames_s=fts)
+        # recheck film2
+        chk_parts2 = [chk_parts[0]]
+        for kind, key in (("character", "characters"), ("place", "places")):
+            for it in film2[key]:
+                s = int(it["example_shot"]); t = (shots[s][0] + shots[s][1]) / 2
+                txt = it["appearance"] if kind == "character" else it["description"]
+                chk_parts2 += [f"\n[{kind} {it['id']}] ({it.get('kind') or it.get('name')}) text: {txt}", img_part(frame_path(t))]
+        rec4, chk2 = call_json("film-table-recheck", CHECK, chk_parts2, {"film": FILM, "step": 1})
+        jl_append(ANN / "rich_crosscheck.jsonl", {"where": "film-table-recheck", "film": FILM, "draft_call": rec3["key"], "check_call": rec4["key"], "check": chk2})
+        final = film2
+        for key, fld, cj in (("characters", "appearance", "characters"), ("places", "description", "places")):
+            for c in chk2.get(cj, []):
+                it = next((x for x in final[key] if x["id"] == c["id"]), None)
+                for iss in c.get("issues", []):
+                    if it is None: continue
+                    before = it[fld]; it[fld] = delete_quote(it[fld], iss.get("quote", ""))
+                    jl_append(ANN / "rich_resolutions.jsonl", {"where": {"film": FILM, "item": c["id"], "field": fld}, "draft": film_item(film, key, c["id"], fld), "rewrite": before,
+                              "check_remark": iss, "treatment": "deleted disputed statement after one rewrite and recheck" if it[fld] != before else "quote not found; left unchanged and flagged", "after": it[fld]})
+        jl_append(ANN / "rich_resolutions.jsonl", {"where": {"film": FILM, "item": "film-table"}, "draft": "see draft_call", "check_remark": remarks, "treatment": "rewritten once by drafter, rechecked", "draft_call": rec["key"], "rewrite_call": rec3["key"], "recheck_call": rec4["key"]})
+    final["call"] = {"draft": rec["key"], "check": rec2["key"]}
+    json.dump(final, open(ANN / "film.json", "w"), indent=1, ensure_ascii=False)
+    print(json.dumps({k: (v if k in ("look", "mixed_ids") else len(v)) for k, v in final.items() if k != "call"}, ensure_ascii=False)[:800])
+
+def film_item(film, key, id_, fld):
+    return next((x[fld] for x in film[key] if x["id"] == id_), None)
+
+if __name__ == "__main__": main()

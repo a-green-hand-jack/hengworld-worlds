@@ -1,0 +1,145 @@
+"""Rebuild the Breakdown data of one film from its pinned master, with a check after every step.
+
+Usage: build.py MASTER OUT_ROOT [--film caminandes3]
+Reads the descriptions drafted by commands/describe_shots.py (paid, done once) from
+OUT_ROOT/data/<film>/descriptions.json; it never calls a model. Writes under OUT_ROOT:
+  data/<film>/{shots,dialogue,hierarchy}.json, data/<film>/provenance.npz, data/work/*.json
+  packages/<task_id>/   published task packages, no answer key
+  key/<task_id>/truth.json   answer key (scorer/auditor only)
+  tasks/<split>.jsonl   task list
+Any failed check exits non-zero. Parameters are those of configs/benchmark.yaml, unchanged.
+"""
+import hashlib, json, shutil, sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from crewcut.build import dialogue, hierarchy, provenance, shots, tasks
+from crewcut.config import benchmark, film as film_cfg
+from crewcut.io import read_dialogue, read_hierarchy, read_shots, release_files
+
+LOG = []
+
+
+def step(name, ok, detail=""):
+    LOG.append({"step": name, "ok": bool(ok), "detail": detail})
+    print(("PASS " if ok else "FAIL ") + name + (f": {detail}" if detail else ""), flush=True)
+    if not ok:
+        sys.exit(1)
+
+
+def sha(p):
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+
+
+def check_hierarchy(h, cfg):
+    d = h["duration_s"]
+    L0, L1, L2, L3, L4 = (h[k] for k in ("L0", "L1", "L2", "L3", "L4"))
+    for lv in ("L0", "L1", "L2", "L3"):
+        segs = h[lv]
+        contig = all(abs(a["end"] - b["start"]) < 2e-3 for a, b in zip(segs[:-1], segs[1:]))
+        cover = abs(segs[0]["start"]) < 1e-3 and abs(segs[-1]["end"] - d) < 0.02
+        step(f"hierarchy {lv} contiguous and covers the film", contig and cover)
+        step(f"hierarchy {lv} shot counts add up", sum(s["shots"] for s in segs) == len(L0))
+    bc = cfg["hierarchy"]["beat"]
+    step("L1 beats within 2-8 shots and 40 s (lone/overlong single shot allowed)",
+         all(s["shots"] == 1 or (bc["min_shots"] <= s["shots"] <= bc["max_shots"] and s["end"] - s["start"] <= bc["max_seconds"] + 1e-3) for s in L1))
+    sq = cfg["hierarchy"]["sequence"]
+    step("L3 sequences within 600 s (a lone scene allowed)",
+         all(s["end"] - s["start"] <= sq["max_seconds"] or s["shots"] == 1 for s in L3))
+    step("L2 scenes at least 12 s unless the film has one scene",
+         len(L2) == 1 or all(s["end"] - s["start"] >= cfg["hierarchy"]["scene"]["min_seconds"] - 1e-3 for s in L2))
+    step("L4 present iff film <= 900 s", bool(L4) == (d <= cfg["hierarchy"]["film"]["max_seconds"]))
+
+
+def main():
+    master = Path(sys.argv[1]); out = Path(sys.argv[2])
+    fid = sys.argv[sys.argv.index("--film") + 1] if "--film" in sys.argv else "caminandes3"
+    cfg = benchmark(); fc = film_cfg(fid)
+    step("master matches pinned sha256", sha(master) == fc.master_sha256, fc.master_sha256[:12])
+    fd = out / "data" / fid; wd = out / "data" / fid / "work"; fd.mkdir(parents=True, exist_ok=True); wd.mkdir(parents=True, exist_ok=True)
+
+    S = shots.detect(str(master)); S["file"] = master.name
+    (wd / "shots_full.json").write_text(json.dumps(S))
+    cuts = S["cuts"]
+    step("shots: cuts strictly increasing, shots >= 0.5 s",
+         all(b - a >= round(0.5 * S["fps"]) for a, b in zip([0] + cuts, cuts + [S["nframes"]])), f"{len(cuts)+1} shots, fps {S['fps']}")
+    step("shots: frame count agrees with stream duration", abs(S["nframes"] / S["fps"] - S["duration"]) < 1 / S["fps"] + 1e-6,
+         f"{S['nframes']} frames, {S['duration']:.4f} s")
+
+    L = dialogue.transcribe(master, backend="faster-whisper", model="base", threads=2, silent=fc.silent)
+    (wd / "lines.json").write_text(json.dumps(L, ensure_ascii=False))
+    step("dialogue: transcribed (model base, vad on)", isinstance(L["lines"], list), f"{len(L['lines'])} lines, lang={L['lang'] or '-'}")
+
+    H = hierarchy.build(fid, S, L["lines"], silent=fc.silent, cfg=cfg["hierarchy"])
+    # ADAPTATION A1: duration_s is released at 2 decimals, as in the published data
+    release_files(fid, {"fps": S["fps"], "duration": round(S["duration"], 2), "cuts": cuts},
+                  {"lang": L["lang"], "lines": [l + [None] for l in L["lines"]]}, H, fd)
+    check_hierarchy(read_hierarchy(fd / "hierarchy.json"), cfg)
+    step("hierarchy L0 count equals shots", len(read_hierarchy(fd / "hierarchy.json")["L0"]) == len(cuts) + 1)
+
+    provenance.build_index(master, fd / "provenance.npz", cfg["provenance"]["frame_sample_fps"], False)
+    import numpy as np
+    z = np.load(fd / "provenance.npz")
+    step("fingerprint: phash and audio landmarks non-empty", len(z["phash"]) > 0 and len(z["audio"]) > 0,
+         f"{len(z['phash'])} frames @2fps, {len(z['audio'])} audio landmarks")
+    res = provenance.check(master, fd / "provenance.npz")
+    step("fingerprint: the master itself is detected by its own index", not res.passed, res.detail)
+
+    desc_p = fd / "descriptions.json"
+    desc = json.loads(desc_p.read_text())
+    step("descriptions: one non-empty description per shot", all(desc.get(str(i), "").strip() for i in range(len(cuts) + 1)), f"{len(desc)} descriptions")
+
+    pk, key = out / "packages", out / "key"
+    # per-film: only this film's packages and keys are rebuilt, others stay
+    for d in list(pk.glob(f"{fid}-*")) + list(key.glob(f"{fid}-*")):
+        shutil.rmtree(d, ignore_errors=True)
+    pk.mkdir(exist_ok=True); key.mkdir(exist_ok=True)
+    hier = read_hierarchy(fd / "hierarchy.json"); sh = read_shots(fd / "shots.json"); dl = read_dialogue(fd / "dialogue.json")
+    # segment_truth works on the full-precision shot record; the released one is rounded
+    sh_full = dict(sh, duration=S["duration"])
+    listing = []
+    for lv, segs in tasks.select_segments(fid, hier, cfg).items():
+        for seg in segs:
+            truth = tasks.segment_truth(seg, sh_full, dl, desc, hier["L2"])
+            step_ok = len(truth["shots"]) == seg["shots"]
+            if not step_ok:
+                step(f"truth shot count of {seg['id']}", False, f"{len(truth['shots'])} != {seg['shots']}")
+            edge = [c for c in truth["cuts"] if c < 2e-3 or truth["duration"] - c < 2e-3]
+            if edge:
+                step(f"truth cuts of {seg['id']} exclude segment edges", False, str(edge))
+            if len(truth["cuts"]) != len(truth["shots"]) - 1:
+                step(f"truth cuts of {seg['id']} = shots - 1", False, f"{len(truth['cuts'])} vs {len(truth['shots'])}")
+            for tr in cfg["tracks"]:
+                d = tasks.write_package(pk, fid, lv, seg, tr, truth, master, "T0", cfg)
+                (key / d.name).mkdir(parents=True)
+                shutil.move(str(d / "truth.json"), key / d.name / "truth.json")
+                listing.append({"task_id": d.name, "film_id": fid, "level": lv, "segment_id": seg["id"], "track": tr,
+                                "start_s": seg["start"], "end_s": seg["end"], "n_shots": seg["shots"], "n_lines": seg["lines"]})
+    (out / "tasks").mkdir(exist_ok=True)
+    (out / "tasks" / f"{fid}.jsonl").write_text("".join(json.dumps(r) + "\n" for r in listing))
+    step("tasks: every package has task/spec/budget/tools/README and its input", all(
+        all((pk / r["task_id"] / f).exists() for f in ("task.json", "spec.json", "budget.json", "tools.json", "README.md"))
+        and ((pk / r["task_id"] / "input" / ("original.mp4" if r["track"] == "ref" else "shotlist.csv")).exists()) for r in listing),
+        f"{len(listing)} tasks")
+    # key scan
+    bad = [str(p.relative_to(pk)) for p in pk.rglob("*") if p.is_file() and p.name.startswith("truth")]
+    for r in listing:
+        kt = json.loads((key / r["task_id"] / "truth.json").read_text())
+        for p in (pk / r["task_id"]).rglob("*"):
+            if p.suffix in (".json", ".md", ".csv"):
+                txt = p.read_text()
+                if '"scenes"' in txt or '"cuts"' in txt or (kt["lines"] and any(l["text"] in txt for l in kt["lines"])):
+                    bad.append(str(p.relative_to(pk)))
+    step("key scan: no truth file, cuts, scenes or dialogue key in any package", not bad, ", ".join(bad[:5]))
+    # tree digest for reproducibility
+    h = hashlib.sha256()
+    roots = [fd] + sorted(pk.glob(f"{fid}-*")) + sorted(key.glob(f"{fid}-*")) + [out / "tasks" / f"{fid}.jsonl"]
+    for root in roots:
+        for p in sorted(root.rglob("*")) if root.is_dir() else [root]:
+            if p.is_file():
+                h.update(str(p.relative_to(out)).encode()); h.update(p.read_bytes())
+    (fd / "build_log.json").write_text(json.dumps({"steps": LOG, "tree_sha256": h.hexdigest()}, indent=1))
+    print("tree_sha256", h.hexdigest())
+
+
+if __name__ == "__main__":
+    main()

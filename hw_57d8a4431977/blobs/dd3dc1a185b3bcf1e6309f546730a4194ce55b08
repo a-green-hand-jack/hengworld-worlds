@@ -1,0 +1,18 @@
+# Audit log (auditor) — in progress
+
+## Corpus (curator 42ba08b)
+- Independent check: backup master in /crewcut/masters has SHA-256 028d7629...8d7f, equal to the pinned value; curator's verification_log reports artifact_from=source with the same hash, PASS.
+- Not yet checked: licence evidence quotes in corpus/admissions.json against the source page.
+
+## Pending (no delivery yet)
+- tasks (task-maker): rebuild, compare with dataset d509bed, duration_s bases, key scan
+- runs (executor), scores (scorer)
+- cost report, credential/host-path scan
+No approval is possible until these exist.
+
+## 2026-10-22 verdict turn (phase B, early)
+Delivery assembled at task-maker 6c86748, curator d220538, executor 93698bb, steward dac4342. Not approvable:
+- Breakdown exists for caminandes3 only (data/, 90 packages, tasks/dev.jsonl = 90 of 598 tasks); five other films have pinned masters (curator) but no shots/dialogue/hierarchy/descriptions/packages, so no comparison with d509bed for them.
+- No stage B run (B1/B2) has records; runs/not_run.md lists all as NOT RUN (no auth for Claude Code/Codex, agy not installable). Nothing scored beyond stage A's smoke run.
+- Tool server and price table delivered but not yet audited (price vs official page and Issue #13 pending).
+Nothing approved; nothing claimed.

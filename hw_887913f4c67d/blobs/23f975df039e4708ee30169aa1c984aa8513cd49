@@ -1,0 +1,63 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0002",
+  "start": 42.708,
+  "end": 56.583,
+  "shots": 6,
+  "lines": 0
+ },
+ "duration": 13.875,
+ "cuts": [
+  0.0,
+  1.209,
+  4.292,
+  7.167,
+  9.584,
+  10.167
+ ],
+ "shots": [
+  {
+   "index": 9,
+   "start": 0.0,
+   "end": 1.209,
+   "description": "Extreme wide shot of a penguin eating a cherry on the train tracks as a train approaches, static camera."
+  },
+  {
+   "index": 10,
+   "start": 1.209,
+   "end": 4.292,
+   "description": "Medium shot of C1 turning head and holding a cherry on its snout, static camera."
+  },
+  {
+   "index": 11,
+   "start": 4.292,
+   "end": 7.167,
+   "description": "Extreme long shot of C1 looking, static."
+  },
+  {
+   "index": 12,
+   "start": 7.167,
+   "end": 9.584,
+   "description": "Close-up of C1 exhaling a small ball into the air, static."
+  },
+  {
+   "index": 13,
+   "start": 9.584,
+   "end": 10.167,
+   "description": "Medium close-up of a weasel looking around as a bird flies past, static camera."
+  },
+  {
+   "index": 14,
+   "start": 10.167,
+   "end": 13.875,
+   "description": "Medium shot of an animal and a bird sitting in snow near train tracks. The bird holds up a berry, and the animal dives down toward it. The camera is static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 13.875
+  }
+ ]
+}

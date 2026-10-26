@@ -1,0 +1,6 @@
+# Scores, run v1 (executor run-v1, system count_words.py on package-v1)
+Command: `python3 scoring/score.py <answer key> runs/executor/v1/output.txt` at scorer revision e4197b4 (score.py unchanged since).
+Deliverability check first: 8 integer lines -> passed.
+Result: correct 4/8, accuracy 0.5; per line match: 1 yes, 2 no, 3 yes, 4 no, 5 no, 6 yes, 7 no, 8 yes (run-v1.json).
+Validation: validation/stress.txt (identical 1.0, one line wrong 0.875, all zero 0.0, non-numeric -> not deliverable).
+No paid steps.

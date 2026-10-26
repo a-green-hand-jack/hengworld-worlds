@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0076",
+  "start": 666.599,
+  "end": 668.902,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.303,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 76,
+   "start": 0.0,
+   "end": 2.303,
+   "description": "Medium shot of C1 talking, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.303
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0076-ref",
+ "descriptions_available": true
+}

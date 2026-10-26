@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L1-0031",
+  "start": 771.738,
+  "end": 800.633,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 28.895,
+ "cuts": [
+  8.341,
+  13.947,
+  17.684
+ ],
+ "shots": [
+  {
+   "index": 97,
+   "start": -0.0,
+   "end": 8.341,
+   "description": "Medium shot of C1 pointing toward C2 while other people look on, static camera."
+  },
+  {
+   "index": 98,
+   "start": 8.341,
+   "end": 13.947,
+   "description": "Medium shot of C1, C2, and three other characters standing in a living room while C1 puts a hat on, static."
+  },
+  {
+   "index": 99,
+   "start": 13.947,
+   "end": 17.684,
+   "description": "Medium long shot of C1 standing and holding a hat next to a crying C2 who is leaning against the staircase, static."
+  },
+  {
+   "index": 100,
+   "start": 17.684,
+   "end": 28.895,
+   "description": "Medium close-up of C1 standing and looking down thoughtfully, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 28.895
+  }
+ ],
+ "task_id": "sherlock_jr-L1-0031-scr",
+ "descriptions_available": true
+}

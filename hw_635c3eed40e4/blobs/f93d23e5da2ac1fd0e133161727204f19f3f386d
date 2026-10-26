@@ -1,0 +1,13 @@
+import json,glob,time
+from faster_whisper import WhisperModel
+P='/hutian/.home/.cache/huggingface/hub/models--Systran--faster-whisper-base/snapshots/ebe41f70d5b6dfa9166e2c581c45c9c0cfc57b66'
+m=WhisperModel(P,device='cpu',compute_type='int8',cpu_threads=2)
+out={}
+for f in ['coffee_run','caminandes3','spirit_chaser','domini_canes']:
+    p=glob.glob(f'/hutian/work/masters/{f}.*')[0]
+    segs,info=m.transcribe(p,vad_filter=True,beam_size=5,temperature=0.0,language=None)
+    segs=list(segs)
+    out[f]={'language':info.language,'prob':round(info.language_probability,4),'n_segments':len(segs),'texts':[s.text for s in segs][:5]}
+    print(f,json.dumps(out[f]),flush=True)
+json.dump(out,open('/hutian/work/asr_result.json','w'),indent=1)
+print('HUTIAN_WAKE: asr done',flush=True)

@@ -1,0 +1,8 @@
+# Scores
+Run: executor runs/run1 (executor commit 4ed66a5d3e0b), output sha256 5e68cdff...7378; package sentences.txt identical to task-maker task-v1 package.
+Key: task-maker key/answer_key.json at d4a9d020c742 (not published).
+Command: `python3 tools/score.py <key> runs/run1/output.txt` at scorer revision 46e4749 (tools/ unchanged since).
+Deliverability check first: output is 8 integer lines -> deliverable.
+Result (run1_score.json): exact match per line [1,0,1,0,0,1,0,1]; accuracy 4/8 = 0.5.
+Wrong lines: 2, 4, 5, 7 (1-indexed); explanation of causes is the auditor's.
+Measures: exact match and accuracy only. No paid steps. Validation: validation/damage_stress.json.

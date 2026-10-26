@@ -1,0 +1,5 @@
+{"assignment_schema":1,"objective":"auditor#1","items":[
+{"work":"Corpus, ground truth, task package without answers, answer key","owner":"task-maker","paths":[]},
+{"work":"Run record of the unchanged system on the package","owner":"executor","paths":["runs/"]},
+{"work":"Score: exact match per line and accuracy","owner":"scorer","paths":["scores/"]},
+{"work":"Audit and approval","owner":"auditor","paths":["audit/"]}]}

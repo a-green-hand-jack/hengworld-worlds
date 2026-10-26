@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0003",
+  "start": 169.202,
+  "end": 191.558,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 22.356,
+ "cuts": [
+  2.136,
+  3.971,
+  14.715
+ ],
+ "shots": [
+  {
+   "index": 13,
+   "start": 0.0,
+   "end": 2.136,
+   "description": "Medium shot of C1 standing on the street, static camera."
+  },
+  {
+   "index": 14,
+   "start": 2.136,
+   "end": 3.971,
+   "description": "Medium shot of a photograph featuring C1 posing in display window, static."
+  },
+  {
+   "index": 15,
+   "start": 3.971,
+   "end": 14.715,
+   "description": "Medium shot of C1 holding money, static camera."
+  },
+  {
+   "index": 16,
+   "start": 14.715,
+   "end": 22.356,
+   "description": "Medium shot of C1 standing in a store talking to a shop assistant, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 22.356
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0003-scr",
+ "descriptions_available": true
+}

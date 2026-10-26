@@ -1,0 +1,6 @@
+{
+ "checked": "derived truth vs /wordcount-reference/reference.json",
+ "lines": 8,
+ "differences": [],
+ "pass": true
+}

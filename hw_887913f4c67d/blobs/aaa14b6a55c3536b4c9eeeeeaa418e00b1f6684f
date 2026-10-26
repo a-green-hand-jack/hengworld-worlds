@@ -1,0 +1,13 @@
+# Run records (executor) — UNOFFICIAL (smoke profile, placeholder generators)
+
+Inputs: release tasks-caminandes3-v1 of world/task-maker; tar.gz sha256 0d5cd14cfeb78fa3d534abec7a833c985d9313754f24aaa6ddece98f1bceeabd; every file of the extracted packages matched packages_manifest.json (585 files, 0 mismatches; manifest sha256 a3603c6e...dc1c8). Only the published package was read; no answer key accessed.
+System: crewcut 0.1.0 at df54b3a3918e16bfc8e61ff6215e01b6abca3849, `fixed`, profile smoke, tier T0. No Gemini/Anthropic request made (model_usd 0.0).
+
+## Attempt 1 — FAILED (kept in runs/attempt1-failed/)
+Command: `crewcut run --system fixed --profile smoke --task packages/caminandes3-L1-0000-scr --runs <dir>` after `pip install /hutian/cc` (non-editable).
+Outcome: tool server crashed (FileNotFoundError .../site-packages/configs/benchmark.yaml; the package's config dir is resolved relative to the source tree), runner raised TimeoutError "port did not open" after 30 s. Nothing was produced.
+Decision (executor, 2026-10-21): reinstall the same code editable (`pip install -e /hutian/cc`, same commit, no file or config changed) so `configs/` resolves. Reason: install-method artefact, not a protocol matter. Possible gap for the maintainer: a plain pip install of the core cannot find configs/ (not chosen, only recorded).
+
+## Attempt 2 — OK
+Same command, run dir runs/fixed-caminandes3-L1-0000-scr-T0-3c14dc: status ok, exit 0, wall 14.6 s (process 16 s), model_usd 0.0, tool_usd 0.1846 (budget model 10.76 / tool 2.69 / wall 1937.52 s), official=false. Deliverables in output/: film.mp4, film.en.vtt, manifest.json. Log: log.jsonl; command-stdout.log.
+No retries beyond attempt 1. Not run here: scoring (scorer), real generators (T0), screening, S.

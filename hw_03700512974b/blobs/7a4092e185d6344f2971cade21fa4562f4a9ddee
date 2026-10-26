@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0007",
+  "start": 47.12,
+  "end": 59.84,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 12.72,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 7,
+   "start": 0.0,
+   "end": 12.72,
+   "description": "A medium shot of C1 floating in the air, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 12.72
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0007-scr",
+ "descriptions_available": true
+}

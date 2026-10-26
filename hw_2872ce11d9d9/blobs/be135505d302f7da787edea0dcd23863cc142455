@@ -1,0 +1,1 @@
+{"input":"sentences.txt","encoding":"UTF-8","output":"one integer per input line, in order, newline-delimited","rule":"count words as maximal runs of non-whitespace characters"}

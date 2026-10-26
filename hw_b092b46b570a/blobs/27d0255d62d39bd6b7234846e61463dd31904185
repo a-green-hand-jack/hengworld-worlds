@@ -1,0 +1,6 @@
+identity: {"deliverable": true, "per_line_exact": [1, 1, 1, 1, 1, 1, 1, 1], "correct": 8, "accuracy": 1.0}
+damage1: {"deliverable": true, "per_line_exact": [0, 1, 1, 1, 1, 1, 1, 1], "correct": 7, "accuracy": 0.875}
+damage4: {"deliverable": true, "per_line_exact": [0, 0, 0, 0, 1, 1, 1, 1], "correct": 4, "accuracy": 0.5}
+damage_all: {"deliverable": true, "per_line_exact": [0, 0, 0, 0, 0, 0, 0, 0], "correct": 0, "accuracy": 0.0}
+truncated: {"deliverable": false, "accuracy": null, "per_line": null, "note": "not 8 integer lines; not scored"}
+garbage: {"deliverable": false, "accuracy": null, "per_line": null, "note": "not 8 integer lines; not scored"}

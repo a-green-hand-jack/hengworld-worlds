@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0001",
+  "start": 15.56,
+  "end": 17.76,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.2,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 1,
+   "start": 0.0,
+   "end": 2.2,
+   "description": "Medium shot of C1 standing still against a night sky, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.2
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0001-scr",
+ "descriptions_available": true
+}

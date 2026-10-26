@@ -1,0 +1,80 @@
+"""Package the 12 new tasks + updated -scr packages from saved records only (no model calls). Deterministic: run twice -> identical bytes."""
+import sys, shutil, io; sys.path.insert(0, "scripts")
+from lib import *
+
+OUT = ROOT / "packages"
+film = json.load(open(ANN / "film.json"))
+rich = json.load(open(ANN / "descriptions_rich.json"))["shots"]
+corr = json.load(open(ANN / "descriptions.json"))["descriptions"]
+orig = json.load(open(DS / "annotations" / FILM / "descriptions.json"))["descriptions"]
+syn = json.load(open(ANN / "synopses.json"))
+man = json.load(open(ROOT / "references" / FILM / "manifest.json"))
+shots, _ = film_info()
+dev = [json.loads(l) for l in open(DS / "tasks" / "dev.jsonl")]
+COLS = ["setting", "characters", "props", "action", "camera", "light_mood", "sound"]
+NEW_INPUT = ("- `input/` the task input, by track. **Reference** (`-ref`): `clip.mp4`, the original segment. **Screenplay-rich** (`-rich`): `script.csv`, `shotlist.csv` (shot, start, end, description, plus per-shot detail columns), `characters.json`, `synopsis.md` and `references/` (images generated from text only; `manifest.json` lists the prompt of each). "
+             "**Screenplay** (`-scr`): `script.csv` and `shotlist.csv` (shot, start, end, description). **Synopsis** (`-syn`): `synopsis.md` and `script.csv`; the segment duration is `segment_duration_s` in `spec.json`. Times are seconds from the segment start. You receive only the input of your track.")
+
+def readme(src):
+    lines = (DS / "packages" / src / "README.md").read_text().split("\n")
+    k = [i for i, l in enumerate(lines) if l.startswith("- `input/`")]; assert len(k) == 1
+    lines[k[0]] = NEW_INPUT
+    return "\n".join(lines)
+
+def wcsv(rows):
+    b = io.StringIO(); csv.writer(b, lineterminator="\n").writerows(rows); return b.getvalue()
+
+def main():
+    if OUT.exists(): shutil.rmtree(OUT)
+    changed = []; newtasks = []; rep = {}
+    for sid in SAMPLE:
+        scr = DS / "packages" / f"{sid}-scr"; t0 = next(t for t in dev if t["segment_id"] == sid and t["track"] == "scr")
+        idx = [i for i, (a, b) in enumerate(shots) if a >= t0["start_s"] - 0.01 and b <= t0["end_s"] + 0.01]
+        rows = read_csv(scr / "input" / "shotlist.csv"); assert wcsv(rows) == (scr / "input" / "shotlist.csv").read_text(), "csv roundtrip"
+        assert len(rows) - 1 == len(idx)
+        for j, i in enumerate(idx):
+            assert rows[j + 1][3] == orig[str(i)], (sid, j)
+            rows[j + 1][3] = corr[str(i)]
+        scr_sl = wcsv(rows)
+        if scr_sl != (scr / "input" / "shotlist.csv").read_text(): changed.append({"package": f"{sid}-scr", "file": "input/shotlist.csv", "shots_changed": [j for j, i in enumerate(idx) if corr[str(i)] != orig[str(i)]]})
+        # --- -scr (updated copy), -ref (README only)
+        d = OUT / f"{sid}-scr"; shutil.copytree(scr, d); (d / "input" / "shotlist.csv").write_text(scr_sl); (d / "README.md").write_text(readme(f"{sid}-scr"))
+        d = OUT / f"{sid}-ref"; d.mkdir(parents=True); (d / "README.md").write_text(readme(f"{sid}-ref"))
+        # --- rich
+        d = OUT / f"{sid}-rich"; (d / "input" / "references").mkdir(parents=True)
+        for f in ("spec.json", "tools.json", "budget.json"): shutil.copy(scr / f, d / f)
+        (d / "README.md").write_text(readme(f"{sid}-scr"))
+        tj = json.load(open(scr / "task.json")); tj["task_id"] = f"{sid}-rich"; tj["track"] = "rich"; (d / "task.json").write_text(json.dumps(tj, indent=1))
+        shutil.copy(scr / "input" / "script.csv", d / "input" / "script.csv")
+        out = [["shot", "start", "end", "description"] + COLS]
+        for j, i in enumerate(idx): out.append(rows[j + 1] + [rich[str(i)][c] for c in COLS])
+        (d / "input" / "shotlist.csv").write_text(wcsv(out))
+        text = " ".join(" ".join(r[3:]) for r in out[1:])
+        cids = sorted(set(re.findall(r"\bC\d+\b", text)), key=lambda x: int(x[1:]))
+        chars = []
+        for c in film["characters"]:
+            if c["id"] in cids: chars.append({"id": c["id"], "kind": c["kind"], "appearance": c["appearance"], "role": c["role"], "reference": f"references/character_{c['id']}.png"})
+        settings = " ".join(r[4] for r in out[1:]).lower()
+        places = [p for p in film["places"] if p["name"].lower() in settings]
+        imgs = [m for m in man["images"] if (m["category"] == "character" and m["id"] in cids) or (m["category"] == "place" and m["id"] in [p["id"] for p in places])]
+        (d / "input" / "characters.json").write_text(json.dumps(chars, indent=1, ensure_ascii=False))
+        for m in imgs: shutil.copy(ROOT / "references" / FILM / m["file"], d / "input" / "references" / m["file"])
+        pm = {k: v for k, v in man.items() if k not in ("images", "failed", "film_id", "granularity")}
+        # the package copy carries no film name and no pointer to where in the original the nearest hash was found
+        pm["images"] = [{**{k: v for k, v in m.items() if k != "attempts"}, "provenance_check": {"passed": m["provenance_check"]["passed"], "min_hamming_incl_mirror": m["provenance_check"]["min_hamming_incl_mirror"], "threshold": "distance <= 10 voids the image; checked against all 6 dev films, plain and mirrored"}} for m in imgs]
+        (d / "input" / "references" / "manifest.json").write_text(json.dumps(pm, indent=1, ensure_ascii=False))
+        (d / "input" / "synopsis.md").write_text(syn[sid]["synopsis"].strip() + "\n")
+        rep[sid] = {"characters": [c["id"] for c in chars], "places_with_image": [p["id"] for p in places], "images": [m["file"] for m in imgs]}
+        # --- syn
+        e = OUT / f"{sid}-syn"; (e / "input").mkdir(parents=True)
+        for f in ("spec.json", "tools.json", "budget.json"): shutil.copy(scr / f, e / f)
+        (e / "README.md").write_text(readme(f"{sid}-scr"))
+        tj = dict(tj); tj["task_id"] = f"{sid}-syn"; tj["track"] = "syn"; (e / "task.json").write_text(json.dumps(tj, indent=1))
+        shutil.copy(d / "input" / "synopsis.md", e / "input" / "synopsis.md"); shutil.copy(scr / "input" / "script.csv", e / "input" / "script.csv")
+        for tr in ("rich", "syn"): newtasks.append({**{k: t0[k] for k in ("film_id", "level", "segment_id")}, "task_id": f"{sid}-{tr}", "track": tr, **{k: t0[k] for k in ("start_s", "end_s", "n_shots", "n_lines")}})
+    (ROOT / "tasks").mkdir(exist_ok=True)
+    nt = [{"task_id": t["task_id"], "film_id": t["film_id"], "level": t["level"], "segment_id": t["segment_id"], "track": t["track"], "start_s": t["start_s"], "end_s": t["end_s"], "n_shots": t["n_shots"], "n_lines": t["n_lines"]} for t in newtasks]
+    (ROOT / "tasks" / "dev_new_tracks.jsonl").write_text("".join(json.dumps(t) + "\n" for t in nt))
+    (OUT / "UPDATES.json").write_text(json.dumps({"scr_shotlist_replaced": changed, "readme_replaced_in": "every -scr package (full copy here) and every -ref package (README.md only here; clip.mp4 etc. unchanged in the dataset)", "per_segment": rep}, indent=1))
+
+if __name__ == "__main__": main()

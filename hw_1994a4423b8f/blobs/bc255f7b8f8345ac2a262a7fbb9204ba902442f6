@@ -1,0 +1,378 @@
+{
+ "film_id": "caminandes3",
+ "duration_s": 150.04,
+ "L0": [
+  {
+   "id": "caminandes3-L0-0000",
+   "start": 0.0,
+   "end": 21.375,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0001",
+   "start": 21.375,
+   "end": 30.5,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0002",
+   "start": 30.5,
+   "end": 32.292,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0003",
+   "start": 32.292,
+   "end": 33.875,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0004",
+   "start": 33.875,
+   "end": 36.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0005",
+   "start": 36.792,
+   "end": 39.5,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0006",
+   "start": 39.5,
+   "end": 40.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0007",
+   "start": 40.792,
+   "end": 41.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0008",
+   "start": 41.792,
+   "end": 42.708,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0009",
+   "start": 42.708,
+   "end": 43.917,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0010",
+   "start": 43.917,
+   "end": 47.0,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0011",
+   "start": 47.0,
+   "end": 49.875,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0012",
+   "start": 49.875,
+   "end": 52.292,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0013",
+   "start": 52.292,
+   "end": 52.875,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0014",
+   "start": 52.875,
+   "end": 56.583,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0015",
+   "start": 56.583,
+   "end": 62.25,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0016",
+   "start": 62.25,
+   "end": 66.417,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0017",
+   "start": 66.417,
+   "end": 67.417,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0018",
+   "start": 67.417,
+   "end": 68.0,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0019",
+   "start": 68.0,
+   "end": 70.083,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0020",
+   "start": 70.083,
+   "end": 73.875,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0021",
+   "start": 73.875,
+   "end": 74.625,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0022",
+   "start": 74.625,
+   "end": 75.458,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0023",
+   "start": 75.458,
+   "end": 77.75,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0024",
+   "start": 77.75,
+   "end": 78.542,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0025",
+   "start": 78.542,
+   "end": 80.125,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0026",
+   "start": 80.125,
+   "end": 83.458,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0027",
+   "start": 83.458,
+   "end": 86.167,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0028",
+   "start": 86.167,
+   "end": 89.333,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0029",
+   "start": 89.333,
+   "end": 93.042,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0030",
+   "start": 93.042,
+   "end": 96.667,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0031",
+   "start": 96.667,
+   "end": 101.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0032",
+   "start": 101.792,
+   "end": 103.75,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0033",
+   "start": 103.75,
+   "end": 114.5,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0034",
+   "start": 114.5,
+   "end": 118.792,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0035",
+   "start": 118.792,
+   "end": 123.542,
+   "shots": 1,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L0-0036",
+   "start": 123.542,
+   "end": 150.042,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L1": [
+  {
+   "id": "caminandes3-L1-0000",
+   "start": 0.0,
+   "end": 32.292,
+   "shots": 3,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L1-0001",
+   "start": 32.292,
+   "end": 42.708,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L1-0002",
+   "start": 42.708,
+   "end": 56.583,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L1-0003",
+   "start": 56.583,
+   "end": 70.083,
+   "shots": 5,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L1-0004",
+   "start": 70.083,
+   "end": 80.125,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L1-0005",
+   "start": 80.125,
+   "end": 114.5,
+   "shots": 8,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L1-0006",
+   "start": 114.5,
+   "end": 123.542,
+   "shots": 2,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L1-0007",
+   "start": 123.542,
+   "end": 150.042,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L2": [
+  {
+   "id": "caminandes3-L2-0000",
+   "start": 0.0,
+   "end": 42.708,
+   "shots": 9,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L2-0001",
+   "start": 42.708,
+   "end": 56.583,
+   "shots": 6,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L2-0002",
+   "start": 56.583,
+   "end": 80.125,
+   "shots": 11,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L2-0003",
+   "start": 80.125,
+   "end": 123.542,
+   "shots": 10,
+   "lines": 0
+  },
+  {
+   "id": "caminandes3-L2-0004",
+   "start": 123.542,
+   "end": 150.042,
+   "shots": 1,
+   "lines": 0
+  }
+ ],
+ "L3": [
+  {
+   "id": "caminandes3-L3-0000",
+   "start": 0.0,
+   "end": 150.042,
+   "shots": 37,
+   "lines": 0
+  }
+ ],
+ "L4": [
+  {
+   "id": "caminandes3-L4-0000",
+   "start": 0.0,
+   "end": 150.042,
+   "shots": 37,
+   "lines": 0
+  }
+ ]
+}

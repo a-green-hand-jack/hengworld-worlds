@@ -1,0 +1,98 @@
+{
+ "identical": {
+  "deliverable": true,
+  "exact": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "accuracy": 1.0,
+  "expected_accuracy": 1.0,
+  "ok": true
+ },
+ "one_line_damaged": {
+  "deliverable": true,
+  "exact": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "accuracy": 0.875,
+  "expected_accuracy": 0.875,
+  "ok": true
+ },
+ "all_damaged": {
+  "deliverable": true,
+  "exact": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "accuracy": 0.0,
+  "expected_accuracy": 0.0,
+  "ok": true
+ },
+ "truncated": {
+  "deliverable": false,
+  "exact": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "accuracy": 0.0,
+  "expected_accuracy": 0.0,
+  "ok": true
+ },
+ "extra_text": {
+  "deliverable": false,
+  "exact": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "accuracy": 0.0,
+  "expected_accuracy": 0.0,
+  "ok": true
+ },
+ "non_numeric": {
+  "deliverable": false,
+  "exact": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "accuracy": 0.0,
+  "expected_accuracy": 0.0,
+  "ok": true
+ }
+}

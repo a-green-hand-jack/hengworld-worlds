@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0026",
+  "start": 80.125,
+  "end": 83.458,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.333,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 26,
+   "start": 0.0,
+   "end": 3.333,
+   "description": "Medium shot of C1 leaping through the air while chasing fruit, tracking right."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.333
+  }
+ ],
+ "task_id": "caminandes3-L0-0026-scr",
+ "descriptions_available": true
+}

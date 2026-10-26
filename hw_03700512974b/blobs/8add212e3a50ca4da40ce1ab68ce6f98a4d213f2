@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0004",
+  "start": 31.708,
+  "end": 41.167,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 9.459,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 4,
+   "start": 0.0,
+   "end": 9.459,
+   "description": "Wide shot of C1 petting a wolf, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 9.459
+  }
+ ],
+ "task_id": "domini_canes-L0-0004-ref",
+ "descriptions_available": true
+}

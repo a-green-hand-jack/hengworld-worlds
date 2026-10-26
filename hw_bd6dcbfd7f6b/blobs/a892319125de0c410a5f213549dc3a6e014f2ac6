@@ -1,0 +1,36 @@
+"""Run an unmodified CrewCut function while logging every chat request's purpose, model and reported usage.
+usage: logged_run.py describe FILM_DIR LOG | judge ... (see below). CrewCut code is not edited; only
+openai's create() is wrapped to append a record (no prompt images stored)."""
+import json, sys, time
+from openai.resources.chat.completions import Completions
+
+PURPOSE = {"v": "unset"}; LOG = {"p": None}
+_orig = Completions.create
+import os
+EXTRA = json.loads(os.environ.get('ROUND2_EXTRA_BODY', '{}'))  # e.g. {"reasoning_effort": "none"}; recorded in the run record
+def create(self, *a, **kw):
+    kw.update(EXTRA)
+    t = time.time()
+    try:
+        r = _orig(self, *a, **kw)
+        rec = {"purpose": PURPOSE["v"], "model": kw.get("model"), "max_tokens": kw.get("max_tokens"), "extra": EXTRA, "status": "ok",
+               "usage": r.usage.model_dump() if r.usage else None, "finish_reason": r.choices[0].finish_reason,
+               "reply": r.choices[0].message.content, "n_images": sum(1 for c in kw["messages"][0]["content"] if isinstance(c, dict) and c.get("type") == "image_url"),
+               "seconds": round(time.time() - t, 2)}
+    except Exception as e:
+        rec = {"purpose": PURPOSE["v"], "model": kw.get("model"), "status": "error", "error": repr(e)[:500], "seconds": round(time.time() - t, 2)}
+        with open(LOG["p"], "a") as f: f.write(json.dumps(rec) + "\n")
+        raise
+    with open(LOG["p"], "a") as f: f.write(json.dumps(rec) + "\n")
+    return r
+Completions.create = create
+
+if __name__ == "__main__":
+    from pathlib import Path
+    sys.path.insert(0, "/hutian/work/cc")
+    mode, d, log = sys.argv[1], Path(sys.argv[2]), sys.argv[3]
+    LOG["p"] = log
+    if mode == "describe":
+        PURPOSE["v"] = "shot-description"
+        from crewcut.build.describe import describe_film
+        describe_film(d)

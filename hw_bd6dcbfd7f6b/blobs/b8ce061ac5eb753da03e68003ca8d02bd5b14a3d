@@ -1,0 +1,20 @@
+# Gemini use and spend (task-maker, round 2)
+
+Model: `gemini-3.8-flash` for both the VLM and the judge (D6); the gateway reports `model: gemini-3.8-flash` in every response. Parameters added outside CrewCut: D7.
+Files: `*requests*.jsonl` = one line per request (purpose, model, max_tokens CrewCut asked vs sent, reasoning_effort, usage as reported, finish_reason, reply, prompt); `spend.json` = `python3 scripts/spend.py record/gemini`.
+
+| purpose | file | requests | result |
+|---|---|---|---|
+| shot-description | attempt0-describe-requests | 1 | null reply (thinking used the 120-token budget); CrewCut crashed |
+| shot-description | attempt1-describe-requests | 37 | 37 descriptions (one per shot of the film), all kept |
+| continuity-judge | attempt0-judge-requests | 1 | null reply (max_tokens 3) |
+| continuity-judge | attempt1-...-floor16 | 2 | No, null reply; crashed |
+| continuity-judge | attempt2-...-floor128 | 3 | No, No, No -> correspondence 0.0 |
+| manual probes (curl, not logged) | - | 5 | model check "hi"; max_tokens 3/16 with reasoning_effort none; two `minimal` probes (error replies); ~60 tokens in all |
+
+Logged: 44 requests; with the probes 49 of the 300 allowed.
+Tokens as reported (logged requests): shot-description prompt 128,668 / completion 1,079 / total 129,863; continuity-judge prompt 46,799 / completion 4 / total 46,914. Total minus prompt minus completion is hidden reasoning (counted as output below).
+Cost (no cache discount, so an upper bound; cached prompt tokens appear in spend.json):
+- at CrewCut `configs/prices.yaml` `default` row ($5.00 in / $25.00 out per M; no Gemini row exists): descriptions $0.673, judge $0.237, total **$0.910**;
+- at Google's published price for Gemini 3.8 Flash, $0.75 in / $3.75 out per M through 2026-12-31 (https://ai.google.dev/gemini-api/docs/pricing, page "last updated 2026-10-19 UTC", read 2026-10-21): descriptions $0.101, judge $0.036, total **$0.136**.
+The gateway offers no meter of its own (`ht-resource status` shows no use figure), so these counts come from my logs.

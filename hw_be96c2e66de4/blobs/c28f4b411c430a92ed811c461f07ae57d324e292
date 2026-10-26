@@ -1,0 +1,43 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L1-0065",
+  "start": 1681.213,
+  "end": 1696.595,
+  "shots": 3,
+  "lines": 0
+ },
+ "duration": 15.382,
+ "cuts": [
+  4.805,
+  12.546
+ ],
+ "shots": [
+  {
+   "index": 208,
+   "start": -0.0,
+   "end": 4.805,
+   "description": "Medium shot of C1 standing in a room and making gestures, static."
+  },
+  {
+   "index": 209,
+   "start": 4.805,
+   "end": 12.546,
+   "description": "Medium shot of C1 playing billiards, static camera."
+  },
+  {
+   "index": 210,
+   "start": 12.546,
+   "end": 15.382,
+   "description": "Medium shot of C1 talking, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 15.382
+  }
+ ],
+ "task_id": "sherlock_jr-L1-0065-scr",
+ "descriptions_available": true
+}

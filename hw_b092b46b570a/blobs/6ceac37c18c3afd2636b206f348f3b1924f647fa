@@ -1,0 +1,10 @@
+#!/bin/sh
+# usage: validate.sh KEY ; damage and stress checks on synthetic outputs derived from the key
+K=$1; T=$(mktemp -d)
+python3 -c "
+import json,sys
+c=[x['words'] for x in json.load(open('$K'))['counts']]
+w=lambda n,v:open('$T/'+n,'w').write(''.join(f'{x}\n' for x in v))
+w('identity',c); w('damage1',[c[0]+1]+c[1:]); w('damage4',[x+1 for x in c[:4]]+c[4:]); w('damage_all',[x+1 for x in c])
+open('$T/truncated','w').write(''.join(f'{x}\n' for x in c[:5])); open('$T/garbage','w').write('hello\n')"
+for n in identity damage1 damage4 damage_all truncated garbage; do printf '%s: ' $n; python3 -I "$(dirname "$0")/score.py" "$K" $T/$n; done

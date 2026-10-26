@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "domini_canes-L1-0004",
+  "start": 89.417,
+  "end": 100.708,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 11.291,
+ "cuts": [
+  2.75,
+  4.75,
+  10.708
+ ],
+ "shots": [
+  {
+   "index": 18,
+   "start": -0.0,
+   "end": 2.75,
+   "description": "Medium shot of C1 standing, static camera."
+  },
+  {
+   "index": 19,
+   "start": 2.75,
+   "end": 4.75,
+   "description": "Medium close-up of C1 standing, static camera."
+  },
+  {
+   "index": 20,
+   "start": 4.75,
+   "end": 10.708,
+   "description": "Medium shot of C1 standing up straight, holding a candle and facing right, static camera."
+  },
+  {
+   "index": 21,
+   "start": 10.708,
+   "end": 11.291,
+   "description": "Medium shot of C1 standing in profile while holding a lit candle, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 11.291
+  }
+ ],
+ "task_id": "domini_canes-L1-0004-ref",
+ "descriptions_available": true
+}

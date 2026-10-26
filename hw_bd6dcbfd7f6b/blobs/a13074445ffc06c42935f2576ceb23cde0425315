@@ -1,0 +1,15 @@
+{
+ "decision": "Install the optional faster-whisper (asr extra) on top of the core install, base model, CPU, because the dialogue stage is part of the requested stretch and crewcut's only pip-installable ASR is in that extra. Torch-based extras were not installed.",
+ "evidence": [
+  "record/results/pip-freeze-relevant.txt",
+  "crewcut/build/dialogue.py: backend 'faster-whisper' imports faster_whisper; the published draft came from whisper.cpp (module docstring)"
+ ],
+ "effect": "dialogue.json has 0 lines, identical to the published one; the backend difference therefore did not matter for this film. No claim for other films.",
+ "decided_by": "task-maker (agent)",
+ "date": "2026-10-21",
+ "affects": [
+  "dialogue",
+  "hierarchy",
+  "tasks"
+ ]
+}

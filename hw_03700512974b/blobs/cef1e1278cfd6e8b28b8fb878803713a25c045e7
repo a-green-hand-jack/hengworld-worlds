@@ -1,0 +1,13 @@
+Damage/stress evidence for the measures.
+1. Synthetic (`validate_measures.py` → `validation_measures.json`, 19 checks): identical → perfect, shifted beyond tolerance → 0, dropped/noisy cuts → lower, silence → WER 1, reversed scenes → 0.
+2. Real output (`scores/code/validate_real.py` → `validation_real.json`), task coffee_run-L2-0000-scr (3 true cuts), same Q checks and unmodified cut detector:
+   - identical copy, re-encoded (crf 30), audio silenced: Q=1, cut F1 1.0/1.0 (holds; no dialogue so silencing cannot change c);
+   - truncated to half: Q=0 (duration check) → c = 0;
+   - 3 s front padding: cuts move +3 s → F1 0.0/0.0;
+   - shot order shuffled: F1 0.0 @0.5 s, 0.333 @1.0 s (drops).
+   Shot correspondence has no real-output damage check beyond the Screenplay/Reference contrast (scr 1.0 vs ref 0.51); the judge was run once and not repeated for damaged variants (paid step done once).
+3. Scene order (added with the scene-order measure): `validate_measures.py` now has 26 checks (recovery tie → earlier scene, no overlap → no label, split scene repeats a label, split remake 0.5, empty 0). Real output `scores/code/validate_scene.py` → `validation_scene.json`, task coffee_run-L4-0000-scr (2 original scenes), unmodified cut detector and reference hierarchy:
+   - identical copy, re-encoded (crf 30), audio silenced, 3 s front padding: labels [0, 1], scene order 1.0 (holds);
+   - scenes swapped (14 s scene first, then 170 s): labels [0, 0], 0.5 (drops);
+   - second scene replaced by a repeat of the first: one scene, labels [0], 0.5 (drops).
+   Because labels come from time overlap, the measure reacts to scene structure along the time axis, not to which content is where (see scores/README.md).

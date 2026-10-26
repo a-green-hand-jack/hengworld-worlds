@@ -1,0 +1,4 @@
+{"assignment_schema":1,"objective":"word-count benchmark","items":[
+{"work":"ground truth, reference comparison, answer key, task package without answers","owner":"task-maker","paths":[]},
+{"work":"run of unchanged system on published package with log","owner":"executor","paths":["runs/"]},
+{"work":"scores: exact match per line and accuracy","owner":"scorer","paths":["scores/"]}]}

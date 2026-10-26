@@ -1,0 +1,61 @@
+# scores (scorer)
+
+## Run score (Q first, then cut F1)
+Run `fixed-caminandes3-L1-0000-scr-T0-5e9dec` (executor@2bfa44aee581, smoke, unofficial), task `caminandes3-L1-0000-scr`.
+Full output: `score_fixed-caminandes3-L1-0000-scr-T0-5e9dec.json`.
+Command (CrewCut df54b3a, editable pip core install, ffmpeg 9.0.2 conda-forge; judge disabled because no key):
+`crewcut score --run <copy of executor runs/fixed-...-5e9dec> --task <published package task-maker@c8331e70c674 + key/.../truth.json> --judge ''`
+Input check: film.mp4 sha256 dbe7652f...9f26c equals executor's record.
+- **Q = 1**: decodes, format, duration, subtitles, clean-room log all pass. The provenance check is **not run** (no provenance index `--index` was supplied; none exists in task-maker's repo), so Q = 1 holds for the other five checks only.
+- **cut F1 = 0.8 at 0.5 s and at 1.0 s** (key has 3 cuts: 21.375, 30.5, 32.292; the output's detected cuts: 21.375, 30.5). Observation for task-maker/auditor: the key's third cut 32.292 equals the segment duration (32.292 s), i.e. a cut at the very end; the detector cannot report it. I did not alter the key or measure.
+- Not run: correspondence (judge, no key), WER/onset (no dialogue lines in truth or ASR not run), speaker/character purity, S (screening). scene_order printed 1.0 by the command but is outside this round's scope; not reported as a result.
+
+## Q-failure check (done)
+Same output truncated to 2 s -> Q = 0 (duration 2.00 s vs 32.29 s), cut F1 not computed (None). So Q gates c as the protocol says.
+
+## Validation of the measures (done, needs no key)
+`validation.json`: cut F1 at tolerances [0.5, 1.0] s (cfg `continuity.cut_tolerance_s`), CrewCut df54b3a
+(`crewcut.scoring.continuity.cut_f1`, `detect_cuts`; damage `crewcut.scoring.meta`), pip core install, ffmpeg from conda-forge.
+- synthetic 36 cuts: identical = 1.0; shift 0.3 s = 1.0/1.0 (holds within tolerance); shifts 0.7 s and 1.5 s = 0.9722 (not a real drop: the synthetic cuts are 1 s apart, so a shifted cut matches its neighbour in the one-to-one matching — an artefact of my 1 s spacing, recorded; the film-based damage below is the real drop evidence);
+  half dropped / doubled predictions = 0.6667; empty prediction = 0.0.
+- film-based (masters/caminandes3.ogv local copy, used only for this check; "truth" here = the detector's own cuts on that file, not the key):
+  self = 1.0/1.0 (36 cuts); blank_shots 25%/75% and shuffle_50 fall to 0.29/0.42 and 0.36/0.58.
+- Observation: blank_shots 25% and 75% gave identical F1 (noise injection creates spurious cuts either way; same seed). Recorded, not tuned.
+Judge/correspondence/WER/scene order: not run (out of scope, no key).
+
+## Note on the key's end-of-segment cut (answered by task-maker#8)
+task-maker confirms it is not intended and unchanged: `segment_truth` keeps cuts with a < c < b, but the end b is rounded (32.292) while c = 775/24 = 32.29167, so the end cut passes. 32 of 90 key files are affected; recorded by task-maker as open item O5 for CrewCut's maintainer. The 0.8 cut F1 is therefore a property of this key (cap), not of the placeholder run. Score reported as computed; no correction applied.
+
+
+# Round 2 (objective #5): descriptions, judge, completed c, spend
+
+Revision of CrewCut: df54b3a (same install). Judge/VLM: `gemini-3.8-flash` via the `gemini` resource. Decisions S1-S6: `decisions_round2.json` (two deviations of a call parameter, S2 and S3, are open for CrewCut's maintainer).
+Tools (no key, no answer key): `tools/gemini_meter.py` (logs every call's usage), `tools/describe_run.py`, `tools/score_run.py`, `tools/judge_controls.py`, `tools/spend.py`.
+
+## Shot descriptions
+37 shots of the whole film drafted by CrewCut's `describe_film` with gemini-3.8-flash: 37 requests, none truncated or empty. `python3 tools/describe_run.py <dir with shots.json + master.ogv>`. The text is key content, kept in `private/` (not in `scores/`); task-maker/auditor to decide on publishing.
+
+## Completed c for `fixed-caminandes3-L1-0000-scr-T0-5e9dec` (task `caminandes3-L1-0000-scr`, smoke, unofficial)
+Command: `python3 tools/score_run.py <run copy> <task dir whose truth.json shots carry the descriptions> out.json gemini-3.8-flash` = CrewCut `score_run(run, task, None, judge='gemini-3.8-flash')`, env `CREWCUT_JUDGE_*` -> gateway, `METER_REASONING=none METER_MIN_MAX_TOKENS=512`. Full output `score_judged_...json` (no descriptions in it).
+- Q = 1 (provenance check not run: no index).
+- cut F1 = 0.8 at 0.5 s and 1.0 s (as before; key end-cut cap, see note above).
+- shot correspondence = **0.0** (judge said no for all 3 shots, duration-weighted). No conclusion is drawn: the output is the smoke placeholder film, not a real generator's.
+- scene_order = 1.0 (computed by the code; the key has no scenes so the whole segment is one scene, a trivial value).
+- WER and line-onset error: **not applicable** (film has no dialogue; truth has 0 lines).
+- speaker purity, character purity: **not run** (the scoring code computes neither: both stay None; they need human speaker/character annotation which does not exist).
+- S (screening): not run (needs raters). Provenance: not run (no index).
+
+## Judge validation (`judge_controls.json`, 74 requests, on the pinned master itself, 37 shots)
+- positive control (each shot's own description vs the master's frames of that shot): 35/37 shots accepted, duration-weighted correspondence 0.6809 (the two rejected: shot 0, 21.4 s long judged on 8 frames, and the last shot);
+- negative control (descriptions rotated by 7 shots): 1/37 accepted, 0.0056.
+So the judge accepts a matching description and rejects mismatched ones; the 0.0 of the placeholder is consistent with that and is not by itself evidence about any system.
+
+## Spend (`spend/spend.json`, raw per-call logs `spend/meter_final.jsonl`, `spend/failed_attempts/`)
+Price: USD 0.75/Mtok input, 3.75/Mtok output incl. thinking (S4). Metered calls: 124 requests, 503,550 prompt tokens, 1,170 completion tokens, 9,537 hidden-reasoning tokens (total - prompt - completion), **USD 0.418**.
+By purpose: describe 37 (125,282 in / 1,090 out; 0.098 USD) + 2 truncated first attempt (0.006); judge for the run 3 (20,107 in; 0.016) + 8 failed/retried attempts at lower max_tokens in 4 attempts (0.049, 5 returned empty content); judge controls 74 (286,760 in; 0.249). Plus 11 unmetered manual probe requests (gateway count 135 in all; tokens not recorded, a few tens of tokens each). 135 of 300 requests used at the time of writing.
+
+## Reconciliation with the other Gemini users (after steward#8; scorer holds the ledger)
+- World ledger of Gemini requests: scorer 135 (124 metered + 11 unmetered probes) + executor 76 (`runs/round2/spend.json`) + task-maker 49 (`record/gemini/spend.json` in task-maker) = **260 of 300** used. Executor and task-maker made theirs before steward#8 and make no more; the descriptions and judge were drafted three times (duplicates), and only one set is delivered: task-maker's `key/caminandes3/descriptions.json` is what task-maker publishes; my draft (`private/`) and executor's are second/third drafts, not delivered.
+- Costs of the others were not recomputed by me; only the tokens they report are summed in their own files.
+- Comparison with task-maker's completed c (`record/c/score-c.json`, same CrewCut df54b3a, same model, same parameters S2/S3 in kind): cut F1 0.8/0.8, correspondence 0.0 (all 3 shots "No"), scene_order 1.0, WER/onset not applicable, purity not run: **identical to mine**. One difference: task-maker's Q records provenance `true` (it ran the check with the provenance index built in round 1, not present in any repository I can read); mine records provenance "not run" (no index). Q = 1 either way. Descriptions differ in wording between the drafts (0 of 37 identical; model sampling), yet both drafts give 0.0 for the placeholder. The judge controls above (positive 0.68 / negative 0.006) are on my draft only.
+- executor#6 asked for the judge run: done as above (3 judge requests, tokens in `spend/spend.json`, 8 more in failed attempts), not repeated.

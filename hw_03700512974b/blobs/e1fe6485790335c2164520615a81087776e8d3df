@@ -1,0 +1,18 @@
+# scores/
+Scores for the 28 Coffee Run T0 runs (14 Reference `-ref`, 14 Screenplay `-scr`; executor release `coffee-run-t0-v1`, runs commit 59edcdd).
+- `scores.csv` / `scores.json`: per task: Q (with every check in `scores.json`), c components (cut F1 @0.5 s and @1.0 s, shot correspondence, scene order), Q·c components, and $ taken from the run manifest (cost, calls, wall clock). Per-track means are in `summary.md`.
+- Not run: S (no raters); speaker/character consistency (no human labels); dialogue WER / onset error (not applicable: Coffee Run has no dialogue lines, so also Q's subtitle rule is trivially met by an empty-cue WebVTT). Details in `not_run.md`.
+- Caveat: Coffee Run has only 4 film cuts. In tasks whose truth has no cut and whose remake has none, cut F1 is defined 1.0 by `measures.cut_f1`; those rows carry `cut_trivial_no_cuts_either_side=true`. Reference-track L0/L1 tasks where the pipeline's cut detection found a spurious cut at the clip end score 0.
+- Inputs: truth = task-maker `key/` at c4fe559 (not published here); deliverables = SHA-256-verified executor release; fingerprint check = task-maker `tools/fingerprint.py` with `annotations/coffee_run/fingerprint`.
+## Reproduce (revisions in `summary.md`)
+1. Cuts on each `delivery.mp4`: `PYTHONPATH=/crewcut-algorithms python3 -m crewcut_algorithms cuts delivery.mp4 cuts/<task>.json` (needs opencv-python-headless 5.0.0).
+2. `code/run_q_cuts.py DELIV KEY WORK FPPREFIX FPPY q_cuts.json` (Q first; cuts scored only when Q=1).
+3. `code/judge_shots.py DELIV KEY judge/judge_calls.jsonl` (only after Q; paid, once).
+4. `code/assemble.py q_cuts.json judge/judge_calls.jsonl KEY DELIV scores/`.
+Validation: `code/validate_measures.py` (synthetic) and `code/validate_real.py` (real output) → `validation/`.
+
+## Scene order (objective §二 评分 c, scored since this revision)
+Original sequence = the truth's L2 scenes of the task segment in time order (labels 0..n-1; one scene for L0/L1/L2, two for the Coffee Run L3/L4 tasks). Remake sequence = the unmodified reference algorithm `crewcut_algorithms` `hierarchy.build` run on the shot record of the remake (`cuts` output on delivery.mp4), its L2 scenes, each labelled with the original scene it overlaps most in time. Score = max(0, 1 − edit distance ÷ original scene count) (`measures.scene_order`, `score_run.scene_order_rec`). Q gates it like the other c components.
+Recorded choices for what the text does not fix (choices, not rules of the benchmark): a tie in overlap goes to the earlier original scene; a remake scene overlapping no original scene gets a label equal to none of them; repeated labels are kept as they are (a remake that splits one original scene into two scenes pays for the extra scene); an empty remake sequence scores 0; hierarchy is called with silent=True and no lines (Coffee Run has no dialogue lines).
+Property to know: labels come from time overlap, so the measure sees the scene structure along the time axis (how many scenes, where they start), not which content plays where.
+Results: Reference mean 0.893 (the `L3-0000-ref` remake gets 4 scenes → 0.0, `L4-0000-ref` 3 scenes → 0.5; all others 1.0), Screenplay 1.000. Run-1 only; the corrected reruns are rescored next.

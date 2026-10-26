@@ -1,0 +1,67 @@
+{
+ "film_id": "coffee_run",
+ "model": "gemini-3.5-flash-lite",
+ "params": {
+  "temperature": 0,
+  "reasoning_effort": "minimal",
+  "max_tokens": 600
+ },
+ "frames_per_shot": 3,
+ "jpeg_width": 448,
+ "prompt": "You see frames from one shot of a film. Describe the shot in one to three sentences using the template '[shot size] of [subject] [action], [camera move]'. Refer to people as C1, C2 and so on, consistently with these known characters: {chars}. Do not mention colours, lens, art style or other appearance details that a remake could legitimately change. Reply with the description only.",
+ "chars_rule": "labels C1..Ck seen in this film's earlier answers, else 'none yet' (maintainer question: brief gap 12)",
+ "descriptions": {
+  "0": "Establishing shot of title text showing production credits, static.",
+  "1": "Wide shot of C1 running, then flying away from a hospital, static camera.",
+  "2": "Wide shot of C1 flying through a hospital room, church, and city, static camera.",
+  "3": "Wide shot of C1 surfing on a stroller, panning right.",
+  "4": "Extreme close-up of credits showing, static."
+ },
+ "calls": [
+  {
+   "shot": 0,
+   "chars": "none yet",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3299,
+   "completion_tokens": 11,
+   "total_tokens": 3310,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 1,
+   "chars": "none yet",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3299,
+   "completion_tokens": 17,
+   "total_tokens": 3316,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 2,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3299,
+   "completion_tokens": 19,
+   "total_tokens": 3318,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 3,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3299,
+   "completion_tokens": 13,
+   "total_tokens": 3312,
+   "finish_reason": "stop"
+  },
+  {
+   "shot": 4,
+   "chars": "C1",
+   "model": "gemini-3.5-flash-lite",
+   "prompt_tokens": 3299,
+   "completion_tokens": 10,
+   "total_tokens": 3309,
+   "finish_reason": "stop"
+  }
+ ]
+}

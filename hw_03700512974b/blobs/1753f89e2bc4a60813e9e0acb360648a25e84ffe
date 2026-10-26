@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0015",
+  "start": 56.583,
+  "end": 62.25,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 5.667,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 15,
+   "start": 0.0,
+   "end": 5.667,
+   "description": "Medium shot of C1 waking up and looking around, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 5.667
+  }
+ ],
+ "task_id": "caminandes3-L0-0015-scr",
+ "descriptions_available": true
+}

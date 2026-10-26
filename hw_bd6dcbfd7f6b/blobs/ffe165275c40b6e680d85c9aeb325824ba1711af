@@ -1,0 +1,8 @@
+{
+ "mcpServers": {
+  "crewcut": {
+   "type": "http",
+   "url": "http://127.0.0.1:58033/mcp"
+  }
+ }
+}

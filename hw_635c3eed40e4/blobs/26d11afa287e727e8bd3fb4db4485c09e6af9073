@@ -1,0 +1,5 @@
+#!/bin/bash
+# usage: runall.sh ref|scr   runs every Coffee Run package of that track once, 3 in parallel; an output dir with manifest.json is skipped (never silently re-run)
+. /hutian/repo/runs/pipeline/env.sh
+P=/hutian/deliv/d4/packages; O=/hutian/runs_out2; C=${CLIPS:-/hutian/deliv/clips-v2}
+ls $P | grep "^coffee_run-.*-$1\$" | xargs -P 3 -I{} bash -c '[ -f '$O'/{}/manifest.json ] || python3 /hutian/repo/runs/pipeline/t0.py '$P'/{} '$C' '$O'/{} > '$O'/{}.stdout 2>&1; echo HUTIAN_DONE {}'

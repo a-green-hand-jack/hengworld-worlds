@@ -1,0 +1,176 @@
+"""Shared plumbing: media extraction, logged+cached model calls, price table. Every paid call goes through call_*()
+which appends one record to the call log and replays from it on rerun (same request -> same saved answer)."""
+import base64, hashlib, json, os, subprocess, threading, time, re, csv, io, math
+from pathlib import Path
+
+DS = Path("/crewcut-dataset")
+FILM = "caminandes3"
+ROOT = Path(__file__).resolve().parent.parent
+ANN = ROOT / "annotations" / FILM
+WORK = Path("/hutian/work")
+FRAMES = WORK / "frames"
+AUDIO = WORK / "audio"
+PROMPTS = ANN / "prompts"
+LOG = ANN / "rich_log.jsonl"
+FPS = 24
+SAMPLE = ["caminandes3-L1-0001", "caminandes3-L1-0005", "caminandes3-L2-0002", "caminandes3-L2-0004", "caminandes3-L3-0000", "caminandes3-L4-0000"]
+DRAFT = "gemini-4-argon"
+CHECK = "qwen3.5-plus"
+CHECK_AUDIO = "qwen3.5-omni-plus"
+IMG_MODEL = "gemini-3.1-flash-image"
+_lock = threading.Lock()
+_cache = {}
+_loaded = False
+
+def sha(b):
+    return hashlib.sha256(b if isinstance(b, bytes) else b.encode()).hexdigest()
+
+def _load():
+    global _loaded
+    if _loaded: return
+    _loaded = True
+    if LOG.exists():
+        for l in LOG.read_text().splitlines():
+            r = json.loads(l); _cache[r["key"]] = r
+
+def append_log(rec):
+    with _lock:
+        _cache[rec["key"]] = rec
+        PROMPTS.mkdir(parents=True, exist_ok=True)
+        with open(LOG, "a") as f: f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
+def env(name):
+    url = subprocess.run(["ht-resource", "url", name], capture_output=True, text=True, check=True).stdout.strip()
+    return url, os.environ["HT_RESOURCE_TOKEN"]
+
+# ---------------- media ----------------
+def film_info():
+    s = json.load(open(DS / "annotations" / FILM / "shots.json"))
+    cuts = s["cut_times_s"]; dur = s["duration_s"]
+    starts = [0.0] + cuts; ends = cuts + [dur]
+    return [(a, b) for a, b in zip(starts, ends)], dur
+
+def frame_n(duration):
+    return min(8, max(4, math.ceil(duration / 2)))
+
+def frame_times(a, b):
+    n = frame_n(b - a)
+    return [a + (k + 1) / (n + 1) * (b - a) for k in range(n)]
+
+def extract_all_frames():
+    """decode master at constant 24 fps, 640-wide JPEG, into WORK/frames/f%06d.jpg (1-based)."""
+    FRAMES.mkdir(parents=True, exist_ok=True)
+    if any(FRAMES.glob("f*.jpg")): return
+    subprocess.run(["ffmpeg", "-v", "error", "-i", str(DS / "masters" / "caminandes3.ogv"), "-an", "-vf", f"fps={FPS},scale=640:-2",
+                    "-q:v", "4", str(FRAMES / "f%06d.jpg")], check=True)
+
+def frame_path(t):
+    return FRAMES / ("f%06d.jpg" % (int(math.floor(t * FPS + 1e-6)) + 1))
+
+def shot_audio(i, a, b):
+    """16 kHz mono wav of the shot (3x10 s windows when longer than 30 s). Returns (path|None, silent)."""
+    AUDIO.mkdir(parents=True, exist_ok=True)
+    out = AUDIO / f"shot{i:02d}.wav"
+    if (b - a) <= 30:
+        cmd = ["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.3f}", "-t", f"{b-a:.3f}", "-i", str(DS / "masters/caminandes3.ogv"), "-vn", "-ac", "1", "-ar", "16000", str(out)]
+        subprocess.run(cmd, check=True)
+    else:
+        parts = []
+        for k in range(3):
+            st = a + (b - a - 10) * k / 2
+            p = AUDIO / f"shot{i:02d}_w{k}.wav"
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{st:.3f}", "-t", "10", "-i", str(DS / "masters/caminandes3.ogv"), "-vn", "-ac", "1", "-ar", "16000", str(p)], check=True)
+            parts.append(p)
+        lst = AUDIO / f"shot{i:02d}.txt"; lst.write_text("".join(f"file '{p}'\n" for p in parts))
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(out)], check=True)
+    import numpy as np
+    raw = out.read_bytes()[44:]
+    x = np.frombuffer(raw, np.int16)
+    silent = x.size == 0 or int(np.abs(x).max()) == 0
+    return out, silent
+
+def img_part(path):
+    return {"type": "image_url", "image_url": {"url": "data:image/jpeg;base64," + base64.b64encode(Path(path).read_bytes()).decode()}}
+
+# ---------------- model calls ----------------
+def _key(model, params, messages_sig):
+    return sha(json.dumps([model, params, messages_sig], sort_keys=True))
+
+def _sig(parts):
+    """signature of a message content list that does not carry the big media blobs"""
+    out = []
+    for p in parts:
+        if isinstance(p, str): out.append(p)
+        elif p.get("type") == "text": out.append(p["text"])
+        elif p.get("type") == "image_url": out.append("IMG:" + sha(p["image_url"]["url"]))
+        elif p.get("type") == "input_audio": out.append("AUD:" + sha(p["input_audio"]["data"]))
+    return out
+
+def call_chat(purpose, model, parts, ctx, frames_s=None, stream=False, system=None):
+    """parts = list of text strings / media dicts (one user message). ctx = free dict stored in the log (film/shot/segment...)."""
+    _load()
+    ctx = dict(ctx)
+    if model == DRAFT:
+        params = {"temperature": 0, "reasoning_effort": "low", "max_tokens": 16000}
+    else:
+        params = {"temperature": 0, "max_tokens": 4000}
+        if stream: params["stream"] = True; params["modalities"] = ["text"]
+    sig = _sig(parts)
+    key = _key(model, params, sig)
+    if key in _cache: return _cache[key]
+    text_prompt = "\n".join(s for s in sig if not s.startswith(("IMG:", "AUD:")))
+    full_prompt = "\n".join(sig)
+    psha = sha(full_prompt)
+    PROMPTS.mkdir(parents=True, exist_ok=True)
+    (PROMPTS / f"{psha}.txt").write_text(full_prompt)
+    content = [({"type": "text", "text": p} if isinstance(p, str) else p) for p in parts]
+    from openai import OpenAI
+    base, tok = env("gemini" if model == DRAFT else "alibaba")
+    client = OpenAI(base_url=base if model == DRAFT else base + "/compatible-mode/v1", api_key=tok, timeout=300, max_retries=0)
+    kw = {k: v for k, v in params.items() if k not in ("stream", "modalities")}
+    if model == DRAFT: kw["reasoning_effort"] = "low"
+    err = None
+    for attempt in range(4):
+        try:
+            t0 = time.time()
+            if stream:
+                resp = client.chat.completions.create(model=model, messages=[{"role": "user", "content": content}], stream=True, stream_options={"include_usage": True}, extra_body={"modalities": ["text"]}, **kw)
+                txt = ""; usage = None; fin = None
+                for ch in resp:
+                    if ch.choices:
+                        txt += ch.choices[0].delta.content or ""
+                        fin = ch.choices[0].finish_reason or fin
+                    if getattr(ch, "usage", None): usage = ch.usage.model_dump()
+            else:
+                resp = client.chat.completions.create(model=model, messages=[{"role": "user", "content": content}], **kw)
+                txt = resp.choices[0].message.content or ""; fin = resp.choices[0].finish_reason; usage = resp.usage.model_dump() if resp.usage else None
+            if not txt.strip(): raise RuntimeError("empty reply, finish=%s" % fin)
+            rec = {"key": key, "purpose": purpose, "model": model, "params": params, "prompt_sha256": psha, "prompt_file": f"prompts/{psha}.txt",
+                   "frames_s": frames_s, "ctx": ctx, "response": txt, "usage": usage, "finish_reason": fin, "seconds": round(time.time() - t0, 1), "attempts": attempt + 1,
+                   "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+            append_log(rec); return rec
+        except Exception as e:
+            err = e; time.sleep(5 * (attempt + 1))
+    raise RuntimeError(f"{purpose} failed: {err}")
+
+def parse_json(txt):
+    t = txt.strip()
+    t = re.sub(r"^```(?:json)?\s*|\s*```$", "", t)
+    try: return json.loads(t)
+    except Exception:
+        i, j = t.find("{"), t.rfind("}")
+        return json.loads(t[i:j + 1])
+
+def call_json(purpose, model, parts, ctx, **kw):
+    """call, parse as JSON; on parse failure ask again once with a different suffix (logged as its own call)."""
+    for n in range(2):
+        p = parts if n == 0 else parts + ["\nYour previous reply was not valid JSON. Reply with the JSON object only."]
+        rec = call_chat(purpose + ("" if n == 0 else "-jsonretry"), model, p, ctx, **kw)
+        try: return rec, parse_json(rec["response"])
+        except Exception: continue
+    raise RuntimeError("no valid JSON for " + purpose)
+
+def words(s): return len(re.findall(r"\S+", s))
+
+def read_csv(p):
+    return list(csv.reader(open(p, newline="")))

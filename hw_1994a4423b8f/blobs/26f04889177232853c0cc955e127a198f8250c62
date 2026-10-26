@@ -1,0 +1,9 @@
+import sys, json, os
+sys.path.insert(0,'/hutian/repo/scores/judge')
+from pathlib import Path
+import judge_adapted as A
+run=Path('/hutian/work_s/runs/fixed-caminandes3-L1-0000-scr-T0-3c14dc')
+t=json.load(open('/hutian/work_s/task/truth.json'))
+j=A.AdaptedJudge(run/'output'/'film.mp4','gemini-3.5-flash-lite')
+s=t['shots'][0]
+print(j(s['description'],s['start'],s['end']))

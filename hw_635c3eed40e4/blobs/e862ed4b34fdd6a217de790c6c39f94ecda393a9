@@ -1,0 +1,49 @@
+[
+ {
+  "type": "image",
+  "file": "work/still0.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Extreme wide shot of title text appearing, static.",
+  "used_in": "delivery.mp4",
+  "shot": 0
+ },
+ {
+  "type": "image",
+  "file": "work/still1.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Wide shot of a cartoon character running through a hospital room, static camera. Medium shot of a cartoon character sliding down steps inside a building while fleeing a monster, static camera. Long shot of a cartoon character diving through the air between skyscrapers, static camera.",
+  "used_in": "delivery.mp4",
+  "shot": 1
+ },
+ {
+  "type": "image",
+  "file": "work/still2.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Wide shot of a cartoon character sliding into a church, static camera.",
+  "used_in": "delivery.mp4",
+  "shot": 2
+ },
+ {
+  "type": "image",
+  "file": "work/still3.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Wide shot of a cartoon character riding a pram, static.",
+  "used_in": "delivery.mp4",
+  "shot": 3
+ },
+ {
+  "type": "image",
+  "file": "work/still4.jpg",
+  "model": "gemini-3.1-flash-lite-image",
+  "prompt": "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork. Depict this shot: Extreme close-up of credits fading out, static.",
+  "used_in": "delivery.mp4",
+  "shot": 4
+ },
+ {
+  "type": "music",
+  "file": "work/music.mp3",
+  "model": "lyria-3.5",
+  "prompt": "Gentle instrumental background score for a short animated film about a woman hurrying through a city; light, warm, playful, no vocals.",
+  "used_in": "delivery.mp4"
+ }
+]

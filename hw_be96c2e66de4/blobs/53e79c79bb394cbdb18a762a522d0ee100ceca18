@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0010",
+  "start": 64.24,
+  "end": 66.96,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.72,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 10,
+   "start": 0.0,
+   "end": 2.72,
+   "description": "Wide shot of C1 standing on the platform surrounded by giant eyes, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.72
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0010-ref",
+ "descriptions_available": true
+}

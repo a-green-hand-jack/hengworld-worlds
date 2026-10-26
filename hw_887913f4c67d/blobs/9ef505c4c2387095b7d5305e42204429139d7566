@@ -1,0 +1,5 @@
+# Not run (executor, first turn)
+
+- Gemini steps (describe of 37 shots; any request to Gemini): not run. `ht-resource list` in this world has no `gemini` resource (checked 2026-10-21); no credential sought.
+- `crewcut-dataset` resource is also absent (relevant to task-maker/auditor comparison, not to my runs).
+- T0 real generators, screening, score S: out of this round.

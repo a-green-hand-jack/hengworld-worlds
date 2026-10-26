@@ -1,0 +1,18 @@
+Here is your detailed description of shot 16:
+{"setting": "P3: Underground mine. Indoor, dark cavern with blue light, rocky walls, broken wooden tracks suspended over a chasm, and another broken cart in the lower right.", "characters": "C1: sitting in the left side of the minecart with dark circular marks around eyes, stretching forward with an eager expression; C2: sitting on the right rim of the cart, jumping up.", "props": "A wooden minecart on a broken track edge, a bunch of red berries hanging from the rock wall, and a broken cart below.", "action": "The minecart sits precariously on a broken track that ends over a chasm. C2 sits on the right rim, looking at a bunch of red berries hanging from the rock wall. C1 stretches its neck forward inside the cart to reach the berries, causing the cart to roll slightly right. C2 hops up toward the berries.", "camera": "Wide shot, eye-level static camera.", "light_mood": "Dark cavern with cool blue ambient light from above illuminating the cart and characters; tense and comedic mood.", "sound": "Suspenseful plucking music, wooden creaking as the cart shifts, and a loud metallic screech at the end."}
+An independent checker looking at the same frames flagged:
+- action: 'C1 stretches its neck forward inside the cart to reach the berries, causing the cart to roll slightly right.' -> contradicted
+- sound: 'wooden creaking as the cart shifts' -> unsupported
+- sound: 'a loud metallic screech at the end' -> contradicted
+Rewrite the whole JSON (same keys, same limits, no description_* keys needed) so that every statement is confirmed by the frames or audio. Reply with JSON only.
+
+Frames:
+[frame 1 at 63.08s]
+IMG:bc087c0004af1bfa5025a14cfa11bc28489fef79241acf8efbf9c74bc80ac4a8
+[frame 2 at 63.92s]
+IMG:979b0885b4c02df7a7c5c51dc8ef774f4396c8c52337ee280633a8ab1596d280
+[frame 3 at 64.75s]
+IMG:80c42913ad058feafa1a7162148288bc25349f4f83f57269eb334a2624b4724e
+[frame 4 at 65.58s]
+IMG:0b2035eb30113e40c21370bef19f40abb501c00a67f149905a4ba9e8f1cfe4de
+AUD:3302fa3e255b016246ae1e1fea9d6cc8163a1a4bc742a92ace4582daf9cdb61c

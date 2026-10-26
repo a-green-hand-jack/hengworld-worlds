@@ -1,0 +1,4 @@
+# Task: count words per line
+Input: `sentences.txt` (8 lines, UTF-8). Run: `python3 count_words.py sentences.txt`.
+Output: one integer per line, in input order, 8 lines, no other text.
+A word is a maximal run of characters that are not whitespace (spaces, tabs). Hyphenated words and numbers count as one word.

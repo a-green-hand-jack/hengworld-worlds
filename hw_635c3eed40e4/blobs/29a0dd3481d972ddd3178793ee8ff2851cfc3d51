@@ -1,0 +1,4 @@
+#!/bin/bash
+T=/hutian/task-maker; E=/hutian/executor/runs/coffee_run
+f=$1
+for d in $E/*-scr; do n=$(basename $d); echo $n $f $(python3 -I $T/tools/fingerprint.py check $T/annotations/$f/fingerprint $d/delivery.mp4 2>&1 | tail -1; echo rc=${PIPESTATUS[0]}); done

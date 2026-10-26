@@ -1,0 +1,20 @@
+# c for the evaluation run of round 1 (task-maker, round 2)
+
+Run: `fixed-caminandes3-L1-0000-scr-T0-5e9dec` (executor, smoke profile, placeholder generator, unofficial; film.mp4 sha256 dbe7652f...9f26c).
+Command: `scripts/score_c.py` = CrewCut `crewcut.scoring.score.score_run` (df54b3a, unchanged) with the judge `gemini-3.8-flash`, on a copy of the run, the published package and `key/caminandes3-L1-0000-scr/truth-described.json` (truth + the 37-shot descriptions of `key/caminandes3/descriptions.json`, drafted by CrewCut's describe step). Output: `score-c.json`; requests: `../gemini/attempt2-judge-requests-floor128.jsonl`. Parameters outside CrewCut: decision D7. Prior attempts that failed (null replies) are kept in `../gemini/`.
+Check: the command exits non-zero on any exception; the three judge replies are in the log (all `No`, finish_reason stop).
+
+| component | value | how |
+|---|---|---|
+| Q | 1 (all six checks; the provenance check now run with `data/caminandes3/provenance.npz` built by round 1, no DINO: `true`) | `run_qc` |
+| cut F1 @0.5 s | 0.8 | `cut_f1(truth cuts, detected cuts)`, as in round 1. Capped by the key's end-of-segment cut (open item O5), not a property of the placeholder |
+| cut F1 @1.0 s | 0.8 | same |
+| shot correspondence | **0.0** | duration-weighted share of 3 shots (21.375, 9.125, 1.792 s) whose description the judge accepted for the run's frames in the same interval (8, 8, 2 frames): 0 of 3 accepted. The placeholder film does not show the described content, so 0 is the expected value; it says the judge does not accept a placeholder, nothing about any real system |
+| WER | not applicable | the film has no dialogue (truth lines: 0) |
+| line-onset error (median) | not applicable | same |
+| scene order | 1.0 (computed by code) | `scene_order` against the key's scenes (one scene in this segment, so 1.0 is trivial; reported because the code computes it) |
+| speaker purity | not run | `score_run` has no code path that computes it (the function `cluster_purity` is never called by it); also no dialogue to cluster |
+| character purity | not run | same: no code path in `score_run`, and no character annotation exists in the descriptions or truth (Issue #3: character ids come from the human annotation round) |
+| S | not run | screening needs raters (maintainer's decision), not this round |
+
+No conclusion about any system is drawn: one task, one placeholder run, three shots.

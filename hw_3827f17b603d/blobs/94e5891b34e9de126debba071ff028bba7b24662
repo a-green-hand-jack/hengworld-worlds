@@ -1,0 +1,7 @@
+# Audit record
+- Ground truth recomputed independently (str.split on pinned file): [6,4,6,4,4,1,2,6] = key = reference; no differences. Corpus sha256 matches source; package equals corpus, no key in it.
+- Reran the system unchanged on the package: output 6 5 6 5 2 1 3 6, equals runs/output.txt. Cost 0, nothing paid.
+- Score reproduced: exact on lines 1,3,6,8; accuracy 4/8 = 0.5, equals scores.json.
+- Wrong lines: 2 (double space -> split(' ') yields an empty token, 5 vs 4), 4 (leading space, 5 vs 4), 5 (tabs not split, 2 vs 4), 7 (trailing space, 3 vs 2). The system splits on ' ' only, contrary to the README rule; this is the system's defect, not the benchmark's.
+- Minor: run_record names runs/stderr.txt, which is absent (stderr empty, exit 0). Not blocking.
+- Protocol unchanged; no missing resources; no maintainer decisions open.

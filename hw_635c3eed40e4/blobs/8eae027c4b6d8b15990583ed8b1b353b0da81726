@@ -1,0 +1,29 @@
+#!/bin/bash
+# Regenerate the Coffee Run truth locally from the master and compare with task-maker's tasks/key_manifest.json.
+# Usage: regen_truth.sh TM_REPO WORKDIR   (TM_REPO = task-maker checkout at 62f6180 or later). Needs the Coffee Run master (sha256 f40ce7f4...aebf, archive.org coffee-run).
+# Dialogue: the committed annotations/coffee_run/dialogue.json (0 lines; the Whisper step is not rerun here). Descriptions: committed (paid step, reused).
+set -e; TM=$1; B=$2; export PYTHONPATH=/crewcut-algorithms
+mkdir -p $B/m $B/w/cuts/coffee_run $B/repo/annotations/coffee_run $B/repo/data $B/repo/tools $B/repo/toolservice
+curl -fL -o $B/m/coffee_run.mp4 "https://archive.org/download/coffee-run/Coffee%20Run.ia.mp4"
+echo "f40ce7f497b2f56e6a672cea6ef15d191da3d19bd61aeed5d3730e5d73f6aebf  $B/m/coffee_run.mp4" | sha256sum -c
+python3 -m crewcut_algorithms cuts $B/m/coffee_run.mp4 $B/w/cuts/coffee_run/shotrec.json
+cp $TM/annotations/coffee_run/{dialogue.json,descriptions.json} $B/repo/annotations/coffee_run/
+python3 -m crewcut_algorithms hierarchy coffee_run $B/w/cuts/coffee_run/shotrec.json $B/repo/annotations/coffee_run/hierarchy.json --silent --dialogue $B/repo/annotations/coffee_run/dialogue.json
+python3 - $B <<'PY'   # task-maker tools/step5b_format.py logic for coffee_run only
+import json, sys
+B = sys.argv[1]; f = "coffee_run"; p = f"{B}/repo/annotations/{f}/hierarchy.json"; h = json.load(open(p))
+o = {"film_id": f, "duration_s": h.get("duration", h.get("duration_s"))}
+for lv in ["L0", "L1", "L2", "L3", "L4"]:
+    o[lv] = [{"id": s.get("id", f"{f}-{lv}-{i:04d}"), "start": s["start"], "end": s["end"], "shots": s["shots"], "lines": s["lines"]} for i, s in enumerate(h[lv])]
+json.dump(o, open(p, "w"), indent=1)
+print("hierarchy == reference release:", json.load(open(f"/crewcut-dataset/annotations/{f}/hierarchy.json")) == o)
+PY
+cp $TM/tools/package_README.md $B/repo/tools/; cp $TM/toolservice/tools.json $B/repo/toolservice/
+sed 's/^FILMS = \[.*\]/FILMS = ["coffee_run"]/' $TM/tools/step8_tasks.py > $B/step8_coffee.py
+python3 $B/step8_coffee.py $B/w $B/repo || true   # exits 1 because only one film is built; the key files are written before
+python3 - $TM $B <<'PY'
+import json, hashlib, os, sys
+TM, B = sys.argv[1:3]; m = {t: v for t, v in json.load(open(f"{TM}/tasks/key_manifest.json"))["files"].items() if t.startswith("coffee_run")}
+k = {t: hashlib.sha256(open(f"{B}/repo/key/{t}/truth.json", "rb").read()).hexdigest() for t in os.listdir(f"{B}/repo/key")}
+print("key vs manifest:", len(k), "built,", len(m), "in manifest, equal =", k == m); sys.exit(0 if k == m else 1)
+PY

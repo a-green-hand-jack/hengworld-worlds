@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "decided_by": "curator",
+ "decided_on": "2026-10-21",
+ "records": [
+  {
+   "id": "caminandes3",
+   "title": "Caminandes 3: Llamigos",
+   "year": 2016,
+   "split": "dev",
+   "decision": "admit",
+   "reason": "Licence CC BY 3.0 (allows derivatives, no NC/ND); a single finished short film, not an extra; a fixed master file is obtainable and checksum-verified. Criteria 1,2,5 of protocol 1.2 met; criterion 3 checked as far as sources allow (see caveats).",
+   "licence": "CC BY 3.0",
+   "evidence": [
+    {"where": "https://archive.org/metadata/CaminandesLlamigos (saved as corpus/ia_metadata_CaminandesLlamigos.json) and https://archive.org/download/CaminandesLlamigos/CaminandesLlamigos_meta.xml", "quote": "<licenseurl>http://creativecommons.org/licenses/by/3.0/</licenseurl>; creator: Blender Foundation; date 2016-01-29; title 'Caminandes 3: Llamigos'; runtime 2:30"},
+    {"where": "same meta.xml, credits field", "quote": "Director: Pablo Vazquez; Music: Torin Borrowdale; Sound design: Sander Houtman ... (music and sound credited as part of the Blender Foundation production licensed as a whole)"},
+    {"where": "https://en.wikipedia.org/wiki/Caminandes (fetched 2026-10-21)", "quote": "Categories: Creative Commons-licensed films; Open content short films"},
+    {"where": "protocol /crewcut/crewcut-issue-3.md and old configs/films.yaml@df54b3a", "quote": "licence: \"CC BY 3.0\", split: dev, master_sha256: 028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f"}
+   ],
+   "caveats": ["No separate licence statement for the music by Torin Borrowdale was found (the Blender Studio film page returned 404); admission rests on the item-level CC BY 3.0 grant for the whole film plus the protocol's own catalogue. A maintainer who disagrees can revoke.", "Item page is an Internet Archive upload by a third party (not the Blender site); attribution: Blender Foundation, (cc) BY 3.0."],
+   "source_location": "https://archive.org/details/CaminandesLlamigos",
+   "work_vs_extras": "The IA item holds only the film in three encodings plus thumbnails/metadata; no trailer, making-of or clip. All three video files are the same work.",
+   "artifact_chosen": {
+    "file": "Caminandes_ Llamigos-1080p.ogv",
+    "url": "https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv",
+    "ia_format": "Ogg Video (derivative)",
+    "bytes": 11872682,
+    "sha256": "028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f",
+    "sha1_ia_listed": "adc553f00df255643a4af84deda1dc37a6235d6f",
+    "why": "The pinned file in configs/films.yaml (sha256 028d7629...) is this small .ogv; all published annotations are based on it. Not the largest file (the known fetch bug)."
+   },
+   "alternatives_passed_over": [
+    {"file": "Caminandes_ Llamigos-1080p.mp4", "bytes": 138945811, "sha1": "421a2d931d3994030ce7589cced5a1ee04187e2b", "why": "Not the pinned file; checksum differs from the pin, frame timing would not match published annotations. Not downloaded."},
+    {"file": "Caminandes_ Llamigos-1080p.webm", "bytes": 38041423, "sha1": "7d7ee25178bb27f377383cb41322d5794a7ab60b", "why": "Same reason. Not downloaded."},
+    {"file": "/crewcut/masters/caminandes3.ogv (backup copy)", "why": "Not needed: source fetch succeeded. Byte-identical to the fetched file (cmp)."}
+   ],
+   "verification": {
+    "command": "corpus/fetch_and_verify.sh <outdir>",
+    "result": "PASS",
+    "log": "corpus/verification_log.txt",
+    "artifact_from": "source (archive.org), no fallback used",
+    "sha256_computed": "028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f",
+    "also_checked": "cmp of fetched file against backup copy: identical"
+   }
+  },
+  {
+   "id": "caminandes3-mp4-webm",
+   "decision": "reject",
+   "reason": "Same work, different encodings; only one artifact is pinned per film. Not a separate candidate.",
+   "evidence": [{"where": "corpus/ia_metadata_CaminandesLlamigos.json files list", "quote": "Caminandes_ Llamigos-1080p.mp4 (MPEG4, original), .webm (WebM, original)"}],
+   "source_location": "https://archive.org/details/CaminandesLlamigos",
+   "alternatives_passed_over": ["the pinned .ogv was chosen instead"]
+  }
+ ],
+ "scope_note": "This round covers one film only (objective). Other catalogue films and non-feature material (trailers, clips) are out of scope and not evaluated; protocol 1.2 excludes extras from candidacy. Candidate discovery for other films is 'not run'.",
+ "documents_unread": []
+}

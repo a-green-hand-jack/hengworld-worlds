@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0024",
+  "start": 103.375,
+  "end": 104.208,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.833,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 24,
+   "start": 0.0,
+   "end": 0.833,
+   "description": "Wide shot of a wolf running past statues, tracking right."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.833
+  }
+ ],
+ "task_id": "domini_canes-L0-0024-scr",
+ "descriptions_available": true
+}

@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0060",
+  "start": 182.92,
+  "end": 183.4,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.48,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 60,
+   "start": 0.0,
+   "end": 0.48,
+   "description": "Wide shot of abstract energy glowing, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.48
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0060-scr",
+ "descriptions_available": true
+}

@@ -1,0 +1,11 @@
+#!/bin/sh
+# Usage: fetch_and_verify.sh OUTDIR  -- fetches the pinned master, checks SHA-256, falls back to backup copy only if fetch fails.
+set -u
+OUT=${1:?outdir}; mkdir -p "$OUT"
+URL='https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv'
+WANT=028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f
+SRC=source
+curl -sfL "$URL" -o "$OUT/caminandes3.ogv" || { echo "FETCH_FAILED"; SRC=backup; cp /crewcut/masters/caminandes3.ogv "$OUT/caminandes3.ogv" || exit 2; }
+GOT=$(sha256sum "$OUT/caminandes3.ogv" | cut -d' ' -f1)
+echo "artifact_from=$SRC bytes=$(wc -c <"$OUT/caminandes3.ogv") sha256=$GOT"
+[ "$GOT" = "$WANT" ] && echo "VERIFY: PASS" || { echo "VERIFY: FAIL"; exit 1; }

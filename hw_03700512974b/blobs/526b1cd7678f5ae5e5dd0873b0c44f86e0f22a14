@@ -1,0 +1,71 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L1-0012",
+  "start": 181.64,
+  "end": 188.8,
+  "shots": 7,
+  "lines": 0
+ },
+ "duration": 7.16,
+ "cuts": [
+  1.28,
+  1.76,
+  2.8,
+  3.92,
+  4.6,
+  5.76
+ ],
+ "shots": [
+  {
+   "index": 59,
+   "start": 0.0,
+   "end": 1.28,
+   "description": "Medium shot of C1's glowing wings flapping against a dark background, static camera."
+  },
+  {
+   "index": 60,
+   "start": 1.28,
+   "end": 1.76,
+   "description": "Wide shot of abstract energy glowing, static."
+  },
+  {
+   "index": 61,
+   "start": 1.76,
+   "end": 2.8,
+   "description": "Medium shot of C1 standing with outstretched arms in front of glowing wings, zooming out."
+  },
+  {
+   "index": 62,
+   "start": 2.8,
+   "end": 3.92,
+   "description": "Extreme wide shot of lightning striking, static."
+  },
+  {
+   "index": 63,
+   "start": 3.92,
+   "end": 4.6,
+   "description": "Wide shot of C1 standing on a platform, static camera."
+  },
+  {
+   "index": 64,
+   "start": 4.6,
+   "end": 5.76,
+   "description": "Medium wide shot of C1 standing on stage, static."
+  },
+  {
+   "index": 65,
+   "start": 5.76,
+   "end": 7.16,
+   "description": "Close-up of C1 moving head, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 7.16
+  }
+ ],
+ "task_id": "spirit_chaser-L1-0012-ref",
+ "descriptions_available": true
+}

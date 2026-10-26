@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Medium close-up of C1 blowing on a party horn, static camera.
+Detailed description:
+setting: P2: Railroad tracks. Outdoor, daytime, clear blue sky with soft white clouds, and a blurred snowy plain with distant mountains in the background.
+characters: C1: head and neck visible, facing right, with a long pink tongue sticking out, staring cross-eyed at a red berry balanced on its tongue.
+props: One small round red berry.
+action: C1 stands still with its tongue sticking out, balancing a red berry on the tip; it flicks its tongue upward, tossing the berry into the air and catching it back on its tongue.
+camera: Close-up at eye level, static camera.
+light_mood: Bright, crisp natural daylight; quirky, lighthearted, and comedic mood.
+Frames:
+[frame 1 at 50.36s]
+IMG:fe26b78434997e6489ad64aee368b47f97fd11fe29f3c4bf8ce33753f5c815b8
+[frame 2 at 50.84s]
+IMG:3912865ed014ed6935b86d1ed365dec1092681782e42770c227511497232abf9
+[frame 3 at 51.33s]
+IMG:9272cc9afbddfb2dd2947ab1d05909f8814bc2e13f301d649c409fa2eee9717b
+[frame 4 at 51.81s]
+IMG:57e4cf19a6163e71c8f3360b970046961d721cf3ffaf6547e14943184936b041

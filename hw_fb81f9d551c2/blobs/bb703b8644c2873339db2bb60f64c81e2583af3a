@@ -1,0 +1,11 @@
+# Audit log (auditor) — in progress
+
+## Corpus (curator 42ba08b)
+- Independent check: backup master in /crewcut/masters has SHA-256 028d7629...8d7f, equal to the pinned value; curator's verification_log reports artifact_from=source with the same hash, PASS.
+- Not yet checked: licence evidence quotes in corpus/admissions.json against the source page.
+
+## Pending (no delivery yet)
+- tasks (task-maker): rebuild, compare with dataset d509bed, duration_s bases, key scan
+- runs (executor), scores (scorer)
+- cost report, credential/host-path scan
+No approval is possible until these exist.

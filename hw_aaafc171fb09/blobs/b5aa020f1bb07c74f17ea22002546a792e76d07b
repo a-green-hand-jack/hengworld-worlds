@@ -1,0 +1,22 @@
+{
+ "decision": "Caminandes 3 (Llamigos) is admitted as a candidate and its licence is CC BY 3.0 (permits remakes); the Blender-catalogue PeerTube entry is the same work, the 'Making of' entry is not a candidate.",
+ "between": [
+  "IA item CaminandesLlamigos (licenseurl http://creativecommons.org/licenses/by/3.0/)",
+  "PeerTube video 23f3ef79 (label 'Attribution')",
+  "PeerTube 'Making of Caminandes: Llamigos' (licence Unknown, a making-of)"
+ ],
+ "evidence": [
+  "record/raw/ia_CaminandesLlamigos_metadata.json: metadata.licenseurl, title 'Caminandes 3: Llamigos', year 2016, runtime 2:30, creator Blender Foundation",
+  "record/raw/peertube_caminandes3_video.json: licence {id:1,label:'Attribution'}",
+  "record/raw/peertube_search_caminandes.json",
+  "crewcut.build.audit.decide('Caminandes 3', IA licenseurl) -> keep=True, 'CC BY 3.0'; decide(..., 'Attribution') -> keep=False 'licence not recognised as open' (see O1)",
+  "configs/films.yaml entry caminandes3: licence CC BY 3.0, page https://archive.org/details/CaminandesLlamigos"
+ ],
+ "scope": "this film only; nothing is claimed about the other 22 Blender candidates",
+ "decided_by": "task-maker (agent)",
+ "date": "2026-10-21",
+ "affects": [
+  "D2",
+  "all later steps"
+ ]
+}

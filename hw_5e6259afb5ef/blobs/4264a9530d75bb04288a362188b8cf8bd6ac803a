@@ -1,0 +1,10 @@
+You verify a synopsis against the only information allowed to support it: one-sentence shot descriptions and dialogue. For each statement (a self-contained clause) judge 'supported' (can be inferred from them), or 'unsupported'. Each quote must be a complete self-contained clause so that deleting it leaves grammatical text. Also report whether the synopsis mentions any shot count, cut, time, shot size, camera move, colour or other appearance detail, or uses a C label. Reply with JSON {"statements": [{"quote": "exact substring", "verdict": "supported|unsupported"}], "forbidden_content": ["..."]}.
+
+One-sentence descriptions (C labels name the characters):
+shot 0: Extreme close-up of C1 eating berries next to C2 while surrounded by C3, pulling back and tilting up to the night sky for the end credits.
+
+Dialogue:
+(no dialogue)
+
+Synopsis:
+A character eats berries beside another companion while surrounded by a crowd beneath the night sky.

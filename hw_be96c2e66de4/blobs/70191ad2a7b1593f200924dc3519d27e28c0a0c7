@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L2-0000",
+  "start": 0.0,
+  "end": 92.859,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 92.859,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 92.859,
+   "description": "A static title card displaying text, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 92.859
+  }
+ ],
+ "task_id": "sherlock_jr-L2-0000-scr",
+ "descriptions_available": true
+}

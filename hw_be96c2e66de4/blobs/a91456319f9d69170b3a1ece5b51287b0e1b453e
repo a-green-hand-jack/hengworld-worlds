@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0229",
+  "start": 1878.877,
+  "end": 1880.112,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.235,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 229,
+   "start": 0.0,
+   "end": 1.235,
+   "description": "Medium shot of C1 standing on a roof, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.235
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0229-scr",
+ "descriptions_available": true
+}

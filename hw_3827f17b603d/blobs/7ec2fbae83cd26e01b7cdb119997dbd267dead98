@@ -1,0 +1,34 @@
+#!/bin/sh
+# Reproduce corpus pin, ground truth, reference comparison and package. Exits non-zero on any failed check.
+set -eu
+cd "$(dirname "$0")/.."
+SRC=${SRC:-/wordcount-source}; REF=${REF:-/wordcount-reference}
+# 1. pin check
+cmp "$SRC/sentences.txt" corpus/sentences.txt
+sha256sum corpus/sentences.txt | diff - corpus/sentences.txt.sha256
+# 2. ground truth by README rule (maximal runs of non-whitespace)
+python3 -I - <<'PY'
+import json
+lines=open('corpus/sentences.txt',encoding='utf-8').read().split('\n')
+if lines[-1]=='': lines.pop()
+assert len(lines)==8
+gt=[{"line":i+1,"words":len(l.split())} for i,l in enumerate(lines)]
+json.dump({"rule":"maximal run of non-whitespace characters","counts":gt},open('key/answers.json','w'),indent=1)
+ref=json.load(open('/wordcount-reference/reference.json'))['counts']
+diff=[(a,b) for a,b in zip(gt,ref) if a!=b]
+assert len(gt)==len(ref)
+json.dump({"compared":"key/answers.json vs wordcount-reference/reference.json","differences":diff},open('records/reference_comparison.json','w'),indent=1)
+assert not diff, diff
+print("ground truth matches reference")
+PY
+# 3. package, no key
+mkdir -p package; cp corpus/sentences.txt package/sentences.txt
+# 4. key scan: package must not contain answers file nor the answer sequence
+python3 -I - <<'PY'
+import os
+for f in os.listdir('package'):
+    t=open('package/'+f,encoding='utf-8').read()
+    assert 'answers' not in t and '"words"' not in t, f
+assert sorted(os.listdir('package'))==['README.md','sentences.txt']
+print("package key scan ok")
+PY

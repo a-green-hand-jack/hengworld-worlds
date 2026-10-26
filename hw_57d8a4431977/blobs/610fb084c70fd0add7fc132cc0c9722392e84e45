@@ -1,0 +1,5 @@
+"""Four-stage scoring (paper Sec. 4.2): Delivery QC, Continuity, Screening, Budget.
+
+The score of a run is ``R = (Q, Q*c, Q*S, $)``: a film that fails QC earns nothing in Continuity
+and Screening, and cost is always reported.
+"""

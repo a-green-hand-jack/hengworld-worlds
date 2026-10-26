@@ -1,0 +1,4 @@
+# Brief
+Benchmark: per-line word counts of /wordcount-source/sentences.txt (word = maximal run of non-whitespace; hyphenated words and numbers are one word). System under test: system/count_words.py, unchanged. Measures: exact match per line; accuracy over the 8 lines. No other sources, systems or paid services.
+Deliverables: task-maker: pinned source record, ground truth (reproducible command + check, compared with reference, differences recorded), answer key (private), task package without answers. executor: run of the unchanged system on the published package, with log. scorer: per-line exact match and accuracy against the key. auditor: reproduction, wrong-line explanation, approval.
+Protocol: fixed by the README rule and the measures above; no maintainer decisions are open.

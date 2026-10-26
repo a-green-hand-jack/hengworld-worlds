@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Medium close-up of C1 screaming and running, tracking shot.
+Detailed description:
+setting: P4: Mountain slope and rocky peaks. Outdoor, bright daytime, flying high above blurred snow-covered mountains and clouds.
+characters: C1: on left in profile facing right, flying through air; initially has a wide-eyed excited open-mouthed grin, then closes mouth with heavy-lidded disappointed eyes; C3: enters on far left edge.
+props: None.
+action: C1 flies horizontally to the right, frantically paddling its front legs in mid-air with an eager, open-mouthed grin while looking up to the right. Suddenly, C3 swoops in from the left behind C1, causing C1 to stop smiling, droop its eyelids in disappointment, and turn its head slightly back toward the left.
+camera: Medium close-up side profile of C1, fast lateral tracking shot moving right alongside C1 against a motion-blurred background.
+light_mood: Bright, clear daylight with soft white and blue sky tones contrasting with C1's warm orange fur; shifts from excited to comedic disappointment.
+Frames:
+[frame 1 at 84.00s]
+IMG:85de0947c1c0a004fdc6830f64725638124b89214a7a8e36864a6abc836bce25
+[frame 2 at 84.54s]
+IMG:71665b854486333abc390dad58c5f63f42460d9bc845810a6b977a13ee106026
+[frame 3 at 85.08s]
+IMG:0dd8accd6a70d263e4f39ff3ffa32bcb28e43e4e9d3c9f4672c38aaeb068e34e
+[frame 4 at 85.63s]
+IMG:87a1e3c9edff9b5f6bffa5cb1b2f54a4c2d9d70e1fbe345cf9b972f2ed8496d3

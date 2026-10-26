@@ -1,0 +1,32 @@
+{
+ "calls": 50,
+ "prompt_tokens": 48980,
+ "completion_tokens": 100,
+ "total_usd": 0.007148,
+ "price_usd_per_1M": {
+  "input": 0.143,
+  "output": 1.434
+ },
+ "parts": {
+  "scr": {
+   "calls": 25,
+   "prompt_tokens": 24490,
+   "completion_tokens": 50,
+   "total_usd": 0.003574,
+   "price_usd_per_1M": {
+    "input": 0.143,
+    "output": 1.434
+   }
+  },
+  "ref": {
+   "calls": 25,
+   "prompt_tokens": 24490,
+   "completion_tokens": 50,
+   "total_usd": 0.003574,
+   "price_usd_per_1M": {
+    "input": 0.143,
+    "output": 1.434
+   }
+  }
+ }
+}

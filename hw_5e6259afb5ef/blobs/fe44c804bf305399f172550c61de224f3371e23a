@@ -1,0 +1,20 @@
+# CrewCut task
+
+You are asked to produce a **clean-room remake** of a film segment. You may watch and analyse the original input you are given, but your
+delivery must contain no frame of picture and no piece of audio from the original, and no original material may be given to any generator.
+Every model and generator call goes through the tool service (see `tools.json`; prices in the service's `prices.json`), which refuses inputs
+derived from the original at the source and bills each call. You cannot see the ground truth.
+
+Files in this package
+- `task.json` task id, film, level, track, tier, segment start/end (seconds in the film)
+- `spec.json` delivery specification and segment duration
+- `tools.json` tier and tools available to you
+- `budget.json` model, tool and wall-clock limits for this task
+- `input/` the task input, by track. **Reference** (`-ref`): `clip.mp4`, the original segment. **Screenplay-rich** (`-rich`): `script.csv`, `shotlist.csv` (shot, start, end, description, plus per-shot detail columns), `characters.json`, `synopsis.md` and `references/` (images generated from text only; `manifest.json` lists the prompt of each). **Screenplay** (`-scr`): `script.csv` and `shotlist.csv` (shot, start, end, description). **Synopsis** (`-syn`): `synopsis.md` and `script.csv`; the segment duration is `segment_duration_s` in `spec.json`. Times are seconds from the segment start. You receive only the input of your track.
+
+Deliver (see `spec.json`)
+- `delivery.mp4`: H.264, 1280x720, 24 fps; AAC stereo 48 kHz; duration within +-5% of the segment
+- `subtitles.vtt`: English WebVTT covering every line of dialogue
+- `assets.json`: list of the assets used
+
+You are judged on delivery quality (Q), continuity against the original cuts, shots, dialogue and scene order (c), and budget ($).

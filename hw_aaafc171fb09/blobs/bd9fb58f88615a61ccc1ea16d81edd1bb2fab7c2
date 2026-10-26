@@ -1,0 +1,30 @@
+{
+ "schema": 1,
+ "scope": "dev film Caminandes 3 only (objective, curator#1)",
+ "decided_by": "curator", "decided_on": "2026-10-21",
+ "candidates": [
+  {"id":"caminandes3","title":"Caminandes 3: Llamigos","decision":"admit",
+   "reason":"Official Blender Foundation release, licence CC BY 3.0 allows derivative works; no NC/ND; no exclusions.yaml match; a fixed master with a pinned sha256 exists; the film itself (not a trailer/making-of) is the item.",
+   "rights_read":{"where":"https://archive.org/metadata/CaminandesLlamigos and CaminandesLlamigos_meta.xml (saved in corpus/evidence/)","quote":"<licenseurl>http://creativecommons.org/licenses/by/3.0/</licenseurl>; creator Blender Foundation; 'This short Free Culture animation film was made with the free 3D software Blender'",
+    "scope_of_reading":"this film only; catalogue licence in configs/films.yaml is 'CC BY 3.0', agreeing with the item metadata",
+    "third_party_check":"credits in item metadata name Music: Torin Borrowdale and others as production crew of the Blender open movie; no separate third-party rights claim found on the item page. I did not independently verify the music's licence beyond the item's CC BY 3.0 statement (open point for the maintainer)."},
+   "work_vs_extras":"The item holds one film in three encodings plus thumbnails/metadata; the film is 2:30 runtime (metadata <runtime>2:30</runtime>), matching duration_min 2.5. No making-of or trailer in the item.",
+   "source":"https://archive.org/details/CaminandesLlamigos",
+   "artifact_chosen":{"name":"Caminandes_ Llamigos-1080p.ogv","url":"https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv","size_bytes":11872682,"ia_format":"Ogg Video (derivative)","why":"It is the file pinned by sha256 in configs/films.yaml (028d7629...8d7f); fetched bytes match it."},
+   "alternatives_passed_over":[
+     {"name":"Caminandes_ Llamigos-1080p.mp4","size_bytes":138945811,"sha256":"826513349ecf02d83b22f414514704e3bba10ff28fb45408a6cdf6cc57bacc06","why":"Largest file, and what crewcut/build/collect.py ia_files() would pick first ('largest derivative first'); it does NOT match the pinned sha256, so `crewcut annotate` fetching by that rule would fail the gate (same defect as Issue #3 item 'master downloaded wrong file'). Not used."},
+     {"name":"Caminandes_ Llamigos-1080p.webm","size_bytes":38041423,"why":"does not match the pinned hash by construction (not downloaded/hashed)."},
+     {"name":"/crewcut/masters/caminandes3.ogv","why":"offline copy; NOT used, because the pinned file was fetched successfully from source."}],
+   "fetch":{"command":"curl -sfLo master.ogv 'https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv' && sha256sum master.ogv","pinned_sha256":"028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f","computed_sha256":"028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f","verification":"match","fetched_on":"2026-10-21","used_local_copy":false,
+    "local_copy_sha256_also_matches":true}},
+  {"id":"caminandes-3-llamigos","title":"Caminandes 3 Llamigos (other IA item)","decision":"reject",
+   "reason":"A different upload by a third party: its search record carries no licenseurl, so rights cannot be read from it; the official Blender Foundation item CaminandesLlamigos is the catalogue page.",
+   "rights_read":{"where":"https://archive.org/advancedsearch.php?q=title:caminandes (saved result summary in this record)","quote":"no licenseurl field for identifier caminandes-3-llamigos"},
+   "source":"https://archive.org/details/caminandes-3-llamigos","artifact_chosen":null,"alternatives_passed_over":[]},
+  {"id":"caminandes-gran-dillama-blender-foundations-new-open-movie.webm.-720p.vp-9-mac","decision":"reject","reason":"a different film (Caminandes 2), out of scope this round, and its upload carries a CC BY-NC-SA 4.0 licenseurl (NC/SA-NC excluded by criterion 2).",
+   "rights_read":{"where":"IA advancedsearch result","quote":"licenseurl https://creativecommons.org/licenses/by-nc-sa/4.0/"},"source":"https://archive.org/details/caminandes-gran-dillama-blender-foundations-new-open-movie.webm.-720p.vp-9-mac","artifact_chosen":null,"alternatives_passed_over":[]}
+ ],
+ "open_for_maintainer": [
+  "crewcut/build/collect.py ia_files() sorts largest-first, so fetch.fetch() on page https://archive.org/details/CaminandesLlamigos downloads the 139 MB mp4, whose sha256 differs from the pinned ogv; the pin can only be met by naming the file. Documents record no per-film file name; not changed here."
+ ]
+}

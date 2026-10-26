@@ -1,0 +1,8 @@
+# Run 1
+- system: /wordcount-source/system/count_words.py (unchanged), sha256 in system.sha256
+- python: Python 3.11.2
+- task package: tasks-v1 (TASK.md sha256 9d96c5ba..., sentences.txt sha256 24566eb3...); sentences.txt identical to source
+- command: python3 count_words.py sentences.txt
+- exit code: 0; wall seconds: 
+- attempts: 1, no failures, no retries; parameters: none; cost: 0 (no paid resource)
+- answer key: not accessed

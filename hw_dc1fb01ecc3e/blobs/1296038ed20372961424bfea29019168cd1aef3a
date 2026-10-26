@@ -1,0 +1,27 @@
+#!/bin/sh
+# Reproduce corpus pin, ground truth, package; each step is checked. Exit non-zero on failure.
+set -eu
+cd "$(dirname "$0")/.."
+SRC=${SRC:-/wordcount-source}; REF=${REF:-/wordcount-reference}
+# step 1: pin check
+want=$(cut -d' ' -f1 corpus/sentences.sha256)
+got=$(sha256sum "$SRC/sentences.txt" | cut -d' ' -f1)
+[ "$want" = "$got" ] || { echo "FAIL pin: source differs from pinned checksum"; exit 1; }
+cmp "$SRC/sentences.txt" corpus/sentences.txt
+echo "OK pin $got"
+# step 2: ground truth by README rule (whitespace-split), compared to reference
+python3 -I scripts/groundtruth.py corpus/sentences.txt "$REF/reference.json" data/key/answers.json data/key/reference_comparison.json
+# step 3: task package (no key), then scan it
+rm -rf package; mkdir package
+cp corpus/sentences.txt package/sentences.txt
+cp corpus/TASK.md package/TASK.md
+for f in package/*; do
+  if grep -qi 'answers\|reference.json' "$f"; then echo "FAIL key-like content in $f"; exit 1; fi
+done
+python3 -I - <<'PY'
+import json,glob
+key=[c['words'] for c in json.load(open('data/key/answers.json'))['counts']]
+for f in glob.glob('package/*'):
+    if f.endswith('.json') and json.load(open(f))==key: raise SystemExit('FAIL key in '+f)
+PY
+echo "OK package has no key: $(ls package | tr '\n' ' ')"

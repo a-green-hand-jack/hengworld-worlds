@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+"""Usage: judge_cost.py JUDGE_CALLS.jsonl OUT_DIR -> cost_lines.jsonl, cost.json. Reported tokens x official price (Model Studio, qwen3-vl-plus, China (Beijing) table)."""
+import json, sys
+calls, out = sys.argv[1:3]
+# official price, USD per 1M tokens, "0<Token<=32K" tier (every call is far below 32K input tokens); see judge/README.md for source and query date
+P_IN, P_OUT, TIER_MAX = 0.143, 1.434, 32000
+lines, tot, tin, tout = [], 0.0, 0, 0
+for l in open(calls):
+    e = json.loads(l); u = e["usage"]; pi, po = u["prompt_tokens"], u["completion_tokens"]
+    assert pi <= TIER_MAX
+    amt = pi * P_IN / 1e6 + po * P_OUT / 1e6
+    lines.append({"service": "alibaba/chat.completions", "model": e["model"], "system": "scorer", "task": e["task"], "purpose": f"shot correspondence judge, shot {e['shot']}",
+                  "usage": {"prompt_tokens": pi, "completion_tokens": po}, "unit_price_usd_per_1M": {"input": P_IN, "output": P_OUT}, "amount_usd": round(amt, 8),
+                  "borne_by": "benchmark maintainer's Alibaba Model Studio account (world resource `alibaba`)", "run": "judge-run-1"})
+    tot += amt; tin += pi; tout += po
+with open(f"{out}/cost_lines.jsonl", "w") as f:
+    for x in lines: f.write(json.dumps(x) + "\n")
+json.dump({"calls": len(lines), "prompt_tokens": tin, "completion_tokens": tout, "total_usd": round(tot, 6), "price_usd_per_1M": {"input": P_IN, "output": P_OUT}}, open(f"{out}/cost.json", "w"), indent=1)
+print(len(lines), tin, tout, round(tot, 6))

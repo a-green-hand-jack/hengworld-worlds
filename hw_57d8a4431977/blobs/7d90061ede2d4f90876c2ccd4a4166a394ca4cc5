@@ -1,0 +1,131 @@
+"""Hosted generator back ends: Gemini (image, edit, speech, music), ElevenLabs (sfx), Alibaba DashScope (Wan 2.2).
+
+Credentials come from the environment of whoever runs the server, never from files:
+  GOOGLE_GEMINI_BASE_URL + GEMINI_API_KEY      native Gemini API (generateContent)
+  ELEVENLABS_BASE_URL (optional) + ELEVENLABS_API_KEY
+  DASHSCOPE_BASE_URL + DASHSCOPE_API_KEY
+Prices do not live here: the server bills fixed prices from configs/tools.yaml, whichever service answers.
+NOTE: written against the vendors' documented REST shapes; task-maker holds none of these credentials
+for the non-Gemini services and could not exercise them (see decisions/D-toolserver.json).
+"""
+from __future__ import annotations
+
+import base64
+import os
+import subprocess
+import time
+import wave
+from pathlib import Path
+
+import requests
+
+from . import Backend, Result, _media_seconds, _out
+
+
+def _post(url, headers, body, timeout=600):
+    r = requests.post(url, headers=headers, json=body, timeout=timeout)
+    if r.status_code >= 400:
+        raise RuntimeError(f"HTTP {r.status_code}: {r.text[:300]}")
+    return r.json()
+
+
+def _gem(cfg, model, parts, gen_cfg=None):
+    base = os.environ["GOOGLE_GEMINI_BASE_URL"].rstrip("/")
+    h = {"x-goog-api-key": os.environ["GEMINI_API_KEY"], "Content-Type": "application/json"}
+    body = {"contents": [{"parts": parts}]}
+    if gen_cfg:
+        body["generationConfig"] = gen_cfg
+    return _post(f"{base}/models/{model}:generateContent", h, body)
+
+
+def _inline(resp, kind):
+    for c in resp.get("candidates", []):
+        for p in c.get("content", {}).get("parts", []):
+            d = p.get("inlineData") or p.get("inline_data")
+            if d and d.get("mimeType", d.get("mime_type", "")).startswith(kind):
+                return base64.b64decode(d["data"]), d.get("mimeType", d.get("mime_type"))
+    raise RuntimeError(f"no {kind} in the response")
+
+
+def _pcm_to_wav(pcm: bytes, out: Path, rate=24000):
+    with wave.open(str(out), "wb") as w:
+        w.setnchannels(1); w.setsampwidth(2); w.setframerate(rate); w.writeframes(pcm)
+
+
+class GeminiImage(Backend):
+    def call(self, tool, args, out_dir):
+        parts = [{"text": args["prompt"]}]
+        if tool == "image.edit":
+            parts.append({"inlineData": {"mimeType": "image/png", "data": base64.b64encode(Path(args["image"]).read_bytes()).decode()}})
+        r = _gem(self.cfg, self.cfg["model"], parts, {"responseModalities": ["IMAGE"]})
+        data, _ = _inline(r, "image/")
+        out = _out(out_dir, tool); tmp = out.with_suffix(".raw")
+        tmp.write_bytes(data)
+        w, h = int(args.get("width", 1280)), int(args.get("height", 720))
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(tmp), "-vf", f"scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}", str(out)], check=True)
+        tmp.unlink()
+        return Result([out], {"calls": 1}, {"model": self.cfg["model"], "usage": r.get("usageMetadata")})
+
+
+class GeminiSpeech(Backend):
+    def call(self, tool, args, out_dir):
+        voice = args.get("voice", "Kore")
+        r = _gem(self.cfg, self.cfg["model"], [{"text": args["text"]}], {
+            "responseModalities": ["AUDIO"],
+            "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}})
+        pcm, _ = _inline(r, "audio/")
+        out = _out(out_dir, tool); _pcm_to_wav(pcm, out)
+        return Result([out], {"seconds": _media_seconds(out)}, {"model": self.cfg["model"], "voice": voice, "usage": r.get("usageMetadata")})
+
+
+class GeminiMusic(Backend):
+    def call(self, tool, args, out_dir):
+        r = _gem(self.cfg, self.cfg["model"], [{"text": f"{args['prompt']} Duration about {float(args.get('duration_s', 30)):.0f} seconds."}], {"responseModalities": ["AUDIO"]})
+        data, mime = _inline(r, "audio/")
+        out = _out(out_dir, tool); tmp = out.with_suffix(".raw"); tmp.write_bytes(data)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(tmp), "-ar", "48000", str(out)], check=True)
+        tmp.unlink()
+        return Result([out], {"calls": 1}, {"model": self.cfg["model"], "usage": r.get("usageMetadata")})
+
+
+class ElevenLabsSFX(Backend):
+    def call(self, tool, args, out_dir):
+        base = os.environ.get("ELEVENLABS_BASE_URL", "https://api.elevenlabs.io").rstrip("/")
+        dur = max(0.5, min(30.0, float(args.get("duration_s", 3))))
+        r = requests.post(f"{base}/v1/sound-generation", headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"]},
+                          json={"text": args["prompt"], "duration_seconds": dur}, timeout=300)
+        if r.status_code >= 400:
+            raise RuntimeError(f"HTTP {r.status_code}: {r.text[:300]}")
+        out = _out(out_dir, tool); tmp = out.with_suffix(".raw"); tmp.write_bytes(r.content)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(tmp), "-ar", "48000", str(out)], check=True)
+        tmp.unlink()
+        return Result([out], {"seconds": _media_seconds(out)}, {"requested_s": dur})
+
+
+class DashScopeWan(Backend):
+    """Wan 2.2 via DashScope's asynchronous video-synthesis API (text-to-video, or image-to-video with first_frame)."""
+
+    def call(self, tool, args, out_dir):
+        base = os.environ["DASHSCOPE_BASE_URL"].rstrip("/")
+        h = {"Authorization": f"Bearer {os.environ['DASHSCOPE_API_KEY']}", "Content-Type": "application/json", "X-DashScope-Async": "enable"}
+        first = args.get("first_frame")
+        inp = {"prompt": args["prompt"]}
+        if first:
+            inp["img_url"] = "data:image/png;base64," + base64.b64encode(Path(first).read_bytes()).decode()
+        model = self.cfg["i2v_model"] if first else self.cfg["model"]
+        t = _post(f"{base}/api/v1/services/aigc/video-generation/video-synthesis", h,
+                  {"model": model, "input": inp, "parameters": {"size": self.cfg.get("size", "1280*720"), "duration": int(round(float(args.get("duration_s", 5))))}})
+        tid = t["output"]["task_id"]; t0 = time.time()
+        while True:
+            q = requests.get(f"{base}/api/v1/tasks/{tid}", headers={"Authorization": h["Authorization"]}, timeout=60).json()
+            st = q["output"]["task_status"]
+            if st == "SUCCEEDED":
+                break
+            if st in ("FAILED", "CANCELED", "UNKNOWN") or time.time() - t0 > 1500:
+                raise RuntimeError(f"video task {st}: {str(q)[:300]}")
+            time.sleep(10)
+        out = _out(out_dir, tool); tmp = out.with_suffix(".raw")
+        tmp.write_bytes(requests.get(q["output"]["video_url"], timeout=600).content)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(tmp), "-r", "24", "-pix_fmt", "yuv420p", str(out)], check=True)
+        tmp.unlink()
+        return Result([out], {"seconds": _media_seconds(out)}, {"model": model})

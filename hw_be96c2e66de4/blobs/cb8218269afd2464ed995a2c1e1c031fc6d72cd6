@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0051",
+  "start": 167.56,
+  "end": 169.08,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.52,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 51,
+   "start": 0.0,
+   "end": 1.52,
+   "description": "Medium shot of C1 twirling, with a static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.52
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0051-scr",
+ "descriptions_available": true
+}

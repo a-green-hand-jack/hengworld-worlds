@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+"""Usage: assemble.py Q_CUTS.json JUDGE_CALLS.jsonl KEY_DIR DELIV_DIR OUT_DIR -> scores.json, scores.csv (scores only; no truth content)."""
+import csv, json, os, sys
+sys.path.insert(0, os.path.dirname(__file__))
+from measures import shot_correspondence
+qc, calls, key, deliv, out = sys.argv[1:6]
+qc = json.load(open(qc)); J = {}
+for l in open(calls):
+    e = json.loads(l); J.setdefault(e["task"], {})[e["shot"]] = e
+rows, full = [], {}
+for task, r in qc.items():
+    q = r["Q"]; truth = json.load(open(f"{key}/{task}/truth.json")); man = json.load(open(f"{deliv}/{task}/manifest.json"))
+    shots = [(s["start"], s["end"]) for s in truth["shots"]]
+    acc = [J[task][s["index"]]["accepted"] for s in truth["shots"]] if q["Q"] else [False] * len(shots)
+    sc = shot_correspondence(shots, acc)
+    c = {"cut_F1_0.5": r["cut"]["F1_0.5"], "cut_F1_1.0": r["cut"]["F1_1.0"], "cut_trivial_no_cuts_either_side": r["cut"].get("trivial_no_cuts", False),
+         "shot_correspondence": sc, "dialogue_WER": None, "dialogue_onset_median_err_s": None, "scene_order": r["scene"]["scene_order"]}
+    row = {"task": task, "track": task[-3:], "Q": q["Q"], **c, "n_ref_cuts": len(r["cut"].get("ref_cuts", [])), "n_remake_cuts": len(r["cut"].get("hyp_cuts", [])),
+           "n_shots_judged": len(shots), "cost_usd": man["cost_usd_total"], "calls": man["calls"], "wall_clock_s": man["wall_clock_s"], "delivery_s": man["delivery_duration_s"], "segment_s": man["segment_duration_s"]}
+    for k in ("cut_F1_0.5", "cut_F1_1.0", "shot_correspondence", "scene_order"): row["Qc_" + k] = q["Q"] * row[k]
+    rows.append(row); full[task] = {"Q_checks": q, "cut": {k: v for k, v in r["cut"].items() if k != "ref_cuts"}, "scene": r["scene"], "row": row}
+json.dump({"not_run": ["S (viewing score): no raters", "speaker/character consistency: no human labels", "dialogue WER / onset error: not applicable, Coffee Run has no dialogue lines"], "tasks": full}, open(f"{out}/scores.json", "w"), indent=1)
+w = csv.DictWriter(open(f"{out}/scores.csv", "w"), fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
+for tr in ("ref", "scr"):
+    R = [x for x in rows if x["track"] == tr]
+    if not R: continue
+    print(tr, len(R), {k: round(sum(x[k] for x in R) / len(R), 4) for k in ("Q", "cut_F1_0.5", "cut_F1_1.0", "shot_correspondence", "scene_order", "cost_usd")})

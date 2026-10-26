@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0160",
+  "start": 1374.506,
+  "end": 1377.343,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.837,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 160,
+   "start": 0.0,
+   "end": 2.837,
+   "description": "Close-up of C1 pointing to a billiard ball and then holding it, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.837
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0160-scr",
+ "descriptions_available": true
+}

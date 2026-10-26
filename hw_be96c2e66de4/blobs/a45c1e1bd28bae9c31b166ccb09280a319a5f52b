@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L1-0058",
+  "start": 1533.265,
+  "end": 1539.204,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 5.939,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 181,
+   "start": 0.0,
+   "end": 5.939,
+   "description": "Close-up of an intertitle displaying dialogue, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 5.939
+  }
+ ],
+ "task_id": "sherlock_jr-L1-0058-scr",
+ "descriptions_available": true
+}

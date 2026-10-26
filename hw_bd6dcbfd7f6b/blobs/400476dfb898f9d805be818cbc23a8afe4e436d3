@@ -1,0 +1,289 @@
+{
+ "segment": {
+  "id": "caminandes3-L3-0000",
+  "start": 0.0,
+  "end": 150.042,
+  "shots": 37,
+  "lines": 0
+ },
+ "duration": 150.042,
+ "cuts": [
+  21.375,
+  30.5,
+  32.292,
+  33.875,
+  36.792,
+  39.5,
+  40.792,
+  41.792,
+  42.708,
+  43.917,
+  47.0,
+  49.875,
+  52.292,
+  52.875,
+  56.583,
+  62.25,
+  66.417,
+  67.417,
+  68.0,
+  70.083,
+  73.875,
+  74.625,
+  75.458,
+  77.75,
+  78.542,
+  80.125,
+  83.458,
+  86.167,
+  89.333,
+  93.042,
+  96.667,
+  101.792,
+  103.75,
+  114.5,
+  118.792,
+  123.542
+ ],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 21.375,
+   "description": ""
+  },
+  {
+   "index": 1,
+   "start": 21.375,
+   "end": 30.5,
+   "description": ""
+  },
+  {
+   "index": 2,
+   "start": 30.5,
+   "end": 32.292,
+   "description": ""
+  },
+  {
+   "index": 3,
+   "start": 32.292,
+   "end": 33.875,
+   "description": ""
+  },
+  {
+   "index": 4,
+   "start": 33.875,
+   "end": 36.792,
+   "description": ""
+  },
+  {
+   "index": 5,
+   "start": 36.792,
+   "end": 39.5,
+   "description": ""
+  },
+  {
+   "index": 6,
+   "start": 39.5,
+   "end": 40.792,
+   "description": ""
+  },
+  {
+   "index": 7,
+   "start": 40.792,
+   "end": 41.792,
+   "description": ""
+  },
+  {
+   "index": 8,
+   "start": 41.792,
+   "end": 42.708,
+   "description": ""
+  },
+  {
+   "index": 9,
+   "start": 42.708,
+   "end": 43.917,
+   "description": ""
+  },
+  {
+   "index": 10,
+   "start": 43.917,
+   "end": 47.0,
+   "description": ""
+  },
+  {
+   "index": 11,
+   "start": 47.0,
+   "end": 49.875,
+   "description": ""
+  },
+  {
+   "index": 12,
+   "start": 49.875,
+   "end": 52.292,
+   "description": ""
+  },
+  {
+   "index": 13,
+   "start": 52.292,
+   "end": 52.875,
+   "description": ""
+  },
+  {
+   "index": 14,
+   "start": 52.875,
+   "end": 56.583,
+   "description": ""
+  },
+  {
+   "index": 15,
+   "start": 56.583,
+   "end": 62.25,
+   "description": ""
+  },
+  {
+   "index": 16,
+   "start": 62.25,
+   "end": 66.417,
+   "description": ""
+  },
+  {
+   "index": 17,
+   "start": 66.417,
+   "end": 67.417,
+   "description": ""
+  },
+  {
+   "index": 18,
+   "start": 67.417,
+   "end": 68.0,
+   "description": ""
+  },
+  {
+   "index": 19,
+   "start": 68.0,
+   "end": 70.083,
+   "description": ""
+  },
+  {
+   "index": 20,
+   "start": 70.083,
+   "end": 73.875,
+   "description": ""
+  },
+  {
+   "index": 21,
+   "start": 73.875,
+   "end": 74.625,
+   "description": ""
+  },
+  {
+   "index": 22,
+   "start": 74.625,
+   "end": 75.458,
+   "description": ""
+  },
+  {
+   "index": 23,
+   "start": 75.458,
+   "end": 77.75,
+   "description": ""
+  },
+  {
+   "index": 24,
+   "start": 77.75,
+   "end": 78.542,
+   "description": ""
+  },
+  {
+   "index": 25,
+   "start": 78.542,
+   "end": 80.125,
+   "description": ""
+  },
+  {
+   "index": 26,
+   "start": 80.125,
+   "end": 83.458,
+   "description": ""
+  },
+  {
+   "index": 27,
+   "start": 83.458,
+   "end": 86.167,
+   "description": ""
+  },
+  {
+   "index": 28,
+   "start": 86.167,
+   "end": 89.333,
+   "description": ""
+  },
+  {
+   "index": 29,
+   "start": 89.333,
+   "end": 93.042,
+   "description": ""
+  },
+  {
+   "index": 30,
+   "start": 93.042,
+   "end": 96.667,
+   "description": ""
+  },
+  {
+   "index": 31,
+   "start": 96.667,
+   "end": 101.792,
+   "description": ""
+  },
+  {
+   "index": 32,
+   "start": 101.792,
+   "end": 103.75,
+   "description": ""
+  },
+  {
+   "index": 33,
+   "start": 103.75,
+   "end": 114.5,
+   "description": ""
+  },
+  {
+   "index": 34,
+   "start": 114.5,
+   "end": 118.792,
+   "description": ""
+  },
+  {
+   "index": 35,
+   "start": 118.792,
+   "end": 123.542,
+   "description": ""
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 42.708
+  },
+  {
+   "start": 42.708,
+   "end": 56.583
+  },
+  {
+   "start": 56.583,
+   "end": 80.125
+  },
+  {
+   "start": 80.125,
+   "end": 123.542
+  },
+  {
+   "start": 123.542,
+   "end": 150.042
+  }
+ ]
+}

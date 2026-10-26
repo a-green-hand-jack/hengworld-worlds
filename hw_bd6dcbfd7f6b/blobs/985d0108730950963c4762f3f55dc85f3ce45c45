@@ -1,0 +1,36 @@
+"""Compare rebuilt Caminandes 3 data with dataset revision d509bed. Writes a JSON; exits 0 always (differences are data).
+Usage: compare.py DATA_FILM_DIR TASKS_FULL DATASET_DIR OUT.json"""
+import csv, json, sys
+from pathlib import Path
+
+data, tasks, ds, out = Path(sys.argv[1]), Path(sys.argv[2]), Path(sys.argv[3]), Path(sys.argv[4])
+A = ds / "annotations" / "caminandes3"
+res = {"annotations": {}, "tasks": {}, "catalogue": {}}
+for name in ("shots", "dialogue", "hierarchy"):
+    a, b = json.loads((A / f"{name}.json").read_text()), json.loads((data / f"{name}.json").read_text())
+    res["annotations"][name] = {"identical": a == b, "bytes_identical": (A / f"{name}.json").read_bytes() == (data / f"{name}.json").read_bytes(),
+                                "differing_keys": {k: [a.get(k), b.get(k)] for k in set(a) | set(b) if a.get(k) != b.get(k)}}
+# tasks
+pub = [json.loads(l) for l in open(ds / "tasks" / "dev.jsonl")]
+pub = {r["task_id"]: r for r in pub if r["film_id"] == "caminandes3"}
+ours = {}
+for t in sorted(p for p in tasks.iterdir() if p.is_dir()):
+    tj, tr = json.loads((t / "task.json").read_text()), json.loads((t / "truth.json").read_text())
+    seg = tr["segment"]
+    ours[tj["task_id"]] = {"task_id": tj["task_id"], "film_id": tj["film_id"], "level": tj["level"], "segment_id": seg["id"],
+                           "track": tj["track"], "start_s": tj["start_s"], "end_s": tj["end_s"], "n_shots": seg["shots"], "n_lines": seg["lines"]}
+res["tasks"]["n_published"], res["tasks"]["n_ours"] = len(pub), len(ours)
+res["tasks"]["ids_only_in_published"] = sorted(set(pub) - set(ours))
+res["tasks"]["ids_only_in_ours"] = sorted(set(ours) - set(pub))
+res["tasks"]["field_differences"] = {i: {k: [pub[i].get(k), ours[i].get(k)] for k in set(pub[i]) | set(ours[i]) if pub[i].get(k) != ours[i].get(k)}
+                                     for i in sorted(set(pub) & set(ours)) if pub[i] != ours[i]}
+res["tasks"]["fields_compared"] = sorted(next(iter(pub.values())))
+res["tasks"]["empty_descriptions_in_ours"] = sum(1 for t in tasks.iterdir() for s in json.loads((t / "truth.json").read_text())["shots"] if not s["description"])
+# catalogue row
+row = [r for r in csv.DictReader(open(ds / "catalogue.csv")) if r["film_id"] == "caminandes3"][0]
+h = json.loads((data / "hierarchy.json").read_text()); s = json.loads((data / "shots.json").read_text())
+mine = {"shots": len(h["L0"]), "beats": len(h["L1"]), "scenes": len(h["L2"]), "sequences": len(h["L3"]), "lines": len(json.loads((data / "dialogue.json").read_text())["lines"])}
+res["catalogue"] = {k: [row[k], str(v)] for k, v in mine.items()}
+res["catalogue"]["all_equal"] = all(row[k] == str(v) for k, v in mine.items())
+json.dump(res, open(out, "w"), indent=1)
+print(json.dumps({"annotations": {k: v["identical"] for k, v in res["annotations"].items()}, "tasks_equal": not (res["tasks"]["ids_only_in_published"] or res["tasks"]["ids_only_in_ours"] or res["tasks"]["field_differences"]), "catalogue_equal": res["catalogue"]["all_equal"]}))

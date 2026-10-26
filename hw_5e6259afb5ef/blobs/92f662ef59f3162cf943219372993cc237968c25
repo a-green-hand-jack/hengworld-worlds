@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Medium shot of C1 getting thrown off a weasel's head, static camera.
+Detailed description:
+setting: Outdoor, daytime, clear blue sky with soft white clouds and a blurred snowy plain in the background.
+characters: C1: head in bottom foreground facing right, large brown eyes with horizontal pupils and tongue tip sticking out; C2: sitting on C1's head, leaps right with open beak.
+props: One small round red berry floating in mid-air.
+action: As a red berry floats in the air on the right, C2 leaps upward and to the right off C1's head toward the berry, flying out of the top-right corner while C1 lifts its head.
+camera: Close-up, low-angle static camera.
+light_mood: Bright, crisp natural daylight; playful, fast-paced, and comedic mood.
+Frames:
+[frame 1 at 52.41s]
+IMG:69db682cba6bb12d605347bd4c404729ed3e86545b479e96a003c233d401b5a9
+[frame 2 at 52.53s]
+IMG:575c6172d260af62cb609187746dae9b99cfcab2c3469e7d8e18d34e0ff4608e
+[frame 3 at 52.64s]
+IMG:4ef38bfd8a8da06d6e416e8ed3c0833104a845810872eb00416ea45363aff796
+[frame 4 at 52.76s]
+IMG:91a7935dda7b2d577637925f2cea90a48d9aa28e008b8fd67a5ad92620587eec

@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0180",
+  "start": 1512.378,
+  "end": 1533.265,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 20.887,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 180,
+   "start": -0.0,
+   "end": 20.887,
+   "description": "Medium shot of C1 and C2 taking drinks from a tray held by a waiter, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 20.887
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0180-ref",
+ "descriptions_available": true
+}

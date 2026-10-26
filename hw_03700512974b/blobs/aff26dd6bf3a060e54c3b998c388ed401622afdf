@@ -1,0 +1,7 @@
+film_id,title,year,source,type,licence_or_pd_basis,split,duration_min,shots,beats,scenes,sequences,lines,language,master_sha256
+caminandes3,Caminandes 3,2016,Blender open movie,Animation,CC BY 3.0,dev,2.5,37,8,5,1,0,en,028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f
+coffee_run,Coffee Run,2020,Blender open movie,Animation,CC BY 4.0,dev,3.1,5,5,2,1,0,en,f40ce7f497b2f56e6a672cea6ef15d191da3d19bd61aeed5d3730e5d73f6aebf
+spirit_chaser,Spirit Chaser,2016,Independent CC film,Animation,CC BY-SA 3.0,dev,4.4,80,17,4,1,0,en,cce14605b8dc2fbe0593ca1207b8972d13676e3050bd6f48c92efd44f0013182
+domini_canes,Domini Canes,2016,Independent CC film,Animation,CC BY 3.0,dev,4.3,41,11,4,1,0,en,70b8515d4afc4a392644d315666583b4c83386f9cf50f3710fd228d92aa29586
+sherlock_jr,Sherlock Jr.,1924,Public domain (US),Silent,Published before 1931,dev,44.1,404,107,32,8,0,,8931dc7b1dd72fababe7c48176774d01ade1f994c7c6cb3643c2fe1a0b7a7442
+trip_to_the_moon,A Trip to the Moon,1902,Public domain (US),Silent,Published before 1931,dev,12.9,36,21,9,2,0,,084dc2ec7391f56a993cdda4ec9f385513d3c4a2f46fe9bb18875c5abb269fab

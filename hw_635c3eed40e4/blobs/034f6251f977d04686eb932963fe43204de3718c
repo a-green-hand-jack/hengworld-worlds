@@ -1,0 +1,11 @@
+# Truth check against task-maker's key manifest (pre-step for rescoring)
+
+Checked 2026-10-22 against task-maker 62f6180 (`tasks/key_manifest.json`, key not committed any more).
+
+- Command: for each of the 28 `coffee_run-*` ids in the manifest, `sha256(git show 4787948:key/<id>/truth.json)` compared with the manifest entry (4787948 = the revision with key/ that run-1 scoring used, c4fe559 content).
+- Result: 28 of 28 equal. `git diff 4787948 62f6180 -- annotations tasks/dev.jsonl` is empty and `tools/step8_tasks.py` changed by 3 lines only, so the truth the run-1 scores used is byte-identical to the manifest.
+- Not done: a regeneration of the key from the masters with `tools/step8_tasks.py` (needs the build tree of steps 2-5). The rescoring on the rerun records will do it if those exist; until then the check above is the evidence, and it is stated as such.
+- Rescoring itself: not run. The executor's rerun records (prompt fix, tool service, frame-exact clips `clips-v2`) are not published (executor main at 12858c9: "rerun waits for service and corrected clips"). The run-1 scores stay the only scores and stay valid for the runs they scored.
+
+## Update: key regenerated locally (same day, after the Screenplay reruns appeared)
+`scores/code/regen_truth.sh /hutian/task-maker /hutian/regen` (task-maker 62f6180 checkout; master fetched from archive.org, sha256 f40ce7f4…aebf verified): cuts with `crewcut_algorithms cuts` on the master, `hierarchy` (hierarchy equals the reference release's), task-maker's `step8_tasks.py` restricted to `coffee_run`. Result: 28 truth files built, **28/28 equal to `tasks/key_manifest.json`**. Recorded limitation: dialogue is the committed `dialogue.json` (0 lines), the Whisper step was not rerun; descriptions are the committed paid-step output.

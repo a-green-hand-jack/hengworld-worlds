@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0015",
+  "start": 80.708,
+  "end": 83.0,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.292,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 15,
+   "start": 0.0,
+   "end": 2.292,
+   "description": "Medium shot of C1 walking towards the camera, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.292
+  }
+ ],
+ "task_id": "domini_canes-L0-0015-ref",
+ "descriptions_available": true
+}

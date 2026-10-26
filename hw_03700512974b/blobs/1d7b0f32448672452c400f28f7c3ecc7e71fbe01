@@ -1,0 +1,36 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L1-0000",
+  "start": 0.0,
+  "end": 17.76,
+  "shots": 2,
+  "lines": 0
+ },
+ "duration": 17.76,
+ "cuts": [
+  15.56
+ ],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 15.56,
+   "description": "Wide shot of floating islands hanging in the sky with a giant lamp hovering above, static."
+  },
+  {
+   "index": 1,
+   "start": 15.56,
+   "end": 17.76,
+   "description": "Medium shot of C1 standing still against a night sky, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 17.76
+  }
+ ],
+ "task_id": "spirit_chaser-L1-0000-scr",
+ "descriptions_available": true
+}

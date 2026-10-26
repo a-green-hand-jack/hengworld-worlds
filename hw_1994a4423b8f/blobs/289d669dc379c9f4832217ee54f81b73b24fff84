@@ -1,0 +1,26 @@
+"""usage: run_judge.py RUN_DIR TASK_DIR MASTER_OGV OUTDIR MODEL
+1) score_run with the adapted judge (real scoring, remake frames); 2) judge check on the original master's frames:
+right = true description of the span, wrong = description of another shot (rotated by one)."""
+import json, os, sys
+from pathlib import Path
+run, task, master, out, model = sys.argv[1:6]
+out = Path(out); out.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(Path(__file__).parent))
+os.environ["JUDGE_LEDGER"] = str(out / "judge_ledger_scoring.jsonl"); os.environ["JUDGE_PURPOSE"] = "continuity-judge (scoring)"
+import judge_adapted as A
+from crewcut.scoring import judge as J
+from crewcut.scoring.score import score_run
+J.ContinuityJudge = A.AdaptedJudge
+res = score_run(Path(run), Path(task), None, judge=model)
+(out / "score_with_judge.json").write_text(json.dumps(res, indent=1))
+print(json.dumps({k: res[k] for k in ("Q", "continuity")}, indent=1), res.get("notes"))
+truth = json.loads((Path(task) / "truth.json").read_text())["shots"]
+A.LEDGER = str(out / "judge_ledger_check.jsonl")
+rows = []
+for purpose, shift in (("judge-check right description", 0), ("judge-check wrong description", 1)):
+    A.PURPOSE = purpose
+    j = A.AdaptedJudge(Path(master), model)
+    for i, s in enumerate(truth):
+        d = truth[(i + shift) % len(truth)]["description"]
+        rows.append({"check": purpose, "shot": i, "verdict": j(d, s["start"], s["end"])})
+(out / "judge_check.json").write_text(json.dumps(rows, indent=1)); print(rows)

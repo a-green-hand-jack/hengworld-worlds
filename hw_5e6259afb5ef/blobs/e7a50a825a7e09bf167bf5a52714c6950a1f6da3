@@ -1,0 +1,4 @@
+frames 300 ref 300
+median_nodc bit agreement 0.9969791666666666 exact 0.9066666666666666 max 4
+median_all bit agreement 0.9969791666666666 exact 0.9066666666666666 max 4
+1519bc2874d97cda95c73fc03396384afafc5a6d3f98c93a003cc1503657e7f4  audit/provenance/phash.py

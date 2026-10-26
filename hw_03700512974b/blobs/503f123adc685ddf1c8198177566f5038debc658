@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L1-0056",
+  "start": 1474.64,
+  "end": 1502.201,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 27.561,
+ "cuts": [
+  4.571,
+  10.243,
+  23.724
+ ],
+ "shots": [
+  {
+   "index": 175,
+   "start": -0.0,
+   "end": 4.571,
+   "description": "Full shot of intertitle showing dialogue, static."
+  },
+  {
+   "index": 176,
+   "start": 4.571,
+   "end": 10.243,
+   "description": "Medium shot of C1 and C2 standing, then C1 walks out of frame, static."
+  },
+  {
+   "index": 177,
+   "start": 10.243,
+   "end": 23.724,
+   "description": "Medium shot of C1 watching C2 sit down at a billiard table, static camera."
+  },
+  {
+   "index": 178,
+   "start": 23.724,
+   "end": 27.561,
+   "description": "Close-up of C1 opening a poison ampoule, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 27.561
+  }
+ ],
+ "task_id": "sherlock_jr-L1-0056-ref",
+ "descriptions_available": true
+}

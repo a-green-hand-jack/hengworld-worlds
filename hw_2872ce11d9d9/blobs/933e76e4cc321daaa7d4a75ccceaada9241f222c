@@ -1,0 +1,1 @@
+{"command":"python3 corpus/count_words.py packages/sentences.txt > records/sut_output.txt","input":"packages/sentences.txt","output":"records/sut_output.txt","system_revision":"wordcount-source/system/count_words.py (pinned copy)","check":"python3 scripts/check_sut.py records/sut_output.txt","result":"success"}

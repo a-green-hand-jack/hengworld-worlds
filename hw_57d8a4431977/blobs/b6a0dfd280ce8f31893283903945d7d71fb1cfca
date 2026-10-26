@@ -1,0 +1,289 @@
+{
+ "schema": 1,
+ "decided_by": "curator",
+ "decided_on": "2026-10-21",
+ "stage": "B",
+ "note": "Caminandes 3 stays in corpus/admissions.json. Fetch: corpus/fetch_master.sh FILM OUTDIR using corpus/pins.tsv; pins come from configs/films.yaml@df54b3a and catalogue.csv (identical). No fallback copy exists for these films; none was used.",
+ "records": [
+  {
+   "id": "coffee_run",
+   "title": "Coffee Run",
+   "year": 2020,
+   "split": "dev",
+   "decision": "admit",
+   "reason": "Rights holder (Blender Studio) releases the project content under CC BY 4.0 (allows derivatives, commercial use). The Internet Archive item that hosts the pinned file carries licenseurl by-nd/4.0, set by a third-party uploader ('I am not endorsed by or affiliated with the Blender Foundation'); the rights holder's own statement is taken as authoritative. An ND tag would exclude the film under protocol 1.2, so this conflict is recorded openly and the maintainer can revoke.",
+   "licence": "CC BY 4.0",
+   "evidence": [
+    {
+     "where": "https://studio.blender.org/projects/coffee-run/pages/licensing/ (saved as corpus/evidence_coffee_run_blender_licensing.txt, fetched 2026-10-21)",
+     "quote": "The content of the Coffee Run project is released under the Creative Commons Attribution 4.0 license. This includes all the data we publish on this website."
+    },
+    {
+     "where": "https://archive.org/metadata/coffee-run (saved as corpus/ia_metadata_coffee-run.json)",
+     "quote": "licenseurl: https://creativecommons.org/licenses/by-nd/4.0/ ; creator 'Blender Institution'; uploader ecewan11@gmail.com; description: 'I am not endorsed by or affiliated with the Blender Foundation.'"
+    },
+    {
+     "where": "/crewcut-dataset/catalogue.csv and configs/films.yaml@df54b3a",
+     "quote": "coffee_run,...,CC BY 4.0,dev,3.1,...,f40ce7f497b2f56e6a672cea6ef15d191da3d19bd61aeed5d3730e5d73f6aebf"
+    }
+   ],
+   "caveats": [
+    "RIGHTS CONFLICT: IA item says CC BY-ND 4.0, rights holder says CC BY 4.0. The IA tag is an uploader's mistake or restriction not made by the rights holder; the clean-room remake does not redistribute the film, only derived annotations (steward/maintainer may rule otherwise).",
+    "Third-party upload; attribution: (CC) Blender Foundation | studio.blender.org."
+   ],
+   "source_location": "https://archive.org/details/coffee-run",
+   "work_vs_extras": "IA item holds only the film (original mp4 and the IA h.264 derivative, 184.67 s) plus thumbnails; no trailer or making-of.",
+   "artifact_chosen": {
+    "file": "Coffee Run.ia.mp4",
+    "url": "https://archive.org/download/coffee-run/Coffee%20Run.ia.mp4",
+    "ia_format": "h.264 IA (derivative)",
+    "bytes": 17475695,
+    "sha256": "f40ce7f497b2f56e6a672cea6ef15d191da3d19bd61aeed5d3730e5d73f6aebf",
+    "why": "This is the file the pin matches (sha256 verified). Note: the item's 'original' Coffee Run.mp4 has the same size (17475695) but a different SHA-256 (314243812998fb5b8c237273f08539c86589e91dff71ab319df88cbdb2798b9e) and is NOT the pinned master; fetching 'the original' or 'the first mp4' gives the wrong file."
+   },
+   "alternatives_passed_over": [
+    {
+     "file": "Coffee Run.mp4 (original)",
+     "sha256": "314243812998fb5b8c237273f08539c86589e91dff71ab319df88cbdb2798b9e",
+     "bytes": 17475695,
+     "why": "Downloaded and hashed; differs from the pin."
+    }
+   ],
+   "verification": {
+    "command": "corpus/fetch_master.sh coffee_run <outdir>",
+    "result": "PASS",
+    "log": "corpus/verification_log_stageB.txt",
+    "artifact_from": "source, no fallback used (none exists)",
+    "bytes": 17475695,
+    "sha256_computed": "f40ce7f497b2f56e6a672cea6ef15d191da3d19bd61aeed5d3730e5d73f6aebf"
+   }
+  },
+  {
+   "id": "spirit_chaser",
+   "title": "Spirit Chaser",
+   "year": 2016,
+   "split": "dev",
+   "decision": "admit",
+   "reason": "Commons file page states CC BY-SA 3.0 (derivatives allowed, no NC/ND); single finished short film by Karl Pajak, not an extra; pinned file fetched and checksum-verified.",
+   "licence": "CC BY-SA 3.0",
+   "evidence": [
+    {
+     "where": "https://commons.wikimedia.org/w/api.php imageinfo extmetadata for File:Karl_Pajak_-_Spirit_Chaser_(2016).webm (saved as corpus/commons_imageinfo_spirit_chaser.json, fetched 2026-10-21)",
+     "quote": "LicenseShortName: CC BY-SA 3.0; LicenseUrl: https://creativecommons.org/licenses/by-sa/3.0; UsageTerms: Creative Commons Attribution-Share Alike 3.0; Artist: Karl Pajak; Credit: Vimeo https://vimeo.com/166747691"
+    },
+    {
+     "where": "/crewcut-dataset/catalogue.csv",
+     "quote": "spirit_chaser,...,CC BY-SA 3.0,dev,4.4,80,...,cce14605b8dc2fbe0593ca1207b8972d13676e3050bd6f48c92efd44f0013182"
+    }
+   ],
+   "caveats": [
+    "Share-alike: derived annotations of this film are CC BY-SA (dataset README says so). Third-party-held content inside the film (e.g. music) not separately verifiable beyond the file-page licence."
+   ],
+   "source_location": "https://commons.wikimedia.org/wiki/File:Karl_Pajak_-_Spirit_Chaser_(2016).webm",
+   "work_vs_extras": "The Commons file is the film itself (266.78 s).",
+   "artifact_chosen": {
+    "file": "Karl_Pajak_-_Spirit_Chaser_(2016).webm.480p.vp9.webm",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/ca/Karl_Pajak_-_Spirit_Chaser_%282016%29.webm/Karl_Pajak_-_Spirit_Chaser_%282016%29.webm.480p.vp9.webm",
+    "bytes": 13659889,
+    "sha256": "cce14605b8dc2fbe0593ca1207b8972d13676e3050bd6f48c92efd44f0013182",
+    "why": "The pin equals Wikimedia's 480p VP9 transcode, found by hashing every transcode. The old fetch (Special:FilePath = the 1080p original, 50489492 bytes) does NOT give the pin."
+   },
+   "alternatives_passed_over": [
+    {
+     "file": "original webm (1080p)",
+     "sha256": "5c51af51e68599050de712aa7681fdb2d71039c03f121b428a68c2fae32dfb16",
+     "why": "What Special:FilePath returns; differs from the pin"
+    },
+    {
+     "file": "transcodes 1080p/720p/360p/240p vp9",
+     "sha256": {
+      "1080p": "64d00f0c549dab4aee90050f9f67ae5476b5db86ecb537576ae27c4bfa320089",
+      "720p": "ce9c5dc984224592394e4463259d5ed855078b441d5ed3083ee9be09b634a6fd",
+      "360p": "f7e4f4e72cc9c68dbc55bbbe07ad5215bb422867c25dbf795d9b76f14557da66",
+      "240p": "4e8120a0a4649594875ce6d4061f2cd3ace2a70eb4ebcca55ef589ba083003cf"
+     },
+     "why": "Differ from the pin"
+    }
+   ],
+   "adaptation": "The old fetch (Special:FilePath) cannot reproduce the pin; the pin is the 480p transcode URL. Transcodes are generated by Wikimedia and could be regenerated; if the URL stops working record 'not fetched' (no backup exists).",
+   "verification": {
+    "command": "corpus/fetch_master.sh spirit_chaser <outdir>",
+    "result": "PASS",
+    "log": "corpus/verification_log_stageB.txt",
+    "artifact_from": "source, no fallback used (none exists)",
+    "bytes": 13659889,
+    "sha256_computed": "cce14605b8dc2fbe0593ca1207b8972d13676e3050bd6f48c92efd44f0013182"
+   }
+  },
+  {
+   "id": "domini_canes",
+   "title": "Domini Canes",
+   "year": 2016,
+   "split": "dev",
+   "decision": "admit",
+   "reason": "Commons file page states CC BY 3.0; single finished short film by Jakub Bednarz, not an extra; pinned file fetched and checksum-verified.",
+   "licence": "CC BY 3.0",
+   "evidence": [
+    {
+     "where": "Commons API imageinfo extmetadata for File:Jakub_Bednarz_-_Domini_Canes_(2016).webm (saved as corpus/commons_imageinfo_domini_canes.json, fetched 2026-10-21)",
+     "quote": "LicenseShortName: CC BY 3.0; LicenseUrl: https://creativecommons.org/licenses/by/3.0; UsageTerms: Creative Commons Attribution 3.0; Artist: Jakub Bednarz (Kuba Tulobie); Credit: Vimeo https://vimeo.com/155565051"
+    },
+    {
+     "where": "/crewcut-dataset/catalogue.csv",
+     "quote": "domini_canes,...,CC BY 3.0,dev,4.3,41,...,70b8515d4afc4a392644d315666583b4c83386f9cf50f3710fd228d92aa29586"
+    }
+   ],
+   "caveats": [
+    "Third-party-held content inside the film (music) not separately verifiable beyond the file-page licence."
+   ],
+   "source_location": "https://commons.wikimedia.org/wiki/File:Jakub_Bednarz_-_Domini_Canes_(2016).webm",
+   "work_vs_extras": "The Commons file is the film itself (260.30 s).",
+   "artifact_chosen": {
+    "file": "Jakub_Bednarz_-_Domini_Canes_(2016).webm.480p.vp9.webm",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Jakub_Bednarz_-_Domini_Canes_%282016%29.webm/Jakub_Bednarz_-_Domini_Canes_%282016%29.webm.480p.vp9.webm",
+    "bytes": 18483687,
+    "sha256": "70b8515d4afc4a392644d315666583b4c83386f9cf50f3710fd228d92aa29586",
+    "why": "The pin equals Wikimedia's 480p VP9 transcode. The original (Special:FilePath) does NOT match."
+   },
+   "alternatives_passed_over": [
+    {
+     "file": "original webm (1920x1038)",
+     "sha256": "81641af6b6902de2f014b2aaa20c3718eb2586f5227bbc75a9d044852c612dfc",
+     "why": "Differs from the pin"
+    },
+    {
+     "file": "transcodes 1080p/720p/360p/240p vp9",
+     "sha256": {
+      "1080p": "9a267ee1eadae5f378367f5fb78178818b840bbb6265b770c9b41819b83cb3b9",
+      "720p": "2bcc462eb362af0f5cf8ca040723d624e55c5009ff1a623738646bf305d9f978",
+      "360p": "4e78d496751fe2e60bf43c2ed82cab8605e8d7d418ffd3525372114c18d049fc",
+      "240p": "9e5e3f741f148e879e2003ebb5b2aebca8a52514c8cab8cd2ffd0e2250890bf2"
+     },
+     "why": "Differ from the pin"
+    }
+   ],
+   "adaptation": "Same as spirit_chaser: pin is the 480p transcode, not what the old fetch returns.",
+   "verification": {
+    "command": "corpus/fetch_master.sh domini_canes <outdir>",
+    "result": "PASS",
+    "log": "corpus/verification_log_stageB.txt",
+    "artifact_from": "source, no fallback used (none exists)",
+    "bytes": 18483687,
+    "sha256_computed": "70b8515d4afc4a392644d315666583b4c83386f9cf50f3710fd228d92aa29586"
+   }
+  },
+  {
+   "id": "sherlock_jr",
+   "title": "Sherlock Jr.",
+   "year": 1924,
+   "split": "dev",
+   "decision": "admit",
+   "reason": "US public domain: published 11 May 1924 (before 1931; US term expired, Wikipedia: entered the US public domain 1 Jan 2020); Keaton's film is a single finished work; IA item carries the whole film. The pinned file was found (configs page is null) by hashing the small candidate files of IA items of the right length (~2646 s); only one matched.",
+   "licence": "Published before 1931 (US public domain)",
+   "evidence": [
+    {
+     "where": "https://en.wikipedia.org/wiki/Sherlock_Jr. (API extract fetched 2026-10-21)",
+     "quote": "On January 1, 2020, the film entered into the public domain in the United States."
+    },
+    {
+     "where": "https://archive.org/metadata/MyMovie_20190318 (saved as corpus/ia_metadata_MyMovie_20190318.json)",
+     "quote": "title: '\"Sherlock Jr.\" (1924) starring Buster Keaton'; description: 'Release date May 11, 1924 ... Running time 44 min ... Silent film, English intertitles'; collections silenthalloffame, silent_films; no licenseurl set; files My Movie.mp4 (2648.04 s) and My Movie.ogv (2648.11 s)"
+    },
+    {
+     "where": "/crewcut-dataset/catalogue.csv",
+     "quote": "sherlock_jr,Sherlock Jr.,1924,Public domain (US),Silent,Published before 1931,dev,44.1,404,...,8931dc7b1dd72fababe7c48176774d01ade1f994c7c6cb3643c2fe1a0b7a7442"
+    }
+   ],
+   "caveats": [
+    "The IA upload has a sound track although the film is silent; whether the added score is itself copyrighted was not established (no credit given). The PD basis covers the film; the score, if any, is unverified. Tasks use the picture and dialogue-less intertitles.",
+    " The IA item sets no licence field; PD rests on publication date (checked: 1924 US release)."
+   ],
+   "source_location": "https://archive.org/details/MyMovie_20190318",
+   "work_vs_extras": "The item is the full film (44 min), not a clip.",
+   "artifact_chosen": {
+    "file": "My Movie.ogv",
+    "url": "https://archive.org/download/MyMovie_20190318/My%20Movie.ogv",
+    "ia_format": "Ogg Video (derivative of My Movie.mp4)",
+    "bytes": 170849579,
+    "sha256": "8931dc7b1dd72fababe7c48176774d01ade1f994c7c6cb3643c2fe1a0b7a7442",
+    "why": "SHA-256 equals the pin. It is the auto-transcoded smaller ogv, not the larger original mp4 (627165683 bytes, not hashed)."
+   },
+   "alternatives_passed_over": [
+    {
+     "item/file": "MyMovie_20190318 / My Movie.mp4",
+     "why": "original, larger (627165683 B); not the pin, not hashed"
+    },
+    {
+     "item/file": "sherlock-jr / Sherlock Jr.ia.mp4",
+     "sha256": "ee05c2fcd82a5216ca40cc89deb4da5a69e7dc6e02aa5b0bf377e39418d4e809",
+     "why": "hashed, no match"
+    },
+    {
+     "item/file": "9 other IA Sherlock Jr. files of length 2540-2740 s (derivatives and smaller originals; see corpus/sherlock_search.txt)",
+     "why": "hashed, no match"
+    }
+   ],
+   "verification": {
+    "command": "corpus/fetch_master.sh sherlock_jr <outdir>",
+    "result": "PASS",
+    "log": "corpus/verification_log_stageB.txt",
+    "artifact_from": "source, no fallback used (none exists)",
+    "bytes": 170849579,
+    "sha256_computed": "8931dc7b1dd72fababe7c48176774d01ade1f994c7c6cb3643c2fe1a0b7a7442"
+   }
+  },
+  {
+   "id": "trip_to_the_moon",
+   "title": "A Trip to the Moon (Le Voyage dans la Lune)",
+   "year": 1902,
+   "split": "dev",
+   "decision": "admit",
+   "reason": "US public domain: French film of 1902 by Georges Méliès, published before 1931 (copyright term long expired); IA item holds the film only; pinned file fetched and checksum-verified.",
+   "licence": "Published before 1931 (US public domain)",
+   "evidence": [
+    {
+     "where": "https://en.wikipedia.org/wiki/A_Trip_to_the_Moon (API extract fetched 2026-10-21)",
+     "quote": "A Trip to the Moon ... is a 1902 French science-fiction adventure trick film written, directed and produced by Georges Méliès."
+    },
+    {
+     "where": "https://archive.org/metadata/ATripToTheMoonGeorgeMelies (saved as corpus/ia_metadata_ATripToTheMoonGeorgeMelies.json)",
+     "quote": "title 'A Trip To The Moon George Méliès'; date 1902; description 'Silent film by George Méliès'; files mp4 (771.81 s) and ogv (771.81 s); no licenseurl"
+    },
+    {
+     "where": "/crewcut-dataset/catalogue.csv",
+     "quote": "trip_to_the_moon,...,Published before 1931,dev,12.9,36,...,084dc2ec7391f56a993cdda4ec9f385513d3c4a2f46fe9bb18875c5abb269fab"
+    }
+   ],
+   "caveats": [
+    "Upload carries a music track of unknown origin; PD basis covers the 1902 film, not any added score (unverified). Restorations (e.g. Flicker Alley 2011) are not what is pinned."
+   ],
+   "source_location": "https://archive.org/details/ATripToTheMoonGeorgeMelies",
+   "work_vs_extras": "Item is the film only (12.9 min), no extras.",
+   "artifact_chosen": {
+    "file": "A Trip to the Moon-George Méliès.ogv",
+    "url": "https://archive.org/download/ATripToTheMoonGeorgeMelies/A%20Trip%20to%20the%20Moon-George%20M%C3%A9li%C3%A8s.ogv",
+    "ia_format": "Ogg Video (derivative)",
+    "bytes": 60618423,
+    "sha256": "084dc2ec7391f56a993cdda4ec9f385513d3c4a2f46fe9bb18875c5abb269fab",
+    "why": "Equals the pin; the smaller auto-transcoded ogv, not the 218115276-byte original mp4."
+   },
+   "alternatives_passed_over": [
+    {
+     "file": "A Trip to the Moon-George Méliès.mp4",
+     "bytes": 218115276,
+     "why": "larger original; not the pin; not downloaded"
+    }
+   ],
+   "verification": {
+    "command": "corpus/fetch_master.sh trip_to_the_moon <outdir>",
+    "result": "PASS",
+    "log": "corpus/verification_log_stageB.txt",
+    "artifact_from": "source, no fallback used (none exists)",
+    "bytes": 60618423,
+    "sha256_computed": "084dc2ec7391f56a993cdda4ec9f385513d3c4a2f46fe9bb18875c5abb269fab"
+   }
+  }
+ ],
+ "not_evaluated": "Other catalogue films (test split) are out of scope for stage B.",
+ "documents_unread": []
+}

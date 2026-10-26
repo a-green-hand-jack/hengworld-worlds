@@ -1,0 +1,37 @@
+{
+ "schema": 1,
+ "decided_by": "curator", "decided_on": "2026-10-21",
+ "crewcut_commit": "df54b3a", "dataset_revision": "d509bed",
+ "records": [
+  {
+   "film_id": "caminandes3", "decision": "admit",
+   "scope": "this film only (round scope: dev film)",
+   "reason": "Dev film named in the objective; licence permits copying and redistribution with attribution; pinned master fetched and checksum verified.",
+   "source_location": "https://archive.org/details/CaminandesLlamigos (configs/films.yaml page; catalogue.csv row 'caminandes3')",
+   "rights_evidence": [
+     {"where": "https://archive.org/metadata/CaminandesLlamigos, field metadata.licenseurl, read 2026-10-21", "quote": "http://creativecommons.org/licenses/by/3.0/"},
+     {"where": "same metadata, creator / description", "quote": "creator: Blender Foundation; 'This short 'Free Culture' animation film was made with the free 3D software Blender'"},
+     {"where": "crewcut configs/films.yaml and dataset catalogue.csv (corroborating only)", "quote": "licence: CC BY 3.0"}
+   ],
+   "work_vs_extras": "Item CaminandesLlamigos is the film 'Caminandes 3: Llamigos' (2016-01-29, 2.5 min). Its other files are thumbnails, torrent and metadata (not the work). No trailer or making-of is in the item's file list.",
+   "artifact_chosen": {
+     "file": "Caminandes_ Llamigos-1080p.ogv", "url": "https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv",
+     "size_bytes": 11872682, "sha256_expected": "028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f",
+     "sha256_computed": "028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f",
+     "check": "corpus/verify_caminandes3.sh -> MATCH (corpus/verify_caminandes3.log)", "check_result": "pass",
+     "why": "It is the file whose sha256 equals master_sha256 in configs/films.yaml; the pin decides."
+   },
+   "alternatives_passed_over": [
+     {"file": "Caminandes_ Llamigos-1080p.webm", "size_bytes": 38041423, "sha256_computed": "16e757a80ffec51a8423f0c7a267adbaf78b533656ddd488eccc2caaf947d99c", "why": "Does not match the pinned checksum."},
+     {"file": "Caminandes_ Llamigos-1080p.mp4", "size_bytes": 138945811, "sha256_computed": null, "why": "Not fetched; not the pinned file."},
+     {"file": "/crewcut/masters/caminandes3.ogv (local copy)", "sha256_computed": "028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f", "why": "Not needed: the source fetch succeeded. Same checksum as the fetched file."}
+   ],
+   "fallback_used": false,
+   "open_for_maintainer": ["configs/films.yaml has silent: false for caminandes3 while the issue and catalogue.csv (lines=0) say the film has no dialogue; the field's meaning ('no dialogue track') is not consistent with the value. Recorded, not decided."],
+   "next_step_depending": "task-maker: shots/dialogue/hierarchy/tasks from the pinned master"
+  },
+  {"film_id": "caminandes1", "decision": "reject", "reason": "Out of this round's scope (objective: only the dev film Caminandes 3). Not a rights rejection: listed licence CC BY 3.0 in films.yaml was NOT read at source, so no rights finding is claimed.", "evidence": "objective issue curator#1 item 1; configs/films.yaml", "source_location": "https://archive.org/details/Caminandes1LlamaDrama", "artifact": null, "alternatives_passed_over": []},
+  {"film_id": "caminandes2", "decision": "reject", "reason": "Out of this round's scope (only Caminandes 3). Rights not read at source; no rights finding is claimed.", "evidence": "objective issue curator#1 item 1; configs/films.yaml", "source_location": "https://archive.org/details/Caminandes2GranDillama", "artifact": null, "alternatives_passed_over": []},
+  {"film_id": "other 33 films of configs/films.yaml", "decision": "reject", "reason": "Out of this round's scope (test films; only the dev film is built). Rights not read; nothing admitted.", "evidence": "objective issue curator#1", "source_location": "configs/films.yaml", "artifact": null, "alternatives_passed_over": []}
+ ]
+}

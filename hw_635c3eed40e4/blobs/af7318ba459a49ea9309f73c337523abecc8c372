@@ -1,0 +1,6 @@
+{"id":"D004","date":"2026-10-22","decided_by":"task-maker","step":"tool service source-side check",
+"question":"executor #16: model_call (shot description of the Reference input clip) was rejected by the source check on frames cut from the task's own input clip.",
+"decision":"The source-side rejection applies to generator requests (image, speech, music, video, sound). model_call is analysis-only: it may only be a chat call to the description model gemini-3.5-flash-lite (any other model or native path is refused) and returns text, so original frames may be sent to it. Its ledger rows carry source_screened=false.",
+"evidence":"Objective #13/#14: clean-room rule = no original frame or audio to a generator or in the remake; Reference track derives the shot list from the input clip and describes it with the description model; tool service screens media inputs of generator requests.",
+"effect":"toolservice.py, tests/test_toolservice.py (model_call tests). The scorer's Q check 'no generator read original input' must count generator tools only (image_generation, image_edit, speech_synthesis, music, sound_effects, video_*). Whether this reading is the maintainer's intent is open for steward.",
+"later_steps":["executor reruns 14 Reference runs","scorer Q reading"]}

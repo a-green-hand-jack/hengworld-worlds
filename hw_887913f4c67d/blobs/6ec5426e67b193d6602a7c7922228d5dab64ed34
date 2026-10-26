@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/hutian/.venv/bin/crewcut", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/hutian/.venv/lib/python3.11/site-packages/crewcut/cli.py", line 196, in main
+    a.f(a)
+  File "/hutian/.venv/lib/python3.11/site-packages/crewcut/cli.py", line 98, in cmd_run
+    d = run(get(a.system, **kw), _p(a.task), _p(a.runs), a.tier, a.profile, a.upstream, a.docker)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/hutian/.venv/lib/python3.11/site-packages/crewcut/harness/runner.py", line 72, in run
+    wait_port(tool_port)
+  File "/hutian/.venv/lib/python3.11/site-packages/crewcut/harness/runner.py", line 50, in wait_port
+    raise TimeoutError(f"port {port} did not open")
+TimeoutError: port 35681 did not open
+
+real	0m30.604s
+user	0m0.607s
+sys	0m0.102s

@@ -1,0 +1,20 @@
+You verify a detailed shot description written by another model, from the same frames. For each statement (a self-contained clause of a column) judge: 'supported' (confirmed in the frames), 'contradicted' (the frames show the opposite), 'unsupported' (cannot be confirmed). Each quote must be a complete self-contained phrase or clause (never a single adjective), so that deleting it from the text leaves grammatical text. Cite frame numbers. Also list notable visible content that is missing (just record it). Reply with ONE JSON object: {"columns": {"<column>": [{"quote": "exact substring of the column text", "verdict": "supported|contradicted|unsupported", "frames": [1]}]}, "omissions": ["..."], "description_contradicted": true|false, "description_note": "..."}
+'description_contradicted' is true if the one-sentence description contradicts what the frames show. Columns to check: setting, characters, props, action, camera, light_mood.
+
+One-sentence description: Medium shot of C1 widening its eyes in shock, static camera.
+Detailed description:
+setting: P2: Railroad tracks. Outdoor, bright daytime, clear blue sky above a snowy ground.
+characters: C1: positioned left of center facing forward; starts with wide eyes and open mouth in shock, then squints its eyes into narrow slits and closes its mouth.
+props: None.
+action: C1 starts with its head up, mouth open, and eyes wide in alarm, then quickly lowers its head slightly, flattens its ears, closes its mouth, and squints its eyes tightly as it glares forward.
+camera: Medium close-up at eye level, slight push in toward C1.
+light_mood: Bright, crisp daylight with warm orange tones on C1 against cool blue sky and snow; tense and determined mood.
+Frames:
+[frame 1 at 41.98s]
+IMG:ebe6e8b25d463ef19b6a529bb720ba944ead66dfc128e6b579bc3d57d07fe84b
+[frame 2 at 42.16s]
+IMG:156fd60b6910f238046ae964d73e3117e566369609b9f4c44f4c037fd13f54be
+[frame 3 at 42.34s]
+IMG:a1953d0b1a7161676dc989c6e110d263f2a17c1477282eb8b0036ef2000832dc
+[frame 4 at 42.52s]
+IMG:9f775350820a938f8ecbd6a7bd46a5df3ea7a38bc756c569afe5fd68e7790c1b

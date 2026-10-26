@@ -1,0 +1,11 @@
+{
+ "decision": "The descriptions (key/caminandes3/descriptions.json, 37 shots, keys = shot index) and the described truth (key/caminandes3-L1-0000-scr/truth-described.json) are in key/. The published packages are unchanged: their shotlist.csv keeps empty description fields, so the run already done by executor stays valid for its task package. Whether the scr package's shot table should carry the descriptions is not decided here.",
+ "why": "The run record (task package sha256 e846797e...) was produced from the empty-description package; changing it would void that run. The original key truth.json (empty descriptions) is kept unchanged.",
+ "decided_by": "task-maker (agent)",
+ "date": "2026-10-21",
+ "open_item": "O9",
+ "affects": [
+  "published packages",
+  "correspondence"
+ ]
+}

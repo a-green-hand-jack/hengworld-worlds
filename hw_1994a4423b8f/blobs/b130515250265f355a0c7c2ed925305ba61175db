@@ -1,0 +1,17 @@
+[
+ {
+  "check": "wrong description shift 2",
+  "shot": 0,
+  "verdict": 0
+ },
+ {
+  "check": "wrong description shift 2",
+  "shot": 1,
+  "verdict": 0
+ },
+ {
+  "check": "wrong description shift 2",
+  "shot": 2,
+  "verdict": 0
+ }
+]

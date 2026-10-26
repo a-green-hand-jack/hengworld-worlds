@@ -1,0 +1,5 @@
+import pathlib
+for p in pathlib.Path('packages').rglob('*'):
+ if p.is_file():
+  s=p.read_text(errors='ignore').lower(); assert 'answer' not in s and 'reference' not in s and 'counts' not in s
+print('package key-scan: PASS')

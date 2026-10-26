@@ -1,0 +1,369 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L3-0004",
+  "start": 1437.569,
+  "end": 1806.638,
+  "shots": 49,
+  "lines": 0
+ },
+ "duration": 369.069,
+ "cuts": [
+  9.343,
+  30.064,
+  37.071,
+  41.642,
+  47.314,
+  60.795,
+  64.632,
+  74.809,
+  95.696,
+  101.635,
+  113.581,
+  133.801,
+  137.404,
+  141.642,
+  144.111,
+  156.957,
+  158.592,
+  159.66,
+  162.296,
+  179.78,
+  182.349,
+  184.818,
+  189.189,
+  195.93,
+  199.166,
+  201.201,
+  205.172,
+  210.177,
+  211.845,
+  217.785,
+  219.353,
+  221.288,
+  225.626,
+  230.831,
+  238.539,
+  243.644,
+  248.449,
+  256.19,
+  259.026,
+  277.077,
+  283.817,
+  288.822,
+  295.295,
+  299.566,
+  306.473,
+  318.218,
+  330.297,
+  361.862
+ ],
+ "shots": [
+  {
+   "index": 172,
+   "start": 0.0,
+   "end": 9.343,
+   "description": "Medium shot of C1 entering a room with guests, static camera."
+  },
+  {
+   "index": 173,
+   "start": 9.343,
+   "end": 30.064,
+   "description": "Medium shot of C1 standing in profile while facing a man, with C2 standing next to the man and looking at C1, static camera."
+  },
+  {
+   "index": 174,
+   "start": 30.064,
+   "end": 37.071,
+   "description": "Medium shot of C1 and C2 entering a room, static camera."
+  },
+  {
+   "index": 175,
+   "start": 37.071,
+   "end": 41.642,
+   "description": "Full shot of intertitle showing dialogue, static."
+  },
+  {
+   "index": 176,
+   "start": 41.642,
+   "end": 47.314,
+   "description": "Medium shot of C1 and C2 standing, then C1 walks out of frame, static."
+  },
+  {
+   "index": 177,
+   "start": 47.314,
+   "end": 60.795,
+   "description": "Medium shot of C1 watching C2 sit down at a billiard table, static camera."
+  },
+  {
+   "index": 178,
+   "start": 60.795,
+   "end": 64.632,
+   "description": "Close-up of C1 opening a poison ampoule, static."
+  },
+  {
+   "index": 179,
+   "start": 64.632,
+   "end": 74.809,
+   "description": "Medium shot of C1 mixing drinks, static camera."
+  },
+  {
+   "index": 180,
+   "start": 74.809,
+   "end": 95.696,
+   "description": "Medium shot of C1 and C2 taking drinks from a tray held by a waiter, static camera."
+  },
+  {
+   "index": 181,
+   "start": 95.696,
+   "end": 101.635,
+   "description": "Close-up of an intertitle displaying dialogue, static."
+  },
+  {
+   "index": 182,
+   "start": 101.635,
+   "end": 113.581,
+   "description": "Medium shot of C1, C2, and a waiter serving drinks, static. Medium shot of C1 and C2 talking, static. Medium shot of C1 and C2 playing billiards, static."
+  },
+  {
+   "index": 183,
+   "start": 113.581,
+   "end": 133.801,
+   "description": "Medium wide shot of C1 playing billiards while C2 stands and watches, static."
+  },
+  {
+   "index": 184,
+   "start": 133.801,
+   "end": 137.404,
+   "description": "Close-up of hands arranging pool balls, static."
+  },
+  {
+   "index": 185,
+   "start": 137.404,
+   "end": 141.642,
+   "description": "Medium shot of C1 taking objects from a wooden box, while C2 walks into the room; static camera."
+  },
+  {
+   "index": 186,
+   "start": 141.642,
+   "end": 144.111,
+   "description": "Medium shot of C1 chalking a pool cue with C1 reflected in a mirror behind the pool cue rack, static."
+  },
+  {
+   "index": 187,
+   "start": 144.111,
+   "end": 156.957,
+   "description": "Wide shot of C1 playing billiards while C2 watches, static camera."
+  },
+  {
+   "index": 188,
+   "start": 156.957,
+   "end": 158.592,
+   "description": "Medium shot of C1 and C2 walking backwards out of a room, static camera."
+  },
+  {
+   "index": 189,
+   "start": 158.592,
+   "end": 159.66,
+   "description": "Medium shot of C1 playing billiards, static camera."
+  },
+  {
+   "index": 190,
+   "start": 159.66,
+   "end": 162.296,
+   "description": "Medium shot of billiard balls rolling, static camera."
+  },
+  {
+   "index": 191,
+   "start": 162.296,
+   "end": 179.78,
+   "description": "Medium shot of C1 playing billiards, static."
+  },
+  {
+   "index": 192,
+   "start": 179.78,
+   "end": 182.349,
+   "description": "Medium long shot of C1 holding a pool cue while looking at C2, static camera."
+  },
+  {
+   "index": 193,
+   "start": 182.349,
+   "end": 184.818,
+   "description": "Medium shot of C1 talking, static camera."
+  },
+  {
+   "index": 194,
+   "start": 184.818,
+   "end": 189.189,
+   "description": "Medium shot of C1 gesturing, static camera."
+  },
+  {
+   "index": 195,
+   "start": 189.189,
+   "end": 195.93,
+   "description": "Medium shot of C1 playing pool, static."
+  },
+  {
+   "index": 196,
+   "start": 195.93,
+   "end": 199.166,
+   "description": "Medium shot of C1 standing in a room and looking around, static."
+  },
+  {
+   "index": 197,
+   "start": 199.166,
+   "end": 201.201,
+   "description": "Medium close-up of C1 talking, static camera."
+  },
+  {
+   "index": 198,
+   "start": 201.201,
+   "end": 205.172,
+   "description": "Medium shot of C1 standing in a room and talking while gesturing with his hands, static camera."
+  },
+  {
+   "index": 199,
+   "start": 205.172,
+   "end": 210.177,
+   "description": "Medium shot of C1 leaning over a billiard table to strike the cue ball, static camera."
+  },
+  {
+   "index": 200,
+   "start": 210.177,
+   "end": 211.845,
+   "description": "Medium shot of C1 leaning against a doorway and nodding, static camera."
+  },
+  {
+   "index": 201,
+   "start": 211.845,
+   "end": 217.785,
+   "description": "Medium shot of C1 playing billiards, static camera."
+  },
+  {
+   "index": 202,
+   "start": 217.785,
+   "end": 219.353,
+   "description": "Medium close-up of C1 playing billiards, static camera."
+  },
+  {
+   "index": 203,
+   "start": 219.353,
+   "end": 221.288,
+   "description": "Medium shot of C1 playing billiards, static camera."
+  },
+  {
+   "index": 204,
+   "start": 221.288,
+   "end": 225.626,
+   "description": "Medium shot of C1 leaning against a doorway and pointing, static camera."
+  },
+  {
+   "index": 205,
+   "start": 225.626,
+   "end": 230.831,
+   "description": "Medium shot of C1 playing billiards, static camera."
+  },
+  {
+   "index": 206,
+   "start": 230.831,
+   "end": 238.539,
+   "description": "Medium shot of C1 standing in a room and straightening his bowtie, static."
+  },
+  {
+   "index": 207,
+   "start": 238.539,
+   "end": 243.644,
+   "description": "Medium shot of C1 playing billiards, static."
+  },
+  {
+   "index": 208,
+   "start": 243.644,
+   "end": 248.449,
+   "description": "Medium shot of C1 standing in a room and making gestures, static."
+  },
+  {
+   "index": 209,
+   "start": 248.449,
+   "end": 256.19,
+   "description": "Medium shot of C1 playing billiards, static camera."
+  },
+  {
+   "index": 210,
+   "start": 256.19,
+   "end": 259.026,
+   "description": "Medium shot of C1 talking, static camera."
+  },
+  {
+   "index": 211,
+   "start": 259.026,
+   "end": 277.077,
+   "description": "Medium shot of C1 playing billiards while C2 watches, static."
+  },
+  {
+   "index": 212,
+   "start": 277.077,
+   "end": 283.817,
+   "description": "Medium shot of C1 leaning against a wall and C2 standing in another room, static camera."
+  },
+  {
+   "index": 213,
+   "start": 283.817,
+   "end": 288.822,
+   "description": "Medium shot of C1 playing billiards, static camera."
+  },
+  {
+   "index": 214,
+   "start": 288.822,
+   "end": 295.295,
+   "description": "Medium shot of C1 standing in a room and C2 standing in another room across a hallway looking at C1, static camera."
+  },
+  {
+   "index": 215,
+   "start": 295.295,
+   "end": 299.566,
+   "description": "Medium shot of C1 and C2 standing by a pool table, C1 unboxing a small item while C2 looks on, static."
+  },
+  {
+   "index": 216,
+   "start": 299.566,
+   "end": 306.473,
+   "description": "Medium shot of C1 and C2 standing by a pool table, static camera."
+  },
+  {
+   "index": 217,
+   "start": 306.473,
+   "end": 318.218,
+   "description": "Medium shot of C1 and C2 talking, static."
+  },
+  {
+   "index": 218,
+   "start": 318.218,
+   "end": 330.297,
+   "description": "Medium shot of C1 drinking a glass while C2 looks on, static camera."
+  },
+  {
+   "index": 219,
+   "start": 330.297,
+   "end": 361.862,
+   "description": "Medium shot of C1 standing in a low-crouched pose before a wooden front door, static camera."
+  },
+  {
+   "index": 220,
+   "start": 361.862,
+   "end": 369.069,
+   "description": "Extreme close-up of title card displaying text, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 179.78
+  },
+  {
+   "start": 179.78,
+   "end": 369.069
+  }
+ ],
+ "task_id": "sherlock_jr-L3-0004-scr",
+ "descriptions_available": true
+}

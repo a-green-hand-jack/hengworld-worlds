@@ -1,0 +1,14 @@
+# runs — Coffee Run, fixed T0 pipeline (1 run per task, 28 tasks: 14 Reference + 14 Screenplay)
+
+Inputs: published task-maker packages (`packages/<task id>/`, commit c4fe559cbed6, taken through `ht-role delivery`), toolservice/ (prices.json, toolservice.py, fingerprints of all 6 masters), clips-v1 in the task-maker release `packages-v1` (Reference clips). **No key was read**: `key/` appeared inside the delivery directory I was handed (task-maker's README says it is in no release); I never opened it — reported in the issue comments.
+
+Pipeline: `runs/pipeline/t0.py` (runner `runall.sh`, `env.sh`), sha256 prefix of final t0.py 9dfad7e2f6e6e5b5 + the deltas below. No model in the loop, no feedback:
+shot list (Screenplay: given `shotlist.csv`; Reference: `crewcut_algorithms` cuts, unmodified, on the input clip; descriptions by gemini-3.5-flash-lite, temperature 0, 3 frames/shot at (k+1)/4, width 448, same prompt as the packages) →
+one still per shot (gemini-3.1-flash-lite-image via gemini-native, 16:9) with slow push-in (ffmpeg zoompan, 24 fps) → one lyria-3.5 music piece per run → concatenation → MP4 H.264 1280x720 24 fps + AAC stereo 48 kHz, WebVTT, assets.json.
+Speech: none — Coffee Run has 0 dialogue lines (script.csv header only), so VTT is `WEBVTT` with no cues and no voice is synthesised. Reference track recovers no dialogue (no ASR step in the fixed T0 pipeline).
+Sound effects: **not run** — ElevenLabs is not a resource of this world (tool listed in T0, no way to call it; brief gap 3). Video editing: local ffmpeg, price 0.
+
+Every generator call: priced and recorded by the published `ToolService.call` (ledger.jsonl: service, model, system, task, purpose, usage, unit price, amount, status, borne_by); source-side screen runs for media inputs (all generator inputs were text, so none). Model calls (Reference descriptions) are billed from reported tokens × prices.json `description_model`. borne_by: "world (paid key of executor's resources)".
+
+Per run (`runs/coffee_run/<task id>/`): `production_log.jsonl` (model calls, tool calls with prompts and usage, file writes, shot list, commands, failed attempts), `ledger.jsonl`, `manifest.json` (ffprobe, duration, cost, wall clock, unused assets), `assets.json`, `subtitles.vtt`, and `attempts/` = earlier failed attempts (never hidden). `summary.csv` one row per task. Media (delivery.mp4, generated stills and music) are in the executor release `coffee-run-t0-v1` (SHA256SUMS there).
+Costs and decisions: `runs/decisions.md`, `runs/costs.md`. Probes and the discarded test run: `runs/records/`.

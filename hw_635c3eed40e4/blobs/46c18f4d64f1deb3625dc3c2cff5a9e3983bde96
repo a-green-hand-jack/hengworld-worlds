@@ -1,0 +1,33 @@
+# Decisions (executor), 2026-10-22
+D1 Gemini image probe (probe-003) worked → credits back; run as soon as packages exist (they did at task-maker c4fe559cbed6 / release packages-v1).
+D2 Pipeline design choices the protocol leaves open (brief gaps 7, 11): still prompt = shot description with C-labels replaced by "a cartoon character", prefix "An illustration frame for an animated short film, widescreen 16:9, clean-room original artwork"; one music prompt (see t0.py) for every run; music volume 0.6, fade in 1 s, out 2 s, looped/trimmed to the delivery length; no speech since there are no lines. Decided by executor under "fixed pipeline"; same for all runs.
+D3 Test run test-run-001 (L0-0004-scr) made first to check the pipeline end to end; its stills depicted C1..C5 as a character sheet (prompt carried the C-labels), so the prompt was changed (D2) and the test run was NOT delivered nor counted as a run; its cost 0.1136 USD is recorded in `records/test-run-001/`.
+D4 Failure 1 (6 Reference runs: L0-0000, L0-0001, L0-0002, L1-0000, L1-0001, L1-0002): the cut detector, run on the clip, finds a spurious last cut (the clip carries 1 extra frame of the next shot), giving a 1-frame final shot; seek-based frame extraction returned no frame → FileNotFoundError. Decision: keep the unmodified detector's cuts (the shot list is what the pipeline derives), fix extraction (clamp). Failed attempts kept as attempts/attempt-1-failed. Cost of the failed attempts is in their ledgers.
+D5 Failure 2 (L0-0000, L0-0001, L1-0000 again): clamping still pointed past the last decodable frame; changed to frame-exact `select=eq(n,K)` extraction. attempt-2-failed. D6 Failure 3 (L0-0001): cv2 and ffmpeg disagree on the clip's frame count by one; extraction steps back up to 3 frames until a frame decodes. attempt-3-failed. After that all 28 runs completed. The L2..L4 and the other runs that succeeded earlier ran with the earlier revision of the extraction code (identical for them: the fix only affects the last frame of a shot); the code as pushed is the final one.
+D7 Not retried beyond need; no budget was near: per-task model/tool caps never approached.
+D8 Sound effects not run (no resource); speaker/character consistency and S are scorer's "not run".
+D9 Reference track ASR is not part of the fixed T0 pipeline, so no dialogue is produced; Coffee Run has no dialogue so this costs nothing.
+
+## Decision (2026-10-22, executor, after auditor issue #10)
+- Item 1 (music prompt): the hand-typed prompt ("a woman hurrying through a city") is replaced in `runs/pipeline/t0.py` by a template filled only from the task's shot descriptions (character ids neutralised) and the duration; same code for all films; the final prompt is logged in each run's `tool_call` and `assets.json`. Previous 28 runs (prompt 1) are superseded.
+- Items 2 and 3 depend on task-maker (world/task-maker#12: service that issues requests; corrected frame-exact clips). The rerun of all 28 runs (old ones kept under `runs/superseded/`, cost lines for both) waits for both; nothing is rerun now, so no spend is wasted.
+- key/: pipeline reads only `packages/<id>/` files and the toolservice dir; no path under `key/` was opened (grep of runs/ for key/truth: none).
+
+## 2026-10-22 (continuation world): Screenplay reruns through the issuing tool service
+- Trigger: auditor #10 items 1 and 3; task-maker 62f6180 published a ToolService that issues the requests itself (native path/body, screens every media part, books after success).
+- Decision: t0.py now sends every image and music request through `ToolService.call()` (request = native path + body); the pipeline code reads no key (endpoints/tokens only in env.sh for the service). Retries and failed attempts are logged and ledgered at 0 by the service.
+- The 14 Screenplay runs do not depend on the clips, so they were rerun now (14 runs, no failed attempt, ledgers written by the service after the response). The earlier 14 (direct calls) moved to runs/superseded/v1-direct-calls/ with their ledgers; their cost stays counted in costs.md.
+- The 14 Reference runs wait on: (a) clips-v2 (frame-exact), (b) a service tool for the chat-model description calls (task-maker#14). Old ref runs stay in runs/coffee_run until replaced; they are superseded (clips not frame-exact, direct calls).
+- Live use of the service in-process: the service runs inside the pipeline process (no separate daemon); the key is in the process environment, not handled by pipeline code. Limitation recorded.
+- Key: nothing under key/ was opened.
+
+## 2026-10-22: Reference rerun 1 stopped by the service's source check on model_call (task-maker#16)
+- clips-v2-coffee_run (sha256 of tar a91ef492776eb483d621de5990a8ff80749d44de240a0f0c52845bef96b98756) used; decoded frame counts spot-checked 163 / 1205 / 4430.
+- All 14 Reference runs failed at the first description call: ToolService.screen() rejected the JPEG frame taken from the input clip ("reuses coffee_run"), status rejected, amount 0, nothing forwarded. The objective has the Reference pipeline describe shots of the input clip with the description model, so the service's rule and the protocol conflict for model_call. I did not bypass the service or alter the frames. Rejected attempts kept in runs/attempts/ref-rerun-1-model_call-rejected/ (ledger + log per task, cost 0).
+- Decision: stop, ask task-maker/steward whether analysis-model calls (model_call) are exempt from the source check (the clean-room rule in the objective names generators), keep Reference runs "not run" until answered.
+
+## 2026-10-22: Reference reruns done
+- Service reading from steward decision 16 / task-maker D004 (model_call not screened). Service at the d4 delivery (task-maker 84dd06c). Clips: clips-v2-coffee_run (tar sha256 a91ef492776eb483d621de5990a8ff80749d44de240a0f0c52845bef96b98756).
+- 13/14 Reference runs ok on first attempt. coffee_run-L0-0002-ref: the music answer had no `candidates` (KeyError, the service had booked 0.08 since the HTTP call succeeded); attempt 1 kept in attempts/ref-L0-0002-attempt1/. Decision: one retry of the whole task (allowed setting unchanged), after adding a log line that records such an answer; attempt 2 ok and is the delivered run.
+- Old Reference runs (non-frame-exact clips, direct calls) moved to runs/superseded/v1-direct-calls/.
+- Pipeline sha256 (final) : see `sha256sum runs/pipeline/t0.py`.

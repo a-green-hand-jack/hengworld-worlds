@@ -1,0 +1,174 @@
+{
+ "model": "gemini-3.1-flash-image",
+ "fallback_used": false,
+ "images": [
+  {
+   "file": "character_C1.png",
+   "sha256": "75f565d8266f198d08d00c094519f116c1d10ce960cdcb1700186e0b29660ad2",
+   "category": "character",
+   "id": "C1",
+   "name": "a guanaco (llama)",
+   "prompt": "Character design reference sheet: a single character, full body, standing and facing the viewer, on a plain neutral light-grey background, no text, no other characters. Visual style: 3D CGI animated cartoon style with exaggerated facial expressions, bright daylight in snowy mountain landscapes, and dark blue-lit underground mine caves. The character is a guanaco (llama). Slender, long-necked quadruped with orange-brown fur, dark brown muzzle, long ears, and huge bulging eyes.",
+   "model": "gemini-3.1-flash-image",
+   "request_params": {
+    "responseModalities": [
+     "IMAGE"
+    ],
+    "imageConfig": {
+     "aspectRatio": "2:3"
+    }
+   },
+   "request_has_media": false,
+   "request_body_sha256": "15e605ca1952be79837d4a408cd342cfceb31b7eb18f520a437ebc7bec8cc355",
+   "provenance_check": {
+    "passed": true,
+    "min_hamming_incl_mirror": 12,
+    "threshold": "distance <= 10 voids the image; checked against all 6 dev films, plain and mirrored"
+   },
+   "vision_check": {
+    "matches": true,
+    "why": "The image perfectly matches the description. It shows a full-body 3D character design of a llama or guanaco standing against a plain, neutral grey background. The character has slender legs, a long neck, orange-brown fur, a dark brown muzzle, long pointed ears, and distinctively huge, bulging eyes as described."
+   }
+  },
+  {
+   "file": "character_C2.png",
+   "sha256": "400730062eefd73b3a66754e6cd312c121586197a0c98c638cefc5b49ecc225e",
+   "category": "character",
+   "id": "C2",
+   "name": "a baby penguin",
+   "prompt": "Character design reference sheet: a single character, full body, standing and facing the viewer, on a plain neutral light-grey background, no text, no other characters. Visual style: 3D CGI animated cartoon style with exaggerated facial expressions, bright daylight in snowy mountain landscapes, and dark blue-lit underground mine caves. The character is a baby penguin. Small, round, fluffy bird with a grey-black back and head, white belly, small beak, and large white eyes with dark pupils.",
+   "model": "gemini-3.1-flash-image",
+   "request_params": {
+    "responseModalities": [
+     "IMAGE"
+    ],
+    "imageConfig": {
+     "aspectRatio": "2:3"
+    }
+   },
+   "request_has_media": false,
+   "request_body_sha256": "7e6b37cfad5f9fa814bc01f3cea63538a2e26b3f6962d4032601659d7e7810df",
+   "provenance_check": {
+    "passed": true,
+    "min_hamming_incl_mirror": 16,
+    "threshold": "distance <= 10 voids the image; checked against all 6 dev films, plain and mirrored"
+   },
+   "vision_check": {
+    "matches": true,
+    "why": "The image perfectly depicts a baby penguin character. It is small, round, and fluffy with a grey back/head and white belly. It has a small beak and notably large eyes with white sclera and dark pupils. The composition is a full-body shot of a single character against a plain, neutral grey background, matching all criteria in the description."
+   }
+  },
+  {
+   "file": "character_C3.png",
+   "sha256": "bd6f181c2284337c13da4185a92688d3002ab5f924de832c5a54293fb111ad57",
+   "category": "character",
+   "id": "C3",
+   "name": "adult penguins",
+   "prompt": "Character design reference sheet: a single character, full body, standing and facing the viewer, on a plain neutral light-grey background, no text, no other characters. Visual style: 3D CGI animated cartoon style with exaggerated facial expressions, bright daylight in snowy mountain landscapes, and dark blue-lit underground mine caves. The character is adult penguins. Medium-sized black and white penguins with distinct black and white facial bands, holding large bunches of red berries.",
+   "model": "gemini-3.1-flash-image",
+   "request_params": {
+    "responseModalities": [
+     "IMAGE"
+    ],
+    "imageConfig": {
+     "aspectRatio": "2:3"
+    }
+   },
+   "request_has_media": false,
+   "request_body_sha256": "88f3e4a27bb3ea360424bc5e1979d52b9b1133a705dbf5424c4209b922ae550a",
+   "provenance_check": {
+    "passed": true,
+    "min_hamming_incl_mirror": 12,
+    "threshold": "distance <= 10 voids the image; checked against all 6 dev films, plain and mirrored"
+   },
+   "vision_check": {
+    "matches": true,
+    "why": "The image depicts a single, full-body penguin character on a plain, neutral gray background. The penguin is black and white with distinct facial bands, matching the description. It is holding two large bunches of red berries (or grapes) in its flippers, which aligns perfectly with the text 'holding large bunches of red berries'."
+   }
+  },
+  {
+   "file": "place_P1.png",
+   "sha256": "c7cd502d2622d87ebd444f3c452d30aca973ec4f84e17937699b82570f270343",
+   "category": "place",
+   "id": "P1",
+   "name": "Frozen pond and snowy field",
+   "prompt": "Atmospheric establishing image of a location, wide 16:9 composition, no characters, no animals, no text. Visual style: 3D CGI animated cartoon style with exaggerated facial expressions, bright daylight in snowy mountain landscapes, and dark blue-lit underground mine caves. Location: Frozen pond and snowy field. A snowy plain with a frozen blue puddle, a wire fence with wooden posts, and distant snowy mountains.",
+   "model": "gemini-3.1-flash-image",
+   "request_params": {
+    "responseModalities": [
+     "IMAGE"
+    ],
+    "imageConfig": {
+     "aspectRatio": "16:9"
+    }
+   },
+   "request_has_media": false,
+   "request_body_sha256": "f72f4cd3f65f33e80f9084e03981e106c3d6696665b7d2e324cfe58f0f8111ed",
+   "provenance_check": {
+    "passed": true,
+    "min_hamming_incl_mirror": 18,
+    "threshold": "distance <= 10 voids the image; checked against all 6 dev films, plain and mirrored"
+   },
+   "vision_check": {
+    "matches": true,
+    "why": "The image perfectly depicts the described elements: a frozen blue pond in the foreground, a snowy field, a fence made of wooden posts and ropes/wires running across the scene, and large snowy mountains in the background. It is a landscape shot with no characters present."
+   }
+  },
+  {
+   "file": "place_P3.png",
+   "sha256": "094204269b29b6dcd7b223cad635240ef236dbe5c8147d64fa309bdddcc7c024",
+   "category": "place",
+   "id": "P3",
+   "name": "Underground mine",
+   "prompt": "Atmospheric establishing image of a location, wide 16:9 composition, no characters, no animals, no text. Visual style: 3D CGI animated cartoon style with exaggerated facial expressions, bright daylight in snowy mountain landscapes, and dark blue-lit underground mine caves. Location: Underground mine. A dark, cavernous underground mine with blue ambient lighting, rocky walls, wooden support beams, and steep minecart tracks.",
+   "model": "gemini-3.1-flash-image",
+   "request_params": {
+    "responseModalities": [
+     "IMAGE"
+    ],
+    "imageConfig": {
+     "aspectRatio": "16:9"
+    }
+   },
+   "request_has_media": false,
+   "request_body_sha256": "7c7647d657b4f09f01d9b6715d0d8d04455ed72636e833600c446b7a789713c8",
+   "provenance_check": {
+    "passed": true,
+    "min_hamming_incl_mirror": 16,
+    "threshold": "distance <= 10 voids the image; checked against all 6 dev films, plain and mirrored"
+   },
+   "vision_check": {
+    "matches": true,
+    "why": "The image perfectly aligns with the description. It shows a dark, cavernous underground mine setting bathed in blue ambient light. Key features like the rough rocky walls, extensive wooden support beams framing the tunnels, and the winding, steep minecart tracks are all clearly visible. Additionally, it is a widescreen (16:9) location shot containing no characters."
+   }
+  },
+  {
+   "file": "place_P4.png",
+   "sha256": "37758faca469536ced28054fb02fef9bd4507c9399ca9d8c771817e61b4d90e0",
+   "category": "place",
+   "id": "P4",
+   "name": "Mountain slope and rocky peaks",
+   "prompt": "Atmospheric establishing image of a location, wide 16:9 composition, no characters, no animals, no text. Visual style: 3D CGI animated cartoon style with exaggerated facial expressions, bright daylight in snowy mountain landscapes, and dark blue-lit underground mine caves. Location: Mountain slope and rocky peaks. A high, steep snowy mountain area with jagged rocky peaks covered in snow and ice.",
+   "model": "gemini-3.1-flash-image",
+   "request_params": {
+    "responseModalities": [
+     "IMAGE"
+    ],
+    "imageConfig": {
+     "aspectRatio": "16:9"
+    }
+   },
+   "request_has_media": false,
+   "request_body_sha256": "d4e1418143d3faa460c0f65f0d80556936763039add8dc49be5b01d1e220ae00",
+   "provenance_check": {
+    "passed": true,
+    "min_hamming_incl_mirror": 16,
+    "threshold": "distance <= 10 voids the image; checked against all 6 dev films, plain and mirrored"
+   },
+   "vision_check": {
+    "matches": true,
+    "why": "The image accurately depicts a high, steep snowy mountain area with jagged rocky peaks and slopes as described. It is a wide (16:9) landscape shot focusing on the location, and there are no characters present in the scene."
+   }
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0098",
+  "start": 780.079,
+  "end": 785.685,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 5.606,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 98,
+   "start": 0.0,
+   "end": 5.606,
+   "description": "Medium shot of C1, C2, and three other characters standing in a living room while C1 puts a hat on, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 5.606
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0098-scr",
+ "descriptions_available": true
+}

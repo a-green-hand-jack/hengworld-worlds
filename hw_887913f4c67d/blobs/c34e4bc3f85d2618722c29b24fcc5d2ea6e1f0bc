@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0015",
+  "start": 56.583,
+  "end": 62.25,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 5.667,
+ "cuts": [
+  0.0
+ ],
+ "shots": [
+  {
+   "index": 15,
+   "start": 0.0,
+   "end": 5.667,
+   "description": "Medium close-up of a mammal waking up and looking around, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 5.667
+  }
+ ]
+}

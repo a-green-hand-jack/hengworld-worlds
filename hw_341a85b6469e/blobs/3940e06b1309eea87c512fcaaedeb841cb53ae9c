@@ -1,0 +1,2 @@
+# Brief
+Word-count benchmark: 8 lines of /wordcount-source/sentences.txt; truth = words per line (maximal non-whitespace run; hyphenated/number = 1 word). Protocol: system/count_words.py unchanged, run once on the published package (no answers); score = exact match per line and accuracy over 8. Compare truth to /wordcount-reference, list differences. No other sources/systems/paid services. Audit: reproduce truth and score, explain each wrong line.

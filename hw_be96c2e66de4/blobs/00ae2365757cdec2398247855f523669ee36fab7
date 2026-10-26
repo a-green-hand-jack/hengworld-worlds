@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0016",
+  "start": 62.25,
+  "end": 66.417,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 4.167,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 16,
+   "start": 0.0,
+   "end": 4.167,
+   "description": "Medium shot of C1 riding in a mine cart inside a cave, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 4.167
+  }
+ ],
+ "task_id": "caminandes3-L0-0016-scr",
+ "descriptions_available": true
+}

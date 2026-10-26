@@ -1,0 +1,83 @@
+# Resources
+
+Instruction lines mentioning `probe`: "`probe` (directory): A probe directory, read only, at /probe, for checking what positions are told about a resource they do not hold. Held by auditor (audit)." (listed under "Given to other positions, not to you").
+
+## Printed output
+```
+$ ht-resource list
+{
+  "catalog_digest": "adf241df66b137802b8dc771aea3c72afe360bf1759a75918244e07b8ae496f1",
+  "others": [
+    {
+      "description": "A probe directory, read only, at /probe, for checking what positions are told about a resource they do not hold.",
+      "holders": {
+        "auditor": [
+          "audit"
+        ]
+      },
+      "id": "probe",
+      "kind": "directory"
+    }
+  ],
+  "resources": [
+    {
+      "available": true,
+      "capabilities": [
+        "compute:local"
+      ],
+      "check": {
+        "reason": null,
+        "usable": true
+      },
+      "description": "Computation that outlives your turn: start it with `ht-resource run`; anything else you start in your sandbox, in the background too, ends with your turn. The world wakes you when it ends or prints a line starting with `HUTIAN_WAKE:`, so end your turn once it is started.",
+      "id": "local-compute",
+      "instructions": "`ht-resource run local-compute [--cwd DIR] [--note TEXT] -- COMMAND [ARGS...]` starts COMMAND in its own container and tracks it. The job has your sandbox's limits (CPUs, memory, processes) and no GPU; like your sandbox, it runs on a host that every world's sandboxes and jobs share, so those limits are ceilings, not reservations: it is placed on as many of the host's CPUs as its limit, those the fewest containers use, and shares them when the containers together are placed on more CPUs than the host has, and the host's memory and disk are shared by all of them. It shares your /hutian workspace (write results, logs and checkpoints there, and read them from your turns), sees the same read-only inputs and the same environment, and has no network, so fetch what it needs first. It prints a job reference. `ht-resource status local-compute` shows each job's state, the last lines of its output, the CPUs and memory it is using and how many containers share its CPUs, and the host's CPUs, memory and disk; `ht-resource stop local-compute REF` ends one. When it ends the world records how (exit status, out of memory) and wakes you for it; your next activation says so. While it runs, a line of its output that starts with `HUTIAN_WAKE:` wakes you too: your next activation shows the lines it printed since you were last woken for it, and lines printed while your turn runs wake you once after it. The world passes such a line on as it is; what it says, and when your program prints one, is up to you. The job's output goes to a pipe, which many programs buffer: flush the line (`print(..., flush=True)`, `python3 -u`), or it reaches the world only when the buffer fills or the job ends. What others ask of you while it runs reaches you at your next turn, so end your turn once it is started, without waiting for the job or polling it. If the world is stopped the job is frozen and goes on when the world resumes; a job whose container was lost, or whose world was restored from a checkpoint, is reported as failed. A job that writes no output and uses almost no CPU for as long as an idle turn is allowed (your activation says how long) is ended by the world and reported as failed, with the reason. When the world limits this resource with `max_spend`, it counts the CPU seconds all jobs use, and the jobs are ended and reported failed when it is used up.",
+      "kind": "container",
+      "limits": {},
+      "policy": {
+        "on_finish": "teardown",
+        "on_stop": "keep"
+      },
+      "tracking": {
+        "checked": true,
+        "metered": false,
+        "reclaimed": true
+      }
+    },
+    {
+      "check": {
+        "reason": null,
+        "usable": true
+      },
+      "description": "Already in your sandbox: NumPy and SciPy, for measuring and comparing results. Your /hutian/.venv sees them: install only what is missing or a different version.",
+      "id": "heng-packages",
+      "instructions": "These packages are part of your sandbox's image: they need no download and take no space in your workspace, and this entry lists them with their versions. They are in the image's system Python, which your /hutian/.venv sees (`python3 -c 'import numpy, scipy'` works without installing anything). `pip install` puts a different version, or anything missing, into your private venv, where it comes first. The image's own packages cannot be changed or removed; install anything else through the world's network resource and record what you installed.",
+      "kind": "image",
+      "python_packages": [
+        "numpy==2.4.6",
+        "scipy==1.17.1"
+      ],
+      "system_packages": []
+    }
+  ],
+  "sandbox": {
+    "gpus": 0,
+    "initial_state": null,
+    "limits": {
+      "cpus": 2.0,
+      "memory_mb": 4096,
+      "processes": 256,
+      "temporary_mb": 512
+    },
+    "mounts": [],
+    "services": [],
+    "writable_environment": null
+  },
+  "schema_version": 2,
+  "tag": "hw-3572fbb56bfd",
+  "world_id": "hw_3572fbb56bfd"
+}
+
+$ ht-resource describe probe
+{"error": "probe is given to other positions, not to you: held by auditor (audit). Ask a holder for what you need from it."}
+```

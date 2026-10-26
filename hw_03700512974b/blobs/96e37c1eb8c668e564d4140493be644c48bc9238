@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0063",
+  "start": 185.56,
+  "end": 186.24,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.68,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 63,
+   "start": 0.0,
+   "end": 0.68,
+   "description": "Wide shot of C1 standing on a platform, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.68
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0063-ref",
+ "descriptions_available": true
+}

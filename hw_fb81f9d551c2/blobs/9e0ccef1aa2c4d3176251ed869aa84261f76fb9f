@@ -1,0 +1,19 @@
+"""CrewCut: benchmarking multi-agent film production with clean-room remakes.
+
+Two halves, matching the paper's two overview figures.
+
+* :mod:`crewcut.build` turns openly licensed films into the task hierarchy (Figure 1).
+  collect -> audit -> annotate (shots, dialogue, scenes) -> L0-L4 hierarchy -> tasks in two tracks
+  plus a provenance index of each original.
+* :mod:`crewcut.harness`, :mod:`crewcut.systems` and :mod:`crewcut.scoring` run and score a
+  system on a level playing field (Figure 2). One MCP tool server, a metering proxy, a common
+  production log, and four-stage scoring (Delivery QC, Continuity, Screening, Budget).
+"""
+from pathlib import Path
+
+__version__ = "0.1.0"
+
+ROOT = Path(__file__).resolve().parent.parent
+CONFIG_DIR = ROOT / "configs"
+LEVELS = ("L0", "L1", "L2", "L3", "L4")
+TRACKS = ("ref", "scr")

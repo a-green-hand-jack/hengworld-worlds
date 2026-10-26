@@ -1,0 +1,23 @@
+You check a production bible written by another model. Below, for each character and place, one frame from the film and the written description. Judge each item independently from the frame. Reply with ONE JSON object: {"characters": [{"id": "C1", "appearance_accurate": true|false, "issues": [{"quote": "exact substring of the appearance text", "verdict": "contradicted|unsupported", "why": "..."}]}], "places": [{"id": "P1", "description_accurate": true|false, "issues": [same form on the description text]}], "same_character_check": [{"id": "C1", "ids_consistent": true|false, "note": "..."}]}
+'contradicted' = the frame shows the opposite; 'unsupported' = cannot be confirmed in the frame. Quotes must be exact substrings and complete self-contained phrases (the whole clause or noun phrase with its modifiers, e.g. 'large white eyes with dark pupils', not just 'white'), so that deleting a quote leaves a grammatical text. Items:
+
+[character C1] (a guanaco (llama)) text: Slender, long-necked quadruped with orange-brown fur, a cream-colored chest and face, dark brown muzzle, long ears, and huge bulging eyes with patterned lower rims.
+IMG:dda88f918a3a86d16fa3d53f0d25ef0f28d405bef012d4a6f59a7da2406a0f0d
+
+[character C2] (a baby penguin) text: Small, round, fluffy bird with a grey-black back and head, white belly and heart-shaped face patch, small beak, and large white eyes with dark pupils.
+IMG:e375c8135ae003b34012574ba52575b5511707a37f9bcdf7ae294a3356eb49d4
+
+[character C3] (adult penguins) text: Medium-sized black and white penguins with distinct black and white facial bands, holding large bunches of red berries.
+IMG:0142fb8db5c6c251437ddfbb42e4bba19f545e374c7297facc334973aef55ad7
+
+[place P1] (Frozen pond and snowy field) text: A snowy plain with a frozen blue puddle, a wire fence with wooden posts, and distant snowy mountains.
+IMG:dda88f918a3a86d16fa3d53f0d25ef0f28d405bef012d4a6f59a7da2406a0f0d
+
+[place P2] (Railroad tracks) text: Steel train tracks on wooden ties and gravel cutting through a snowy landscape with an oil pumpjack in the background.
+IMG:e375c8135ae003b34012574ba52575b5511707a37f9bcdf7ae294a3356eb49d4
+
+[place P3] (Underground mine) text: A dark, cavernous underground mine with blue ambient lighting, rocky walls, wooden support beams, and steep minecart tracks.
+IMG:665498b179f7d2e7cce3b2ba52b559639701cc518b0fd3a6588ed53791bfe791
+
+[place P4] (Mountain slope and rocky peaks) text: A high, steep snowy mountain area with jagged rocky peaks covered in snow and ice.
+IMG:46d050d8b38e542d84d522d1a16098c088729c3dfac4b8227814c3421a0da141

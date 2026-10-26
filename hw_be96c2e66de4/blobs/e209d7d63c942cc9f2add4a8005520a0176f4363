@@ -1,0 +1,50 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L1-0103",
+  "start": 2520.251,
+  "end": 2545.143,
+  "shots": 4,
+  "lines": 0
+ },
+ "duration": 24.892,
+ "cuts": [
+  7.908,
+  10.544,
+  16.25
+ ],
+ "shots": [
+  {
+   "index": 389,
+   "start": 0.0,
+   "end": 7.908,
+   "description": "Medium shot of C1 and C2 talking, static camera."
+  },
+  {
+   "index": 390,
+   "start": 7.908,
+   "end": 10.544,
+   "description": "Medium close-up of C1 looking down, then looking up, static."
+  },
+  {
+   "index": 391,
+   "start": 10.544,
+   "end": 16.25,
+   "description": "Close-up of an intertitle card showing dialogue, static."
+  },
+  {
+   "index": 392,
+   "start": 16.25,
+   "end": 24.892,
+   "description": "Medium shot of C1 and C2 standing, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 24.892
+  }
+ ],
+ "task_id": "sherlock_jr-L1-0103-ref",
+ "descriptions_available": true
+}

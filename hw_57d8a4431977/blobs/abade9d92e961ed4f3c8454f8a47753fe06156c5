@@ -1,0 +1,50 @@
+{
+ "decided_by": "task-maker",
+ "decided_on": "2026-10-21",
+ "note": "Changes to the df54b3a implementation; none changes a measure or a fixed parameter of configs/benchmark.yaml (copied unchanged).",
+ "adaptations": [
+  {
+   "id": "A1",
+   "what": "shots.probe returns the video-stream duration; release rounds duration_s to 2 decimals",
+   "why": "known duration_s issue; see D-duration.json",
+   "effect": "duration_s 150.04 = published; truth keeps the last shot"
+  },
+  {
+   "id": "A2",
+   "what": "describe: new commands/describe_shots.py reads shots through crewcut.io.read_shots (accepts published cut_frames/duration_s), uses plain HTTP to the world's OpenAI-compatible gemini endpoint, omits reasoning_effort, max_tokens 1024, temperature 0, model gemini-3.5-flash-lite pinned",
+   "why": "old describe read shots['cuts'] and shots['fps'] from the published file layout and set max_tokens=120 (breaks thinking models); the endpoint answers HTTP 400 to reasoning_effort=none for this model (observed, costs/gemini_calls_probe.jsonl)",
+   "effect": "37 descriptions, all non-empty on first try; descriptions are drafts, not corrected, characters hint 'none yet'"
+  },
+  {
+   "id": "A3",
+   "what": "fetch is not reimplemented: curator's corpus/fetch_and_verify.sh pins the .ogv by SHA-256 (028d7629...); commands/build.py refuses any other file",
+   "why": "old fetch picked the largest file; licence string 'Attribution' unrecognised",
+   "effect": "none on data; master verified byte-identical, fallback copy not used"
+  },
+  {
+   "id": "A4",
+   "what": "cut_clip runs ffmpeg single-threaded with bitexact flags and no metadata",
+   "why": "byte-identical reruns",
+   "effect": "clips of the Reference track are reproducible; encode settings otherwise unchanged (libx264 veryfast crf 20, aac 160k)"
+  },
+  {
+   "id": "A5",
+   "what": "write_package output is split: truth.json moves from the package to key/<task_id>/truth.json",
+   "why": "published packages must carry no answer key",
+   "effect": "packages/ holds task.json, spec.json, budget.json, tools.json, README.md and input/; key/ holds truth.json"
+  },
+  {
+   "id": "A6",
+   "what": "segment_truth rounding: build.py checks that every truth has exactly the shot count recorded in the hierarchy and exits non-zero otherwise",
+   "why": "known rounding issue (1 ms tolerance on rounded segment bounds)",
+   "effect": "no mismatch on this film with the stream-duration basis"
+  },
+  {
+   "id": "A6b",
+   "what": "segment_truth keeps a cut only if it lies strictly inside the segment by more than 1 ms on both sides; build.py checks cuts == shots-1 and no cut within 2 ms of a segment edge",
+   "why": "scorer issue task-maker#7: the old a<c<b test let the rounded segment end (e.g. 32.292) through as a cut, capping cut F1 at 0.8 for any remake",
+   "effect": "key revised: 46 of the 90 truth.json files lost an edge cut (all single-shot and last-shot-ending segments); packages and the release are byte-unchanged; rescoring needs no paid step",
+   "found": "2026-10-21"
+  }
+ ]
+}

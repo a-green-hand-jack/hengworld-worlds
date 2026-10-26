@@ -1,0 +1,11 @@
+# usage: clipframes.py CLIPS_DIR  (CLIPS_DIR/<task id>/clip.mp4); expected frames from the reference hierarchy
+import json,subprocess,sys
+h=json.load(open('/crewcut-dataset/annotations/coffee_run/hierarchy.json'))
+seg={s['id']:s for lv in ['L0','L1','L2','L3','L4'] for s in h[lv]}
+bad=0
+for sid,s in seg.items():
+    p=f'{sys.argv[1]}/{sid}-ref/clip.mp4'
+    st=json.loads(subprocess.run(['ffprobe','-v','error','-count_frames','-select_streams','v:0','-show_entries','stream=nb_read_frames','-of','json',p],capture_output=True,text=True).stdout)['streams'][0]
+    exp=round(s['end']*24)-round(s['start']*24); ok=int(st['nb_read_frames'])==exp; bad+=not ok
+    print(sid,st['nb_read_frames'],exp,ok)
+sys.exit(1 if bad else 0)

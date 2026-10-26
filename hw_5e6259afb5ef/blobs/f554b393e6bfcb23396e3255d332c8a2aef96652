@@ -1,0 +1,3 @@
+Does this image match the text description? Description: Railroad tracks. Steel train tracks on wooden ties and gravel cutting through a snowy landscape with an oil pumpjack in the background.
+The image should be a 16:9 location image with no characters. Reply JSON {"matches": true|false, "why": "..."}.
+IMG:42379c6358b1c2673f371dbae78bd583018bd2275f9724884b8f0e99985cf803

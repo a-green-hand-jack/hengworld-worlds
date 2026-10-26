@@ -1,0 +1,56 @@
+"""Damage/stress checks of the measures (no Gemini). usage: validate.py RUN_DIR TASK_DIR WORKDIR
+Uses crewcut.scoring at the installed revision; nothing in CrewCut is modified."""
+import json, shutil, subprocess, sys
+from pathlib import Path
+from crewcut.scoring import continuity as C
+from crewcut.scoring.score import score_run
+run, task, work = map(Path, sys.argv[1:4]); work.mkdir(parents=True, exist_ok=True)
+truth = json.loads((task/"truth.json").read_text())
+out = []
+def rec(name, expect, got, ok): out.append({"check": name, "expected": expect, "got": got, "ok": bool(ok)}); print(out[-1])
+def variant(name, film_cmd=None, drop=()):
+    d = work/name
+    if d.exists(): shutil.rmtree(d)
+    shutil.copytree(run, d)
+    for f in drop: (d/"output"/f).unlink()
+    if film_cmd:
+        src = run/"output"/"film.mp4"; dst = d/"output"/"film.mp4"
+        subprocess.run(film_cmd(src, dst), check=True, capture_output=True)
+    r = score_run(d, task, None, judge=None); return r
+F = lambda r: (r["Q"], r["continuity"]["cut_f1_05"], r["continuity"]["cut_f1_10"], r["continuity"]["scene_order"])
+base = score_run(run, task, None, judge=None); rec("baseline", "Q=1", F(base), base["Q"] == 1)
+# pure function checks
+tc = truth["cuts"]
+rec("cut_f1 identical", 1.0, C.cut_f1(tc, tc, 0.5), C.cut_f1(tc, tc, 0.5) == 1.0)
+rec("cut_f1 shifted 3 s", 0.0, C.cut_f1(tc, [c+3 for c in tc], 0.5), C.cut_f1(tc, [c+3 for c in tc], 0.5) == 0.0)
+rec("cut_f1 shift 0.7 s: drops at 0.5 s tol, holds at 1.0 s", "f05<f10=1", (C.cut_f1(tc,[c+0.7 for c in tc],0.5), C.cut_f1(tc,[c+0.7 for c in tc],1.0)),
+    C.cut_f1(tc,[c+0.7 for c in tc],0.5) < 1 and C.cut_f1(tc,[c+0.7 for c in tc],1.0) == 1.0)
+rec("cut_f1 no detections", 0.0, C.cut_f1(tc, [], 0.5), C.cut_f1(tc, [], 0.5) == 0.0)
+rec("cut_f1 spurious extra cuts lower F1", "<1", C.cut_f1(tc, tc+[5,10,15], 0.5), C.cut_f1(tc, tc+[5,10,15], 0.5) < 1)
+# correspondence aggregation with fake judges
+for nm, j, exp in [("always yes", lambda d,s,e: 1, 1.0), ("always no", lambda d,s,e: 0, 0.0)]:
+    v = C.correspondence(truth["shots"], j)[0]; rec(f"correspondence {nm} (stub judge, aggregation only)", exp, v, v == exp)
+sh = truth["shots"]; v = C.correspondence(sh, lambda d,s,e: int(s == sh[0]["start"]))[0]
+w = (sh[0]["end"]-sh[0]["start"])/sum(s["end"]-s["start"] for s in sh); rec("correspondence duration-weighted", round(w,4), round(v,4), abs(v-w) < 1e-9)
+# scene order
+sc = [(0, 10), (10, 20), (20, 30)]
+rec("scene_order in order", 1.0, C.scene_order(sc, sc), C.scene_order(sc, sc) == 1.0)
+rec("scene_order reversed", "<1", C.scene_order(sc, sc[::-1]), C.scene_order(sc, sc[::-1]) < 1)
+# end-to-end damage of the run
+r = variant("no_vtt", drop=["film.en.vtt"]); rec("Q: subtitles removed", "Q=0, c all null", (r["Q"], r["continuity"]["cut_f1_05"]), r["Q"] == 0 and r["continuity"]["cut_f1_05"] is None)
+r = variant("no_manifest", drop=["manifest.json"]); rec("observation: manifest removed (QC does not check manifest.json at this revision; not a measure change)", "Q stays 1", r["Q"], r["Q"] == 1)
+r = variant("truncated", lambda s,d: ["ffmpeg","-v","error","-y","-i",str(s),"-t","10","-c","copy",str(d)]); rec("Q: film truncated to 10 s", "Q=0", r["Q"], r["Q"] == 0)
+r = variant("static", lambda s,d: ["ffmpeg","-v","error","-y","-ss","1","-i",str(s),"-frames:v","1","-f","lavfi","-i","anullsrc=r=48000:cl=stereo","-vf","loop=loop=-1:size=1","-t","32.292","-r","24","-s","1280x720","-pix_fmt","yuv420p","-c:v","libx264","-c:a","aac","-shortest","-map","0:v","-map","1:a",str(d)] if False else
+    ["ffmpeg","-v","error","-y","-loop","1","-framerate","24","-i",str(work/"still.png"),"-f","lavfi","-i","anullsrc=r=48000:cl=stereo","-t","32.292","-s","1280x720","-pix_fmt","yuv420p","-c:v","libx264","-c:a","aac","-map","0:v","-map","1:a",str(d)]) if (subprocess.run(["ffmpeg","-v","error","-y","-ss","1","-i",str(run/"output"/"film.mp4"),"-frames:v","1",str(work/"still.png")],check=True) or True) else None
+rec("Q passes but cut F1 drops: static film (no cuts)", "Q=1, f1 < baseline", F(r), r["Q"] == 1 and r["continuity"]["cut_f1_05"] < base["continuity"]["cut_f1_05"])
+# many cuts: concatenate 1-s slices in shuffled order via select/concat segments
+segs = [(i*1.0) for i in range(32)]
+def shuffled(s, d):
+    parts = [f"[0:v]trim={a}:{a+1},setpts=PTS-STARTPTS[v{i}]" for i, a in enumerate(segs[::-1])]
+    fc = ";".join(parts) + ";" + "".join(f"[v{i}]" for i in range(len(segs))) + f"concat=n={len(segs)}:v=1:a=0[v]"
+    return ["ffmpeg","-v","error","-y","-i",str(s),"-f","lavfi","-i","anullsrc=r=48000:cl=stereo","-filter_complex",fc,"-map","[v]","-map","1:a","-t","32.292","-c:v","libx264","-pix_fmt","yuv420p","-r","24","-c:a","aac",str(d)]
+r = variant("shuffled", shuffled); rec("Q may pass; spurious cuts lower F1 (1-s slices reversed)", "f1 < baseline", F(r), r["continuity"]["cut_f1_05"] is None or r["continuity"]["cut_f1_05"] < base["continuity"]["cut_f1_05"])
+# hold: re-score identical copy
+r = variant("copy"); rec("hold: identical copy scores the same", F(base), F(r), F(r) == F(base))
+json.dump(out, open(work/"validation_results.json", "w"), indent=1)
+print("ALL OK" if all(o["ok"] for o in out) else "SOME FAILED")

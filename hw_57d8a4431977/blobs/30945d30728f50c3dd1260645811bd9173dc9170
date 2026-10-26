@@ -1,0 +1,33 @@
+# task-maker — CrewCut Breakdown for Caminandes 3 (dev)
+
+Everything here was built from the master curator pinned (`curator/corpus/admissions.json`,
+SHA-256 `028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f`, fetched from the source, no fallback).
+
+| Path | What |
+|---|---|
+| `commands/build.py` | master -> shots, dialogue, hierarchy, fingerprints, packages, key; one check per step, non-zero exit on failure |
+| `commands/describe_shots.py` | the paid step: shot descriptions, `gemini-3.5-flash-lite`, temperature 0, done once |
+| `commands/compare_dataset.py` | item-by-item comparison with dataset revision d509bed |
+| `commands/reproduce.sh` | fetch, build twice, require identical bytes, compare with the dataset |
+| `crewcut/`, `configs/benchmark.yaml` | the df54b3a build code with the adaptations of `decisions/D-adaptations.json`; benchmark parameters unchanged |
+| `data/caminandes3/` | shots, dialogue, hierarchy, provenance fingerprint (`provenance.npz`), descriptions, `gemini_calls.jsonl` (every request) |
+| `data/comparison_with_dataset_d509bed.json`, `data/build_log.json` | comparison result; per-step check results and tree digest |
+| `packages/`, `packages_manifest.sha256`, `tasks/dev.jsonl` | the 90 task packages (no key) and the list; the Reference clips (`input/original.mp4`) are in the release asset only, hashes in the manifest |
+| `key/` | **answer key** (`truth.json` per task). For scorer and auditor only; never in a package or release |
+| `decisions/` | duration basis, adaptations, ASR choice, tool versions |
+| `costs/` | price table (official page, 2026-10-21), request ledger |
+
+## Results (checked 2026-10-21)
+* Two builds from the master are byte-identical (tree SHA-256 in `data/build_log.json`).
+* Against dataset d509bed: cut frames (36 cuts, 37 shots), cut times, fps, duration_s, dialogue (0 lines),
+  hierarchy L0–L4 (37/8/5/1/1 segments) and the 90 tasks (list and records) are all equal: **no differences** (`data/comparison_with_dataset_d509bed.json`).
+* `duration_s`: video-stream basis chosen (150.04 s); container basis would be 150.11 s and breaks the truth of four tasks. See `decisions/D-duration.json`.
+* Descriptions: 37 drafts, 41 gemini requests in all (4 diagnosing an HTTP 400), about $0.04 at reported token counts. Descriptions are model drafts, uncorrected.
+* Release `packages-dev-caminandes3-v1`: the packages without key; its tarball was scanned for key files and key text.
+
+## Not run
+* Comparison of prices with CrewCut Issue #13 (not readable here; official page used).
+* Descriptions of the published dataset are empty, so descriptions are not compared; no human correction of descriptions/speakers.
+* Provenance fingerprints have no published counterpart; only checked that the master matches its own index.
+* The dataset's L0/L1 sampling is reproduced (task ids equal) but nothing was independently validated beyond that.
+* Other films, test split: out of scope.

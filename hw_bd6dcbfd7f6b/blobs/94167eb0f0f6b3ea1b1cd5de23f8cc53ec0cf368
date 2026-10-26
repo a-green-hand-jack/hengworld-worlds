@@ -1,0 +1,16 @@
+#!/bin/bash
+# Round 2: descriptions + c. usage: reproduce-c.sh WORKDIR RUN_DIR   (needs the gemini env: CREWCUT_VLM_*/CREWCUT_JUDGE_*, ffmpeg, openai)
+# Spends ~44 Gemini requests. Fails non-zero on any error.
+set -euo pipefail
+W=$1; RUN=$2; H=$(cd "$(dirname "$0")/.." && pwd)
+export GEMINI_REASONING_EFFORT=none
+mkdir -p "$W/film" "$H/record/gemini-rerun"
+ln -sf "$W/data/caminandes3/master.ogv" "$W/film/master.ogv"; cp "$W/data/caminandes3/work/shots_full.json" "$W/film/shots.json"   # D8
+python3 -I "$H/scripts/describe.py" "$W/film" "$H/record/gemini-rerun/describe-requests.jsonl"
+python3 - "$W/film/descriptions.json" "$H" <<'PY'
+import json,sys; d=json.load(open(sys.argv[1])); assert len(d)==37 and all(v.strip() for v in d.values())
+t=json.load(open(sys.argv[2]+"/key/caminandes3-L1-0000-scr/truth.json"))
+for s in t["shots"]: s["description"]=d[str(s["index"])]
+json.dump(t,open(sys.argv[2]+"/record/gemini-rerun/truth-described.json","w"),indent=1)
+PY
+GEMINI_MAX_TOKENS_FLOOR=128 python3 -I "$H/scripts/score_c.py" "$RUN" "$H/published/tasks/caminandes3-L1-0000-scr" "$H/record/gemini-rerun/truth-described.json" "$H/record/gemini-rerun/score-c.json" "$H/record/gemini-rerun/judge-requests.jsonl" "$W/data/caminandes3/provenance.npz"

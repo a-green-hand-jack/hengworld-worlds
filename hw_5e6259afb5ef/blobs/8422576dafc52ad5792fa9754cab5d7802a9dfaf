@@ -1,0 +1,16 @@
+Here is your detailed description of shot 23:
+{"setting": "P3: Underground mine. Indoor, dark cavernous interior with blurred wooden support beams and dark rocky walls passing rapidly in the background.", "characters": "C1: far left foreground, only orange-brown neck and torso visible; C2: center, holding a large bunch of red berries, half-closed unbothered eyes, chewing casually.", "props": "A large bunch of red berries on a green stem and a dark wooden minecart edge.", "action": "While riding rapidly downward through the mine behind C1, C2 sits calmly inside the minecart holding a large bunch of red berries, plucking and chewing a berry with a relaxed, nonchalant expression.", "camera": "Close-up on C2, eye-level, tracking rapidly alongside the moving characters while keeping C2 centered.", "light_mood": "Dim underground lighting with soft highlights on C2 and warm tones on the berries and C1's fur; comedic, deadpan mood.", "sound": "Fast-paced, dramatic orchestral action music accompanied by the rumbling and rattling of a speeding minecart."}
+An independent checker looking at the same frames flagged:
+- sound: 'accompanied by the rumbling and rattling of a speeding minecart' -> contradicted
+Rewrite the whole JSON (same keys, same limits, no description_* keys needed) so that every statement is confirmed by the frames or audio. Reply with JSON only.
+
+Frames:
+[frame 1 at 75.92s]
+IMG:af138aeb27840cd6b588bce610fbf8c247fe7f0aebbf359327d52488a41e822c
+[frame 2 at 76.37s]
+IMG:b535d1c2966472df6fcd3972da8a430aa6d66bba0d91d95ae176eddf6e73e514
+[frame 3 at 76.83s]
+IMG:2406e67eae51df09946495a765b88894cf8612ea770df5cdbdc0549335f690e0
+[frame 4 at 77.29s]
+IMG:100a568c266ebf14aaf250ae74ff8c29986366bc6bfebd2f49e2ec7cf64c621b
+AUD:4ed427b427ef9a5f98ca921ce9c344743f15e146ef5b3041b458b144b8aeb9c5

@@ -1,0 +1,7 @@
+ctranslate2            4.8.3
+faster-whisper         1.2.1
+numpy                  2.4.6
+pillow                 13.0.0
+PyYAML                 6.0.3
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+opencv-python-headless 5.0.0.93

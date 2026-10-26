@@ -1,0 +1,12 @@
+{"task_id": "caminandes3-L1-0001-rich", "film_id": "caminandes3", "level": "L1", "segment_id": "caminandes3-L1-0001", "track": "rich", "start_s": 32.292, "end_s": 42.708, "n_shots": 6, "n_lines": 0}
+{"task_id": "caminandes3-L1-0001-syn", "film_id": "caminandes3", "level": "L1", "segment_id": "caminandes3-L1-0001", "track": "syn", "start_s": 32.292, "end_s": 42.708, "n_shots": 6, "n_lines": 0}
+{"task_id": "caminandes3-L1-0005-rich", "film_id": "caminandes3", "level": "L1", "segment_id": "caminandes3-L1-0005", "track": "rich", "start_s": 80.125, "end_s": 114.5, "n_shots": 8, "n_lines": 0}
+{"task_id": "caminandes3-L1-0005-syn", "film_id": "caminandes3", "level": "L1", "segment_id": "caminandes3-L1-0005", "track": "syn", "start_s": 80.125, "end_s": 114.5, "n_shots": 8, "n_lines": 0}
+{"task_id": "caminandes3-L2-0002-rich", "film_id": "caminandes3", "level": "L2", "segment_id": "caminandes3-L2-0002", "track": "rich", "start_s": 56.583, "end_s": 80.125, "n_shots": 11, "n_lines": 0}
+{"task_id": "caminandes3-L2-0002-syn", "film_id": "caminandes3", "level": "L2", "segment_id": "caminandes3-L2-0002", "track": "syn", "start_s": 56.583, "end_s": 80.125, "n_shots": 11, "n_lines": 0}
+{"task_id": "caminandes3-L2-0004-rich", "film_id": "caminandes3", "level": "L2", "segment_id": "caminandes3-L2-0004", "track": "rich", "start_s": 123.542, "end_s": 150.042, "n_shots": 1, "n_lines": 0}
+{"task_id": "caminandes3-L2-0004-syn", "film_id": "caminandes3", "level": "L2", "segment_id": "caminandes3-L2-0004", "track": "syn", "start_s": 123.542, "end_s": 150.042, "n_shots": 1, "n_lines": 0}
+{"task_id": "caminandes3-L3-0000-rich", "film_id": "caminandes3", "level": "L3", "segment_id": "caminandes3-L3-0000", "track": "rich", "start_s": 0.0, "end_s": 150.042, "n_shots": 37, "n_lines": 0}
+{"task_id": "caminandes3-L3-0000-syn", "film_id": "caminandes3", "level": "L3", "segment_id": "caminandes3-L3-0000", "track": "syn", "start_s": 0.0, "end_s": 150.042, "n_shots": 37, "n_lines": 0}
+{"task_id": "caminandes3-L4-0000-rich", "film_id": "caminandes3", "level": "L4", "segment_id": "caminandes3-L4-0000", "track": "rich", "start_s": 0.0, "end_s": 150.042, "n_shots": 37, "n_lines": 0}
+{"task_id": "caminandes3-L4-0000-syn", "film_id": "caminandes3", "level": "L4", "segment_id": "caminandes3-L4-0000", "track": "syn", "start_s": 0.0, "end_s": 150.042, "n_shots": 37, "n_lines": 0}

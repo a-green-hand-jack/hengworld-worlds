@@ -1,0 +1,5 @@
+# Word-count benchmark
+
+`packages/` is the published answer-free task. Run `python3 corpus/count_words.py packages/sentences.txt` to produce one integer per line. The rule is maximal runs of non-whitespace characters. Reproduction commands and checks are in `scripts/`; measured outputs and decisions are in `records/`. The answer key is confined to `key/`.
+
+Ground truth: 6,4,6,4,4,1,2,6. The unchanged SUT emits 6,5,6,5,2,1,3,6; exact-line accuracy is 0.5, with wrong lines 2,4,5,7.

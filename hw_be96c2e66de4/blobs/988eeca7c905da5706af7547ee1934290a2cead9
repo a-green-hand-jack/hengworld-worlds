@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0042",
+  "start": 121.24,
+  "end": 122.8,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.56,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 42,
+   "start": 0.0,
+   "end": 1.56,
+   "description": "Medium shot of C1 playing an electric guitar, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.56
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0042-scr",
+ "descriptions_available": true
+}

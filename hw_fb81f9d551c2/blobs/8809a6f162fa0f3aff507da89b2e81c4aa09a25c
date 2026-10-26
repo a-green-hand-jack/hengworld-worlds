@@ -1,0 +1,52 @@
+# CrewCut stage A — brief (steward)
+
+Sources: **OBJ** = `Benchmark objective` issue (steward#1); **I3** = `crewcut-issue-3.md` (CrewCut Issue #3, export of 2026-10-20); **CFG** = `configs/*.yaml` at old-implementation commit `df54b3a` (read-only reference; the objective names it for the master checksum; its parameters are quoted only where I3 gives the same item or I3 is silent, and then marked). Nothing below is changed, rounded or filled in. Gaps: `protocol/gaps.md`.
+
+## 1. What the objective asks (quoted)
+- Scope: "只做一部影片和一个评测任务" — film 《Caminandes 3》(dev); task `caminandes3-L1-0000-scr`; system `fixed`; tier `smoke`; generator is the placeholder. Out: other films/systems, real generators, screening score (观影评分), reshoots (补拍), scoring validation (评分验证).
+- R1 "找到《Caminandes 3》，审许可证，取钉住的 master 并核对校验和，每个收或不收都记成决定、带证据".
+- R2 "从钉住的文件一路做出镜头、对白、层级、镜头描述、出处指纹和任务包，每步有检查"; descriptions drafted by `gemini-3.5-flash-lite` via `gemini`, temperature 0, model id pinned, no other model; model and parameters recorded.
+- R3 Compare rebuild with the published dataset (HF revision `d509bed`) item by item: cut points, shots, dialogue, hierarchy, task list; every difference listed and explained; "重建两次要逐字节相同"; `duration_s`: choose video-stream or container duration "按对照结果", give the reason, report both bases' difference.
+- R4 Publish task packages without the answer; run `fixed` + `smoke` on `caminandes3-L1-0000-scr` from the published packages; compute Q and each sub-item of c by the protocol's measures; judge temporarily `gemini-3.8-flash` (final decision: `qwen3-vl-plus`, not available this round) and say so in the records; small check that the judge separates right from wrong descriptions.
+- R5 "由没参与制作的岗位从记录独立复现结果、和数据集逐项比较并解释差别，满足发布门槛后批准".
+- Unrun/unspecified → "未运行", no conclusion; protocol not changed.
+- Deliverables: benchmark files, reproduction steps, records of decisions and commands, comparison with dataset, run records and scores, not-run list; cost: model requests by position and purpose vs needed count, reported tokens and known prices → cost; no credentials or host paths in records.
+- Budget: VLM provisional $30; `gemini` is the only paid service, total requests ≤150; placeholder generator free; prices from official pages by task-maker as data with date and source, cross-checked against CrewCut Issue #13 (differences: official page wins, report); paid steps once, others read published records; do not repeat done steps.
+- Master: per `configs/films.yaml` file+SHA-256; fetch from source, fallback `/crewcut/masters/` only if unobtainable, record use.
+- Known old-implementation issues to adapt without changing any measure, each adaptation recorded (what/why/effect): `duration_s` basis; `segment_truth` rounding; judge/describe `max_tokens` vs thinking models; `describe` reads field names unlike published `shots.json`; `fetch` picks the largest file; licence spelling `Attribution` not recognised.
+
+## 2. Protocol items (as the documents give them)
+### Film (I3 §1.1 table; CFG films.yaml)
+- Caminandes 3, 2016, animation, CC BY 3.0, Blender, split dev, 2.5 min, 37 shots, 0 dialogue lines (I3 §1.1). CFG: id `caminandes3`, page `https://archive.org/details/CaminandesLlamigos`, `master_sha256: 028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f` (CFG `films.yaml`; the backup `/crewcut/masters/caminandes3.ogv` hashes to the same value). I3 §1.6: pinned file is an Internet Archive auto-transcoded small `.ogv`, not the largest file.
+- Admission needs all of (I3 §1.2): licence CC0/CC BY/CC BY-SA or US public domain; no NC/ND; no third-party-held content (music, songs, source works) — manual judgment; PD basis explicit; a fixed master file with checksum. Trailers/extras are never candidates.
+- I3 §1.6 probe on this film: 36 cut points all agree with published; dialogue and hierarchy identical; 90 task IDs identical.
+### Annotations (I3 §1.3)
+shots (frame no. and time of each cut, automatic), dialogue (start/end/text, ASR), shot description (1–3 sentences "[景别] 的 [主体] [动作]，[运镜]", characters as C1, C2…, no colour/lens/style; VLM-drafted), hierarchy L0–L4 (derived), provenance fingerprints (frame + audio, from master). Speaker/character/description corrections: out of scope.
+### Hierarchy (I3 §1.4; CFG benchmark.yaml same values)
+- L0 shot. L1 beat: 2–8 consecutive shots in one scene, ≤40 s; a shot >40 s or a lone shot is its own beat (CFG: min_shots 2, max_shots 8, max_seconds 40).
+- L2 scene: boundary where each of the 3 shots before and after are mutually dissimilar by shot-appearance similarity; scenes <12 s merge into previous (CFG: link_window_shots 3, kappa 1.0, min_seconds 12 — kappa is only in CFG).
+- L3: 2–6 scenes, ≤10 min; over-long single scene alone (CFG max_scenes 6, max_seconds 600). L4 whole film, only ≤15 min (CFG max_seconds 900).
+- Sampling: L0 30 shots, L1 15 beats, duration-stratified, seed determined by the film; fewer → all (CFG sample_per_film L0 30, L1 15).
+- Tasks: every L2/L3/L4 segment; sampled L0/L1; two tracks per segment: Reference (`ref`) and Screenplay (`scr`). Dev totals (all films): L0 155/310, L1 69/138, L2 56/112, L3 14/28, L4 5/10; 299 segments/598 tasks. (Caminandes 3: 90 task IDs, I3 §1.6.)
+- Task contents: instructions, delivery spec, tool list of the tier, budget per minute of segment: model $20, tools $5, 1 h wall clock, at least 15 min (CFG wall_clock_floor_minutes 15); input (Screenplay: script of dialogue+times and shot table of times+descriptions); the segment's answer (cuts, shots+descriptions, dialogue, scenes) used only for scoring and never visible to the system.
+### Run rules (I3 §2.1–2.3)
+- `fixed`: no agent, no feedback loop; one still frame + slow push per shot, one synthetic voice per speaker, one background music, cut at the cut points; leaderboard floor.
+- Isolation; no answer visible; all model calls metered; all generator calls through one tool server charging fixed prices and refusing inputs from the original film; uniform event log.
+- Tiers: T0 image generate/edit, speech, music, sfx, video edit; T1 = T0 + Wan 2.2 video; T2 own generators. CFG tools.yaml defines profile `smoke` (all generators replaced by placeholder, runs marked unofficial) — see gaps G1.
+- Delivery: MP4 H.264 1280×720 24 fps; AAC stereo 48 kHz; English WebVTT; manifest of used assets; duration within ±5% of the segment (CFG: yuv420p, tolerance 0.05).
+- Runs per task: 3 (L4: 2) (I3 §2.4; CFG runs). For this round only one run is asked? — gaps G4.
+### Scoring (I3 §2.4)
+R = (Q, Q·c, Q·S, $). Q (pass/fail): decodes fully with picture and sound; format per spec; duration within ±5%; subtitles cover every dialogue line; log shows no generator read original input; provenance check finds no original frame/audio. Q fail ⇒ c and S zero.
+c: cut F1 at tolerance 0.5 s and 1.0 s; shot correspondence (judge sees only the original shot description and 1 frame/s of the remake's same period, 2–8 frames; match or not; duration-weighted); dialogue WER and onset-time error; speaker/character consistency (cluster purity); scene order. Judge must be a different vendor from the system's base model.
+S (screening) — out of scope this round. $: total cost etc.; budget stats are in I3, reported as run data.
+CFG continuity: cut_tolerance_s [0.5, 1.0]; frames/second 1, min 2, max 8. CFG provenance: frame_sample_fps 2, phash_max_hamming 10, dino_min_cosine 0.92, audio_min_match 0.35, max_false_flag_rate 0.01 (I3 §2.5 says thresholds are set on the stress test; values in CFG only).
+### Release / evidence (I3 §1.5)
+Master verified by checksum; annotations, descriptions with model recorded, fingerprints, task packages; evidence of agreement with `d509bed` (cuts, dialogue, hierarchy, task list), every difference listed and explained; README states verified status.
+
+## 3. Maintainer's decisions
+Decided (OBJ, 2026-10-21): VLM `gemini-3.5-flash-lite` temp 0; generators (T0 Gemini images/edit/TTS/music, ElevenLabs sfx; T1 Alibaba Wan 2.2; judge `qwen3-vl-plus`) — placeholder this round, judge temporarily `gemini-3.8-flash`; later-stage base models Claude Code `claude-opus-5-5`, Codex `gpt-6.1-sol` (not this round); no write-back anywhere — artifacts only via `hengworld artifacts`, final publish to Hugging Face (results/trajectories separate repos, private first), scan credentials and host paths before.
+Open, belong to the maintainer, no position decides: (1) stage C budget; (2) screening rater source; (3) Gemini CLI base model and auth; (4) how the judge-vs-system same-vendor rule is enforced; plus I3 "待定事项": VLM spend cap for the full film set, T0/T1 services and prices, full vs sampled official run scale/total budget, rater source. Anything depending on these: "未运行".
+Gaps recorded in `protocol/gaps.md` (G1–G6) are for the maintainer unless the documents answer them.
+
+## 4. Who delivers what
+See `assignment.json` (`ht-role assignment`): curator → R1 (`corpus/`); task-maker → R2, packages, key, duration_s decision, prices (repo root); executor → R4 run (`runs/`); scorer → R4 scores and judge check (`scores/`); auditor → R3 comparison, R5, cost report and scan (`audit/`); steward → this brief, assignment, `protocol/`.

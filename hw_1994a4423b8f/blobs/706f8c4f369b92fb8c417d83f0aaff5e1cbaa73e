@@ -1,0 +1,8 @@
+#!/bin/sh
+# Fetch the pinned master and verify sha256 against configs/films.yaml (crewcut commit df54b3a).
+set -e
+D=${1:?output dir (new, empty)}; mkdir -p "$D"
+curl -fsSL -o "$D/caminandes3.ogv" "https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv"
+want=028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f
+got=$(sha256sum "$D/caminandes3.ogv" | cut -d' ' -f1)
+echo "sha256 $got"; [ "$got" = "$want" ] && echo MATCH || { echo MISMATCH; exit 1; }

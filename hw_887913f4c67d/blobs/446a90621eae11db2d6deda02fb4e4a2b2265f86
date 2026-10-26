@@ -1,0 +1,7 @@
+# Gaps and open decisions (recorded, not chosen; nothing goes back to CrewCut)
+- G1 audit.normalise does not recognise PeerTube labels ('Attribution', 'Attribution - Share Alike', 'Unknown'): 0/23 Blender candidates kept (Issue #3 §1.6 known). Commons crawl not run by me (not needed for this film).
+- G2 `annotate` requires faster-whisper for films with silent:false; core install fails. caminandes3 has silent:false in configs/films.yaml although it has no dialogue.
+- G3 fetch.ia_files picks the largest file (139 MB mp4), not the pinned ogv.
+- G4 describe_film: key mismatch with shots.json (cuts/duration vs cut_frames/duration_s); no CLI command; max_tokens=120 fails with reasoning models (gemini-3.8-flash returned 'A').
+- G5 shots.json duration_s differs from published (container vs video duration).
+- G6 configs/prices.yaml has only `default` ($5/$25 per M); no Gemini price. Prices used for the spend come from the provider page (see SPEND.md). Issue #3 open item 1 (VLM, cost cap) and 2 (judge model, prices) stay with the maintainer.

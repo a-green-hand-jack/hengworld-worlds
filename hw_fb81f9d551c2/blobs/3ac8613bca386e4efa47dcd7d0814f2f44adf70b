@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0012",
+  "start": 49.875,
+  "end": 52.292,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.417,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 12,
+   "start": 0.0,
+   "end": 2.417,
+   "description": "Close-up of an animal looking surprised as a ball flies off its tongue, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.417
+  }
+ ]
+}

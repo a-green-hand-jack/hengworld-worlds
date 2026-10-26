@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0013",
+  "start": 72.625,
+  "end": 78.583,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 5.958,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 13,
+   "start": 0.0,
+   "end": 5.958,
+   "description": "Extreme wide shot of multiple small statues standing in a circle as a single small statue stands in the center with a long trail, zooming out."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 5.958
+  }
+ ],
+ "task_id": "domini_canes-L0-0013-ref",
+ "descriptions_available": true
+}

@@ -1,0 +1,5 @@
+frames 300 fp 300
+median_all bit-agree 0.9996 exact 296 / 300
+median_nodc bit-agree 0.9996 exact 296 / 300
+mean_all bit-agree 0.7443 exact 0 / 300
+mean_nodc bit-agree 0.9493 exact 29 / 300

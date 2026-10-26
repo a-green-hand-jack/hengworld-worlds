@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0203",
+  "start": 1656.922,
+  "end": 1658.857,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.935,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 203,
+   "start": -0.0,
+   "end": 1.935,
+   "description": "Medium shot of C1 playing billiards, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.935
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0203-ref",
+ "descriptions_available": true
+}

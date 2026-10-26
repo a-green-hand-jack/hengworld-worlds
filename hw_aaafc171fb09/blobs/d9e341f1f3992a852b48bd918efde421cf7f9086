@@ -1,0 +1,29 @@
+{
+ "open_for_maintainer": [
+  {
+   "id": "O1",
+   "what": "crewcut.build.audit.normalise does not recognise the PeerTube licence label 'Attribution' (and likely 'Attribution - ShareAlike' etc.), so audit rejects Caminandes 3 from the Blender catalogue crawl; the Internet Archive licenseurl form is accepted. Issue #3 s1.6 lists this as a known stuck point.",
+   "status": "recorded, not decided here; worked around per film by D1 using the IA licence URL"
+  },
+  {
+   "id": "O2",
+   "what": "crewcut.build.fetch.resolve/ia_files picks the largest file first, which downloads the 139 MB .mp4 instead of the pinned .ogv; the pipeline has no way to name the pinned file besides --local-dir. Known stuck point in Issue #3 s1.6.",
+   "status": "recorded; worked around by D2"
+  },
+  {
+   "id": "O3",
+   "what": "Shot-description VLM and the cost cap (Issue #3 open item 1) are the maintainer's; descriptions not produced.",
+   "status": "open, not run"
+  },
+  {
+   "id": "O4",
+   "what": "duration_s: published shots.json has 150.04 (video stream duration), a rebuild with crewcut df54b3a gives 150.108345 (ffprobe container duration = longer audio stream). The docs do not say which is intended; downstream, tasks use the shot times, QC uses truth['duration'] of each segment (the last segment's end is the film duration only for L4/last segments).",
+   "status": "recorded, effect on tasks checked in comparison"
+  },
+  {
+   "id": "O5",
+   "what": "crewcut/build/tasks.py segment_truth keeps a cut when `a < c < b`, with c = frame/fps unrounded and b the segment end rounded to 3 decimals in hierarchy.json. For the L1 segment caminandes3-L1-0000 the end is the real cut 775/24 = 32.29167 s stored as 32.292, so that cut passes the filter and truth.cuts = [21.375, 30.5, 32.292] with duration 32.292: the last 'cut' sits at the segment end. 32 of the 90 Caminandes 3 key files have a last cut equal to their duration. A detector does not report a cut at the clip end, so cut F1 against such a key is capped (scr L1-0000: 0.8 max). Whether this is intended is not stated in the documents; the same rebuild also reproduces the published task list exactly, and the published dataset holds no truth.json to compare against.",
+   "status": "recorded, not decided; key left exactly as CrewCut produces it"
+  }
+ ]
+}

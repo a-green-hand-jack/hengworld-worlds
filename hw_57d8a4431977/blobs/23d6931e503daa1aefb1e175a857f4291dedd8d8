@@ -1,0 +1,203 @@
+"""Generator back ends behind the tool server.
+
+Every back end implements ``call(tool, args, out_dir) -> Result``. Prices are applied by the tool
+server from ``configs/tools.yaml`` rather than by the back end, so that two systems pay the same for
+the same work whatever service sits behind a tool.
+"""
+from __future__ import annotations
+
+import base64
+import json
+import math
+import os
+import shlex
+import subprocess
+import time
+import uuid
+from dataclasses import dataclass, field
+from pathlib import Path
+
+import requests
+
+EXT = {"image.generate": ".png", "image.edit": ".png", "speech.synthesize": ".wav", "music.generate": ".wav",
+       "sfx.generate": ".wav", "video.generate": ".mp4"}
+
+
+@dataclass
+class Result:
+    outputs: list[Path]
+    units: dict = field(default_factory=dict)   # billable quantities: calls, chars, seconds, gpu_seconds
+    detail: dict = field(default_factory=dict)
+
+
+def _out(out_dir: Path, tool: str) -> Path:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    return out_dir / f"{tool.replace('.', '_')}_{uuid.uuid4().hex[:8]}{EXT.get(tool, '')}"
+
+
+def _expand(v):
+    return os.path.expandvars(v) if isinstance(v, str) else v
+
+
+def _media_seconds(p: Path) -> float:
+    out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(p)],
+                         capture_output=True, text=True).stdout.strip()
+    try:
+        return float(out)
+    except ValueError:
+        return 0.0
+
+
+class Backend:
+    def __init__(self, cfg: dict):
+        self.cfg = {k: _expand(v) for k, v in cfg.items()}
+
+    def call(self, tool: str, args: dict, out_dir: Path) -> Result:  # pragma: no cover - interface
+        raise NotImplementedError
+
+
+class Placeholder(Backend):
+    """Flat colour frames, sine tones and silent clips. For smoke tests of the harness only."""
+
+    def call(self, tool, args, out_dir):
+        out = _out(out_dir, tool)
+        seed = abs(hash(json.dumps(args, sort_keys=True))) % 0xFFFFFF
+        colour = f"0x{seed:06x}"
+        if tool in ("image.generate", "image.edit"):
+            w, h = int(args.get("width", 1280)), int(args.get("height", 720))
+            cmd = ["-f", "lavfi", "-i", f"color=c={colour}:s={w}x{h}", "-frames:v", "1"]
+            units = {"calls": 1}
+        elif tool == "speech.synthesize":
+            dur = max(0.5, 0.065 * len(args.get("text", "")))
+            cmd = ["-f", "lavfi", "-i", f"sine=frequency={200 + seed % 300}:duration={dur:.2f}", "-ar", "48000"]
+            units = {"seconds": dur}
+        elif tool in ("music.generate", "sfx.generate"):
+            dur = float(args.get("duration_s", 5))
+            cmd = ["-f", "lavfi", "-i", f"anoisesrc=d={dur:.2f}:c=pink:a=0.02", "-ar", "48000"]
+            units = {"calls": 1, "seconds": dur}
+        elif tool == "video.generate":
+            dur = float(args.get("duration_s", 5))
+            cmd = ["-f", "lavfi", "-i", f"color=c={colour}:s=1280x720:r=24:d={dur:.2f}", "-pix_fmt", "yuv420p"]
+            units = {"seconds": dur}
+        else:
+            raise ValueError(tool)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", *cmd, str(out)], check=True)
+        return Result([out], units, {"placeholder": True})
+
+
+class HTTP(Backend):
+    """POST ``{"tool": ..., **args}`` (files as base64) to a service; accepts JSON or raw media back.
+
+    JSON answers may carry ``b64`` or ``url`` for the media. Any service can be wrapped this way,
+    which keeps provider SDKs out of the harness.
+    """
+
+    def call(self, tool, args, out_dir):
+        url = self.cfg.get("url")
+        if not url or url.startswith("$"):
+            raise RuntimeError(f"{tool}: no endpoint configured (set the URL in configs/tools.yaml)")
+        payload = {"tool": tool}
+        for k, v in args.items():
+            if k in ("image", "first_frame") and v:
+                payload[k] = base64.b64encode(Path(v).read_bytes()).decode()
+            else:
+                payload[k] = v
+        r = requests.post(url, json=payload, timeout=1800,
+                          headers={"Authorization": f"Bearer {os.environ.get('CREWCUT_TOOL_KEY', '')}"})
+        r.raise_for_status()
+        out = _out(out_dir, tool)
+        if r.headers.get("Content-Type", "").startswith("application/json"):
+            j = r.json()
+            if "b64" in j:
+                out.write_bytes(base64.b64decode(j["b64"]))
+            else:
+                out.write_bytes(requests.get(j["url"], timeout=600).content)
+        else:
+            out.write_bytes(r.content)
+        units = {"calls": 1}
+        if tool == "speech.synthesize":
+            units = {"chars": len(args.get("text", ""))}
+        elif tool in ("music.generate", "sfx.generate"):
+            units = {"seconds": _media_seconds(out)}
+        return Result([out], units)
+
+
+class Wan22(Backend):
+    """Wan 2.2 A14B text-to-video and image-to-video at 720p (T1).
+
+    With ``url`` set, calls a remote server through :class:`HTTP`. Otherwise loads the Diffusers
+    pipelines locally (needs a large GPU). Billed by GPU seconds so that self-hosting choices do
+    not change what a system pays.
+    """
+
+    _pipes: dict = {}
+
+    def call(self, tool, args, out_dir):
+        if self.cfg.get("url") and not self.cfg["url"].startswith("$"):
+            t0 = time.time()
+            res = HTTP(self.cfg).call(tool, args, out_dir)
+            res.units = {"gpu_seconds": res.detail.get("gpu_seconds", time.time() - t0)}
+            return res
+        import torch
+        from diffusers import WanImageToVideoPipeline, WanPipeline
+        from diffusers.utils import export_to_video, load_image
+        first = args.get("first_frame")
+        key = "i2v" if first else "t2v"
+        if key not in self._pipes:
+            cls, mid = (WanImageToVideoPipeline, self.cfg["i2v_model"]) if first else (WanPipeline, self.cfg["model"])
+            self._pipes[key] = cls.from_pretrained(mid, torch_dtype=torch.bfloat16).to("cuda")
+        pipe = self._pipes[key]
+        w, h = self.cfg.get("resolution", [1280, 720])
+        frames = int(round(float(args.get("duration_s", 5)) * 16)) // 4 * 4 + 1  # Wan uses 4k+1 frames at 16 fps
+        t0 = time.time()
+        kw = dict(prompt=args["prompt"], negative_prompt=args.get("negative_prompt", ""), height=h, width=w,
+                  num_frames=frames, guidance_scale=float(args.get("guidance", 4.0)),
+                  num_inference_steps=int(args.get("steps", 40)))
+        if first:
+            kw["image"] = load_image(str(first)).resize((w, h))
+        video = pipe(**kw).frames[0]
+        out = _out(out_dir, tool)
+        export_to_video(video, str(out), fps=16)
+        return Result([out], {"gpu_seconds": time.time() - t0})
+
+
+class FFmpeg(Backend):
+    """Local media operations. Arguments are passed to ffmpeg; every path must stay in the sandbox."""
+
+    def __init__(self, cfg, sandbox: Path | None = None):
+        super().__init__(cfg)
+        self.sandbox = sandbox
+
+    def call(self, tool, args, out_dir):
+        argv = args["args"] if isinstance(args["args"], list) else shlex.split(args["args"])
+        if self.sandbox is not None:
+            files = [a for i, a in enumerate(argv) if i > 0 and argv[i - 1] == "-i" and "=" not in a] + [argv[-1]]
+            for a in files:
+                p = (self.sandbox / a).resolve() if not os.path.isabs(a) else Path(a).resolve()
+                if self.sandbox.resolve() not in p.parents:
+                    raise PermissionError(f"path outside the sandbox: {a}")
+        r = subprocess.run(["ffmpeg", "-v", "error", "-y", *argv], cwd=self.sandbox, capture_output=True, text=True)
+        if r.returncode:
+            raise RuntimeError(r.stderr[-2000:])
+        out = Path(argv[-1])
+        return Result([out if out.is_absolute() else (self.sandbox or Path.cwd()) / out], {"calls": 1})
+
+
+
+from .real import ElevenLabsSFX, GeminiImage, GeminiMusic, GeminiSpeech, DashScopeWan  # noqa: E402
+
+REGISTRY = {"placeholder": Placeholder, "http": HTTP, "wan22": Wan22, "ffmpeg": FFmpeg, "gemini_image": GeminiImage,
+            "gemini_speech": GeminiSpeech, "gemini_music": GeminiMusic, "elevenlabs_sfx": ElevenLabsSFX,
+            "dashscope_wan": DashScopeWan}
+
+
+def bill(units: dict, price: dict) -> float:
+    cost = price.get("per_call", 0.0) * units.get("calls", 0)
+    cost += price.get("per_1k_chars", 0.0) * units.get("chars", 0) / 1000
+    cost += price.get("per_second", 0.0) * units.get("seconds", 0.0)
+    cost += price.get("per_gpu_second", 0.0) * units.get("gpu_seconds", 0.0)
+    return round(cost, 6)
+
+
+def ceil_seconds(x: float) -> float:
+    return math.ceil(x * 10) / 10

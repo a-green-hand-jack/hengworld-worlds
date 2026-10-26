@@ -1,0 +1,3 @@
+# curator
+`corpus/admissions.json` — admission records; `corpus/fetch_and_verify.sh` — fetch + SHA-256 check; `corpus/verification_log.txt` — result; `corpus/ia_metadata_CaminandesLlamigos.json` — source metadata snapshot.
+Stage B: `corpus/admissions_stageB.json` (5 films), `corpus/fetch_master.sh FILM OUTDIR` + `corpus/pins.tsv`, `corpus/verification_log_stageB.txt`.

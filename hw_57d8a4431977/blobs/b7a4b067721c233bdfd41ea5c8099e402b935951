@@ -1,0 +1,6 @@
+numpy
+scipy
+opencv-python-headless
+pyyaml
+pillow
+faster-whisper==1.2.1

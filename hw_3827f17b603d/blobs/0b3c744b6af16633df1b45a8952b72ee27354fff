@@ -1,0 +1,4 @@
+# scores
+- validation.json: damage/stress checks (commands/validate.py). Done.
+- scores.json: exact match per line + accuracy (0.5, 4/8), deliverability check passed first.
+  Computed: `python3 commands/score.py runs/output.txt <key>` with executor's output.txt at executor revision c359a4be9fe081abb8798d71981c131b4f2f1262, key from task-maker revision 870622e4bd8e0c4381e481379ddf90e3bfa47d20; scorer revision of the commands is the commit before this one (see git log). No paid steps.

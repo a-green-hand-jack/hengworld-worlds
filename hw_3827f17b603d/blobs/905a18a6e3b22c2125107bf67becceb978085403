@@ -1,0 +1,5 @@
+{"item":"wordcount-source/sentences.txt","decision":"admit","reason":"the only source; the task's own object; world-provided read-only directory",
+"evidence":"/wordcount-source/README.md: 'A word is a maximal run of characters that are not whitespace'; no licence stated beyond world supply (rights not otherwise documented)",
+"artifact":"sentences.txt","alternatives_passed_over":["system/count_words.py (system under test, not data)"],
+"source_location":"/wordcount-source/sentences.txt","sha256_file":"corpus/sentences.txt.sha256",
+"decided_by":"task-maker","date":"2026-10-22","used_by":"commands/build.sh"}

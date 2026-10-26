@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0002",
+  "start": 20.417,
+  "end": 30.333,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 9.916,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 2,
+   "start": -0.0,
+   "end": 9.916,
+   "description": "Medium shot of C1 peeking from behind a curtain, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 9.916
+  }
+ ],
+ "task_id": "domini_canes-L0-0002-ref",
+ "descriptions_available": true
+}

@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "coffee_run-L1-0001",
+  "start": 6.792,
+  "end": 56.458,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 49.666,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 1,
+   "start": -0.0,
+   "end": 49.666,
+   "description": "Wide shot of C1 running, then flying away from a hospital, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 49.666
+  }
+ ],
+ "task_id": "coffee_run-L1-0001-ref",
+ "descriptions_available": true
+}

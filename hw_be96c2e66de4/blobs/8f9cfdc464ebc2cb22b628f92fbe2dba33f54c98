@@ -1,0 +1,78 @@
+{
+ "segment": {
+  "id": "caminandes3-L1-0005",
+  "start": 80.125,
+  "end": 114.5,
+  "shots": 8,
+  "lines": 0
+ },
+ "duration": 34.375,
+ "cuts": [
+  3.333,
+  6.042,
+  9.208,
+  12.917,
+  16.542,
+  21.667,
+  23.625
+ ],
+ "shots": [
+  {
+   "index": 26,
+   "start": 0.0,
+   "end": 3.333,
+   "description": "Medium shot of C1 leaping through the air while chasing fruit, tracking right."
+  },
+  {
+   "index": 27,
+   "start": 3.333,
+   "end": 6.042,
+   "description": "Medium close-up of C1 screaming and running, tracking shot."
+  },
+  {
+   "index": 28,
+   "start": 6.042,
+   "end": 9.208,
+   "description": "Medium close-up of C1 falling while waving, static camera."
+  },
+  {
+   "index": 29,
+   "start": 9.208,
+   "end": 12.917,
+   "description": "Medium close-up of C1 looking panicked while turning its head, static."
+  },
+  {
+   "index": 30,
+   "start": 12.917,
+   "end": 16.542,
+   "description": "Extreme long shot of a furry creature falling from the sky and crashing into a snowy landscape, zooming in."
+  },
+  {
+   "index": 31,
+   "start": 16.542,
+   "end": 21.667,
+   "description": "Medium shot of an animal lying on its back in the snow with another animal sitting on it, static camera."
+  },
+  {
+   "index": 32,
+   "start": 21.667,
+   "end": 23.625,
+   "description": "Wide shot of C1 sliding down a snowy slope, panning right."
+  },
+  {
+   "index": 33,
+   "start": 23.625,
+   "end": 34.375,
+   "description": "Medium shot of C1 ducking down, zoom out."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 34.375
+  }
+ ],
+ "task_id": "caminandes3-L1-0005-ref",
+ "descriptions_available": true
+}

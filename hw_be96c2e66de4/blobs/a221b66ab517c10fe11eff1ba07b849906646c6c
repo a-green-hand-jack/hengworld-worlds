@@ -1,0 +1,5 @@
+{"id":"D001","date":"2026-10-22","decided_by":"task-maker","step":"6b shot descriptions (tools/step6b_describe.py)",
+"finding":"Every chat/completions call through the world's `gemini` resource returns HTTP 402 RESOURCE_EXHAUSTED: 'Your prepayment credits are depleted' (gemini-3.5-flash-lite and gemini-3.1-flash-lite; gemini-2.5-flash-lite is 404). The /models listing works and contains all models named in the objective. 7 requests of the 2000 quota were consumed by diagnostics, none produced output.",
+"choice":"Do not substitute another model or fabricate descriptions (objective fixes the model). Mark descriptions.json, Screenplay shotlist.csv descriptions and truth shot descriptions 'not run' until credits exist; escalate to steward as a maintainer question.",
+"effect":"Screenplay-track packages cannot be complete; Reference-track clips, shots, hierarchy, tasks, fingerprints are unaffected. Executor's T0 generators (same upstream key) are likely affected too.",
+"later_steps":["step6b","packages Screenplay track","truth.json descriptions","scorer shot correspondence"]}

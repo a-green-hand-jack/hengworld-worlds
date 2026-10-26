@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0099",
+  "start": 785.685,
+  "end": 789.422,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 3.737,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 99,
+   "start": -0.0,
+   "end": 3.737,
+   "description": "Medium long shot of C1 standing and holding a hat next to a crying C2 who is leaning against the staircase, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 3.737
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0099-scr",
+ "descriptions_available": true
+}

@@ -1,0 +1,61 @@
+{
+ "segment": {
+  "id": "coffee_run-L3-0000",
+  "start": 0.0,
+  "end": 184.583,
+  "shots": 5,
+  "lines": 0
+ },
+ "duration": 184.583,
+ "cuts": [
+  6.792,
+  56.458,
+  106.667,
+  170.125
+ ],
+ "shots": [
+  {
+   "index": 0,
+   "start": 0.0,
+   "end": 6.792,
+   "description": "Establishing shot of title text showing production credits, static."
+  },
+  {
+   "index": 1,
+   "start": 6.792,
+   "end": 56.458,
+   "description": "Wide shot of C1 running, then flying away from a hospital, static camera."
+  },
+  {
+   "index": 2,
+   "start": 56.458,
+   "end": 106.667,
+   "description": "Wide shot of C1 flying through a hospital room, church, and city, static camera."
+  },
+  {
+   "index": 3,
+   "start": 106.667,
+   "end": 170.125,
+   "description": "Wide shot of C1 surfing on a stroller, panning right."
+  },
+  {
+   "index": 4,
+   "start": 170.125,
+   "end": 184.583,
+   "description": "Extreme close-up of credits showing, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 170.125
+  },
+  {
+   "start": 170.125,
+   "end": 184.583
+  }
+ ],
+ "task_id": "coffee_run-L3-0000-scr",
+ "descriptions_available": true
+}

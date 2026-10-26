@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0350",
+  "start": 2388.419,
+  "end": 2391.155,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.736,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 350,
+   "start": 0.0,
+   "end": 2.736,
+   "description": "Long shot of C1 and C2 riding in a car, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.736
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0350-scr",
+ "descriptions_available": true
+}

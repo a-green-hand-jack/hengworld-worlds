@@ -1,0 +1,24 @@
+{
+ "decision": "Pin the Internet Archive derivative 'Caminandes_ Llamigos-1080p.ogv' (11,872,682 bytes), the file whose sha256 equals configs/films.yaml. Do not use crewcut's own file choice (largest file first).",
+ "url": "https://archive.org/download/CaminandesLlamigos/Caminandes_%20Llamigos-1080p.ogv",
+ "between": [
+  "Caminandes_ Llamigos-1080p.mp4 (138,945,811 B, what fetch.resolve picks: largest first)",
+  "Caminandes_ Llamigos-1080p.webm (38,041,423 B)",
+  "Caminandes_ Llamigos-1080p.ogv (11,872,682 B)"
+ ],
+ "evidence": [
+  "record/results/reproduce-run1.log (check 1): ogv sha256 028d7629782251a212986662b50445daa2ee278aff279a4af8bd02dde28f8d7f == configs/films.yaml master_sha256",
+  "record/raw/annotate_attempt1_largest_file.log: `crewcut annotate` without a local master downloads the .mp4 and stops with 'does not match the pinned master'",
+  "IA metadata sha1 of the ogv adc553f00df255643a4af84deda1dc37a6235d6f"
+ ],
+ "effect": "crewcut annotate is run with --local-dir holding this file as caminandes3.ogv (crewcut's supported route for a master the user downloaded). The copy at /crewcut/masters/caminandes3.ogv was NOT used for the build; it has the same sha256 (checked).",
+ "decided_by": "task-maker (agent)",
+ "date": "2026-10-21",
+ "affects": [
+  "shots",
+  "dialogue",
+  "hierarchy",
+  "provenance",
+  "tasks"
+ ]
+}

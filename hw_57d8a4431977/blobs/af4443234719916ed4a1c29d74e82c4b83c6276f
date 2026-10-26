@@ -1,0 +1,17 @@
+#!/bin/sh
+# Rebuild everything twice from the pinned master and require byte-identical trees and equality with the published dataset.
+# Usage: commands/reproduce.sh WORKDIR DATASET_ROOT   (needs ffmpeg, python deps in requirements.txt, network for corpus fetch)
+set -eu
+W=${1:?workdir}; DS=${2:?dataset}; R=$(cd "$(dirname "$0")/.." && pwd)
+mkdir -p "$W/master"
+sh "$R/commands/fetch_and_verify.sh" "$W/master"
+for k in 1 2; do
+  rm -rf "$W/build$k"; mkdir -p "$W/build$k/data/caminandes3"
+  cp "$R/data/caminandes3/descriptions.json" "$W/build$k/data/caminandes3/"
+  python3 "$R/commands/build.py" "$W/master/caminandes3.ogv" "$W/build$k" | tail -1
+done
+diff -rq "$W/build1" "$W/build2" && echo "REPRO: two builds byte-identical"
+python3 "$R/commands/compare_dataset.py" "$W/build1" "$DS" --master "$W/master/caminandes3.ogv" --out "$W/comparison.json"
+# the committed data must equal the rebuild
+for d in data tasks key; do diff -rq "$R/$d" "$W/build1/$d" | grep -v -E 'gemini_calls|descriptions.json|work' || true; done
+echo "REPRO: ok"

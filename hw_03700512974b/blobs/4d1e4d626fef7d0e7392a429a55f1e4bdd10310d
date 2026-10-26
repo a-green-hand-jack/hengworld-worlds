@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0064",
+  "start": 186.24,
+  "end": 187.4,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.16,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 64,
+   "start": 0.0,
+   "end": 1.16,
+   "description": "Medium wide shot of C1 standing on stage, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.16
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0064-scr",
+ "descriptions_available": true
+}

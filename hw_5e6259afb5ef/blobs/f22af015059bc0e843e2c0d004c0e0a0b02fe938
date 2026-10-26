@@ -1,0 +1,229 @@
+{
+ "scr_shotlist_replaced": [
+  {
+   "package": "caminandes3-L1-0001-scr",
+   "file": "input/shotlist.csv",
+   "shots_changed": [
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  {
+   "package": "caminandes3-L1-0005-scr",
+   "file": "input/shotlist.csv",
+   "shots_changed": [
+    0,
+    1,
+    2,
+    3,
+    6,
+    7
+   ]
+  },
+  {
+   "package": "caminandes3-L2-0002-scr",
+   "file": "input/shotlist.csv",
+   "shots_changed": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8,
+    10
+   ]
+  },
+  {
+   "package": "caminandes3-L2-0004-scr",
+   "file": "input/shotlist.csv",
+   "shots_changed": [
+    0
+   ]
+  },
+  {
+   "package": "caminandes3-L3-0000-scr",
+   "file": "input/shotlist.csv",
+   "shots_changed": [
+    0,
+    1,
+    2,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    16,
+    17,
+    20,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    32,
+    33,
+    34,
+    35,
+    36
+   ]
+  },
+  {
+   "package": "caminandes3-L4-0000-scr",
+   "file": "input/shotlist.csv",
+   "shots_changed": [
+    0,
+    1,
+    2,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    16,
+    17,
+    20,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    32,
+    33,
+    34,
+    35,
+    36
+   ]
+  }
+ ],
+ "readme_replaced_in": "every -scr package (full copy here) and every -ref package (README.md only here; clip.mp4 etc. unchanged in the dataset)",
+ "per_segment": {
+  "caminandes3-L1-0001": {
+   "characters": [
+    "C1",
+    "C2"
+   ],
+   "places_with_image": [
+    "P1",
+    "P2"
+   ],
+   "images": [
+    "character_C1.png",
+    "character_C2.png",
+    "place_P1.png",
+    "place_P2.png"
+   ]
+  },
+  "caminandes3-L1-0005": {
+   "characters": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "places_with_image": [
+    "P4"
+   ],
+   "images": [
+    "character_C1.png",
+    "character_C2.png",
+    "character_C3.png",
+    "place_P4.png"
+   ]
+  },
+  "caminandes3-L2-0002": {
+   "characters": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "places_with_image": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "images": [
+    "character_C1.png",
+    "character_C2.png",
+    "character_C3.png",
+    "place_P1.png",
+    "place_P3.png",
+    "place_P4.png"
+   ]
+  },
+  "caminandes3-L2-0004": {
+   "characters": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "places_with_image": [
+    "P4"
+   ],
+   "images": [
+    "character_C1.png",
+    "character_C2.png",
+    "character_C3.png",
+    "place_P4.png"
+   ]
+  },
+  "caminandes3-L3-0000": {
+   "characters": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "places_with_image": [
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+   ],
+   "images": [
+    "character_C1.png",
+    "character_C2.png",
+    "character_C3.png",
+    "place_P1.png",
+    "place_P2.png",
+    "place_P3.png",
+    "place_P4.png"
+   ]
+  },
+  "caminandes3-L4-0000": {
+   "characters": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "places_with_image": [
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+   ],
+   "images": [
+    "character_C1.png",
+    "character_C2.png",
+    "character_C3.png",
+    "place_P1.png",
+    "place_P2.png",
+    "place_P3.png",
+    "place_P4.png"
+   ]
+  }
+ }
+}

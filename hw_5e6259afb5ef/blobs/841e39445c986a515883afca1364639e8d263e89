@@ -1,0 +1,46 @@
+"""Cost ledger from the call log: one line per call; averages; extrapolation to 6 films."""
+import sys; sys.path.insert(0, "scripts")
+from lib import *
+import numpy as np
+P = json.load(open(ROOT / "scripts" / "prices.json"))["models"]
+rows = []
+for l in open(LOG):
+    r = json.loads(l); m = r["model"]; u = r.get("usage") or {}; pr = P[m]
+    if m == IMG_MODEL: pt = ct = None; usd = pr["per_image"]; unit = "1 image (1K)"
+    else:
+        pt = u.get("prompt_tokens") or u.get("promptTokenCount") or 0; ct = u.get("completion_tokens") or 0
+        at = ((u.get("prompt_tokens_details") or {}).get("audio_tokens") or 0) if m == "qwen3.5-omni-plus" else 0
+        usd = (pt - at) / 1e6 * pr["in_per_M"] + at / 1e6 * pr.get("in_audio_per_M", pr["in_per_M"]) + ct / 1e6 * pr["out_per_M"]
+        unit = f"{pt} in + {ct} out tokens"
+    c = r["ctx"]
+    rows.append({"service": "gemini" if m.startswith("gemini") else "alibaba", "model": m, "purpose": r["purpose"], "film": c.get("film", FILM), "unit_of_work": c.get("shot", c.get("segment", c.get("image", "film"))),
+                 "usage": unit, "usd": round(usd, 6), "borne_by": "maintainer's account (resource gateway), called by task-maker"})
+ledger = ROOT / "cost"; ledger.mkdir(exist_ok=True)
+with open(ledger / "ledger.csv", "w", newline="") as f:
+    w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
+tot = sum(r["usd"] for r in rows)
+shot_rows = [r for r in rows if r["purpose"].startswith(("shot-", "description-"))]
+shots_done = len({r["unit_of_work"] for r in rows if r["purpose"] == "shot-detail-draft"})
+shot_avg = sum(r["usd"] for r in rows if r["purpose"].startswith("shot-")) / shots_done
+corr = sum(r["usd"] for r in rows if r["purpose"].startswith("description-"))
+imgs = [r for r in rows if r["purpose"].startswith("reference-image")]
+n_img_gen = sum(1 for r in rows if r["purpose"] == "reference-image")
+img_avg = sum(r["usd"] for r in imgs) / max(1, n_img_gen)
+filmtab = sum(r["usd"] for r in rows if r["purpose"].startswith("film-table"))
+syn_rows = {}
+for r in rows:
+    if r["purpose"].startswith("synopsis"): syn_rows[r["unit_of_work"]] = syn_rows.get(r["unit_of_work"], 0) + r["usd"]
+dev = [json.loads(l) for l in open(DS / "tasks" / "dev.jsonl") if json.loads(l)["track"] == "scr"]
+ns = np.array([next(t["n_shots"] for t in dev if t["segment_id"] == s) for s in syn_rows]); cs = np.array(list(syn_rows.values()))
+b, a = np.polyfit(ns, cs, 1)
+syn_total = sum(max(0.0, a + b * t["n_shots"]) for t in dev)
+n_films = 6; n_shots = 603
+ext = shot_avg * n_shots + img_avg * n_img_gen / 1 * n_films + filmtab * n_films + corr / shots_done * n_shots + syn_total
+summ = {"queried": "2026-10-22", "total_usd_sample": round(tot, 4), "calls": len(rows), "shots_in_sample": shots_done,
+        "avg_per_shot_draft_check_resolve_usd": round(shot_avg, 5), "avg_per_reference_image_incl_attempts_and_vision_check_usd": round(img_avg, 5), "reference_images_generated_calls": n_img_gen,
+        "film_table_usd": round(filmtab, 5), "description_corrections_usd": round(corr, 5), "avg_per_synopsis_usd": round(float(cs.mean()), 5), "synopsis_fit": {"a_fixed": round(float(a), 5), "b_per_shot": round(float(b), 6), "points": dict(zip(syn_rows, map(lambda x: round(x, 5), syn_rows.values())))},
+        "extrapolation_formula": "603*shot_avg + 6*(film_table + n_images_per_film*img_avg) + 603*(corrections/shots_in_sample) + sum over the 299 dev segments of (a + b*n_shots); n_images_per_film taken as the sample's (7 here)",
+        "extrapolated_total_usd_6_films": round(ext, 2), "cap_usd": 30, "within_cap": bool(ext <= 30), "excess_usd": round(max(0, ext - 30), 2),
+        "not_included": "auditor's re-check calls; each separately reported by the auditor; the cap covers all of them together",
+        "notes": "omni: audio tokens at the audio rate, rest at the text/image rate; gemini-4-argon audio input priced at the text/image rate (page lists one input price); prices & sources in scripts/prices.json"}
+json.dump(summ, open(ledger / "summary.json", "w"), indent=1); print(json.dumps(summ, indent=1)[:1800])

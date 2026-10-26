@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+"""Damage/stress checks for scene order on a real output (coffee_run-L4-0000-scr, 2 original scenes). Usage: validate_scene.py DELIV KEY WORK OUT.json
+Variants of delivery.mp4 (ffmpeg); cuts by crewcut_algorithms (unmodified) and L2 scenes by its hierarchy, then the same scene-order function as the scores.
+Expected: identical / re-encoded / silenced / front-padded hold at 1.0; scenes swapped drops to 0; first scene only (second replaced by a repeat of the first) drops to 0.5."""
+import json, os, subprocess, sys, shutil
+sys.path.insert(0, os.path.dirname(__file__))
+import score_run
+deliv, key, work, out = sys.argv[1:5]
+task = "coffee_run-L4-0000-scr"
+truth = json.load(open(f"{key}/{task}/truth.json")); src = f"{deliv}/{task}/delivery.mp4"
+V = os.path.abspath(os.path.join(work, "validation_scene")); os.makedirs(V, exist_ok=True)
+sc = [(s["start"], s["end"]) for s in truth["scenes"]]
+def ff(*a): subprocess.run(["ffmpeg", "-y", "-v", "error", *a], check=True)
+E = ["-c:v", "libx264", "-r", "24", "-pix_fmt", "yuv420p", "-c:a", "aac", "-ar", "48000", "-ac", "2"]
+def piece(name, a, b):
+    p = f"{V}/{name}.mp4"; ff("-i", src, "-ss", str(a), "-to", str(b), *E, p); return p
+def concat(parts, o):
+    open(f"{V}/list.txt", "w").write("".join(f"file '{p}'\n" for p in parts)); ff("-f", "concat", "-safe", "0", "-i", f"{V}/list.txt", *E, o)
+variants = {
+  "identical_copy": lambda o: shutil.copy(src, o),
+  "reencoded_crf30": lambda o: ff("-i", src, "-c:v", "libx264", "-crf", "30", "-c:a", "aac", "-ar", "48000", o),
+  "silenced": lambda o: ff("-i", src, "-c:v", "copy", "-af", "volume=0", "-c:a", "aac", "-ar", "48000", o),
+  "shifted_3s_front_pad": lambda o: ff("-i", src, "-vf", "tpad=start_duration=3:color=black", "-af", "adelay=3000:all=1", *E, o),
+  "scenes_swapped": lambda o: concat([piece("s1", sc[1][0], sc[1][1]), piece("s0", sc[0][0], sc[0][1])], o),
+  "second_scene_replaced_by_first": lambda o: concat([piece("a0", sc[0][0], sc[0][1]), piece("a0b", sc[0][0], sc[0][0] + (sc[1][1] - sc[1][0]))], o),
+}
+res = {"task": task, "orig_scenes": len(sc)}
+for name, mk in variants.items():
+    o = f"{V}/{name}.mp4"; mk(o); cp = f"{V}/{name}_cuts.json"
+    subprocess.run([sys.executable, "-m", "crewcut_algorithms", "cuts", o, cp], check=True, capture_output=True, env={**os.environ, "PYTHONPATH": "/crewcut-algorithms"})
+    r = score_run.scene_order_rec(json.load(open(cp)), truth); res[name] = r; print(name, r["recovered_labels"], r["scene_order"], flush=True)
+json.dump(res, open(out, "w"), indent=1)

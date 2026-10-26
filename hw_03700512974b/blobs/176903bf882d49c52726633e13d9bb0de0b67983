@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "spirit_chaser-L0-0028",
+  "start": 100.52,
+  "end": 101.04,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 0.52,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 28,
+   "start": 0.0,
+   "end": 0.52,
+   "description": "Extreme long shot of abstract energy pulsing through space, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 0.52
+  }
+ ],
+ "task_id": "spirit_chaser-L0-0028-scr",
+ "descriptions_available": true
+}

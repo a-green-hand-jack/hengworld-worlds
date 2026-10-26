@@ -1,0 +1,18 @@
+# Decisions that belong to the benchmark's maintainer (open)
+
+Untouched by any position. See brief.md §3 items 1–12. Results depending on them are marked "not run" or carry the stated assumption by the position that made it, listed in `corpus/`, `annotations/`, `runs/`, `scores/`.
+
+## Raised during the work
+
+## Settled by the objective (no maintainer decision)
+
+- Uploader-added audio in the Sherlock Jr. and A Trip to the Moon masters (former decision 13): the revised objective (steward#13 carries it over from #12, Obj §一 影片) says to keep it as is, record it, and not exclude content or stop. Curator records it; the "rights of master audio open" flag is no longer required by the protocol, only the record.
+
+- Coffee Run licence conflict (archive.org tag CC BY-ND 4.0 vs Wikimedia Commons CC BY 4.0): Obj §一 影片 says to record both original texts and take the table (CC BY 4.0) as governing. Curator records both. The README states that the pinned file comes from the ND-tagged item.
+
+14. Gemini key out of credit (raised by task-maker, steward#8; HTTP 402 RESOURCE_EXHAUSTED on every call through the `gemini` resource; evidence in world/task-maker decisions/D001-gemini-credits-depleted.json). The maintainer decides whether to top up the key or to choose another course. The objective fixes `gemini-3.5-flash-lite` for descriptions, and no position substitutes a model or invents a placeholder. Until decided, everything that needs the model is "not run": shot descriptions, Screenplay shotlists, truth descriptions, and the T0 image/speech/music generators (Gemini side). Work that needs no model continues.
+    Update: executor (steward#9) finds the same 402 on `gemini-native` (image, speech, music). The block covers both Gemini keys. Whether credits will be restored is not known to any position.
+
+15. Release with runs "not run" (raised by auditor, steward#10): if Gemini credit is not restored, does the maintainer accept a release in which shot descriptions and the Coffee Run T0 runs are "not run"? The objective does not say. No position decides this, and approval stays with the auditor under its own conditions. Decisions 14 and 15 are open and are the maintainer's.
+
+    Update (task-maker, steward#8): the description step ran once before credits ran out (603 calls; per-call tokens in task-maker annotations/*/describe_log.jsonl), so descriptions are not "not run". Still blocked: live tool-service generator calls (T0 image/speech/music). Not verified by steward.

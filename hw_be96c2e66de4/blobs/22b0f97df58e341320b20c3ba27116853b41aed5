@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0391",
+  "start": 2530.795,
+  "end": 2536.501,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 5.706,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 391,
+   "start": -0.0,
+   "end": 5.706,
+   "description": "Close-up of an intertitle card showing dialogue, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 5.706
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0391-ref",
+ "descriptions_available": true
+}

@@ -1,0 +1,44 @@
+"""Compare a rebuild with the published dataset item by item (cuts, shots, dialogue, hierarchy, task list).
+
+Usage: compare_dataset.py BUILD_ROOT DATASET_ROOT [--film caminandes3] [--out report.json]
+Exit 0 only if every item is equal; differences are listed. duration_s is reported under both bases.
+"""
+import json, subprocess, sys
+from pathlib import Path
+
+
+def load(p): return json.loads(Path(p).read_text())
+
+
+def main():
+    b, d = Path(sys.argv[1]), Path(sys.argv[2])
+    fid = sys.argv[sys.argv.index("--film") + 1] if "--film" in sys.argv else "caminandes3"
+    out = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else None
+    rep, diffs = {}, []
+    def cmp(name, a, c):
+        eq = a == c; rep[name] = {"equal": eq}
+        if not eq:
+            rep[name].update(rebuilt=a, published=c); diffs.append(name)
+    A, D = b / "data" / fid, d / "annotations" / fid
+    sa, sd = load(A / "shots.json"), load(D / "shots.json")
+    cmp("shots.fps", sa["fps"], sd["fps"]); cmp("shots.cut_frames", sa["cut_frames"], sd["cut_frames"])
+    cmp("shots.cut_times_s", sa["cut_times_s"], sd["cut_times_s"]); cmp("shots.duration_s", sa["duration_s"], sd["duration_s"])
+    cmp("shots.count", len(sa["cut_frames"]) + 1, len(sd["cut_frames"]) + 1)
+    cmp("dialogue", load(A / "dialogue.json"), load(D / "dialogue.json"))
+    ha, hd = load(A / "hierarchy.json"), load(D / "hierarchy.json")
+    for k in ("duration_s", "L0", "L1", "L2", "L3", "L4"):
+        cmp(f"hierarchy.{k}", ha.get(k), hd.get(k))
+    ta = [json.loads(l) for l in (b / "tasks" / "dev.jsonl").read_text().splitlines()]
+    td = [json.loads(l) for l in (d / "tasks" / "dev.jsonl").read_text().splitlines() if f'"film_id": "{fid}"' in l]
+    cmp("tasks.ids", [t["task_id"] for t in ta], [t["task_id"] for t in td]); cmp("tasks.records", ta, td)
+    m = sys.argv[sys.argv.index("--master") + 1] if "--master" in sys.argv else None
+    if m:
+        pr = json.loads(subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=duration:format=duration", "-of", "json", m], capture_output=True, text=True).stdout)
+        rep["duration_bases"] = {"video_stream_s": float(pr["streams"][0]["duration"]), "container_s": float(pr["format"]["duration"]), "published_duration_s": sd["duration_s"]}
+    rep["differences"] = diffs
+    txt = json.dumps(rep, indent=1)
+    if out: Path(out).write_text(txt)
+    print(txt if diffs else f"all {len(rep) - 1} items equal")
+    sys.exit(1 if diffs else 0)
+
+main()

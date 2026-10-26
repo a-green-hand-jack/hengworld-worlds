@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0017",
+  "start": 66.417,
+  "end": 67.417,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 1.0,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 17,
+   "start": -0.0,
+   "end": 1.0,
+   "description": "Medium close-up of C1 and another animal looking excitedly while riding a vehicle, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 1.0
+  }
+ ],
+ "task_id": "caminandes3-L0-0017-ref",
+ "descriptions_available": true
+}

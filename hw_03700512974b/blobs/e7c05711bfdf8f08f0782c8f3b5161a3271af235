@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "sherlock_jr-L0-0329",
+  "start": 2317.182,
+  "end": 2331.663,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 14.481,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 329,
+   "start": -0.0,
+   "end": 14.481,
+   "description": "Medium shot of C1 riding a vehicle with a train in the background, static camera."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 14.481
+  }
+ ],
+ "task_id": "sherlock_jr-L0-0329-scr",
+ "descriptions_available": true
+}

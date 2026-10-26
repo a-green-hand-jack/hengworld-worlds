@@ -1,0 +1,18 @@
+Here is your detailed description of shot 1:
+{"setting": "P1: Frozen pond and snowy field. Outdoor, bright daytime. Smooth ice surface in the foreground with a blurred snowy hill, rocks, and wooden fence posts behind.", "characters": "C1: lies flat on the ice on the left, narrows eyes angrily, then tries to lift head with wide strained eyes; C2: stands on the ice in the center, eats a berry, then hops away.", "props": "Crushed green plant leaves on the snow; red berry stains on the ice.", "action": "C2 stands next to C1's head, chews, swallows the berry, looks at C1, and hops off to the right as the camera pans left onto C1. C1 glares with narrowed eyes, then struggles to lift its chin off the ice, finding its tongue stuck frozen to the surface.", "camera": "Low-angle close-up at ice level; starts on C2 and C1's snout, pans left to center on C1 as C2 leaves, then remains static.", "light_mood": "Bright natural daylight with soft shadows on the snow and ice; comedic and frustrated mood.", "sound": "High-pitched squeaks, chewing and gulping sounds, a springy hop sound, dramatic low strings, and strained vocal grunts from C1."}
+An independent checker looking at the same frames flagged:
+- sound: 'chewing and gulping sounds' -> unsupported
+Rewrite the whole JSON (same keys, same limits, no description_* keys needed) so that every statement is confirmed by the frames or audio. Reply with JSON only.
+
+Frames:
+[frame 1 at 22.90s]
+IMG:271621ceb3ed887741581f3d255f98707f8a108935e432c1c0236a336d82711c
+[frame 2 at 24.42s]
+IMG:3b09b32d2669d77d413a1dc86f2181a84959a1e831b0bb25b0764d7ba7f0e35b
+[frame 3 at 25.94s]
+IMG:32fced812d6ec7eb4fcbe4623bb1b682f3003877aa2f584ff2e215326f93ad32
+[frame 4 at 27.46s]
+IMG:3bff5b67a8629935e51381342a0c87d29ef1c17fb3fe0ac908f3c08b7aba25bd
+[frame 5 at 28.98s]
+IMG:f37ac3956b4c8e42a12ebea3788970cc85dce1eedb456387aab10a89c664aa52
+AUD:cdc080586743241f5c4c0fa1eda5cd0ca26bb85debbbc5d138ed46a284ac772b

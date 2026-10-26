@@ -1,0 +1,182 @@
+"""Stage 2, Continuity: is the remake the same film? (paper Sec. 4.2, Appendix G)
+
+* cut alignment, F1 of a one-to-one matching of detected cuts to the original's cuts within 0.5 s
+  and 1.0 s;
+* shot correspondence by description-mediated judging, the duration-weighted share of original
+  shots whose description a judge accepts for the remake's frames in the same interval (the judge
+  never sees the original's pixels);
+* dialogue, WER of the remake's transcript against the script and the median line-onset error;
+* character continuity, cluster purity of per-line speaker embeddings and per-appearance visual
+  embeddings by character;
+* scene order, one minus the normalised edit distance between scene sequences.
+"""
+from __future__ import annotations
+
+import re
+from dataclasses import asdict, dataclass
+from pathlib import Path
+
+import numpy as np
+
+from ..build import shots as shot_mod
+
+
+# ----------------------------------------------------------------- cuts
+def cut_f1(truth: list[float], pred: list[float], tol: float) -> float:
+    """F1 of the maximum one-to-one matching with |t - p| <= tol (greedy on sorted lists is optimal here)."""
+    if not truth and not pred:
+        return 1.0
+    if not truth or not pred:
+        return 0.0
+    t, p = sorted(truth), sorted(pred)
+    i = j = m = 0
+    while i < len(t) and j < len(p):
+        if abs(t[i] - p[j]) <= tol:
+            m += 1
+            i += 1
+            j += 1
+        elif t[i] < p[j]:
+            i += 1
+        else:
+            j += 1
+    return 2 * m / (len(t) + len(p))
+
+
+def detect_cuts(film: Path) -> list[float]:
+    rec = shot_mod.detect(str(film))
+    return [c / rec["fps"] for c in rec["cuts"]]
+
+
+# ----------------------------------------------------------------- shot correspondence
+def correspondence(truth_shots: list[dict], judge) -> tuple[float, list[int]]:
+    """Duration-weighted share of accepted shots. ``judge(description, start, end) -> 0/1``."""
+    num = den = 0.0
+    verdicts = []
+    for s in truth_shots:
+        w = s["end"] - s["start"]
+        v = int(judge(s["description"], s["start"], s["end"])) if s.get("description") else 0
+        verdicts.append(v)
+        num += w * v
+        den += w
+    return (num / den if den else 0.0), verdicts
+
+
+# ----------------------------------------------------------------- dialogue
+def _words(s: str) -> list[str]:
+    return re.sub(r"[^\w\s']", " ", s.lower()).split()
+
+
+def levenshtein(a: list, b: list) -> int:
+    prev = list(range(len(b) + 1))
+    for i, x in enumerate(a, 1):
+        cur = [i]
+        for j, y in enumerate(b, 1):
+            cur.append(min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (x != y)))
+        prev = cur
+    return prev[-1]
+
+
+def wer(reference: str, hypothesis: str) -> float:
+    r, h = _words(reference), _words(hypothesis)
+    if not r:
+        return 0.0 if not h else 1.0
+    return levenshtein(r, h) / len(r)
+
+
+def align_lines(truth: list[dict], hyp: list[tuple[float, float, str]]) -> list[tuple[int, int]]:
+    """Monotone alignment of hypothesis segments to script lines maximising word overlap."""
+    n, m = len(truth), len(hyp)
+    T = [set(_words(l["text"])) for l in truth]
+    H = [set(_words(h[2])) for h in hyp]
+    sim = np.array([[len(a & b) / max(1, len(a | b)) for b in H] for a in T]) if n and m else np.zeros((n, m))
+    D = np.zeros((n + 1, m + 1))
+    for i in range(1, n + 1):
+        for j in range(1, m + 1):
+            D[i, j] = max(D[i - 1, j], D[i, j - 1], D[i - 1, j - 1] + sim[i - 1, j - 1])
+    pairs, i, j = [], n, m
+    while i > 0 and j > 0:
+        if D[i, j] == D[i - 1, j - 1] + sim[i - 1, j - 1] and sim[i - 1, j - 1] > 0:
+            pairs.append((i - 1, j - 1))
+            i, j = i - 1, j - 1
+        elif D[i, j] == D[i - 1, j]:
+            i -= 1
+        else:
+            j -= 1
+    return pairs[::-1]
+
+
+def dialogue_scores(truth_lines: list[dict], hyp: list[tuple[float, float, str]]) -> dict:
+    ref = " ".join(l["text"] for l in truth_lines)
+    hyp_text = " ".join(h[2] for h in hyp)
+    pairs = align_lines(truth_lines, hyp)
+    onsets = [abs(truth_lines[i]["start"] - hyp[j][0]) for i, j in pairs]
+    return {"wer": round(min(wer(ref, hyp_text), 1.0), 4) if truth_lines else None,
+            "onset_error_median_s": round(float(np.median(onsets)), 3) if onsets else None,
+            "lines_matched": len(pairs), "lines_total": len(truth_lines)}
+
+
+# ----------------------------------------------------------------- characters
+def cluster_purity(emb: np.ndarray, labels: list[str], n_clusters: int | None = None) -> float:
+    """Purity of agglomerative (average-link, cosine) clusters against character labels."""
+    if len(labels) < 2:
+        return 1.0
+    k = n_clusters or len(set(labels))
+    x = emb / (np.linalg.norm(emb, axis=1, keepdims=True) + 1e-9)
+    clusters = [[i] for i in range(len(x))]
+    sim = x @ x.T
+    while len(clusters) > k:
+        best, pair = -9.0, (0, 1)
+        for a in range(len(clusters)):
+            for b in range(a + 1, len(clusters)):
+                s = sim[np.ix_(clusters[a], clusters[b])].mean()
+                if s > best:
+                    best, pair = s, (a, b)
+        a, b = pair
+        clusters[a] += clusters.pop(b)
+    hit = sum(max(sum(labels[i] == l for i in c) for l in set(labels[i] for i in c)) for c in clusters)
+    return hit / len(labels)
+
+
+def speaker_embeddings(wav_segments: list[np.ndarray], sr: int = 16000) -> np.ndarray:
+    """ECAPA-TDNN embeddings (needs ``speechbrain``)."""
+    import torch
+    from speechbrain.inference.speaker import EncoderClassifier
+    enc = EncoderClassifier.from_hparams(source="speechbrain/spkrec-ecapa-voxceleb")
+    out = [enc.encode_batch(torch.tensor(w).unsqueeze(0)).squeeze().numpy() for w in wav_segments]
+    return np.stack(out)
+
+
+# ----------------------------------------------------------------- scene order
+def scene_order(truth_scenes: list[tuple[float, float]], remake_shots: list[tuple[float, float]],
+                remake_scene_of_shot: list[int] | None = None) -> float:
+    """1 - normalised edit distance between the original scene sequence and the recovered one.
+
+    By default each remake shot is assigned the original scene whose interval contains its midpoint,
+    which rewards a remake whose scenes come in the original order at the original times.
+    """
+    ref = list(range(len(truth_scenes)))
+    if remake_scene_of_shot is None:
+        remake_scene_of_shot = []
+        for a, b in remake_shots:
+            mid = (a + b) / 2
+            k = next((i for i, (s, e) in enumerate(truth_scenes) if s <= mid < e), len(truth_scenes) - 1)
+            remake_scene_of_shot.append(k)
+    seq = [k for i, k in enumerate(remake_scene_of_shot) if i == 0 or k != remake_scene_of_shot[i - 1]]
+    if not ref:
+        return 1.0
+    return max(0.0, 1 - levenshtein(ref, seq) / len(ref))
+
+
+@dataclass
+class ContinuityResult:
+    cut_f1_05: float
+    cut_f1_10: float
+    correspondence: float | None
+    wer: float | None
+    onset_error_median_s: float | None
+    speaker_purity: float | None
+    character_purity: float | None
+    scene_order: float | None
+
+    def to_dict(self):
+        return asdict(self)

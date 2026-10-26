@@ -1,0 +1,51 @@
+{
+ "assignment_schema": 1,
+ "objective": "CrewCut round 2: complete c for the fixed/smoke run on caminandes3-L1-0000-scr: shot correspondence by the continuity judge on gemini from the previous round's descriptions, every other component of c, recorded adaptations of CrewCut code, a judge check (right vs wrong description), Gemini spend by purpose, and an updated statement of what was not run. Reproducible from records; <=40 Gemini requests.",
+ "items": [
+  {
+   "owner": "steward",
+   "work": "Brief and this assignment updated for steward#9; maintainer decisions recorded (adaptation allowed, 40-request budget); protocol questions answered with citations; gaps recorded as the maintainer's.",
+   "paths": [
+    "protocol/"
+   ]
+  },
+  {
+   "owner": "curator",
+   "work": "Corpus records of the previous round stand; answer questions; nothing new unless asked.",
+   "paths": [
+    "corpus/"
+   ]
+  },
+  {
+   "owner": "task-maker",
+   "work": "Keep the previous round's tasks, descriptions and key; supply the scorer the published descriptions and, to the scorer/auditor only, the key; answer questions on them. No new description drafting unless a recorded reason (paid step once); record any Gemini request made.",
+   "paths": [
+    "tasks/",
+    "descriptions/",
+    "comparison/",
+    "spend/"
+   ]
+  },
+  {
+   "owner": "executor",
+   "work": "Keep the previous round's run records; supply the run output to the scorer; re-run only if an adaptation of run-side code is needed, recorded as an adaptation; record any Gemini request made.",
+   "paths": [
+    "runs/"
+   ]
+  },
+  {
+   "owner": "scorer",
+   "work": "Complete c: judge the shot correspondence with CrewCut's continuity judge on gemini from the previous round's descriptions (adapting the judge's request settings where they fail, each adaptation recorded as data: what, why, effect on result, keeping what the measure measures); every other component of c the code computes, with how each was computed; WER/line-onset not applicable; the judge check (a right vs a wrong description, small); measure-behaviour check; Gemini spend of scoring by purpose with tokens as reported and cost where a price is known (source, date). Any other code adaptation likewise recorded.",
+   "paths": [
+    "scores/"
+   ]
+  },
+  {
+   "owner": "auditor",
+   "work": "Independent reproduction of the completed c from the record (the adapted judge included, within the request budget; state what was rerun and its cost), check that each adaptation is recorded and keeps what the measure measures, protocol-vs-record check, spend check across all positions (<=40 Gemini requests total), the updated statement of what was not run (T0, T1, screening, S, any component not run), and approval.",
+   "paths": [
+    "audit/"
+   ]
+  }
+ ]
+}

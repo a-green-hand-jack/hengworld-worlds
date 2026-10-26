@@ -1,0 +1,26 @@
+{
+ "segment": {
+  "id": "caminandes3-L0-0011",
+  "start": 47.0,
+  "end": 49.875,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.875,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 11,
+   "start": 0.0,
+   "end": 2.875,
+   "description": "Extreme long shot of C1 looking, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.875
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "segment": {
+  "id": "domini_canes-L0-0016",
+  "start": 83.0,
+  "end": 85.625,
+  "shots": 1,
+  "lines": 0
+ },
+ "duration": 2.625,
+ "cuts": [],
+ "shots": [
+  {
+   "index": 16,
+   "start": 0.0,
+   "end": 2.625,
+   "description": "Close-up of C1 waiting with a sword, static."
+  }
+ ],
+ "lines": [],
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 2.625
+  }
+ ],
+ "task_id": "domini_canes-L0-0016-scr",
+ "descriptions_available": true
+}
